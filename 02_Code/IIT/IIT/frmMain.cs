@@ -18,7 +18,8 @@ namespace IIT
 
         private void btnEntity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            frmEntityList obj = new frmEntityList();
+            Utility.showDialog(obj);
         }
     }
 }
