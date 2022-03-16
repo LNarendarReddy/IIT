@@ -28,7 +28,7 @@
 
         public object Currency { get; set; }
 
-        public object ResidentState { get; set; }
+        public object ResidentStatus { get; set; }
 
         public object EntityID { get; set; }
 
