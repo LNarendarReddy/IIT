@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IIT", "IIT\IIT.csproj", "{17D4C788-64DB-4922-8FCC-0D394CEB91DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{06704D83-BE16-4B2A-956C-6DA890305EB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{F9C9EEA4-9E71-428C-BB6D-E61CBE6831BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{17D4C788-64DB-4922-8FCC-0D394CEB91DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D4C788-64DB-4922-8FCC-0D394CEB91DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D4C788-64DB-4922-8FCC-0D394CEB91DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06704D83-BE16-4B2A-956C-6DA890305EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06704D83-BE16-4B2A-956C-6DA890305EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06704D83-BE16-4B2A-956C-6DA890305EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06704D83-BE16-4B2A-956C-6DA890305EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C9EEA4-9E71-428C-BB6D-E61CBE6831BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C9EEA4-9E71-428C-BB6D-E61CBE6831BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C9EEA4-9E71-428C-BB6D-E61CBE6831BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C9EEA4-9E71-428C-BB6D-E61CBE6831BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
