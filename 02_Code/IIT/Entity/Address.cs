@@ -1,11 +1,13 @@
 ﻿
 namespace Entity
 {
-    public class Address
+    public class Address : EntityBase
     {
-        public object AddressID { get; set; }
-
         public object HNo { get; set; }
+
+        public object Area { get; set; }
+
+        public object City { get; set; }
 
         public object LandMark { get; set; }
 
