@@ -55,22 +55,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmEntityIndividual.cs">
+    <Compile Include="Entity\frmEntityIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEntityIndividual.Designer.cs">
+    <Compile Include="Entity\frmEntityIndividual.Designer.cs">
       <DependentUpon>frmEntityIndividual.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEntityList.cs">
+    <Compile Include="Entity\frmEntityList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEntityList.Designer.cs">
+    <Compile Include="Entity\frmEntityList.Designer.cs">
       <DependentUpon>frmEntityList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEntityType.cs">
+    <Compile Include="Entity\frmEntityType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEntityType.Designer.cs">
+    <Compile Include="Entity\frmEntityType.Designer.cs">
       <DependentUpon>frmEntityType.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -82,13 +82,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
-    <EmbeddedResource Include="frmEntityIndividual.resx">
+    <EmbeddedResource Include="Entity\frmEntityIndividual.resx">
       <DependentUpon>frmEntityIndividual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEntityList.resx">
+    <EmbeddedResource Include="Entity\frmEntityList.resx">
       <DependentUpon>frmEntityList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEntityType.resx">
+    <EmbeddedResource Include="Entity\frmEntityType.resx">
       <DependentUpon>frmEntityType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">

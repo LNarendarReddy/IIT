@@ -57,13 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressRepository.cs" />
-    <Compile Include="EntityDataRepository.cs" />
+    <Compile Include="Entity\AddressRepository.cs" />
+    <Compile Include="Entity\EntityDataRepository.cs" />
     <Compile Include="LookUpRepository.cs" />
-    <Compile Include="LookUpUtility.cs" />
-    <Compile Include="PersonRepository.cs" />
+    <Compile Include="Utility\LookUpUtility.cs" />
+    <Compile Include="Entity\PersonRepository.cs" />
     <Compile Include="RepositoryBase.cs" />
-    <Compile Include="SQLCon.cs" />
+    <Compile Include="Utility\SQLCon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
