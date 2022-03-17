@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Base;
+using Repository;
+using System;
 using System.Windows.Forms;
 
 namespace IIT
@@ -20,6 +22,22 @@ namespace IIT
         {
             frmEntityIndividual  frmEntityIndividual = new frmEntityIndividual();
             Utility.showDialog(frmEntityIndividual);
+        }
+
+        private void frmEntityList_Load(object sender, EventArgs e)
+        {
+            gcEntityList.DataSource = new EntityDataRepository().GetEntityList();
+            gvEntityList_FocusedRowChanged(null, new FocusedRowChangedEventArgs(-1, -1));
+        }
+
+        private void gvEntityList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            btnModifyEntity.Enabled = e.FocusedRowHandle >= 0;
+        }
+
+        private void btnModifyEntity_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

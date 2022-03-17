@@ -33,6 +33,9 @@
             this.btnCreateEntity = new DevExpress.XtraEditors.SimpleButton();
             this.gcEntityList = new DevExpress.XtraGrid.GridControl();
             this.gvEntityList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -74,6 +77,7 @@
             this.btnModifyEntity.StyleController = this.layoutControl1;
             this.btnModifyEntity.TabIndex = 6;
             this.btnModifyEntity.Text = "Modify Entity";
+            this.btnModifyEntity.Click += new System.EventHandler(this.btnModifyEntity_Click);
             // 
             // btnCreateEntity
             // 
@@ -98,8 +102,36 @@
             // 
             // gvEntityList
             // 
+            this.gvEntityList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
             this.gvEntityList.GridControl = this.gcEntityList;
             this.gvEntityList.Name = "gvEntityList";
+            this.gvEntityList.OptionsBehavior.Editable = false;
+            this.gvEntityList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvEntityList_FocusedRowChanged);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ENTITYID";
+            this.gridColumn1.FieldName = "ENTITYID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "S No";
+            this.gridColumn2.FieldName = "SNO";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Name of Entity";
+            this.gridColumn3.FieldName = "ENTITYNAME";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // Root
             // 
@@ -169,6 +201,7 @@
             this.KeyPreview = true;
             this.Name = "frmEntityList";
             this.Text = "Entity List";
+            this.Load += new System.EventHandler(this.frmEntityList_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEntityList_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -197,5 +230,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

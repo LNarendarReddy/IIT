@@ -63,12 +63,16 @@ namespace IIT
             entityData.ResidentStatus = rgResidenceStatus.EditValue;
 
             entityData.PermanentAddress.HNo = txtHNoR.EditValue;
+            entityData.PermanentAddress.Area = txtAreaR.EditValue;
+            entityData.PermanentAddress.City = txtCityR.EditValue;
             entityData.PermanentAddress.District = txtDistrictR.EditValue;
             entityData.PermanentAddress.StateID = cmbStateR.EditValue;
             entityData.PermanentAddress.LandMark = txtLandMarkR.EditValue;
             entityData.PermanentAddress.PinCode = txtPincodeR.EditValue;
 
             entityData.BusinessAddress.HNo = txtHNoB.EditValue;
+            entityData.BusinessAddress.Area = txtAreaB.EditValue;
+            entityData.BusinessAddress.City = txtCityB.EditValue;
             entityData.BusinessAddress.District = txtDistrictB.EditValue;
             entityData.BusinessAddress.StateID = cmbStateB.EditValue;
             entityData.BusinessAddress.LandMark = txtLandMarkB.EditValue;

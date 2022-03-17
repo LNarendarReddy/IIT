@@ -54,11 +54,11 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@PercentageShares", personObj.PercentageShares);
                     cmd.Parameters.AddWithValue("@NoOfShares", personObj.NoOfShares);
                     cmd.Parameters.AddWithValue("@PrimaryGSTNoID", personObj.PrimaryGST.GSTRegNoID);
-                    string personObjID = cmd.ExecuteScalar() as string;
+                    object personObjID = cmd.ExecuteScalar();
 
-                    if (!int.TryParse(personObjID, out int personID))
+                    if (!int.TryParse(personObjID.ToString(), out int personID))
                     {
-                        throw new Exception(personObjID);
+                        throw new Exception(personObjID.ToString());
                     }
 
                     personObj.ID = personID;

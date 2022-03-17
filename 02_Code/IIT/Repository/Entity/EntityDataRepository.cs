@@ -1,9 +1,9 @@
-﻿
-using Entity;
+﻿using Entity;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Repository
 {
@@ -86,6 +86,81 @@ namespace Repository
             }
 
             return entityObj;
+        }
+
+        public DataTable GetEntityList()
+        {
+            DataTable dtEntityList = new DataTable();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_ENTITYLIST]";
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dtEntityList);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Retrieving Enity List", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+
+            return dtEntityList;
+        }
+
+        public EntityData GetEntityData(object entityID)
+        {
+            EntityData entityData;
+            DataSet dsEntityData = new DataSet();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_ENTITY]";
+                    cmd.Parameters.AddWithValue("@EntityID", entityID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dsEntityData);
+                    }
+                }
+
+                dsEntityData.Tables[0].TableName = "ENTITY";
+                dsEntityData.Tables[1].TableName = "PERSON";
+                dsEntityData.Tables[2].TableName = "ADDRESS";
+
+                entityData = LoadFirstRecordOnly(dsEntityData.Tables["ENTITY"]);
+                
+                entityData.PersonData = personRepository.LoadFirstRecordOnly(dsEntityData.Tables["PERSON"]);
+
+                List<Address> addresses = addressRepository.Load(dsEntityData.Tables["ADDRESS"]);
+                
+                entityData.PermanentAddress = 
+                    addresses.FirstOrDefault(x => x.ID ==
+                        dsEntityData.Tables["ENTITY"].Rows[0]["PERMANENTADDRESSID"]);
+                entityData.BusinessAddress =
+                    addresses.FirstOrDefault(x => x.ID ==
+                        dsEntityData.Tables["ENTITY"].Rows[0]["BUSINESSADDRESSID"]);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Retrieving entity details", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+            return entityData;
         }
     }
 }
