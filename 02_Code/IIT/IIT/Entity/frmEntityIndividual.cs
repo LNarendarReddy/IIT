@@ -89,15 +89,44 @@ namespace IIT
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkSameAddress.Checked)
-            {
-                entityData.BusinessAddress = entityData.PermanentAddress;
+            entityData.BusinessAddress = chkSameAddress.Checked ? entityData.PermanentAddress : new Address();
+            Utility.BindAddress(entityData.BusinessAddress, !chkSameAddress.Checked, txtHNoB, txtAreaB, txtCityB, txtDistrictB
+                , cmbStateB, txtLandMarkB, txtPincodeB);
+        }
 
-            }
-            else
-            {
-                entityData.BusinessAddress = new Address() { };
-            }
+        private void txtHNoR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, txtHNoR, txtHNoB);
+        }
+
+        private void txtAreaR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, txtAreaR, txtAreaB);
+        }
+
+        private void txtCityR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, txtCityR, txtCityB);
+        }
+
+        private void txtDistrictR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, txtDistrictR, txtDistrictB);
+        }
+
+        private void cmbStateR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, cmbStateR, cmbStateB);
+        }
+
+        private void txtLandMarkR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, txtLandMarkR, txtLandMarkB);
+        }
+
+        private void txtPincodeR_EditValueChanged(object sender, EventArgs e)
+        {
+            Utility.PropogateAddress(chkSameAddress, txtPincodeR, txtPincodeB);
         }
     }
 }
