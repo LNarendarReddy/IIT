@@ -71,7 +71,7 @@ namespace Repository
                     }
 
                     entityObj.ID = entityID;
-                    entityObj.PersonData.EntityID = entityID;
+                    entityObj.PersonData.ForEach(x => x.EntityID = entityID);
                 }
 
                 personRepository.Save(entityObj.PersonData);
@@ -141,7 +141,7 @@ namespace Repository
 
                 entityData = LoadFirstRecordOnly(dsEntityData.Tables["ENTITY"]);
                 
-                entityData.PersonData = personRepository.LoadFirstRecordOnly(dsEntityData.Tables["PERSON"]);
+                entityData.PersonData = personRepository.Load(dsEntityData.Tables["PERSON"]);
 
                 List<Address> addresses = addressRepository.Load(dsEntityData.Tables["ADDRESS"]);
                 

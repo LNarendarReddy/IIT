@@ -1,4 +1,6 @@
-﻿namespace Entity
+﻿using System.Collections.Generic;
+
+namespace Entity
 {
     public class EntityData : EntityBase
     {
@@ -10,7 +12,7 @@
 
         public object NoOfPartners { get; set; }
 
-        public Person PersonData { get; set; }
+        public List<Person> PersonData { get; set; }
 
         public object AadharNumber { get; set; }
 
@@ -40,7 +42,7 @@
 
         public EntityData()
         {
-            PersonData = new Person();
+            PersonData = new List<Person>();
             PermanentAddress = new Address();
             BusinessAddress = new Address();
         }

@@ -2,6 +2,7 @@
 using Repository;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace IIT
@@ -53,9 +54,9 @@ namespace IIT
             entityData.AadharNumber = txtAadharNumber.EditValue;
             entityData.MobileNumber = txtMobileNumber.EditValue;
 
-            entityData.PersonData.PersonName = txtPersonName.EditValue;
-            entityData.PersonData.PANNumber = txtPanNumber.EditValue;
-            entityData.PersonData.AadharNumber = txtAadharNumber.EditValue;
+            entityData.PersonData.First().PersonName = txtPersonName.EditValue;
+            entityData.PersonData.First().PANNumber = txtPanNumber.EditValue;
+            entityData.PersonData.First().AadharNumber = txtAadharNumber.EditValue;
 
             entityData.MethodOfAccounting = cmbMethod.EditValue;
             entityData.Currency = cmbCurrency.EditValue;
