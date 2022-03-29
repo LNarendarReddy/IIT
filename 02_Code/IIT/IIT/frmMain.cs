@@ -4,7 +4,11 @@ namespace IIT
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmMain()
+        private static frmMain _instance = null;
+
+        public static frmMain Instance { get { return _instance ?? (_instance = new frmMain()); } }
+
+        private frmMain()
         {
             InitializeComponent();
         }
@@ -19,6 +23,11 @@ namespace IIT
         {
             lblDateTime.Caption = DateTime.Now.ToString();
             btnEntity_ItemClick(null, null);
+        }
+
+        public void UpdateStatusBar(string message)
+        {
+            
         }
     }
 }
