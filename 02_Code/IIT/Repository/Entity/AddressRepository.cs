@@ -19,7 +19,6 @@ namespace Repository
                     HNo = drAddress["HNO"],
                     Area = drAddress["AREA"],
                     City = drAddress["CITY"],
-                    LandMark = drAddress["LANDMARK"],
                     District = drAddress["DISTRICT"],
                     PinCode = drAddress["PINCODE"],
                     StateID = drAddress["STATEID"]
@@ -44,10 +43,10 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@HNo", address.HNo);
                     cmd.Parameters.AddWithValue("@Area", address.Area);
                     cmd.Parameters.AddWithValue("@City", address.City);
-                    cmd.Parameters.AddWithValue("@LandMark", address.LandMark);
                     cmd.Parameters.AddWithValue("@District", address.District);
                     cmd.Parameters.AddWithValue("@StateID", address.StateID);
                     cmd.Parameters.AddWithValue("@PinCode", address.PinCode);
+                    cmd.Parameters.AddWithValue("@UserName", address.UserName);
                     object addressIDObj = cmd.ExecuteScalar();
 
                     if(!int.TryParse(addressIDObj.ToString(), out int addressID))

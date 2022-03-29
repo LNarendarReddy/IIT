@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Entity\AddressRepository.cs" />
     <Compile Include="Entity\EntityDataRepository.cs" />
+    <Compile Include="Entity\GSTRepository.cs" />
     <Compile Include="LookUpRepository.cs" />
     <Compile Include="Utility\LookUpUtility.cs" />
     <Compile Include="Entity\PersonRepository.cs" />
@@ -68,10 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IITData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="IITData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>IITData.mdf</DependentUpon>
     </Content>
   </ItemGroup>

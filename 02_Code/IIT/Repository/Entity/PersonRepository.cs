@@ -25,7 +25,7 @@ namespace Repository
                     IsAuthorizedSignatory = drPerson["ISAUTHORIZEDSIGNATORY"],
                     PercentageShares = drPerson["PERCENTAGESHARES"],
                     NoOfShares = drPerson["NOOFSHARES"],
-                    //PrimaryGST = drPerson["PERSONID"],
+                    Address = drPerson["ADDRESSOFPERSON"]
                 };
 
                 people.Add(person);
@@ -53,7 +53,8 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@IsAuthorizedSignatory", personObj.IsAuthorizedSignatory);
                     cmd.Parameters.AddWithValue("@PercentageShares", personObj.PercentageShares);
                     cmd.Parameters.AddWithValue("@NoOfShares", personObj.NoOfShares);
-                    cmd.Parameters.AddWithValue("@PrimaryGSTNoID", personObj.PrimaryGST.GSTRegNoID);
+                    cmd.Parameters.AddWithValue("@UserName", personObj.UserName);
+                    cmd.Parameters.AddWithValue("@Address", personObj.Address);
                     object personObjID = cmd.ExecuteScalar();
 
                     if (!int.TryParse(personObjID.ToString(), out int personID))

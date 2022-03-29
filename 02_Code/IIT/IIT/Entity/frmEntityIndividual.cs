@@ -10,13 +10,23 @@ namespace IIT
     public partial class frmEntityIndividual : DevExpress.XtraEditors.XtraForm
     {
         int entityType = 0;
-        EntityData entityData = new EntityData();
-        public frmEntityIndividual()
+        public bool IsSave = false;
+        EntityData entityData = null;
+        bool isLoading = false;
+        public frmEntityIndividual(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
-            frmEntityType frmentitytype = new frmEntityType();
-            Utility.showDialog(frmentitytype);
-            entityType = frmentitytype.entityType;
+            entityType = _entityType;
+            if (EntityID > 0)
+            {
+                entityData = new EntityDataRepository().GetEntityData(EntityID);
+            }
+            else
+            {
+                entityData = new EntityData();
+                entityData.ID = EntityID;
+            }
+            
         }
 
         private void frmEntityIndividual_Load(object sender, EventArgs e)
@@ -44,90 +54,160 @@ namespace IIT
                     new DevExpress.XtraEditors.Controls.RadioGroupItem(
                         drResidentStatus["ENTITYLOOKUPID"], drResidentStatus["LOOKUPVALUE"].ToString()));
             }
+            if (entityData.ID.Equals(0))
+            {
+                rgResidenceStatus.SelectedIndex = 0;
+            }
+            else
+            {
+                isLoading = true;
+                entityData.EntityTypeID = entityType;
+                txtEntityName.EditValue = entityData.EntityName;
+                txtPanNumber.EditValue = entityData.PANNumber;
+                txtMobileNumber.EditValue = entityData.MobileNumber;
+                txtGSTNumber.EditValue = entityData.GSTNumber;
+
+                txtPersonName.EditValue = entityData.PersonData.First().PersonName;
+                txtPanNumber.EditValue = entityData.PersonData.First().PANNumber;
+                txtAadharNumber.EditValue = entityData.PersonData.First().AadharNumber;
+
+                cmbMethod.EditValue = entityData.MethodOfAccounting;
+                cmbCurrency.EditValue = entityData.Currency;
+                txtEmail.EditValue = entityData.EmailID;
+                rgResidenceStatus.EditValue = entityData.ResidentStatus;
+                txtNatureOfBussiness.EditValue = entityData.NatureOfBussiness;
+
+                txtHNoR.EditValue = entityData.PermanentAddress.HNo;
+                txtAreaR.EditValue = entityData.PermanentAddress.Area;
+                txtCityR.EditValue = entityData.PermanentAddress.City;
+                txtDistrictR.EditValue = entityData.PermanentAddress.District;
+                cmbStateR.EditValue = entityData.PermanentAddress.StateID;
+                txtPincodeR.EditValue = entityData.PermanentAddress.PinCode;
+
+                txtHNoB.EditValue = entityData.BusinessAddress.HNo;
+                txtAreaB.EditValue = entityData.BusinessAddress.Area;
+                txtCityB.EditValue = entityData.BusinessAddress.City;
+                txtDistrictB.EditValue = entityData.BusinessAddress.District;
+                cmbStateB.EditValue = entityData.BusinessAddress.StateID;
+                txtPincodeB.EditValue = entityData.BusinessAddress.PinCode;
+
+                chkSameAddress.EditValue = entityData.SameAddress;
+
+                if(chkSameAddress.Checked)
+                {
+                    txtHNoB.Enabled = false;
+                    txtAreaB.Enabled = false;
+                    txtCityB.Enabled = false;
+                    txtDistrictB.Enabled = false;
+                    cmbStateB.Enabled = false;
+                    txtPincodeB.Enabled = false;
+                }
+
+                isLoading = false;
+            }
         }
 
         private void btnSaveCompany_Click(object sender, EventArgs e)
         {
-            entityData.EntityTypeID = 1;
+            if (!dxValidationProvider1.Validate())
+                return;
+            entityData.EntityTypeID = entityType;
             entityData.EntityName = txtEntityName.EditValue;
             entityData.PANNumber = txtPanNumber.EditValue;
-            entityData.AadharNumber = txtAadharNumber.EditValue;
             entityData.MobileNumber = txtMobileNumber.EditValue;
+            entityData.GSTNumber = txtGSTNumber.EditValue;
 
+            if (!entityData.PersonData.Any())
+                entityData.PersonData.Add(new Person());
             entityData.PersonData.First().PersonName = txtPersonName.EditValue;
             entityData.PersonData.First().PANNumber = txtPanNumber.EditValue;
             entityData.PersonData.First().AadharNumber = txtAadharNumber.EditValue;
+            entityData.PersonData.First().UserName = Utility.UserName;
 
             entityData.MethodOfAccounting = cmbMethod.EditValue;
             entityData.Currency = cmbCurrency.EditValue;
             entityData.EmailID = txtEmail.EditValue;
             entityData.ResidentStatus = rgResidenceStatus.EditValue;
+            entityData.SameAddress = chkSameAddress.EditValue;
+            entityData.NatureOfBussiness = txtNatureOfBussiness.EditValue;
+            entityData.UserName = Utility.UserName;
+
 
             entityData.PermanentAddress.HNo = txtHNoR.EditValue;
             entityData.PermanentAddress.Area = txtAreaR.EditValue;
             entityData.PermanentAddress.City = txtCityR.EditValue;
             entityData.PermanentAddress.District = txtDistrictR.EditValue;
             entityData.PermanentAddress.StateID = cmbStateR.EditValue;
-            entityData.PermanentAddress.LandMark = txtLandMarkR.EditValue;
             entityData.PermanentAddress.PinCode = txtPincodeR.EditValue;
+            entityData.PermanentAddress.UserName = Utility.UserName;
 
             entityData.BusinessAddress.HNo = txtHNoB.EditValue;
             entityData.BusinessAddress.Area = txtAreaB.EditValue;
             entityData.BusinessAddress.City = txtCityB.EditValue;
             entityData.BusinessAddress.District = txtDistrictB.EditValue;
             entityData.BusinessAddress.StateID = cmbStateB.EditValue;
-            entityData.BusinessAddress.LandMark = txtLandMarkB.EditValue;
             entityData.BusinessAddress.PinCode = txtPincodeB.EditValue;
+            entityData.BusinessAddress.UserName = Utility.UserName;
 
             new EntityDataRepository().Save(entityData);
-        }
-
-        private void frmEntityIndividual_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Escape)
-                this.Close();
+            IsSave = true;
+            this.Close();
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             entityData.BusinessAddress = chkSameAddress.Checked ? entityData.PermanentAddress : new Address();
             Utility.BindAddress(entityData.BusinessAddress, !chkSameAddress.Checked, txtHNoB, txtAreaB, txtCityB, txtDistrictB
-                , cmbStateB, txtLandMarkB, txtPincodeB);
+                , cmbStateB, txtPincodeB);
         }
 
         private void txtHNoR_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             Utility.PropogateAddress(chkSameAddress, txtHNoR, txtHNoB);
         }
 
         private void txtAreaR_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             Utility.PropogateAddress(chkSameAddress, txtAreaR, txtAreaB);
         }
 
         private void txtCityR_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             Utility.PropogateAddress(chkSameAddress, txtCityR, txtCityB);
         }
 
         private void txtDistrictR_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             Utility.PropogateAddress(chkSameAddress, txtDistrictR, txtDistrictB);
         }
 
         private void cmbStateR_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             Utility.PropogateAddress(chkSameAddress, cmbStateR, cmbStateB);
-        }
-
-        private void txtLandMarkR_EditValueChanged(object sender, EventArgs e)
-        {
-            Utility.PropogateAddress(chkSameAddress, txtLandMarkR, txtLandMarkB);
         }
 
         private void txtPincodeR_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             Utility.PropogateAddress(chkSameAddress, txtPincodeR, txtPincodeB);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

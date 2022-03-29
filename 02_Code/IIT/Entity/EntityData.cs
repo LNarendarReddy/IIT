@@ -14,7 +14,7 @@ namespace Entity
 
         public List<Person> PersonData { get; set; }
 
-        public object AadharNumber { get; set; }
+        public List<GSTRegistrationNumber> GSTRegNo { get; set; }
 
         public object PANNumber { get; set; }
 
@@ -22,9 +22,17 @@ namespace Entity
 
         public object OfficeNumber { get; set; }
 
+        public object CompanyNumber { get; set; }
+
+        public object GSTNumber { get; set; }
+
+        public object NatureOfBussiness { get; set; }
+
         public Address PermanentAddress { get; set; }
 
         public Address BusinessAddress { get; set; }
+
+        public object SameAddress { get; set; }
 
         public object EmailID { get; set; }
 
@@ -36,6 +44,8 @@ namespace Entity
 
         public object ResidentStatus { get; set; }
 
+        
+
         #endregion
 
         #region Constructor
@@ -45,6 +55,7 @@ namespace Entity
             PersonData = new List<Person>();
             PermanentAddress = new Address();
             BusinessAddress = new Address();
+            GSTRegNo = new List<GSTRegistrationNumber>();
         }
 
         #endregion

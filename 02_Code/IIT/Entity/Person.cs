@@ -20,11 +20,7 @@
 
         public object NoOfShares { get; set; }
 
-        public GSTRegistrationNumber PrimaryGST { get; set; }
+        public object Address { get; set; }
 
-        public Person()
-        {            
-            PrimaryGST = new GSTRegistrationNumber();
-        }
     }
 }

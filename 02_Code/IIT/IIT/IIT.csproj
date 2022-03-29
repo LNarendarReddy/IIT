@@ -37,12 +37,12 @@
     <Reference Include="DevExpress.Data.v21.2" />
     <Reference Include="DevExpress.Utils.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
-    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
-    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\frmAddGSTNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entity\frmAddGSTNumber.Designer.cs">
+      <DependentUpon>frmAddGSTNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\frmAddPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entity\frmAddPartner.Designer.cs">
+      <DependentUpon>frmAddPartner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity\frmEntityIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     <Compile Include="Entity\frmEntityType.Designer.cs">
       <DependentUpon>frmEntityType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\frmPartnershipFirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
+      <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +100,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="Entity\frmAddGSTNumber.resx">
+      <DependentUpon>frmAddGSTNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity\frmAddPartner.resx">
+      <DependentUpon>frmAddPartner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entity\frmEntityIndividual.resx">
       <DependentUpon>frmEntityIndividual.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entity\frmEntityType.resx">
       <DependentUpon>frmEntityType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
+      <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

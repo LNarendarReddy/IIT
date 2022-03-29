@@ -1,12 +1,14 @@
 ﻿
 namespace Entity
 {
-    public class GSTRegistrationNumber
+    public class GSTRegistrationNumber : EntityBase
     {
-        public object GSTRegNoID { get; set; }
-
         public object StateID { get; set; }
 
         public object GSTNo { get; set; }
+
+        public object EntityID { get; set; }
+
+        public object StateName { get; set; }
     }
 }

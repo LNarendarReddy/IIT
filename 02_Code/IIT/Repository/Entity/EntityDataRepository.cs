@@ -11,7 +11,7 @@ namespace Repository
     {
         AddressRepository addressRepository = new AddressRepository();
         PersonRepository personRepository = new PersonRepository();
-
+        GSTRepository gstRepository = new GSTRepository();
         public override List<EntityData> Load(DataTable dtEntityTable)
         {
             List<EntityData> entities = new List<EntityData>();
@@ -23,14 +23,17 @@ namespace Repository
                     EntityName = drEntity["ENTITYNAME"],
                     EntityTypeID = drEntity["ENTITYTYPEID"],
                     PANNumber = drEntity["PANNUMBER"],
-                    AadharNumber = drEntity["AADHARNUMBER"],
                     NoOfPartners = drEntity["NOOFPARTNERS"],
                     EmailID = drEntity["EMAILID"],
                     MobileNumber = drEntity["MOBILENUMBER"],
                     OfficeNumber = drEntity["OFFICENUMBER"],
                     MethodOfAccounting = drEntity["METHODACCID"],
-                    Currency = drEntity["CURRENCY"],
-                    ResidentStatus = drEntity["RESIDENTSTATUS"],
+                    Currency = drEntity["CURRENCYID"],
+                    ResidentStatus = drEntity["RESIDENTSTATUSID"],
+                    GSTNumber = drEntity["GSTNumber"],
+                    SameAddress = drEntity["SameAddress"],
+                    NatureOfBussiness = drEntity["NatureOfBussiness"],
+                    CompanyNumber = drEntity["CompanyNumber"],
                 };
 
                 entities.Add(entityData);
@@ -63,6 +66,11 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@MethodOfAccountingID", entityObj.MethodOfAccounting);
                     cmd.Parameters.AddWithValue("@CurrencyID", entityObj.Currency);
                     cmd.Parameters.AddWithValue("@ResidentStatusID", entityObj.ResidentStatus);
+                    cmd.Parameters.AddWithValue("@GSTNumber", entityObj.GSTNumber);
+                    cmd.Parameters.AddWithValue("@SameAddress", entityObj.SameAddress);
+                    cmd.Parameters.AddWithValue("@NAtureOfBussiness", entityObj.NatureOfBussiness);
+                    cmd.Parameters.AddWithValue("@CompanyNumber", entityObj.CompanyNumber);
+                    cmd.Parameters.AddWithValue("@UserName", entityObj.UserName);
                     object entityIDObj = cmd.ExecuteScalar();
 
                     if (!int.TryParse(entityIDObj.ToString(), out int entityID))
@@ -72,9 +80,10 @@ namespace Repository
 
                     entityObj.ID = entityID;
                     entityObj.PersonData.ForEach(x => x.EntityID = entityID);
+                    entityObj.GSTRegNo.ForEach(x => x.EntityID = entityID);
                 }
-
                 personRepository.Save(entityObj.PersonData);
+                gstRepository.Save(entityObj.GSTRegNo);
             }
             catch (Exception ex)
             {
@@ -138,6 +147,7 @@ namespace Repository
                 dsEntityData.Tables[0].TableName = "ENTITY";
                 dsEntityData.Tables[1].TableName = "PERSON";
                 dsEntityData.Tables[2].TableName = "ADDRESS";
+                dsEntityData.Tables[3].TableName = "GST";
 
                 entityData = LoadFirstRecordOnly(dsEntityData.Tables["ENTITY"]);
                 
@@ -146,11 +156,11 @@ namespace Repository
                 List<Address> addresses = addressRepository.Load(dsEntityData.Tables["ADDRESS"]);
                 
                 entityData.PermanentAddress = 
-                    addresses.FirstOrDefault(x => x.ID ==
-                        dsEntityData.Tables["ENTITY"].Rows[0]["PERMANENTADDRESSID"]);
+                    addresses.FirstOrDefault(x => x.ID.Equals(dsEntityData.Tables["ENTITY"].Rows[0]["PERMANENTADDRESSID"]));
                 entityData.BusinessAddress =
-                    addresses.FirstOrDefault(x => x.ID ==
-                        dsEntityData.Tables["ENTITY"].Rows[0]["BUSINESSADDRESSID"]);
+                    addresses.FirstOrDefault(x => x.ID.Equals(dsEntityData.Tables["ENTITY"].Rows[0]["BUSINESSADDRESSID"]));
+
+                entityData.GSTRegNo = gstRepository.Load(dsEntityData.Tables["GST"]);
             }
             catch (Exception ex)
             {

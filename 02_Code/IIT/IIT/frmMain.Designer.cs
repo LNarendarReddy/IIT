@@ -36,6 +36,8 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.lblDateTime = new DevExpress.XtraBars.BarStaticItem();
+            this.lblStatus = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,17 +48,22 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.btnEntity});
+            this.btnEntity,
+            this.lblDateTime,
+            this.lblStatus});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1142, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1332, 164);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btnEntity
@@ -81,28 +88,44 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 724);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblDateTime);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblStatus);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 841);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1142, 24);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1332, 22);
             // 
             // ribbonPage3
             // 
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
             // 
+            // lblDateTime
+            // 
+            this.lblDateTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lblDateTime.Id = 2;
+            this.lblDateTime.Name = "lblDateTime";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Id = 3;
+            this.lblStatus.Name = "lblStatus";
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 748);
+            this.ClientSize = new System.Drawing.Size(1332, 863);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,6 +140,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.BarButtonItem btnEntity;
+        private DevExpress.XtraBars.BarStaticItem lblDateTime;
+        private DevExpress.XtraBars.BarStaticItem lblStatus;
     }
 }
 
