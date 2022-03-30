@@ -214,14 +214,6 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnCancel.Appearance.Options.UseBackColor = true;
-            this.btnCancel.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnCancel.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnCancel.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCancel.AppearanceHovered.Options.UseBackColor = true;
-            this.btnCancel.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCancel.AppearancePressed.Options.UseBackColor = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
@@ -236,14 +228,6 @@
             // 
             // btnSaveCompany
             // 
-            this.btnSaveCompany.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnSaveCompany.Appearance.Options.UseBackColor = true;
-            this.btnSaveCompany.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnSaveCompany.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnSaveCompany.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSaveCompany.AppearanceHovered.Options.UseBackColor = true;
-            this.btnSaveCompany.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSaveCompany.AppearancePressed.Options.UseBackColor = true;
             this.btnSaveCompany.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSaveCompany.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSaveCompany.ImageOptions.SvgImage")));
             this.btnSaveCompany.Location = new System.Drawing.Point(729, 522);

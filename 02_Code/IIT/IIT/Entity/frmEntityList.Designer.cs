@@ -75,14 +75,6 @@
             // btnModifyEntity
             // 
             this.btnModifyEntity.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.btnModifyEntity.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnModifyEntity.Appearance.Options.UseBackColor = true;
-            this.btnModifyEntity.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnModifyEntity.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnModifyEntity.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnModifyEntity.AppearanceHovered.Options.UseBackColor = true;
-            this.btnModifyEntity.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnModifyEntity.AppearancePressed.Options.UseBackColor = true;
             this.btnModifyEntity.Location = new System.Drawing.Point(787, 311);
             this.btnModifyEntity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModifyEntity.Name = "btnModifyEntity";
@@ -95,10 +87,6 @@
             // btnCreateEntity
             // 
             this.btnCreateEntity.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
-            this.btnCreateEntity.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnCreateEntity.Appearance.Options.UseBackColor = true;
-            this.btnCreateEntity.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnCreateEntity.AppearanceDisabled.Options.UseBackColor = true;
             this.btnCreateEntity.Location = new System.Drawing.Point(787, 277);
             this.btnCreateEntity.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCreateEntity.Name = "btnCreateEntity";
@@ -123,7 +111,7 @@
             // gvEntityList
             // 
             this.gvEntityList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gvEntityList.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvEntityList.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
             this.gvEntityList.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvEntityList.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvEntityList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {

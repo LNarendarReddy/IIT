@@ -69,14 +69,6 @@
             // 
             // btnAOP
             // 
-            this.btnAOP.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnAOP.Appearance.Options.UseBackColor = true;
-            this.btnAOP.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnAOP.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnAOP.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAOP.AppearanceHovered.Options.UseBackColor = true;
-            this.btnAOP.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAOP.AppearancePressed.Options.UseBackColor = true;
             this.btnAOP.Location = new System.Drawing.Point(127, 193);
             this.btnAOP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAOP.Name = "btnAOP";
@@ -88,14 +80,6 @@
             // 
             // btnCompany
             // 
-            this.btnCompany.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnCompany.Appearance.Options.UseBackColor = true;
-            this.btnCompany.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnCompany.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnCompany.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCompany.AppearanceHovered.Options.UseBackColor = true;
-            this.btnCompany.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCompany.AppearancePressed.Options.UseBackColor = true;
             this.btnCompany.Location = new System.Drawing.Point(127, 227);
             this.btnCompany.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCompany.Name = "btnCompany";
@@ -107,14 +91,6 @@
             // 
             // btnPertnershipFirm
             // 
-            this.btnPertnershipFirm.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnPertnershipFirm.Appearance.Options.UseBackColor = true;
-            this.btnPertnershipFirm.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnPertnershipFirm.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnPertnershipFirm.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnPertnershipFirm.AppearanceHovered.Options.UseBackColor = true;
-            this.btnPertnershipFirm.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnPertnershipFirm.AppearancePressed.Options.UseBackColor = true;
             this.btnPertnershipFirm.Location = new System.Drawing.Point(127, 159);
             this.btnPertnershipFirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPertnershipFirm.Name = "btnPertnershipFirm";
@@ -126,14 +102,6 @@
             // 
             // btnIndividualFirm
             // 
-            this.btnIndividualFirm.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
-            this.btnIndividualFirm.Appearance.Options.UseBackColor = true;
-            this.btnIndividualFirm.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
-            this.btnIndividualFirm.AppearanceDisabled.Options.UseBackColor = true;
-            this.btnIndividualFirm.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnIndividualFirm.AppearanceHovered.Options.UseBackColor = true;
-            this.btnIndividualFirm.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnIndividualFirm.AppearancePressed.Options.UseBackColor = true;
             this.btnIndividualFirm.Location = new System.Drawing.Point(127, 125);
             this.btnIndividualFirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnIndividualFirm.Name = "btnIndividualFirm";
