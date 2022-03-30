@@ -38,8 +38,8 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -47,8 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -69,10 +69,18 @@
             // 
             // btnAOP
             // 
-            this.btnAOP.Location = new System.Drawing.Point(129, 194);
+            this.btnAOP.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnAOP.Appearance.Options.UseBackColor = true;
+            this.btnAOP.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnAOP.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnAOP.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAOP.AppearanceHovered.Options.UseBackColor = true;
+            this.btnAOP.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAOP.AppearancePressed.Options.UseBackColor = true;
+            this.btnAOP.Location = new System.Drawing.Point(127, 193);
             this.btnAOP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAOP.Name = "btnAOP";
-            this.btnAOP.Size = new System.Drawing.Size(279, 22);
+            this.btnAOP.Size = new System.Drawing.Size(283, 22);
             this.btnAOP.StyleController = this.layoutControl1;
             this.btnAOP.TabIndex = 7;
             this.btnAOP.Text = "AOP / BOI";
@@ -80,10 +88,18 @@
             // 
             // btnCompany
             // 
-            this.btnCompany.Location = new System.Drawing.Point(129, 228);
+            this.btnCompany.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnCompany.Appearance.Options.UseBackColor = true;
+            this.btnCompany.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnCompany.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnCompany.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCompany.AppearanceHovered.Options.UseBackColor = true;
+            this.btnCompany.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCompany.AppearancePressed.Options.UseBackColor = true;
+            this.btnCompany.Location = new System.Drawing.Point(127, 227);
             this.btnCompany.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCompany.Name = "btnCompany";
-            this.btnCompany.Size = new System.Drawing.Size(279, 22);
+            this.btnCompany.Size = new System.Drawing.Size(283, 22);
             this.btnCompany.StyleController = this.layoutControl1;
             this.btnCompany.TabIndex = 6;
             this.btnCompany.Text = "Company";
@@ -91,10 +107,18 @@
             // 
             // btnPertnershipFirm
             // 
-            this.btnPertnershipFirm.Location = new System.Drawing.Point(129, 160);
+            this.btnPertnershipFirm.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnPertnershipFirm.Appearance.Options.UseBackColor = true;
+            this.btnPertnershipFirm.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnPertnershipFirm.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnPertnershipFirm.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnPertnershipFirm.AppearanceHovered.Options.UseBackColor = true;
+            this.btnPertnershipFirm.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnPertnershipFirm.AppearancePressed.Options.UseBackColor = true;
+            this.btnPertnershipFirm.Location = new System.Drawing.Point(127, 159);
             this.btnPertnershipFirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPertnershipFirm.Name = "btnPertnershipFirm";
-            this.btnPertnershipFirm.Size = new System.Drawing.Size(279, 22);
+            this.btnPertnershipFirm.Size = new System.Drawing.Size(283, 22);
             this.btnPertnershipFirm.StyleController = this.layoutControl1;
             this.btnPertnershipFirm.TabIndex = 5;
             this.btnPertnershipFirm.Text = "Partnership Firm";
@@ -102,10 +126,18 @@
             // 
             // btnIndividualFirm
             // 
-            this.btnIndividualFirm.Location = new System.Drawing.Point(129, 126);
+            this.btnIndividualFirm.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnIndividualFirm.Appearance.Options.UseBackColor = true;
+            this.btnIndividualFirm.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnIndividualFirm.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnIndividualFirm.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnIndividualFirm.AppearanceHovered.Options.UseBackColor = true;
+            this.btnIndividualFirm.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnIndividualFirm.AppearancePressed.Options.UseBackColor = true;
+            this.btnIndividualFirm.Location = new System.Drawing.Point(127, 125);
             this.btnIndividualFirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnIndividualFirm.Name = "btnIndividualFirm";
-            this.btnIndividualFirm.Size = new System.Drawing.Size(279, 22);
+            this.btnIndividualFirm.Size = new System.Drawing.Size(283, 22);
             this.btnIndividualFirm.StyleController = this.layoutControl1;
             this.btnIndividualFirm.TabIndex = 4;
             this.btnIndividualFirm.Text = "Individual / Proprietor Firm";
@@ -129,58 +161,58 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnIndividualFirm;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 109);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
-            this.layoutControlItem1.Size = new System.Drawing.Size(513, 34);
+            this.layoutControlItem1.Size = new System.Drawing.Size(517, 34);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 244);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 245);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(513, 168);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(517, 171);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnPertnershipFirm;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 142);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 143);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
-            this.layoutControlItem2.Size = new System.Drawing.Size(513, 34);
+            this.layoutControlItem2.Size = new System.Drawing.Size(517, 34);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnCompany;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 210);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 211);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
-            this.layoutControlItem3.Size = new System.Drawing.Size(513, 34);
+            this.layoutControlItem3.Size = new System.Drawing.Size(517, 34);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.btnAOP;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 176);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
-            this.layoutControlItem4.Size = new System.Drawing.Size(513, 34);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(513, 108);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(517, 109);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnAOP;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 177);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
+            this.layoutControlItem4.Size = new System.Drawing.Size(517, 34);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // frmEntityType
             // 
@@ -200,8 +232,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

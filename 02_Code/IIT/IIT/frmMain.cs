@@ -27,7 +27,7 @@ namespace IIT
 
         public void UpdateStatusBar(string message)
         {
-            
+            lblStatus.Caption = message;
         }
     }
 }

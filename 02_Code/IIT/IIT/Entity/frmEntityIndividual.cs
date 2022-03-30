@@ -151,7 +151,7 @@ namespace IIT
 
             new EntityDataRepository().Save(entityData);
             IsSave = true;
-            frmMain.Instance.UpdateStatusBar("save successful");
+            frmMain.Instance.UpdateStatusBar("Entity save successful");
             this.Close();
         }
 

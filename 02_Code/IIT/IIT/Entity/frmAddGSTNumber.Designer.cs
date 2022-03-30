@@ -75,6 +75,14 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnCancel.Appearance.Options.UseBackColor = true;
+            this.btnCancel.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnCancel.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.AppearanceHovered.Options.UseBackColor = true;
+            this.btnCancel.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.AppearancePressed.Options.UseBackColor = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
@@ -88,6 +96,14 @@
             // 
             // btnSave
             // 
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnSave.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnSave.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.AppearanceHovered.Options.UseBackColor = true;
+            this.btnSave.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.AppearancePressed.Options.UseBackColor = true;
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
             this.btnSave.Location = new System.Drawing.Point(99, 79);

@@ -329,6 +329,8 @@
             // 
             // gvPartners
             // 
+            this.gvPartners.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Black;
+            this.gvPartners.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gvPartners.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn11,
             this.gridColumn1,
@@ -432,6 +434,14 @@
             // 
             // btnAddPartner
             // 
+            this.btnAddPartner.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnAddPartner.Appearance.Options.UseBackColor = true;
+            this.btnAddPartner.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnAddPartner.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnAddPartner.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAddPartner.AppearanceHovered.Options.UseBackColor = true;
+            this.btnAddPartner.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAddPartner.AppearancePressed.Options.UseBackColor = true;
             this.btnAddPartner.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPartner.ImageOptions.Image")));
             this.btnAddPartner.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAddPartner.Location = new System.Drawing.Point(409, 112);
@@ -444,6 +454,14 @@
             // 
             // btnAddGSTNumber
             // 
+            this.btnAddGSTNumber.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnAddGSTNumber.Appearance.Options.UseBackColor = true;
+            this.btnAddGSTNumber.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnAddGSTNumber.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnAddGSTNumber.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAddGSTNumber.AppearanceHovered.Options.UseBackColor = true;
+            this.btnAddGSTNumber.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAddGSTNumber.AppearancePressed.Options.UseBackColor = true;
             this.btnAddGSTNumber.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddGSTNumber.ImageOptions.Image")));
             this.btnAddGSTNumber.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAddGSTNumber.Location = new System.Drawing.Point(946, 48);
@@ -471,6 +489,14 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnCancel.Appearance.Options.UseBackColor = true;
+            this.btnCancel.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnCancel.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.AppearanceHovered.Options.UseBackColor = true;
+            this.btnCancel.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.AppearancePressed.Options.UseBackColor = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
@@ -484,6 +510,14 @@
             // 
             // btnSaveCompany
             // 
+            this.btnSaveCompany.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnSaveCompany.Appearance.Options.UseBackColor = true;
+            this.btnSaveCompany.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnSaveCompany.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnSaveCompany.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSaveCompany.AppearanceHovered.Options.UseBackColor = true;
+            this.btnSaveCompany.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSaveCompany.AppearancePressed.Options.UseBackColor = true;
             this.btnSaveCompany.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSaveCompany.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSaveCompany.ImageOptions.SvgImage")));
             this.btnSaveCompany.Location = new System.Drawing.Point(788, 677);

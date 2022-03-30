@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddPartner));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNumberOfSharesHeld = new DevExpress.XtraEditors.TextEdit();
             this.txtDINNumber = new DevExpress.XtraEditors.TextEdit();
@@ -108,7 +108,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(906, 199, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(700, 373);
+            this.layoutControl1.Size = new System.Drawing.Size(700, 361);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -139,6 +139,14 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.btnCancel.Appearance.Options.UseBackColor = true;
+            this.btnCancel.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnCancel.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.AppearanceHovered.Options.UseBackColor = true;
+            this.btnCancel.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.AppearancePressed.Options.UseBackColor = true;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
@@ -153,6 +161,14 @@
             // 
             // btnSave
             // 
+            this.btnSave.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.AppearanceDisabled.BackColor = System.Drawing.Color.Gray;
+            this.btnSave.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnSave.AppearanceHovered.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.AppearanceHovered.Options.UseBackColor = true;
+            this.btnSave.AppearancePressed.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.AppearancePressed.Options.UseBackColor = true;
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
             this.btnSave.Location = new System.Drawing.Point(411, 310);
@@ -191,10 +207,10 @@
             this.txtShare.Size = new System.Drawing.Size(488, 22);
             this.txtShare.StyleController = this.layoutControl1;
             this.txtShare.TabIndex = 7;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtShare, conditionValidationRule1);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Mandatory";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtShare, conditionValidationRule7);
             // 
             // txtAadharNumber
             // 
@@ -205,10 +221,10 @@
             this.txtAadharNumber.Size = new System.Drawing.Size(488, 22);
             this.txtAadharNumber.StyleController = this.layoutControl1;
             this.txtAadharNumber.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAadharNumber, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAadharNumber, conditionValidationRule1);
             // 
             // txtPanNumber
             // 
@@ -219,10 +235,10 @@
             this.txtPanNumber.Size = new System.Drawing.Size(488, 22);
             this.txtPanNumber.StyleController = this.layoutControl1;
             this.txtPanNumber.TabIndex = 4;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPanNumber, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPanNumber, conditionValidationRule2);
             // 
             // txtAddress
             // 
@@ -233,10 +249,10 @@
             this.txtAddress.Size = new System.Drawing.Size(488, 22);
             this.txtAddress.StyleController = this.layoutControl1;
             this.txtAddress.TabIndex = 2;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAddress, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Mandatory";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAddress, conditionValidationRule3);
             // 
             // txtFatherName
             // 
@@ -247,10 +263,10 @@
             this.txtFatherName.Size = new System.Drawing.Size(488, 22);
             this.txtFatherName.StyleController = this.layoutControl1;
             this.txtFatherName.TabIndex = 1;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Mandatory";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule4);
             // 
             // txtNameofthepartner
             // 
@@ -261,10 +277,10 @@
             this.txtNameofthepartner.Size = new System.Drawing.Size(488, 22);
             this.txtNameofthepartner.StyleController = this.layoutControl1;
             this.txtNameofthepartner.TabIndex = 0;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtNameofthepartner, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtNameofthepartner, conditionValidationRule5);
             // 
             // Root
             // 
@@ -284,7 +300,7 @@
             this.layoutControlItem10,
             this.layoutControlItem11});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(700, 373);
+            this.Root.Size = new System.Drawing.Size(700, 361);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -362,7 +378,7 @@
             this.layoutControlItem8.Control = this.btnSave;
             this.layoutControlItem8.Location = new System.Drawing.Point(399, 298);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(138, 55);
+            this.layoutControlItem8.Size = new System.Drawing.Size(138, 43);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -371,7 +387,7 @@
             this.layoutControlItem9.Control = this.btnCancel;
             this.layoutControlItem9.Location = new System.Drawing.Point(537, 298);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(143, 55);
+            this.layoutControlItem9.Size = new System.Drawing.Size(143, 43);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -380,7 +396,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 298);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(399, 55);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(399, 43);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
@@ -408,7 +424,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(700, 373);
+            this.ClientSize = new System.Drawing.Size(700, 361);
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmAddPartner";
