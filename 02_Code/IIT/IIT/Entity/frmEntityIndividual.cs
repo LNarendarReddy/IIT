@@ -65,7 +65,11 @@ namespace IIT
                 txtEntityName.EditValue = entityData.EntityName;
                 txtPanNumber.EditValue = entityData.PANNumber;
                 txtMobileNumber.EditValue = entityData.MobileNumber;
-                txtGSTNumber.EditValue = entityData.GSTNumber;
+
+                cmbGSTNumber.Properties.DataSource = entityData.GSTRegNo;
+                cmbGSTNumber.Properties.ValueMember = "ID";
+                cmbGSTNumber.Properties.DisplayMember = "GSTNO";
+                cmbGSTNumber.EditValue = entityData.PrimaryGST.ID;
 
                 txtPersonName.EditValue = entityData.PersonData.First().PersonName;
                 txtPanNumber.EditValue = entityData.PersonData.First().PANNumber;
@@ -115,7 +119,7 @@ namespace IIT
             entityData.EntityName = txtEntityName.EditValue;
             entityData.PANNumber = txtPanNumber.EditValue;
             entityData.MobileNumber = txtMobileNumber.EditValue;
-            entityData.GSTNumber = txtGSTNumber.EditValue;
+            entityData.PrimaryGST = entityData.GSTRegNo.First(x => x.ID.Equals(cmbGSTNumber.EditValue));
 
             if (!entityData.PersonData.Any())
                 entityData.PersonData.Add(new Person());
@@ -209,6 +213,19 @@ namespace IIT
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddGSTNumber_Click(object sender, EventArgs e)
+        {
+            GSTRegistrationNumber gst = new GSTRegistrationNumber();
+            gst.ID = entityData.GSTRegNo.Count * -1;
+            frmAddGSTNumber obj = new frmAddGSTNumber(gst);
+            Utility.showDialog(obj);
+            if (gst.IsSave)
+            {
+                entityData.GSTRegNo.Add(gst);
+                entityData.PrimaryGST = gst;
+            }
         }
     }
 }

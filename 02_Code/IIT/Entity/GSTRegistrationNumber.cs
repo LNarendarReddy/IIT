@@ -3,6 +3,7 @@ namespace Entity
 {
     public class GSTRegistrationNumber : EntityBase
     {
+
         public object StateID { get; set; }
 
         public object GSTNo { get; set; }

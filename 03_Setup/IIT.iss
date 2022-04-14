@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "IIT"
-#define MyAppVersion "1.1.0(01-04-2022)"
+#define MyAppVersion "1.1.1(06-04-2022)"
 #define MyAppPublisher "NSoftSol Pvt Ltd."
 #define MyAppURL "http://www.nsoftsol.com/"
 #define MyAppExeName "IIT.exe"
@@ -39,7 +39,7 @@ Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-source: "..\02_Code\IIT\IIT\bin\Release\*"; destdir: "{win}\IIT"; flags: ignoreversion recursesubdirs createallsubdirs
+source: "..\02_Code\IIT\IIT\bin\Release\*"; destdir: "{win}\IIT"; flags: ignoreversion recursesubdirs createallsubdirs; Permissions: everyone-full
 
 [Dirs]
 

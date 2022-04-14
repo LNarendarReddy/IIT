@@ -30,7 +30,7 @@ namespace Repository
                     MethodOfAccounting = drEntity["METHODACCID"],
                     Currency = drEntity["CURRENCYID"],
                     ResidentStatus = drEntity["RESIDENTSTATUSID"],
-                    GSTNumber = drEntity["GSTNumber"],
+                    GSTREGNOID = drEntity["GSTREGNOID"],
                     SameAddress = drEntity["SameAddress"],
                     NatureOfBussiness = drEntity["NatureOfBussiness"],
                     CompanyNumber = drEntity["CompanyNumber"],
@@ -66,7 +66,6 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@MethodOfAccountingID", entityObj.MethodOfAccounting);
                     cmd.Parameters.AddWithValue("@CurrencyID", entityObj.Currency);
                     cmd.Parameters.AddWithValue("@ResidentStatusID", entityObj.ResidentStatus);
-                    cmd.Parameters.AddWithValue("@GSTNumber", entityObj.GSTNumber);
                     cmd.Parameters.AddWithValue("@SameAddress", entityObj.SameAddress);
                     cmd.Parameters.AddWithValue("@NAtureOfBussiness", entityObj.NatureOfBussiness);
                     cmd.Parameters.AddWithValue("@CompanyNumber", entityObj.CompanyNumber);
@@ -84,6 +83,8 @@ namespace Repository
                 }
                 personRepository.Save(entityObj.PersonData);
                 gstRepository.Save(entityObj.GSTRegNo);
+                gstRepository.UpdateGSTNumber(entityObj.ID,entityObj.PrimaryGST.ID);
+
             }
             catch (Exception ex)
             {
@@ -161,6 +162,9 @@ namespace Repository
                     addresses.FirstOrDefault(x => x.ID.Equals(dsEntityData.Tables["ENTITY"].Rows[0]["BUSINESSADDRESSID"]));
 
                 entityData.GSTRegNo = gstRepository.Load(dsEntityData.Tables["GST"]);
+
+                entityData.PrimaryGST = entityData.GSTRegNo.FirstOrDefault(x=> x.ID.Equals(dsEntityData.Tables["ENTITY"].Rows[0]["GSTREGNOID"]));
+               
             }
             catch (Exception ex)
             {
@@ -172,5 +176,6 @@ namespace Repository
             }
             return entityData;
         }
+
     }
 }

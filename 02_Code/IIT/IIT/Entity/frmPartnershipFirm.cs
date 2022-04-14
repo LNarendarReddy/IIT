@@ -68,7 +68,6 @@ namespace IIT
                 txtOfficeNumber.EditValue = entityData.OfficeNumber;
                 txtMobileNumber.EditValue = entityData.MobileNumber;
                 txtEmail.EditValue = entityData.EmailID;
-                txtGSTNumber.EditValue = entityData.GSTNumber;
                 txtNatureOfBuisness.EditValue = entityData.NatureOfBussiness;
                 cmbMethod.EditValue = entityData.MethodOfAccounting;
                 cmbCurrency.EditValue = entityData.Currency;
@@ -76,7 +75,10 @@ namespace IIT
 
                 gcPartners.DataSource = entityData.PersonData;
 
-                gcGST.DataSource = entityData.GSTRegNo;
+                cmbGSTNumber.Properties.DataSource = entityData.GSTRegNo;
+                cmbGSTNumber.Properties.ValueMember = "ID";
+                cmbGSTNumber.Properties.DisplayMember = "GSTNO";
+                cmbGSTNumber.EditValue = entityData.PrimaryGST.ID;
 
                 txtHNoR.EditValue = entityData.PermanentAddress.HNo;
                 txtAreaR.EditValue = entityData.PermanentAddress.Area;
@@ -118,7 +120,7 @@ namespace IIT
             entityData.OfficeNumber = txtOfficeNumber.EditValue;
             entityData.MobileNumber = txtMobileNumber.EditValue;
             entityData.EmailID = txtEmail.EditValue;
-            entityData.GSTNumber = txtGSTNumber.EditValue;
+            entityData.PrimaryGST = entityData.GSTRegNo.First(X=> X.ID.Equals(cmbGSTNumber.EditValue));
             entityData.NatureOfBussiness = txtNatureOfBuisness.EditValue;
             entityData.MethodOfAccounting = cmbMethod.EditValue;
             entityData.Currency = cmbCurrency.EditValue;
@@ -211,14 +213,12 @@ namespace IIT
         private void btnAddGSTNumber_Click(object sender, EventArgs e)
         {
             GSTRegistrationNumber gst = new GSTRegistrationNumber();
-            gst.ID = 0;
+            gst.ID = entityData.GSTRegNo.Count * -1;
             frmAddGSTNumber obj = new frmAddGSTNumber(gst);
             Utility.showDialog(obj);
             if (gst.IsSave)
             {
                 entityData.GSTRegNo.Add(gst);
-                gcGST.DataSource = entityData.GSTRegNo;
-                gcGST.RefreshDataSource();
             }
         }
     }

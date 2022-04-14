@@ -22,6 +22,7 @@ namespace IIT
         private void frmMain_Load(object sender, System.EventArgs e)
         {
             lblDateTime.Caption = DateTime.Now.ToString();
+            lblVersion.Caption = "1.1.1 (06-04-2022)";
             btnEntity_ItemClick(null, null);
         }
 

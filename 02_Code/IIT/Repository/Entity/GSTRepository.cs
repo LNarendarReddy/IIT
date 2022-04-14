@@ -66,5 +66,29 @@ namespace Repository
 
             return gst;
         }
+
+        public void UpdateGSTNumber(object EntityID,  object GSTRegNoID)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_ENTITYLIST]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
+                    cmd.Parameters.AddWithValue("@GSTREGNOID", GSTRegNoID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Updating GST Number", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+        }
     }
 }

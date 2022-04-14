@@ -24,7 +24,7 @@ namespace Entity
 
         public object CompanyNumber { get; set; }
 
-        public object GSTNumber { get; set; }
+        public GSTRegistrationNumber PrimaryGST { get; set; }
 
         public object NatureOfBussiness { get; set; }
 

@@ -32,12 +32,13 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnEntity = new DevExpress.XtraBars.BarButtonItem();
+            this.lblDateTime = new DevExpress.XtraBars.BarStaticItem();
+            this.lblStatus = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.lblDateTime = new DevExpress.XtraBars.BarStaticItem();
-            this.lblStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.lblVersion = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,10 +56,11 @@
             this.ribbonControl1.SearchEditItem,
             this.btnEntity,
             this.lblDateTime,
-            this.lblStatus});
+            this.lblStatus,
+            this.lblVersion});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -73,6 +75,17 @@
             this.btnEntity.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEntity.ImageOptions.SvgImage")));
             this.btnEntity.Name = "btnEntity";
             this.btnEntity.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEntity_ItemClick);
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lblDateTime.Id = 2;
+            this.lblDateTime.Name = "lblDateTime";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Id = 3;
+            this.lblStatus.Name = "lblStatus";
             // 
             // ribbonPage1
             // 
@@ -90,6 +103,7 @@
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.lblDateTime);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblStatus);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblVersion);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 841);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
@@ -101,16 +115,11 @@
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
             // 
-            // lblDateTime
+            // lblVersion
             // 
-            this.lblDateTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.lblDateTime.Id = 2;
-            this.lblDateTime.Name = "lblDateTime";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Id = 3;
-            this.lblStatus.Name = "lblStatus";
+            this.lblVersion.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lblVersion.Id = 4;
+            this.lblVersion.Name = "lblVersion";
             // 
             // frmMain
             // 
@@ -142,6 +151,7 @@
         private DevExpress.XtraBars.BarButtonItem btnEntity;
         private DevExpress.XtraBars.BarStaticItem lblDateTime;
         private DevExpress.XtraBars.BarStaticItem lblStatus;
+        private DevExpress.XtraBars.BarStaticItem lblVersion;
     }
 }
 
