@@ -22,7 +22,7 @@ namespace IIT
         {
             entityType = 1;
             frmEntityIndividual obj = new frmEntityIndividual(entityType);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (obj.IsSave)
                 this.Close();
         }
@@ -32,7 +32,7 @@ namespace IIT
             entityType = 2;
             EntityData entityData = new EntityData();
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (obj.IsSave)
                 this.Close();
         }
@@ -41,7 +41,7 @@ namespace IIT
         {
             entityType = 3;
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (obj.IsSave)
                 this.Close();
         }
@@ -50,7 +50,7 @@ namespace IIT
         {
             entityType = 4;
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (obj.IsSave)
                 this.Close();
         }

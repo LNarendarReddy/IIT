@@ -30,7 +30,7 @@ namespace Repository
                     MethodOfAccounting = drEntity["METHODACCID"],
                     Currency = drEntity["CURRENCYID"],
                     ResidentStatus = drEntity["RESIDENTSTATUSID"],
-                    GSTREGNOID = drEntity["GSTREGNOID"],
+                    //GSTREGNOID = drEntity["GSTREGNOID"],
                     SameAddress = drEntity["SameAddress"],
                     NatureOfBussiness = drEntity["NatureOfBussiness"],
                     CompanyNumber = drEntity["CompanyNumber"],

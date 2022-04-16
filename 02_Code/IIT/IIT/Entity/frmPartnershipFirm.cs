@@ -201,7 +201,7 @@ namespace IIT
             Person person = new Person();
             person.ID = 0;
             frmAddPartner obj = new frmAddPartner(person,entityType == 4 ? true : false);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (person.IsSave)
             {
                 entityData.PersonData.Add(person);
@@ -215,7 +215,7 @@ namespace IIT
             GSTRegistrationNumber gst = new GSTRegistrationNumber();
             gst.ID = entityData.GSTRegNo.Count * -1;
             frmAddGSTNumber obj = new frmAddGSTNumber(gst);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (gst.IsSave)
             {
                 entityData.GSTRegNo.Add(gst);

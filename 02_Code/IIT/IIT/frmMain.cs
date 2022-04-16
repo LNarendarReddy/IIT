@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IIT.Masters;
+using System;
 
 namespace IIT
 {
@@ -16,7 +17,7 @@ namespace IIT
         private void btnEntity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmEntityList obj = new frmEntityList();
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
         }
 
         private void frmMain_Load(object sender, System.EventArgs e)
@@ -29,6 +30,16 @@ namespace IIT
         public void UpdateStatusBar(string message)
         {
             lblStatus.Caption = message;
+        }
+
+        private void bbiNOB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmSectorList());
+        }
+
+        private void bbiGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmGroupList());
         }
     }
 }

@@ -110,10 +110,6 @@
             // 
             // gvEntityList
             // 
-            this.gvEntityList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gvEntityList.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
-            this.gvEntityList.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvEntityList.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gvEntityList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -123,8 +119,6 @@
             this.gvEntityList.DetailHeight = 404;
             this.gvEntityList.GridControl = this.gcEntityList;
             this.gvEntityList.Name = "gvEntityList";
-            this.gvEntityList.OptionsBehavior.Editable = false;
-            this.gvEntityList.OptionsView.ShowGroupPanel = false;
             this.gvEntityList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvEntityList_FocusedRowChanged);
             // 
             // gridColumn1

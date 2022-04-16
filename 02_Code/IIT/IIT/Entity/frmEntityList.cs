@@ -18,23 +18,21 @@ namespace IIT
                 this.Close();
             else if (e.KeyData == Keys.C)
                 btnCreateEntity_Click(null, null);
-            else if (e.KeyData == Keys.M)
-            {
-                if (btnModifyEntity.Enabled == true)
-                    btnModifyEntity_Click(null, null);
-            }
+            else if (e.KeyData == Keys.M && btnModifyEntity.Enabled)
+                btnModifyEntity_Click(null, null);
         }
 
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
             frmEntityType objEntityType = new frmEntityType();
-            Utility.showDialog(objEntityType);
+            Utility.ShowDialog(objEntityType);
             gcEntityList.DataSource = new EntityDataRepository().GetEntityList();
             gvEntityList_FocusedRowChanged(null,null);
         }
 
         private void frmEntityList_Load(object sender, EventArgs e)
         {
+            Utility.SetGridFormatting(gvEntityList);
             gcEntityList.DataSource = new EntityDataRepository().GetEntityList();
             gvEntityList_FocusedRowChanged(null, new FocusedRowChangedEventArgs(-1, -1));
         }
@@ -52,7 +50,7 @@ namespace IIT
             {
                 frmEntityIndividual obj = new frmEntityIndividual(1,
                     Convert.ToInt32(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
-                Utility.showDialog(obj);
+                Utility.ShowDialog(obj);
                 gcEntityList.DataSource = new EntityDataRepository().GetEntityList();
                 gvEntityList_FocusedRowChanged(null, null);
             }
@@ -60,7 +58,7 @@ namespace IIT
             {
                 frmPartnershipFirm obj = new frmPartnershipFirm(Convert.ToInt32(gvEntityList.GetFocusedRowCellValue("ENTITYTYPEID")),
                     Convert.ToInt32(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
-                Utility.showDialog(obj);
+                Utility.ShowDialog(obj);
                 gcEntityList.DataSource = new EntityDataRepository().GetEntityList();
                 gvEntityList_FocusedRowChanged(null, null);
             }

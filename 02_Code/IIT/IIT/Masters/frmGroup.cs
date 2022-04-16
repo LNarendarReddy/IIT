@@ -1,0 +1,60 @@
+﻿using DevExpress.XtraEditors;
+using Entity.Masters;
+using Repository;
+using Repository.Masters;
+using System;
+using System.Windows.Forms;
+
+namespace IIT.Masters
+{
+    public partial class frmGroup : XtraForm
+    {
+        Group groupObj;
+
+        public frmGroup(Group group)
+        {
+            InitializeComponent();
+            groupObj = group;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!dxValidationProvider1.Validate()) return;
+
+            groupObj.Name = txtGroupName.EditValue;
+            groupObj.ClassificationID = luClassification.EditValue;
+            groupObj.SubSectorID = luSubSector.EditValue;
+            groupObj.Description = meDescription.EditValue;
+            groupObj.UserName = Utility.UserName;
+
+            try
+            {
+                new GroupRepository().Save(groupObj);
+                groupObj.IsSave = true;
+                Close();
+            }
+            catch(Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void frmGroup_Load(object sender, EventArgs e)
+        {
+            luClassification.Properties.DataSource = LookUpUtility.GetClassification();
+            luClassification.Properties.DisplayMember = "LOOKUPVALUE";
+            luClassification.Properties.ValueMember = "ENTITYLOOKUPID";
+
+            luSubSector.Properties.DataSource = new SubSectorRepository().GetSubSectorList();
+            luSubSector.Properties.DisplayMember = "SUBSECTORNAME";
+            luSubSector.Properties.ValueMember = "SUBSECTORID";
+
+            txtGroupName.EditValue = groupObj.Name;
+            luClassification.EditValue = groupObj.ClassificationID;
+            luSubSector.EditValue = groupObj.SubSectorID;
+            meDescription.EditValue = groupObj.Description;
+
+            Text = string.IsNullOrEmpty(groupObj.Name?.ToString()) ? Text : $"{Text} - {groupObj.Name}";
+        }
+    }
+}

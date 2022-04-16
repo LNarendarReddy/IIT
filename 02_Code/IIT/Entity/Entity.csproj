@@ -45,6 +45,11 @@
     <Compile Include="EntityBase.cs" />
     <Compile Include="EntityData.cs" />
     <Compile Include="GSTRegistrationNumber.cs" />
+    <Compile Include="Masters\Group.cs" />
+    <Compile Include="Masters\MasterBase.cs" />
+    <Compile Include="Masters\Sector.cs" />
+    <Compile Include="Masters\SubGroup.cs" />
+    <Compile Include="Masters\SubSector.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

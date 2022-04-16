@@ -8,6 +8,7 @@ namespace Repository
         private static DataTable dtCurrency = null;
         private static DataTable dtStates = null;
         private static DataTable dtResidentStatus = null;
+        private static DataTable dtClassification = null;
         private static LookUpRepository lookUpRepository = new LookUpRepository();
 
         public static DataTable GetMethodOfAccountings()
@@ -32,6 +33,12 @@ namespace Repository
         {
             return dtResidentStatus =
                 dtResidentStatus ?? lookUpRepository.GetLookUpData("RESIDENT STATUS"); ;
+        }
+
+        public static DataTable GetClassification()
+        {
+            return dtClassification =
+                dtClassification ?? lookUpRepository.GetLookUpData("CLASSIFICATION"); ;
         }
     }
 }

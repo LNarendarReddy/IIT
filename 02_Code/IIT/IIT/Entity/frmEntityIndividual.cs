@@ -220,7 +220,7 @@ namespace IIT
             GSTRegistrationNumber gst = new GSTRegistrationNumber();
             gst.ID = entityData.GSTRegNo.Count * -1;
             frmAddGSTNumber obj = new frmAddGSTNumber(gst);
-            Utility.showDialog(obj);
+            Utility.ShowDialog(obj);
             if (gst.IsSave)
             {
                 entityData.GSTRegNo.Add(gst);
