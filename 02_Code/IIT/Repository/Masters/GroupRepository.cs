@@ -1,7 +1,6 @@
 ﻿
 using Entity.Masters;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -88,11 +87,6 @@ namespace Repository.Masters
             }
 
             return dtGroupList;
-        }
-
-        public override List<Group> Load(DataTable dtEntityTable)
-        {
-            throw new NotImplementedException();
         }
     }
 }

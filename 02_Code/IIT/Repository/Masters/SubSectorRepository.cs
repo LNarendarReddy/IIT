@@ -8,11 +8,6 @@ namespace Repository.Masters
 {
     public class SubSectorRepository : RepositoryBase<SubSector>
     {
-        public override List<SubSector> Load(DataTable dtEntityTable)
-        {
-            throw new NotImplementedException();
-        }
-
         public override SubSector Save(SubSector entityObj)
         {
             throw new NotImplementedException();

@@ -9,6 +9,8 @@ namespace Repository
         private static DataTable dtStates = null;
         private static DataTable dtResidentStatus = null;
         private static DataTable dtClassification = null;
+        private static DataTable dtVoucherType = null;
+
         private static LookUpRepository lookUpRepository = new LookUpRepository();
 
         public static DataTable GetMethodOfAccountings()
@@ -39,6 +41,12 @@ namespace Repository
         {
             return dtClassification =
                 dtClassification ?? lookUpRepository.GetLookUpData("CLASSIFICATION"); ;
+        }
+
+        public static DataTable GetVoucherType()
+        {
+            return dtVoucherType =
+                dtVoucherType ?? lookUpRepository.GetLookUpData("VOUCHERTYPE"); ;
         }
     }
 }

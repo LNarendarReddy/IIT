@@ -12,7 +12,7 @@ namespace Repository
 
         public virtual T LoadFirstRecordOnly(DataTable dtEntityTable) => Load(dtEntityTable).FirstOrDefault();
 
-        public abstract List<T> Load(DataTable dtEntityTable);
+        public virtual List<T> Load(DataTable dtEntityTable) => throw new NotImplementedException();
 
         public abstract T Save(T entityObj);
 

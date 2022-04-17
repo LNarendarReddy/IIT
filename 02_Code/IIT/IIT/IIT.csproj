@@ -108,6 +108,18 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ledger\frmVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\frmVoucher.Designer.cs">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger\frmVoucherList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\frmVoucherList.Designer.cs">
+      <DependentUpon>frmVoucherList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Masters\frmGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,18 @@
     </Compile>
     <Compile Include="Masters\frmSectorList.Designer.cs">
       <DependentUpon>frmSectorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmSubGroup.Designer.cs">
+      <DependentUpon>frmSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmSubGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmSubGroupList.Designer.cs">
+      <DependentUpon>frmSubGroupList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +180,12 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\frmVoucher.resx">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\frmVoucherList.resx">
+      <DependentUpon>frmVoucherList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmGroup.resx">
       <DependentUpon>frmGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +197,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmSectorList.resx">
       <DependentUpon>frmSectorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmSubGroup.resx">
+      <DependentUpon>frmSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmSubGroupList.resx">
+      <DependentUpon>frmSubGroupList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <!--<EmbeddedResource Include="Properties\licenses.licx" />-->

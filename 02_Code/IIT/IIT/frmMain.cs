@@ -1,4 +1,5 @@
-﻿using IIT.Masters;
+﻿using IIT.Ledger;
+using IIT.Masters;
 using System;
 
 namespace IIT
@@ -40,6 +41,16 @@ namespace IIT
         private void bbiGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmGroupList());
+        }
+
+        private void bbiSubGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmSubGroupList());
+        }
+
+        private void bbiVoucher_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmVoucherList());
         }
     }
 }

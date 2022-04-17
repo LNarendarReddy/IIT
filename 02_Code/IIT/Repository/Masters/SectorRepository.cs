@@ -80,10 +80,5 @@ namespace Repository.Masters
 
             return dtSectorList;
         }
-
-        public override List<Sector> Load(DataTable dtEntityTable)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
