@@ -53,5 +53,10 @@ namespace IIT
             cmbState.EditValue = addressObj.StateID;
             txtPinCode.EditValue = addressObj.PinCode;
         }
+
+        public static object AssetsHeadID = 15;
+        public static object LiabilitiesHeadID = 16;
+        public static object IncomeHeadID = 17;
+        public static object ExpensesHeadID = 18;
     }
 }

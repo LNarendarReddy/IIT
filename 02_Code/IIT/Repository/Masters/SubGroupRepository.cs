@@ -83,5 +83,37 @@ namespace Repository.Masters
 
             return dtGroupList;
         }
+
+        public SubGroup GetSubGroupDetails(object SubGroupID)
+        {
+            DataTable dtSubGroup = new DataTable();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_SUBGROUP]";
+                    cmd.Parameters.AddWithValue("@SUBGROUPID", SubGroupID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dtSubGroup);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Retrieving Sub Group Details", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+
+            if (dtSubGroup.Rows.Count > 0)
+                return Load(dtSubGroup.Rows[0]);
+            else
+                return null;
+        }
     }
 }

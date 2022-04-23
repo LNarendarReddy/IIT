@@ -120,6 +120,7 @@
             this.gvEntityList.GridControl = this.gcEntityList;
             this.gvEntityList.Name = "gvEntityList";
             this.gvEntityList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvEntityList_FocusedRowChanged);
+            this.gvEntityList.DoubleClick += new System.EventHandler(this.gvEntityList_DoubleClick);
             // 
             // gridColumn1
             // 

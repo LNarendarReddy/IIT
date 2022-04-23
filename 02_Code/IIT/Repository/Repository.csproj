@@ -60,6 +60,7 @@
     <Compile Include="Entity\AddressRepository.cs" />
     <Compile Include="Entity\EntityDataRepository.cs" />
     <Compile Include="Entity\GSTRepository.cs" />
+    <Compile Include="Ledger\LedgerRepository.cs" />
     <Compile Include="Ledger\VoucherRepository.cs" />
     <Compile Include="LookUpRepository.cs" />
     <Compile Include="Masters\GroupRepository.cs" />

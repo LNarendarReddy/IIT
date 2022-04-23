@@ -33,21 +33,17 @@
             this.btnCreateGroup = new DevExpress.XtraEditors.SimpleButton();
             this.gcGroupList = new DevExpress.XtraGrid.GridControl();
             this.gvGroupList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcGroupList)).BeginInit();
@@ -108,17 +104,49 @@
             this.gvGroupList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
-            this.gridColumn8,
             this.gridColumn9});
             this.gvGroupList.GridControl = this.gcGroupList;
             this.gvGroupList.Name = "gvGroupList";
             this.gvGroupList.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvGroupList_FocusedRowChanged);
             this.gvGroupList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gvGroupList_KeyDown);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "GROUPID";
+            this.gridColumn1.FieldName = "GROUPDID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "CLASSIFICATIONID";
+            this.gridColumn2.FieldName = "CLASSIFICATIONID";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Group Name";
+            this.gridColumn6.FieldName = "GROUPNAME";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Description";
+            this.gridColumn7.FieldName = "DESCRIPTION";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Head";
+            this.gridColumn9.FieldName = "CLASSIFICATION";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 2;
             // 
             // Root
             // 
@@ -179,68 +207,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(453, 261);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "GROUPID";
-            this.gridColumn1.FieldName = "GROUPDID";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "CLASSIFICATIONID";
-            this.gridColumn2.FieldName = "CLASSIFICATIONID";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "SECTORID";
-            this.gridColumn3.FieldName = "SECTORID";
-            this.gridColumn3.Name = "gridColumn3";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Sector Name";
-            this.gridColumn4.FieldName = "SECTORNAME";
-            this.gridColumn4.Name = "gridColumn4";
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "SUBSECTORID";
-            this.gridColumn5.FieldName = "SUBSECTORID";
-            this.gridColumn5.Name = "gridColumn5";
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Group Name";
-            this.gridColumn6.FieldName = "GROUPNAME";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Description";
-            this.gridColumn7.FieldName = "DESCRIPTION";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Nature of Business";
-            this.gridColumn8.FieldName = "SUBSECTORNAME";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Head";
-            this.gridColumn9.FieldName = "CLASSIFICATION";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 3;
-            // 
             // frmGroupList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -279,12 +245,8 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

@@ -7,6 +7,8 @@ namespace IIT
 {
     public partial class frmEntityList : DevExpress.XtraEditors.XtraForm
     {
+        public object EntityID;
+        public object EntityName;
         public frmEntityList()
         {
             InitializeComponent();
@@ -62,6 +64,16 @@ namespace IIT
                 gcEntityList.DataSource = new EntityDataRepository().GetEntityList();
                 gvEntityList_FocusedRowChanged(null, null);
             }
+        }
+
+        private void gvEntityList_DoubleClick(object sender, EventArgs e)
+        {
+            //if(gvEntityList.FocusedRowHandle >= 0)
+            //{
+            //    EntityID = 0;
+            //    EntityName = string.Empty;
+            //    this.Close();
+            //}
         }
     }
 }

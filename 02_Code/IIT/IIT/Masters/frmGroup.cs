@@ -23,7 +23,6 @@ namespace IIT.Masters
 
             groupObj.Name = txtGroupName.EditValue;
             groupObj.ClassificationID = luClassification.EditValue;
-            groupObj.SubSectorID = luSubSector.EditValue;
             groupObj.Description = meDescription.EditValue;
             groupObj.UserName = Utility.UserName;
 
@@ -45,13 +44,8 @@ namespace IIT.Masters
             luClassification.Properties.DisplayMember = "LOOKUPVALUE";
             luClassification.Properties.ValueMember = "ENTITYLOOKUPID";
 
-            luSubSector.Properties.DataSource = new SubSectorRepository().GetSubSectorList();
-            luSubSector.Properties.DisplayMember = "SUBSECTORNAME";
-            luSubSector.Properties.ValueMember = "SUBSECTORID";
-
             txtGroupName.EditValue = groupObj.Name;
             luClassification.EditValue = groupObj.ClassificationID;
-            luSubSector.EditValue = groupObj.SubSectorID;
             meDescription.EditValue = groupObj.Description;
 
             Text = string.IsNullOrEmpty(groupObj.Name?.ToString()) ? Text : $"{Text} - {groupObj.Name}";

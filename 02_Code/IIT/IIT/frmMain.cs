@@ -1,4 +1,5 @@
-﻿using IIT.Ledger;
+﻿using DevExpress.XtraBars;
+using IIT.Ledger;
 using IIT.Masters;
 using System;
 
@@ -51,6 +52,26 @@ namespace IIT
         private void bbiVoucher_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmVoucherList());
+        }
+
+        private void btnAssets_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmLedgerList(Utility.AssetsHeadID));
+        }
+
+        private void btnLiabilities_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmLedgerList(Utility.LiabilitiesHeadID));
+        }
+
+        private void btnIncome_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmLedgerList(Utility.IncomeHeadID));
+        }
+
+        private void btnExpenses_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmLedgerList(Utility.ExpensesHeadID));
         }
     }
 }

@@ -15,12 +15,8 @@ namespace Repository.Masters
                 ID = dtGroupRow["GROUPID"]
                 , Name = dtGroupRow["GROUPNAME"]
                 , Description = dtGroupRow["DESCRIPTION"]
-                , SubSectorID = dtGroupRow["SUBSECTORID"]
-                , SubSectorName = dtGroupRow["SUBSECTORNAME"]
                 , ClassificationID = dtGroupRow["CLASSIFICATIONID"]
                 , Classification = dtGroupRow["CLASSIFICATION"]
-                , SectorID = dtGroupRow["SECTORID"]
-                , SectorName = dtGroupRow["SECTORNAME"]
             };
         }
 
@@ -37,7 +33,6 @@ namespace Repository.Masters
                     cmd.Parameters.AddWithValue("@GroupName", groupObj.Name);
                     cmd.Parameters.AddWithValue("@Description", groupObj.Description);
                     cmd.Parameters.AddWithValue("@ClassificationID", groupObj.ClassificationID);
-                    cmd.Parameters.AddWithValue("@SubSectorID", groupObj.SubSectorID);
                     cmd.Parameters.AddWithValue("@UserName", groupObj.UserName);
                     object groupIDObj = cmd.ExecuteScalar();
 
@@ -88,5 +83,38 @@ namespace Repository.Masters
 
             return dtGroupList;
         }
+
+        public Group GetGroupDetails(object GroupID)
+        {
+            DataTable dtGroup = new DataTable();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_GROUP]";
+                    cmd.Parameters.AddWithValue("@GROUPID", GroupID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dtGroup);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Retrieving Group Details", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+
+            if (dtGroup.Rows.Count > 0)
+                return Load(dtGroup.Rows[0]);
+            else
+                return null;
+        }
+
     }
 }

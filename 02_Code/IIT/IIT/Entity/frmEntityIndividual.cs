@@ -119,7 +119,7 @@ namespace IIT
             entityData.EntityName = txtEntityName.EditValue;
             entityData.PANNumber = txtPanNumber.EditValue;
             entityData.MobileNumber = txtMobileNumber.EditValue;
-            entityData.PrimaryGST = entityData.GSTRegNo.First(x => x.ID.Equals(cmbGSTNumber.EditValue));
+            //entityData.PrimaryGST = entityData.GSTRegNo.First(x => x.ID.Equals(cmbGSTNumber.EditValue));
 
             if (!entityData.PersonData.Any())
                 entityData.PersonData.Add(new Person());

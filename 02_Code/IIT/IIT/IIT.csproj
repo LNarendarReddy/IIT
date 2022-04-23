@@ -44,6 +44,7 @@
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="IITSkin">
       <HintPath>..\..\..\Skin\IITSkin\IITSkin.dll</HintPath>
     </Reference>
@@ -102,11 +103,23 @@
     <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEntityMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntityMain.Designer.cs">
+      <DependentUpon>frmEntityMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger\frmLedgerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\frmLedgerList.Designer.cs">
+      <DependentUpon>frmLedgerList.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmVoucher.cs">
       <SubType>Form</SubType>
@@ -177,8 +190,14 @@
     <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEntityMain.resx">
+      <DependentUpon>frmEntityMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\frmLedgerList.resx">
+      <DependentUpon>frmLedgerList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmVoucher.resx">
       <DependentUpon>frmVoucher.cs</DependentUpon>
