@@ -5,18 +5,12 @@ using IIT.Masters;
 using Repository.Ledger;
 using Repository.Masters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IIT.Ledger
 {
-    public partial class frmLedgerList : DevExpress.XtraEditors.XtraForm
+    public partial class frmLedgerList : XtraForm
     {
         object HeadID = null;
         DataTable dt = null;
@@ -28,83 +22,90 @@ namespace IIT.Ledger
 
         private void frmLedgerList_Load(object sender, EventArgs e)
         {
-            dt = new LedgerRepository().GetLedgerData(HeadID);
-            tlLedger.DataSource = dt;
-            tlLedger.KeyFieldName = "ID";
-            tlLedger.ParentFieldName = "ParentID";
-            AddNewNodes();
-            tlLedger.ExpandToLevel(0);
-        }
-
-        private void AddNewNodes()
-        {
-
-            foreach (TreeListNode node in tlLedger.Nodes)
-            {
-                if (node.HasChildren)
-                    AddRecursiveNodes(node);
-            }
-
-            tlLedger.AppendNode(new object[] { -1, 0, -1, "Add Group", 1 }, null);
-        }
-
-        private void AddRecursiveNodes(TreeListNode pnode)
-        {
-            if (Convert.ToInt16(pnode["LedgerLevel"]) == 3)
-                return;
-            if (Convert.ToInt32(pnode["ID"]) > 0)
-                tlLedger.AppendNode(new object[] { -1, pnode["ID"], -1, 
-                    Convert.ToInt16(pnode["LedgerLevel"]) == 1 ? "Add Sub Group" : "Add Ledger", 
-                    Convert.ToInt16(pnode["LedgerLevel"]) + 1 }, pnode);
-            if (pnode.HasChildren && Convert.ToInt16(pnode["LedgerLevel"]) < 2)
-            {
-                foreach (TreeListNode node in pnode.Nodes)
-                    AddRecursiveNodes(node);
-            }
+            BindDataSource();
         }
 
         private void tlLedger_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter && tlLedger.FocusedNode != null)
-            {
-                int ledgerlevel = Convert.ToInt32(tlLedger.FocusedNode["LedgerLevel"]);
-                switch (ledgerlevel)
-                {
-                    case 1:
-                        {
-                            Group groupdObj = null;
-                            bool IsEdit = false;
-                            if (Convert.ToInt32(tlLedger.FocusedNode["LedgerID"]) > 0)
-                            {
-                                groupdObj = new GroupRepository().GetGroupDetails(tlLedger.FocusedNode["LedgerID"]);
-                                IsEdit = true;
-                            }
-                            else
-                                groupdObj = new Group();
-                            Utility.ShowDialog(new frmGroup(groupdObj));
-                            if (groupdObj.IsSave)
-                            {
-                                if (IsEdit)
-                                {
+            if (e.KeyCode != Keys.Enter || tlLedger.FocusedNode == null)
+                return;
+            int ledgerlevel = Convert.ToInt32(tlLedger.FocusedNode["LedgerLevel"]);
+            bool IsEdit = int.TryParse(tlLedger.FocusedNode["LedgerID"]?.ToString(), out int entityID) && entityID > 0;
 
-                                }
-                                else
-                                {
-                                    var max = dt.AsEnumerable().Max(ID => ID[1]);
-                                    TreeListNode newnode = tlLedger.AppendNode(new object[] { Convert.ToInt32(max) + 1,
-                                    tlLedger.FocusedNode.ParentNode == null? HeadID : tlLedger.FocusedNode.ParentNode["ID"],
-                                    groupdObj.ID, groupdObj.Name, ledgerlevel}, tlLedger.FocusedNode.ParentNode);
-                                    tlLedger.SetNodeIndex(newnode,
-                                        tlLedger.FocusedNode.ParentNode == null? tlLedger.Nodes.Count - 2 
-                                        : tlLedger.FocusedNode.ParentNode.Nodes.Count - 2);
-                                }
-                            }
-                        }
-                        break;
-                    default:
-                        break;
-                }
+            switch (ledgerlevel)
+            {
+                case 1:
+                    {
+                        Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID) : 
+                            new Group() { ClassificationID = HeadID };
+                        Utility.ShowDialog(new frmGroup(groupdObj));
+                        RefreshTreeData(groupdObj, IsEdit, ledgerlevel);
+                    }
+                    break;
+                case 2:
+                    {
+                        SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID) : 
+                            new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
+                        Utility.ShowDialog(new frmSubGroup(subGroupdObj));
+                        RefreshTreeData(subGroupdObj, IsEdit, ledgerlevel);
+                    }
+                    break;
+                default:
+                    break;
             }
+        }
+
+        private void RefreshTreeData(MasterBase entityObj, bool IsEdit, int ledgerlevel)
+        {
+            if (!entityObj.IsSave)
+                return;
+
+            if (IsEdit)
+            {
+                tlLedger.FocusedNode["LedgerName"] = entityObj.Name;
+                CheckAndReBindTreeData((entityObj as Group)?.ClassificationID);
+                CheckAndReBindTreeData((entityObj as SubGroup)?.GroupID);
+            }
+            else
+            {
+                var max = dt.Rows.Count + 1;
+                TreeListNode newnode = tlLedger.AppendNode(
+                        new object[] 
+                            { max,
+                              tlLedger.FocusedNode.ParentNode?["ID"] ?? HeadID,
+                              entityObj.ID
+                              , entityObj.Name
+                              , ledgerlevel
+                            }
+                        , tlLedger.FocusedNode.ParentNode);
+
+                if(ledgerlevel < 3)
+                {
+                    string nodeText = "Add ";
+                    nodeText += ledgerlevel == 1 ? "Sub Group" : string.Empty;
+                    nodeText += ledgerlevel == 2 ? "Ledger" : string.Empty;
+
+                    newnode.Nodes.Add(new object[] { ++max, max, -1, nodeText, ++ledgerlevel });
+                }
+
+                tlLedger.SetNodeIndex(newnode, (tlLedger.FocusedNode.ParentNode?.Nodes?.Count ?? tlLedger.Nodes.Count) - 2);
+            }
+        }
+
+        private void BindDataSource()
+        {
+            dt = new LedgerRepository().GetLedgerData(HeadID);
+            tlLedger.DataSource = dt;
+            tlLedger.KeyFieldName = "ID";
+            tlLedger.ParentFieldName = "ParentID";
+            tlLedger.ExpandToLevel(0);
+        }
+
+        private void CheckAndReBindTreeData(object ID)
+        {
+            if (ID == null || ID.Equals(tlLedger.FocusedNode.ParentNode?["LedgerID"])) return;
+     
+            BindDataSource();
         }
     }
 }
