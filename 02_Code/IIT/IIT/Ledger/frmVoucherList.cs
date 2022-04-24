@@ -1,10 +1,10 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
-using Repository.Ledger;
+using Repository;
 using Entity;
 
-namespace IIT.Ledger
+namespace IIT
 {
     public partial class frmVoucherList : XtraForm
     {

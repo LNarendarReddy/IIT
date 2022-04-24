@@ -1,9 +1,9 @@
-﻿using Entity.Masters;
-using Repository.Masters;
+﻿using Entity;
+using Repository;
 using System;
 using System.Windows.Forms;
 
-namespace IIT.Masters
+namespace IIT
 {
     public partial class frmSectorList : DevExpress.XtraEditors.XtraForm
     {

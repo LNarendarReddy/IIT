@@ -1,10 +1,9 @@
-﻿
-using Entity.Masters;
+﻿using Entity;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Repository.Masters
+namespace Repository
 {
     public class GroupRepository : RepositoryBase<Group>
     {
@@ -65,7 +64,7 @@ namespace Repository.Masters
                 {
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "[USP_R_GROUPLIST]";
+                    cmd.CommandText = "[USP_R_GROUP]";
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dtGroupList);

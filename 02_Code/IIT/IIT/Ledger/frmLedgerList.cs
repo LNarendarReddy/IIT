@@ -1,14 +1,13 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList.Nodes;
-using Entity.Masters;
-using IIT.Masters;
-using Repository.Ledger;
-using Repository.Masters;
+using Entity;
+using IIT;
+using Repository;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace IIT.Ledger
+namespace IIT
 {
     public partial class frmLedgerList : XtraForm
     {
@@ -50,6 +49,17 @@ namespace IIT.Ledger
                         RefreshTreeData(subGroupdObj, IsEdit, ledgerlevel);
                     }
                     break;
+                case 3:
+                    {
+                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedgerDetails(entityID) :
+                            new Ledger() { ClassificationID = HeadID, 
+                                GroupID = tlLedger.FocusedNode.ParentNode.ParentNode["LedgerID"],
+                                SubGroupID = tlLedger.FocusedNode.ParentNode["LedgerID"]
+                            };
+                        Utility.ShowDialog(new frmLedger(ledgerObj));
+                        RefreshTreeData(ledgerObj, IsEdit, ledgerlevel);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -65,6 +75,7 @@ namespace IIT.Ledger
                 tlLedger.FocusedNode["LedgerName"] = entityObj.Name;
                 CheckAndReBindTreeData((entityObj as Group)?.ClassificationID);
                 CheckAndReBindTreeData((entityObj as SubGroup)?.GroupID);
+                CheckAndReBindTreeData((entityObj as Ledger)?.SubGroupID);
             }
             else
             {
@@ -107,5 +118,7 @@ namespace IIT.Ledger
      
             BindDataSource();
         }
+
+        
     }
 }

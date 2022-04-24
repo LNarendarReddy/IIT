@@ -1,4 +1,4 @@
-﻿namespace Entity.Masters
+﻿namespace Entity
 {
     public class Group : MasterBase
     {

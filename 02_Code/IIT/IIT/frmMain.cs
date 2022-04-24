@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraBars;
-using IIT.Ledger;
-using IIT.Masters;
+using IIT;
 using System;
 
 namespace IIT
@@ -56,22 +55,22 @@ namespace IIT
 
         private void btnAssets_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.AssetsHeadID));
+            Utility.ShowDialog(new frmLedgerList(Utility.AssetsHeadID) { Text = "Assets Group"});
         }
 
         private void btnLiabilities_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.LiabilitiesHeadID));
+            Utility.ShowDialog(new frmLedgerList(Utility.LiabilitiesHeadID) { Text = "Liabilities Group" });
         }
 
         private void btnIncome_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.IncomeHeadID));
+            Utility.ShowDialog(new frmLedgerList(Utility.IncomeHeadID) { Text = "Income Group" });
         }
 
         private void btnExpenses_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.ExpensesHeadID));
+            Utility.ShowDialog(new frmLedgerList(Utility.ExpensesHeadID) { Text = "Expenses Group" });
         }
     }
 }

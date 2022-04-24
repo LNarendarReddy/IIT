@@ -66,14 +66,5 @@ namespace IIT
             }
         }
 
-        private void gvEntityList_DoubleClick(object sender, EventArgs e)
-        {
-            //if(gvEntityList.FocusedRowHandle >= 0)
-            //{
-            //    EntityID = 0;
-            //    EntityName = string.Empty;
-            //    this.Close();
-            //}
-        }
     }
 }

@@ -63,13 +63,13 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(763, 117, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(537, 436);
+            this.layoutControl1.Size = new System.Drawing.Size(537, 313);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnAOP
             // 
-            this.btnAOP.Location = new System.Drawing.Point(127, 193);
+            this.btnAOP.Location = new System.Drawing.Point(127, 161);
             this.btnAOP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAOP.Name = "btnAOP";
             this.btnAOP.Size = new System.Drawing.Size(283, 22);
@@ -80,7 +80,7 @@
             // 
             // btnCompany
             // 
-            this.btnCompany.Location = new System.Drawing.Point(127, 227);
+            this.btnCompany.Location = new System.Drawing.Point(127, 195);
             this.btnCompany.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCompany.Name = "btnCompany";
             this.btnCompany.Size = new System.Drawing.Size(283, 22);
@@ -91,7 +91,7 @@
             // 
             // btnPertnershipFirm
             // 
-            this.btnPertnershipFirm.Location = new System.Drawing.Point(127, 159);
+            this.btnPertnershipFirm.Location = new System.Drawing.Point(127, 127);
             this.btnPertnershipFirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPertnershipFirm.Name = "btnPertnershipFirm";
             this.btnPertnershipFirm.Size = new System.Drawing.Size(283, 22);
@@ -102,7 +102,7 @@
             // 
             // btnIndividualFirm
             // 
-            this.btnIndividualFirm.Location = new System.Drawing.Point(127, 125);
+            this.btnIndividualFirm.Location = new System.Drawing.Point(127, 93);
             this.btnIndividualFirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnIndividualFirm.Name = "btnIndividualFirm";
             this.btnIndividualFirm.Size = new System.Drawing.Size(283, 22);
@@ -123,13 +123,13 @@
             this.emptySpaceItem2,
             this.layoutControlItem4});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(537, 436);
+            this.Root.Size = new System.Drawing.Size(537, 313);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnIndividualFirm;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 109);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 77);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
             this.layoutControlItem1.Size = new System.Drawing.Size(517, 34);
@@ -139,15 +139,15 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 245);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 213);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(517, 171);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(517, 80);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnPertnershipFirm;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 143);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
             this.layoutControlItem2.Size = new System.Drawing.Size(517, 34);
@@ -157,7 +157,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnCompany;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 211);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 179);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
             this.layoutControlItem3.Size = new System.Drawing.Size(517, 34);
@@ -169,13 +169,13 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(517, 109);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(517, 77);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnAOP;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 177);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 145);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(117, 117, 6, 6);
             this.layoutControlItem4.Size = new System.Drawing.Size(517, 34);
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 436);
+            this.ClientSize = new System.Drawing.Size(537, 313);
             this.Controls.Add(this.layoutControl1);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

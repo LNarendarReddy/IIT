@@ -1,5 +1,5 @@
 ﻿
-namespace Entity.Masters
+namespace Entity
 {
     public class SubGroup : MasterBase
     {

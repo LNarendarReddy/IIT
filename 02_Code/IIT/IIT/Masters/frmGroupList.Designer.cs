@@ -1,4 +1,4 @@
-﻿namespace IIT.Masters
+﻿namespace IIT
 {
     partial class frmGroupList
     {

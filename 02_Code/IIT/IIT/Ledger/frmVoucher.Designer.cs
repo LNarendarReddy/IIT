@@ -1,4 +1,4 @@
-﻿namespace IIT.Ledger
+﻿namespace IIT
 {
     partial class frmVoucher
     {
@@ -29,65 +29,65 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dtVoucherDate = new DevExpress.XtraEditors.DateEdit();
+            this.luVoucherType = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.mePurpose = new DevExpress.XtraEditors.MemoEdit();
+            this.txtBankName = new DevExpress.XtraEditors.TextEdit();
+            this.txtPaymentTo = new DevExpress.XtraEditors.TextEdit();
+            this.txtPaymentFrom = new DevExpress.XtraEditors.TextEdit();
+            this.txtAmount = new DevExpress.XtraEditors.TextEdit();
+            this.txtRefNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtVoucherNumber = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtVoucherNumber = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRefNo = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtAmount = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtPaymentFrom = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtPaymentTo = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtBankName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.mePurpose = new DevExpress.XtraEditors.MemoEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.luVoucherType = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.dtVoucherDate = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luVoucherType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mePurpose.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBankName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentFrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRefNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVoucherNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVoucherNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRefNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBankName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mePurpose.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luVoucherType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -110,6 +110,146 @@
             this.layoutControl1.Size = new System.Drawing.Size(482, 420);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // dtVoucherDate
+            // 
+            this.dtVoucherDate.EditValue = null;
+            this.dtVoucherDate.Location = new System.Drawing.Point(121, 15);
+            this.dtVoucherDate.Name = "dtVoucherDate";
+            this.dtVoucherDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtVoucherDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtVoucherDate.Size = new System.Drawing.Size(346, 22);
+            this.dtVoucherDate.StyleController = this.layoutControl1;
+            this.dtVoucherDate.TabIndex = 0;
+            // 
+            // luVoucherType
+            // 
+            this.luVoucherType.EnterMoveNextControl = true;
+            this.luVoucherType.Location = new System.Drawing.Point(121, 47);
+            this.luVoucherType.Name = "luVoucherType";
+            this.luVoucherType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luVoucherType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "Voucher Type")});
+            this.luVoucherType.Properties.NullText = "";
+            this.luVoucherType.Size = new System.Drawing.Size(346, 22);
+            this.luVoucherType.StyleController = this.layoutControl1;
+            this.luVoucherType.TabIndex = 1;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Value cannot be empty";
+            this.dxValidationProvider1.SetValidationRule(this.luVoucherType, conditionValidationRule1);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
+            this.btnCancel.Location = new System.Drawing.Point(361, 369);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 36);
+            this.btnCancel.StyleController = this.layoutControl1;
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // btnSave
+            // 
+            this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btnSave.Location = new System.Drawing.Point(246, 369);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(105, 36);
+            this.btnSave.StyleController = this.layoutControl1;
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // mePurpose
+            // 
+            this.mePurpose.EnterMoveNextControl = true;
+            this.mePurpose.Location = new System.Drawing.Point(121, 271);
+            this.mePurpose.Name = "mePurpose";
+            this.mePurpose.Size = new System.Drawing.Size(346, 88);
+            this.mePurpose.StyleController = this.layoutControl1;
+            this.mePurpose.TabIndex = 8;
+            // 
+            // txtBankName
+            // 
+            this.txtBankName.EnterMoveNextControl = true;
+            this.txtBankName.Location = new System.Drawing.Point(121, 239);
+            this.txtBankName.Name = "txtBankName";
+            this.txtBankName.Size = new System.Drawing.Size(346, 22);
+            this.txtBankName.StyleController = this.layoutControl1;
+            this.txtBankName.TabIndex = 7;
+            // 
+            // txtPaymentTo
+            // 
+            this.txtPaymentTo.EnterMoveNextControl = true;
+            this.txtPaymentTo.Location = new System.Drawing.Point(121, 207);
+            this.txtPaymentTo.Name = "txtPaymentTo";
+            this.txtPaymentTo.Size = new System.Drawing.Size(346, 22);
+            this.txtPaymentTo.StyleController = this.layoutControl1;
+            this.txtPaymentTo.TabIndex = 6;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Value cannot be empty";
+            this.dxValidationProvider1.SetValidationRule(this.txtPaymentTo, conditionValidationRule2);
+            // 
+            // txtPaymentFrom
+            // 
+            this.txtPaymentFrom.EnterMoveNextControl = true;
+            this.txtPaymentFrom.Location = new System.Drawing.Point(121, 175);
+            this.txtPaymentFrom.Name = "txtPaymentFrom";
+            this.txtPaymentFrom.Size = new System.Drawing.Size(346, 22);
+            this.txtPaymentFrom.StyleController = this.layoutControl1;
+            this.txtPaymentFrom.TabIndex = 5;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Value cannot be empty";
+            this.dxValidationProvider1.SetValidationRule(this.txtPaymentFrom, conditionValidationRule3);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.EnterMoveNextControl = true;
+            this.txtAmount.Location = new System.Drawing.Point(121, 143);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Properties.DisplayFormat.FormatString = "n2";
+            this.txtAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtAmount.Properties.EditFormat.FormatString = "n2";
+            this.txtAmount.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtAmount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtAmount.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtAmount.Properties.MaskSettings.Set("mask", "c");
+            this.txtAmount.Size = new System.Drawing.Size(346, 22);
+            this.txtAmount.StyleController = this.layoutControl1;
+            this.txtAmount.TabIndex = 4;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Value cannot be empty";
+            this.dxValidationProvider1.SetValidationRule(this.txtAmount, conditionValidationRule4);
+            // 
+            // txtRefNo
+            // 
+            this.txtRefNo.EnterMoveNextControl = true;
+            this.txtRefNo.Location = new System.Drawing.Point(121, 111);
+            this.txtRefNo.Name = "txtRefNo";
+            this.txtRefNo.Size = new System.Drawing.Size(346, 22);
+            this.txtRefNo.StyleController = this.layoutControl1;
+            this.txtRefNo.TabIndex = 3;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Value cannot be empty";
+            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule5);
+            // 
+            // txtVoucherNumber
+            // 
+            this.txtVoucherNumber.EnterMoveNextControl = true;
+            this.txtVoucherNumber.Location = new System.Drawing.Point(121, 79);
+            this.txtVoucherNumber.Name = "txtVoucherNumber";
+            this.txtVoucherNumber.Size = new System.Drawing.Size(346, 22);
+            this.txtVoucherNumber.StyleController = this.layoutControl1;
+            this.txtVoucherNumber.TabIndex = 2;
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Value cannot be empty";
+            this.dxValidationProvider1.SetValidationRule(this.txtVoucherNumber, conditionValidationRule6);
             // 
             // Root
             // 
@@ -140,18 +280,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(231, 46);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtVoucherNumber
-            // 
-            this.txtVoucherNumber.EnterMoveNextControl = true;
-            this.txtVoucherNumber.Location = new System.Drawing.Point(121, 79);
-            this.txtVoucherNumber.Name = "txtVoucherNumber";
-            this.txtVoucherNumber.Size = new System.Drawing.Size(346, 22);
-            this.txtVoucherNumber.StyleController = this.layoutControl1;
-            this.txtVoucherNumber.TabIndex = 2;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Value cannot be empty";
-            this.dxValidationProvider1.SetValidationRule(this.txtVoucherNumber, conditionValidationRule6);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtVoucherNumber;
@@ -161,18 +289,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(462, 32);
             this.layoutControlItem2.Text = "Voucher Number";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(94, 15);
-            // 
-            // txtRefNo
-            // 
-            this.txtRefNo.EnterMoveNextControl = true;
-            this.txtRefNo.Location = new System.Drawing.Point(121, 111);
-            this.txtRefNo.Name = "txtRefNo";
-            this.txtRefNo.Size = new System.Drawing.Size(346, 22);
-            this.txtRefNo.StyleController = this.layoutControl1;
-            this.txtRefNo.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Value cannot be empty";
-            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule5);
             // 
             // layoutControlItem3
             // 
@@ -184,25 +300,6 @@
             this.layoutControlItem3.Text = "Ref NO ";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(94, 15);
             // 
-            // txtAmount
-            // 
-            this.txtAmount.EnterMoveNextControl = true;
-            this.txtAmount.Location = new System.Drawing.Point(121, 143);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Properties.DisplayFormat.FormatString = "n2";
-            this.txtAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtAmount.Properties.EditFormat.FormatString = "n2";
-            this.txtAmount.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtAmount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtAmount.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtAmount.Properties.MaskSettings.Set("mask", "c");
-            this.txtAmount.Size = new System.Drawing.Size(346, 22);
-            this.txtAmount.StyleController = this.layoutControl1;
-            this.txtAmount.TabIndex = 4;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Value cannot be empty";
-            this.dxValidationProvider1.SetValidationRule(this.txtAmount, conditionValidationRule4);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtAmount;
@@ -212,18 +309,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(462, 32);
             this.layoutControlItem4.Text = "Amount";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(94, 15);
-            // 
-            // txtPaymentFrom
-            // 
-            this.txtPaymentFrom.EnterMoveNextControl = true;
-            this.txtPaymentFrom.Location = new System.Drawing.Point(121, 175);
-            this.txtPaymentFrom.Name = "txtPaymentFrom";
-            this.txtPaymentFrom.Size = new System.Drawing.Size(346, 22);
-            this.txtPaymentFrom.StyleController = this.layoutControl1;
-            this.txtPaymentFrom.TabIndex = 5;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Value cannot be empty";
-            this.dxValidationProvider1.SetValidationRule(this.txtPaymentFrom, conditionValidationRule3);
             // 
             // layoutControlItem5
             // 
@@ -235,18 +320,6 @@
             this.layoutControlItem5.Text = "Payment From";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(94, 15);
             // 
-            // txtPaymentTo
-            // 
-            this.txtPaymentTo.EnterMoveNextControl = true;
-            this.txtPaymentTo.Location = new System.Drawing.Point(121, 207);
-            this.txtPaymentTo.Name = "txtPaymentTo";
-            this.txtPaymentTo.Size = new System.Drawing.Size(346, 22);
-            this.txtPaymentTo.StyleController = this.layoutControl1;
-            this.txtPaymentTo.TabIndex = 6;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Value cannot be empty";
-            this.dxValidationProvider1.SetValidationRule(this.txtPaymentTo, conditionValidationRule2);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtPaymentTo;
@@ -256,15 +329,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(462, 32);
             this.layoutControlItem6.Text = "Payment To";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(94, 15);
-            // 
-            // txtBankName
-            // 
-            this.txtBankName.EnterMoveNextControl = true;
-            this.txtBankName.Location = new System.Drawing.Point(121, 239);
-            this.txtBankName.Name = "txtBankName";
-            this.txtBankName.Size = new System.Drawing.Size(346, 22);
-            this.txtBankName.StyleController = this.layoutControl1;
-            this.txtBankName.TabIndex = 7;
             // 
             // layoutControlItem7
             // 
@@ -276,15 +340,6 @@
             this.layoutControlItem7.Text = "Bank Name";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(94, 15);
             // 
-            // mePurpose
-            // 
-            this.mePurpose.EnterMoveNextControl = true;
-            this.mePurpose.Location = new System.Drawing.Point(121, 271);
-            this.mePurpose.Name = "mePurpose";
-            this.mePurpose.Size = new System.Drawing.Size(346, 88);
-            this.mePurpose.StyleController = this.layoutControl1;
-            this.mePurpose.TabIndex = 8;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.mePurpose;
@@ -294,18 +349,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(462, 98);
             this.layoutControlItem8.Text = "Purpose";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(94, 15);
-            // 
-            // btnSave
-            // 
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnSave.Location = new System.Drawing.Point(246, 369);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(105, 36);
-            this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // layoutControlItem9
             // 
@@ -317,18 +360,6 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnCancel.Location = new System.Drawing.Point(361, 369);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 36);
-            this.btnCancel.StyleController = this.layoutControl1;
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Cancel";
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnCancel;
@@ -339,24 +370,6 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // luVoucherType
-            // 
-            this.luVoucherType.EnterMoveNextControl = true;
-            this.luVoucherType.Location = new System.Drawing.Point(121, 47);
-            this.luVoucherType.Name = "luVoucherType";
-            this.luVoucherType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luVoucherType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "Voucher Type")});
-            this.luVoucherType.Properties.NullText = "";
-            this.luVoucherType.Size = new System.Drawing.Size(346, 22);
-            this.luVoucherType.StyleController = this.layoutControl1;
-            this.luVoucherType.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Value cannot be empty";
-            this.dxValidationProvider1.SetValidationRule(this.luVoucherType, conditionValidationRule1);
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.luVoucherType;
@@ -366,19 +379,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(462, 32);
             this.layoutControlItem11.Text = "Voucher Type";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(94, 15);
-            // 
-            // dtVoucherDate
-            // 
-            this.dtVoucherDate.EditValue = null;
-            this.dtVoucherDate.Location = new System.Drawing.Point(121, 15);
-            this.dtVoucherDate.Name = "dtVoucherDate";
-            this.dtVoucherDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtVoucherDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtVoucherDate.Size = new System.Drawing.Size(346, 22);
-            this.dtVoucherDate.StyleController = this.layoutControl1;
-            this.dtVoucherDate.TabIndex = 0;
             // 
             // layoutControlItem12
             // 
@@ -403,30 +403,30 @@
             this.Load += new System.EventHandler(this.frmVoucher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luVoucherType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mePurpose.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBankName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentTo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentFrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRefNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVoucherNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVoucherNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRefNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentFrom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBankName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mePurpose.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luVoucherType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtVoucherDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

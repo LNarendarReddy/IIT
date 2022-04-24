@@ -1,10 +1,10 @@
-﻿using Entity.Masters;
+﻿using Entity;
 using System.Collections.Generic;
 using System.Data;
 using System;
 using System.Data.SqlClient;
 
-namespace Repository.Masters
+namespace Repository
 {
     public class SubGroupRepository : RepositoryBase<SubGroup>
     {
@@ -65,7 +65,7 @@ namespace Repository.Masters
                 {
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "[USP_R_SUBGROUPLIST]";
+                    cmd.CommandText = "[USP_R_SUBGROUP]";
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dtGroupList);

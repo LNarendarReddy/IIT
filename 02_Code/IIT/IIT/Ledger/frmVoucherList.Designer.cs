@@ -1,4 +1,4 @@
-﻿namespace IIT.Ledger
+﻿namespace IIT
 {
     partial class frmVoucherList
     {

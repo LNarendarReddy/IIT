@@ -1,10 +1,10 @@
-﻿using Entity.Masters;
+﻿using Entity;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Repository.Masters
+namespace Repository
 {
     public class SubSectorRepository : RepositoryBase<SubSector>
     {

@@ -1,11 +1,10 @@
 ﻿using DevExpress.XtraEditors;
-using Entity.Masters;
+using Entity;
 using Repository;
-using Repository.Masters;
 using System;
 using System.Windows.Forms;
 
-namespace IIT.Masters
+namespace IIT
 {
     public partial class frmSubGroup : XtraForm
     {

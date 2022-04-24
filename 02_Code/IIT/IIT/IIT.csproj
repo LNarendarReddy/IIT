@@ -103,17 +103,17 @@
     <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEntityMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEntityMain.Designer.cs">
-      <DependentUpon>frmEntityMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger\frmLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\frmLedger.Designer.cs">
+      <DependentUpon>frmLedger.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmLedgerList.cs">
       <SubType>Form</SubType>
@@ -190,11 +190,11 @@
     <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEntityMain.resx">
-      <DependentUpon>frmEntityMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\frmLedger.resx">
+      <DependentUpon>frmLedger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmLedgerList.resx">
       <DependentUpon>frmLedgerList.cs</DependentUpon>

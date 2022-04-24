@@ -7,6 +7,8 @@ namespace IIT
 {
     public static class Utility
     {
+        public static EntityData CurrentEntity { get; set; }
+
         public static string UserName = "Test User";
         public static void ShowDialog(XtraForm frm)
         {

@@ -1,11 +1,10 @@
 ﻿using DevExpress.XtraEditors;
-using Entity.Masters;
+using Entity;
 using Repository;
-using Repository.Masters;
 using System;
 using System.Windows.Forms;
 
-namespace IIT.Masters
+namespace IIT
 {
     public partial class frmGroup : XtraForm
     {
@@ -49,6 +48,11 @@ namespace IIT.Masters
             meDescription.EditValue = groupObj.Description;
 
             Text = string.IsNullOrEmpty(groupObj.Name?.ToString()) ? Text : $"{Text} - {groupObj.Name}";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
