@@ -75,7 +75,7 @@ namespace Repository
                 {
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "[USP_R_ENTITYLIST]";
+                    cmd.CommandText = "[USP_U_GSTREGNO]";
                     cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     cmd.Parameters.AddWithValue("@GSTREGNOID", GSTRegNoID);
                     cmd.ExecuteNonQuery();
