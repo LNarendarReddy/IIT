@@ -20,7 +20,7 @@ namespace IIT
 
         private void btnIndividualFirm_Click(object sender, EventArgs e)
         {
-            entityType = 1;
+            entityType = 11;
             frmEntityIndividual obj = new frmEntityIndividual(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)
@@ -29,7 +29,7 @@ namespace IIT
 
         private void btnPertnershipFirm_Click(object sender, EventArgs e)
         {
-            entityType = 2;
+            entityType = 12;
             EntityData entityData = new EntityData();
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
@@ -39,7 +39,7 @@ namespace IIT
 
         private void btnAOP_Click(object sender, EventArgs e)
         {
-            entityType = 3;
+            entityType = 14;
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)
@@ -48,7 +48,7 @@ namespace IIT
 
         private void btnCompany_Click(object sender, EventArgs e)
         {
-            entityType = 4;
+            entityType = 13;
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)

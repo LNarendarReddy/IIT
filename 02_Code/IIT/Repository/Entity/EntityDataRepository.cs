@@ -177,5 +177,64 @@ namespace Repository
             return entityData;
         }
 
+        public DataSet GetEntityExportData(object entitydID)
+        {
+            DataSet dsEntityData = new DataSet();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_EXPORTENTITYDATA]";
+                    cmd.Parameters.AddWithValue("@EntityID", entitydID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dsEntityData);
+                    }
+
+                    dsEntityData.Tables[0].TableName = "ENTITY";
+                    dsEntityData.Tables[1].TableName = "PERSON";
+                    dsEntityData.Tables[2].TableName = "ADDRESS";
+                    dsEntityData.Tables[3].TableName = "GSTIN";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Retrieving Enity Data", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+            return dsEntityData;
+        }
+
+        public string ImportEntityData(DataSet dsEntityData)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_IMP_ENTITYDATA]";
+                    cmd.Parameters.AddWithValue("@Entity", dsEntityData.Tables[0]);
+                    cmd.Parameters.AddWithValue("@Persons", dsEntityData.Tables[1]);
+                    cmd.Parameters.AddWithValue("@Address", dsEntityData.Tables[2]);
+                    cmd.Parameters.AddWithValue("@GSTIN", dsEntityData.Tables[3]);
+                    object output = cmd.ExecuteScalar();
+                    return output?.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Importing Enity Data", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+        }
     }
 }
