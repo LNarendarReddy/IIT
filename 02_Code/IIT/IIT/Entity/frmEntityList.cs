@@ -73,25 +73,44 @@ namespace IIT
         {
             if (gvEntityList.FocusedRowHandle < 0)
                 return;
-            DataSet entityDataSource = entityDataRepository.GetEntityExportData(gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-            entityDataSource.RemotingFormat = SerializationFormat.Binary;
-            FileStream fs = new FileStream(@"D:\To Delete\Export\Customer.bin", FileMode.Create);
-            BinaryFormatter fmt = new BinaryFormatter();
-            fmt.Serialize(fs, entityDataSource);
-            fs.Close();
+
+            try
+            {
+                XtraSaveFileDialog xtraSaveFileDialog = new XtraSaveFileDialog();
+                xtraSaveFileDialog.FileName = gvEntityList.GetFocusedRowCellValue("ENTITYNAME").ToString() + ".bin";
+                if (xtraSaveFileDialog.ShowDialog() != DialogResult.OK) return;
+
+                DataSet entityDataSource = entityDataRepository.GetEntityExportData(gvEntityList.GetFocusedRowCellValue("ENTITYID"));
+                entityDataSource.RemotingFormat = SerializationFormat.Binary;
+
+                FileStream fs = new FileStream(xtraSaveFileDialog.FileName, FileMode.Create);
+                BinaryFormatter fmt = new BinaryFormatter();
+                fmt.Serialize(fs, entityDataSource);
+                fs.Close();
+
+                XtraMessageBox.Show("Export completed");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Export failed : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
             DataSet dsEntityDataFromFile;
-            using (FileStream stream = new FileStream(@"D:\To Delete\Export\Customer.bin", FileMode.Open))
-            {
-                BinaryFormatter format = new BinaryFormatter();
-                dsEntityDataFromFile = (DataSet)format.Deserialize(stream);                
-            }
 
+            XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
             try
             {
+                if (xtraOpenFileDialog.ShowDialog() != DialogResult.OK) return;
+
+                using (Stream stream = xtraOpenFileDialog.OpenFile())
+                {
+                    BinaryFormatter format = new BinaryFormatter();
+                    dsEntityDataFromFile = (DataSet)format.Deserialize(stream);
+                }
+
                 var output = entityDataRepository.ImportEntityData(dsEntityDataFromFile);
                 BindDatasource();
                 XtraMessageBox.Show(output);

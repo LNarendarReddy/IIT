@@ -225,6 +225,11 @@ namespace IIT
             {
                 entityData.GSTRegNo.Add(gst);
                 entityData.PrimaryGST = gst;
+
+                cmbGSTNumber.Properties.DataSource = entityData.GSTRegNo;
+                cmbGSTNumber.Properties.ValueMember = "ID";
+                cmbGSTNumber.Properties.DisplayMember = "GSTNo";
+                cmbGSTNumber.EditValue = entityData.PrimaryGST.ID;
             }
         }
     }
