@@ -4,6 +4,6 @@
 	.st0{fill:#AFAFAF;}
 </style>
   <g tag="Element2">
-    <rect x="1" y="0" width="31" height="32" rx="0" ry="0" class="st0" tag="st00" />
+    <rect x="1" y="0" width="31" height="32" class="st0" tag="st00" />
   </g>
 </svg>

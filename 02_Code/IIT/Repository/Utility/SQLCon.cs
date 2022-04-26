@@ -29,5 +29,9 @@ namespace Repository
             catch (Exception ex) { throw ex; }
             return connection;
         }
+        public static string connectionString()
+        {
+            return ConfigurationManager.AppSettings["Connection"].ToString();
+        }
     }
 }

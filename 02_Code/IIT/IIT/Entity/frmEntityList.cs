@@ -19,15 +19,6 @@ namespace IIT
         {
             InitializeComponent();
         }
-        private void frmEntityList_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Escape)
-                this.Close();
-            else if (e.KeyData == Keys.C)
-                btnCreateEntity_Click(null, null);
-            else if (e.KeyData == Keys.M && btnModifyEntity.Enabled)
-                btnModifyEntity_Click(null, null);
-        }
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
             frmEntityType objEntityType = new frmEntityType();
@@ -136,6 +127,16 @@ namespace IIT
                 gvEntityList.GetFocusedRowCellValue("ENTITYID"));
             IsEntitySelected = true;
             this.Close();
+        }
+
+        private void frmEntityList_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+                this.Close();
+            else if (e.KeyChar == (char)Keys.C)
+                btnCreateEntity_Click(null, null);
+            else if (e.KeyChar == (char)Keys.M && btnModifyEntity.Enabled)
+                btnModifyEntity_Click(null, null);
         }
     }
 }

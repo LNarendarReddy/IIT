@@ -3,6 +3,6 @@
   <style type="text/css" tag="Element1">
 	.st0{fill:#969696;}
 </style>
-  <rect x="0" y="0" width="10" height="10" rx="0" ry="0" class="st0" tag="st00" />
+  <rect x="0" y="0" width="10" height="10" class="st0" tag="st00" />
   <path d="M0, 0L0, 10L10, 10L10, 0L0, 0zM9, 9L1, 9L1, 1L9, 1L9, 9z" tag="Element2" />
 </svg>

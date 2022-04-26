@@ -16058,12 +16058,10 @@
           <AllowTouch Value="False" ValueType="System.Boolean" />
           <DxSolidColor Value="0:W=0xFFE6E6E6;1:W=0xFFE6E6E6;All" ValueType="System.String" />
         </Properties>
-        <Color EmptySpaceColor="255,255,255" />
         <ScaleInfo>
           <ScaleInfo ScaleFactor="2">
             <Image ImageSize="Width=128,Height=64" ImageCount="2" Layout="Horizontal" Stretch="Stretch" SvgImageSize="Width=32,Height=32" ImageName="reports\200dpi_cornerpanel.png" />
             <Glyph Stretch="NoResize" ImageCount="2" Layout="Vertical" SvgImageSize="Width=12,Height=12" ImageName="reports\200dpi_cornerpanel_glyph.png" />
-            <Color EmptySpaceColor="255,255,255" />
           </ScaleInfo>
         </ScaleInfo>
       </CornerPanel>
@@ -19220,7 +19218,7 @@
           <ForeColor2 Value="@Accent Brush" ValueType="System.Drawing.Color" />
           <ForeColorInactive Value="@Accent Brush Light" ValueType="System.Drawing.Color" />
         </Properties>
-        <Color ForeColor="@Accent Brush" />
+        <Color FontBold="True" FontSize="6" ForeColor="@Accent Brush" />
         <Size MinSize="Width=10,Height=36" />
         <SizeTouch AllowScale="False" ScaleFactor="1" MinSize="Width=10,Height=30" />
         <SvgPalette>
@@ -19245,7 +19243,7 @@
             <Image ImageSize="Width=64,Height=128" ImageCount="2" Layout="Vertical" Stretch="Stretch" ImageName="ribbon\200dpi_formcaption.png">
               <SizingMargins Top="2" Left="2" Right="2" />
             </Image>
-            <Color ForeColor="@Accent Brush" />
+            <Color FontBold="True" FontSize="6" ForeColor="@Accent Brush" />
           </ScaleInfo>
         </ScaleInfo>
       </FormCaption>

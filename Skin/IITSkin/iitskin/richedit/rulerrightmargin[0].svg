@@ -5,7 +5,7 @@
 	.Brush{fill:#707070;}
 </style>
   <g tag="Element2">
-    <rect x="0" y="0" width="32" height="32" rx="0" ry="0" fill="#AFAFAF" class="Paint" tag="Paint0" />
+    <rect x="0" y="0" width="32" height="32" fill="#AFAFAF" class="Paint" tag="Paint0" />
   </g>
   <g tag="Element3">
     <path d="M0, 0L0, 32L32, 32L32, 0L0, 0zM31, 31L1, 31L1, 1L31, 1L31, 31z" fill="#707070" class="Brush" tag="Brush0" />

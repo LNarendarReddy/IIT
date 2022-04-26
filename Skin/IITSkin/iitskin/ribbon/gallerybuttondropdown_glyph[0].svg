@@ -4,5 +4,5 @@
     <polygon points="5,8 8,5 2,5  " fill="#707070" class="st0" tag="st00" />
   </g>
   <g id="Layer_2" tag="Element1" />
-  <rect x="1" y="2" width="8" height="1" rx="0" ry="0" fill="#707070" class="st0" tag="st01" />
+  <rect x="1" y="2" width="8" height="1" fill="#707070" class="st0" tag="st01" />
 </svg>

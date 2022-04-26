@@ -314,7 +314,7 @@
             this.Name = "frmEntityList";
             this.Text = "Entity List";
             this.Load += new System.EventHandler(this.frmEntityList_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEntityList_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmEntityList_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcEntityList)).EndInit();

@@ -5,10 +5,10 @@
 	.st1{fill:#707070;}
 </style>
   <g tag="Element2">
-    <rect x="0" y="0" width="3" height="32" rx="0" ry="0" class="st0" tag="st00" />
+    <rect x="0" y="0" width="3" height="32" class="st0" tag="st00" />
   </g>
   <g tag="Element3">
-    <rect x="0" y="0" width="3" height="2" rx="0" ry="0" class="st1" tag="st10" />
-    <rect x="0" y="30" width="3" height="2" rx="0" ry="0" class="st1" tag="st11" />
+    <rect x="0" y="0" width="3" height="2" class="st1" tag="st10" />
+    <rect x="0" y="30" width="3" height="2" class="st1" tag="st11" />
   </g>
 </svg>

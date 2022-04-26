@@ -125,12 +125,15 @@ namespace IIT
         {
             ViewLedger(57);
         }
+
         private void ViewLedger(object VoucherTypeID)
         {
             rptLedgerPrinting rpt = new rptLedgerPrinting();
             rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
             rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
             rpt.Parameters["VoucherTypeID"].Value = VoucherTypeID;
+            rpt.Parameters["FromDate"].Value = DateTime.Now.AddDays(-30);
+            rpt.Parameters["ToDate"].Value = DateTime.Now;
             rpt.ShowRibbonPreview();
         }
     }

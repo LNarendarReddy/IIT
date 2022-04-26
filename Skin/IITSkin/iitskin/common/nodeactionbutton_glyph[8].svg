@@ -3,7 +3,7 @@
   <style type="text/css" tag="Element1">
 	.st0{fill:#707070;}
 </style>
-  <rect x="8" y="5" width="1" height="1" rx="0" ry="0" class="st0" tag="st00" />
-  <rect x="5" y="5" width="1" height="1" rx="0" ry="0" class="st0" tag="st01" />
-  <rect x="2" y="5" width="1" height="1" rx="0" ry="0" class="st0" tag="st02" />
+  <rect x="8" y="5" width="1" height="1" class="st0" tag="st00" />
+  <rect x="5" y="5" width="1" height="1" class="st0" tag="st01" />
+  <rect x="2" y="5" width="1" height="1" class="st0" tag="st02" />
 </svg>

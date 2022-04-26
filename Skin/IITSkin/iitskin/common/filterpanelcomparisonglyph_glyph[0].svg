@@ -3,6 +3,6 @@
   <style type="text/css" tag="Element1">
 	.st0{fill:#727272;}
 </style>
-  <rect x="4" y="7" width="8" height="1" rx="0" ry="0" fill="#727272" class="st0" tag="st00" />
-  <rect x="4" y="9" width="8" height="1" rx="0" ry="0" fill="#727272" class="st0" tag="st01" />
+  <rect x="4" y="7" width="8" height="1" fill="#727272" class="st0" tag="st00" />
+  <rect x="4" y="9" width="8" height="1" fill="#727272" class="st0" tag="st01" />
 </svg>

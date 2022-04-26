@@ -4,33 +4,33 @@
 	.st0{fill:#AFAFAF;}
 </style>
   <g tag="Element2">
-    <rect x="0" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st00" />
+    <rect x="0" y="0" width="1" height="1" class="st0" tag="st00" />
   </g>
   <g tag="Element3">
-    <rect x="3" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st01" />
+    <rect x="3" y="0" width="1" height="1" class="st0" tag="st01" />
   </g>
   <g tag="Element4">
-    <rect x="6" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st02" />
+    <rect x="6" y="0" width="1" height="1" class="st0" tag="st02" />
   </g>
   <g tag="Element5">
-    <rect x="9" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st03" />
+    <rect x="9" y="0" width="1" height="1" class="st0" tag="st03" />
   </g>
   <g tag="Element6">
-    <rect x="12" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st04" />
+    <rect x="12" y="0" width="1" height="1" class="st0" tag="st04" />
   </g>
   <g tag="Element7">
-    <rect x="15" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st05" />
+    <rect x="15" y="0" width="1" height="1" class="st0" tag="st05" />
   </g>
   <g tag="Element8">
-    <rect x="18" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st06" />
+    <rect x="18" y="0" width="1" height="1" class="st0" tag="st06" />
   </g>
   <g tag="Element9">
-    <rect x="21" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st07" />
+    <rect x="21" y="0" width="1" height="1" class="st0" tag="st07" />
   </g>
   <g tag="Element10">
-    <rect x="24" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st08" />
+    <rect x="24" y="0" width="1" height="1" class="st0" tag="st08" />
   </g>
   <g tag="Element11">
-    <rect x="27" y="0" width="1" height="1" rx="0" ry="0" class="st0" tag="st09" />
+    <rect x="27" y="0" width="1" height="1" class="st0" tag="st09" />
   </g>
 </svg>

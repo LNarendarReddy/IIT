@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraReports.UI;
+using Repository;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ namespace IIT
         public rptLedgerPrinting()
         {
             InitializeComponent();
+            sqlDataSource1.ConnectionName = SQLCon.connectionString();
         }
 
     }

@@ -3,8 +3,8 @@
   <style type="text/css" tag="Element1">
 	.st0{fill:#AFAFAF;}
 </style>
-  <rect x="3" y="11" width="1" height="2" rx="0" ry="0" class="st0" tag="st00" />
-  <rect x="7" y="11" width="1" height="2" rx="0" ry="0" class="st0" tag="st01" />
-  <rect x="11" y="11" width="1" height="2" rx="0" ry="0" class="st0" tag="st02" />
-  <rect x="15" y="11" width="1" height="2" rx="0" ry="0" class="st0" tag="st03" />
+  <rect x="3" y="11" width="1" height="2" class="st0" tag="st00" />
+  <rect x="7" y="11" width="1" height="2" class="st0" tag="st01" />
+  <rect x="11" y="11" width="1" height="2" class="st0" tag="st02" />
+  <rect x="15" y="11" width="1" height="2" class="st0" tag="st03" />
 </svg>
