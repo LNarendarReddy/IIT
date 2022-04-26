@@ -44,7 +44,7 @@ namespace Entity
 
         public object ResidentStatus { get; set; }
 
-        
+        public byte[] LogoData { get; set; }
 
         #endregion
 

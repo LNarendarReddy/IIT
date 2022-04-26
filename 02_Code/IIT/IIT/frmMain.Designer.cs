@@ -50,17 +50,20 @@
             this.btnBankPaymentVoucher = new DevExpress.XtraBars.BarButtonItem();
             this.btnCashRecieptVoucher = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankRecieptVoucher = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnVoucherList = new DevExpress.XtraBars.BarButtonItem();
+            this.btnExitCompany = new DevExpress.XtraBars.BarButtonItem();
+            this.rpIIT = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpAccounts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnCashPaymentLedger = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCashRecieptLedger = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,15 +97,19 @@
             this.btnCashPaymentVoucher,
             this.btnBankPaymentVoucher,
             this.btnCashRecieptVoucher,
-            this.btnBankRecieptVoucher});
+            this.btnBankRecieptVoucher,
+            this.btnVoucherList,
+            this.btnExitCompany,
+            this.btnCashPaymentLedger,
+            this.btnCashRecieptLedger});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ribbonControl1.MaxItemId = 21;
+            this.ribbonControl1.MaxItemId = 26;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage4});
+            this.rpIIT,
+            this.rpAccounts});
             this.ribbonControl1.Size = new System.Drawing.Size(1332, 164);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -223,6 +230,7 @@
             this.btnCashPaymentVoucher.Id = 17;
             this.btnCashPaymentVoucher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCashPaymentVoucher.ImageOptions.SvgImage")));
             this.btnCashPaymentVoucher.Name = "btnCashPaymentVoucher";
+            this.btnCashPaymentVoucher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCashPaymentVoucher_ItemClick);
             // 
             // btnBankPaymentVoucher
             // 
@@ -230,6 +238,7 @@
             this.btnBankPaymentVoucher.Id = 18;
             this.btnBankPaymentVoucher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBankPaymentVoucher.ImageOptions.SvgImage")));
             this.btnBankPaymentVoucher.Name = "btnBankPaymentVoucher";
+            this.btnBankPaymentVoucher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBankPaymentVoucher_ItemClick);
             // 
             // btnCashRecieptVoucher
             // 
@@ -237,6 +246,7 @@
             this.btnCashRecieptVoucher.Id = 19;
             this.btnCashRecieptVoucher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCashRecieptVoucher.ImageOptions.SvgImage")));
             this.btnCashRecieptVoucher.Name = "btnCashRecieptVoucher";
+            this.btnCashRecieptVoucher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCashRecieptVoucher_ItemClick);
             // 
             // btnBankRecieptVoucher
             // 
@@ -244,14 +254,31 @@
             this.btnBankRecieptVoucher.Id = 20;
             this.btnBankRecieptVoucher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBankRecieptVoucher.ImageOptions.SvgImage")));
             this.btnBankRecieptVoucher.Name = "btnBankRecieptVoucher";
+            this.btnBankRecieptVoucher.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBankRecieptVoucher_ItemClick);
             // 
-            // ribbonPage1
+            // btnVoucherList
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.btnVoucherList.Caption = "Voucher List";
+            this.btnVoucherList.Id = 21;
+            this.btnVoucherList.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnVoucherList.ImageOptions.SvgImage")));
+            this.btnVoucherList.Name = "btnVoucherList";
+            this.btnVoucherList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVoucherList_ItemClick);
+            // 
+            // btnExitCompany
+            // 
+            this.btnExitCompany.Caption = "Exit Company";
+            this.btnExitCompany.Id = 23;
+            this.btnExitCompany.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExitCompany.ImageOptions.SvgImage")));
+            this.btnExitCompany.Name = "btnExitCompany";
+            this.btnExitCompany.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExitCompany_ItemClick);
+            // 
+            // rpIIT
+            // 
+            this.rpIIT.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup3});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "IIT";
+            this.rpIIT.Name = "rpIIT";
+            this.rpIIT.Text = "IIT";
             // 
             // ribbonPageGroup1
             // 
@@ -265,17 +292,18 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.bbiSubGroup);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Group options";
+            this.ribbonPageGroup3.Visible = false;
             // 
-            // ribbonPage4
+            // rpAccounts
             // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpAccounts.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
             this.ribbonPageGroup7,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup8});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Accounts";
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup9});
+            this.rpAccounts.Name = "rpAccounts";
+            this.rpAccounts.Text = "Accounts";
+            this.rpAccounts.Visible = false;
             // 
             // ribbonPageGroup6
             // 
@@ -292,23 +320,15 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCashRecieptVoucher);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnBankPaymentVoucher);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnBankRecieptVoucher);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnVoucherList);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Voucher Entry";
             // 
-            // ribbonPageGroup2
+            // ribbonPageGroup4
             // 
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Invetory Entry";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Accounting Reports";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "MIS Forms";
+            this.ribbonPageGroup4.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnExitCompany);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonStatusBar1
             // 
@@ -326,6 +346,30 @@
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "ribbonPage3";
             // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPageGroup9.ImageOptions.SvgImage")));
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnCashPaymentLedger);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnCashRecieptLedger);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Reports";
+            // 
+            // btnCashPaymentLedger
+            // 
+            this.btnCashPaymentLedger.Caption = "Cash Payment Ledger";
+            this.btnCashPaymentLedger.Id = 24;
+            this.btnCashPaymentLedger.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.btnCashPaymentLedger.Name = "btnCashPaymentLedger";
+            this.btnCashPaymentLedger.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCashPaymentLedger_ItemClick);
+            // 
+            // btnCashRecieptLedger
+            // 
+            this.btnCashRecieptLedger.Caption = "Cash Reciept Ledger";
+            this.btnCashRecieptLedger.Id = 25;
+            this.btnCashRecieptLedger.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCashRecieptLedger.ImageOptions.SvgImage")));
+            this.btnCashRecieptLedger.Name = "btnCashRecieptLedger";
+            this.btnCashRecieptLedger.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCashRecieptLedger_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -338,7 +382,7 @@
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "Form1";
+            this.Text = "IIT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -350,7 +394,7 @@
         #endregion
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpIIT;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
@@ -359,7 +403,7 @@
         private DevExpress.XtraBars.BarStaticItem lblStatus;
         private DevExpress.XtraBars.BarStaticItem lblVersion;
         private DevExpress.XtraBars.BarButtonItem bbiNOB;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpAccounts;
         private DevExpress.XtraBars.BarButtonItem bbiGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem bbiSubGroup;
@@ -377,9 +421,12 @@
         private DevExpress.XtraBars.BarButtonItem btnBankPaymentVoucher;
         private DevExpress.XtraBars.BarButtonItem btnCashRecieptVoucher;
         private DevExpress.XtraBars.BarButtonItem btnBankRecieptVoucher;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem btnVoucherList;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnExitCompany;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btnCashPaymentLedger;
+        private DevExpress.XtraBars.BarButtonItem btnCashRecieptLedger;
     }
 }
 

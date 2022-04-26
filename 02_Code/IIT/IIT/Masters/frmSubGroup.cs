@@ -25,7 +25,7 @@ namespace IIT
             luGroup.CascadingOwner = luClassification;
             luGroup.Properties.CascadingMember = "CLASSIFICATIONID";
 
-            luGroup.Properties.DataSource = new GroupRepository().GetGroupList();
+            luGroup.Properties.DataSource = new GroupRepository().GetGroupList(Utility.CurrentEntity.ID);
             luGroup.Properties.DisplayMember = "GROUPNAME";
             luGroup.Properties.ValueMember = "GROUPID";
 

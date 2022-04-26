@@ -21,7 +21,7 @@ namespace IIT
             InitializeComponent();
             ledgerObj = ledger;
 
-            luSubGroup.Properties.DataSource = new SubGroupRepository().GetSubGroupList();
+            luSubGroup.Properties.DataSource = new SubGroupRepository().GetSubGroupList(Utility.CurrentEntity.ID);
             luSubGroup.Properties.DisplayMember = "SUBGROUPNAME";
             luSubGroup.Properties.ValueMember = "SUBGROUPID";
 

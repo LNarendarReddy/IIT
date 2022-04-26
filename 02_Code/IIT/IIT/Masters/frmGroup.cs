@@ -24,6 +24,7 @@ namespace IIT
             groupObj.ClassificationID = luClassification.EditValue;
             groupObj.Description = meDescription.EditValue;
             groupObj.UserName = Utility.UserName;
+            groupObj.EntityID = Utility.CurrentEntity?.ID;
 
             try
             {

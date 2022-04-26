@@ -34,17 +34,32 @@
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v21.2" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2" />
     <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-	<Reference Include="DevExpress.XtraEditors.v21.2" />
-	<Reference Include="DevExpress.XtraDialogs.v21.2" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.XtraDialogs.v21.2" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="IITSkin">
       <HintPath>..\..\..\Skin\IITSkin\IITSkin.dll</HintPath>
@@ -54,6 +69,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
@@ -92,6 +108,12 @@
     <Compile Include="Entity\frmEntityList.Designer.cs">
       <DependentUpon>frmEntityList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\frmEntityLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entity\frmEntityLogo.Designer.cs">
+      <DependentUpon>frmEntityLogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity\frmEntityType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,17 +144,29 @@
     <Compile Include="Ledger\frmLedgerList.Designer.cs">
       <DependentUpon>frmLedgerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ledger\frmVoucherList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\frmVoucherList.Designer.cs">
+      <DependentUpon>frmVoucherList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ledger\frmVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ledger\frmVoucher.Designer.cs">
       <DependentUpon>frmVoucher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ledger\frmVoucherList.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Ledger\Report\rptLedgerPrinting.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ledger\frmVoucherList.Designer.cs">
-      <DependentUpon>frmVoucherList.cs</DependentUpon>
+    <Compile Include="Ledger\Report\rptLedgerPrinting.Designer.cs">
+      <DependentUpon>rptLedgerPrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger\Report\rptVoucher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ledger\Report\rptVoucher.Designer.cs">
+      <DependentUpon>rptVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="Masters\frmGroup.cs">
       <SubType>Form</SubType>
@@ -185,6 +219,9 @@
     <EmbeddedResource Include="Entity\frmEntityList.resx">
       <DependentUpon>frmEntityList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entity\frmEntityLogo.resx">
+      <DependentUpon>frmEntityLogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entity\frmEntityType.resx">
       <DependentUpon>frmEntityType.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,11 +237,17 @@
     <EmbeddedResource Include="Ledger\frmLedgerList.resx">
       <DependentUpon>frmLedgerList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\frmVoucherList.resx">
+      <DependentUpon>frmVoucherList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmVoucher.resx">
       <DependentUpon>frmVoucher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ledger\frmVoucherList.resx">
-      <DependentUpon>frmVoucherList.cs</DependentUpon>
+    <EmbeddedResource Include="Ledger\Report\rptLedgerPrinting.resx">
+      <DependentUpon>rptLedgerPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\Report\rptVoucher.resx">
+      <DependentUpon>rptVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmGroup.resx">
       <DependentUpon>frmGroup.cs</DependentUpon>

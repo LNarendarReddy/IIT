@@ -18,7 +18,7 @@ namespace IIT
         private void frmGroupList_Load(object sender, EventArgs e)
         {
             Utility.SetGridFormatting(gvGroupList);
-            gcGroupList.DataSource = groupRepository.GetGroupList();
+            gcGroupList.DataSource = groupRepository.GetGroupList(Utility.CurrentEntity.ID);
             gvGroupList_FocusedRowChanged(null, null);
         }
 
@@ -28,7 +28,7 @@ namespace IIT
             Utility.ShowDialog(new frmGroup(groupdObj));
             if(groupdObj.IsSave)
             {
-                gcGroupList.DataSource = new GroupRepository().GetGroupList();
+                gcGroupList.DataSource = new GroupRepository().GetGroupList(Utility.CurrentEntity.ID);
                 gvGroupList.FocusedRowHandle = gvGroupList.LocateByValue("GROUPID", groupdObj.ID);
             }
         }
@@ -41,7 +41,7 @@ namespace IIT
             Utility.ShowDialog(new frmGroup(groupdObj));
             if (groupdObj.IsSave)
             {
-                gcGroupList.DataSource = new GroupRepository().GetGroupList();
+                gcGroupList.DataSource = new GroupRepository().GetGroupList(Utility.CurrentEntity.ID);
                 gvGroupList.FocusedRowHandle = gvGroupList.LocateByValue("GROUPID", groupdObj.ID);
             }
         }

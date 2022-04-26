@@ -15,9 +15,13 @@ namespace Repository
         {
             return new Ledger()
             {
-                ID = drLedgerRow["GROUPID"],
-                Name = drLedgerRow["GROUPNAME"],
-                Description = drLedgerRow["DESCRIPTION"],
+                ID = drLedgerRow["LEDGERID"],
+                Name = drLedgerRow["LEDGERNAME"],
+                Description = drLedgerRow["LEDGERDESCRIPTION"],
+                SubGroupID = drLedgerRow["SUBGROUPID"],
+                SubGroupName = drLedgerRow["SUBGROUPNAME"],
+                GroupID = drLedgerRow["GROUPID"],
+                GroupName = drLedgerRow["GROUPNAME"],
                 ClassificationID = drLedgerRow["CLASSIFICATIONID"],
                 Classification = drLedgerRow["CLASSIFICATION"]
             };
@@ -48,7 +52,10 @@ namespace Repository
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error While saving Ledger : {ex.Message} ", ex);
+                if (ex.Message.Contains("UC_TBLLEDGER_LEDGERNAME"))
+                    throw new Exception("Ledger Already Exists!");
+                else
+                    throw new Exception($"Error While saving Ledger : {ex.Message} ", ex);
             }
             finally
             {
@@ -57,7 +64,7 @@ namespace Repository
 
             return ledgerObj;
         }
-        public DataTable GetLedgerData(object HeadID)
+        public DataTable GetLedgerData(object HeadID,object EntityID)
         {
             DataTable dt = new DataTable();
             try
@@ -68,6 +75,7 @@ namespace Repository
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_LEDGERDATA]";
                     cmd.Parameters.AddWithValue("@HEADID", HeadID);
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dt);
@@ -85,7 +93,7 @@ namespace Repository
 
             return dt;
         }
-        public Ledger GetLedgerDetails(object LedgerID)
+        public Ledger GetLedger(object LedgerID,object EntityID)
         {
             DataTable dt = new DataTable();
             try
@@ -95,6 +103,7 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_LEDGER]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     cmd.Parameters.AddWithValue("@LedgerID", LedgerID);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -115,6 +124,33 @@ namespace Repository
                 return Load(dt.Rows[0]);
             else
                 return null;
+        }
+        public DataTable GetLedgerList(object EntityID)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_LEDGER]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error While Retrieving Ledger List", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+            return dt;
         }
     }
 }

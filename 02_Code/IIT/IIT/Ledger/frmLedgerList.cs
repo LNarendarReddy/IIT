@@ -35,7 +35,7 @@ namespace IIT
             {
                 case 1:
                     {
-                        Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID) : 
+                        Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID, Utility.CurrentEntity.ID) : 
                             new Group() { ClassificationID = HeadID };
                         Utility.ShowDialog(new frmGroup(groupdObj));
                         RefreshTreeData(groupdObj, IsEdit, ledgerlevel);
@@ -43,7 +43,7 @@ namespace IIT
                     break;
                 case 2:
                     {
-                        SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID) : 
+                        SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) : 
                             new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
                         Utility.ShowDialog(new frmSubGroup(subGroupdObj));
                         RefreshTreeData(subGroupdObj, IsEdit, ledgerlevel);
@@ -51,7 +51,7 @@ namespace IIT
                     break;
                 case 3:
                     {
-                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedgerDetails(entityID) :
+                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedger(entityID,Utility.CurrentEntity.ID) :
                             new Ledger() { ClassificationID = HeadID, 
                                 GroupID = tlLedger.FocusedNode.ParentNode.ParentNode["LedgerID"],
                                 SubGroupID = tlLedger.FocusedNode.ParentNode["LedgerID"]
@@ -105,7 +105,7 @@ namespace IIT
 
         private void BindDataSource()
         {
-            dt = new LedgerRepository().GetLedgerData(HeadID);
+            dt = new LedgerRepository().GetLedgerData(HeadID, Utility.CurrentEntity.ID);
             tlLedger.DataSource = dt;
             tlLedger.KeyFieldName = "ID";
             tlLedger.ParentFieldName = "ParentID";
@@ -119,6 +119,10 @@ namespace IIT
             BindDataSource();
         }
 
-        
+        private void frmLedgerList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

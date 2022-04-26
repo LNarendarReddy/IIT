@@ -28,6 +28,7 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_CU_GROUP]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", groupObj.EntityID);
                     cmd.Parameters.AddWithValue("@GroupID", groupObj.ID);
                     cmd.Parameters.AddWithValue("@GroupName", groupObj.Name);
                     cmd.Parameters.AddWithValue("@Description", groupObj.Description);
@@ -45,7 +46,10 @@ namespace Repository
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error While saving group : {ex.Message} ", ex);
+                if (ex.Message.Contains("UC_TBLGROUP_GROUPNAME"))
+                    throw new Exception("Group Name Alread Exists!");
+                else
+                    throw new Exception($"Error While saving group : {ex.Message} ", ex);
             }
             finally
             {
@@ -55,7 +59,7 @@ namespace Repository
             return groupObj;
         }
 
-        public DataTable GetGroupList()
+        public DataTable GetGroupList(object EntityID)
         {
             DataTable dtGroupList = new DataTable();
             try
@@ -65,6 +69,7 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_GROUP]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dtGroupList);
@@ -83,7 +88,7 @@ namespace Repository
             return dtGroupList;
         }
 
-        public Group GetGroupDetails(object GroupID)
+        public Group GetGroupDetails(object GroupID,object EntityID)
         {
             DataTable dtGroup = new DataTable();
             try
@@ -93,6 +98,7 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_GROUP]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     cmd.Parameters.AddWithValue("@GROUPID", GroupID);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {

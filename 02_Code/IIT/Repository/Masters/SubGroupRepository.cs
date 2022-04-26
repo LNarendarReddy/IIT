@@ -46,7 +46,10 @@ namespace Repository
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error While saving sub group : {ex.Message} ", ex);
+                if (ex.Message.Contains("UC_SUBGROUP_SUBGROUPNAME"))
+                    throw new Exception("Sub group already exists!");
+                else
+                    throw new Exception($"Error While saving sub group : {ex.Message} ", ex);
             }
             finally
             {
@@ -56,7 +59,7 @@ namespace Repository
             return subGroupObj;
         }
 
-        public DataTable GetSubGroupList()
+        public DataTable GetSubGroupList(object EntityID)
         {
             DataTable dtGroupList = new DataTable();
             try
@@ -66,6 +69,7 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_SUBGROUP]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dtGroupList);
@@ -84,7 +88,7 @@ namespace Repository
             return dtGroupList;
         }
 
-        public SubGroup GetSubGroupDetails(object SubGroupID)
+        public SubGroup GetSubGroupDetails(object SubGroupID,object EntityID)
         {
             DataTable dtSubGroup = new DataTable();
             try
@@ -94,6 +98,7 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_SUBGROUP]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
                     cmd.Parameters.AddWithValue("@SUBGROUPID", SubGroupID);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {

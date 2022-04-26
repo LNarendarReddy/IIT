@@ -13,13 +13,12 @@ namespace IIT
     {
         public object EntityID;
         public object EntityName;
+        public bool IsEntitySelected = false;
         EntityDataRepository entityDataRepository = new EntityDataRepository();
-
         public frmEntityList()
         {
             InitializeComponent();
         }
-
         private void frmEntityList_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Escape)
@@ -29,26 +28,23 @@ namespace IIT
             else if (e.KeyData == Keys.M && btnModifyEntity.Enabled)
                 btnModifyEntity_Click(null, null);
         }
-
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
             frmEntityType objEntityType = new frmEntityType();
             Utility.ShowDialog(objEntityType);
             BindDatasource();
         }
-
         private void frmEntityList_Load(object sender, EventArgs e)
         {
             Utility.SetGridFormatting(gvEntityList);
             BindDatasource();
         }
-
         private void gvEntityList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             btnModifyEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
             btnExportEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
+            btnViewLogo.Enabled = gvEntityList.FocusedRowHandle >= 0;
         }
-
         private void btnModifyEntity_Click(object sender, EventArgs e)
         {
             if(gvEntityList.FocusedRowHandle < 0)
@@ -68,7 +64,6 @@ namespace IIT
 
             BindDatasource();
         }
-
         private void btnExportEntity_Click(object sender, EventArgs e)
         {
             if (gvEntityList.FocusedRowHandle < 0)
@@ -95,7 +90,6 @@ namespace IIT
                 XtraMessageBox.Show("Export failed : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnImport_Click(object sender, EventArgs e)
         {
             DataSet dsEntityDataFromFile;
@@ -121,11 +115,27 @@ namespace IIT
 
             }
         }
-
         private void BindDatasource()
         {
             gcEntityList.DataSource = entityDataRepository.GetEntityList();
             gvEntityList_FocusedRowChanged(null, null);
+        }
+        private void btnViewLogo_Click(object sender, EventArgs e)
+        {
+            if (gvEntityList.FocusedRowHandle < 0)
+                return;
+            Utility.ShowDialog(new frmEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
+        }
+        private void gvEntityList_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvEntityList.FocusedRowHandle < 0)
+                return;
+            Utility.CurrentEntity = new EntityDataRepository().GetEntityData(
+                gvEntityList.GetFocusedRowCellValue("ENTITYID"));
+            Utility.CurrentEntity.LogoData = new EntityDataRepository().GetEntityLogo(
+                gvEntityList.GetFocusedRowCellValue("ENTITYID"));
+            IsEntitySelected = true;
+            this.Close();
         }
     }
 }

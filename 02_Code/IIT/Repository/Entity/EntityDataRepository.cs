@@ -236,5 +236,51 @@ namespace Repository
                 SQLCon.Sqlconn().Close();
             }
         }
+
+        public byte[] GetEntityLogo(object EntityID)
+        {
+            byte[] imagedata = null;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[AMS_R_ENTITYLOGO]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
+                    object obj = cmd.ExecuteScalar();
+                    imagedata = (byte[])obj;
+                }
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+            return imagedata;
+        }
+
+        public void SaveEntityLogo(object EntityID, byte[] LogoData)
+        {
+            DataSet dsPayment = new DataSet();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_CU_ENTITYLOGO]";
+                    cmd.Parameters.AddWithValue("@ENTITYID", EntityID);
+                    cmd.Parameters.AddWithValue("@LOGODATA", LogoData);
+                    int rowsaffected = cmd.ExecuteNonQuery();
+                    if (rowsaffected == 0)
+                        throw new Exception("Error while saving entity logo");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

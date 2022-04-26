@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraReports.UI;
+using Entity;
 using IIT;
 using System;
 
@@ -19,6 +21,13 @@ namespace IIT
         {
             frmEntityList obj = new frmEntityList();
             Utility.ShowDialog(obj);
+            if (obj.IsEntitySelected && Utility.CurrentEntity?.ID != null)
+            {
+                this.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
+                rpAccounts.Visible = true;
+                rpIIT.Visible = false;
+                ribbonControl1.SelectedPage = rpAccounts;
+            }
         }
 
         private void frmMain_Load(object sender, System.EventArgs e)
@@ -71,6 +80,58 @@ namespace IIT
         private void btnExpenses_ItemClick(object sender, ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmLedgerList(Utility.ExpensesHeadID) { Text = "Expenses Group" });
+        }
+
+        private void btnCashPaymentVoucher_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmVoucher(new Voucher() { VoucherTypeID = 55 }));
+        }
+
+        private void btnBankPaymentVoucher_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmVoucher(new Voucher() { VoucherTypeID = 56 }));
+        }
+
+        private void btnCashRecieptVoucher_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmVoucher(new Voucher() { VoucherTypeID = 57 }));
+        }
+
+        private void btnBankRecieptVoucher_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmVoucher(new Voucher() { VoucherTypeID = 58 }));
+        }
+
+        private void btnVoucherList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Utility.ShowDialog(new frmVoucherList());
+        }
+
+        private void btnExitCompany_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rpIIT.Visible = true;
+            rpAccounts.Visible = false;
+            Utility.CurrentEntity = null;
+            this.Text = "IIT";
+            btnEntity_ItemClick(null, null);
+        }
+
+        private void btnCashPaymentLedger_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ViewLedger(55);
+        }
+
+        private void btnCashRecieptLedger_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ViewLedger(57);
+        }
+        private void ViewLedger(object VoucherTypeID)
+        {
+            rptLedgerPrinting rpt = new rptLedgerPrinting();
+            rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
+            rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
+            rpt.Parameters["VoucherTypeID"].Value = VoucherTypeID;
+            rpt.ShowRibbonPreview();
         }
     }
 }
