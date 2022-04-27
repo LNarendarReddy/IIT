@@ -1,9 +1,6 @@
-﻿using DevExpress.XtraReports.UI;
+﻿using DevExpress.DataAccess.ConnectionParameters;
 using Repository;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
+using System.Data.SqlClient;
 
 namespace IIT
 {
@@ -12,7 +9,8 @@ namespace IIT
         public rptLedgerPrinting()
         {
             InitializeComponent();
-            sqlDataSource1.ConnectionName = SQLCon.connectionString();
+            SqlConnection sqlCon = SQLCon.Sqlconn();
+            sqlDataSource1.ConnectionParameters = new MsSqlConnectionParameters(sqlCon.DataSource, sqlCon.Database, string.Empty, string.Empty, MsSqlAuthorizationType.Windows);
         }
 
     }
