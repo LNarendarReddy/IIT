@@ -10,7 +10,9 @@ namespace IIT
         {
             InitializeComponent();
             SqlConnection sqlCon = SQLCon.Sqlconn();
-            sqlDataSource1.ConnectionParameters = new MsSqlConnectionParameters(sqlCon.DataSource, sqlCon.Database, string.Empty, string.Empty, MsSqlAuthorizationType.Windows);
+            sqlDataSource1.ConnectionParameters = 
+                new MsSqlConnectionParameters(sqlCon.DataSource, 
+                sqlCon.Database, string.Empty, string.Empty, MsSqlAuthorizationType.Windows);
         }
 
     }
