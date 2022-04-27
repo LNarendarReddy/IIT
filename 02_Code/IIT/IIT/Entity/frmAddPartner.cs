@@ -1,13 +1,5 @@
-﻿using DevExpress.XtraEditors;
-using Entity;
+﻿using Entity;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IIT
@@ -20,6 +12,7 @@ namespace IIT
             InitializeComponent();
             txtDINNumber.Enabled = IsCompany;
             txtNumberOfSharesHeld.Enabled = IsCompany;
+            lciNameOfThePartner.Text = IsCompany ? "Name of the Director" : lciNameOfThePartner.Text;
             person = _person;
         }
 
@@ -43,6 +36,12 @@ namespace IIT
         {
             if (!dxValidationProvider1.Validate())
                 return;
+            if(txtDINNumber.Enabled && string.IsNullOrEmpty(txtDINNumber.EditValue?.ToString()))
+            {
+                XtraMessageBox.Show("DIN Number is mandatory", "Mandatory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             person.PersonName = txtNameofthepartner.EditValue;
             person.FatherName = txtFatherName.EditValue;
             person.Address = txtAddress.EditValue;

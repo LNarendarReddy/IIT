@@ -30,7 +30,6 @@ namespace IIT
         private void btnPertnershipFirm_Click(object sender, EventArgs e)
         {
             entityType = 12;
-            EntityData entityData = new EntityData();
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)

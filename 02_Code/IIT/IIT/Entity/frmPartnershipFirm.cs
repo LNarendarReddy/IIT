@@ -1,15 +1,7 @@
-﻿using DevExpress.XtraEditors;
-using Entity;
+﻿using Entity;
 using Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IIT
 {
@@ -19,15 +11,22 @@ namespace IIT
         public bool IsSave = false;
         EntityData entityData = new EntityData();
         bool isLoading = false;
+        bool IsCompany;
+
         public frmPartnershipFirm(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
+            IsCompany = _entityType == 13;
             entityType = _entityType;
-            txtCompanyNumber.Enabled = entityType == 4;
-            lcgPrimaryAddress.Text = entityType == 4 ? "Registered Office as per ROC" : "Residence Address";
-            gcDIN.Visible = entityType == 4;
-            gcNOOfShares.Visible = entityType == 4;
-            this.Text = entityType == 2 ? "Partnership Firm" : entityType == 3 ? "AOP / BOI" : "Company";
+            txtCompanyNumber.Enabled = IsCompany;
+            lcgPrimaryAddress.Text = IsCompany ? "Registered Office as per ROC" : "Office Address";
+            chkSameAddress.Text = IsCompany ? "Business Address same as ROC" : chkSameAddress.Text;
+            gcDIN.Visible = IsCompany;
+            gcNOOfShares.Visible = IsCompany;
+            lciNoOfPartners.Text = IsCompany ? "Number of Directors" : lciNoOfPartners.Text;
+            lciNameOfTheFirm.Text = IsCompany ? "Name of the Company" : lciNameOfTheFirm.Text;
+            btnAddPartner.Text = IsCompany ? "Add Director" : btnAddPartner.Text;
+            this.Text = entityType == 12 ? "Partnership Firm" : entityType == 14 ? "AOP / BOI" : "Company";
 
             if (EntityID > 0)
             {
@@ -166,31 +165,37 @@ namespace IIT
         private void txtHNoR_EditValueChanged(object sender, EventArgs e)
         {
             Utility.PropogateAddress(chkSameAddress, txtHNoR, txtHNoB);
+            entityData.PermanentAddress.HNo = txtHNoR.EditValue;
         }
 
         private void txtAreaR_EditValueChanged(object sender, EventArgs e)
         {
             Utility.PropogateAddress(chkSameAddress, txtAreaR, txtAreaB);
+            entityData.PermanentAddress.Area = txtAreaR.EditValue;
         }
 
         private void txtCityR_EditValueChanged(object sender, EventArgs e)
         {
             Utility.PropogateAddress(chkSameAddress, txtCityR, txtCityB);
+            entityData.PermanentAddress.City = txtCityR.EditValue;
         }
 
         private void txtDistrictR_EditValueChanged(object sender, EventArgs e)
         {
             Utility.PropogateAddress(chkSameAddress, txtDistrictR, txtDistrictB);
+            entityData.PermanentAddress.District = txtDistrictR.EditValue;
         }
 
         private void cmbStateR_EditValueChanged(object sender, EventArgs e)
         {
             Utility.PropogateAddress(chkSameAddress, cmbStateR, cmbStateB);
+            entityData.PermanentAddress.StateID = cmbStateR.EditValue;
         }
 
         private void txtPincodeR_EditValueChanged(object sender, EventArgs e)
         {
             Utility.PropogateAddress(chkSameAddress, txtPincodeR, txtPincodeB);
+            entityData.PermanentAddress.PinCode = txtPincodeR.EditValue;
         }
 
         private void btnAddPartner_Click(object sender, EventArgs e)
@@ -200,7 +205,7 @@ namespace IIT
                 return;
             Person person = new Person();
             person.ID = 0;
-            frmAddPartner obj = new frmAddPartner(person,entityType == 4 ? true : false);
+            frmAddPartner obj = new frmAddPartner(person,entityType == 13 ? true : false);
             Utility.ShowDialog(obj);
             if (person.IsSave)
             {
