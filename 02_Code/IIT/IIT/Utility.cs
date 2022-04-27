@@ -88,5 +88,133 @@ namespace IIT
             memStream.Write(b, 0, b.Length);
             return Image.FromStream(memStream);
         }
+
+        public static string ConvertNum(long Input) // Call this function passing the number you desire to be changed
+        {
+            string output = null;
+            if (Input < 1000)
+                output = FindNumber(Input); // if its less than 1000 then just look it up
+            else
+            {
+                string[] nparts; // used to break the number up into 3 digit parts
+                string n = Input.ToString(); // string version of the number
+                int i = Input.ToString().Length; // length of the string to help break it up
+
+                while (!(i - 3 <= 0))
+                {
+                    n = n.Insert(i - 3, ","); // insert commas to use as splitters
+                    i = i - 3; // this insures that we get the correct number of parts
+                }
+                nparts = n.Split(','); // split the string into the array
+
+                i = Input.ToString().Length; // return i to initial value for reuse
+                int p = 0; // p for parts, used for finding correct suffix
+                foreach (string s in nparts)
+                {
+                    long x = Convert.ToInt64(s); // x is used to compare the part value to other values
+                    p = p + 1;
+                    if (p == nparts.Length)
+                    {
+                        if (x != 0)
+                        {
+                            if (Convert.ToInt64(s) < 100)
+                                output = output + " And " + FindNumber(Convert.ToInt64(s)); // look up the number, no suffix 
+                            else
+                                output = output + " " + FindNumber(Convert.ToInt64(s));
+                        }
+                    }
+                    else if (x != 0)
+                    {
+                        if (output == null)
+                            output = output + FindNumber(Convert.ToInt64(s)) + " " + FindSuffix(i, Convert.ToInt64(s)); // look up the number and suffix
+                        else
+                            output = output + " " + FindNumber(Convert.ToInt64(s)) + " " + FindSuffix(i, Convert.ToInt64(s));// look up the snumber and suffix
+                    }
+                    i = i - 3; // reduce the suffix counter by 3 to step down to the next suffix
+                }
+            }
+            return output + " Only";
+        }
+
+        private static string FindNumber(long Number)
+        {
+            string Words = null;
+            string[] Digits = new[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" };
+            string[] Teens = new[] { "", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+
+            if (Number < 11)
+                Words = Digits[Number];
+            else if (Number < 20)
+                Words = Teens[Number - 10];
+            else if (Number == 20)
+                Words = "Twenty";
+            else if (Number < 30)
+                Words = "Twenty " + Digits[Number - 20];
+            else if (Number == 30)
+                Words = "Thirty";
+            else if (Number < 40)
+                Words = "Thirty " + Digits[Number - 30];
+            else if (Number == 40)
+                Words = "Fourty";
+            else if (Number < 50)
+                Words = "Fourty " + Digits[Number - 40];
+            else if (Number == 50)
+                Words = "Fifty";
+            else if (Number < 60)
+                Words = "Fifty " + Digits[Number - 50];
+            else if (Number == 60)
+                Words = "Sixty";
+            else if (Number < 70)
+                Words = "Sixty " + Digits[Number - 60];
+            else if (Number == 70)
+                Words = "Seventy";
+            else if (Number < 80)
+                Words = "Seventy " + Digits[Number - 70];
+            else if (Number == 80)
+                Words = "Eighty";
+            else if (Number < 90)
+                Words = "Eighty " + Digits[Number - 80];
+            else if (Number == 90)
+                Words = "Ninety";
+            else if (Number < 100)
+                Words = "Ninety " + Digits[Number - 90];
+            else if (Number < 1000)
+            {
+                Words = Number.ToString();
+                Words = Words.Insert(1, ",");
+                string[] wparts = Words.Split(',');
+                Words = FindNumber(Convert.ToInt64(wparts[0])) + " " + "Hundred";
+                string n = FindNumber(Convert.ToInt64(wparts[1]));
+                if (Convert.ToInt64(wparts[1]) != 0)
+                    Words = Words + " And " + n;
+            }
+
+            return Words;
+        }
+
+        private static string FindSuffix(long Length, long l)
+        {
+            string word;
+
+            if (l != 0)
+            {
+                if (Length > 12)
+                    word = "Trillion";
+                else if (Length > 9)
+                    word = "Billion";
+                else if (Length > 6)
+                    word = "Million";
+                else if (Length > 3)
+                    word = "Thousand";
+                else if (Length > 2)
+                    word = "Hundred";
+                else
+                    word = "";
+            }
+            else
+                word = "";
+
+            return word;
+        }
     }
 }

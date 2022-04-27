@@ -97,7 +97,7 @@ namespace IIT
                 rpt.Parameters["VoucherDate"].Value = voucherObj.VoucherDate;
                 rpt.Parameters["VoucherNumber"].Value = voucherObj.VoucherNumber;
                 rpt.Parameters["AmountInRupees"].Value = voucherObj.Amount;
-                rpt.Parameters["AmountInWords"].Value = string.Empty;
+                rpt.Parameters["AmountInWords"].Value = voucherObj.AmountInWords;
                 rpt.Parameters["LedgerName"].Value = luPaymentMadeto.Text;
                 rpt.Parameters["BankName"].Value = luBankAccount.Text;
                 rpt.Parameters["Purpose"].Value = voucherObj.Purpose;
@@ -151,12 +151,17 @@ namespace IIT
         {
             try
             {
-                //if(long.TryParse(Convert.ToString(txtAmountIRupees.EditValue),out long dValue))
-                //NumeriCon.ConvertNum(dValue);
+                voucherObj.AmountInWords = string.Empty;
+                if (long.TryParse(Convert.ToString(txtAmountIRupees.EditValue), out long dValue))
+                {
+                    voucherObj.AmountInWords = Utility.ConvertNum(dValue);
+                }
+
+                txtAmountInWords.Text = Convert.ToString(voucherObj.AmountInWords);
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Error while converting numbers to words");
+                XtraMessageBox.Show("Error while converting numbers to words : " + ex.Message);
             }
         }
     }

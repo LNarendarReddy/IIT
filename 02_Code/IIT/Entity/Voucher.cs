@@ -17,5 +17,7 @@
         public object VoucherTypeID { get; set; }
         public object EntityID { get; set; }
 
+        public object AmountInWords { get; set; }
+
     }
 }
