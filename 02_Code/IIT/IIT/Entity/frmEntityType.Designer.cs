@@ -186,13 +186,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 313);
             this.Controls.Add(this.layoutControl1);
-            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmEntityType";
-            this.Text = "Entity Type";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEntityType_KeyDown);
+            this.Size = new System.Drawing.Size(537, 313);
+            this.Load += new System.EventHandler(this.frmEntityType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();

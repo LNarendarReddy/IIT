@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid.Views.Base;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -9,14 +10,19 @@ using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmEntityList : XtraForm
+    public partial class frmEntityList : NavigationBase
     {
         public object EntityID;
         public object EntityName;
         public bool IsEntitySelected = false;
         EntityDataRepository entityDataRepository = new EntityDataRepository();
-        public frmEntityList()
-        {
+
+        public override NavigationBase PreviousControl { get => base.PreviousControl; set { } }
+        public override List<string> HelpText => new List<string> { "Create", "Modify", "test" };
+
+
+        public frmEntityList() 
+        {    
             InitializeComponent();
         }
         private void btnCreateEntity_Click(object sender, EventArgs e)
@@ -126,14 +132,12 @@ namespace IIT
             Utility.CurrentEntity.LogoData = new EntityDataRepository().GetEntityLogo(
                 gvEntityList.GetFocusedRowCellValue("ENTITYID"));
             IsEntitySelected = true;
-            this.Close();
+            //this.Close();
         }
 
         private void frmEntityList_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Escape)
-                this.Close();
-            else if (e.KeyChar == (char)Keys.C)
+            if (e.KeyChar == (char)Keys.C)
                 btnCreateEntity_Click(null, null);
             else if (e.KeyChar == (char)Keys.M && btnModifyEntity.Enabled)
                 btnModifyEntity_Click(null, null);

@@ -21,6 +21,23 @@ namespace IIT
             frm.ShowDialog();
         }
 
+        public static void ShowDialog(NavigationBase frm)
+        {
+            if (frm == null) return;
+
+            frm.Dock = System.Windows.Forms.DockStyle.Fill;            
+            frm.AutoSize = true;
+            if(frmSingularMain.Instance.pcMain.Controls.Count == 1 && frm.PreviousControl == null)
+            {
+                frm.PreviousControl = frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase;
+            }
+
+            frmSingularMain.Instance.pcMain.Controls.Clear();
+            frmSingularMain.Instance.pcMain.Controls.Add(frm);
+
+            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine, frm.HelpText);
+        }
+
         public static void SetGridFormatting(GridView gridView)
         {
             gridView.Appearance.HeaderPanel.Font = new Font("Arial", 9F, FontStyle.Bold);

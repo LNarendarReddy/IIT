@@ -1115,8 +1115,7 @@
             // frmPartnershipFirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;            
             this.ClientSize = new System.Drawing.Size(1098, 728);
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);

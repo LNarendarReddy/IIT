@@ -1,18 +1,20 @@
 ﻿using Entity;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmEntityIndividual : DevExpress.XtraEditors.XtraForm
+    public partial class frmEntityIndividual : NavigationBase
     {
         int entityType = 0;
         public bool IsSave = false;
         EntityData entityData = null;
         bool isLoading = false;
+
         public frmEntityIndividual(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
@@ -31,6 +33,8 @@ namespace IIT
 
         private void frmEntityIndividual_Load(object sender, EventArgs e)
         {
+            txtPersonName.Focus();
+
             cmbCurrency.Properties.DataSource = LookUpUtility.GetCurrencies();
             cmbCurrency.Properties.DisplayMember = "LOOKUPVALUE";
             cmbCurrency.Properties.ValueMember = "ENTITYLOOKUPID";
@@ -156,7 +160,7 @@ namespace IIT
             new EntityDataRepository().Save(entityData);
             IsSave = true;
             frmMain.Instance.UpdateStatusBar("Entity save successful");
-            this.Close();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
@@ -212,7 +216,7 @@ namespace IIT
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void btnAddGSTNumber_Click(object sender, EventArgs e)

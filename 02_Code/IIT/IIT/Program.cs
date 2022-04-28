@@ -27,7 +27,7 @@ namespace IIT
             SkinManager.EnableMdiFormSkins();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(frmMain.Instance);
+            Application.Run(frmSingularMain.Instance);
         }
     }
     public class SkinRegistration : Component

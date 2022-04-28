@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace IIT
 {
-    public partial class frmPartnershipFirm : DevExpress.XtraEditors.XtraForm
+    public partial class frmPartnershipFirm : NavigationBase
     {
         int entityType = 0;
         public bool IsSave = false;
@@ -41,6 +41,8 @@ namespace IIT
 
         private void frmPartnershipFirm_Load(object sender, EventArgs e)
         {
+            txtEntityName.Focus();
+
             cmbCurrency.Properties.DataSource = LookUpUtility.GetCurrencies();
             cmbCurrency.Properties.DisplayMember = "LOOKUPVALUE";
             cmbCurrency.Properties.ValueMember = "ENTITYLOOKUPID";
@@ -147,12 +149,12 @@ namespace IIT
             new EntityDataRepository().Save(entityData);
             IsSave = true;
             frmMain.Instance.UpdateStatusBar("Entity save successful");
-            this.Close();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void chkSameAddress_CheckedChanged(object sender, EventArgs e)

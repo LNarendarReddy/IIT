@@ -1,10 +1,11 @@
-﻿using Entity;
+﻿using DevExpress.XtraEditors;
+using Entity;
 using System;
 using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmAddPartner : DevExpress.XtraEditors.XtraForm
+    public partial class frmAddPartner : XtraForm
     {
         Person person = null;
         public frmAddPartner(Person _person, bool IsCompany = false)

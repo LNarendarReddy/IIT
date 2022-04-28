@@ -64,12 +64,14 @@
     <Reference Include="IITSkin">
       <HintPath>..\..\..\Skin\IITSkin\IITSkin.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
@@ -82,6 +84,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\frmAddGSTNumber.cs">
@@ -97,13 +101,13 @@
       <DependentUpon>frmAddPartner.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\frmEntityIndividual.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Entity\frmEntityIndividual.Designer.cs">
       <DependentUpon>frmEntityIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\frmEntityList.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Entity\frmEntityList.Designer.cs">
       <DependentUpon>frmEntityList.cs</DependentUpon>
@@ -115,13 +119,13 @@
       <DependentUpon>frmEntityLogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\frmEntityType.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Entity\frmEntityType.Designer.cs">
       <DependentUpon>frmEntityType.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\frmPartnershipFirm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
@@ -131,6 +135,15 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSingularMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSingularMain.Designer.cs">
+      <DependentUpon>frmSingularMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBase.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ledger\frmLedger.cs">
       <SubType>Form</SubType>
@@ -230,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSingularMain.resx">
+      <DependentUpon>frmSingularMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmLedger.resx">
       <DependentUpon>frmLedger.cs</DependentUpon>

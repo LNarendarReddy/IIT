@@ -20,7 +20,7 @@ namespace IIT
         private void btnEntity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmEntityList obj = new frmEntityList();
-            Utility.ShowDialog(obj);
+            //Utility.ShowDialog(obj);
             if (obj.IsEntitySelected && Utility.CurrentEntity?.ID != null)
             {
                 this.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
