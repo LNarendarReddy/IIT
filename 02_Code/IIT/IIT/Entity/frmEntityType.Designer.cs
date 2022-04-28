@@ -190,7 +190,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmEntityType";
             this.Size = new System.Drawing.Size(537, 313);
-            this.Load += new System.EventHandler(this.frmEntityType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();

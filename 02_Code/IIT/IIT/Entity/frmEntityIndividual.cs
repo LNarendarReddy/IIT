@@ -32,9 +32,7 @@ namespace IIT
         }
 
         private void frmEntityIndividual_Load(object sender, EventArgs e)
-        {
-            txtPersonName.Focus();
-
+        { 
             cmbCurrency.Properties.DataSource = LookUpUtility.GetCurrencies();
             cmbCurrency.Properties.DisplayMember = "LOOKUPVALUE";
             cmbCurrency.Properties.ValueMember = "ENTITYLOOKUPID";

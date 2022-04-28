@@ -47,10 +47,5 @@ namespace IIT
             if (obj.IsSave)
                 frmSingularMain.Instance.RollbackControl();
         }
-
-        private void frmEntityType_Load(object sender, EventArgs e)
-        {
-            btnIndividualFirm.Focus();
-        }
     }
 }

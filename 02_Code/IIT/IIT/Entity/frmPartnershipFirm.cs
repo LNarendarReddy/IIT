@@ -41,8 +41,6 @@ namespace IIT
 
         private void frmPartnershipFirm_Load(object sender, EventArgs e)
         {
-            txtEntityName.Focus();
-
             cmbCurrency.Properties.DataSource = LookUpUtility.GetCurrencies();
             cmbCurrency.Properties.DisplayMember = "LOOKUPVALUE";
             cmbCurrency.Properties.ValueMember = "ENTITYLOOKUPID";

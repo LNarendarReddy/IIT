@@ -34,7 +34,7 @@ namespace IIT
 
             frmSingularMain.Instance.pcMain.Controls.Clear();
             frmSingularMain.Instance.pcMain.Controls.Add(frm);
-
+            frm.Focus();
             frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine, frm.HelpText);
         }
 
