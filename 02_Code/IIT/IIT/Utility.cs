@@ -21,21 +21,21 @@ namespace IIT
             frm.ShowDialog();
         }
 
-        public static void ShowDialog(NavigationBase frm)
+        public static void ShowDialog(NavigationBase userControl)
         {
-            if (frm == null) return;
+            if (userControl == null) return;
 
-            frm.Dock = System.Windows.Forms.DockStyle.Fill;            
-            frm.AutoSize = true;
-            if(frmSingularMain.Instance.pcMain.Controls.Count == 1 && frm.PreviousControl == null)
+            userControl.Dock = System.Windows.Forms.DockStyle.Fill;            
+            userControl.AutoSize = true;
+            if(frmSingularMain.Instance.pcMain.Controls.Count == 1 && userControl.PreviousControl == null)
             {
-                frm.PreviousControl = frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase;
+                userControl.PreviousControl = frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase;
             }
 
             frmSingularMain.Instance.pcMain.Controls.Clear();
-            frmSingularMain.Instance.pcMain.Controls.Add(frm);
-            frm.Focus();
-            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine, frm.HelpText);
+            frmSingularMain.Instance.pcMain.Controls.Add(userControl);
+            userControl.Focus();
+            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine, userControl.HelpText);
         }
 
         public static void SetGridFormatting(GridView gridView)

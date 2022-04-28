@@ -34,6 +34,7 @@ namespace IIT
         private void frmEntityList_Load(object sender, EventArgs e)
         {
             Utility.SetGridFormatting(gvEntityList);
+            this.Parent.KeyPress += frmEntityList_KeyPress;
             BindDatasource();
         }
         private void gvEntityList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
