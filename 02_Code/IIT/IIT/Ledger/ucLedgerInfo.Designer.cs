@@ -62,7 +62,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(371, 259);
+            this.layoutControl1.Size = new System.Drawing.Size(156, 253);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -70,7 +70,7 @@
             // 
             this.btnExpenses.Location = new System.Drawing.Point(32, 194);
             this.btnExpenses.Name = "btnExpenses";
-            this.btnExpenses.Size = new System.Drawing.Size(307, 27);
+            this.btnExpenses.Size = new System.Drawing.Size(92, 27);
             this.btnExpenses.StyleController = this.layoutControl1;
             this.btnExpenses.TabIndex = 3;
             this.btnExpenses.Text = "Expenses";
@@ -80,7 +80,7 @@
             // 
             this.btnIncome.Location = new System.Drawing.Point(32, 147);
             this.btnIncome.Name = "btnIncome";
-            this.btnIncome.Size = new System.Drawing.Size(307, 27);
+            this.btnIncome.Size = new System.Drawing.Size(92, 27);
             this.btnIncome.StyleController = this.layoutControl1;
             this.btnIncome.TabIndex = 2;
             this.btnIncome.Text = "Income";
@@ -90,7 +90,7 @@
             // 
             this.btnAssets.Location = new System.Drawing.Point(32, 100);
             this.btnAssets.Name = "btnAssets";
-            this.btnAssets.Size = new System.Drawing.Size(307, 27);
+            this.btnAssets.Size = new System.Drawing.Size(92, 27);
             this.btnAssets.StyleController = this.layoutControl1;
             this.btnAssets.TabIndex = 1;
             this.btnAssets.Text = "Assets";
@@ -100,7 +100,7 @@
             // 
             this.btnLiabilities.Location = new System.Drawing.Point(32, 53);
             this.btnLiabilities.Name = "btnLiabilities";
-            this.btnLiabilities.Size = new System.Drawing.Size(307, 27);
+            this.btnLiabilities.Size = new System.Drawing.Size(92, 27);
             this.btnLiabilities.StyleController = this.layoutControl1;
             this.btnLiabilities.TabIndex = 0;
             this.btnLiabilities.Text = "Liabilities";
@@ -113,7 +113,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(371, 259);
+            this.Root.Size = new System.Drawing.Size(156, 253);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -129,7 +129,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(351, 239);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(136, 233);
             this.layoutControlGroup1.Text = "Ledger Creation";
             // 
             // layoutControlItem1
@@ -138,7 +138,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(327, 47);
+            this.layoutControlItem1.Size = new System.Drawing.Size(112, 47);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -148,7 +148,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(327, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(112, 47);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -158,7 +158,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 94);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem3.Size = new System.Drawing.Size(327, 47);
+            this.layoutControlItem3.Size = new System.Drawing.Size(112, 47);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -168,7 +168,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 141);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(327, 53);
+            this.layoutControlItem4.Size = new System.Drawing.Size(112, 47);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
