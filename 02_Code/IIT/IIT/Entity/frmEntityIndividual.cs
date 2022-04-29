@@ -159,6 +159,7 @@ namespace IIT
             IsSave = true;
             frmMain.Instance.UpdateStatusBar("Entity save successful");
             frmSingularMain.Instance.RollbackControl();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
@@ -214,6 +215,7 @@ namespace IIT
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            frmSingularMain.Instance.RollbackControl();
             frmSingularMain.Instance.RollbackControl();
         }
 

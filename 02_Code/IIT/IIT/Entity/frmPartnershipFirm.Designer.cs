@@ -196,6 +196,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.AutoSize = true;
             this.layoutControl1.Controls.Add(this.txtCompanyNumber);
             this.layoutControl1.Controls.Add(this.gcPartners);
             this.layoutControl1.Controls.Add(this.btnAddPartner);
@@ -1120,8 +1121,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(1098, 728);
             this.Name = "frmPartnershipFirm";
             this.Size = new System.Drawing.Size(1098, 728);
             this.Load += new System.EventHandler(this.frmPartnershipFirm_Load);
@@ -1189,6 +1193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

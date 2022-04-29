@@ -148,10 +148,12 @@ namespace IIT
             IsSave = true;
             frmMain.Instance.UpdateStatusBar("Entity save successful");
             frmSingularMain.Instance.RollbackControl();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            frmSingularMain.Instance.RollbackControl();
             frmSingularMain.Instance.RollbackControl();
         }
 

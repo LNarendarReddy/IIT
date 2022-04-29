@@ -29,13 +29,14 @@ namespace IIT
 
             userControl.Dock = System.Windows.Forms.DockStyle.Fill;            
             userControl.AutoSize = true;
-            if(frmSingularMain.Instance.pcMain.Controls.Count == 1 && userControl.PreviousControl == null)
+            if(frmSingularMain.Instance.tpMain.Controls.Count == 1 && userControl.PreviousControl == null)
             {
-                userControl.PreviousControl = frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase;
+                userControl.PreviousControl = frmSingularMain.Instance.tpMain.Controls[0] as NavigationBase;
             }
 
-            frmSingularMain.Instance.pcMain.Controls.Clear();
-            frmSingularMain.Instance.pcMain.Controls.Add(userControl);
+            frmSingularMain.Instance.tpMain.Controls.Clear();
+            frmSingularMain.Instance.tpMain.Controls.Add(userControl);
+            frmSingularMain.Instance.tpMain.SetCell(userControl, 1, 1);
             userControl.Focus();
             frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine, userControl.HelpText);
         }

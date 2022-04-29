@@ -134,6 +134,8 @@ namespace IIT
         }
         private void frmEntityList_ParentChanged(object sender, EventArgs e)
         {
+            if (Parent == null) return;
+
             BindDatasource();
             Utility.CurrentEntity = null;
             frmSingularMain.Instance.Text = "IIT";

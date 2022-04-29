@@ -34,6 +34,7 @@
             this.lblHelpText = new DevExpress.XtraEditors.LabelControl();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
+            this.tpMain = new DevExpress.Utils.Layout.TablePanel();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -53,6 +54,8 @@
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcMain)).BeginInit();
+            this.pcMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tpMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -121,10 +124,27 @@
             // 
             // pcMain
             // 
+            this.pcMain.Controls.Add(this.tpMain);
             this.pcMain.Location = new System.Drawing.Point(8, 8);
             this.pcMain.Name = "pcMain";
             this.pcMain.Size = new System.Drawing.Size(939, 471);
             this.pcMain.TabIndex = 4;
+            // 
+            // tpMain
+            // 
+            this.tpMain.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpMain.Location = new System.Drawing.Point(2, 2);
+            this.tpMain.Name = "tpMain";
+            this.tpMain.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tpMain.Size = new System.Drawing.Size(935, 467);
+            this.tpMain.TabIndex = 0;
             // 
             // Root
             // 
@@ -276,6 +296,8 @@
             this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcMain)).EndInit();
+            this.pcMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tpMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -306,5 +328,6 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         public DevExpress.XtraEditors.LabelControl lblHelpText;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        public DevExpress.Utils.Layout.TablePanel tpMain;
     }
 }
