@@ -1,20 +1,14 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraReports.UI;
 using Entity;
 using Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmVoucher : DevExpress.XtraEditors.XtraForm
+    public partial class frmVoucher : NavigationBase
     {
         Voucher voucherObj;
         public frmVoucher(Voucher _voucherObj)
@@ -25,7 +19,7 @@ namespace IIT
             {
                 case 55:
                     lblformHeader.Text = "CASH PAYMENT VOUCHER";
-                    lciBankAccount.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lciBankAccount.Visibility = LayoutVisibility.Never;
                     lciPaymentMadeTo.Text = "Payment Made to : ";
                     lciPurpose.Text = "Purpose of the Payment ";
                     break;
@@ -37,7 +31,7 @@ namespace IIT
                     break;
                 case 57:
                     lblformHeader.Text = "CASH RECIEPT VOUCHER";
-                    lciBankAccount.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                    lciBankAccount.Visibility = LayoutVisibility.Never;
                     lciPaymentMadeTo.Text = "Amount received From : ";
                     lciPurpose.Text = "Purpose of the Reciept ";
                     break;
@@ -46,6 +40,18 @@ namespace IIT
                     lciPaymentMadeTo.Text = "Amount received From : ";
                     lciBankAccount.Text = "Amount Credit to : ";
                     lciPurpose.Text = "Purpose of the Reciept ";
+                    break;
+                case 59:
+                    lblformHeader.Text = "CONTRA VOUCHER - Withdrawal";
+                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
+                    lciBankAccount.Text = "Amount Withdrawn from : ";
+                    lciPurpose.Text = "Reasons ";
+                    break;
+                case 60:
+                    lblformHeader.Text = "CONTRA VOUCHER - Deposit";
+                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
+                    lciBankAccount.Text = "Amount Deposited in to : ";
+                    lciPurpose.Text = "Reasons ";
                     break;
                 default:
                     break;
@@ -107,12 +113,14 @@ namespace IIT
                     case 55:
                         rpt.Parameters["VoucherCaption"].Value = "CASH PAYMENT VOUCHER";
                         rpt.Parameters["IsBankVoucher"].Value = false;
+                        rpt.Parameters["IsContraVoucher"].Value = false;
                         rpt.Parameters["LedgerNameCaption"].Value = "Payment Made to : ";
                         rpt.Parameters["PurposeCaption"].Value = "Purpose of the Payment : ";
                         break;
                     case 56:
                         rpt.Parameters["VoucherCaption"].Value = "BANK PAYMENT VOUCHER";
                         rpt.Parameters["IsBankVoucher"].Value = true;
+                        rpt.Parameters["IsContraVoucher"].Value = false;
                         rpt.Parameters["LedgerNameCaption"].Value = "Payment Made to : ";
                         rpt.Parameters["BankNameCaption"].Value = "Payment Made from : ";
                         rpt.Parameters["PurposeCaption"].Value = "Purpose of the Payment : ";
@@ -120,21 +128,37 @@ namespace IIT
                     case 57:
                         rpt.Parameters["VoucherCaption"].Value = "CASH RECIEPT VOUCHER";
                         rpt.Parameters["IsBankVoucher"].Value = false;
+                        rpt.Parameters["IsContraVoucher"].Value = false;
                         rpt.Parameters["LedgerNameCaption"].Value = "Amount received From : ";
                         rpt.Parameters["PurposeCaption"].Value = "Purpose of the Reciept : ";
                         break;
                     case 58:
                         rpt.Parameters["VoucherCaption"].Value = "BANK RECIEPT VOUCHER";
                         rpt.Parameters["IsBankVoucher"].Value = true;
+                        rpt.Parameters["IsContraVoucher"].Value = false;
                         rpt.Parameters["LedgerNameCaption"].Value = "Amount received From : ";
                         rpt.Parameters["BankNameCaption"].Value = "Amount Credit to : ";
                         rpt.Parameters["PurposeCaption"].Value = "Purpose of the Reciept : ";
+                        break;
+                    case 59:
+                        rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Withdrawal";
+                        rpt.Parameters["IsBankVoucher"].Value = true;
+                        rpt.Parameters["IsContraVoucher"].Value = true;
+                        rpt.Parameters["BankNameCaption"].Value = "Amount Withdrawn from : ";
+                        rpt.Parameters["PurposeCaption"].Value = "Reasons : ";
+                        break;
+                    case 60:
+                        rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Deposit";
+                        rpt.Parameters["IsBankVoucher"].Value = true;
+                        rpt.Parameters["IsContraVoucher"].Value = true;
+                        rpt.Parameters["BankNameCaption"].Value = "Amount received From : ";
+                        rpt.Parameters["PurposeCaption"].Value = "Reasons : ";
                         break;
                     default:
                         break;
                 }
                 rpt.ShowRibbonPreview();
-                Close();
+                frmSingularMain.Instance.RollbackControl();
             }
             catch (Exception ex)
             {
@@ -144,18 +168,17 @@ namespace IIT
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmSingularMain.Instance.RollbackControl();
         }
 
         private void txtAmountIRupees_Leave(object sender, EventArgs e)
         {
             try
             {
-                voucherObj.AmountInWords = string.Empty;
-                if (long.TryParse(Convert.ToString(txtAmountIRupees.EditValue), out long dValue))
-                {
-                    voucherObj.AmountInWords = Utility.ConvertNum(dValue);
-                }
+                voucherObj.AmountInWords = 
+                    long.TryParse(Convert.ToString(txtAmountIRupees.EditValue), out long dValue) 
+                        ? Utility.ConvertNum(dValue) 
+                        : string.Empty;
 
                 txtAmountInWords.Text = Convert.ToString(voucherObj.AmountInWords);
             }

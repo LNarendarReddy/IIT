@@ -81,6 +81,7 @@
             this.PurposeCaption = new DevExpress.XtraReports.Parameters.Parameter();
             this.VoucherCaption = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsBankVoucher = new DevExpress.XtraReports.Parameters.Parameter();
+            this.IsContraVoucher = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -379,6 +380,8 @@
             this.xrTableRow7.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell14,
             this.xrTableCell15});
+            this.xrTableRow7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "!?IsContraVoucher")});
             this.xrTableRow7.Name = "xrTableRow7";
             this.xrTableRow7.Weight = 1.1999999692033267D;
             // 
@@ -418,7 +421,7 @@
             this.xrTableCell16,
             this.xrTableCell17});
             this.xrTableRow8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 56 OR ?VoucherTypeID = 58, true ,false )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "?IsBankVoucher")});
             this.xrTableRow8.Name = "xrTableRow8";
             this.xrTableRow8.Weight = 1.199999969203327D;
             // 
@@ -617,6 +620,14 @@
             this.IsBankVoucher.ValueInfo = "False";
             this.IsBankVoucher.Visible = false;
             // 
+            // IsContraVoucher
+            // 
+            this.IsContraVoucher.Description = "IsContraVoucher";
+            this.IsContraVoucher.Name = "IsContraVoucher";
+            this.IsContraVoucher.Type = typeof(bool);
+            this.IsContraVoucher.ValueInfo = "False";
+            this.IsContraVoucher.Visible = false;
+            // 
             // rptVoucher
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -639,7 +650,8 @@
             this.BankNameCaption,
             this.PurposeCaption,
             this.VoucherCaption,
-            this.IsBankVoucher});
+            this.IsBankVoucher,
+            this.IsContraVoucher});
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -703,5 +715,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell6;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
+        private DevExpress.XtraReports.Parameters.Parameter IsContraVoucher;
     }
 }

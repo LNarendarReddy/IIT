@@ -164,7 +164,7 @@
       <DependentUpon>frmVoucherList.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmVoucher.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ledger\frmVoucher.Designer.cs">
       <DependentUpon>frmVoucher.cs</DependentUpon>

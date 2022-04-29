@@ -233,5 +233,12 @@ namespace IIT
 
             return word;
         }
+
+        public static Tuple<DateTime, DateTime> GetFinYear(DateTime inputDate)
+        {
+            DateTime startDate = new DateTime(inputDate.Month < 4 ? inputDate.Year - 1 : inputDate.Year, 4, 1);
+            DateTime endDate = new DateTime(startDate.Year + 1, 3, 31);
+            return new Tuple<DateTime, DateTime>(startDate, endDate);
+        }
     }
 }
