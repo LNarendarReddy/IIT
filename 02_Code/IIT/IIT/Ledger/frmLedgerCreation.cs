@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmLedgerList : NavigationBase
+    public partial class frmLedgerCreation : NavigationBase
     {
         object HeadID = null;
         DataTable dt = null;
-        public frmLedgerList(object _HeadID, string HeadName)
+        public frmLedgerCreation(object _HeadID, string HeadName)
         {
             InitializeComponent();
             HeadID = _HeadID;

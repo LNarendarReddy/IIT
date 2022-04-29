@@ -45,7 +45,7 @@ namespace IIT
 
         private void btnLedgerPrinting_Click(object sender, EventArgs e)
         {
-
+            Utility.ShowDialog(new ucLedgerList());
         }
     }
 }

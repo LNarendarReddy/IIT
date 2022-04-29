@@ -425,10 +425,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 471);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmVoucher";
-            this.Text = "Voucher";
+            this.Size = new System.Drawing.Size(747, 471);
             this.Load += new System.EventHandler(this.frmVoucherNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
