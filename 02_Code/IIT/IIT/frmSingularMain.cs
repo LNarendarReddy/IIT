@@ -21,7 +21,7 @@ namespace IIT
 
         public void RollbackControl()
         {
-            Utility.ShowDialog((tpMain.Controls[0] as NavigationBase)?.PreviousControl);
+            Utility.ShowDialog((pcMain.Controls[0] as NavigationBase)?.PreviousControl);
         }
 
         private void frmSingularMain_KeyPress(object sender, KeyPressEventArgs e)
