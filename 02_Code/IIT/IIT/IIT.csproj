@@ -155,6 +155,12 @@
     <Compile Include="frmSingularMain.Designer.cs">
       <DependentUpon>frmSingularMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ledger\ucLedgerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ledger\ucLedgerList.Designer.cs">
+      <DependentUpon>ucLedgerList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ledger\ucVoucherType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\Report\rptVoucher.resx">
       <DependentUpon>rptVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\ucLedgerList.resx">
+      <DependentUpon>ucLedgerList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\ucVoucherType.resx">
       <DependentUpon>ucVoucherType.cs</DependentUpon>
