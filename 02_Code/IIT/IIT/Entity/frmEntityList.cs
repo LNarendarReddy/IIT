@@ -143,5 +143,10 @@ namespace IIT
             else if (e.KeyChar == (char)Keys.M && btnModifyEntity.Enabled)
                 btnModifyEntity_Click(null, null);
         }
+
+        private void frmEntityList_ParentChanged(object sender, EventArgs e)
+        {
+            BindDatasource();
+        }
     }
 }

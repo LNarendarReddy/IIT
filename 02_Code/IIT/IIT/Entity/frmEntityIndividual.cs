@@ -70,7 +70,7 @@ namespace IIT
 
                 cmbGSTNumber.Properties.DataSource = entityData.GSTRegNo;
                 cmbGSTNumber.Properties.ValueMember = "ID";
-                cmbGSTNumber.Properties.DisplayMember = "GSTNO";
+                cmbGSTNumber.Properties.DisplayMember = "GSTNo";
                 cmbGSTNumber.EditValue = entityData.PrimaryGST.ID;
 
                 txtPersonName.EditValue = entityData.PersonData.First().PersonName;

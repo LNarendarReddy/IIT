@@ -314,6 +314,7 @@
             this.Size = new System.Drawing.Size(1305, 665);
             this.Load += new System.EventHandler(this.frmEntityList_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmEntityList_KeyPress);
+            this.ParentChanged += new System.EventHandler(this.frmEntityList_ParentChanged);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcEntityList)).EndInit();

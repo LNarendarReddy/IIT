@@ -28,7 +28,7 @@ namespace IIT
 
         public void RollbackControl()
         {
-            Utility.ShowDialog((pcMain.Controls[0] as NavigationBase).PreviousControl);
+            Utility.ShowDialog((pcMain.Controls[0] as NavigationBase)?.PreviousControl);
         }
     }
 }

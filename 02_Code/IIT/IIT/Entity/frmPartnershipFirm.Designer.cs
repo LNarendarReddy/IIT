@@ -742,6 +742,10 @@
             this.cmbGSTNumber.Name = "cmbGSTNumber";
             this.cmbGSTNumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbGSTNumber.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GSTNo", "GST Registration No"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StateName", "State")});
             this.cmbGSTNumber.Properties.NullText = "";
             this.cmbGSTNumber.Size = new System.Drawing.Size(254, 22);
             this.cmbGSTNumber.StyleController = this.layoutControl1;
@@ -1115,12 +1119,11 @@
             // frmPartnershipFirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;            
-            this.ClientSize = new System.Drawing.Size(1098, 728);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPartnershipFirm";
-            this.Text = "Partnership Firm";
+            this.Size = new System.Drawing.Size(1098, 728);
             this.Load += new System.EventHandler(this.frmPartnershipFirm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
