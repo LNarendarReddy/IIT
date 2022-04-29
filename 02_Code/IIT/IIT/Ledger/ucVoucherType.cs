@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class ucVoucherType : DevExpress.XtraEditors.XtraUserControl
+    public partial class ucVoucherType : NavigationBase
     {
         public ucVoucherType()
         {

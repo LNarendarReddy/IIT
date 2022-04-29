@@ -44,6 +44,7 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -55,24 +56,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Appearance.Control.Font = new System.Drawing.Font("Arial", 14F);
             this.layoutControl1.Appearance.Control.Options.UseFont = true;
-            this.layoutControl1.AutoSize = true;
+            this.tablePanel1.SetColumn(this.layoutControl1, 1);
             this.layoutControl1.Controls.Add(this.btnLedgerPrinting);
             this.layoutControl1.Controls.Add(this.btnMISForms);
             this.layoutControl1.Controls.Add(this.btnDayBook);
             this.layoutControl1.Controls.Add(this.btnInventoryEntry);
             this.layoutControl1.Controls.Add(this.btnvoucherEntry);
             this.layoutControl1.Controls.Add(this.btnLeadgerCreation);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(88, 65);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(386, 393);
+            this.tablePanel1.SetRow(this.layoutControl1, 1);
+            this.layoutControl1.Size = new System.Drawing.Size(634, 392);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -80,7 +83,7 @@
             // 
             this.btnLedgerPrinting.Location = new System.Drawing.Point(32, 333);
             this.btnLedgerPrinting.Name = "btnLedgerPrinting";
-            this.btnLedgerPrinting.Size = new System.Drawing.Size(322, 27);
+            this.btnLedgerPrinting.Size = new System.Drawing.Size(570, 27);
             this.btnLedgerPrinting.StyleController = this.layoutControl1;
             this.btnLedgerPrinting.TabIndex = 5;
             this.btnLedgerPrinting.Text = "Ledger Printing";
@@ -90,7 +93,7 @@
             // 
             this.btnMISForms.Location = new System.Drawing.Point(32, 194);
             this.btnMISForms.Name = "btnMISForms";
-            this.btnMISForms.Size = new System.Drawing.Size(322, 27);
+            this.btnMISForms.Size = new System.Drawing.Size(570, 27);
             this.btnMISForms.StyleController = this.layoutControl1;
             this.btnMISForms.TabIndex = 3;
             this.btnMISForms.Text = "MIS Forms";
@@ -99,7 +102,7 @@
             // 
             this.btnDayBook.Location = new System.Drawing.Point(32, 286);
             this.btnDayBook.Name = "btnDayBook";
-            this.btnDayBook.Size = new System.Drawing.Size(322, 27);
+            this.btnDayBook.Size = new System.Drawing.Size(570, 27);
             this.btnDayBook.StyleController = this.layoutControl1;
             this.btnDayBook.TabIndex = 4;
             this.btnDayBook.Text = "Day Book";
@@ -109,7 +112,7 @@
             // 
             this.btnInventoryEntry.Location = new System.Drawing.Point(32, 147);
             this.btnInventoryEntry.Name = "btnInventoryEntry";
-            this.btnInventoryEntry.Size = new System.Drawing.Size(322, 27);
+            this.btnInventoryEntry.Size = new System.Drawing.Size(570, 27);
             this.btnInventoryEntry.StyleController = this.layoutControl1;
             this.btnInventoryEntry.TabIndex = 2;
             this.btnInventoryEntry.Text = "Inventory Entry";
@@ -118,16 +121,17 @@
             // 
             this.btnvoucherEntry.Location = new System.Drawing.Point(32, 100);
             this.btnvoucherEntry.Name = "btnvoucherEntry";
-            this.btnvoucherEntry.Size = new System.Drawing.Size(322, 27);
+            this.btnvoucherEntry.Size = new System.Drawing.Size(570, 27);
             this.btnvoucherEntry.StyleController = this.layoutControl1;
             this.btnvoucherEntry.TabIndex = 1;
             this.btnvoucherEntry.Text = "Voucher Entry";
+            this.btnvoucherEntry.Click += new System.EventHandler(this.btnvoucherEntry_Click_1);
             // 
             // btnLeadgerCreation
             // 
             this.btnLeadgerCreation.Location = new System.Drawing.Point(32, 53);
             this.btnLeadgerCreation.Name = "btnLeadgerCreation";
-            this.btnLeadgerCreation.Size = new System.Drawing.Size(322, 27);
+            this.btnLeadgerCreation.Size = new System.Drawing.Size(570, 27);
             this.btnLeadgerCreation.StyleController = this.layoutControl1;
             this.btnLeadgerCreation.TabIndex = 0;
             this.btnLeadgerCreation.Text = "Ledger Creation";
@@ -141,7 +145,7 @@
             this.layoutControlGroup1,
             this.layoutControlGroup2});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(386, 393);
+            this.Root.Size = new System.Drawing.Size(634, 392);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -157,7 +161,7 @@
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(366, 233);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(614, 233);
             this.layoutControlGroup1.Text = "Accounts";
             // 
             // layoutControlItem1
@@ -166,7 +170,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(342, 47);
+            this.layoutControlItem1.Size = new System.Drawing.Size(590, 47);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -176,7 +180,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(342, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(590, 47);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -186,7 +190,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 94);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem3.Size = new System.Drawing.Size(342, 47);
+            this.layoutControlItem3.Size = new System.Drawing.Size(590, 47);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -196,7 +200,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 141);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem5.Size = new System.Drawing.Size(342, 47);
+            this.layoutControlItem5.Size = new System.Drawing.Size(590, 47);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -211,7 +215,7 @@
             this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 233);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(366, 140);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(614, 139);
             this.layoutControlGroup2.Text = "Reports";
             // 
             // layoutControlItem4
@@ -220,7 +224,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(342, 47);
+            this.layoutControlItem4.Size = new System.Drawing.Size(590, 47);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -230,20 +234,35 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem6.Size = new System.Drawing.Size(342, 48);
+            this.layoutControlItem6.Size = new System.Drawing.Size(590, 47);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 54.5F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.layoutControl1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 474F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(810, 521);
+            this.tablePanel1.TabIndex = 1;
             // 
             // ucAccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.tablePanel1);
             this.MinimumSize = new System.Drawing.Size(386, 393);
             this.Name = "ucAccountInfo";
-            this.Size = new System.Drawing.Size(386, 393);
+            this.Size = new System.Drawing.Size(810, 521);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -255,8 +274,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -277,5 +297,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraEditors.SimpleButton btnLedgerPrinting;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }

@@ -43,6 +43,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -53,22 +54,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Appearance.Control.Font = new System.Drawing.Font("Arial", 14F);
             this.layoutControl1.Appearance.Control.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.layoutControl1, 1);
             this.layoutControl1.Controls.Add(this.btnContraDeposit);
             this.layoutControl1.Controls.Add(this.btnContraWithdrawal);
             this.layoutControl1.Controls.Add(this.btnBankReciept);
             this.layoutControl1.Controls.Add(this.btnBankPayment);
             this.layoutControl1.Controls.Add(this.btnCashReciept);
             this.layoutControl1.Controls.Add(this.btnCashPayment);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(113, 105);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
+            this.tablePanel1.SetRow(this.layoutControl1, 1);
             this.layoutControl1.Size = new System.Drawing.Size(507, 348);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
@@ -221,13 +225,30 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 75.96F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.layoutControl1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 478F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(732, 557);
+            this.tablePanel1.TabIndex = 1;
+            // 
             // ucVoucherType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.tablePanel1);
             this.Name = "ucVoucherType";
-            this.Size = new System.Drawing.Size(507, 348);
+            this.Size = new System.Drawing.Size(732, 557);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -238,6 +259,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -259,5 +282,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }

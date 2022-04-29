@@ -127,6 +127,8 @@ namespace IIT
         }
         private void frmEntityList_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (this.Parent == null)
+                return;
             if (e.KeyChar == (char)Keys.C)
                 btnCreateEntity_Click(null, null);
             else if (e.KeyChar == (char)Keys.M && btnModifyEntity.Enabled)

@@ -47,5 +47,10 @@ namespace IIT
         {
             Utility.ShowDialog(new ucLedgerList());
         }
+
+        private void btnvoucherEntry_Click_1(object sender, EventArgs e)
+        {
+            Utility.ShowDialog(new ucVoucherType());
+        }
     }
 }

@@ -39,6 +39,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -47,6 +48,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnIndividualFirm
@@ -63,13 +66,15 @@
             // 
             this.layoutControl1.Appearance.Control.Font = new System.Drawing.Font("Arial", 14F);
             this.layoutControl1.Appearance.Control.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.layoutControl1, 1);
             this.layoutControl1.Controls.Add(this.btnCompany);
             this.layoutControl1.Controls.Add(this.btnAOP);
             this.layoutControl1.Controls.Add(this.btnPertnershipFirm);
             this.layoutControl1.Controls.Add(this.btnIndividualFirm);
-            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
+            this.layoutControl1.Location = new System.Drawing.Point(206, 125);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
+            this.tablePanel1.SetRow(this.layoutControl1, 1);
             this.layoutControl1.Size = new System.Drawing.Size(354, 254);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
@@ -170,16 +175,31 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 98.52F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.layoutControl1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 424F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(766, 504);
+            this.tablePanel1.TabIndex = 1;
+            // 
             // frmEntityType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.tablePanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmEntityType";
-            this.Size = new System.Drawing.Size(360, 260);
+            this.Size = new System.Drawing.Size(766, 504);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -188,6 +208,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -204,5 +226,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }

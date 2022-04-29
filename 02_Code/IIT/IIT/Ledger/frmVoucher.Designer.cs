@@ -61,6 +61,7 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lciBankAccount = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luBankAccount.Properties)).BeginInit();
@@ -85,10 +86,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciBankAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.tablePanel1.SetColumn(this.layoutControl1, 1);
             this.layoutControl1.Controls.Add(this.luBankAccount);
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.btnSave);
@@ -99,11 +103,11 @@
             this.layoutControl1.Controls.Add(this.dtpVoucherDate);
             this.layoutControl1.Controls.Add(this.lblformHeader);
             this.layoutControl1.Controls.Add(this.txtPurposeofPayment);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(48, 74);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1134, 386, 650, 400);
             this.layoutControl1.Root = this.Root;
+            this.tablePanel1.SetRow(this.layoutControl1, 1);
             this.layoutControl1.Size = new System.Drawing.Size(747, 471);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
@@ -273,6 +277,8 @@
             // 
             // Root
             // 
+            this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Black;
+            this.Root.AppearanceGroup.Options.UseBorderColor = true;
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -421,13 +427,30 @@
             this.lciBankAccount.Text = "Bank Account";
             this.lciBankAccount.TextSize = new System.Drawing.Size(112, 15);
             // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 101.35F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.layoutControl1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 646F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(843, 619);
+            this.tablePanel1.TabIndex = 1;
+            // 
             // frmVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.tablePanel1);
             this.Name = "frmVoucher";
-            this.Size = new System.Drawing.Size(747, 471);
+            this.Size = new System.Drawing.Size(843, 619);
             this.Load += new System.EventHandler(this.frmVoucherNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -453,6 +476,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciBankAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -485,5 +510,6 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private DevExpress.XtraEditors.LookUpEdit luBankAccount;
         private DevExpress.XtraLayout.LayoutControlItem lciBankAccount;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }

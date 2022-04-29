@@ -131,10 +131,10 @@
     <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entity\ucLedgerInfo.cs">
+    <Compile Include="Ledger\ucLedgerInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Entity\ucLedgerInfo.Designer.cs">
+    <Compile Include="Ledger\ucLedgerInfo.Designer.cs">
       <DependentUpon>ucLedgerInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\ucAccountInfo.cs">
@@ -266,7 +266,7 @@
     <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entity\ucLedgerInfo.resx">
+    <EmbeddedResource Include="Ledger\ucLedgerInfo.resx">
       <DependentUpon>ucLedgerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entity\ucAccountInfo.resx">

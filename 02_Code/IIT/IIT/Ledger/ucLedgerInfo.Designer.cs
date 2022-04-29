@@ -39,6 +39,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -47,22 +48,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Appearance.Control.Font = new System.Drawing.Font("Arial", 14F);
             this.layoutControl1.Appearance.Control.Options.UseFont = true;
-            this.layoutControl1.AutoSize = true;
+            this.tablePanel1.SetColumn(this.layoutControl1, 1);
             this.layoutControl1.Controls.Add(this.btnExpenses);
             this.layoutControl1.Controls.Add(this.btnIncome);
             this.layoutControl1.Controls.Add(this.btnAssets);
             this.layoutControl1.Controls.Add(this.btnLiabilities);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(126, 112);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(156, 253);
+            this.tablePanel1.SetRow(this.layoutControl1, 1);
+            this.layoutControl1.Size = new System.Drawing.Size(392, 254);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -70,7 +73,7 @@
             // 
             this.btnExpenses.Location = new System.Drawing.Point(32, 194);
             this.btnExpenses.Name = "btnExpenses";
-            this.btnExpenses.Size = new System.Drawing.Size(92, 27);
+            this.btnExpenses.Size = new System.Drawing.Size(328, 27);
             this.btnExpenses.StyleController = this.layoutControl1;
             this.btnExpenses.TabIndex = 3;
             this.btnExpenses.Text = "Expenses";
@@ -80,7 +83,7 @@
             // 
             this.btnIncome.Location = new System.Drawing.Point(32, 147);
             this.btnIncome.Name = "btnIncome";
-            this.btnIncome.Size = new System.Drawing.Size(92, 27);
+            this.btnIncome.Size = new System.Drawing.Size(328, 27);
             this.btnIncome.StyleController = this.layoutControl1;
             this.btnIncome.TabIndex = 2;
             this.btnIncome.Text = "Income";
@@ -90,7 +93,7 @@
             // 
             this.btnAssets.Location = new System.Drawing.Point(32, 100);
             this.btnAssets.Name = "btnAssets";
-            this.btnAssets.Size = new System.Drawing.Size(92, 27);
+            this.btnAssets.Size = new System.Drawing.Size(328, 27);
             this.btnAssets.StyleController = this.layoutControl1;
             this.btnAssets.TabIndex = 1;
             this.btnAssets.Text = "Assets";
@@ -100,7 +103,7 @@
             // 
             this.btnLiabilities.Location = new System.Drawing.Point(32, 53);
             this.btnLiabilities.Name = "btnLiabilities";
-            this.btnLiabilities.Size = new System.Drawing.Size(92, 27);
+            this.btnLiabilities.Size = new System.Drawing.Size(328, 27);
             this.btnLiabilities.StyleController = this.layoutControl1;
             this.btnLiabilities.TabIndex = 0;
             this.btnLiabilities.Text = "Liabilities";
@@ -113,7 +116,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(156, 253);
+            this.Root.Size = new System.Drawing.Size(392, 254);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -129,7 +132,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(136, 233);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(372, 234);
             this.layoutControlGroup1.Text = "Ledger Creation";
             // 
             // layoutControlItem1
@@ -138,7 +141,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(112, 47);
+            this.layoutControlItem1.Size = new System.Drawing.Size(348, 47);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -148,7 +151,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(112, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(348, 47);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -158,7 +161,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 94);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem3.Size = new System.Drawing.Size(112, 47);
+            this.layoutControlItem3.Size = new System.Drawing.Size(348, 47);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -168,20 +171,35 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 141);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(112, 47);
+            this.layoutControlItem4.Size = new System.Drawing.Size(348, 48);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 98.32F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.layoutControl1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 358F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(643, 477);
+            this.tablePanel1.TabIndex = 5;
             // 
             // ucLedgerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.tablePanel1);
             this.MinimumSize = new System.Drawing.Size(371, 259);
             this.Name = "ucLedgerInfo";
-            this.Size = new System.Drawing.Size(371, 259);
+            this.Size = new System.Drawing.Size(643, 477);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -190,8 +208,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -207,5 +226,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
     }
 }
