@@ -201,7 +201,7 @@
             this.ClientSize = new System.Drawing.Size(359, 134);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmAddGSTNumber";
-            this.Text = "Add GST Number";
+            this.Text = "GST Number";
             this.Load += new System.EventHandler(this.frmAddGSTNumber_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

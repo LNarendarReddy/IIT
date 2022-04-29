@@ -10,6 +10,10 @@ namespace IIT
         public frmEntityType()
         {
             InitializeComponent();
+            btnIndividualFirm.Click += btnIndividualFirm_Click;
+            btnPertnershipFirm.Click += btnPertnershipFirm_Click;
+            btnAOP.Click += btnAOP_Click;
+            btnCompany.Click += btnCompany_Click;
         }
         
         private void btnIndividualFirm_Click(object sender, EventArgs e)
@@ -18,7 +22,10 @@ namespace IIT
             frmEntityIndividual obj = new frmEntityIndividual(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)
+            {
                 frmSingularMain.Instance.RollbackControl();
+                frmSingularMain.Instance.RollbackControl();
+            }
         }
 
         private void btnPertnershipFirm_Click(object sender, EventArgs e)
@@ -27,7 +34,10 @@ namespace IIT
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)
+            {
                 frmSingularMain.Instance.RollbackControl();
+                frmSingularMain.Instance.RollbackControl();
+            }
         }
 
         private void btnAOP_Click(object sender, EventArgs e)
@@ -36,7 +46,10 @@ namespace IIT
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)
+            {
                 frmSingularMain.Instance.RollbackControl();
+                frmSingularMain.Instance.RollbackControl();
+            }
         }
 
         private void btnCompany_Click(object sender, EventArgs e)
@@ -45,7 +58,10 @@ namespace IIT
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
             if (obj.IsSave)
+            {
                 frmSingularMain.Instance.RollbackControl();
+                frmSingularMain.Instance.RollbackControl();
+            }
         }
     }
 }

@@ -18,6 +18,8 @@ namespace IIT
             frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;    
             frm.WindowState = System.Windows.Forms.FormWindowState.Normal;
             frm.IconOptions.ShowIcon = false;
+            frm.ControlBox = false;
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             frm.ShowDialog();
         }
 

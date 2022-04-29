@@ -21,12 +21,12 @@ namespace IIT
             InitializeComponent();
             ledgerObj = ledger;
 
-            luSubGroup.Properties.DataSource = new SubGroupRepository().GetSubGroupList(Utility.CurrentEntity.ID);
-            luSubGroup.Properties.DisplayMember = "SUBGROUPNAME";
-            luSubGroup.Properties.ValueMember = "SUBGROUPID";
+            cmbSubGroup.Properties.DataSource = new SubGroupRepository().GetSubGroupList(Utility.CurrentEntity.ID);
+            cmbSubGroup.Properties.DisplayMember = "SUBGROUPNAME";
+            cmbSubGroup.Properties.ValueMember = "SUBGROUPID";
 
             txtLedgerName.EditValue = ledgerObj.Name;
-            luSubGroup.EditValue = ledgerObj.SubGroupID;
+            cmbSubGroup.EditValue = ledgerObj.SubGroupID;
             meDescription.EditValue = ledgerObj.Description;
 
             Text = string.IsNullOrEmpty(ledgerObj.Name?.ToString()) ? Text : $"{Text} - {ledgerObj.Name}";
@@ -37,7 +37,7 @@ namespace IIT
             if (!dxValidationProvider1.Validate()) return;
 
             ledgerObj.Name = txtLedgerName.EditValue;
-            ledgerObj.SubGroupID = luSubGroup.EditValue;
+            ledgerObj.SubGroupID = cmbSubGroup.EditValue;
             ledgerObj.Description = meDescription.EditValue;
             ledgerObj.UserName = Utility.UserName;
 
@@ -56,6 +56,11 @@ namespace IIT
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLedger_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

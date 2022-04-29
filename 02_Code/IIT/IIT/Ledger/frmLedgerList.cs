@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList.Nodes;
+using DevExpress.XtraTreeList.Nodes.Operations;
 using Entity;
 using IIT;
 using Repository;
@@ -9,19 +10,21 @@ using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmLedgerList : XtraForm
+    public partial class frmLedgerList : NavigationBase
     {
         object HeadID = null;
         DataTable dt = null;
-        public frmLedgerList(object _HeadID)
+        public frmLedgerList(object _HeadID, string HeadName)
         {
             InitializeComponent();
             HeadID = _HeadID;
+            tlcLedgerName.Caption = HeadName;
         }
 
         private void frmLedgerList_Load(object sender, EventArgs e)
         {
             BindDataSource();
+            this.Parent.KeyPress += frmLedgerList_KeyPress;
         }
 
         private void tlLedger_KeyDown(object sender, KeyEventArgs e)
@@ -35,7 +38,7 @@ namespace IIT
             {
                 case 1:
                     {
-                        Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID, Utility.CurrentEntity.ID) : 
+                        Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID, Utility.CurrentEntity.ID) :
                             new Group() { ClassificationID = HeadID };
                         Utility.ShowDialog(new frmGroup(groupdObj));
                         RefreshTreeData(groupdObj, IsEdit, ledgerlevel);
@@ -43,7 +46,7 @@ namespace IIT
                     break;
                 case 2:
                     {
-                        SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) : 
+                        SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) :
                             new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
                         Utility.ShowDialog(new frmSubGroup(subGroupdObj));
                         RefreshTreeData(subGroupdObj, IsEdit, ledgerlevel);
@@ -51,8 +54,10 @@ namespace IIT
                     break;
                 case 3:
                     {
-                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedger(entityID,Utility.CurrentEntity.ID) :
-                            new Ledger() { ClassificationID = HeadID, 
+                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedger(entityID, Utility.CurrentEntity.ID) :
+                            new Ledger()
+                            {
+                                ClassificationID = HeadID,
                                 GroupID = tlLedger.FocusedNode.ParentNode.ParentNode["LedgerID"],
                                 SubGroupID = tlLedger.FocusedNode.ParentNode["LedgerID"]
                             };
@@ -81,7 +86,7 @@ namespace IIT
             {
                 var max = dt.Rows.Count + 1;
                 TreeListNode newnode = tlLedger.AppendNode(
-                        new object[] 
+                        new object[]
                             { max,
                               tlLedger.FocusedNode.ParentNode?["ID"] ?? HeadID,
                               entityObj.ID
@@ -90,7 +95,7 @@ namespace IIT
                             }
                         , tlLedger.FocusedNode.ParentNode);
 
-                if(ledgerlevel < 3)
+                if (ledgerlevel < 3)
                 {
                     string nodeText = "Add ";
                     nodeText += ledgerlevel == 1 ? "Sub Group" : string.Empty;
@@ -109,20 +114,68 @@ namespace IIT
             tlLedger.DataSource = dt;
             tlLedger.KeyFieldName = "ID";
             tlLedger.ParentFieldName = "ParentID";
-            tlLedger.ExpandToLevel(0);
+            tlLedger.CollapseAll();
         }
 
         private void CheckAndReBindTreeData(object ID)
         {
             if (ID == null || ID.Equals(tlLedger.FocusedNode.ParentNode?["LedgerID"])) return;
-     
+
             BindDataSource();
         }
 
-        private void frmLedgerList_KeyDown(object sender, KeyEventArgs e)
+        private void frmLedgerList_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
-                this.Close();
+            if (e.KeyChar == (char)Keys.Escape)
+                frmSingularMain.Instance.RollbackControl();
+        }
+
+        private void tablePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+        }
+
+        private void tlLedger_BeforeExpand(object sender, DevExpress.XtraTreeList.BeforeExpandEventArgs e)
+        {
+            OperationCollapseAllButThis op = new OperationCollapseAllButThis(e.Node);
+            tlLedger.BeginUpdate();
+            if (e.Node.ParentNode == null)
+                tlLedger.NodesIterator.DoOperation(op);
+            else
+                tlLedger.NodesIterator.DoLocalOperation(op, e.Node.ParentNode.Nodes);
+            tlLedger.EndUpdate();
+        }
+    }
+
+    public class OperationCollapseAllButThis : TreeListOperation
+    {
+        TreeListNode nodeCore;
+        public OperationCollapseAllButThis(TreeListNode node)
+        {
+            nodeCore = node;
+        }
+        public override bool NeedsVisitChildren(TreeListNode node)
+        {
+            return true;
+        }
+        public override bool CanContinueIteration(TreeListNode node)
+        {
+            return true;
+        }
+        public override bool NeedsFullIteration
+        {
+            get { return false; }
+        }
+        public override void Execute(TreeListNode node)
+        {
+            if (node == nodeCore)
+                return;
+            node.Expanded = false;
         }
     }
 }

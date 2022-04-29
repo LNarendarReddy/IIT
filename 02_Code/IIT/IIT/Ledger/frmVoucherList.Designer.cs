@@ -83,7 +83,6 @@
             this.gcVoucher.TabIndex = 4;
             this.gcVoucher.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVoucher});
-            this.gcVoucher.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcVoucher_KeyDown);
             // 
             // gvVoucher
             // 
@@ -102,6 +101,7 @@
             this.gridColumn12});
             this.gvVoucher.GridControl = this.gcVoucher;
             this.gvVoucher.Name = "gvVoucher";
+            this.gvVoucher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gvVoucher_KeyPress);
             // 
             // gridColumn1
             // 
@@ -245,10 +245,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 710);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmVoucherList";
-            this.Text = "Voucher List";
+            this.Size = new System.Drawing.Size(1105, 710);
             this.Load += new System.EventHandler(this.frmVoucherList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

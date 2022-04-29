@@ -219,7 +219,7 @@
             this.ClientSize = new System.Drawing.Size(488, 219);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmGroup";
-            this.Text = "Group";
+            this.Text = "Add Group";
             this.Load += new System.EventHandler(this.frmGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

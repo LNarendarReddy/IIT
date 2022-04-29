@@ -57,6 +57,7 @@
     <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -130,6 +131,18 @@
     <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\ucLedgerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity\ucLedgerInfo.Designer.cs">
+      <DependentUpon>ucLedgerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ucAccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity\ucAccountInfo.Designer.cs">
+      <DependentUpon>ucAccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,13 +165,13 @@
       <DependentUpon>frmLedger.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmLedgerList.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ledger\frmLedgerList.Designer.cs">
       <DependentUpon>frmLedgerList.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmVoucherList.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ledger\frmVoucherList.Designer.cs">
       <DependentUpon>frmVoucherList.cs</DependentUpon>
@@ -241,6 +254,12 @@
     <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entity\ucLedgerInfo.resx">
+      <DependentUpon>ucLedgerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity\ucAccountInfo.resx">
+      <DependentUpon>ucAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmSubGroupList.resx">
       <DependentUpon>frmSubGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBase.resx">
+      <DependentUpon>NavigationBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <!--<EmbeddedResource Include="Properties\licenses.licx" />-->

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmSingularMain : DevExpress.XtraEditors.XtraForm
+    public partial class frmSingularMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private static frmSingularMain _instance = null;
 
@@ -18,17 +18,17 @@ namespace IIT
         {
             Utility.ShowDialog(new frmEntityList());
         }
-                
-        private void frmSingularMain_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode != Keys.Escape)
-                return;   
-            RollbackControl();
-        }
 
         public void RollbackControl()
         {
             Utility.ShowDialog((pcMain.Controls[0] as NavigationBase)?.PreviousControl);
+        }
+
+        private void frmSingularMain_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char) Keys.Escape)
+                return;
+            RollbackControl();
         }
     }
 }

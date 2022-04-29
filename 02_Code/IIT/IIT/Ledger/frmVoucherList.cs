@@ -7,21 +7,13 @@ using DevExpress.XtraReports.UI;
 
 namespace IIT
 {
-    public partial class frmVoucherList : XtraForm
+    public partial class frmVoucherList : NavigationBase
     {
         VoucherRepository voucherRepository = new VoucherRepository();
 
         public frmVoucherList()
         {
             InitializeComponent();
-        }
-
-        private void gcVoucher_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Escape)
-                this.Close();
-            else if (e.KeyData == Keys.Enter)
-                btnModifyVoucher_Click(null, null);
         }
 
         private void btnModifyVoucher_Click(object sender, EventArgs e)
@@ -90,6 +82,12 @@ namespace IIT
                     break;
             }
             rpt.ShowRibbonPreview();
+        }
+
+        private void gvVoucher_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+                btnModifyVoucher_Click(null, null);
         }
     }
 }

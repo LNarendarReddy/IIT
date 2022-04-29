@@ -19,8 +19,6 @@ namespace IIT
 
         public override NavigationBase PreviousControl { get => base.PreviousControl; set { } }
         public override List<string> HelpText => new List<string> { "Create", "Modify", "test" };
-
-
         public frmEntityList() 
         {    
             InitializeComponent();
@@ -34,14 +32,13 @@ namespace IIT
         private void frmEntityList_Load(object sender, EventArgs e)
         {
             Utility.SetGridFormatting(gvEntityList);
-            this.Parent.KeyPress += frmEntityList_KeyPress;
+            frmSingularMain.Instance.KeyPress += frmEntityList_KeyPress;
             BindDatasource();
         }
         private void gvEntityList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             btnModifyEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
             btnExportEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
-            btnViewLogo.Enabled = gvEntityList.FocusedRowHandle >= 0;
         }
         private void btnModifyEntity_Click(object sender, EventArgs e)
         {
@@ -91,7 +88,6 @@ namespace IIT
         private void btnImport_Click(object sender, EventArgs e)
         {
             DataSet dsEntityDataFromFile;
-
             XtraOpenFileDialog xtraOpenFileDialog = new XtraOpenFileDialog();
             try
             {
@@ -118,12 +114,6 @@ namespace IIT
             gcEntityList.DataSource = entityDataRepository.GetEntityList();
             gvEntityList_FocusedRowChanged(null, null);
         }
-        private void btnViewLogo_Click(object sender, EventArgs e)
-        {
-            if (gvEntityList.FocusedRowHandle < 0)
-                return;
-            Utility.ShowDialog(new frmEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
-        }
         private void gvEntityList_DoubleClick(object sender, EventArgs e)
         {
             if (gvEntityList.FocusedRowHandle < 0)
@@ -132,10 +122,9 @@ namespace IIT
                 gvEntityList.GetFocusedRowCellValue("ENTITYID"));
             Utility.CurrentEntity.LogoData = new EntityDataRepository().GetEntityLogo(
                 gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-            IsEntitySelected = true;
-            //this.Close();
+            frmSingularMain.Instance.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
+            Utility.ShowDialog(new ucAccountInfo());
         }
-
         private void frmEntityList_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.C)
@@ -143,10 +132,23 @@ namespace IIT
             else if (e.KeyChar == (char)Keys.M && btnModifyEntity.Enabled)
                 btnModifyEntity_Click(null, null);
         }
-
         private void frmEntityList_ParentChanged(object sender, EventArgs e)
         {
             BindDatasource();
+            Utility.CurrentEntity = null;
+            frmSingularMain.Instance.Text = "IIT";
+        }
+        private void btnviewLogo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvEntityList.FocusedRowHandle < 0)
+                return;
+            Utility.ShowDialog(new frmEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
+        }
+        private void gvEntityList_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)Keys.Enter)
+                return;
+            gvEntityList_DoubleClick(null, null);
         }
     }
 }

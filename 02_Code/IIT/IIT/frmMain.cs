@@ -64,22 +64,22 @@ namespace IIT
 
         private void btnAssets_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.AssetsHeadID) { Text = "Assets Group"});
+            Utility.ShowDialog(new frmLedgerList(Utility.AssetsHeadID, "Assets"));
         }
 
         private void btnLiabilities_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.LiabilitiesHeadID) { Text = "Liabilities Group" });
+            Utility.ShowDialog(new frmLedgerList(Utility.LiabilitiesHeadID, "Liabilities") );
         }
 
         private void btnIncome_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.IncomeHeadID) { Text = "Income Group" });
+            Utility.ShowDialog(new frmLedgerList(Utility.IncomeHeadID, "Income"));
         }
 
         private void btnExpenses_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerList(Utility.ExpensesHeadID) { Text = "Expenses Group" });
+            Utility.ShowDialog(new frmLedgerList(Utility.ExpensesHeadID, "Expenses") );
         }
 
         private void btnCashPaymentVoucher_ItemClick(object sender, ItemClickEventArgs e)
