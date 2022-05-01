@@ -48,6 +48,8 @@ namespace IIT
             luClassification.EditValue = groupObj.ClassificationID;
             meDescription.EditValue = groupObj.Description;
 
+            if (groupObj.ID == null)
+                luClassification.Enabled = false;
             Text = string.IsNullOrEmpty(groupObj.Name?.ToString()) ? Text : $"{Text} - {groupObj.Name}";
         }
 

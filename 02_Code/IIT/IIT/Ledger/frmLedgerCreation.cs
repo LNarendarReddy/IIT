@@ -137,7 +137,14 @@ namespace IIT
 
         private void btnAdd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
+            Ledger ledgerObj = new Ledger()
+                            {
+                                ClassificationID = HeadID,
+                                GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"],
+                                SubGroupID = tlLedger.FocusedNode["LedgerID"]
+                            };
+            Utility.ShowDialog(new frmLedger(ledgerObj));
+            RefreshTreeData(ledgerObj, false, 3);
         }
 
         private void tlLedger_BeforeExpand(object sender, DevExpress.XtraTreeList.BeforeExpandEventArgs e)
@@ -149,6 +156,21 @@ namespace IIT
             else
                 tlLedger.NodesIterator.DoLocalOperation(op, e.Node.ParentNode.Nodes);
             tlLedger.EndUpdate();
+        }
+
+        private void tlLedger_CustomNodeCellEdit(object sender, DevExpress.XtraTreeList.GetCustomNodeCellEditEventArgs e)
+        {
+            if (e.Column.FieldName == "Add" && e.Node["LedgerLevel"].Equals(2) && !e.Node["LedgerID"].Equals(-1))
+                    e.RepositoryItem = btnAdd;
+        }
+
+        private void tlLedger_ShowingEditor(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            if (tlLedger.FocusedColumn.FieldName == "Add" &&
+                (!tlLedger.FocusedNode["LedgerLevel"].Equals(2) ||
+                tlLedger.FocusedNode["LedgerID"].Equals(-1)))
+                e.Cancel = true;
         }
     }
 

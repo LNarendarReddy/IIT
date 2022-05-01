@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLedger));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.luGroup = new DevExpress.XtraEditors.LookUpEdit();
+            this.luClassification = new DevExpress.XtraEditors.LookUpEdit();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.meDescription = new DevExpress.XtraEditors.MemoEdit();
@@ -46,13 +48,13 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.cmbHead = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbGroup = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luGroup.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luClassification.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
@@ -63,17 +65,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbHead.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.cmbGroup);
-            this.layoutControl1.Controls.Add(this.cmbHead);
+            this.layoutControl1.Controls.Add(this.luGroup);
+            this.layoutControl1.Controls.Add(this.luClassification);
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.meDescription);
@@ -84,8 +84,32 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(503, 224);
-            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // luGroup
+            // 
+            this.luGroup.EnterMoveNextControl = true;
+            this.luGroup.Location = new System.Drawing.Point(103, 79);
+            this.luGroup.Name = "luGroup";
+            this.luGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luGroup.Properties.NullText = "";
+            this.luGroup.Size = new System.Drawing.Size(385, 22);
+            this.luGroup.StyleController = this.layoutControl1;
+            this.luGroup.TabIndex = 2;
+            // 
+            // luClassification
+            // 
+            this.luClassification.EnterMoveNextControl = true;
+            this.luClassification.Location = new System.Drawing.Point(103, 47);
+            this.luClassification.Name = "luClassification";
+            this.luClassification.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luClassification.Properties.NullText = "";
+            this.luClassification.Size = new System.Drawing.Size(385, 22);
+            this.luClassification.StyleController = this.layoutControl1;
+            this.luClassification.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -96,7 +120,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 36);
             this.btnCancel.StyleController = this.layoutControl1;
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -108,7 +132,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 36);
             this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -119,11 +143,11 @@
             this.meDescription.Name = "meDescription";
             this.meDescription.Size = new System.Drawing.Size(385, 20);
             this.meDescription.StyleController = this.layoutControl1;
-            this.meDescription.TabIndex = 7;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.meDescription, conditionValidationRule4);
+            this.meDescription.TabIndex = 4;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.meDescription, conditionValidationRule1);
             // 
             // cmbSubGroup
             // 
@@ -138,11 +162,11 @@
             this.cmbSubGroup.Properties.NullText = "";
             this.cmbSubGroup.Size = new System.Drawing.Size(385, 22);
             this.cmbSubGroup.StyleController = this.layoutControl1;
-            this.cmbSubGroup.TabIndex = 5;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbSubGroup, conditionValidationRule1);
+            this.cmbSubGroup.TabIndex = 3;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbSubGroup, conditionValidationRule2);
             // 
             // txtLedgerName
             // 
@@ -151,11 +175,11 @@
             this.txtLedgerName.Name = "txtLedgerName";
             this.txtLedgerName.Size = new System.Drawing.Size(385, 22);
             this.txtLedgerName.StyleController = this.layoutControl1;
-            this.txtLedgerName.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule2);
+            this.txtLedgerName.TabIndex = 0;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Mandatory";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule3);
             // 
             // Root
             // 
@@ -232,20 +256,9 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // cmbHead
-            // 
-            this.cmbHead.Location = new System.Drawing.Point(103, 47);
-            this.cmbHead.Name = "cmbHead";
-            this.cmbHead.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbHead.Properties.NullText = "";
-            this.cmbHead.Size = new System.Drawing.Size(385, 22);
-            this.cmbHead.StyleController = this.layoutControl1;
-            this.cmbHead.TabIndex = 10;
-            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.cmbHead;
+            this.layoutControlItem3.Control = this.luClassification;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 32);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -253,20 +266,9 @@
             this.layoutControlItem3.Text = "Head";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(76, 15);
             // 
-            // cmbGroup
-            // 
-            this.cmbGroup.Location = new System.Drawing.Point(103, 79);
-            this.cmbGroup.Name = "cmbGroup";
-            this.cmbGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbGroup.Properties.NullText = "";
-            this.cmbGroup.Size = new System.Drawing.Size(385, 22);
-            this.cmbGroup.StyleController = this.layoutControl1;
-            this.cmbGroup.TabIndex = 11;
-            // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.cmbGroup;
+            this.layoutControlItem7.Control = this.luGroup;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 64);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -286,6 +288,8 @@
             this.Load += new System.EventHandler(this.frmLedger_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.luGroup.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luClassification.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.meDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubGroup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
@@ -296,11 +300,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbHead.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbGroup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,8 +323,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
-        private DevExpress.XtraEditors.LookUpEdit cmbGroup;
-        private DevExpress.XtraEditors.LookUpEdit cmbHead;
+        private DevExpress.XtraEditors.LookUpEdit luGroup;
+        private DevExpress.XtraEditors.LookUpEdit luClassification;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }

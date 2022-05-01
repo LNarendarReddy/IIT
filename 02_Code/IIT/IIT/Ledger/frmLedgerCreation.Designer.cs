@@ -97,7 +97,6 @@
             this.tlLedger.FormatRules.Add(treeListFormatRule2);
             this.tlLedger.Location = new System.Drawing.Point(3, 7);
             this.tlLedger.Name = "tlLedger";
-            this.tlLedger.OptionsBehavior.Editable = false;
             this.tlLedger.OptionsCustomization.AllowSort = false;
             this.tlLedger.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAdd});
@@ -105,7 +104,9 @@
             this.tlLedger.RowHeight = 25;
             this.tlLedger.Size = new System.Drawing.Size(906, 751);
             this.tlLedger.TabIndex = 4;
+            this.tlLedger.CustomNodeCellEdit += new DevExpress.XtraTreeList.GetCustomNodeCellEditEventHandler(this.tlLedger_CustomNodeCellEdit);
             this.tlLedger.BeforeExpand += new DevExpress.XtraTreeList.BeforeExpandEventHandler(this.tlLedger_BeforeExpand);
+            this.tlLedger.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.tlLedger_ShowingEditor);
             this.tlLedger.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tlLedger_KeyDown);
             // 
             // tlcLedgerName
@@ -113,6 +114,7 @@
             this.tlcLedgerName.Caption = "Ledger";
             this.tlcLedgerName.FieldName = "LedgerName";
             this.tlcLedgerName.Name = "tlcLedgerName";
+            this.tlcLedgerName.OptionsColumn.AllowEdit = false;
             this.tlcLedgerName.Visible = true;
             this.tlcLedgerName.VisibleIndex = 0;
             this.tlcLedgerName.Width = 591;
@@ -133,8 +135,7 @@
             // 
             this.treeListColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.treeListColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.treeListColumn1.Caption = "Add";
-            this.treeListColumn1.ColumnEdit = this.btnAdd;
+            this.treeListColumn1.Caption = "Add Ledger";
             this.treeListColumn1.FieldName = "Add";
             this.treeListColumn1.MaxWidth = 90;
             this.treeListColumn1.Name = "treeListColumn1";
@@ -166,12 +167,12 @@
             this.tablePanel1.TabIndex = 1;
             this.tablePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel1_Paint);
             // 
-            // frmLedgerList
+            // frmLedgerCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
-            this.Name = "frmLedgerList";
+            this.Name = "frmLedgerCreation";
             this.Size = new System.Drawing.Size(912, 765);
             this.Load += new System.EventHandler(this.frmLedgerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tlLedger)).EndInit();

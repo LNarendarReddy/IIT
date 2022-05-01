@@ -21,13 +21,36 @@ namespace IIT
             InitializeComponent();
             ledgerObj = ledger;
 
+            luClassification.Properties.DataSource = LookUpUtility.GetClassification();
+            luClassification.Properties.DisplayMember = "LOOKUPVALUE";
+            luClassification.Properties.ValueMember = "ENTITYLOOKUPID";
+
+            luGroup.CascadingOwner = luClassification;
+            luGroup.Properties.CascadingMember = "CLASSIFICATIONID";
+
+            luGroup.Properties.DataSource = new GroupRepository().GetGroupList(Utility.CurrentEntity.ID);
+            luGroup.Properties.DisplayMember = "GROUPNAME";
+            luGroup.Properties.ValueMember = "GROUPID";
+
+            cmbSubGroup.CascadingOwner = luGroup;
+            cmbSubGroup.Properties.CascadingMember = "GROUPID";
+
             cmbSubGroup.Properties.DataSource = new SubGroupRepository().GetSubGroupList(Utility.CurrentEntity.ID);
             cmbSubGroup.Properties.DisplayMember = "SUBGROUPNAME";
             cmbSubGroup.Properties.ValueMember = "SUBGROUPID";
 
             txtLedgerName.EditValue = ledgerObj.Name;
+            luClassification.EditValue = ledgerObj.ClassificationID;
+            luGroup.EditValue = ledgerObj.GroupID;
             cmbSubGroup.EditValue = ledgerObj.SubGroupID;
             meDescription.EditValue = ledgerObj.Description;
+
+            if(ledgerObj.ID == null)
+            {
+                luClassification.Enabled = false;
+                luGroup.Enabled = false;
+                cmbSubGroup.Enabled = false;
+            }
 
             Text = string.IsNullOrEmpty(ledgerObj.Name?.ToString()) ? Text : $"{Text} - {ledgerObj.Name}";
         }

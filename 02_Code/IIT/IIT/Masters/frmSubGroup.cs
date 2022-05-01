@@ -34,6 +34,13 @@ namespace IIT
             luGroup.EditValue = subGroupObj.GroupID;
             meDescription.EditValue = subGroupObj.Description;
 
+            if (subGroupObj.ID == null)
+            {
+                luClassification.Enabled = false;
+                luGroup.Enabled = false;
+            }
+
+
             Text = string.IsNullOrEmpty(subGroupObj.Name?.ToString()) ? Text : $"{Text} - {subGroupObj.Name}";
         }
 
