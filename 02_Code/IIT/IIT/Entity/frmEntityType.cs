@@ -43,5 +43,10 @@ namespace IIT
             frmPartnershipFirm obj = new frmPartnershipFirm(entityType);
             Utility.ShowDialog(obj);
         }
+
+        private void btnIndividualFirm_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

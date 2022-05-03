@@ -77,7 +77,7 @@ namespace IIT
                 cmbGSTNumber.Properties.DataSource = entityData.GSTRegNo;
                 cmbGSTNumber.Properties.ValueMember = "ID";
                 cmbGSTNumber.Properties.DisplayMember = "GSTNo";
-                cmbGSTNumber.EditValue = entityData.PrimaryGST.ID;
+                cmbGSTNumber.EditValue = entityData.GSTRegNo.FirstOrDefault()?.ID;
 
                 txtHNoR.EditValue = entityData.PermanentAddress.HNo;
                 txtAreaR.EditValue = entityData.PermanentAddress.Area;
@@ -159,6 +159,14 @@ namespace IIT
 
         private void chkSameAddress_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
+            entityData.PermanentAddress.HNo = txtHNoR.EditValue;
+            entityData.PermanentAddress.Area = txtAreaR.EditValue;
+            entityData.PermanentAddress.City = txtCityR.EditValue;
+            entityData.PermanentAddress.District = txtDistrictR.EditValue;
+            entityData.PermanentAddress.StateID = cmbStateR.EditValue;
+            entityData.PermanentAddress.PinCode = txtPincodeR.EditValue;
             entityData.BusinessAddress = chkSameAddress.Checked ? entityData.PermanentAddress : new Address();
             Utility.BindAddress(entityData.BusinessAddress, !chkSameAddress.Checked, txtHNoB, txtAreaB, txtCityB, txtDistrictB
                 , cmbStateB, txtPincodeB);

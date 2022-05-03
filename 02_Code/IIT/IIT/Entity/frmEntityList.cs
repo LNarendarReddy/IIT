@@ -38,7 +38,7 @@ namespace IIT
         private void gvEntityList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
             btnModifyEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
-            btnExportEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
+            btnExport.Enabled = gvEntityList.FocusedRowHandle >= 0;
         }
         private void btnModifyEntity_Click(object sender, EventArgs e)
         {
@@ -152,6 +152,10 @@ namespace IIT
         {
             if (e.KeyChar != (char)Keys.Enter)
                 return;
+            gvEntityList_DoubleClick(null, null);
+        }
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
             gvEntityList_DoubleClick(null, null);
         }
     }

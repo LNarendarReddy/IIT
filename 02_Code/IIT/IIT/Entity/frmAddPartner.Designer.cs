@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddPartner));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNumberOfSharesHeld = new DevExpress.XtraEditors.TextEdit();
             this.txtDINNumber = new DevExpress.XtraEditors.TextEdit();
@@ -59,8 +55,8 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcDIN = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcNoOFShares = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -84,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDIN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcNoOFShares)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,10 +187,6 @@
             this.txtShare.Size = new System.Drawing.Size(488, 22);
             this.txtShare.StyleController = this.layoutControl1;
             this.txtShare.TabIndex = 7;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtShare, conditionValidationRule1);
             // 
             // txtAadharNumber
             // 
@@ -205,10 +197,6 @@
             this.txtAadharNumber.Size = new System.Drawing.Size(488, 22);
             this.txtAadharNumber.StyleController = this.layoutControl1;
             this.txtAadharNumber.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAadharNumber, conditionValidationRule2);
             // 
             // txtPanNumber
             // 
@@ -219,10 +207,6 @@
             this.txtPanNumber.Size = new System.Drawing.Size(488, 22);
             this.txtPanNumber.StyleController = this.layoutControl1;
             this.txtPanNumber.TabIndex = 4;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPanNumber, conditionValidationRule3);
             // 
             // txtAddress
             // 
@@ -233,10 +217,6 @@
             this.txtAddress.Size = new System.Drawing.Size(488, 22);
             this.txtAddress.StyleController = this.layoutControl1;
             this.txtAddress.TabIndex = 2;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAddress, conditionValidationRule4);
             // 
             // txtFatherName
             // 
@@ -247,10 +227,10 @@
             this.txtFatherName.Size = new System.Drawing.Size(488, 22);
             this.txtFatherName.StyleController = this.layoutControl1;
             this.txtFatherName.TabIndex = 1;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule5);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule1);
             // 
             // txtNameofthepartner
             // 
@@ -261,10 +241,10 @@
             this.txtNameofthepartner.Size = new System.Drawing.Size(488, 22);
             this.txtNameofthepartner.StyleController = this.layoutControl1;
             this.txtNameofthepartner.TabIndex = 0;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtNameofthepartner, conditionValidationRule6);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtNameofthepartner, conditionValidationRule2);
             // 
             // Root
             // 
@@ -281,8 +261,8 @@
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.emptySpaceItem2,
-            this.layoutControlItem10,
-            this.layoutControlItem11});
+            this.lcDIN,
+            this.lcNoOFShares});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(700, 361);
             this.Root.TextVisible = false;
@@ -383,25 +363,25 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(399, 43);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem10
+            // lcDIN
             // 
-            this.layoutControlItem10.Control = this.txtDINNumber;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 102);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem10.Size = new System.Drawing.Size(680, 32);
-            this.layoutControlItem10.Text = "DIN Number";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(168, 15);
+            this.lcDIN.Control = this.txtDINNumber;
+            this.lcDIN.Location = new System.Drawing.Point(0, 102);
+            this.lcDIN.Name = "lcDIN";
+            this.lcDIN.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.lcDIN.Size = new System.Drawing.Size(680, 32);
+            this.lcDIN.Text = "DIN Number";
+            this.lcDIN.TextSize = new System.Drawing.Size(168, 15);
             // 
-            // layoutControlItem11
+            // lcNoOFShares
             // 
-            this.layoutControlItem11.Control = this.txtNumberOfSharesHeld;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 202);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem11.Size = new System.Drawing.Size(680, 32);
-            this.layoutControlItem11.Text = "Number of Shares Held";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(168, 15);
+            this.lcNoOFShares.Control = this.txtNumberOfSharesHeld;
+            this.lcNoOFShares.Location = new System.Drawing.Point(0, 202);
+            this.lcNoOFShares.Name = "lcNoOFShares";
+            this.lcNoOFShares.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.lcNoOFShares.Size = new System.Drawing.Size(680, 32);
+            this.lcNoOFShares.Text = "Number of Shares Held";
+            this.lcNoOFShares.TextSize = new System.Drawing.Size(168, 15);
             // 
             // frmAddPartner
             // 
@@ -436,8 +416,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcDIN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcNoOFShares)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -468,8 +448,8 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.TextEdit txtNumberOfSharesHeld;
         private DevExpress.XtraEditors.TextEdit txtDINNumber;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem lcDIN;
+        private DevExpress.XtraLayout.LayoutControlItem lcNoOFShares;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
     }
 }

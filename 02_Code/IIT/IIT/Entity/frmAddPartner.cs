@@ -11,9 +11,15 @@ namespace IIT
         public frmAddPartner(Person _person, bool IsCompany = false)
         {
             InitializeComponent();
-            txtDINNumber.Enabled = IsCompany;
-            txtNumberOfSharesHeld.Enabled = IsCompany;
+            
+            lcDIN.Visibility = !IsCompany ? DevExpress.XtraLayout.Utils.LayoutVisibility.Never : 
+                DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            
+            lcNoOFShares.Visibility = !IsCompany ? DevExpress.XtraLayout.Utils.LayoutVisibility.Never : 
+                DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
             lciNameOfThePartner.Text = IsCompany ? "Name of the Director" : lciNameOfThePartner.Text;
+            this.Text = IsCompany ? "Director" : this.Text;
             person = _person;
         }
 
@@ -37,7 +43,9 @@ namespace IIT
         {
             if (!dxValidationProvider1.Validate())
                 return;
-            if(txtDINNumber.Enabled && string.IsNullOrEmpty(txtDINNumber.EditValue?.ToString()))
+            if( 
+                lcDIN.Visibility == DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+                && string.IsNullOrEmpty(txtDINNumber.EditValue?.ToString()))
             {
                 XtraMessageBox.Show("DIN Number is mandatory", "Mandatory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;

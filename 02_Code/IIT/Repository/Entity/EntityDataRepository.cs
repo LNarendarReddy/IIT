@@ -83,7 +83,7 @@ namespace Repository
                 }
                 personRepository.Save(entityObj.PersonData);
                 gstRepository.Save(entityObj.GSTRegNo);
-                gstRepository.UpdateGSTNumber(entityObj.ID,entityObj.PrimaryGST.ID);
+                //gstRepository.UpdateGSTNumber(entityObj.ID,entityObj.PrimaryGST.ID);
 
             }
             catch (Exception ex)

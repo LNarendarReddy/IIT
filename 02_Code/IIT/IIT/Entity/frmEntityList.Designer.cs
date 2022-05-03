@@ -35,10 +35,10 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnShut = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExportEntity = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             this.btnModifyEntity = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreateEntity = new DevExpress.XtraEditors.SimpleButton();
             this.gcEntityList = new DevExpress.XtraGrid.GridControl();
@@ -79,10 +79,10 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton2);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.btnShut);
+            this.layoutControl1.Controls.Add(this.btnSelect);
             this.layoutControl1.Controls.Add(this.btnImport);
-            this.layoutControl1.Controls.Add(this.btnExportEntity);
+            this.layoutControl1.Controls.Add(this.btnExport);
             this.layoutControl1.Controls.Add(this.btnModifyEntity);
             this.layoutControl1.Controls.Add(this.btnCreateEntity);
             this.layoutControl1.Controls.Add(this.gcEntityList);
@@ -97,23 +97,24 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // simpleButton2
+            // btnShut
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(1047, 464);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(132, 22);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 6;
-            this.simpleButton2.Text = "Sh&utdown";
+            this.btnShut.Location = new System.Drawing.Point(1047, 464);
+            this.btnShut.Name = "btnShut";
+            this.btnShut.Size = new System.Drawing.Size(132, 22);
+            this.btnShut.StyleController = this.layoutControl1;
+            this.btnShut.TabIndex = 6;
+            this.btnShut.Text = "Sh&ut";
             // 
-            // simpleButton1
+            // btnSelect
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(1047, 362);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(132, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "&Select";
+            this.btnSelect.Location = new System.Drawing.Point(1047, 362);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(132, 22);
+            this.btnSelect.StyleController = this.layoutControl1;
+            this.btnSelect.TabIndex = 3;
+            this.btnSelect.Text = "&Select";
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnImport
             // 
@@ -126,16 +127,16 @@
             this.btnImport.Visible = false;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
-            // btnExportEntity
+            // btnExport
             // 
-            this.btnExportEntity.Location = new System.Drawing.Point(1047, 396);
-            this.btnExportEntity.Name = "btnExportEntity";
-            this.btnExportEntity.Size = new System.Drawing.Size(132, 22);
-            this.btnExportEntity.StyleController = this.layoutControl1;
-            this.btnExportEntity.TabIndex = 4;
-            this.btnExportEntity.Text = "Export";
-            this.btnExportEntity.Visible = false;
-            this.btnExportEntity.Click += new System.EventHandler(this.btnExportEntity_Click);
+            this.btnExport.Location = new System.Drawing.Point(1047, 396);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(132, 22);
+            this.btnExport.StyleController = this.layoutControl1;
+            this.btnExport.TabIndex = 4;
+            this.btnExport.Text = "Export";
+            this.btnExport.Visible = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExportEntity_Click);
             // 
             // btnModifyEntity
             // 
@@ -332,7 +333,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.btnExportEntity;
+            this.layoutControlItem4.Control = this.btnExport;
             this.layoutControlItem4.Location = new System.Drawing.Point(937, 380);
             this.layoutControlItem4.MaxSize = new System.Drawing.Size(332, 34);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(332, 34);
@@ -342,6 +343,7 @@
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            this.layoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem5
             // 
@@ -355,10 +357,11 @@
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
+            this.layoutControlItem5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.simpleButton1;
+            this.layoutControlItem6.Control = this.btnSelect;
             this.layoutControlItem6.Location = new System.Drawing.Point(937, 346);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(332, 34);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(332, 34);
@@ -371,7 +374,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.simpleButton2;
+            this.layoutControlItem7.Control = this.btnShut;
             this.layoutControlItem7.Location = new System.Drawing.Point(937, 448);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(332, 34);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(332, 34);
@@ -381,6 +384,7 @@
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            this.layoutControlItem7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // frmEntityList
             // 
@@ -429,13 +433,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.SimpleButton btnExportEntity;
+        private DevExpress.XtraEditors.SimpleButton btnExport;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.SimpleButton btnImport;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnShut;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnviewLogo;

@@ -61,6 +61,7 @@
             this.btnIndividualFirm.StyleController = this.layoutControl1;
             this.btnIndividualFirm.TabIndex = 0;
             this.btnIndividualFirm.Text = "Individual / Proprietor Firm";
+            this.btnIndividualFirm.Click += new System.EventHandler(this.btnIndividualFirm_Click_1);
             // 
             // layoutControl1
             // 

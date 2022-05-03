@@ -5,6 +5,7 @@ using Entity;
 using IIT;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -14,6 +15,8 @@ namespace IIT
     {
         object HeadID = null;
         DataTable dt = null;
+        public override List<string> HelpText => new List<string> { "Press Ctrl + Right/Left to expand/collapse", 
+            "Press Up/Down to navigate", "Press Enter to create/edit","Press + to add ledger" };
         public frmLedgerCreation(object _HeadID, string HeadName)
         {
             InitializeComponent();
@@ -46,10 +49,16 @@ namespace IIT
                     break;
                 case 2:
                     {
-                        SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) :
-                            new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
-                        Utility.ShowDialog(new frmSubGroup(subGroupdObj));
-                        RefreshTreeData(subGroupdObj, IsEdit, ledgerlevel);
+                        if (tlLedger.FocusedColumn.FieldName.Equals("Add") &&
+                            !tlLedger.FocusedNode["LedgerID"].Equals(-1))
+                            btnAdd_ButtonClick(null, null);
+                        else
+                        {
+                            SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) :
+                                new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
+                            Utility.ShowDialog(new frmSubGroup(subGroupdObj));
+                            RefreshTreeData(subGroupdObj, IsEdit, ledgerlevel);
+                        }
                     }
                     break;
                 case 3:
@@ -70,7 +79,7 @@ namespace IIT
             }
         }
 
-        private void RefreshTreeData(MasterBase entityObj, bool IsEdit, int ledgerlevel)
+        private void RefreshTreeData(MasterBase entityObj, bool IsEdit, int ledgerlevel, bool callfrombutton = false)
         {
             if (!entityObj.IsSave)
                 return;
@@ -88,12 +97,12 @@ namespace IIT
                 TreeListNode newnode = tlLedger.AppendNode(
                         new object[]
                             { max,
-                              tlLedger.FocusedNode.ParentNode?["ID"] ?? HeadID,
+                              callfrombutton ? tlLedger.FocusedNode["ID"] : tlLedger.FocusedNode.ParentNode?["ID"] ?? HeadID,
                               entityObj.ID
                               , entityObj.Name
                               , ledgerlevel
                             }
-                        , tlLedger.FocusedNode.ParentNode);
+                        , callfrombutton ? tlLedger.FocusedNode : tlLedger.FocusedNode.ParentNode);
 
                 if (ledgerlevel < 3)
                 {
@@ -104,7 +113,9 @@ namespace IIT
                     newnode.Nodes.Add(new object[] { ++max, max, -1, nodeText, ++ledgerlevel });
                 }
 
-                tlLedger.SetNodeIndex(newnode, (tlLedger.FocusedNode.ParentNode?.Nodes?.Count ?? tlLedger.Nodes.Count) - 2);
+                tlLedger.SetNodeIndex(newnode, 
+                    (callfrombutton ? tlLedger.FocusedNode.Nodes.Count : 
+                    tlLedger.FocusedNode.ParentNode?.Nodes?.Count ?? tlLedger.Nodes.Count) - 2);
             }
         }
 
@@ -120,7 +131,6 @@ namespace IIT
         private void CheckAndReBindTreeData(object ID)
         {
             if (ID == null || ID.Equals(tlLedger.FocusedNode.ParentNode?["LedgerID"])) return;
-
             BindDataSource();
         }
 
@@ -144,7 +154,7 @@ namespace IIT
                                 SubGroupID = tlLedger.FocusedNode["LedgerID"]
                             };
             Utility.ShowDialog(new frmLedger(ledgerObj));
-            RefreshTreeData(ledgerObj, false, 3);
+            RefreshTreeData(ledgerObj, false, 3,true);
         }
 
         private void tlLedger_BeforeExpand(object sender, DevExpress.XtraTreeList.BeforeExpandEventArgs e)

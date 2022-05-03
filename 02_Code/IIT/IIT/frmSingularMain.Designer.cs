@@ -86,26 +86,26 @@
             this.tablePanel2.Appearance.BackColor = System.Drawing.Color.LightBlue;
             this.tablePanel2.Appearance.Options.UseBackColor = true;
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F)});
             this.tablePanel2.Controls.Add(this.lblHelpText);
             this.tablePanel2.Location = new System.Drawing.Point(957, 8);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel2.Size = new System.Drawing.Size(182, 602);
             this.tablePanel2.TabIndex = 5;
             // 
             // lblHelpText
             // 
-            this.lblHelpText.Appearance.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblHelpText.Appearance.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblHelpText.Appearance.Options.UseFont = true;
             this.tablePanel2.SetColumn(this.lblHelpText, 0);
             this.lblHelpText.Location = new System.Drawing.Point(3, 3);
             this.lblHelpText.Name = "lblHelpText";
             this.lblHelpText.Padding = new System.Windows.Forms.Padding(5);
             this.tablePanel2.SetRow(this.lblHelpText, 0);
-            this.lblHelpText.Size = new System.Drawing.Size(85, 20);
+            this.lblHelpText.Size = new System.Drawing.Size(85, 26);
             this.lblHelpText.TabIndex = 0;
             this.lblHelpText.Text = "labelControl1";
             // 

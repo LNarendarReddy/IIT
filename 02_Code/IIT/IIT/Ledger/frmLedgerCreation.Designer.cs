@@ -60,6 +60,10 @@
             // 
             // tlLedger
             // 
+            this.tlLedger.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.tlLedger.Appearance.FocusedCell.ForeColor = System.Drawing.Color.White;
+            this.tlLedger.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.tlLedger.Appearance.FocusedCell.Options.UseForeColor = true;
             this.tlLedger.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(12)));
             this.tlLedger.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
             this.tlLedger.Appearance.HeaderPanel.Options.UseFont = true;
