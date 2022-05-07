@@ -43,16 +43,16 @@ namespace IIT
             luClassification.EditValue = ledgerObj.ClassificationID;
             luGroup.EditValue = ledgerObj.GroupID;
             cmbSubGroup.EditValue = ledgerObj.SubGroupID;
-            meDescription.EditValue = ledgerObj.Description;
 
-            if(ledgerObj.ID == null)
+            if (ledgerObj.ID == null)
             {
+                this.Text = $"Add { this.Text}";
                 luClassification.Enabled = false;
                 luGroup.Enabled = false;
                 cmbSubGroup.Enabled = false;
             }
-
-            Text = string.IsNullOrEmpty(ledgerObj.Name?.ToString()) ? Text : $"{Text} - {ledgerObj.Name}";
+            else
+                Text = string.IsNullOrEmpty(ledgerObj.Name?.ToString()) ? Text : $"Edit {Text} - {ledgerObj.Name}";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace IIT
 
             ledgerObj.Name = txtLedgerName.EditValue;
             ledgerObj.SubGroupID = cmbSubGroup.EditValue;
-            ledgerObj.Description = meDescription.EditValue;
+            ledgerObj.Description = txtLedgerName.EditValue;
             ledgerObj.UserName = Utility.UserName;
 
             try

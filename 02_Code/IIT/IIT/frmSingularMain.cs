@@ -30,5 +30,10 @@ namespace IIT
                 return;
             RollbackControl();
         }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

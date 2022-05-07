@@ -34,6 +34,9 @@ namespace Repository
                     SameAddress = drEntity["SameAddress"],
                     NatureOfBussiness = drEntity["NatureOfBussiness"],
                     CompanyNumber = drEntity["CompanyNumber"],
+                    CASHINHANDID = drEntity["CASHINHANDID"],
+                    EntitylogoID = drEntity["ENTITYLOGOID"],
+                    LogoData =  (byte[]) drEntity["LOGODATA"]
                 };
 
                 entities.Add(entityData);
@@ -70,6 +73,7 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@NAtureOfBussiness", entityObj.NatureOfBussiness);
                     cmd.Parameters.AddWithValue("@CompanyNumber", entityObj.CompanyNumber);
                     cmd.Parameters.AddWithValue("@UserName", entityObj.UserName);
+                    cmd.Parameters.AddWithValue("@LogoData", entityObj.LogoData);
                     object entityIDObj = cmd.ExecuteScalar();
 
                     if (!int.TryParse(entityIDObj.ToString(), out int entityID))

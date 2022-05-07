@@ -100,14 +100,14 @@
             // 
             this.lblHelpText.Appearance.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblHelpText.Appearance.Options.UseFont = true;
+            this.lblHelpText.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.tablePanel2.SetColumn(this.lblHelpText, 0);
             this.lblHelpText.Location = new System.Drawing.Point(3, 3);
             this.lblHelpText.Name = "lblHelpText";
             this.lblHelpText.Padding = new System.Windows.Forms.Padding(5);
             this.tablePanel2.SetRow(this.lblHelpText, 0);
-            this.lblHelpText.Size = new System.Drawing.Size(85, 26);
+            this.lblHelpText.Size = new System.Drawing.Size(176, 10);
             this.lblHelpText.TabIndex = 0;
-            this.lblHelpText.Text = "labelControl1";
             // 
             // tablePanel1
             // 
@@ -148,6 +148,7 @@
             this.labelControl1.Size = new System.Drawing.Size(166, 15);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Status text based on operation";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // pictureEdit1
             // 
@@ -309,6 +310,7 @@
             this.Controls.Add(this.lcMain);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmSingularMain.IconOptions.Icon")));
             this.KeyPreview = true;
             this.Name = "frmSingularMain";
             this.Ribbon = this.ribbonControl1;

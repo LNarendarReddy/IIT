@@ -22,7 +22,7 @@ namespace IIT
 
             groupObj.Name = txtGroupName.EditValue;
             groupObj.ClassificationID = luClassification.EditValue;
-            groupObj.Description = meDescription.EditValue;
+            groupObj.Description = txtGroupName.EditValue;
             groupObj.UserName = Utility.UserName;
             groupObj.EntityID = Utility.CurrentEntity?.ID;
 
@@ -46,11 +46,14 @@ namespace IIT
 
             txtGroupName.EditValue = groupObj.Name;
             luClassification.EditValue = groupObj.ClassificationID;
-            meDescription.EditValue = groupObj.Description;
 
             if (groupObj.ID == null)
+            {
                 luClassification.Enabled = false;
-            Text = string.IsNullOrEmpty(groupObj.Name?.ToString()) ? Text : $"{Text} - {groupObj.Name}";
+                Text = $"Add {Text}";
+            }
+            else
+                Text = string.IsNullOrEmpty(groupObj.Name?.ToString()) ? Text : $"Edit {Text} - {groupObj.Name}";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

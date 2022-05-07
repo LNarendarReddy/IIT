@@ -19,7 +19,6 @@ namespace IIT
             this.Name = "NavigationBase";
             this.Size = new System.Drawing.Size(953, 670);
             this.ResumeLayout(false);
-
         }
 
         private void simpleButton1_Click(object sender, System.EventArgs e)

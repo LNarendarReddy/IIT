@@ -15,8 +15,8 @@ namespace Repository
                 VoucherDate = dtVoucherRow["VOUCHERDATE"],
                 VoucherNumber = dtVoucherRow["VOUCHERNUMBER"],
                 Amount = dtVoucherRow["AMOUNT"],
-                PaymentTo = dtVoucherRow["PAYMENTTO"],
-                BankName = dtVoucherRow["BANKNAME"],
+                PaymentFrom = dtVoucherRow["PaymentFrom"],
+                PaymentTo = dtVoucherRow["PaymentTo"],
                 Purpose = dtVoucherRow["PURPOSE"],
                 VoucherTypeID = dtVoucherRow["VOUCHERTYPEID"]
             };
@@ -33,22 +33,23 @@ namespace Repository
                     cmd.CommandText = "[USP_CU_VOUCHER]";
                     cmd.Parameters.AddWithValue("@VoucherID", voucherObj.ID);
                     cmd.Parameters.AddWithValue("@VoucherDate", voucherObj.VoucherDate);
-                    cmd.Parameters.AddWithValue("@VoucherNumber", voucherObj.VoucherNumber);
+                    SqlParameter sqlParameter = cmd.Parameters.Add("@VoucherNumber", SqlDbType.BigInt);
+                    sqlParameter.Value = 0;
+                    sqlParameter.Direction = ParameterDirection.InputOutput;
                     cmd.Parameters.AddWithValue("@Amount", voucherObj.Amount);
                     cmd.Parameters.AddWithValue("@PaymentTo", voucherObj.PaymentTo);
-                    cmd.Parameters.AddWithValue("@BankName", voucherObj.BankName);
+                    cmd.Parameters.AddWithValue("@PaymentFrom", voucherObj.PaymentFrom);
                     cmd.Parameters.AddWithValue("@Purpose", voucherObj.Purpose);
                     cmd.Parameters.AddWithValue("@VoucherTypeID", voucherObj.VoucherTypeID);
                     cmd.Parameters.AddWithValue("@UserName", voucherObj.UserName);
                     cmd.Parameters.AddWithValue("@ENTITYID", voucherObj.EntityID);
                     object voucherIDObj = cmd.ExecuteScalar();
-
                     if (!int.TryParse(voucherIDObj.ToString(), out int voucherID))
                     {
                         throw new Exception(voucherIDObj.ToString());
                     }
-
                     voucherObj.ID = voucherID;
+                    voucherObj.VoucherNumber = sqlParameter.Value;
                 }
             }
             catch (Exception ex)

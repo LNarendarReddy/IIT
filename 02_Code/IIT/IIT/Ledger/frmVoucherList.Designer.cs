@@ -184,22 +184,22 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "Ledger";
+            this.gridColumn6.Caption = "Payment To";
             this.gridColumn6.FieldName = "TOLEDGER";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.VisibleIndex = 5;
             this.gridColumn6.Width = 115;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Bank Name";
+            this.gridColumn4.Caption = "Payment From";
             this.gridColumn4.FieldName = "FROMLEDGER";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 124;
             // 
             // gridColumn12

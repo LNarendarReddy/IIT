@@ -60,7 +60,7 @@
             this.btnIndividualFirm.Size = new System.Drawing.Size(290, 27);
             this.btnIndividualFirm.StyleController = this.layoutControl1;
             this.btnIndividualFirm.TabIndex = 0;
-            this.btnIndividualFirm.Text = "Individual / Proprietor Firm";
+            this.btnIndividualFirm.Text = "&Individual / Proprietor Firm";
             this.btnIndividualFirm.Click += new System.EventHandler(this.btnIndividualFirm_Click_1);
             // 
             // layoutControl1
@@ -88,7 +88,7 @@
             this.btnCompany.Size = new System.Drawing.Size(290, 27);
             this.btnCompany.StyleController = this.layoutControl1;
             this.btnCompany.TabIndex = 3;
-            this.btnCompany.Text = "Company";
+            this.btnCompany.Text = "&Company";
             // 
             // btnAOP
             // 
@@ -98,7 +98,7 @@
             this.btnAOP.Size = new System.Drawing.Size(290, 27);
             this.btnAOP.StyleController = this.layoutControl1;
             this.btnAOP.TabIndex = 2;
-            this.btnAOP.Text = "AOP / BOI";
+            this.btnAOP.Text = "&AOP / BOI";
             // 
             // btnPertnershipFirm
             // 
@@ -108,7 +108,7 @@
             this.btnPertnershipFirm.Size = new System.Drawing.Size(290, 27);
             this.btnPertnershipFirm.StyleController = this.layoutControl1;
             this.btnPertnershipFirm.TabIndex = 1;
-            this.btnPertnershipFirm.Text = "Partnership Firm";
+            this.btnPertnershipFirm.Text = "&Partnership Firm";
             // 
             // Root
             // 

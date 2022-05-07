@@ -14,7 +14,8 @@ namespace IIT
         public bool IsSave = false;
         EntityData entityData = null;
         bool isLoading = false;
-
+        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save ", "(Alt + L) ==> Add Logo" };
+        public override List<string> HelpText => helpText;
         public frmEntityIndividual(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace IIT
             if (EntityID > 0)
             {
                 entityData = new EntityDataRepository().GetEntityData(EntityID);
+                btnAddLogo.Text = entityData.EntitylogoID.Equals(0) ? "Add Logo" : "View Logo";
             }
             else
             {
@@ -240,6 +242,11 @@ namespace IIT
 
 
             }
+        }
+
+        private void btnAddLogo_Click(object sender, EventArgs e)
+        {
+            Utility.ShowDialog(new frmEntityLogo(entityData));
         }
     }
 }

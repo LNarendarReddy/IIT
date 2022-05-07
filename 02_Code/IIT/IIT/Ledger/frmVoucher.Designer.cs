@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.luBankAccount = new DevExpress.XtraEditors.LookUpEdit();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbPaymentMadefrom = new DevExpress.XtraEditors.LookUpEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.luPaymentMadeto = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbPaymentMadeto = new DevExpress.XtraEditors.LookUpEdit();
             this.txtAmountInWords = new DevExpress.XtraEditors.LabelControl();
             this.txtAmountIRupees = new DevExpress.XtraEditors.TextEdit();
             this.txtRefNo = new DevExpress.XtraEditors.TextEdit();
@@ -48,7 +48,6 @@
             this.txtPurposeofPayment = new DevExpress.XtraEditors.MemoEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -57,16 +56,15 @@
             this.lciPaymentMadeTo = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciPurpose = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lciBankAccount = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciPaymentMadeFrom = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.luBankAccount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luPaymentMadeto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPaymentMadefrom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPaymentMadeto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmountIRupees.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRefNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpVoucherDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -74,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPurposeofPayment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -83,9 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lciPaymentMadeTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciPurpose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lciBankAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciPaymentMadeFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -95,97 +91,86 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.luBankAccount);
-            this.layoutControl1.Controls.Add(this.btnCancel);
+            this.layoutControl1.Controls.Add(this.cmbPaymentMadefrom);
             this.layoutControl1.Controls.Add(this.btnSave);
-            this.layoutControl1.Controls.Add(this.luPaymentMadeto);
+            this.layoutControl1.Controls.Add(this.cmbPaymentMadeto);
             this.layoutControl1.Controls.Add(this.txtAmountInWords);
             this.layoutControl1.Controls.Add(this.txtAmountIRupees);
             this.layoutControl1.Controls.Add(this.txtRefNo);
             this.layoutControl1.Controls.Add(this.dtpVoucherDate);
             this.layoutControl1.Controls.Add(this.lblformHeader);
             this.layoutControl1.Controls.Add(this.txtPurposeofPayment);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1134, 386, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(755, 544);
+            this.layoutControl1.Size = new System.Drawing.Size(755, 442);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // luBankAccount
+            // cmbPaymentMadefrom
             // 
-            this.luBankAccount.EnterMoveNextControl = true;
-            this.luBankAccount.Location = new System.Drawing.Point(139, 271);
-            this.luBankAccount.Name = "luBankAccount";
-            this.luBankAccount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbPaymentMadefrom.EnterMoveNextControl = true;
+            this.cmbPaymentMadefrom.Location = new System.Drawing.Point(139, 219);
+            this.cmbPaymentMadefrom.Name = "cmbPaymentMadefrom";
+            this.cmbPaymentMadefrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luBankAccount.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.cmbPaymentMadefrom.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "Ledger"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERDESCRIPTION", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPID", "SUBGROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "sub Group"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "sub Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPID", "GROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head")});
-            this.luBankAccount.Properties.NullText = "";
-            this.luBankAccount.Size = new System.Drawing.Size(601, 22);
-            this.luBankAccount.StyleController = this.layoutControl1;
-            this.luBankAccount.TabIndex = 4;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
-            this.btnCancel.Location = new System.Drawing.Point(387, 481);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(118, 36);
-            this.btnCancel.StyleController = this.layoutControl1;
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cmbPaymentMadefrom.Properties.NullText = "";
+            this.cmbPaymentMadefrom.Size = new System.Drawing.Size(601, 22);
+            this.cmbPaymentMadefrom.StyleController = this.layoutControl1;
+            this.cmbPaymentMadefrom.TabIndex = 4;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadefrom, conditionValidationRule1);
             // 
             // btnSave
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(250, 481);
+            this.btnSave.Location = new System.Drawing.Point(621, 391);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 36);
+            this.btnSave.Size = new System.Drawing.Size(119, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "&Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // luPaymentMadeto
+            // cmbPaymentMadeto
             // 
-            this.luPaymentMadeto.EnterMoveNextControl = true;
-            this.luPaymentMadeto.Location = new System.Drawing.Point(139, 229);
-            this.luPaymentMadeto.Name = "luPaymentMadeto";
-            this.luPaymentMadeto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbPaymentMadeto.EnterMoveNextControl = true;
+            this.cmbPaymentMadeto.Location = new System.Drawing.Point(139, 261);
+            this.cmbPaymentMadeto.Name = "cmbPaymentMadeto";
+            this.cmbPaymentMadeto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luPaymentMadeto.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.cmbPaymentMadeto.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "Ledger"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERDESCRIPTION", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPID", "SUBGROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "Sub Group"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "Sub Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPID", "GROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head")});
-            this.luPaymentMadeto.Properties.NullText = "";
-            this.luPaymentMadeto.Size = new System.Drawing.Size(601, 22);
-            this.luPaymentMadeto.StyleController = this.layoutControl1;
-            this.luPaymentMadeto.TabIndex = 3;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.luPaymentMadeto, conditionValidationRule6);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cmbPaymentMadeto.Properties.NullText = "";
+            this.cmbPaymentMadeto.Size = new System.Drawing.Size(601, 22);
+            this.cmbPaymentMadeto.StyleController = this.layoutControl1;
+            this.cmbPaymentMadeto.TabIndex = 3;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadeto, conditionValidationRule2);
             // 
             // txtAmountInWords
             // 
@@ -210,10 +195,10 @@
             this.txtAmountIRupees.Size = new System.Drawing.Size(601, 22);
             this.txtAmountIRupees.StyleController = this.layoutControl1;
             this.txtAmountIRupees.TabIndex = 2;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAmountIRupees, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAmountIRupees, conditionValidationRule3);
             this.txtAmountIRupees.Leave += new System.EventHandler(this.txtAmountIRupees_Leave);
             // 
             // txtRefNo
@@ -231,9 +216,9 @@
             this.txtRefNo.Size = new System.Drawing.Size(128, 22);
             this.txtRefNo.StyleController = this.layoutControl1;
             this.txtRefNo.TabIndex = 1;
-            conditionValidationRule2.ErrorText = "";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
-            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule2);
+            conditionValidationRule4.ErrorText = "";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
+            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule4);
             // 
             // dtpVoucherDate
             // 
@@ -248,10 +233,10 @@
             this.dtpVoucherDate.Size = new System.Drawing.Size(135, 22);
             this.dtpVoucherDate.StyleController = this.layoutControl1;
             this.dtpVoucherDate.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.dtpVoucherDate, conditionValidationRule3);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.dtpVoucherDate, conditionValidationRule5);
             // 
             // lblformHeader
             // 
@@ -267,15 +252,15 @@
             // txtPurposeofPayment
             // 
             this.txtPurposeofPayment.EnterMoveNextControl = true;
-            this.txtPurposeofPayment.Location = new System.Drawing.Point(139, 313);
+            this.txtPurposeofPayment.Location = new System.Drawing.Point(139, 303);
             this.txtPurposeofPayment.Name = "txtPurposeofPayment";
-            this.txtPurposeofPayment.Size = new System.Drawing.Size(601, 100);
+            this.txtPurposeofPayment.Size = new System.Drawing.Size(601, 68);
             this.txtPurposeofPayment.StyleController = this.layoutControl1;
             this.txtPurposeofPayment.TabIndex = 5;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPurposeofPayment, conditionValidationRule4);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Mandatory";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPurposeofPayment, conditionValidationRule6);
             // 
             // Root
             // 
@@ -285,7 +270,6 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.emptySpaceItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.emptySpaceItem3,
@@ -294,12 +278,11 @@
             this.lciPaymentMadeTo,
             this.lciPurpose,
             this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.emptySpaceItem2,
-            this.lciBankAccount});
+            this.lciPaymentMadeFrom,
+            this.emptySpaceItem4});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.Root.Size = new System.Drawing.Size(755, 544);
+            this.Root.Size = new System.Drawing.Size(755, 442);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -312,14 +295,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(745, 52);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 418);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(745, 48);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
@@ -374,61 +349,54 @@
             // 
             // lciPaymentMadeTo
             // 
-            this.lciPaymentMadeTo.Control = this.luPaymentMadeto;
-            this.lciPaymentMadeTo.Location = new System.Drawing.Point(0, 204);
+            this.lciPaymentMadeTo.Control = this.cmbPaymentMadeto;
+            this.lciPaymentMadeTo.Location = new System.Drawing.Point(0, 246);
             this.lciPaymentMadeTo.Name = "lciPaymentMadeTo";
-            this.lciPaymentMadeTo.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 20, 10);
-            this.lciPaymentMadeTo.Size = new System.Drawing.Size(745, 52);
+            this.lciPaymentMadeTo.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.lciPaymentMadeTo.Size = new System.Drawing.Size(745, 42);
             this.lciPaymentMadeTo.Text = "Payment Made to";
             this.lciPaymentMadeTo.TextSize = new System.Drawing.Size(112, 15);
             // 
             // lciPurpose
             // 
             this.lciPurpose.Control = this.txtPurposeofPayment;
-            this.lciPurpose.Location = new System.Drawing.Point(0, 298);
+            this.lciPurpose.Location = new System.Drawing.Point(0, 288);
             this.lciPurpose.Name = "lciPurpose";
             this.lciPurpose.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciPurpose.Size = new System.Drawing.Size(745, 120);
+            this.lciPurpose.Size = new System.Drawing.Size(745, 88);
             this.lciPurpose.Text = "Purpose of Payment";
             this.lciPurpose.TextSize = new System.Drawing.Size(112, 15);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnSave;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 466);
+            this.layoutControlItem8.Location = new System.Drawing.Point(606, 376);
+            this.layoutControlItem8.MaxSize = new System.Drawing.Size(139, 56);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(139, 56);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(245, 10, 10, 10);
-            this.layoutControlItem8.Size = new System.Drawing.Size(372, 56);
+            this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem8.Size = new System.Drawing.Size(139, 56);
+            this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // layoutControlItem9
+            // lciPaymentMadeFrom
             // 
-            this.layoutControlItem9.Control = this.btnCancel;
-            this.layoutControlItem9.Location = new System.Drawing.Point(372, 466);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 245, 10, 10);
-            this.layoutControlItem9.Size = new System.Drawing.Size(373, 56);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
+            this.lciPaymentMadeFrom.Control = this.cmbPaymentMadefrom;
+            this.lciPaymentMadeFrom.Location = new System.Drawing.Point(0, 204);
+            this.lciPaymentMadeFrom.Name = "lciPaymentMadeFrom";
+            this.lciPaymentMadeFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.lciPaymentMadeFrom.Size = new System.Drawing.Size(745, 42);
+            this.lciPaymentMadeFrom.Text = "Bank Account";
+            this.lciPaymentMadeFrom.TextSize = new System.Drawing.Size(112, 15);
             // 
-            // emptySpaceItem2
+            // emptySpaceItem4
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 522);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(745, 12);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // lciBankAccount
-            // 
-            this.lciBankAccount.Control = this.luBankAccount;
-            this.lciBankAccount.Location = new System.Drawing.Point(0, 256);
-            this.lciBankAccount.Name = "lciBankAccount";
-            this.lciBankAccount.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciBankAccount.Size = new System.Drawing.Size(745, 42);
-            this.lciBankAccount.Text = "Bank Account";
-            this.lciBankAccount.TextSize = new System.Drawing.Size(112, 15);
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 376);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(606, 56);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tablePanel1
             // 
@@ -441,10 +409,10 @@
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 42.21F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 646F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 57.79F)});
-            this.tablePanel1.Size = new System.Drawing.Size(843, 619);
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(843, 505);
             this.tablePanel1.TabIndex = 1;
             // 
             // panelControl1
@@ -454,11 +422,10 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.tablePanel1.SetColumn(this.panelControl1, 1);
             this.panelControl1.Controls.Add(this.layoutControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(42, 30);
             this.panelControl1.Name = "panelControl1";
             this.tablePanel1.SetRow(this.panelControl1, 1);
-            this.panelControl1.Size = new System.Drawing.Size(759, 548);
+            this.panelControl1.Size = new System.Drawing.Size(759, 446);
             this.panelControl1.TabIndex = 1;
             // 
             // frmVoucher
@@ -467,12 +434,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "frmVoucher";
-            this.Size = new System.Drawing.Size(843, 619);
+            this.Size = new System.Drawing.Size(843, 505);
             this.Load += new System.EventHandler(this.frmVoucherNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.luBankAccount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luPaymentMadeto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPaymentMadefrom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPaymentMadeto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmountIRupees.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRefNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpVoucherDate.Properties.CalendarTimeProperties)).EndInit();
@@ -480,7 +447,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPurposeofPayment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
@@ -489,9 +455,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lciPaymentMadeTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciPurpose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lciBankAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciPaymentMadeFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
@@ -508,7 +473,6 @@
         private DevExpress.XtraEditors.DateEdit dtpVoucherDate;
         private DevExpress.XtraEditors.LabelControl lblformHeader;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.TextEdit txtRefNo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -517,19 +481,17 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.LookUpEdit luPaymentMadeto;
+        private DevExpress.XtraEditors.LookUpEdit cmbPaymentMadeto;
         private DevExpress.XtraLayout.LayoutControlItem lciPaymentMadeTo;
         private DevExpress.XtraLayout.LayoutControlItem lciPurpose;
         private DevExpress.XtraEditors.MemoEdit txtPurposeofPayment;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
-        private DevExpress.XtraEditors.LookUpEdit luBankAccount;
-        private DevExpress.XtraLayout.LayoutControlItem lciBankAccount;
+        private DevExpress.XtraEditors.LookUpEdit cmbPaymentMadefrom;
+        private DevExpress.XtraLayout.LayoutControlItem lciPaymentMadeFrom;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }

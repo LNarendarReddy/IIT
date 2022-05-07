@@ -16,9 +16,11 @@ namespace IIT
         public object EntityName;
         public bool IsEntitySelected = false;
         EntityDataRepository entityDataRepository = new EntityDataRepository();
+        private List<string> helpText = new List<string>() { "(Alt + C) ==> Create",
+            "(Alt + M) ==> Modify", "(Alt + S) ==> Select" };
 
         public override NavigationBase PreviousControl { get => base.PreviousControl; set { } }
-        public override List<string> HelpText => new List<string> { "Create", "Modify", "test" };
+        public override List<string> HelpText => helpText;
         public frmEntityList() 
         {    
             InitializeComponent();
@@ -144,9 +146,9 @@ namespace IIT
         }
         private void btnviewLogo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gvEntityList.FocusedRowHandle < 0)
-                return;
-            Utility.ShowDialog(new frmEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
+            //if (gvEntityList.FocusedRowHandle < 0)
+            //    return;
+            //Utility.ShowDialog(new frmEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID")));
         }
         private void gvEntityList_KeyPress(object sender, KeyPressEventArgs e)
         {

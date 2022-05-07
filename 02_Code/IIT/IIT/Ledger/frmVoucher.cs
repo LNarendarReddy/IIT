@@ -4,77 +4,89 @@ using DevExpress.XtraReports.UI;
 using Entity;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace IIT
 {
     public partial class frmVoucher : NavigationBase
     {
+        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save", "(Alt + N) ==> Add ledger" };
+        public override List<string> HelpText => helpText;
         Voucher voucherObj;
         public frmVoucher(Voucher _voucherObj)
         {
             InitializeComponent();
             voucherObj = _voucherObj;
-            switch (Convert.ToInt32(voucherObj.VoucherTypeID))
-            {
-                case 55:
-                    lblformHeader.Text = "CASH PAYMENT VOUCHER";
-                    lciBankAccount.Visibility = LayoutVisibility.Never;
-                    lciPaymentMadeTo.Text = "Payment Made to : ";
-                    lciPurpose.Text = "Purpose of the Payment ";
-                    break;
-                case 56:
-                    lblformHeader.Text = "BANK PAYMENT VOUCHER";
-                    lciPaymentMadeTo.Text = "Payment Made to : ";
-                    lciBankAccount.Text = "Payment Made from : ";
-                    lciPurpose.Text = "Purpose of the Payment ";
-                    break;
-                case 57:
-                    lblformHeader.Text = "CASH RECIEPT VOUCHER";
-                    lciBankAccount.Visibility = LayoutVisibility.Never;
-                    lciPaymentMadeTo.Text = "Amount received From : ";
-                    lciPurpose.Text = "Purpose of the Reciept ";
-                    break;
-                case 58:
-                    lblformHeader.Text = "BANK RECIEPT VOUCHER";
-                    lciPaymentMadeTo.Text = "Amount received From : ";
-                    lciBankAccount.Text = "Amount Credit to : ";
-                    lciPurpose.Text = "Purpose of the Reciept ";
-                    break;
-                case 59:
-                    lblformHeader.Text = "CONTRA VOUCHER - Withdrawal";
-                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
-                    lciBankAccount.Text = "Amount Withdrawn from : ";
-                    lciPurpose.Text = "Reasons ";
-                    break;
-                case 60:
-                    lblformHeader.Text = "CONTRA VOUCHER - Deposit";
-                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
-                    lciBankAccount.Text = "Amount Deposited in to : ";
-                    lciPurpose.Text = "Reasons ";
-                    break;
-                default:
-                    break;
-            }
             dtpVoucherDate.EditValue = DateTime.Now;
         }
 
         private void frmVoucherNew_Load(object sender, EventArgs e)
         {
-            luPaymentMadeto.Properties.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
-            luPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
-            luPaymentMadeto.Properties.ValueMember = "LEDGERID";
+            cmbPaymentMadeto.Properties.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
+            cmbPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
+            cmbPaymentMadeto.Properties.ValueMember = "LEDGERID";
 
-            luBankAccount.Properties.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
-            luBankAccount.Properties.DisplayMember = "LEDGERNAME";
-            luBankAccount.Properties.ValueMember = "LEDGERID";
+            cmbPaymentMadefrom.Properties.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
+            cmbPaymentMadefrom.Properties.DisplayMember = "LEDGERNAME";
+            cmbPaymentMadefrom.Properties.ValueMember = "LEDGERID";
 
             txtRefNo.EditValue = voucherObj.VoucherNumber;
             txtAmountIRupees.EditValue = voucherObj.Amount;
-            luPaymentMadeto.EditValue = voucherObj.PaymentTo;
-            luBankAccount.EditValue = voucherObj.BankName;
+            cmbPaymentMadeto.EditValue = voucherObj.PaymentTo;
+            cmbPaymentMadefrom.EditValue = voucherObj.PaymentFrom;
             txtPurposeofPayment.EditValue = voucherObj.Purpose;
             dtpVoucherDate.EditValue = voucherObj.VoucherDate ?? DateTime.Now;
+
+            switch (Convert.ToInt32(voucherObj.VoucherTypeID))
+            {
+                case 55:
+                    lblformHeader.Text = "CASH PAYMENT VOUCHER";
+                    lciPaymentMadeFrom.Text = "Payment made from :";
+                    lciPaymentMadeTo.Text = "Payment made to :";
+                    lciPurpose.Text = "Purpose of the payment ";
+                    cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                    lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
+                    break;
+                case 56:
+                    lblformHeader.Text = "BANK PAYMENT VOUCHER";
+                    lciPaymentMadeFrom.Text = "Bank account :";
+                    lciPaymentMadeTo.Text = "Payment made to :";
+                    lciPurpose.Text = "Purpose of the payment ";
+                    break;
+                case 57:
+                    lblformHeader.Text = "CASH RECIEPT VOUCHER";
+                    lciPaymentMadeFrom.Text = "Cash received from :";
+                    lciPaymentMadeTo.Text = "Amount credited to :";
+                    lciPurpose.Text = "Purpose of the reciept ";
+                    cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
+                    break;
+                case 58:
+                    lblformHeader.Text = "BANK RECIEPT VOUCHER";
+                    lciPaymentMadeFrom.Text = "Cash received from :";
+                    lciPaymentMadeTo.Text = "Bank account :";
+                    lciPurpose.Text = "Purpose of the reciept ";
+                    break;
+                case 59:
+                    lblformHeader.Text = "CONTRA VOUCHER - Withdrawal";
+                    lciPaymentMadeFrom.Text = "Amount withdrawn from :";
+                    lciPaymentMadeTo.Text = "Cash credited to :";
+                    lciPurpose.Text = "Reasons ";
+                    cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
+                    break;
+                case 60:
+                    lblformHeader.Text = "CONTRA VOUCHER - Deposit";
+                    lciPaymentMadeFrom.Text = "Cash debited from :";
+                    lciPaymentMadeTo.Text = "Amount deposited in to :";
+                    lciPurpose.Text = "Reasons ";
+                    cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                    lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
+                    break;
+                default:
+                    break;
+            }
 
             Text = string.IsNullOrEmpty(voucherObj.VoucherNumber?.ToString()) ? Text : $"{Text} - {voucherObj.VoucherNumber}";
         }
@@ -85,8 +97,13 @@ namespace IIT
 
             voucherObj.VoucherNumber = txtRefNo.EditValue;
             voucherObj.Amount = txtAmountIRupees.EditValue;
-            voucherObj.PaymentTo = luPaymentMadeto.EditValue;
-            voucherObj.BankName = luBankAccount.EditValue;
+            
+            voucherObj.PaymentFrom = lciPaymentMadeFrom.Visibility == LayoutVisibility.Never ? 
+                Utility.CurrentEntity.CASHINHANDID : cmbPaymentMadefrom.EditValue;
+            
+            voucherObj.PaymentTo = lciPaymentMadeTo.Visibility == LayoutVisibility.Never ? 
+                Utility.CurrentEntity.CASHINHANDID : cmbPaymentMadeto.EditValue;
+
             voucherObj.Purpose = txtPurposeofPayment.EditValue;
             voucherObj.VoucherDate = dtpVoucherDate.EditValue;
             voucherObj.UserName = Utility.UserName;
@@ -104,55 +121,47 @@ namespace IIT
                 rpt.Parameters["VoucherNumber"].Value = voucherObj.VoucherNumber;
                 rpt.Parameters["AmountInRupees"].Value = voucherObj.Amount;
                 rpt.Parameters["AmountInWords"].Value = voucherObj.AmountInWords;
-                rpt.Parameters["LedgerName"].Value = luPaymentMadeto.Text;
-                rpt.Parameters["BankName"].Value = luBankAccount.Text;
+                rpt.Parameters["PaymentMadeFrom"].Value = cmbPaymentMadefrom.Text;
+                rpt.Parameters["PaymentMadeTo"].Value = cmbPaymentMadeto.Text;
                 rpt.Parameters["Purpose"].Value = voucherObj.Purpose;
 
                 switch (Convert.ToInt32(voucherObj.VoucherTypeID))
                 {
                     case 55:
                         rpt.Parameters["VoucherCaption"].Value = "CASH PAYMENT VOUCHER";
-                        rpt.Parameters["IsBankVoucher"].Value = false;
-                        rpt.Parameters["IsContraVoucher"].Value = false;
-                        rpt.Parameters["LedgerNameCaption"].Value = "Payment Made to : ";
-                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the Payment : ";
+                        rpt.Parameters["PaymentMadeFromCaption"].Value = "Cash debited form :";
+                        rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
+                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the payment :";
                         break;
                     case 56:
                         rpt.Parameters["VoucherCaption"].Value = "BANK PAYMENT VOUCHER";
-                        rpt.Parameters["IsBankVoucher"].Value = true;
-                        rpt.Parameters["IsContraVoucher"].Value = false;
-                        rpt.Parameters["LedgerNameCaption"].Value = "Payment Made to : ";
-                        rpt.Parameters["BankNameCaption"].Value = "Payment Made from : ";
-                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the Payment : ";
+                        rpt.Parameters["PaymentMadeFromCaption"].Value = "Bank account :";
+                        rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
+                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the payment :";
                         break;
                     case 57:
                         rpt.Parameters["VoucherCaption"].Value = "CASH RECIEPT VOUCHER";
-                        rpt.Parameters["IsBankVoucher"].Value = false;
-                        rpt.Parameters["IsContraVoucher"].Value = false;
-                        rpt.Parameters["LedgerNameCaption"].Value = "Amount received From : ";
-                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the Reciept : ";
+                        rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount recieved from :";
+                        rpt.Parameters["PaymentMadeToCaption"].Value = "Cash credited to :";
+                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the reciept :";
                         break;
                     case 58:
                         rpt.Parameters["VoucherCaption"].Value = "BANK RECIEPT VOUCHER";
-                        rpt.Parameters["IsBankVoucher"].Value = true;
-                        rpt.Parameters["IsContraVoucher"].Value = false;
-                        rpt.Parameters["LedgerNameCaption"].Value = "Amount received From : ";
-                        rpt.Parameters["BankNameCaption"].Value = "Amount Credit to : ";
-                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the Reciept : ";
+                        rpt.Parameters["PaymentMadeFromCaption"].Value = "Bank Account :";
+                        rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
+                        rpt.Parameters["PurposeCaption"].Value = "Purpose of the reciept :";
                         break;
                     case 59:
                         rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Withdrawal";
-                        rpt.Parameters["IsBankVoucher"].Value = true;
-                        rpt.Parameters["IsContraVoucher"].Value = true;
-                        rpt.Parameters["BankNameCaption"].Value = "Amount Withdrawn from : ";
-                        rpt.Parameters["PurposeCaption"].Value = "Reasons : ";
+                        rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount withdrawn from :";
+                        rpt.Parameters["PaymentMadeToCaption"].Value = "Amount credited to :";
+                        rpt.Parameters["PurposeCaption"].Value = "Reasons :";
                         break;
                     case 60:
                         rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Deposit";
-                        rpt.Parameters["IsBankVoucher"].Value = true;
-                        rpt.Parameters["IsContraVoucher"].Value = true;
-                        rpt.Parameters["BankNameCaption"].Value = "Amount received From : ";
-                        rpt.Parameters["PurposeCaption"].Value = "Reasons : ";
+                        rpt.Parameters["PaymentMadeFromCaption"].Value = "Cash debited from :";
+                        rpt.Parameters["PaymentMadeToCaption"].Value = "Cash deposited to :";
+                        rpt.Parameters["PurposeCaption"].Value = "Reasons :";
                         break;
                     default:
                         break;

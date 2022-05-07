@@ -2,8 +2,10 @@
 using DevExpress.XtraGrid.Views.Grid;
 using Entity;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace IIT
 {
@@ -38,7 +40,11 @@ namespace IIT
             frmSingularMain.Instance.pcMain.Controls.Add(userControl);
             //frmSingularMain.Instance.tpMain.SetCell(userControl, 1, 1);
             userControl.Focus();
-            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine, userControl.HelpText);
+
+            userControl.HelpText.AddRange( new List<string>() { "Enter ==> Select", "Esc ==> Close" });
+
+            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine + Environment.NewLine,
+                userControl.HelpText.Distinct());
         }
 
         public static void SetGridFormatting(GridView gridView)
@@ -49,7 +55,6 @@ namespace IIT
             gridView.Appearance.HeaderPanel.Options.UseForeColor = true;
             gridView.OptionsView.ShowGroupPanel = false;
         }
-
 
         public static void PropogateAddress(CheckEdit chkSame, BaseEdit source, BaseEdit target)
         {
@@ -80,6 +85,7 @@ namespace IIT
         public static object LiabilitiesHeadID = 16;
         public static object IncomeHeadID = 17;
         public static object ExpensesHeadID = 18;
+
         public static byte[] ConvertImagetoBinary(Image img)
         {
             byte[] photo_aray = null;
@@ -99,6 +105,7 @@ namespace IIT
             }
             return photo_aray;
         }
+
         public static Image BinaryToImage(byte[] b)
         {
             if (b == null)

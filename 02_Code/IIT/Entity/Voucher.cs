@@ -10,7 +10,7 @@
 
         public object PaymentTo { get; set; }
 
-        public object BankName { get; set; }
+        public object PaymentFrom { get; set; }
 
         public object Purpose { get; set; }
 

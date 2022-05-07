@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using Entity;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -15,17 +16,16 @@ namespace IIT
 {
     public partial class frmEntityLogo : DevExpress.XtraEditors.XtraForm
     {
-        object EntityID = null;
-        public frmEntityLogo(object _EntityID)
+        EntityData entityData = null;
+        public frmEntityLogo(EntityData _entityData)
         {
             InitializeComponent();
-            EntityID = _EntityID;
+            entityData = _entityData;
         }
 
         private void frmEntityLogo_Load(object sender, EventArgs e)
         {
-            pELogo.Image = Utility.BinaryToImage(new EntityDataRepository().
-                GetEntityLogo(EntityID));
+            pELogo.Image = Utility.BinaryToImage(entityData.LogoData);
             pELogo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Never;
         }
 
@@ -35,8 +35,7 @@ namespace IIT
             {
                 if (pELogo.Image != null)
                 {
-                    byte[] LogoData = Utility.ConvertImagetoBinary(pELogo.Image);
-                    new EntityDataRepository().SaveEntityLogo(EntityID,LogoData);
+                    entityData.LogoData = Utility.ConvertImagetoBinary(pELogo.Image);
                     this.Close();
                 }
             }

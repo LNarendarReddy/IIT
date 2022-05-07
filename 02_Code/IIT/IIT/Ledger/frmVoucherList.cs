@@ -46,8 +46,8 @@ namespace IIT
             rpt.Parameters["VoucherNumber"].Value = gvVoucher.GetFocusedRowCellValue("VOUCHERNUMBER");
             rpt.Parameters["AmountInRupees"].Value = gvVoucher.GetFocusedRowCellValue("AMOUNT");
             rpt.Parameters["AmountInWords"].Value = Utility.ConvertNum(Convert.ToInt64(gvVoucher.GetFocusedRowCellValue("AMOUNT")));
-            rpt.Parameters["LedgerName"].Value = gvVoucher.GetFocusedRowCellValue("TOLEDGER");
-            rpt.Parameters["BankName"].Value = gvVoucher.GetFocusedRowCellValue("FROMLEDGER");
+            rpt.Parameters["PaymentMadeFrom"].Value = gvVoucher.GetFocusedRowCellValue("FROMLEDGER");
+            rpt.Parameters["PaymentMadeTo"].Value = gvVoucher.GetFocusedRowCellValue("TOLEDGER");
             rpt.Parameters["Purpose"].Value = gvVoucher.GetFocusedRowCellValue("PURPOSE");
 
             switch (Convert.ToInt32(gvVoucher.GetFocusedRowCellValue("VOUCHERTYPEID")))
@@ -55,28 +55,50 @@ namespace IIT
                 case 55:
                     rpt.Parameters["VoucherCaption"].Value = "CASH PAYMENT VOUCHER";
                     rpt.Parameters["IsBankVoucher"].Value = false;
-                    rpt.Parameters["LedgerNameCaption"].Value = "Payment Made to : ";
-                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the Payment : ";
+                    rpt.Parameters["IsContraVoucher"].Value = false;
+                    rpt.Parameters["PaymentMadeFromCaption"].Value = "Cash debited form :";
+                    rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
+                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the payment :";
                     break;
                 case 56:
                     rpt.Parameters["VoucherCaption"].Value = "BANK PAYMENT VOUCHER";
                     rpt.Parameters["IsBankVoucher"].Value = true;
-                    rpt.Parameters["LedgerNameCaption"].Value = "Payment Made to : ";
-                    rpt.Parameters["BankNameCaption"].Value = "Payment Made from : ";
-                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the Payment : ";
+                    rpt.Parameters["IsContraVoucher"].Value = false;
+                    rpt.Parameters["PaymentMadeFromCaption"].Value = "Bank account :";
+                    rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
+                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the payment :";
                     break;
                 case 57:
                     rpt.Parameters["VoucherCaption"].Value = "CASH RECIEPT VOUCHER";
                     rpt.Parameters["IsBankVoucher"].Value = false;
-                    rpt.Parameters["LedgerNameCaption"].Value = "Amount received From : ";
-                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the Reciept : ";
+                    rpt.Parameters["IsContraVoucher"].Value = false;
+                    rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount recieved from :";
+                    rpt.Parameters["PaymentMadeToCaption"].Value = "Cash credited to :";
+                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the reciept :";
                     break;
                 case 58:
                     rpt.Parameters["VoucherCaption"].Value = "BANK RECIEPT VOUCHER";
                     rpt.Parameters["IsBankVoucher"].Value = true;
-                    rpt.Parameters["LedgerNameCaption"].Value = "Amount received From : ";
-                    rpt.Parameters["BankNameCaption"].Value = "Amount Credit to : ";
-                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the Reciept : ";
+                    rpt.Parameters["IsContraVoucher"].Value = false;
+                    rpt.Parameters["PaymentMadeFromCaption"].Value = "Bank Account :";
+                    rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
+                    rpt.Parameters["PurposeCaption"].Value = "Purpose of the reciept :";
+                    break;
+                case 59:
+                    rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Withdrawal";
+                    rpt.Parameters["IsBankVoucher"].Value = true;
+                    rpt.Parameters["IsContraVoucher"].Value = true;
+                    rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount withdrawn from :";
+                    rpt.Parameters["PaymentMadeToCaption"].Value = "Amount credited to :";
+                    rpt.Parameters["PurposeCaption"].Value = "Reasons :";
+                    break;
+                case 60:
+                    rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Deposit";
+                    rpt.Parameters["IsBankVoucher"].Value = true;
+                    rpt.Parameters["IsContraVoucher"].Value = true;
+                    rpt.Parameters["PaymentMadeFromCaption"].Value = "Cash debited from :";
+                    rpt.Parameters["PaymentMadeToCaption"].Value = "Cash deposited to :";
+                    rpt.Parameters["PurposeCaption"].Value = "Reasons :";
                     break;
                 default:
                     break;

@@ -86,7 +86,7 @@
             this.btnLedgerPrinting.Size = new System.Drawing.Size(570, 27);
             this.btnLedgerPrinting.StyleController = this.layoutControl1;
             this.btnLedgerPrinting.TabIndex = 5;
-            this.btnLedgerPrinting.Text = "Ledger Printing";
+            this.btnLedgerPrinting.Text = "Ledger &Printing";
             this.btnLedgerPrinting.Click += new System.EventHandler(this.btnLedgerPrinting_Click);
             // 
             // btnMISForms
@@ -96,7 +96,7 @@
             this.btnMISForms.Size = new System.Drawing.Size(570, 27);
             this.btnMISForms.StyleController = this.layoutControl1;
             this.btnMISForms.TabIndex = 3;
-            this.btnMISForms.Text = "MIS Forms";
+            this.btnMISForms.Text = "&MIS Forms";
             // 
             // btnDayBook
             // 
@@ -105,7 +105,7 @@
             this.btnDayBook.Size = new System.Drawing.Size(570, 27);
             this.btnDayBook.StyleController = this.layoutControl1;
             this.btnDayBook.TabIndex = 4;
-            this.btnDayBook.Text = "Day Book";
+            this.btnDayBook.Text = "&Day Book";
             this.btnDayBook.Click += new System.EventHandler(this.btnDayBook_Click);
             // 
             // btnInventoryEntry
@@ -115,7 +115,7 @@
             this.btnInventoryEntry.Size = new System.Drawing.Size(570, 27);
             this.btnInventoryEntry.StyleController = this.layoutControl1;
             this.btnInventoryEntry.TabIndex = 2;
-            this.btnInventoryEntry.Text = "Inventory Entry";
+            this.btnInventoryEntry.Text = "&Inventory Entry";
             // 
             // btnvoucherEntry
             // 
@@ -124,7 +124,7 @@
             this.btnvoucherEntry.Size = new System.Drawing.Size(570, 27);
             this.btnvoucherEntry.StyleController = this.layoutControl1;
             this.btnvoucherEntry.TabIndex = 1;
-            this.btnvoucherEntry.Text = "Voucher Entry";
+            this.btnvoucherEntry.Text = "&Voucher Entry";
             this.btnvoucherEntry.Click += new System.EventHandler(this.btnvoucherEntry_Click_1);
             // 
             // btnLeadgerCreation
@@ -134,7 +134,7 @@
             this.btnLeadgerCreation.Size = new System.Drawing.Size(570, 27);
             this.btnLeadgerCreation.StyleController = this.layoutControl1;
             this.btnLeadgerCreation.TabIndex = 0;
-            this.btnLeadgerCreation.Text = "Ledger Creation";
+            this.btnLeadgerCreation.Text = "Ledger &Creation";
             this.btnLeadgerCreation.Click += new System.EventHandler(this.btnLeadgerCreation_Click);
             // 
             // Root

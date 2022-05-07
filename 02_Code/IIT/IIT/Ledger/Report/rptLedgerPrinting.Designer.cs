@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptLedgerPrinting));
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.Parameters.StaticListLookUpSettings staticListLookUpSettings1 = new DevExpress.XtraReports.Parameters.StaticListLookUpSettings();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptLedgerPrinting));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -51,11 +54,11 @@
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
             this.OrgName = new DevExpress.XtraReports.Parameters.Parameter();
             this.EntityID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.VoucherTypeID = new DevExpress.XtraReports.Parameters.Parameter();
             this.FromDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.ToDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -66,6 +69,7 @@
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow7 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
@@ -73,6 +77,11 @@
             this.xrTableRow6 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell19 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.LedgerName = new DevExpress.XtraReports.Parameters.Parameter();
+            this.IsPurposeVisible = new DevExpress.XtraReports.Parameters.Parameter();
+            this.VoucherType = new DevExpress.XtraReports.Parameters.Parameter();
+            this.LedgerID = new DevExpress.XtraReports.Parameters.Parameter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -111,7 +120,8 @@
             // xrTableCell1
             // 
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", resources.GetString("xrTableCell1.ExpressionBindings"))});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?LedgerName + \' Ledgers from \' + FormatString(\'{0:dd/MMM/yyyy}\',?FromDate) + \' to" +
+                    " \' + FormatString(\'{0:dd/MMM/yyyy}\', ?ToDate)")});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
@@ -144,12 +154,12 @@
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
-            this.Detail.HeightF = 80F;
+            this.Detail.HeightF = 60F;
             this.Detail.Name = "Detail";
             // 
             // xrTable2
             // 
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 8F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -165,71 +175,85 @@
             this.xrTableCell4,
             this.xrTableCell5,
             this.xrTableCell11,
-            this.xrTableCell12});
+            this.xrTableCell12,
+            this.xrTableCell17});
             this.xrTableRow3.Name = "xrTableRow3";
             this.xrTableRow3.Weight = 0.635593220338983D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VOUCHERNUMBER]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VOUCHERDATE]")});
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "Voucher #";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell3.Weight = 0.43999999999999995D;
+            this.xrTableCell3.TextFormatString = "{0:dd-MMM-yy}";
+            this.xrTableCell3.Weight = 0.33999999999999997D;
             // 
             // xrTableCell4
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VOUCHERDATE]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VOUCHERNUMBER]")});
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
             this.xrTableCell4.Text = "Date";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell4.TextFormatString = "{0:dd-MMM-yy}";
-            this.xrTableCell4.Weight = 0.60000000000000009D;
+            this.xrTableCell4.Weight = 0.36000000000000004D;
             // 
             // xrTableCell5
             // 
             this.xrTableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TOLEDGER]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LEDGERNAME]")});
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
             this.xrTableCell5.Text = "Particulars";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell5.Weight = 1D;
+            this.xrTableCell5.Weight = 1.04D;
             // 
             // xrTableCell11
             // 
             this.xrTableCell11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([VOUCHERTYPEID]= 55 OR [VOUCHERTYPEID] = 56 , \'Dr\' , \'Cr\')")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LOOKUPVALUE]")});
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Dr/Cr";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell11.Weight = 0.23200000000000054D;
+            this.xrTableCell11.Weight = 0.44800000000000051D;
             // 
             // xrTableCell12
             // 
             this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[AMOUNT]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DebitAmount]")});
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.Text = "Debit";
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell12.Weight = 0.72799999999999931D;
+            this.xrTableCell12.Weight = 0.40599999999999964D;
+            // 
+            // xrTableCell17
+            // 
+            this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CreditAmount]")});
+            this.xrTableCell17.Multiline = true;
+            this.xrTableCell17.Name = "xrTableCell17";
+            this.xrTableCell17.StylePriority.UseTextAlignment = false;
+            this.xrTableCell17.Text = "xrTableCell17";
+            this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell17.Weight = 0.40599999999999964D;
             // 
             // xrTableRow5
             // 
             this.xrTableRow5.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell13});
+            this.xrTableRow5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "?IsPurposeVisible")});
             this.xrTableRow5.Name = "xrTableRow5";
             this.xrTableRow5.StylePriority.UseBorders = false;
             this.xrTableRow5.Weight = 0.63559322033898313D;
@@ -259,20 +283,13 @@
             this.EntityID.ValueInfo = "0";
             this.EntityID.Visible = false;
             // 
-            // VoucherTypeID
-            // 
-            this.VoucherTypeID.Description = "VoucherTypeID";
-            this.VoucherTypeID.Name = "VoucherTypeID";
-            this.VoucherTypeID.Type = typeof(int);
-            this.VoucherTypeID.ValueInfo = "0";
-            this.VoucherTypeID.Visible = false;
-            // 
             // FromDate
             // 
             this.FromDate.Description = "From Date";
             this.FromDate.Name = "FromDate";
             this.FromDate.Type = typeof(System.DateTime);
             this.FromDate.ValueInfo = "2022-04-26";
+            this.FromDate.Visible = false;
             // 
             // ToDate
             // 
@@ -280,6 +297,7 @@
             this.ToDate.Name = "ToDate";
             this.ToDate.Type = typeof(System.DateTime);
             this.ToDate.ValueInfo = "2022-04-26";
+            this.ToDate.Visible = false;
             // 
             // ReportHeader
             // 
@@ -299,7 +317,7 @@
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow4,
             this.xrTableRow7});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(750F, 60F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(747F, 60F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UsePadding = false;
             // 
@@ -310,7 +328,8 @@
             this.xrTableCell10,
             this.xrTableCell7,
             this.xrTableCell9,
-            this.xrTableCell8});
+            this.xrTableCell8,
+            this.xrTableCell16});
             this.xrTableRow4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableRow4.Name = "xrTableRow4";
             this.xrTableRow4.StylePriority.UseFont = false;
@@ -321,18 +340,18 @@
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
-            this.xrTableCell6.Text = "Voucher #";
+            this.xrTableCell6.Text = "Date";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell6.Weight = 0.43999999999999995D;
+            this.xrTableCell6.Weight = 0.33999999999999991D;
             // 
             // xrTableCell10
             // 
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
-            this.xrTableCell10.Text = "Date";
+            this.xrTableCell10.Text = "Voucher #";
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell10.Weight = 0.60000000000000009D;
+            this.xrTableCell10.Weight = 0.35999999999999982D;
             // 
             // xrTableCell7
             // 
@@ -341,27 +360,34 @@
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "Particulars";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell7.Weight = 1D;
+            this.xrTableCell7.Weight = 1.04D;
             // 
             // xrTableCell9
             // 
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseTextAlignment = false;
-            this.xrTableCell9.Text = "Dr/Cr";
+            this.xrTableCell9.Text = "Vch Type";
             this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell9.Weight = 0.23200000000000054D;
+            this.xrTableCell9.Weight = 0.44800000000000073D;
             // 
             // xrTableCell8
             // 
-            this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(?VoucherTypeID = 55 OR ?VoucherTypeID = 56 , \'Debit\' , \'Credit\')")});
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.Text = "Debit";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell8.Weight = 0.72799999999999931D;
+            this.xrTableCell8.Weight = 0.39999999999999969D;
+            // 
+            // xrTableCell16
+            // 
+            this.xrTableCell16.Multiline = true;
+            this.xrTableCell16.Name = "xrTableCell16";
+            this.xrTableCell16.StylePriority.UseTextAlignment = false;
+            this.xrTableCell16.Text = "Credit";
+            this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell16.Weight = 0.39999999999999969D;
             // 
             // xrTableRow7
             // 
@@ -379,7 +405,7 @@
             this.xrTableCell15.StylePriority.UseTextAlignment = false;
             this.xrTableCell15.Text = "Purpose";
             this.xrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell15.Weight = 3D;
+            this.xrTableCell15.Weight = 2.988D;
             // 
             // ReportFooter
             // 
@@ -390,19 +416,24 @@
             // 
             // xrTable4
             // 
+            this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow6});
             this.xrTable4.SizeF = new System.Drawing.SizeF(750F, 30F);
+            this.xrTable4.StylePriority.UseBorders = false;
             this.xrTable4.StylePriority.UsePadding = false;
             // 
             // xrTableRow6
             // 
             this.xrTableRow6.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell14,
-            this.xrTableCell18});
+            this.xrTableCell18,
+            this.xrTableCell19});
             this.xrTableRow6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableRow6.Name = "xrTableRow6";
             this.xrTableRow6.StylePriority.UseFont = false;
@@ -415,12 +446,12 @@
             this.xrTableCell14.StylePriority.UseTextAlignment = false;
             this.xrTableCell14.Text = "Total";
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell14.Weight = 0.72799999999999931D;
+            this.xrTableCell14.Weight = 1.0619093333333325D;
             // 
             // xrTableCell18
             // 
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([AMOUNT])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DebitAmount])")});
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
@@ -429,7 +460,58 @@
             this.xrTableCell18.Text = "Debit";
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell18.TextFormatString = "{0:N2}";
-            this.xrTableCell18.Weight = 0.72799999999999931D;
+            this.xrTableCell18.Weight = 0.19704533333333318D;
+            // 
+            // xrTableCell19
+            // 
+            this.xrTableCell19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([CreditAmount])")});
+            this.xrTableCell19.Multiline = true;
+            this.xrTableCell19.Name = "xrTableCell19";
+            this.xrTableCell19.StylePriority.UseTextAlignment = false;
+            xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrTableCell19.Summary = xrSummary2;
+            this.xrTableCell19.Text = "xrTableCell19";
+            this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell19.Weight = 0.19704533333333313D;
+            // 
+            // LedgerName
+            // 
+            this.LedgerName.Description = "LedgerName";
+            this.LedgerName.Name = "LedgerName";
+            this.LedgerName.Visible = false;
+            // 
+            // IsPurposeVisible
+            // 
+            this.IsPurposeVisible.Description = "IsPurposeVisible";
+            this.IsPurposeVisible.Name = "IsPurposeVisible";
+            this.IsPurposeVisible.Type = typeof(bool);
+            this.IsPurposeVisible.ValueInfo = "False";
+            this.IsPurposeVisible.Visible = false;
+            // 
+            // VoucherType
+            // 
+            this.VoucherType.Description = "VoucherType";
+            this.VoucherType.Name = "VoucherType";
+            this.VoucherType.Type = typeof(int);
+            this.VoucherType.ValueInfo = "0";
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(0, "All"));
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(55, "Cash Payment"));
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(56, "Bank Payment"));
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(57, "Cash Reciept"));
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(58, "Bank Reciept"));
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(59, "CONTRA VOUCHER - Withdrawal"));
+            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(60, "CONTRA VOUCHER - Deposit"));
+            this.VoucherType.ValueSourceSettings = staticListLookUpSettings1;
+            this.VoucherType.Visible = false;
+            // 
+            // LedgerID
+            // 
+            this.LedgerID.Description = "LedgerID";
+            this.LedgerID.Name = "LedgerID";
+            this.LedgerID.Type = typeof(int);
+            this.LedgerID.ValueInfo = "0";
+            this.LedgerID.Visible = false;
             // 
             // sqlDataSource1
             // 
@@ -445,14 +527,18 @@
             queryParameter3.Name = "@TODATE";
             queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
             queryParameter3.Value = new DevExpress.DataAccess.Expression("?ToDate", typeof(System.DateTime));
-            queryParameter4.Name = "@VOUCHERTYPEID";
+            queryParameter4.Name = "@LEDGERID";
             queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter4.Value = new DevExpress.DataAccess.Expression("?VoucherTypeID", typeof(int));
+            queryParameter4.Value = new DevExpress.DataAccess.Expression("?LedgerID", typeof(int));
+            queryParameter5.Name = "@VoucherTypeID";
+            queryParameter5.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter5.Value = new DevExpress.DataAccess.Expression("?VoucherType", typeof(int));
             storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter1,
             queryParameter2,
             queryParameter3,
-            queryParameter4});
+            queryParameter4,
+            queryParameter5});
             storedProcQuery1.StoredProcName = "USP_RPT_LEDGER";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
@@ -475,9 +561,12 @@
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.OrgName,
             this.EntityID,
-            this.VoucherTypeID,
             this.FromDate,
-            this.ToDate});
+            this.ToDate,
+            this.LedgerName,
+            this.IsPurposeVisible,
+            this.VoucherType,
+            this.LedgerID});
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -499,7 +588,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.Parameters.Parameter OrgName;
         private DevExpress.XtraReports.Parameters.Parameter EntityID;
-        private DevExpress.XtraReports.Parameters.Parameter VoucherTypeID;
         private DevExpress.XtraReports.Parameters.Parameter FromDate;
         private DevExpress.XtraReports.Parameters.Parameter ToDate;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
@@ -524,8 +612,15 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow6;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell14;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow7;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell15;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
+        private DevExpress.XtraReports.Parameters.Parameter LedgerName;
+        private DevExpress.XtraReports.Parameters.Parameter IsPurposeVisible;
+        private DevExpress.XtraReports.Parameters.Parameter VoucherType;
+        private DevExpress.XtraReports.Parameters.Parameter LedgerID;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
 }

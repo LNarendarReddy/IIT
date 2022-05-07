@@ -32,16 +32,15 @@ namespace IIT
             txtSubGroupName.EditValue = subGroupObj.Name;
             luClassification.EditValue = subGroupObj.ClassificationID;
             luGroup.EditValue = subGroupObj.GroupID;
-            meDescription.EditValue = subGroupObj.Description;
 
             if (subGroupObj.ID == null)
             {
                 luClassification.Enabled = false;
                 luGroup.Enabled = false;
+                Text = $"Add {Text}";
             }
-
-
-            Text = string.IsNullOrEmpty(subGroupObj.Name?.ToString()) ? Text : $"{Text} - {subGroupObj.Name}";
+            else
+            Text = string.IsNullOrEmpty(subGroupObj.Name?.ToString()) ? Text : $"Edit {Text} - {subGroupObj.Name}";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -50,7 +49,7 @@ namespace IIT
 
             subGroupObj.Name = txtSubGroupName.EditValue;
             subGroupObj.GroupID = luGroup.EditValue;
-            subGroupObj.Description = meDescription.EditValue;
+            subGroupObj.Description = txtSubGroupName.EditValue;
             subGroupObj.UserName = Utility.UserName;
 
             try

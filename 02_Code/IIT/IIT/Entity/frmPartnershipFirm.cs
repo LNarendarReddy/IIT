@@ -1,6 +1,7 @@
 ﻿using Entity;
 using Repository;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace IIT
@@ -12,7 +13,8 @@ namespace IIT
         EntityData entityData = new EntityData();
         bool isLoading = false;
         bool IsCompany;
-
+        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save", "(Alt + L) ==> Add Logo " };
+        public override List<string> HelpText => helpText;
         public frmPartnershipFirm(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
@@ -26,11 +28,12 @@ namespace IIT
             lciNoOfPartners.Text = IsCompany ? "Number of Directors" : lciNoOfPartners.Text;
             lciNameOfTheFirm.Text = IsCompany ? "Name of the Company" : lciNameOfTheFirm.Text;
             btnAddPartner.Text = IsCompany ? "Add Director" : btnAddPartner.Text;
-            this.Text = entityType == 12 ? "Partnership Firm" : entityType == 14 ? "AOP / BOI" : "Company";
+            lblFormHeading.Text = entityType == 12 ? "Partnership Firm" : entityType == 14 ? "AOP / BOI" : "Company";
 
             if (EntityID > 0)
             {
                 entityData = new EntityDataRepository().GetEntityData(EntityID);
+                btnAddLogo.Text = entityData.EntitylogoID.Equals(0) ? "Add Logo" : "View Logo";
             }
             else
             {
@@ -241,6 +244,11 @@ namespace IIT
                 cmbGSTNumber.Properties.DisplayMember = "GSTNo";
                 cmbGSTNumber.EditValue = entityData.PrimaryGST.ID;
             }
+        }
+
+        private void btnAddLogo_Click(object sender, EventArgs e)
+        {
+            Utility.ShowDialog(new frmEntityLogo(entityData));
         }
     }
 }

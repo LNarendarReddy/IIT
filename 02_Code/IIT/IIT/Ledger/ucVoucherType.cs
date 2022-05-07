@@ -14,6 +14,8 @@ namespace IIT
 {
     public partial class ucVoucherType : NavigationBase
     {
+        private List<string> helpText = new List<string>() { "Up/Down ==> navigate"};
+        public override List<string> HelpText => helpText;
         public ucVoucherType()
         {
             InitializeComponent();

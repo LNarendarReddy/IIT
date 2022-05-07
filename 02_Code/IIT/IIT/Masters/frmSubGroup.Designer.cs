@@ -36,7 +36,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.meDescription = new DevExpress.XtraEditors.MemoEdit();
             this.luGroup = new DevExpress.XtraEditors.LookUpEdit();
             this.luClassification = new DevExpress.XtraEditors.LookUpEdit();
             this.txtSubGroupName = new DevExpress.XtraEditors.TextEdit();
@@ -45,13 +44,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.meDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luClassification.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubGroupName.Properties)).BeginInit();
@@ -60,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
@@ -70,7 +66,6 @@
             // 
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.btnSave);
-            this.layoutControl1.Controls.Add(this.meDescription);
             this.layoutControl1.Controls.Add(this.luGroup);
             this.layoutControl1.Controls.Add(this.luClassification);
             this.layoutControl1.Controls.Add(this.txtSubGroupName);
@@ -78,7 +73,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(503, 266);
+            this.layoutControl1.Size = new System.Drawing.Size(503, 168);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -87,7 +82,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
-            this.btnCancel.Location = new System.Drawing.Point(376, 215);
+            this.btnCancel.Location = new System.Drawing.Point(376, 111);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 36);
             this.btnCancel.StyleController = this.layoutControl1;
@@ -98,22 +93,13 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(256, 215);
+            this.btnSave.Location = new System.Drawing.Point(256, 111);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // meDescription
-            // 
-            this.meDescription.EnterMoveNextControl = true;
-            this.meDescription.Location = new System.Drawing.Point(123, 111);
-            this.meDescription.Name = "meDescription";
-            this.meDescription.Size = new System.Drawing.Size(365, 94);
-            this.meDescription.StyleController = this.layoutControl1;
-            this.meDescription.TabIndex = 7;
             // 
             // luGroup
             // 
@@ -179,11 +165,10 @@
             this.emptySpaceItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(503, 266);
+            this.Root.Size = new System.Drawing.Size(503, 168);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -199,9 +184,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 200);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 96);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(241, 46);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(241, 52);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -224,33 +209,23 @@
             this.layoutControlItem3.Text = "Group";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(96, 15);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.meDescription;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem4.Size = new System.Drawing.Size(483, 104);
-            this.layoutControlItem4.Text = "Description";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(96, 15);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnSave;
-            this.layoutControlItem5.Location = new System.Drawing.Point(241, 200);
+            this.layoutControlItem5.Location = new System.Drawing.Point(241, 96);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem5.Size = new System.Drawing.Size(120, 46);
+            this.layoutControlItem5.Size = new System.Drawing.Size(120, 52);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnCancel;
-            this.layoutControlItem6.Location = new System.Drawing.Point(361, 200);
+            this.layoutControlItem6.Location = new System.Drawing.Point(361, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem6.Size = new System.Drawing.Size(122, 46);
+            this.layoutControlItem6.Size = new System.Drawing.Size(122, 52);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -260,14 +235,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(503, 266);
+            this.ClientSize = new System.Drawing.Size(503, 168);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmSubGroup";
             this.Text = "Sub Group";
             this.Load += new System.EventHandler(this.frmSubGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.meDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luGroup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luClassification.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubGroupName.Properties)).EndInit();
@@ -276,7 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
@@ -293,12 +266,10 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.MemoEdit meDescription;
         private DevExpress.XtraEditors.LookUpEdit luGroup;
         private DevExpress.XtraEditors.LookUpEdit luClassification;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;

@@ -21,7 +21,10 @@ namespace IIT
             txtSectorName.EditValue = sectorObj.Name;
             meDescription.EditValue = sectorObj.Description;
 
-            Text = string.IsNullOrEmpty(sectorObj.Name?.ToString()) ? Text : $"{Text} - {sectorObj.Name}";
+            if (sectorObj.ID == null)
+                Text = $"Add {Text}";
+            else
+            Text = string.IsNullOrEmpty(sectorObj.Name?.ToString()) ? Text : $"Edit {Text} - {sectorObj.Name}";
         }
 
         private void btnSave_Click(object sender, EventArgs e)

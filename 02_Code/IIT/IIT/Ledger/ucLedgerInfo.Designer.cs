@@ -76,7 +76,7 @@
             this.btnExpenses.Size = new System.Drawing.Size(328, 27);
             this.btnExpenses.StyleController = this.layoutControl1;
             this.btnExpenses.TabIndex = 3;
-            this.btnExpenses.Text = "Expenses";
+            this.btnExpenses.Text = "&Expenses";
             this.btnExpenses.Click += new System.EventHandler(this.btnExpenses_Click);
             // 
             // btnIncome
@@ -86,7 +86,7 @@
             this.btnIncome.Size = new System.Drawing.Size(328, 27);
             this.btnIncome.StyleController = this.layoutControl1;
             this.btnIncome.TabIndex = 2;
-            this.btnIncome.Text = "Income";
+            this.btnIncome.Text = "&Income";
             this.btnIncome.Click += new System.EventHandler(this.btnIncome_Click);
             // 
             // btnAssets
@@ -96,7 +96,7 @@
             this.btnAssets.Size = new System.Drawing.Size(328, 27);
             this.btnAssets.StyleController = this.layoutControl1;
             this.btnAssets.TabIndex = 1;
-            this.btnAssets.Text = "Assets";
+            this.btnAssets.Text = "&Assets";
             this.btnAssets.Click += new System.EventHandler(this.btnAssets_Click);
             // 
             // btnLiabilities
@@ -106,7 +106,7 @@
             this.btnLiabilities.Size = new System.Drawing.Size(328, 27);
             this.btnLiabilities.StyleController = this.layoutControl1;
             this.btnLiabilities.TabIndex = 0;
-            this.btnLiabilities.Text = "Liabilities";
+            this.btnLiabilities.Text = "&Liabilities";
             this.btnLiabilities.Click += new System.EventHandler(this.btnLiabilities_Click);
             // 
             // Root

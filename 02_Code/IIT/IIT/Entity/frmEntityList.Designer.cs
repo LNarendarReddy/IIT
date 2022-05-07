@@ -248,8 +248,6 @@
             this.gridColumn6.Caption = "View Logo";
             this.gridColumn6.ColumnEdit = this.btnviewLogo;
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 94;
             // 
             // btnviewLogo

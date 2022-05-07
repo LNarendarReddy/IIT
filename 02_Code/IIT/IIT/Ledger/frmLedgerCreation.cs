@@ -15,8 +15,11 @@ namespace IIT
     {
         object HeadID = null;
         DataTable dt = null;
-        public override List<string> HelpText => new List<string> { "Press Ctrl + Right/Left to expand/collapse", 
-            "Press Up/Down to navigate", "Press Enter to create/edit","Press + to add ledger" };
+
+        private List<string> helpText = new List<string>() { "Up/Down ==> Navigate", "Ctrl + Right ==> Expand",
+            "Ctrl + Right ==> Expand" , "Alt + N ==> Add ledger"};
+        public override List<string> HelpText => helpText;
+
         public frmLedgerCreation(object _HeadID, string HeadName)
         {
             InitializeComponent();

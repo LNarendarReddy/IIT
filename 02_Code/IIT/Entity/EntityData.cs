@@ -23,6 +23,9 @@ namespace Entity
         public object OfficeNumber { get; set; }
 
         public object CompanyNumber { get; set; }
+        public object CASHINHANDID { get; set; }
+
+        public object EntitylogoID { get; set; }
 
         public GSTRegistrationNumber PrimaryGST { get; set; }
 

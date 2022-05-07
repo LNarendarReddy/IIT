@@ -1,5 +1,6 @@
 ﻿using Entity;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace IIT
@@ -7,6 +8,9 @@ namespace IIT
     public partial class frmEntityType : NavigationBase
     {
         public int entityType = 0;
+        private List<string> helpText = new List<string>() { "(Alt + I) ==> Individual", "(Alt + P) ==> Partnership",
+        "(Alt + A) ==> AOP ","(Alt + C) ==> Company "};
+        public override List<string> HelpText => helpText;
         public frmEntityType()
         {
             InitializeComponent();

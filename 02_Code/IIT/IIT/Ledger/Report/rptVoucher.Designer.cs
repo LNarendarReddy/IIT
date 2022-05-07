@@ -73,11 +73,11 @@
             this.VoucherNumber = new DevExpress.XtraReports.Parameters.Parameter();
             this.AmountInRupees = new DevExpress.XtraReports.Parameters.Parameter();
             this.AmountInWords = new DevExpress.XtraReports.Parameters.Parameter();
-            this.LedgerName = new DevExpress.XtraReports.Parameters.Parameter();
-            this.BankName = new DevExpress.XtraReports.Parameters.Parameter();
+            this.PaymentMadeTo = new DevExpress.XtraReports.Parameters.Parameter();
+            this.PaymentMadeFrom = new DevExpress.XtraReports.Parameters.Parameter();
             this.Purpose = new DevExpress.XtraReports.Parameters.Parameter();
-            this.LedgerNameCaption = new DevExpress.XtraReports.Parameters.Parameter();
-            this.BankNameCaption = new DevExpress.XtraReports.Parameters.Parameter();
+            this.PaymentMadeFromCaption = new DevExpress.XtraReports.Parameters.Parameter();
+            this.PaymentMadeToCaption = new DevExpress.XtraReports.Parameters.Parameter();
             this.PurposeCaption = new DevExpress.XtraReports.Parameters.Parameter();
             this.VoucherCaption = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsBankVoucher = new DevExpress.XtraReports.Parameters.Parameter();
@@ -255,7 +255,7 @@
             // 
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)));
             this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Date : \' + ?VoucherDate")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Date : \' + FormatString(\'{0:dd/MMM/yyyy}\',?VoucherDate)")});
             this.xrTableCell8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
@@ -382,7 +382,7 @@
             this.xrTableCell14,
             this.xrTableCell15});
             this.xrTableRow7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "!?IsContraVoucher")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 55 OR ?VoucherTypeID = 60, false ,true )")});
             this.xrTableRow7.Name = "xrTableRow7";
             this.xrTableRow7.Weight = 1.1999999692033267D;
             // 
@@ -390,7 +390,7 @@
             // 
             this.xrTableCell14.Borders = DevExpress.XtraPrinting.BorderSide.Left;
             this.xrTableCell14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?LedgerNameCaption + \' : \'")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?PaymentMadeFromCaption")});
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
@@ -405,7 +405,7 @@
             // 
             this.xrTableCell15.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?LedgerName")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?PaymentMadeFrom")});
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
@@ -422,7 +422,7 @@
             this.xrTableCell16,
             this.xrTableCell17});
             this.xrTableRow8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "?IsBankVoucher")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 57 OR ?VoucherTypeID = 59, false , true)")});
             this.xrTableRow8.Name = "xrTableRow8";
             this.xrTableRow8.Weight = 1.199999969203327D;
             // 
@@ -430,7 +430,7 @@
             // 
             this.xrTableCell16.Borders = DevExpress.XtraPrinting.BorderSide.Left;
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?BankNameCaption + \' : \'")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?PaymentMadeToCaption")});
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
@@ -445,7 +445,7 @@
             // 
             this.xrTableCell17.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?BankName")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?PaymentMadeTo")});
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
@@ -571,17 +571,17 @@
             this.AmountInWords.Name = "AmountInWords";
             this.AmountInWords.Visible = false;
             // 
-            // LedgerName
+            // PaymentMadeTo
             // 
-            this.LedgerName.Description = "LedgerName";
-            this.LedgerName.Name = "LedgerName";
-            this.LedgerName.Visible = false;
+            this.PaymentMadeTo.Description = "PaymentMadeTo";
+            this.PaymentMadeTo.Name = "PaymentMadeTo";
+            this.PaymentMadeTo.Visible = false;
             // 
-            // BankName
+            // PaymentMadeFrom
             // 
-            this.BankName.Description = "BankName";
-            this.BankName.Name = "BankName";
-            this.BankName.Visible = false;
+            this.PaymentMadeFrom.Description = "PaymentMadeFrom";
+            this.PaymentMadeFrom.Name = "PaymentMadeFrom";
+            this.PaymentMadeFrom.Visible = false;
             // 
             // Purpose
             // 
@@ -589,17 +589,17 @@
             this.Purpose.Name = "Purpose";
             this.Purpose.Visible = false;
             // 
-            // LedgerNameCaption
+            // PaymentMadeFromCaption
             // 
-            this.LedgerNameCaption.Description = "LedgerNameCaption";
-            this.LedgerNameCaption.Name = "LedgerNameCaption";
-            this.LedgerNameCaption.Visible = false;
+            this.PaymentMadeFromCaption.Description = "PaymentMadeFromCaption";
+            this.PaymentMadeFromCaption.Name = "PaymentMadeFromCaption";
+            this.PaymentMadeFromCaption.Visible = false;
             // 
-            // BankNameCaption
+            // PaymentMadeToCaption
             // 
-            this.BankNameCaption.Description = "BankNameCaption";
-            this.BankNameCaption.Name = "BankNameCaption";
-            this.BankNameCaption.Visible = false;
+            this.PaymentMadeToCaption.Description = "PaymentMadeToCaption";
+            this.PaymentMadeToCaption.Name = "PaymentMadeToCaption";
+            this.PaymentMadeToCaption.Visible = false;
             // 
             // PurposeCaption
             // 
@@ -644,11 +644,11 @@
             this.VoucherNumber,
             this.AmountInRupees,
             this.AmountInWords,
-            this.LedgerName,
-            this.BankName,
+            this.PaymentMadeTo,
+            this.PaymentMadeFrom,
             this.Purpose,
-            this.LedgerNameCaption,
-            this.BankNameCaption,
+            this.PaymentMadeFromCaption,
+            this.PaymentMadeToCaption,
             this.PurposeCaption,
             this.VoucherCaption,
             this.IsBankVoucher,
@@ -676,8 +676,8 @@
         private DevExpress.XtraReports.Parameters.Parameter VoucherNumber;
         private DevExpress.XtraReports.Parameters.Parameter AmountInRupees;
         private DevExpress.XtraReports.Parameters.Parameter AmountInWords;
-        private DevExpress.XtraReports.Parameters.Parameter LedgerName;
-        private DevExpress.XtraReports.Parameters.Parameter BankName;
+        private DevExpress.XtraReports.Parameters.Parameter PaymentMadeTo;
+        private DevExpress.XtraReports.Parameters.Parameter PaymentMadeFrom;
         private DevExpress.XtraReports.Parameters.Parameter Purpose;
         private DevExpress.XtraReports.UI.XRTable xrTable3;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow4;
@@ -695,8 +695,8 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow8;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
-        private DevExpress.XtraReports.Parameters.Parameter LedgerNameCaption;
-        private DevExpress.XtraReports.Parameters.Parameter BankNameCaption;
+        private DevExpress.XtraReports.Parameters.Parameter PaymentMadeFromCaption;
+        private DevExpress.XtraReports.Parameters.Parameter PaymentMadeToCaption;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow9;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;

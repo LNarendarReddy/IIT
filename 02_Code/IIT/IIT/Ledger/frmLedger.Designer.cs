@@ -32,20 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLedger));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.luGroup = new DevExpress.XtraEditors.LookUpEdit();
             this.luClassification = new DevExpress.XtraEditors.LookUpEdit();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.meDescription = new DevExpress.XtraEditors.MemoEdit();
             this.cmbSubGroup = new DevExpress.XtraEditors.LookUpEdit();
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -55,14 +52,12 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luClassification.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.meDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubGroup.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -76,14 +71,13 @@
             this.layoutControl1.Controls.Add(this.luClassification);
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.btnSave);
-            this.layoutControl1.Controls.Add(this.meDescription);
             this.layoutControl1.Controls.Add(this.cmbSubGroup);
             this.layoutControl1.Controls.Add(this.txtLedgerName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(503, 252);
+            this.layoutControl1.Size = new System.Drawing.Size(503, 194);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -116,7 +110,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
-            this.btnCancel.Location = new System.Drawing.Point(376, 201);
+            this.btnCancel.Location = new System.Drawing.Point(376, 143);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 36);
             this.btnCancel.StyleController = this.layoutControl1;
@@ -128,26 +122,13 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(256, 201);
+            this.btnSave.Location = new System.Drawing.Point(256, 143);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // meDescription
-            // 
-            this.meDescription.EnterMoveNextControl = true;
-            this.meDescription.Location = new System.Drawing.Point(103, 143);
-            this.meDescription.Name = "meDescription";
-            this.meDescription.Size = new System.Drawing.Size(385, 48);
-            this.meDescription.StyleController = this.layoutControl1;
-            this.meDescription.TabIndex = 4;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.meDescription, conditionValidationRule1);
             // 
             // cmbSubGroup
             // 
@@ -163,10 +144,10 @@
             this.cmbSubGroup.Size = new System.Drawing.Size(385, 22);
             this.cmbSubGroup.StyleController = this.layoutControl1;
             this.cmbSubGroup.TabIndex = 3;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbSubGroup, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbSubGroup, conditionValidationRule1);
             // 
             // txtLedgerName
             // 
@@ -176,10 +157,10 @@
             this.txtLedgerName.Size = new System.Drawing.Size(385, 22);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 0;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule2);
             // 
             // Root
             // 
@@ -189,13 +170,12 @@
             this.layoutControlItem1,
             this.emptySpaceItem1,
             this.layoutControlItem2,
-            this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem3,
             this.layoutControlItem7});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(503, 252);
+            this.Root.Size = new System.Drawing.Size(503, 194);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -211,7 +191,7 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 186);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 128);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(241, 46);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -226,20 +206,10 @@
             this.layoutControlItem2.Text = "Sub Group";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(76, 15);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.meDescription;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 128);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem4.Size = new System.Drawing.Size(483, 58);
-            this.layoutControlItem4.Text = "Description";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(76, 15);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnSave;
-            this.layoutControlItem5.Location = new System.Drawing.Point(241, 186);
+            this.layoutControlItem5.Location = new System.Drawing.Point(241, 128);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem5.Size = new System.Drawing.Size(120, 46);
@@ -249,7 +219,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnCancel;
-            this.layoutControlItem6.Location = new System.Drawing.Point(361, 186);
+            this.layoutControlItem6.Location = new System.Drawing.Point(361, 128);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem6.Size = new System.Drawing.Size(122, 46);
@@ -281,7 +251,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(503, 252);
+            this.ClientSize = new System.Drawing.Size(503, 194);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmLedger";
             this.Text = "Ledger";
@@ -290,14 +260,12 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.luGroup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luClassification.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.meDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSubGroup.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -312,14 +280,12 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.MemoEdit meDescription;
         private DevExpress.XtraEditors.LookUpEdit cmbSubGroup;
         private DevExpress.XtraEditors.TextEdit txtLedgerName;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
