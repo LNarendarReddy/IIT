@@ -41,10 +41,10 @@ namespace IIT
             //frmSingularMain.Instance.tpMain.SetCell(userControl, 1, 1);
             userControl.Focus();
 
-            userControl.HelpText.AddRange( new List<string>() { "Enter ==> Select", "Esc ==> Close" });
+            var helpText = userControl.HelpText.ToList();
+            helpText.AddRange( new List<string>() { "Enter ==> Select", "Esc ==> Close" });
 
-            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine + Environment.NewLine,
-                userControl.HelpText.Distinct());
+            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine + Environment.NewLine, helpText);
         }
 
         public static void SetGridFormatting(GridView gridView)

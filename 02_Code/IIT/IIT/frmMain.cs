@@ -1,7 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraReports.UI;
 using Entity;
-using IIT;
 using System;
 
 namespace IIT
@@ -17,7 +16,7 @@ namespace IIT
             InitializeComponent();
         }
 
-        private void btnEntity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnEntity_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmEntityList obj = new frmEntityList();
             //Utility.ShowDialog(obj);
@@ -30,10 +29,10 @@ namespace IIT
             }
         }
 
-        private void frmMain_Load(object sender, System.EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
             lblDateTime.Caption = DateTime.Now.ToString();
-            lblVersion.Caption = "1.1.1 (06-04-2022)";
+            lblVersion.Caption = "1.1.2 (07-05-2022)";
             btnEntity_ItemClick(null, null);
         }
 
@@ -42,27 +41,27 @@ namespace IIT
             lblStatus.Caption = message;
         }
 
-        private void bbiNOB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiNOB_ItemClick(object sender, ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmSectorList());
         }
 
-        private void bbiGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiGroup_ItemClick(object sender, ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmGroupList());
         }
 
-        private void bbiSubGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiSubGroup_ItemClick(object sender, ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmSubGroupList());
         }
 
-        private void bbiVoucher_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiVoucher_ItemClick(object sender, ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmVoucherList());
         }
 
-        private void btnAssets_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnAssets_ItemClick(object sender, ItemClickEventArgs e)
         {
             Utility.ShowDialog(new frmLedgerCreation(Utility.AssetsHeadID, "Assets"));
         }
