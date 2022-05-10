@@ -74,19 +74,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IITData.mdf">
+    <Content Include="IITEXP12.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="IITData12.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="IITData12_log.ldf">
-      <DependentUpon>IITData12.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="IITData_log.ldf">
+    <Content Include="IITEXP12_log.ldf">
+      <DependentUpon>IITEXP12.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>IITData.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
