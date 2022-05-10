@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnAddLedger1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.cmbPaymentMadefrom = new DevExpress.XtraEditors.LookUpEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.cmbPaymentMadeto = new DevExpress.XtraEditors.LookUpEdit();
@@ -58,6 +60,8 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciPaymentMadeFrom = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lcibtnAddLedgerFrom = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcibtnAddLedger1To = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -82,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciPaymentMadeFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedgerFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedger1To)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -91,6 +97,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnAddLedger1);
+            this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Controls.Add(this.cmbPaymentMadefrom);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.cmbPaymentMadeto);
@@ -107,6 +115,26 @@
             this.layoutControl1.Size = new System.Drawing.Size(755, 442);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnAddLedger1
+            // 
+            this.btnAddLedger1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLedger1.ImageOptions.Image")));
+            this.btnAddLedger1.Location = new System.Drawing.Point(718, 261);
+            this.btnAddLedger1.Name = "btnAddLedger1";
+            this.btnAddLedger1.Size = new System.Drawing.Size(22, 22);
+            this.btnAddLedger1.StyleController = this.layoutControl1;
+            this.btnAddLedger1.TabIndex = 11;
+            this.btnAddLedger1.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(718, 219);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(22, 22);
+            this.btnAdd.StyleController = this.layoutControl1;
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cmbPaymentMadefrom
             // 
@@ -126,7 +154,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbPaymentMadefrom.Properties.NullText = "";
-            this.cmbPaymentMadefrom.Size = new System.Drawing.Size(601, 22);
+            this.cmbPaymentMadefrom.Size = new System.Drawing.Size(559, 22);
             this.cmbPaymentMadefrom.StyleController = this.layoutControl1;
             this.cmbPaymentMadefrom.TabIndex = 4;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -164,7 +192,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbPaymentMadeto.Properties.NullText = "";
-            this.cmbPaymentMadeto.Size = new System.Drawing.Size(601, 22);
+            this.cmbPaymentMadeto.Size = new System.Drawing.Size(559, 22);
             this.cmbPaymentMadeto.StyleController = this.layoutControl1;
             this.cmbPaymentMadeto.TabIndex = 3;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -279,7 +307,9 @@
             this.lciPurpose,
             this.layoutControlItem8,
             this.lciPaymentMadeFrom,
-            this.emptySpaceItem4});
+            this.emptySpaceItem4,
+            this.lcibtnAddLedgerFrom,
+            this.lcibtnAddLedger1To});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.Root.Size = new System.Drawing.Size(755, 442);
@@ -353,7 +383,7 @@
             this.lciPaymentMadeTo.Location = new System.Drawing.Point(0, 246);
             this.lciPaymentMadeTo.Name = "lciPaymentMadeTo";
             this.lciPaymentMadeTo.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciPaymentMadeTo.Size = new System.Drawing.Size(745, 42);
+            this.lciPaymentMadeTo.Size = new System.Drawing.Size(703, 42);
             this.lciPaymentMadeTo.Text = "Payment Made to";
             this.lciPaymentMadeTo.TextSize = new System.Drawing.Size(112, 15);
             // 
@@ -386,7 +416,7 @@
             this.lciPaymentMadeFrom.Location = new System.Drawing.Point(0, 204);
             this.lciPaymentMadeFrom.Name = "lciPaymentMadeFrom";
             this.lciPaymentMadeFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciPaymentMadeFrom.Size = new System.Drawing.Size(745, 42);
+            this.lciPaymentMadeFrom.Size = new System.Drawing.Size(703, 42);
             this.lciPaymentMadeFrom.Text = "Bank Account";
             this.lciPaymentMadeFrom.TextSize = new System.Drawing.Size(112, 15);
             // 
@@ -397,6 +427,26 @@
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(606, 56);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // lcibtnAddLedgerFrom
+            // 
+            this.lcibtnAddLedgerFrom.Control = this.btnAdd;
+            this.lcibtnAddLedgerFrom.Location = new System.Drawing.Point(703, 204);
+            this.lcibtnAddLedgerFrom.Name = "lcibtnAddLedgerFrom";
+            this.lcibtnAddLedgerFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.lcibtnAddLedgerFrom.Size = new System.Drawing.Size(42, 42);
+            this.lcibtnAddLedgerFrom.TextSize = new System.Drawing.Size(0, 0);
+            this.lcibtnAddLedgerFrom.TextVisible = false;
+            // 
+            // lcibtnAddLedger1To
+            // 
+            this.lcibtnAddLedger1To.Control = this.btnAddLedger1;
+            this.lcibtnAddLedger1To.Location = new System.Drawing.Point(703, 246);
+            this.lcibtnAddLedger1To.Name = "lcibtnAddLedger1To";
+            this.lcibtnAddLedger1To.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.lcibtnAddLedger1To.Size = new System.Drawing.Size(42, 42);
+            this.lcibtnAddLedger1To.TextSize = new System.Drawing.Size(0, 0);
+            this.lcibtnAddLedger1To.TextVisible = false;
             // 
             // tablePanel1
             // 
@@ -457,6 +507,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciPaymentMadeFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedgerFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedger1To)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
@@ -493,5 +545,9 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraEditors.SimpleButton btnAddLedger1;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraLayout.LayoutControlItem lcibtnAddLedgerFrom;
+        private DevExpress.XtraLayout.LayoutControlItem lcibtnAddLedger1To;
     }
 }

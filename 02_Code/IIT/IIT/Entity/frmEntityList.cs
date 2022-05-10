@@ -1,5 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -120,12 +123,19 @@ namespace IIT
         {
             if (gvEntityList.FocusedRowHandle < 0)
                 return;
-            Utility.CurrentEntity = new EntityDataRepository().GetEntityData(
+
+            DXMouseEventArgs ea = e as DXMouseEventArgs;
+            GridView view = sender as GridView;
+            GridHitInfo info = view.CalcHitInfo(ea.Location);
+            if (info.InRow || info.InRowCell)
+            {
+                Utility.CurrentEntity = new EntityDataRepository().GetEntityData(
                 gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-            Utility.CurrentEntity.LogoData = new EntityDataRepository().GetEntityLogo(
-                gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-            frmSingularMain.Instance.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
-            Utility.ShowDialog(new ucAccountInfo());
+                Utility.CurrentEntity.LogoData = new EntityDataRepository().GetEntityLogo(
+                    gvEntityList.GetFocusedRowCellValue("ENTITYID"));
+                frmSingularMain.Instance.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
+                Utility.ShowDialog(new ucAccountInfo());
+            }
         }
         private void frmEntityList_KeyPress(object sender, KeyPressEventArgs e)
         {

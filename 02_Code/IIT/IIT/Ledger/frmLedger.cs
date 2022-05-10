@@ -47,9 +47,9 @@ namespace IIT
             if (ledgerObj.ID == null)
             {
                 this.Text = $"Add { this.Text}";
-                luClassification.Enabled = false;
-                luGroup.Enabled = false;
-                cmbSubGroup.Enabled = false;
+                luClassification.Enabled  = ledgerObj.ClassificationID == null? true : false;
+                luGroup.Enabled = ledgerObj.GroupID == null ? true : false; 
+                cmbSubGroup.Enabled = ledgerObj.SubGroupID == null ? true : false;  
             }
             else
                 Text = string.IsNullOrEmpty(ledgerObj.Name?.ToString()) ? Text : $"Edit {Text} - {ledgerObj.Name}";
@@ -85,5 +85,16 @@ namespace IIT
         {
 
         }
+
+        private void luClassification_EditValueChanged(object sender, EventArgs e)
+        {
+            luGroup.EditValue = null;
+        }
+
+        private void luGroup_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbSubGroup.EditValue = null;
+        }
+
     }
 }

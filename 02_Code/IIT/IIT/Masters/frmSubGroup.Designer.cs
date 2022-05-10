@@ -86,7 +86,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 36);
             this.btnCancel.StyleController = this.layoutControl1;
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             // 
             // btnSave
@@ -97,14 +97,14 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 36);
             this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // luGroup
             // 
             this.luGroup.EnterMoveNextControl = true;
-            this.luGroup.Location = new System.Drawing.Point(123, 79);
+            this.luGroup.Location = new System.Drawing.Point(123, 47);
             this.luGroup.Name = "luGroup";
             this.luGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -121,7 +121,7 @@
             this.luGroup.Properties.NullText = "";
             this.luGroup.Size = new System.Drawing.Size(365, 22);
             this.luGroup.StyleController = this.layoutControl1;
-            this.luGroup.TabIndex = 6;
+            this.luGroup.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Value cannot be empty";
             this.dxValidationProvider1.SetValidationRule(this.luGroup, conditionValidationRule1);
@@ -129,7 +129,7 @@
             // luClassification
             // 
             this.luClassification.EnterMoveNextControl = true;
-            this.luClassification.Location = new System.Drawing.Point(123, 47);
+            this.luClassification.Location = new System.Drawing.Point(123, 15);
             this.luClassification.Name = "luClassification";
             this.luClassification.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -139,7 +139,7 @@
             this.luClassification.Properties.NullText = "";
             this.luClassification.Size = new System.Drawing.Size(365, 22);
             this.luClassification.StyleController = this.layoutControl1;
-            this.luClassification.TabIndex = 5;
+            this.luClassification.TabIndex = 0;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Value cannot be empty";
             this.dxValidationProvider1.SetValidationRule(this.luClassification, conditionValidationRule2);
@@ -147,11 +147,11 @@
             // txtSubGroupName
             // 
             this.txtSubGroupName.EnterMoveNextControl = true;
-            this.txtSubGroupName.Location = new System.Drawing.Point(123, 15);
+            this.txtSubGroupName.Location = new System.Drawing.Point(123, 79);
             this.txtSubGroupName.Name = "txtSubGroupName";
             this.txtSubGroupName.Size = new System.Drawing.Size(365, 22);
             this.txtSubGroupName.StyleController = this.layoutControl1;
-            this.txtSubGroupName.TabIndex = 4;
+            this.txtSubGroupName.TabIndex = 2;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Value cannot be empty";
             this.dxValidationProvider1.SetValidationRule(this.txtSubGroupName, conditionValidationRule3);
@@ -163,10 +163,10 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.emptySpaceItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem3,
+            this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(503, 168);
             this.Root.TextVisible = false;
@@ -174,7 +174,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtSubGroupName;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 64);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem1.Size = new System.Drawing.Size(483, 32);
@@ -192,7 +192,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.luClassification;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem2.Size = new System.Drawing.Size(483, 32);
@@ -202,7 +202,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.luGroup;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 64);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 32);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem3.Size = new System.Drawing.Size(483, 32);

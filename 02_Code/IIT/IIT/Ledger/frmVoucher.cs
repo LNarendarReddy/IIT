@@ -5,13 +5,14 @@ using Entity;
 using Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace IIT
 {
     public partial class frmVoucher : NavigationBase
     {
-        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save", "(Alt + N) ==> Add ledger" };
+        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save", "(Alt + L) ==> Add ledger" };
         public override List<string> HelpText => helpText;
         Voucher voucherObj;
         public frmVoucher(Voucher _voucherObj)
@@ -23,13 +24,7 @@ namespace IIT
 
         private void frmVoucherNew_Load(object sender, EventArgs e)
         {
-            cmbPaymentMadeto.Properties.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
-            cmbPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
-            cmbPaymentMadeto.Properties.ValueMember = "LEDGERID";
-
-            cmbPaymentMadefrom.Properties.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
-            cmbPaymentMadefrom.Properties.DisplayMember = "LEDGERNAME";
-            cmbPaymentMadefrom.Properties.ValueMember = "LEDGERID";
+            BindLookups();
 
             txtRefNo.EditValue = voucherObj.VoucherNumber;
             txtAmountIRupees.EditValue = voucherObj.Amount;
@@ -47,6 +42,7 @@ namespace IIT
                     lciPurpose.Text = "Purpose of the payment ";
                     cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
+                    lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
                     break;
                 case 56:
                     lblformHeader.Text = "BANK PAYMENT VOUCHER";
@@ -61,6 +57,7 @@ namespace IIT
                     lciPurpose.Text = "Purpose of the reciept ";
                     cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
+                    lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
                     break;
                 case 58:
                     lblformHeader.Text = "BANK RECIEPT VOUCHER";
@@ -75,6 +72,7 @@ namespace IIT
                     lciPurpose.Text = "Reasons ";
                     cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
+                    lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
                     break;
                 case 60:
                     lblformHeader.Text = "CONTRA VOUCHER - Deposit";
@@ -83,6 +81,7 @@ namespace IIT
                     lciPurpose.Text = "Reasons ";
                     cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
+                    lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
                     break;
                 default:
                     break;
@@ -195,6 +194,43 @@ namespace IIT
             {
                 XtraMessageBox.Show("Error while converting numbers to words : " + ex.Message);
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Ledger ledgerobj = new Ledger();
+            Utility.ShowDialog(new frmLedger(ledgerobj));
+            if (!ledgerobj.IsSave)
+                return;
+            BindLookups();
+        }
+
+        private void BindLookups()
+        {
+            object selectedfrom = cmbPaymentMadeto.EditValue;
+            object selectedto = cmbPaymentMadefrom.EditValue;
+
+            DataTable dt = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
+
+            cmbPaymentMadefrom.Properties.DataSource = dt;
+            cmbPaymentMadefrom.Properties.DisplayMember = "LEDGERNAME";
+            cmbPaymentMadefrom.Properties.ValueMember = "LEDGERID";
+            cmbPaymentMadefrom.EditValue = selectedfrom;
+
+            cmbPaymentMadeto.Properties.DataSource = dt;
+            cmbPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
+            cmbPaymentMadeto.Properties.ValueMember = "LEDGERID";
+            cmbPaymentMadeto.EditValue = selectedto;
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.L))
+            {
+                btnAdd_Click(null, null);
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }
 }

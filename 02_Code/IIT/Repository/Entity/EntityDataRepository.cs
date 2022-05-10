@@ -36,7 +36,7 @@ namespace Repository
                     CompanyNumber = drEntity["CompanyNumber"],
                     CASHINHANDID = drEntity["CASHINHANDID"],
                     EntitylogoID = drEntity["ENTITYLOGOID"],
-                    LogoData =  (byte[]) drEntity["LOGODATA"]
+                    LogoData = drEntity["LOGODATA"] != DBNull.Value ? (byte[])drEntity["LOGODATA"] : new byte[0]
                 };
 
                 entities.Add(entityData);
