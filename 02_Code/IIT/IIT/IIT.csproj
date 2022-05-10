@@ -371,6 +371,10 @@
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>icacls "$(TargetDir)\IITData14.mdf" /grant Everyone:(f)
+icacls "$(TargetDir)\IITData14_log.ldf" /grant Everyone:(f)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
