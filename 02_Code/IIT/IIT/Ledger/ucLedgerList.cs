@@ -48,7 +48,7 @@ namespace IIT
             rpt.Parameters["VoucherType"].Value = frm.VoucherTypeID();
             rpt.CreateDocument();
             string filePath = Path.Combine(Utility.ReportsPath,
-                $"_{gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")}_{DateTime.Now.ToString("ddMMyyyyHHmmss")}");
+                $"{Utility.CurrentEntity.EntityName}_{gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")}_{DateTime.Now.ToString("ddMMyyyyHHmmss")}.pdf");
             rpt.ExportToPdf(filePath);
 
             ProcessStartInfo startInfo = new ProcessStartInfo(filePath);

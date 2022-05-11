@@ -120,21 +120,13 @@ namespace IIT
             gvEntityList_FocusedRowChanged(null, null);
         }
         private void gvEntityList_DoubleClick(object sender, EventArgs e)
-        {
-            if (gvEntityList.FocusedRowHandle < 0)
-                return;
-
+        {        
             DXMouseEventArgs ea = e as DXMouseEventArgs;
             GridView view = sender as GridView;
             GridHitInfo info = view.CalcHitInfo(ea.Location);
             if (info.InRow || info.InRowCell)
             {
-                Utility.CurrentEntity = new EntityDataRepository().GetEntityData(
-                gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-                Utility.CurrentEntity.LogoData = new EntityDataRepository().GetEntityLogo(
-                    gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-                frmSingularMain.Instance.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
-                Utility.ShowDialog(new ucAccountInfo());
+                btnSelect_Click(null, null);
             }
         }
         private void frmEntityList_KeyPress(object sender, KeyPressEventArgs e)
@@ -164,11 +156,18 @@ namespace IIT
         {
             if (e.KeyChar != (char)Keys.Enter)
                 return;
-            gvEntityList_DoubleClick(null, null);
+            btnSelect_Click(null, null);
         }
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            gvEntityList_DoubleClick(null, null);
+            if (gvEntityList.FocusedRowHandle < 0)
+                return;
+
+            Utility.CurrentEntity = entityDataRepository.GetEntityData(
+            gvEntityList.GetFocusedRowCellValue("ENTITYID"));
+            Utility.CurrentEntity.LogoData = entityDataRepository.GetEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID"));
+            frmSingularMain.Instance.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
+            Utility.ShowDialog(new ucAccountInfo());
         }
     }
 }
