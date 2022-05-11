@@ -1,11 +1,14 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,8 +46,13 @@ namespace IIT
             rpt.Parameters["LedgerID"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERID");
             rpt.Parameters["LedgerName"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERNAME");
             rpt.Parameters["VoucherType"].Value = frm.VoucherTypeID();
-            rpt.ShowRibbonPreview();
+            rpt.CreateDocument();
+            string filePath = Path.Combine(Utility.ReportsPath,
+                $"_{gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")}_{DateTime.Now.ToString("ddMMyyyyHHmmss")}");
+            rpt.ExportToPdf(filePath);
 
+            ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
+            Process.Start(startInfo);
         }
 
         private void gvLedgerList_KeyPress(object sender, KeyPressEventArgs e)

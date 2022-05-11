@@ -71,7 +71,7 @@
             this.layoutControl1.Controls.Add(this.btnInventoryEntry);
             this.layoutControl1.Controls.Add(this.btnvoucherEntry);
             this.layoutControl1.Controls.Add(this.btnLeadgerCreation);
-            this.layoutControl1.Location = new System.Drawing.Point(88, 65);
+            this.layoutControl1.Location = new System.Drawing.Point(23, 27);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             this.tablePanel1.SetRow(this.layoutControl1, 1);
@@ -252,7 +252,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 474F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(810, 521);
+            this.tablePanel1.Size = new System.Drawing.Size(680, 446);
             this.tablePanel1.TabIndex = 1;
             // 
             // ucAccountInfo
@@ -262,7 +262,7 @@
             this.Controls.Add(this.tablePanel1);
             this.MinimumSize = new System.Drawing.Size(386, 393);
             this.Name = "ucAccountInfo";
-            this.Size = new System.Drawing.Size(810, 521);
+            this.Size = new System.Drawing.Size(680, 446);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();

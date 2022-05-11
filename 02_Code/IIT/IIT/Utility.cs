@@ -14,6 +14,8 @@ namespace IIT
         public static EntityData CurrentEntity { get; set; }
 
         public static string UserName = "Test User";
+        public static string ReportsPath = String.Empty;
+        public static string CompanyPath = String.Empty;
         public static void ShowDialog(XtraForm frm)
         {
             frm.ShowInTaskbar  = false;

@@ -203,12 +203,16 @@ namespace IIT
             if (!ledgerobj.IsSave)
                 return;
             BindLookups();
+            if (lciPaymentMadeTo.Visibility == LayoutVisibility.Never)
+                cmbPaymentMadefrom.Focus();
+            else
+                cmbPaymentMadeto.Focus();
         }
 
         private void BindLookups()
         {
-            object selectedfrom = cmbPaymentMadeto.EditValue;
-            object selectedto = cmbPaymentMadefrom.EditValue;
+            object selectedto = cmbPaymentMadeto.EditValue;
+            object selectedfrom = cmbPaymentMadefrom.EditValue;
 
             DataTable dt = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
 

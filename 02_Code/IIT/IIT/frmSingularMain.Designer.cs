@@ -33,7 +33,6 @@
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.lblHelpText = new DevExpress.XtraEditors.LabelControl();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -50,6 +49,8 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.lblReportsPath = new DevExpress.XtraEditors.LabelControl();
+            this.lblCompanyPath = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.lcMain)).BeginInit();
             this.lcMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
@@ -114,40 +115,32 @@
             this.tablePanel1.Appearance.BackColor = System.Drawing.Color.PaleGreen;
             this.tablePanel1.Appearance.Options.UseBackColor = true;
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Controls.Add(this.labelControl2);
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 147F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 80.87F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 24.13F)});
+            this.tablePanel1.Controls.Add(this.lblCompanyPath);
+            this.tablePanel1.Controls.Add(this.lblReportsPath);
             this.tablePanel1.Controls.Add(this.labelControl1);
             this.tablePanel1.Controls.Add(this.pictureEdit1);
             this.tablePanel1.Location = new System.Drawing.Point(8, 489);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(939, 121);
             this.tablePanel1.TabIndex = 0;
             // 
-            // labelControl2
-            // 
-            this.tablePanel1.SetColumn(this.labelControl2, 3);
-            this.labelControl2.Location = new System.Drawing.Point(671, 66);
-            this.labelControl2.Name = "labelControl2";
-            this.tablePanel1.SetRow(this.labelControl2, 1);
-            this.labelControl2.Size = new System.Drawing.Size(46, 15);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "help text";
-            // 
             // labelControl1
             // 
             this.tablePanel1.SetColumn(this.labelControl1, 1);
-            this.labelControl1.Location = new System.Drawing.Point(103, 66);
+            this.labelControl1.Location = new System.Drawing.Point(150, 5);
             this.labelControl1.Name = "labelControl1";
-            this.tablePanel1.SetRow(this.labelControl1, 1);
-            this.labelControl1.Size = new System.Drawing.Size(166, 15);
+            this.tablePanel1.SetRow(this.labelControl1, 0);
+            this.labelControl1.Size = new System.Drawing.Size(141, 15);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Status text based on operation";
+            this.labelControl1.Text = "Application Version : 1.0.0";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // pictureEdit1
@@ -164,8 +157,8 @@
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.tablePanel1.SetRow(this.pictureEdit1, 0);
-            this.tablePanel1.SetRowSpan(this.pictureEdit1, 2);
-            this.pictureEdit1.Size = new System.Drawing.Size(94, 115);
+            this.tablePanel1.SetRowSpan(this.pictureEdit1, 4);
+            this.pictureEdit1.Size = new System.Drawing.Size(141, 115);
             this.pictureEdit1.TabIndex = 0;
             // 
             // ribbonControl1
@@ -301,6 +294,24 @@
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "ribbonPage5";
             // 
+            // lblReportsPath
+            // 
+            this.tablePanel1.SetColumn(this.lblReportsPath, 1);
+            this.lblReportsPath.Location = new System.Drawing.Point(150, 31);
+            this.lblReportsPath.Name = "lblReportsPath";
+            this.tablePanel1.SetRow(this.lblReportsPath, 1);
+            this.lblReportsPath.Size = new System.Drawing.Size(0, 15);
+            this.lblReportsPath.TabIndex = 2;
+            // 
+            // lblCompanyPath
+            // 
+            this.tablePanel1.SetColumn(this.lblCompanyPath, 1);
+            this.lblCompanyPath.Location = new System.Drawing.Point(150, 57);
+            this.lblCompanyPath.Name = "lblCompanyPath";
+            this.tablePanel1.SetRow(this.lblCompanyPath, 2);
+            this.lblCompanyPath.Size = new System.Drawing.Size(0, 15);
+            this.lblCompanyPath.TabIndex = 3;
+            // 
             // frmSingularMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -359,8 +370,9 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         public DevExpress.XtraEditors.LabelControl lblHelpText;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.LabelControl lblReportsPath;
+        private DevExpress.XtraEditors.LabelControl lblCompanyPath;
     }
 }

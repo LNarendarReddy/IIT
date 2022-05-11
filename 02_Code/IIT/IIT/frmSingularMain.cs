@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace IIT
@@ -16,6 +17,19 @@ namespace IIT
 
         private void frmSingularMain_Load(object sender, EventArgs e)
         {
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            Utility.ReportsPath = Path.Combine(folder, @"IIT\Reports");
+            Utility.CompanyPath = Path.Combine(folder, @"IIT\Company");
+
+            if (!Directory.Exists(Utility.ReportsPath))
+                Directory.CreateDirectory(Utility.ReportsPath);
+
+            if (!Directory.Exists(Utility.CompanyPath))
+                Directory.CreateDirectory(Utility.CompanyPath);
+
+            lblReportsPath.Text = $"Reports Path : {Utility.ReportsPath}";
+            lblCompanyPath.Text = $"Company Path : {Utility.CompanyPath}";
+
             Utility.ShowDialog(new frmEntityList());
         }
 
