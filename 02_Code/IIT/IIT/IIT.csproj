@@ -372,8 +372,16 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>icacls "$(TargetDir)\IITData14.mdf" /grant Everyone:(f)
+    <PostBuildEvent>robocopy $(ProjectDir)..\Repository\ $(TargetDir) IITData14.mdf
+
+robocopy $(ProjectDir)..\Repository\ $(TargetDir) IITData14_log.ldf
+
+icacls "$(TargetDir)\IITData14.mdf" /grant Everyone:(f)
 icacls "$(TargetDir)\IITData14_log.ldf" /grant Everyone:(f)</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
