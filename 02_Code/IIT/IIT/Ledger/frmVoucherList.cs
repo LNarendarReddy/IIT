@@ -45,7 +45,7 @@ namespace IIT
             rpt.Parameters["VoucherDate"].Value = gvVoucher.GetFocusedRowCellValue("VOUCHERDATE");
             rpt.Parameters["VoucherNumber"].Value = gvVoucher.GetFocusedRowCellValue("VOUCHERNUMBER");
             rpt.Parameters["AmountInRupees"].Value = gvVoucher.GetFocusedRowCellValue("AMOUNT");
-            rpt.Parameters["AmountInWords"].Value = Utility.ConvertNum(Convert.ToInt64(gvVoucher.GetFocusedRowCellValue("AMOUNT")));
+            rpt.Parameters["AmountInWords"].Value = Utility.ConvertNum(Convert.ToDouble(gvVoucher.GetFocusedRowCellValue("AMOUNT")));
             rpt.Parameters["PaymentMadeFrom"].Value = gvVoucher.GetFocusedRowCellValue("FROMLEDGER");
             rpt.Parameters["PaymentMadeTo"].Value = gvVoucher.GetFocusedRowCellValue("TOLEDGER");
             rpt.Parameters["Purpose"].Value = gvVoucher.GetFocusedRowCellValue("PURPOSE");

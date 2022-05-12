@@ -372,9 +372,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>robocopy $(ProjectDir)..\Repository\ $(TargetDir) IITData14.mdf
+    <PostBuildEvent>robocopy $(ProjectDir)..\Repository\ $(TargetDir) IITData14.mdf /XO
 
-robocopy $(ProjectDir)..\Repository\ $(TargetDir) IITData14_log.ldf
+robocopy $(ProjectDir)..\Repository\ $(TargetDir) IITData14_log.ldf /XO
 
 icacls "$(TargetDir)\IITData14.mdf" /grant Everyone:(f)
 icacls "$(TargetDir)\IITData14_log.ldf" /grant Everyone:(f)</PostBuildEvent>

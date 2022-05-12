@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnAddLedger1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -162,10 +162,10 @@
             this.cmbPaymentMadefrom.Size = new System.Drawing.Size(488, 22);
             this.cmbPaymentMadefrom.StyleController = this.layoutControl1;
             this.cmbPaymentMadefrom.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadefrom, conditionValidationRule1);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Mandatory";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadefrom, conditionValidationRule7);
             // 
             // btnSave
             // 
@@ -200,13 +200,18 @@
             this.cmbPaymentMadeto.Size = new System.Drawing.Size(488, 22);
             this.cmbPaymentMadeto.StyleController = this.layoutControl1;
             this.cmbPaymentMadeto.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadeto, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadeto, conditionValidationRule1);
             // 
             // txtAmountInWords
             // 
+            this.txtAmountInWords.Appearance.Options.UseTextOptions = true;
+            this.txtAmountInWords.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.txtAmountInWords.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtAmountInWords.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.txtAmountInWords.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.txtAmountInWords.Location = new System.Drawing.Point(139, 184);
             this.txtAmountInWords.Name = "txtAmountInWords";
             this.txtAmountInWords.Size = new System.Drawing.Size(601, 15);
@@ -228,10 +233,10 @@
             this.txtAmountIRupees.Size = new System.Drawing.Size(601, 22);
             this.txtAmountIRupees.StyleController = this.layoutControl1;
             this.txtAmountIRupees.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAmountIRupees, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAmountIRupees, conditionValidationRule2);
             this.txtAmountIRupees.Leave += new System.EventHandler(this.txtAmountIRupees_Leave);
             // 
             // txtRefNo
@@ -249,9 +254,9 @@
             this.txtRefNo.Size = new System.Drawing.Size(128, 22);
             this.txtRefNo.StyleController = this.layoutControl1;
             this.txtRefNo.TabIndex = 9;
-            conditionValidationRule4.ErrorText = "";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
-            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule4);
+            conditionValidationRule3.ErrorText = "";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
+            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule3);
             // 
             // dtpVoucherDate
             // 
@@ -266,10 +271,10 @@
             this.dtpVoucherDate.Size = new System.Drawing.Size(135, 22);
             this.dtpVoucherDate.StyleController = this.layoutControl1;
             this.dtpVoucherDate.TabIndex = 10;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.dtpVoucherDate, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Mandatory";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.dtpVoucherDate, conditionValidationRule4);
             // 
             // lblformHeader
             // 
@@ -290,10 +295,10 @@
             this.txtPurposeofPayment.Size = new System.Drawing.Size(601, 68);
             this.txtPurposeofPayment.StyleController = this.layoutControl1;
             this.txtPurposeofPayment.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPurposeofPayment, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPurposeofPayment, conditionValidationRule5);
             // 
             // Root
             // 

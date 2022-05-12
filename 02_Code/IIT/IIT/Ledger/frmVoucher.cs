@@ -184,7 +184,7 @@ namespace IIT
             try
             {
                 voucherObj.AmountInWords = 
-                    long.TryParse(Convert.ToString(txtAmountIRupees.EditValue), out long dValue) 
+                    double.TryParse(Convert.ToString(txtAmountIRupees.EditValue), out double dValue) 
                         ? Utility.ConvertNum(dValue) 
                         : string.Empty;
 
