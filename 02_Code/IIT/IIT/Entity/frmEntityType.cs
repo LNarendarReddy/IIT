@@ -11,6 +11,10 @@ namespace IIT
         private List<string> helpText = new List<string>() { "(Alt + I) ==> Individual", "(Alt + P) ==> Partnership",
         "(Alt + A) ==> AOP ","(Alt + C) ==> Company "};
         public override List<string> HelpText => helpText;
+
+        public override string Caption => "Select Entity Type";
+
+        [Obsolete]
         public frmEntityType()
         {
             InitializeComponent();

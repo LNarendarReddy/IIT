@@ -15,16 +15,20 @@ namespace IIT
     {
         object HeadID = null;
         DataTable dt = null;
+        string caption;
 
         private List<string> helpText = new List<string>() { "Up/Down ==> Navigate", "Ctrl + Right ==> Expand",
             "Ctrl + Right ==> Expand" , "Alt + N ==> Add ledger"};
         public override List<string> HelpText => helpText;
+
+        public override string Caption => caption;
 
         public frmLedgerCreation(object _HeadID, string HeadName)
         {
             InitializeComponent();
             HeadID = _HeadID;
             tlcLedgerName.Caption = HeadName;
+            caption = $"{HeadName} Ledgers";
         }
 
         private void frmLedgerList_Load(object sender, EventArgs e)

@@ -252,6 +252,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucNavigationRouter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNavigationRouter.Designer.cs">
+      <DependentUpon>ucNavigationRouter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="Entity\frmAddGSTNumber.resx">
       <DependentUpon>frmAddGSTNumber.cs</DependentUpon>
@@ -346,6 +352,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucNavigationRouter.resx">
+      <DependentUpon>ucNavigationRouter.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

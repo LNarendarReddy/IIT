@@ -47,6 +47,12 @@ namespace IIT
             helpText.AddRange( new List<string>() { "Enter ==> Select", "Esc ==> Close" });
 
             frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine + Environment.NewLine, helpText);
+            frmSingularMain.Instance.btnBack.Enabled = (frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase)?.PreviousControl != null;
+            string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? "IIT");
+            //frmSingularMain.Instance.Text = selectedEntityName;
+            frmSingularMain.Instance.lblEntityName.Text = selectedEntityName;
+            frmSingularMain.Instance.lblNavigationHeader.Text = userControl.Header;
+
         }
 
         public static void SetGridFormatting(GridView gridView)

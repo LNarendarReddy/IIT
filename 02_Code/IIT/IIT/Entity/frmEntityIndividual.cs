@@ -16,6 +16,9 @@ namespace IIT
         bool isLoading = false;
         private List<string> helpText = new List<string>() { "(Alt + S) ==> Save ", "(Alt + L) ==> Add Logo" };
         public override List<string> HelpText => helpText;
+
+        public override string Caption => @"Create\Modify Entity";
+
         public frmEntityIndividual(int _entityType, int EntityID = 0)
         {
             InitializeComponent();

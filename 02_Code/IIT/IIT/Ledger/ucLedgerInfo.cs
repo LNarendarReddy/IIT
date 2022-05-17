@@ -1,13 +1,5 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IIT
 {
@@ -16,6 +8,9 @@ namespace IIT
         private List<string> helpText = new List<string>() { "(Alt + L) ==> Liabilities", "(Alt + A) ==> Assets",
         "(Alt + I) ==> Income","(Alt + E) ==> Expenses"};
         public override List<string> HelpText => helpText;
+
+        public override string Caption => "Ledger Selection";
+
         public ucLedgerInfo()
         {
             InitializeComponent();

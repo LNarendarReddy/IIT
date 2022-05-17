@@ -10,20 +10,9 @@ namespace IIT
 
         public virtual List<string> HelpText => new List<string>();
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // NavigationBase
-            // 
-            this.Name = "NavigationBase";
-            this.Size = new System.Drawing.Size(953, 670);
-            this.ResumeLayout(false);
-        }
+        public virtual string Caption => Name;
 
-        private void simpleButton1_Click(object sender, System.EventArgs e)
-        {
+        public string Header => PreviousControl != null ? PreviousControl.Header + " > " + Caption : Caption;
 
-        }
     }
 }

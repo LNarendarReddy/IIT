@@ -24,16 +24,52 @@ namespace IIT
 
         public override NavigationBase PreviousControl { get => base.PreviousControl; set { } }
         public override List<string> HelpText => helpText;
+
+        public override string Caption => "(Home)";
+
         public frmEntityList() 
         {    
             InitializeComponent();
         }
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
-            frmEntityType objEntityType = new frmEntityType();
-            Utility.ShowDialog(objEntityType);
-            BindDatasource();
+            List<string> actions = new List<string>()
+            {
+                "Individual / Proprietor Firm"
+                , "Partnership Firm"
+                , "AOP / BOI"
+                , "Company"
+            };
+
+            ucNavigationRouter router = new ucNavigationRouter(actions, "Entity Selection", ActionExecute);
+            Utility.ShowDialog(router);
+
+            //frmEntityType objEntityType = new frmEntityType();
+            //Utility.ShowDialog(objEntityType);
+            //BindDatasource();
         }
+
+        private void ActionExecute(string actionText)
+        {
+            NavigationBase formObj = null;
+            switch(actionText)
+            {
+                case "Individual / Proprietor Firm":
+                    formObj = new frmEntityIndividual(11);
+                    break;
+                case "Partnership Firm":
+                    formObj = new frmPartnershipFirm(12);
+                    break;
+                case "AOP / BOI":
+                    formObj = new frmPartnershipFirm(14);
+                    break;
+                case "Company":
+                    formObj = new frmPartnershipFirm(13);
+                    break;
+            }
+            Utility.ShowDialog(formObj);
+        }
+
         private void frmEntityList_Load(object sender, EventArgs e)
         {
             Utility.SetGridFormatting(gvEntityList);
@@ -42,8 +78,10 @@ namespace IIT
         }
         private void gvEntityList_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            btnModifyEntity.Enabled = gvEntityList.FocusedRowHandle >= 0;
-            btnExport.Enabled = gvEntityList.FocusedRowHandle >= 0;
+            bool enabled = gvEntityList.FocusedRowHandle >= 0;
+            btnModifyEntity.Enabled = enabled;
+            btnSelect.Enabled = enabled;
+            btnExport.Enabled = enabled;
         }
         private void btnModifyEntity_Click(object sender, EventArgs e)
         {
@@ -165,8 +203,7 @@ namespace IIT
 
             Utility.CurrentEntity = entityDataRepository.GetEntityData(
             gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-            Utility.CurrentEntity.LogoData = entityDataRepository.GetEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID"));
-            frmSingularMain.Instance.Text = Utility.CurrentEntity?.EntityName == null ? "IIT" : Convert.ToString(Utility.CurrentEntity.EntityName);
+            Utility.CurrentEntity.LogoData = entityDataRepository.GetEntityLogo(gvEntityList.GetFocusedRowCellValue("ENTITYID"));            
             Utility.ShowDialog(new ucAccountInfo());
         }
     }
