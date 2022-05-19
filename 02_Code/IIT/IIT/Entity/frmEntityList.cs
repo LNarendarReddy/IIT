@@ -19,11 +19,16 @@ namespace IIT
         public object EntityName;
         public bool IsEntitySelected = false;
         EntityDataRepository entityDataRepository = new EntityDataRepository();
-        private List<string> helpText = new List<string>() { "(Alt + C) ==> Create",
-            "(Alt + M) ==> Modify", "(Alt + S) ==> Select" };
+
+        private List<ActionText> helpText = new List<ActionText>() 
+            { 
+                new ActionText("Create", buildShort: false, shortCut: "(Alt + C)"),
+                new ActionText("Modify", buildShort: false, shortCut: "(Alt + M)"),
+                new ActionText("Select", buildShort: false, shortCut: "(Alt + S)")
+            };
 
         public override NavigationBase PreviousControl { get => base.PreviousControl; set { } }
-        public override List<string> HelpText => helpText;
+        public override IEnumerable<ActionText> HelpText => helpText;
 
         public override string Caption => "(Home)";
 

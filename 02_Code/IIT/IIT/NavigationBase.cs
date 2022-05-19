@@ -5,25 +5,18 @@ namespace IIT
 {
     public class NavigationBase : XtraUserControl
     {
-
+        IEnumerable<ActionText> helpText;
         public virtual NavigationBase PreviousControl { get; set; }
 
-        public virtual List<string> HelpText => new List<string>();
+        public virtual IEnumerable<ActionText> HelpText => helpText;
 
         public virtual string Caption => Name;
 
         public string Header => PreviousControl != null ? PreviousControl.Header + " > " + Caption : Caption;
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // NavigationBase
-            // 
-            this.Name = "NavigationBase";
-            this.Size = new System.Drawing.Size(715, 509);
-            this.ResumeLayout(false);
-
+        public NavigationBase()
+        { 
+            helpText = new List<ActionText>(); 
         }
     }
 }

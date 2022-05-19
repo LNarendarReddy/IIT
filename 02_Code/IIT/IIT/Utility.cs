@@ -44,9 +44,13 @@ namespace IIT
             userControl.Focus();
 
             var helpText = userControl.HelpText.ToList();
-            helpText.AddRange( new List<string>() { "Enter ==> Select", "Esc ==> Close" });
+            helpText.AddRange(new List<ActionText>() 
+            {
+                new ActionText("Select", buildShort: false, shortCut: "Enter") 
+                , new ActionText("Close", buildShort: false, shortCut: "Esc")
+            });
 
-            frmSingularMain.Instance.lblHelpText.Text = string.Join(Environment.NewLine + Environment.NewLine, helpText);
+            frmSingularMain.Instance.gcHelpText.DataSource = helpText;
             frmSingularMain.Instance.btnBack.Enabled = (frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase)?.PreviousControl != null;
             string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? "IIT");
             //frmSingularMain.Instance.Text = selectedEntityName;

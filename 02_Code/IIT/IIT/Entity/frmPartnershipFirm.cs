@@ -13,8 +13,13 @@ namespace IIT
         EntityData entityData = new EntityData();
         bool isLoading = false;
         bool IsCompany;
-        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save", "(Alt + L) ==> Add Logo " };
-        public override List<string> HelpText => helpText;
+        private List<ActionText> helpText = new List<ActionText>() 
+            { 
+                new ActionText("Save", buildShort: false, shortCut: "Alt + S"),
+                new ActionText("Add Logo", buildShort: false, shortCut: "Alt + L")
+            };
+
+        public override IEnumerable<ActionText> HelpText => helpText;
         public frmPartnershipFirm(int _entityType, int EntityID = 0)
         {
             InitializeComponent();

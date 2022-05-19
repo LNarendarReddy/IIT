@@ -5,9 +5,9 @@ namespace IIT
 {
     public partial class ucAccountInfo : NavigationBase
     {
-        private List<string> helpText = new List<string>() { "(Alt + C) ==> Ledger Creation ", "(Alt + V) ==> Voucher Entry",
-        "(Alt + I) ==> Inventory Entry","(Alt + M) ==> MIS Forms" , "(Alt + D) ==> Day Book ","(Alt + P) ==> Ledger Printing "};
-        public override List<string> HelpText => helpText;
+        //private List<string> helpText = new List<string>() { "(Alt + C) ==> Ledger Creation ", "(Alt + V) ==> Voucher Entry",
+        //"(Alt + I) ==> Inventory Entry","(Alt + M) ==> MIS Forms" , "(Alt + D) ==> Day Book ","(Alt + P) ==> Ledger Printing "};
+        //public override List<string> HelpText => helpText;
 
         public override string Caption => "Accounts";
 

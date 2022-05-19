@@ -17,9 +17,13 @@ namespace IIT
         DataTable dt = null;
         string caption;
 
-        private List<string> helpText = new List<string>() { "Up/Down ==> Navigate", "Ctrl + Right ==> Expand",
-            "Ctrl + Right ==> Expand" , "Alt + N ==> Add ledger"};
-        public override List<string> HelpText => helpText;
+        private List<ActionText> helpText = new List<ActionText>() { 
+            new ActionText("Navigate", buildShort: false, shortCut: "Up/Down"),
+            new ActionText("Expand", buildShort: false, shortCut: "Ctrl + Right"),
+            new ActionText("Add ledger", buildShort: false, shortCut: "Alt + N")
+        };
+
+        public override IEnumerable<ActionText> HelpText => helpText;
 
         public override string Caption => caption;
 

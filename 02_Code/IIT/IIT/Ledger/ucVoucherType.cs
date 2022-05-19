@@ -1,21 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using Entity;
+﻿using Entity;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IIT
 {
     public partial class ucVoucherType : NavigationBase
     {
-        private List<string> helpText = new List<string>() { "Up/Down ==> navigate"};
-        public override List<string> HelpText => helpText;
+        private List<ActionText> helpText = new List<ActionText>() { new ActionText("Navigate", buildShort: false, shortCut: "Up/Down") };
+        public override IEnumerable<ActionText> HelpText => helpText;
         public ucVoucherType()
         {
             InitializeComponent();

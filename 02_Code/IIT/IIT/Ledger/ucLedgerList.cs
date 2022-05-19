@@ -9,8 +9,9 @@ namespace IIT
 {
     public partial class ucLedgerList : NavigationBase
     {
-        private List<string> helpText = new List<string>() { "Up/Down ==> navigate" };
-        public override List<string> HelpText => helpText;
+        private List<ActionText> helpText = new List<ActionText>() { new ActionText("Navigate", buildShort: false, shortCut: "Up/Down") };
+        public override IEnumerable<ActionText> HelpText => helpText;
+
         public ucLedgerList()
         {
             InitializeComponent();

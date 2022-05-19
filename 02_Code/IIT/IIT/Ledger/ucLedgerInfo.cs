@@ -5,9 +5,9 @@ namespace IIT
 {
     public partial class ucLedgerInfo : NavigationBase
     {
-        private List<string> helpText = new List<string>() { "(Alt + L) ==> Liabilities", "(Alt + A) ==> Assets",
-        "(Alt + I) ==> Income","(Alt + E) ==> Expenses"};
-        public override List<string> HelpText => helpText;
+        //private List<string> helpText = new List<string>() { "(Alt + L) ==> Liabilities", "(Alt + A) ==> Assets",
+        //"(Alt + I) ==> Income","(Alt + E) ==> Expenses"};
+        //public override List<string> HelpText => helpText;
 
         public override string Caption => "Ledger Selection";
 

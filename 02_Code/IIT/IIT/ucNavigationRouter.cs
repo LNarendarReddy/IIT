@@ -19,6 +19,8 @@ namespace IIT
         private string caption;
         Action<string> actionExecute;
 
+        public override IEnumerable<ActionText> HelpText => buttonsList;
+
         public override string Caption => caption;
 
         public ucNavigationRouter(IEnumerable<string> buttons, string _caption, Action<string> _actionExecute)

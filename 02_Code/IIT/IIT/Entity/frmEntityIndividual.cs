@@ -14,8 +14,13 @@ namespace IIT
         public bool IsSave = false;
         EntityData entityData = null;
         bool isLoading = false;
-        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save ", "(Alt + L) ==> Add Logo" };
-        public override List<string> HelpText => helpText;
+
+        private List<ActionText> helpText = new List<ActionText>()
+            { 
+                new ActionText("Save", buildShort: false, shortCut: "Alt + S"),
+                new ActionText("Add Logo", buildShort: false, shortCut: "Alt + L")
+            };
+        public override IEnumerable<ActionText> HelpText => helpText;
 
         public override string Caption => @"Create\Modify Entity";
 

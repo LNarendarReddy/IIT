@@ -12,8 +12,14 @@ namespace IIT
 {
     public partial class frmVoucher : NavigationBase
     {
-        private List<string> helpText = new List<string>() { "(Alt + S) ==> Save", "(Alt + L) ==> Add ledger" };
-        public override List<string> HelpText => helpText;
+        private List<ActionText> helpText = new List<ActionText>()
+            {
+                new ActionText("Save", buildShort: false, shortCut: "Alt + S"),
+                new ActionText("Add Ledger", buildShort: false, shortCut: "Alt + L")
+            };
+
+        public override IEnumerable<ActionText> HelpText => helpText;
+
         Voucher voucherObj;
         public frmVoucher(Voucher _voucherObj)
         {
