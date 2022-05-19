@@ -37,7 +37,7 @@
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.gcHelpText = new DevExpress.XtraGrid.GridControl();
-            this.cvHelpText = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.gvHelpText = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcHelpText)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cvHelpText)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHelpText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -83,7 +83,7 @@
             this.lcMain.Name = "lcMain";
             this.lcMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(332, 400, 650, 400);
             this.lcMain.Root = this.Root;
-            this.lcMain.Size = new System.Drawing.Size(1147, 702);
+            this.lcMain.Size = new System.Drawing.Size(1160, 702);
             this.lcMain.TabIndex = 0;
             this.lcMain.Text = "layoutControl1";
             // 
@@ -102,7 +102,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 40F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 36F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
-            this.tablePanel3.Size = new System.Drawing.Size(945, 561);
+            this.tablePanel3.Size = new System.Drawing.Size(928, 561);
             this.tablePanel3.TabIndex = 7;
             // 
             // btnBack
@@ -110,7 +110,7 @@
             this.tablePanel3.SetColumn(this.btnBack, 1);
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBack.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBack.ImageOptions.SvgImage")));
-            this.btnBack.Location = new System.Drawing.Point(905, 43);
+            this.btnBack.Location = new System.Drawing.Point(888, 43);
             this.btnBack.Name = "btnBack";
             this.tablePanel3.SetRow(this.btnBack, 1);
             this.btnBack.Size = new System.Drawing.Size(37, 30);
@@ -142,7 +142,7 @@
             this.lblEntityName.Location = new System.Drawing.Point(3, 3);
             this.lblEntityName.Name = "lblEntityName";
             this.tablePanel3.SetRow(this.lblEntityName, 0);
-            this.lblEntityName.Size = new System.Drawing.Size(939, 34);
+            this.lblEntityName.Size = new System.Drawing.Size(922, 34);
             this.lblEntityName.TabIndex = 7;
             this.lblEntityName.Text = "labelControl2";
             // 
@@ -154,7 +154,7 @@
             this.pcMain.Location = new System.Drawing.Point(3, 79);
             this.pcMain.Name = "pcMain";
             this.tablePanel3.SetRow(this.pcMain, 2);
-            this.pcMain.Size = new System.Drawing.Size(939, 479);
+            this.pcMain.Size = new System.Drawing.Size(922, 479);
             this.pcMain.TabIndex = 4;
             // 
             // tablePanel2
@@ -164,11 +164,11 @@
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F)});
             this.tablePanel2.Controls.Add(this.gcHelpText);
-            this.tablePanel2.Location = new System.Drawing.Point(952, 3);
+            this.tablePanel2.Location = new System.Drawing.Point(935, 3);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
-            this.tablePanel2.Size = new System.Drawing.Size(192, 696);
+            this.tablePanel2.Size = new System.Drawing.Size(222, 696);
             this.tablePanel2.TabIndex = 5;
             // 
             // gcHelpText
@@ -176,24 +176,34 @@
             this.tablePanel2.SetColumn(this.gcHelpText, 0);
             this.gcHelpText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcHelpText.Location = new System.Drawing.Point(3, 3);
-            this.gcHelpText.MainView = this.cvHelpText;
+            this.gcHelpText.MainView = this.gvHelpText;
             this.gcHelpText.Name = "gcHelpText";
             this.tablePanel2.SetRow(this.gcHelpText, 0);
-            this.gcHelpText.Size = new System.Drawing.Size(186, 690);
+            this.gcHelpText.Size = new System.Drawing.Size(216, 690);
             this.gcHelpText.TabIndex = 0;
             this.gcHelpText.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.cvHelpText});
+            this.gvHelpText});
             // 
-            // cvHelpText
+            // gvHelpText
             // 
-            this.cvHelpText.CardCaptionFormat = "{Action}";
-            this.cvHelpText.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvHelpText.Appearance.CardCaption.Options.UseTextOptions = true;
+            this.gvHelpText.Appearance.CardCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gvHelpText.Appearance.EmptySpace.BackColor = System.Drawing.Color.LightBlue;
+            this.gvHelpText.Appearance.EmptySpace.Options.UseBackColor = true;
+            this.gvHelpText.Appearance.FieldCaption.Options.UseTextOptions = true;
+            this.gvHelpText.Appearance.FieldCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gvHelpText.CardCaptionFormat = "{Action}";
+            this.gvHelpText.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2,
             this.gridColumn1});
-            this.cvHelpText.GridControl = this.gcHelpText;
-            this.cvHelpText.Name = "cvHelpText";
-            this.cvHelpText.OptionsView.ShowQuickCustomizeButton = false;
-            this.cvHelpText.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
+            this.gvHelpText.GridControl = this.gcHelpText;
+            this.gvHelpText.MaximumCardColumns = 1;
+            this.gvHelpText.Name = "gvHelpText";
+            this.gvHelpText.OptionsBehavior.Editable = false;
+            this.gvHelpText.OptionsView.ShowHorzScrollBar = false;
+            this.gvHelpText.OptionsView.ShowQuickCustomizeButton = false;
+            this.gvHelpText.PrintMaximumCardColumns = 1;
+            this.gvHelpText.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
             // gridColumn2
             // 
@@ -205,6 +215,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridColumn1.Caption = "Action";
             this.gridColumn1.FieldName = "Action";
             this.gridColumn1.Name = "gridColumn1";
@@ -228,7 +242,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(939, 121);
+            this.tablePanel1.Size = new System.Drawing.Size(922, 121);
             this.tablePanel1.TabIndex = 0;
             // 
             // lblCompanyPath
@@ -285,7 +299,7 @@
             this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.Root.Size = new System.Drawing.Size(1147, 702);
+            this.Root.Size = new System.Drawing.Size(1160, 702);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -296,7 +310,7 @@
             this.layoutControlItem2.MinSize = new System.Drawing.Size(21, 131);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem2.Size = new System.Drawing.Size(949, 131);
+            this.layoutControlItem2.Size = new System.Drawing.Size(932, 131);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -304,12 +318,12 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.tablePanel2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(949, 0);
-            this.layoutControlItem3.MaxSize = new System.Drawing.Size(192, 0);
-            this.layoutControlItem3.MinSize = new System.Drawing.Size(192, 11);
+            this.layoutControlItem3.Location = new System.Drawing.Point(932, 0);
+            this.layoutControlItem3.MaxSize = new System.Drawing.Size(222, 0);
+            this.layoutControlItem3.MinSize = new System.Drawing.Size(222, 1);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem3.Size = new System.Drawing.Size(192, 696);
+            this.layoutControlItem3.Size = new System.Drawing.Size(222, 696);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -319,7 +333,7 @@
             this.layoutControlItem1.Control = this.tablePanel3;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(949, 565);
+            this.layoutControlItem1.Size = new System.Drawing.Size(932, 565);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -348,7 +362,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1147, 702);
+            this.ClientSize = new System.Drawing.Size(1160, 702);
             this.Controls.Add(this.lcMain);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmSingularMain.IconOptions.Icon")));
             this.KeyPreview = true;
@@ -366,7 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcHelpText)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cvHelpText)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHelpText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
@@ -403,7 +417,7 @@
         public DevExpress.XtraEditors.LabelControl lblEntityName;
         public DevExpress.XtraEditors.LabelControl btnBack;
         public DevExpress.XtraGrid.GridControl gcHelpText;
-        private DevExpress.XtraGrid.Views.Card.CardView cvHelpText;
+        private DevExpress.XtraGrid.Views.Card.CardView gvHelpText;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
