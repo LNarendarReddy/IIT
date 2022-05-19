@@ -33,6 +33,7 @@
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.gcButtons = new DevExpress.XtraGrid.GridControl();
             this.gvButtons = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -124,15 +125,22 @@
             this.gvButtons.Appearance.Row.Font = new System.Drawing.Font("Arial", 14F);
             this.gvButtons.Appearance.Row.Options.UseFont = true;
             this.gvButtons.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
             this.gridColumn2});
             this.gvButtons.GridControl = this.gcButtons;
-            this.gvButtons.IndicatorWidth = 60;
             this.gvButtons.Name = "gvButtons";
             this.gvButtons.OptionsBehavior.Editable = false;
             this.gvButtons.OptionsView.ShowColumnHeaders = false;
             this.gvButtons.OptionsView.ShowGroupPanel = false;
             this.gvButtons.RowHeight = 40;
-            this.gvButtons.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvButtons_CustomDrawRowIndicator);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "S No";
+            this.gridColumn1.FieldName = "SNo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
@@ -141,7 +149,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // ucNavigationRouter
             // 
@@ -170,5 +178,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvButtons;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.LabelControl lblHeader;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

@@ -24,7 +24,8 @@ namespace IIT
         public ucNavigationRouter(IEnumerable<string> buttons, string _caption, Action<string> _actionExecute)
         {
             InitializeComponent();
-            buttonsList = buttons.Select(x => new ActionText() { Action = x }).ToList();
+            int i = 1;
+            buttonsList = buttons.Select(x => new ActionText(x, i++)).ToList();
             caption = _caption;
             actionExecute = _actionExecute;
         }
@@ -35,14 +36,9 @@ namespace IIT
 
             gcButtons.DataSource = buttonsList;
             lblHeader.Text = Caption;
+            gvButtons.BestFitColumns();
             UpdateGridSize();
             
-        }
-
-        private void gvButtons_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
-            if (e.RowHandle < 0) return;
-            e.Info.DisplayText = $"{e.RowHandle + 1}";
         }
 
         private void UpdateGridSize()
@@ -90,7 +86,5 @@ namespace IIT
             gvButtons.FocusedRowHandle = inputNumber - 1;
             gcButtons_Click(sender, e);
         }
-    }
-
-    class ActionText { public string Action { get; set; } }
+    }    
 }
