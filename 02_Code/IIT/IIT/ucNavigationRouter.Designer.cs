@@ -44,6 +44,7 @@
             // 
             // tablePanel1
             // 
+            this.tablePanel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
@@ -53,9 +54,7 @@
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 20F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 20F)});
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel1.Size = new System.Drawing.Size(1006, 540);
             this.tablePanel1.TabIndex = 0;
             // 
@@ -68,12 +67,13 @@
             this.lblHeader.Appearance.Options.UseTextOptions = true;
             this.lblHeader.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblHeader.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblHeader.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.tablePanel1.SetColumn(this.lblHeader, 0);
             this.lblHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHeader.Location = new System.Drawing.Point(3, 23);
+            this.lblHeader.Location = new System.Drawing.Point(3, 3);
             this.lblHeader.Name = "lblHeader";
-            this.tablePanel1.SetRow(this.lblHeader, 1);
-            this.lblHeader.Size = new System.Drawing.Size(497, 494);
+            this.tablePanel1.SetRow(this.lblHeader, 0);
+            this.lblHeader.Size = new System.Drawing.Size(497, 534);
             this.lblHeader.TabIndex = 1;
             this.lblHeader.Text = "Caption";
             // 
@@ -86,21 +86,21 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tablePanel2.Controls.Add(this.gcButtons);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(506, 23);
+            this.tablePanel2.Location = new System.Drawing.Point(506, 3);
             this.tablePanel2.Name = "tablePanel2";
-            this.tablePanel1.SetRow(this.tablePanel2, 1);
+            this.tablePanel1.SetRow(this.tablePanel2, 0);
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel2.Size = new System.Drawing.Size(497, 494);
+            this.tablePanel2.Size = new System.Drawing.Size(497, 534);
             this.tablePanel2.TabIndex = 0;
             // 
             // gcButtons
             // 
             this.tablePanel2.SetColumn(this.gcButtons, 1);
             this.gcButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcButtons.Location = new System.Drawing.Point(99, 222);
+            this.gcButtons.Location = new System.Drawing.Point(99, 242);
             this.gcButtons.MainView = this.gvButtons;
             this.gcButtons.Name = "gcButtons";
             this.tablePanel2.SetRow(this.gcButtons, 1);
@@ -113,15 +113,25 @@
             // 
             // gvButtons
             // 
-            this.gvButtons.Appearance.Row.Font = new System.Drawing.Font("Arial", 12F);
+            this.gvButtons.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.gvButtons.Appearance.FocusedCell.ForeColor = System.Drawing.Color.White;
+            this.gvButtons.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvButtons.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvButtons.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(109)))), ((int)(((byte)(190)))));
+            this.gvButtons.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gvButtons.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvButtons.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvButtons.Appearance.Row.Font = new System.Drawing.Font("Arial", 14F);
             this.gvButtons.Appearance.Row.Options.UseFont = true;
             this.gvButtons.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2});
             this.gvButtons.GridControl = this.gcButtons;
-            this.gvButtons.IndicatorWidth = 40;
+            this.gvButtons.IndicatorWidth = 60;
             this.gvButtons.Name = "gvButtons";
             this.gvButtons.OptionsBehavior.Editable = false;
+            this.gvButtons.OptionsView.ShowColumnHeaders = false;
             this.gvButtons.OptionsView.ShowGroupPanel = false;
+            this.gvButtons.RowHeight = 40;
             this.gvButtons.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvButtons_CustomDrawRowIndicator);
             // 
             // gridColumn2

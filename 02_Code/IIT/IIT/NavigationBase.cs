@@ -14,5 +14,16 @@ namespace IIT
 
         public string Header => PreviousControl != null ? PreviousControl.Header + " > " + Caption : Caption;
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // NavigationBase
+            // 
+            this.Name = "NavigationBase";
+            this.Size = new System.Drawing.Size(715, 509);
+            this.ResumeLayout(false);
+
+        }
     }
 }

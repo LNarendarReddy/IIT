@@ -59,7 +59,7 @@ namespace IIT
                 {
                     width += viewInfo.ColumnsInfo[column].Bounds.Width;
                 }
-                catch { }
+                catch (Exception ex){ }
             }
             if (scrollInfo.VScrollVisible) width += scrollInfo.VScrollSize;
             int height = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, ClientSize.Width, ClientSize.Height), true);

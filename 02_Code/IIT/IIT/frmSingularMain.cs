@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmSingularMain : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmSingularMain : DevExpress.XtraEditors.XtraForm
     {
         private static frmSingularMain _instance = null;
 
