@@ -56,7 +56,7 @@
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1006, 540);
+            this.tablePanel1.Size = new System.Drawing.Size(1006, 728);
             this.tablePanel1.TabIndex = 0;
             // 
             // lblHeader
@@ -74,7 +74,7 @@
             this.lblHeader.Location = new System.Drawing.Point(3, 3);
             this.lblHeader.Name = "lblHeader";
             this.tablePanel1.SetRow(this.lblHeader, 0);
-            this.lblHeader.Size = new System.Drawing.Size(497, 534);
+            this.lblHeader.Size = new System.Drawing.Size(497, 722);
             this.lblHeader.TabIndex = 1;
             this.lblHeader.Text = "Caption";
             // 
@@ -94,18 +94,18 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel2.Size = new System.Drawing.Size(497, 534);
+            this.tablePanel2.Size = new System.Drawing.Size(497, 722);
             this.tablePanel2.TabIndex = 0;
             // 
             // gcButtons
             // 
             this.tablePanel2.SetColumn(this.gcButtons, 1);
             this.gcButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcButtons.Location = new System.Drawing.Point(99, 242);
+            this.gcButtons.Location = new System.Drawing.Point(48, 339);
             this.gcButtons.MainView = this.gvButtons;
             this.gcButtons.Name = "gcButtons";
             this.tablePanel2.SetRow(this.gcButtons, 1);
-            this.gcButtons.Size = new System.Drawing.Size(300, 50);
+            this.gcButtons.Size = new System.Drawing.Size(401, 45);
             this.gcButtons.TabIndex = 0;
             this.gcButtons.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvButtons});
@@ -132,6 +132,7 @@
             this.gvButtons.OptionsBehavior.Editable = false;
             this.gvButtons.OptionsView.ShowColumnHeaders = false;
             this.gvButtons.OptionsView.ShowGroupPanel = false;
+            this.gvButtons.OptionsView.ShowIndicator = false;
             this.gvButtons.RowHeight = 40;
             // 
             // gridColumn1
@@ -157,7 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucNavigationRouter";
-            this.Size = new System.Drawing.Size(1006, 540);
+            this.Size = new System.Drawing.Size(1006, 728);
             this.Load += new System.EventHandler(this.ucNavigationRouter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);

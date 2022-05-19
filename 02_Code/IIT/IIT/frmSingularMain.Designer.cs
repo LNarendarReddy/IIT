@@ -39,6 +39,7 @@
             this.gcHelpText = new DevExpress.XtraGrid.GridControl();
             this.cvHelpText = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.lblCompanyPath = new DevExpress.XtraEditors.LabelControl();
             this.lblReportsPath = new DevExpress.XtraEditors.LabelControl();
@@ -52,7 +53,6 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lcMain)).BeginInit();
             this.lcMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
@@ -164,11 +164,11 @@
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F)});
             this.tablePanel2.Controls.Add(this.gcHelpText);
-            this.tablePanel2.Location = new System.Drawing.Point(957, 8);
+            this.tablePanel2.Location = new System.Drawing.Point(952, 3);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
-            this.tablePanel2.Size = new System.Drawing.Size(182, 686);
+            this.tablePanel2.Size = new System.Drawing.Size(192, 696);
             this.tablePanel2.TabIndex = 5;
             // 
             // gcHelpText
@@ -179,7 +179,7 @@
             this.gcHelpText.MainView = this.cvHelpText;
             this.gcHelpText.Name = "gcHelpText";
             this.tablePanel2.SetRow(this.gcHelpText, 0);
-            this.gcHelpText.Size = new System.Drawing.Size(176, 680);
+            this.gcHelpText.Size = new System.Drawing.Size(186, 690);
             this.gcHelpText.TabIndex = 0;
             this.gcHelpText.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cvHelpText});
@@ -202,6 +202,12 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Action";
+            this.gridColumn1.FieldName = "Action";
+            this.gridColumn1.Name = "gridColumn1";
             // 
             // tablePanel1
             // 
@@ -302,7 +308,7 @@
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(192, 0);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(192, 11);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlItem3.Size = new System.Drawing.Size(192, 696);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -336,12 +342,6 @@
             // 
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "ribbonPage5";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Action";
-            this.gridColumn1.FieldName = "Action";
-            this.gridColumn1.Name = "gridColumn1";
             // 
             // frmSingularMain
             // 
