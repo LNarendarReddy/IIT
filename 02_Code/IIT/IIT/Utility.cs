@@ -259,7 +259,27 @@ namespace IIT
         {
             configData = configData ??
                     (configData = new LookUpRepository().GetConfig().AsEnumerable().ToDictionary(x => x["CONFIGNAME"].ToString(), x => x["CONFIGVALUE"]));
-            return configData.ContainsKey(configName) ? (T)configData[configName] : default(T);
+            if (configData.ContainsKey(configName))
+            { 
+                return (T)configData[configName]; 
+            }
+            
+            if(configName.EndsWith("FROMDATE"))
+            {
+                return (T)((object)GetFinYear(DateTime.Now).Item1);
+            }
+
+            if (configName.EndsWith("TODATE"))
+            {
+                return (T)((object)GetFinYear(DateTime.Now).Item2);
+            }
+
+            if(configName.EndsWith("NARRATIONVISIBLE"))
+            {
+                return (T)(object)"No";
+            }
+
+            return default(T);
         }
     }
 }
