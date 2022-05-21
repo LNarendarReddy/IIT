@@ -26,18 +26,16 @@ namespace IIT
         private void frmEntityLogo_Load(object sender, EventArgs e)
         {
             pELogo.Image = Utility.BinaryToImage(entityData.LogoData);
-            pELogo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Never;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if (pELogo.Image != null)
-                {
-                    entityData.LogoData = Utility.ConvertImagetoBinary(pELogo.Image);
-                    this.Close();
-                }
+                if (pELogo.Image == null)
+                    return;
+                entityData.LogoData = Utility.ConvertImagetoBinary(pELogo.Image);
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -48,6 +46,15 @@ namespace IIT
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            XtraOpenFileDialog ofd = new XtraOpenFileDialog();
+            ofd.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (ofd.ShowDialog() != DialogResult.OK)
+                return;
+            pELogo.Image = new Bitmap(ofd.FileName);
         }
     }
 }

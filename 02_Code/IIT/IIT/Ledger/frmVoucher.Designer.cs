@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoucher));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddLedger1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.cmbPaymentMadefrom = new DevExpress.XtraEditors.LookUpEdit();
@@ -62,6 +63,7 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lcibtnAddLedgerFrom = new DevExpress.XtraLayout.LayoutControlItem();
             this.lcibtnAddLedger1To = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedgerFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedger1To)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -97,6 +100,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnPrint);
             this.layoutControl1.Controls.Add(this.btnAddLedger1);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Controls.Add(this.cmbPaymentMadefrom);
@@ -117,6 +121,18 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrint.ImageOptions.SvgImage")));
+            this.btnPrint.Location = new System.Drawing.Point(621, 391);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(119, 36);
+            this.btnPrint.StyleController = this.layoutControl1;
+            this.btnPrint.TabIndex = 7;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // btnAddLedger1
             // 
             this.btnAddLedger1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLedger1.ImageOptions.Image")));
@@ -125,7 +141,7 @@
             this.btnAddLedger1.Name = "btnAddLedger1";
             this.btnAddLedger1.Size = new System.Drawing.Size(93, 22);
             this.btnAddLedger1.StyleController = this.layoutControl1;
-            this.btnAddLedger1.TabIndex = 7;
+            this.btnAddLedger1.TabIndex = 8;
             this.btnAddLedger1.Text = "Add Ledger";
             this.btnAddLedger1.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -137,7 +153,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(93, 22);
             this.btnAdd.StyleController = this.layoutControl1;
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add Ledger";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -162,21 +178,22 @@
             this.cmbPaymentMadefrom.Size = new System.Drawing.Size(488, 22);
             this.cmbPaymentMadefrom.StyleController = this.layoutControl1;
             this.cmbPaymentMadefrom.TabIndex = 3;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Mandatory";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadefrom, conditionValidationRule7);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadefrom, conditionValidationRule1);
+            this.cmbPaymentMadefrom.EditValueChanged += new System.EventHandler(this.cmbPaymentMadefrom_EditValueChanged);
             // 
             // btnSave
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(621, 391);
+            this.btnSave.Location = new System.Drawing.Point(482, 391);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cmbPaymentMadeto
@@ -200,10 +217,11 @@
             this.cmbPaymentMadeto.Size = new System.Drawing.Size(488, 22);
             this.cmbPaymentMadeto.StyleController = this.layoutControl1;
             this.cmbPaymentMadeto.TabIndex = 4;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadeto, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadeto, conditionValidationRule2);
+            this.cmbPaymentMadeto.Enter += new System.EventHandler(this.cmbPaymentMadeto_Enter);
             // 
             // txtAmountInWords
             // 
@@ -233,10 +251,10 @@
             this.txtAmountIRupees.Size = new System.Drawing.Size(601, 22);
             this.txtAmountIRupees.StyleController = this.layoutControl1;
             this.txtAmountIRupees.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAmountIRupees, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAmountIRupees, conditionValidationRule3);
             this.txtAmountIRupees.Leave += new System.EventHandler(this.txtAmountIRupees_Leave);
             // 
             // txtRefNo
@@ -253,10 +271,10 @@
             this.txtRefNo.Properties.MaskSettings.Set("mask", "d");
             this.txtRefNo.Size = new System.Drawing.Size(128, 22);
             this.txtRefNo.StyleController = this.layoutControl1;
-            this.txtRefNo.TabIndex = 9;
-            conditionValidationRule3.ErrorText = "";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
-            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule3);
+            this.txtRefNo.TabIndex = 10;
+            conditionValidationRule4.ErrorText = "";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.None;
+            this.dxValidationProvider1.SetValidationRule(this.txtRefNo, conditionValidationRule4);
             // 
             // dtpVoucherDate
             // 
@@ -270,11 +288,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpVoucherDate.Size = new System.Drawing.Size(135, 22);
             this.dtpVoucherDate.StyleController = this.layoutControl1;
-            this.dtpVoucherDate.TabIndex = 10;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.dtpVoucherDate, conditionValidationRule4);
+            this.dtpVoucherDate.TabIndex = 11;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.dtpVoucherDate, conditionValidationRule5);
             // 
             // lblformHeader
             // 
@@ -295,10 +313,10 @@
             this.txtPurposeofPayment.Size = new System.Drawing.Size(601, 68);
             this.txtPurposeofPayment.StyleController = this.layoutControl1;
             this.txtPurposeofPayment.TabIndex = 5;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPurposeofPayment, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Mandatory";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPurposeofPayment, conditionValidationRule6);
             // 
             // Root
             // 
@@ -319,7 +337,8 @@
             this.lciPaymentMadeFrom,
             this.emptySpaceItem4,
             this.lcibtnAddLedgerFrom,
-            this.lcibtnAddLedger1To});
+            this.lcibtnAddLedger1To,
+            this.layoutControlItem6});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.Root.Size = new System.Drawing.Size(755, 442);
@@ -410,7 +429,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnSave;
-            this.layoutControlItem8.Location = new System.Drawing.Point(606, 376);
+            this.layoutControlItem8.Location = new System.Drawing.Point(467, 376);
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(139, 56);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(139, 56);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -435,7 +454,7 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 376);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(606, 56);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(467, 56);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lcibtnAddLedgerFrom
@@ -457,6 +476,19 @@
             this.lcibtnAddLedger1To.Size = new System.Drawing.Size(113, 42);
             this.lcibtnAddLedger1To.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedger1To.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.btnPrint;
+            this.layoutControlItem6.Location = new System.Drawing.Point(606, 376);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(139, 56);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(139, 56);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem6.Size = new System.Drawing.Size(139, 56);
+            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // tablePanel1
             // 
@@ -519,6 +551,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedgerFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcibtnAddLedger1To)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
@@ -559,5 +592,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraLayout.LayoutControlItem lcibtnAddLedgerFrom;
         private DevExpress.XtraLayout.LayoutControlItem lcibtnAddLedger1To;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

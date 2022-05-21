@@ -1,8 +1,10 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using Entity;
+using Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,9 +15,50 @@ namespace IIT
     {
         public static EntityData CurrentEntity { get; set; }
 
+        public static object AssetsHeadID = 15;
+        public static object LiabilitiesHeadID = 16;
+        public static object IncomeHeadID = 17;
+        public static object ExpensesHeadID = 18;
         public static string UserName = "Test User";
         public static string ReportsPath = String.Empty;
         public static string CompanyPath = String.Empty;
+        private static DataTable dtLedgers = null;
+        private static DataTable dtBankingLedgers = null;
+        private static DataTable dtNonCashLedgers = null;
+        public static DataTable GetLedgers()
+        {
+            if(dtLedgers == null)
+                dtLedgers = new LedgerRepository().GetLedgerList(CurrentEntity.ID);
+            return dtLedgers;
+        }
+        public static DataTable GetBankingLedgers()
+        {
+            if(dtBankingLedgers == null)
+            {
+                DataTable dt = GetLedgers().Copy();
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = "SUBGROUPNAME = 'Bank Balances'";
+                dtBankingLedgers = dv.ToTable();
+            }
+            return dtBankingLedgers;
+        }
+        public static DataTable GetNonCashLedgers()
+        {
+            if (dtNonCashLedgers == null)
+            {
+                DataTable dt = GetLedgers().Copy();
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = "SUBGROUPNAME <> 'Cash in Hand'";
+                dtNonCashLedgers = dv.ToTable();
+            }
+            return dtNonCashLedgers;
+        }
+        public static void MakeLedgersNull()
+        {
+            dtLedgers = null;
+            dtBankingLedgers = null;
+            dtNonCashLedgers = null;
+        }
         public static void ShowDialog(XtraForm frm)
         {
             frm.ShowInTaskbar  = false;
@@ -26,7 +69,6 @@ namespace IIT
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             frm.ShowDialog();
         }
-
         public static void ShowDialog(NavigationBase userControl)
         {
             if (userControl == null) return;
@@ -58,7 +100,6 @@ namespace IIT
             frmSingularMain.Instance.lblNavigationHeader.Text = userControl.Header;
 
         }
-
         public static void SetGridFormatting(GridView gridView)
         {
             gridView.Appearance.HeaderPanel.Font = new Font("Arial", 9F, FontStyle.Bold);
@@ -67,14 +108,12 @@ namespace IIT
             gridView.Appearance.HeaderPanel.Options.UseForeColor = true;
             gridView.OptionsView.ShowGroupPanel = false;
         }
-
         public static void PropogateAddress(CheckEdit chkSame, BaseEdit source, BaseEdit target)
         {
             if (!chkSame.Checked) { return; }
 
             target.EditValue = source.EditValue;
         }
-
         public static void BindAddress(Address addressObj, bool enabled, TextEdit txtHno, TextEdit txtArea, TextEdit txtCity
             , TextEdit txtDistrict, LookUpEdit cmbState, TextEdit txtPinCode)
         {
@@ -92,11 +131,6 @@ namespace IIT
             cmbState.EditValue = addressObj.StateID;
             txtPinCode.EditValue = addressObj.PinCode;
         }
-
-        public static object AssetsHeadID = 15;
-        public static object LiabilitiesHeadID = 16;
-        public static object IncomeHeadID = 17;
-        public static object ExpensesHeadID = 18;
 
         public static byte[] ConvertImagetoBinary(Image img)
         {
@@ -117,17 +151,20 @@ namespace IIT
             }
             return photo_aray;
         }
-
         public static Image BinaryToImage(byte[] b)
         {
-            if (b == null)
-                return null;
-
-            MemoryStream memStream = new MemoryStream();
-            memStream.Write(b, 0, b.Length);
-            return Image.FromStream(memStream);
+            Image image = null; 
+            try
+            {
+                if (b == null)
+                    return null;
+                MemoryStream memStream = new MemoryStream();
+                memStream.Write(b, 0, b.Length);
+                image = Image.FromStream(memStream);
+            }
+            catch (Exception ex){}
+            return image;
         }
-
         public static string ConvertNum(double? numbers,bool paisaconversion = false) // Call this function passing the number you desire to be changed
         {
             var pointindex = numbers.ToString().IndexOf(".");
@@ -209,8 +246,6 @@ namespace IIT
             }
             return sb.ToString().TrimEnd();
         }
-       
-
         public static Tuple<DateTime, DateTime> GetFinYear(DateTime inputDate)
         {
             DateTime startDate = new DateTime(inputDate.Month < 4 ? inputDate.Year - 1 : inputDate.Year, 4, 1);

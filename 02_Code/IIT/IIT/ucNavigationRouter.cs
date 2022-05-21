@@ -34,17 +34,14 @@ namespace IIT
 
         private void ucNavigationRouter_Load(object sender, EventArgs e)
         {
-            Utility.SetGridFormatting(gvButtons);
-
             gcButtons.DataSource = buttonsList;
             lblHeader.Text = Caption;
             gvButtons.BestFitColumns();
             UpdateGridSize();
-            
         }
 
         private void UpdateGridSize()
-        {            
+        {
             GridViewInfo viewInfo = (GridViewInfo)gvButtons.GetViewInfo();
             FieldInfo fi = typeof(GridView).GetField("scrollInfo", BindingFlags.Instance | BindingFlags.NonPublic);
             ScrollInfo scrollInfo = (ScrollInfo)fi.GetValue(gvButtons);
@@ -57,7 +54,7 @@ namespace IIT
                 {
                     width += viewInfo.ColumnsInfo[column].Bounds.Width;
                 }
-                catch (Exception ex){ }
+                catch (Exception ex) { }
             }
             if (scrollInfo.VScrollVisible) width += scrollInfo.VScrollSize;
             int height = viewInfo.CalcRealViewHeight(new Rectangle(0, 0, ClientSize.Width, ClientSize.Height), true);
@@ -88,5 +85,5 @@ namespace IIT
             gvButtons.FocusedRowHandle = inputNumber - 1;
             gcButtons_Click(sender, e);
         }
-    }    
+    }
 }

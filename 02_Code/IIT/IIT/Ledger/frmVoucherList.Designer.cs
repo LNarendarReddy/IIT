@@ -157,7 +157,7 @@
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "Purpose";
+            this.gridColumn9.Caption = "Narration";
             this.gridColumn9.FieldName = "PURPOSE";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
