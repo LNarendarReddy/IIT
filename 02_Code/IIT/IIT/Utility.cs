@@ -25,6 +25,8 @@ namespace IIT
         private static DataTable dtLedgers = null;
         private static DataTable dtBankingLedgers = null;
         private static DataTable dtNonCashLedgers = null;
+        private static Dictionary<string, object> configData = null;
+
         public static DataTable GetLedgers()
         {
             if(dtLedgers == null)
@@ -251,6 +253,13 @@ namespace IIT
             DateTime startDate = new DateTime(inputDate.Month < 4 ? inputDate.Year - 1 : inputDate.Year, 4, 1);
             DateTime endDate = new DateTime(startDate.Year + 1, 3, 31);
             return new Tuple<DateTime, DateTime>(startDate, endDate);
+        }
+
+        public static T GetConfigValue<T>(string configName)
+        {
+            configData = configData ??
+                    (configData = new LookUpRepository().GetConfig().AsEnumerable().ToDictionary(x => x["CONFIGNAME"].ToString(), x => x["CONFIGVALUE"]));
+            return configData.ContainsKey(configName) ? (T)configData[configName] : default(T);
         }
     }
 }
