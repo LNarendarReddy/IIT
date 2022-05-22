@@ -46,6 +46,9 @@
     <Compile Include="EntityData.cs" />
     <Compile Include="GSTRegistrationNumber.cs" />
     <Compile Include="Ledger.cs" />
+    <Compile Include="LedgerType\BankAccount.cs" />
+    <Compile Include="LedgerType\CapitalAccount.cs" />
+    <Compile Include="LedgerType\LedgerTypeBase.cs" />
     <Compile Include="Masters\Group.cs" />
     <Compile Include="Masters\MasterBase.cs" />
     <Compile Include="Masters\Sector.cs" />

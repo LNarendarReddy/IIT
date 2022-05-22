@@ -1,4 +1,5 @@
 ﻿using Entity;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,7 +24,9 @@ namespace Repository
                 GroupID = drLedgerRow["GROUPID"],
                 GroupName = drLedgerRow["GROUPNAME"],
                 ClassificationID = drLedgerRow["CLASSIFICATIONID"],
-                Classification = drLedgerRow["CLASSIFICATION"]
+                Classification = drLedgerRow["CLASSIFICATION"],
+                LedgerTypeID = drLedgerRow["LEDGERTYPEID"],
+                LedgerTypeInfo = ObjectFactory.GetLedgerType(drLedgerRow["LEDGERTYPEID"], drLedgerRow["LEDGERTYPEINFO"])
             };
         }
         public override Ledger Save(Ledger ledgerObj)
@@ -39,6 +42,8 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@SUBGROUPID", ledgerObj.SubGroupID);
                     cmd.Parameters.AddWithValue("@LEDGERNAME", ledgerObj.Name);
                     cmd.Parameters.AddWithValue("@LEDGERDESCRIPTION", ledgerObj.Description);
+                    cmd.Parameters.AddWithValue("@LedgerTypeID", ledgerObj.LedgerTypeID);
+                    cmd.Parameters.AddWithValue("@LedgerTypeInfo", ledgerObj.LedgerTypeInfo.SerializeXml());
                     cmd.Parameters.AddWithValue("@UserName", ledgerObj.UserName);
                     object objReturn = cmd.ExecuteScalar();
 
