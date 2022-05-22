@@ -15,10 +15,11 @@ namespace IIT
     {
         public static EntityData CurrentEntity { get; set; }
 
-        public static object AssetsHeadID = 15;
-        public static object LiabilitiesHeadID = 16;
-        public static object IncomeHeadID = 17;
-        public static object ExpensesHeadID = 18;
+        //public static object AssetsHeadID = 15;
+        //public static object LiabilitiesHeadID = 16;
+        //public static object IncomeHeadID = 17;
+        //public static object ExpensesHeadID = 18;
+
         public static string UserName = "Test User";
         public static string ReportsPath = String.Empty;
         public static string CompanyPath = String.Empty;

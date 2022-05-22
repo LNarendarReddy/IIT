@@ -3,6 +3,7 @@ using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraReports.UI;
 using Entity;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -45,7 +46,7 @@ namespace IIT
         {
             switch (Convert.ToInt32(voucherObj.VoucherTypeID))
             {
-                case 55:
+                case LookUpIDMap.VoucherType_CashPayment:
                     lblformHeader.Text = "CASH PAYMENT VOUCHER";
                     lciPaymentMadeFrom.Text = "Payment made from";
                     lciPaymentMadeTo.Text = "Payment made to";
@@ -54,13 +55,13 @@ namespace IIT
                     lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
                     break;
-                case 56:
+                case LookUpIDMap.VoucherType_BankPayment:
                     lblformHeader.Text = "BANK PAYMENT VOUCHER";
                     lciPaymentMadeFrom.Text = "Bank account";
                     lciPaymentMadeTo.Text = "Payment made to";
                     lciPurpose.Text = "Narration of the payment ";
                     break;
-                case 57:
+                case LookUpIDMap.VoucherType_CashReciept:
                     lblformHeader.Text = "CASH RECIEPT VOUCHER";
                     lciPaymentMadeFrom.Text = "Amount received from";
                     lciPaymentMadeTo.Text = "Amount credited to";
@@ -69,13 +70,13 @@ namespace IIT
                     lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
                     break;
-                case 58:
+                case LookUpIDMap.VoucherType_BankReciept:
                     lblformHeader.Text = "BANK RECIEPT VOUCHER";
                     lciPaymentMadeFrom.Text = "Amount received from";
                     lciPaymentMadeTo.Text = "Bank account";
                     lciPurpose.Text = "Narration of the reciept ";
                     break;
-                case 59:
+                case LookUpIDMap.VoucherType_ContraVoucher_Withdrawal:
                     lblformHeader.Text = "CONTRA VOUCHER - Withdrawal";
                     lciPaymentMadeFrom.Text = "Bank Account";
                     lciPaymentMadeTo.Text = "Amount credited to";
@@ -84,7 +85,7 @@ namespace IIT
                     lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
                     break;
-                case 60:
+                case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
                     lblformHeader.Text = "CONTRA VOUCHER - Deposit";
                     lciPaymentMadeFrom.Text = "Amount debited from";
                     lciPaymentMadeTo.Text = "Bank Account";
@@ -159,37 +160,37 @@ namespace IIT
 
                     switch (Convert.ToInt32(voucherObj.VoucherTypeID))
                     {
-                        case 55:
+                        case LookUpIDMap.VoucherType_CashPayment:
                             rpt.Parameters["VoucherCaption"].Value = "CASH PAYMENT VOUCHER";
                             rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount debited form :";
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
                             rpt.Parameters["PurposeCaption"].Value = "Narration of the payment :";
                             break;
-                        case 56:
+                        case LookUpIDMap.VoucherType_BankPayment:
                             rpt.Parameters["VoucherCaption"].Value = "BANK PAYMENT VOUCHER";
                             rpt.Parameters["PaymentMadeFromCaption"].Value = "Bank account :";
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Payment made to :";
                             rpt.Parameters["PurposeCaption"].Value = "Narration of the payment :";
                             break;
-                        case 57:
+                        case LookUpIDMap.VoucherType_CashReciept:
                             rpt.Parameters["VoucherCaption"].Value = "CASH RECIEPT VOUCHER";
                             rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount recieved from :";
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Cash credited to :";
                             rpt.Parameters["PurposeCaption"].Value = "Narration of the reciept :";
                             break;
-                        case 58:
+                        case LookUpIDMap.VoucherType_BankReciept:
                             rpt.Parameters["VoucherCaption"].Value = "BANK RECIEPT VOUCHER";
                             rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount recieved from :";
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Bank Account :";
                             rpt.Parameters["PurposeCaption"].Value = "Narration of the reciept :";
                             break;
-                        case 59:
+                        case LookUpIDMap.VoucherType_ContraVoucher_Withdrawal:
                             rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Withdrawal";
                             rpt.Parameters["PaymentMadeFromCaption"].Value = "Bank Account :";
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Amount credited to :";
                             rpt.Parameters["PurposeCaption"].Value = "Narration :";
                             break;
-                        case 60:
+                        case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
                             rpt.Parameters["VoucherCaption"].Value = "CONTRA VOUCHER - Deposit";
                             rpt.Parameters["PaymentMadeFromCaption"].Value = "Amount debited from :";
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Bank Account :";
@@ -249,27 +250,27 @@ namespace IIT
             object selectedfrom = cmbPaymentMadefrom.EditValue;
             switch (Convert.ToInt32(voucherObj.VoucherTypeID))
             {
-                case 55:
+                case LookUpIDMap.VoucherType_CashPayment:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
                     break;
-                case 56:
+                case LookUpIDMap.VoucherType_BankPayment:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
                     break;
-                case 57:
+                case LookUpIDMap.VoucherType_CashReciept:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
                     break;
-                case 58:
+                case LookUpIDMap.VoucherType_BankReciept:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
                     break;
-                case 59:
+                case LookUpIDMap.VoucherType_ContraVoucher_Withdrawal:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
                     break;
-                case 60:
+                case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
                     break;

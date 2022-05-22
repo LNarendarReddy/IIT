@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Repository.Utility;
+using System;
 
 namespace IIT
 {
+    [Obsolete]
     public partial class ucLedgerInfo : NavigationBase
     {
         //private List<string> helpText = new List<string>() { "(Alt + L) ==> Liabilities", "(Alt + A) ==> Assets",
@@ -18,22 +19,22 @@ namespace IIT
 
         private void btnLiabilities_Click(object sender, EventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerCreation(Utility.LiabilitiesHeadID, "Liabilities"));
+            Utility.ShowDialog(new frmLedgerCreation(LookUpIDMap.Classification_Liabilities, "Liabilities"));
         }
 
         private void btnAssets_Click(object sender, EventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerCreation(Utility.AssetsHeadID, "Assets"));
+            Utility.ShowDialog(new frmLedgerCreation(LookUpIDMap.Classification_Assets, "Assets"));
         }
 
         private void btnIncome_Click(object sender, EventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerCreation(Utility.IncomeHeadID, "Income"));
+            Utility.ShowDialog(new frmLedgerCreation(LookUpIDMap.Classification_Incomes, "Income"));
         }
 
         private void btnExpenses_Click(object sender, EventArgs e)
         {
-            Utility.ShowDialog(new frmLedgerCreation(Utility.ExpensesHeadID, "Expenses"));
+            Utility.ShowDialog(new frmLedgerCreation(LookUpIDMap.Classification_Expenses, "Expenses"));
         }
     }
 }

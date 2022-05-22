@@ -7,6 +7,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using Entity;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -145,16 +146,16 @@ namespace IIT
             switch (actionText)
             {
                 case "Individual / Proprietor Firm":
-                    formObj = new frmEntityIndividual(11);
+                    formObj = new frmEntityIndividual(LookUpIDMap.EntityType_IndividualEntity);
                     break;
                 case "Partnership Firm":
-                    formObj = new frmPartnershipFirm(12);
+                    formObj = new frmPartnershipFirm(LookUpIDMap.EntityType_Firm);
                     break;
                 case "AOP / BOI":
-                    formObj = new frmPartnershipFirm(14);
+                    formObj = new frmPartnershipFirm(LookUpIDMap.EntityType_AOPBOI);
                     break;
                 case "Company":
-                    formObj = new frmPartnershipFirm(13);
+                    formObj = new frmPartnershipFirm(LookUpIDMap.EntityType_Company);
                     break;
             }
             Utility.ShowDialog(formObj);
@@ -224,16 +225,16 @@ namespace IIT
             switch (actionText)
             {
                 case "Assets Ledgers":
-                    formObj = new frmLedgerCreation(Utility.AssetsHeadID, "Assets");
+                    formObj = new frmLedgerCreation(LookUpIDMap.Classification_Assets, "Assets");
                     break;
                 case "Liabilities Ledgers":
-                    formObj = new frmLedgerCreation(Utility.LiabilitiesHeadID, "Liabilities");
+                    formObj = new frmLedgerCreation(LookUpIDMap.Classification_Liabilities, "Liabilities");
                     break;
                 case "Income Ledgers":
-                    formObj = new frmLedgerCreation(Utility.IncomeHeadID, "Income");
+                    formObj = new frmLedgerCreation(LookUpIDMap.Classification_Incomes, "Income");
                     break;
                 case "Expenses Ledgers":
-                    formObj = new frmLedgerCreation(Utility.ExpensesHeadID, "Expenses");
+                    formObj = new frmLedgerCreation(LookUpIDMap.Classification_Expenses, "Expenses");
                     break;
             }
             Utility.ShowDialog(formObj);
@@ -244,31 +245,31 @@ namespace IIT
             switch (actionText)
             {
                 case "Bank Reciept Voucher":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 58 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_BankReciept });
                     break;
                 case "Bank Payments Voucher":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 56 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_BankPayment });
                     break;
                 case "Cash Reciepts Voucher":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 57 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_CashReciept });
                     break;
                 case "Cash Payments Voucher":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 55 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_CashPayment });
                     break;
                 case "Contra Withdrawal Voucher":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 59 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Withdrawal });
                     break;
                 case "Contra Deposit Voucher":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 60 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit });
                     break;
                 case "Journal Entry":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 60 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit });
                     break;
                 case "Inventory Entry":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 60 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit });
                     break;
                 case "Misc. Vouchers":
-                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = 60 });
+                    formObj = new frmVoucher(new Voucher() { VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit });
                     break;
             }
             Utility.ShowDialog(formObj);
