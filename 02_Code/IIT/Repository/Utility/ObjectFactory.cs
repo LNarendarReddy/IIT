@@ -9,18 +9,42 @@ namespace Repository.Utility
             if (string.IsNullOrEmpty(ledgerTypeData?.ToString()) || !int.TryParse(objLedgerTypeID.ToString(), out int ledgerTypeID))
                 return null;
 
-            LedgerTypeBase targetType = null;
+            LedgerTypeBase ledgerInfo = null;
             switch(ledgerTypeID)
             {
                 case LookUpIDMap.LedgerType_BankAccount:
-                    targetType = ledgerTypeData.ToString().DeserializeXml<BankAccount>();
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<BankAccount>();
                     break;
                 case LookUpIDMap.LedgerType_CapitalAccount:
-                    targetType = ledgerTypeData.ToString().DeserializeXml<CapitalAccount>();
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CapitalAccount>();
+                    break;
+                case LookUpIDMap.LedgerType_CCOrODC:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CCorODC>();
+                    break;
+                case LookUpIDMap.LedgerType_Creditors:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Creditors>();
+                    break;
+                case LookUpIDMap.LedgerType_Debitors:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Debitors>();
+                    break;
+                case LookUpIDMap.LedgerType_FixedAssetCompany:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<FixedAssetsCompany>();
+                    break;
+                case LookUpIDMap.LedgerType_FixedAssetIndividual:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<FixedAssetsIndividual>();
+                    break;
+                case LookUpIDMap.LedgerType_Investment:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Investment>();
+                    break;
+                case LookUpIDMap.LedgerType_Loan:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Loan>();
+                    break;
+                case LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<ServicesOrDuesToSubContractors>();
                     break;
             }
 
-            return targetType;
+            return ledgerInfo;
         }
     }
 }

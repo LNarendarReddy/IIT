@@ -1,5 +1,4 @@
 ﻿
-
 namespace Entity.LedgerType
 {
     public class BankAccount : LedgerTypeBase
@@ -21,7 +20,6 @@ namespace Entity.LedgerType
         public object FirstChequeNumber { get; set; }
                 
         public object NoOfChequeLeafs { get; set; }
-
 
     }
 }
