@@ -17,19 +17,17 @@ namespace IIT
         private const int GridMinWidth = 300;
         private const int GridMinHeight = 100;
         private string caption;
-        Action<string> actionExecute;
 
         public override IEnumerable<ActionText> HelpText => buttonsList;
 
         public override string Caption => caption;
 
-        public ucNavigationRouter(IEnumerable<string> buttons, string _caption, Action<string> _actionExecute)
+        public ucNavigationRouter(IEnumerable<string> buttons, string _caption)
         {
             InitializeComponent();
             int i = 1;
             buttonsList = buttons.Select(x => new ActionText(x, i++)).ToList();
             caption = _caption;
-            actionExecute = _actionExecute;
         }
 
         private void ucNavigationRouter_Load(object sender, EventArgs e)
@@ -69,7 +67,7 @@ namespace IIT
 
         private void gcButtons_Click(object sender, EventArgs e)
         {
-            actionExecute(Convert.ToString(gvButtons.GetRowCellValue(gvButtons.FocusedRowHandle, "Action")));
+            ActionExecute(Convert.ToString(gvButtons.GetRowCellValue(gvButtons.FocusedRowHandle, "Action")));
         }
 
         private void gcButtons_KeyUp(object sender, KeyEventArgs e)
@@ -85,5 +83,7 @@ namespace IIT
             gvButtons.FocusedRowHandle = inputNumber - 1;
             gcButtons_Click(sender, e);
         }
+
+        public virtual void ActionExecute(string actionText) => throw new NotImplementedException();
     }
 }

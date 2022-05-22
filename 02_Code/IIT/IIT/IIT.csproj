@@ -247,6 +247,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routes\AccountingReportsRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\AccountingRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\BankingUtilityRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\EntityTypeRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\LedgerCreationRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\PurchaseRegisterRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\RequisitionFormsRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\SalesRegisterRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\StockStatementsRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Routes\VoucherEntryRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ucNavigationRouter.cs">
       <SubType>UserControl</SubType>
     </Compile>
