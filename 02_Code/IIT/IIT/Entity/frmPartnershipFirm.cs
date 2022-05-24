@@ -19,6 +19,7 @@ namespace IIT
                 new ActionText("Add Logo", buildShort: false, shortCut: "Alt + L")
             };
 
+        public override string Caption => @"Create\Modify Entity";
         public override IEnumerable<ActionText> HelpText => helpText;
         public frmPartnershipFirm(int _entityType, int EntityID = 0)
         {
@@ -151,6 +152,15 @@ namespace IIT
             entityData.BusinessAddress.StateID = cmbStateB.EditValue;
             entityData.BusinessAddress.PinCode = txtPincodeB.EditValue;
             entityData.BusinessAddress.UserName = Utility.UserName;
+
+            if (!entityData.PersonData.Any())
+                entityData.PersonData.Add(new Person());
+
+            if (!entityData.GSTRegNo.Any())
+                entityData.GSTRegNo.Add(new GSTRegistrationNumber());
+
+            entityData.PersonData.ForEach(x => x.UserName = Utility.UserName);
+            entityData.GSTRegNo.ForEach(x => x.UserName = Utility.UserName);
 
             new EntityDataRepository().Save(entityData);
             IsSave = true;

@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banking\BankingRepository.cs" />
     <Compile Include="Entity\AddressRepository.cs" />
     <Compile Include="Entity\EntityDataRepository.cs" />
     <Compile Include="Entity\GSTRepository.cs" />

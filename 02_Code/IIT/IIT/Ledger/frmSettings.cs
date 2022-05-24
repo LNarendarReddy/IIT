@@ -21,14 +21,16 @@ namespace IIT
 
         private void frmSettings_Load(object sender, EventArgs e)
         {
-            Tuple<DateTime, DateTime> dates = Utility.GetFinYear(DateTime.Now);
-            dtpFromDate.DateTime = dates.Item1;
-            dtpTodate.DateTime = dates.Item2;
-            cmbPurposeVisible.EditValue = "Yes";           
+            dtpFromDate.EditValue = Utility.GetConfigValue<DateTime>("FROMDATE");
+            dtpTodate.EditValue = Utility.GetConfigValue<DateTime>("TODATE");
+            cmbPurposeVisible.EditValue = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            if (!dxValidationProvider1.Validate())
+                return;
+            new LookUpRepository().SaveConfig(dtpFromDate.EditValue,dtpTodate.EditValue,cmbPurposeVisible.EditValue);
             this.Close();
         }
 

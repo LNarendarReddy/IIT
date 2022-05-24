@@ -131,7 +131,6 @@ namespace IIT
             entityData.EntityName = txtEntityName.EditValue;
             entityData.PANNumber = txtPanNumber.EditValue;
             entityData.MobileNumber = txtMobileNumber.EditValue;
-            //entityData.PrimaryGST = entityData.GSTRegNo.First(x => x.ID.Equals(cmbGSTNumber.EditValue));
 
             if (!entityData.PersonData.Any())
                 entityData.PersonData.Add(new Person());
@@ -163,6 +162,10 @@ namespace IIT
             entityData.BusinessAddress.StateID = cmbStateB.EditValue;
             entityData.BusinessAddress.PinCode = txtPincodeB.EditValue;
             entityData.BusinessAddress.UserName = Utility.UserName;
+
+            if (!entityData.GSTRegNo.Any())
+                entityData.GSTRegNo.Add(new GSTRegistrationNumber());
+            entityData.GSTRegNo.First().UserName = Utility.UserName;
 
             new EntityDataRepository().Save(entityData);
             IsSave = true;

@@ -20,6 +20,7 @@ namespace IIT.Routes
             switch (actionText)
             {
                 case "Cheque Books Entry":
+                    formObj = new ucChequeBookEntry();
                     break;
                 case "Cheque Print":
                     break;

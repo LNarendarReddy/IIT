@@ -21,7 +21,8 @@ namespace Repository
                     City = drAddress["CITY"],
                     District = drAddress["DISTRICT"],
                     PinCode = drAddress["PINCODE"],
-                    StateID = drAddress["STATEID"]
+                    StateID = drAddress["STATEID"],
+                    UserName = drAddress["CREATEDBY"]
                 };
 
                 addresses.Add(address);

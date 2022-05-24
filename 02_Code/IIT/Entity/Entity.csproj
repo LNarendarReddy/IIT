@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Banking.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="EntityData.cs" />
     <Compile Include="GSTRegistrationNumber.cs" />

@@ -13,6 +13,8 @@ namespace IIT
 {
     public partial class frmVoucher : NavigationBase
     {
+        private string caption;
+        public override string Caption => caption;
         private List<ActionText> helpText = new List<ActionText>()
             {
                 new ActionText("Save", buildShort: false, shortCut: "Alt + S"),
@@ -39,6 +41,7 @@ namespace IIT
             txtPurposeofPayment.EditValue = voucherObj.Purpose;
             dtpVoucherDate.EditValue = voucherObj.VoucherDate ?? DateTime.Now;
             UpdateLabels();
+            caption = lblformHeader.Text;
             Text = string.IsNullOrEmpty(voucherObj.VoucherNumber?.ToString()) ? Text : $"{Text} - {voucherObj.VoucherNumber}";
         }
 

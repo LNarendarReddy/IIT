@@ -12,6 +12,8 @@ namespace IIT
         private List<ActionText> helpText = new List<ActionText>() { new ActionText("Navigate", buildShort: false, shortCut: "Up/Down") };
         public override IEnumerable<ActionText> HelpText => helpText;
 
+        public override string Caption => "Ledger List";
+
         public ucLedgerList()
         {
             InitializeComponent();
@@ -26,23 +28,18 @@ namespace IIT
         {
             if (gvLedgerList.FocusedRowHandle < 0)
                 return;
-            frmSettings frm = new frmSettings();
-            Utility.ShowDialog(frm);
-            if (!frm.IsSave) return;
             rptLedgerPrinting rpt = new rptLedgerPrinting();
             rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
             rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
-            rpt.Parameters["FromDate"].Value = frm.Fromdate();
-            rpt.Parameters["ToDate"].Value = frm.Todate();
-            rpt.Parameters["IsPurposeVisible"].Value = frm.ISPurposevisible();
+            rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
+            rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
+            rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
             rpt.Parameters["LedgerID"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERID");
             rpt.Parameters["LedgerName"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERNAME");
-            rpt.Parameters["VoucherType"].Value = frm.VoucherTypeID();
             rpt.CreateDocument();
             string filePath = Path.Combine(Utility.ReportsPath,
                 $"{Utility.CurrentEntity.EntityName}_{gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")}_{DateTime.Now.ToString("ddMMyyyyHHmmss")}.pdf");
             rpt.ExportToPdf(filePath);
-
             ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
             Process.Start(startInfo);
         }

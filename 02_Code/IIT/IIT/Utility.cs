@@ -134,7 +134,6 @@ namespace IIT
             cmbState.EditValue = addressObj.StateID;
             txtPinCode.EditValue = addressObj.PinCode;
         }
-
         public static byte[] ConvertImagetoBinary(Image img)
         {
             byte[] photo_aray = null;
@@ -255,7 +254,6 @@ namespace IIT
             DateTime endDate = new DateTime(startDate.Year + 1, 3, 31);
             return new Tuple<DateTime, DateTime>(startDate, endDate);
         }
-
         public static T GetConfigValue<T>(string configName)
         {
             configData = configData ??

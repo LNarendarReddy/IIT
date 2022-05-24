@@ -33,7 +33,7 @@ namespace Repository
             }
             return dtLookUpData;
         }
-        public void SaveConfig(DateTime FromDate, DateTime Todate, String PurposeVisible)
+        public void SaveConfig(object FromDate, object Todate, object PurposeVisible)
         {
             try
             {

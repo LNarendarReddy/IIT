@@ -22,7 +22,8 @@ namespace Repository
                     StateID = drGST["STATEID"],
                     GSTNo = drGST["GSTNO"],
                     EntityID = drGST["ENTITYID"],
-                    StateName = drGST["STATENAME"]
+                    StateName = drGST["STATENAME"],
+                    UserName = drGST["CREATEDBY"]
                 };
 
                 GSTs.Add(gst);

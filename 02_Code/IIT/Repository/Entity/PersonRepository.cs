@@ -25,7 +25,8 @@ namespace Repository
                     IsAuthorizedSignatory = drPerson["ISAUTHORIZEDSIGNATORY"],
                     PercentageShares = drPerson["PERCENTAGESHARES"],
                     NoOfShares = drPerson["NOOFSHARES"],
-                    Address = drPerson["ADDRESSOFPERSON"]
+                    Address = drPerson["ADDRESSOFPERSON"],
+                    UserName = drPerson["CREATEDBY"]
                 };
 
                 people.Add(person);

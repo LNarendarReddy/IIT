@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.XtraReports.Parameters.StaticListLookUpSettings staticListLookUpSettings1 = new DevExpress.XtraReports.Parameters.StaticListLookUpSettings();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
@@ -78,7 +77,6 @@
             this.xrTableCell19 = new DevExpress.XtraReports.UI.XRTableCell();
             this.LedgerName = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsPurposeVisible = new DevExpress.XtraReports.Parameters.Parameter();
-            this.VoucherType = new DevExpress.XtraReports.Parameters.Parameter();
             this.LedgerID = new DevExpress.XtraReports.Parameters.Parameter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -468,22 +466,6 @@
             this.IsPurposeVisible.ValueInfo = "False";
             this.IsPurposeVisible.Visible = false;
             // 
-            // VoucherType
-            // 
-            this.VoucherType.Description = "VoucherType";
-            this.VoucherType.Name = "VoucherType";
-            this.VoucherType.Type = typeof(int);
-            this.VoucherType.ValueInfo = "0";
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(0, "All"));
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(55, "Cash Payment"));
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(56, "Bank Payment"));
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(57, "Cash Reciept"));
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(58, "Bank Reciept"));
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(59, "CONTRA VOUCHER - Withdrawal"));
-            staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(60, "CONTRA VOUCHER - Deposit"));
-            this.VoucherType.ValueSourceSettings = staticListLookUpSettings1;
-            this.VoucherType.Visible = false;
-            // 
             // LedgerID
             // 
             this.LedgerID.Description = "LedgerID";
@@ -544,7 +526,6 @@
             this.ToDate,
             this.LedgerName,
             this.IsPurposeVisible,
-            this.VoucherType,
             this.LedgerID});
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
@@ -596,7 +577,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
         private DevExpress.XtraReports.Parameters.Parameter LedgerName;
         private DevExpress.XtraReports.Parameters.Parameter IsPurposeVisible;
-        private DevExpress.XtraReports.Parameters.Parameter VoucherType;
         private DevExpress.XtraReports.Parameters.Parameter LedgerID;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
     }
