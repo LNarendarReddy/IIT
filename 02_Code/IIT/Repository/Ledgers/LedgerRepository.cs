@@ -26,7 +26,8 @@ namespace Repository
                 ClassificationID = drLedgerRow["CLASSIFICATIONID"],
                 Classification = drLedgerRow["CLASSIFICATION"],
                 LedgerTypeID = drLedgerRow["LEDGERTYPEID"],
-                LedgerTypeInfo = ObjectFactory.GetLedgerType(drLedgerRow["LEDGERTYPEID"], drLedgerRow["LEDGERTYPEINFO"])
+                LedgerTypeInfo = ObjectFactory.GetLedgerType(drLedgerRow["LEDGERTYPEID"],
+                drLedgerRow["LEDGERTYPEINFO"])
             };
         }
         public override Ledger Save(Ledger ledgerObj)

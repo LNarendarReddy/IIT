@@ -15,6 +15,7 @@ namespace IIT
     {
         private string caption;
         public override string Caption => caption;
+
         private List<ActionText> helpText = new List<ActionText>()
             {
                 new ActionText("Save", buildShort: false, shortCut: "Alt + S"),

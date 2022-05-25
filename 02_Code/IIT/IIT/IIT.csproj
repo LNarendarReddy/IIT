@@ -61,6 +61,9 @@
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="IITSkin">
       <HintPath>..\..\..\Skin\IITSkin\IITSkin.dll</HintPath>
@@ -139,6 +142,42 @@
     </Compile>
     <Compile Include="Entity\frmPartnershipFirm.Designer.cs">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucBankAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucBankAccount.Designer.cs">
+      <DependentUpon>ucBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucCreditors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucCreditors.Designer.cs">
+      <DependentUpon>ucCreditors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucDebitors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucDebitors.Designer.cs">
+      <DependentUpon>ucDebitors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucFixedAssetsCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucFixedAssetsCompany.Designer.cs">
+      <DependentUpon>ucFixedAssetsCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucFixedAssetsIndividual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucFixedAssetsIndividual.Designer.cs">
+      <DependentUpon>ucFixedAssetsIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucServices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucServices.Designer.cs">
+      <DependentUpon>ucServices.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmSettings.cs">
       <SubType>Form</SubType>
@@ -313,6 +352,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucBankAccount.resx">
+      <DependentUpon>ucBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucCreditors.resx">
+      <DependentUpon>ucCreditors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucDebitors.resx">
+      <DependentUpon>ucDebitors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucFixedAssetsCompany.resx">
+      <DependentUpon>ucFixedAssetsCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucFixedAssetsIndividual.resx">
+      <DependentUpon>ucFixedAssetsIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucServices.resx">
+      <DependentUpon>ucServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>

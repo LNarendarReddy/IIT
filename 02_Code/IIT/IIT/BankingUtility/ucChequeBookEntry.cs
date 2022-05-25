@@ -70,5 +70,25 @@ namespace IIT
                 if (!e.Valid) return;
             }
         }
+
+        private void gvChequeRegister_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if(e.Column.FieldName == "OPENINGCHEQUENO" || e.Column.FieldName == "NOOFLEAFS")
+            {
+                GridView gv = sender as GridView;
+                 if(int.TryParse(Convert.ToString(gv.GetFocusedRowCellValue("OPENINGCHEQUENO")), 
+                     out int OpeningChequeNo) &&
+                    int.TryParse(Convert.ToString(gv.GetFocusedRowCellValue("NOOFLEAFS")), 
+                    out int NoOfLeafs))
+                {
+                    gv.SetFocusedRowCellValue("CLOSINGCHEQUENO", OpeningChequeNo + NoOfLeafs);
+                }
+            }
+        }
+
+        private void gvChequeRegister_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            e.Cancel = (gvChequeRegister.FocusedRowHandle != DevExpress.XtraGrid.GridControl.NewItemRowHandle);
+        }
     }
 }
