@@ -3,7 +3,7 @@ namespace Entity.LedgerType
 {
     public class BankAccount : LedgerTypeBase
     {
-        public object BankName { get; set; }
+        public object BankID { get; set; }
         
         public object AccountNumber { get; set; }
 
@@ -15,11 +15,7 @@ namespace Entity.LedgerType
 
         public object NatureOfBankAccountID { get; set; }
 
-        public object ChequeBookDetails { get; set; }
-
-        public object FirstChequeNumber { get; set; }
-                
-        public object NoOfChequeLeafs { get; set; }
+        public object InterestRate { get; set; }
 
     }
 }

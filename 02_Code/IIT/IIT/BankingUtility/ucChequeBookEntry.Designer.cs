@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcChequeRegister = new DevExpress.XtraGrid.GridControl();
             this.gvChequeRegister = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -106,10 +106,11 @@
             this.gridColumn6});
             this.gvChequeRegister.GridControl = this.gcChequeRegister;
             this.gvChequeRegister.Name = "gvChequeRegister";
-            this.gvChequeRegister.OptionsBehavior.Editable = false;
             this.gvChequeRegister.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvChequeRegister.OptionsView.ShowGroupPanel = false;
+            this.gvChequeRegister.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gvChequeRegister_ShowingEditor);
             this.gvChequeRegister.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gvChequeRegister_InitNewRow);
+            this.gvChequeRegister.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvChequeRegister_CellValueChanged);
             this.gvChequeRegister.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvChequeRegister_ValidateRow);
             this.gvChequeRegister.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gvChequeRegister_RowUpdated);
             // 
@@ -200,10 +201,10 @@
             this.cmbLedger.Size = new System.Drawing.Size(276, 22);
             this.cmbLedger.StyleController = this.layoutControl1;
             this.cmbLedger.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbLedger, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbLedger, conditionValidationRule2);
             this.cmbLedger.Leave += new System.EventHandler(this.cmbLedger_Leave);
             // 
             // Root

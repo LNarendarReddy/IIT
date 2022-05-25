@@ -10,6 +10,8 @@ namespace Repository
         private static DataTable dtResidentStatus = null;
         private static DataTable dtClassification = null;
         private static DataTable dtVoucherType = null;
+        private static DataTable dtBanks = null;
+        private static DataTable dtNatureOfBanks = null;
 
         private static LookUpRepository lookUpRepository = new LookUpRepository();
 
@@ -47,6 +49,18 @@ namespace Repository
         {
             return dtVoucherType =
                 dtVoucherType ?? lookUpRepository.GetLookUpData("VOUCHERTYPE"); ;
+        }
+
+        public static DataTable GetBanks()
+        {
+            return dtBanks =
+                dtBanks ?? lookUpRepository.GetLookUpData("BANKS");
+        }
+
+        public static DataTable GetNatureOfBanks()
+        {
+            return dtNatureOfBanks =
+                dtNatureOfBanks ?? lookUpRepository.GetLookUpData("NATUREOFBANKS");
         }
     }
 }
