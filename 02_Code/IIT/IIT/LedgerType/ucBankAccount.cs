@@ -1,27 +1,18 @@
-﻿using DevExpress.XtraEditors;
-using Entity;
+﻿using Entity;
+using IIT.LedgerType;
 using Repository;
 using Repository.Utility;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class ucBankAccount : NavigationBase
+    public partial class ucBankAccount : ucLedgerTypeBase
     {
         public override string Caption => "Bank Account ledgers Creation";
-        Ledger  ledger = null;  
-        public ucBankAccount(Ledger _ledger)
+
+        public ucBankAccount(Ledger _ledger) : base(_ledger)
         {
             InitializeComponent();
-            ledger = _ledger;
         }
 
         private void ucBankAccount_Load(object sender, EventArgs e)
@@ -35,17 +26,16 @@ namespace IIT
             cmbNatureoftheBankAccount.Properties.ValueMember = "ENTITYLOOKUPID";
             cmbNatureoftheBankAccount.Properties.DisplayMember = "LOOKUPVALUE";
 
-            if(ledger.ID != null)
-            {
-                cmbNameOftheBank.EditValue = ledger.BankAccountInfo.BankID;
-                txtBankAccountNumber.EditValue = ledger.BankAccountInfo.AccountNumber;
-                txtBranchAddress.EditValue = ledger.BankAccountInfo.BranchAddress;
-                txtIFSCCode.EditValue = ledger.BankAccountInfo.IFSCCode;
-                txtMICRCode.EditValue = ledger.BankAccountInfo.MICRCode;
-                cmbNatureoftheBankAccount.EditValue = ledger.BankAccountInfo.NatureOfBankAccountID;
-                txtInterestRate.EditValue = ledger.BankAccountInfo.InterestRate;
-                txtOpeningBalance.EditValue = ledger.BankAccountInfo.OpeningBalance;
-            }
+            if (ledger.ID == null) return;
+
+            cmbNameOftheBank.EditValue = ledger.BankAccountInfo.BankID;
+            txtBankAccountNumber.EditValue = ledger.BankAccountInfo.AccountNumber;
+            txtBranchAddress.EditValue = ledger.BankAccountInfo.BranchAddress;
+            txtIFSCCode.EditValue = ledger.BankAccountInfo.IFSCCode;
+            txtMICRCode.EditValue = ledger.BankAccountInfo.MICRCode;
+            cmbNatureoftheBankAccount.EditValue = ledger.BankAccountInfo.NatureOfBankAccountID;
+            txtInterestRate.EditValue = ledger.BankAccountInfo.InterestRate;
+            txtOpeningBalance.EditValue = ledger.BankAccountInfo.OpeningBalance;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -63,9 +53,7 @@ namespace IIT
             ledger.BankAccountInfo.NatureOfBankAccountID = cmbNatureoftheBankAccount.EditValue;
             ledger.BankAccountInfo.InterestRate = txtInterestRate.EditValue;
             ledger.BankAccountInfo.OpeningBalance = txtOpeningBalance.EditValue;
-            ledger.UserName = Utility.UserName;
-            new LedgerRepository().Save(ledger);
-            frmSingularMain.Instance.RollbackControl();
+            Save();
         }
     }
 }

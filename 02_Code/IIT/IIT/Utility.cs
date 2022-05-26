@@ -56,7 +56,7 @@ namespace IIT
             }
             return dtNonCashLedgers;
         }
-        public static void MakeLedgersNull()
+        public static void ClearLedgerCache()
         {
             dtLedgers = null;
             dtBankingLedgers = null;

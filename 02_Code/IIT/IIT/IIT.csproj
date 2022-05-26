@@ -173,6 +173,9 @@
     <Compile Include="LedgerType\ucFixedAssetsIndividual.Designer.cs">
       <DependentUpon>ucFixedAssetsIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="LedgerType\ucLedgerTypeBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="LedgerType\ucServices.cs">
       <SubType>UserControl</SubType>
     </Compile>
