@@ -152,7 +152,7 @@ namespace IIT
         private NavigationBase SelectEntity()
         {
             if (gvEntityList.FocusedRowHandle < 0) return null;
-
+            Utility.MakeLedgersNull();
             Utility.CurrentEntity = entityDataRepository.GetEntityData(gvEntityList.GetFocusedRowCellValue("ENTITYID"));
             return new AccountingRoute();
         }

@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IIT.LedgerType
+namespace IIT
 {
     public partial class ucFixedAssetsIndividual : NavigationBase
     {
@@ -41,12 +42,15 @@ namespace IIT.LedgerType
         {
             if (!dxValidationProvider1.Validate())
                 return;
-            ledger.FixedAssetsIndividualInfo.NameOfAsset = ledger.Name = txtLedgerName.EditValue;
+            ledger.FixedAssetsIndividualInfo.NameOfAsset = ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.FixedAssetsIndividualInfo.RateOfDepreciation = txtRateOfDepriciation.EditValue;
             ledger.FixedAssetsIndividualInfo.IsGSTConsidered = cmbGSTConsidered.EditValue;
             ledger.FixedAssetsIndividualInfo.IsOperatingAsset = cmbOperatingAsset.EditValue;
             ledger.FixedAssetsIndividualInfo.OpeningBalance = txtOpeningBalance.EditValue;
+            ledger.LedgerTypeID = LookUpIDMap.LedgerType_FixedAsset;
+            ledger.UserName = Utility.UserName;
             new LedgerRepository().Save(ledger);
+            frmSingularMain.Instance.RollbackControl();
         }
     }
 }

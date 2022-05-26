@@ -1,4 +1,4 @@
-﻿namespace IIT.LedgerType
+﻿namespace IIT
 {
     partial class ucFixedAssetsCompany
     {
@@ -37,6 +37,7 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtOpeningBalanceDR = new DevExpress.XtraEditors.TextEdit();
@@ -60,6 +61,8 @@
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalanceDR.Properties)).BeginInit();
@@ -88,7 +91,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Controls.Add(this.labelControl2);
+            this.tablePanel1.Controls.Add(this.panelControl1);
             this.tablePanel1.Controls.Add(this.layoutControl1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
@@ -98,16 +101,30 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tablePanel1.Size = new System.Drawing.Size(738, 412);
-            this.tablePanel1.TabIndex = 3;
+            this.tablePanel1.TabIndex = 0;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Appearance.BorderColor = System.Drawing.Color.Silver;
+            this.panelControl1.Appearance.Options.UseBorderColor = true;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.tablePanel1.SetColumn(this.panelControl1, 2);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Location = new System.Drawing.Point(529, 28);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 1);
+            this.panelControl1.Size = new System.Drawing.Size(200, 357);
+            this.panelControl1.TabIndex = 1;
             // 
             // labelControl2
             // 
-            this.tablePanel1.SetColumn(this.labelControl2, 2);
-            this.labelControl2.Location = new System.Drawing.Point(543, 199);
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(16, 168);
             this.labelControl2.Name = "labelControl2";
-            this.tablePanel1.SetRow(this.labelControl2, 1);
             this.labelControl2.Size = new System.Drawing.Size(173, 15);
-            this.labelControl2.TabIndex = 1;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Dep rates chart to be displayed ";
             // 
             // layoutControl1
@@ -121,7 +138,7 @@
             this.layoutControl1.Controls.Add(this.cmbGSTConsidered);
             this.layoutControl1.Controls.Add(this.cmbOperatingAsset);
             this.layoutControl1.Controls.Add(this.txtRateOfDerpiciation);
-            this.layoutControl1.Location = new System.Drawing.Point(23, 28);
+            this.layoutControl1.Location = new System.Drawing.Point(9, 28);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1046, 427, 650, 400);
             this.layoutControl1.Root = this.Root;
@@ -132,11 +149,19 @@
             // 
             // txtOpeningBalanceDR
             // 
+            this.txtOpeningBalanceDR.EnterMoveNextControl = true;
             this.txtOpeningBalanceDR.Location = new System.Drawing.Point(261, 214);
             this.txtOpeningBalanceDR.Name = "txtOpeningBalanceDR";
+            this.txtOpeningBalanceDR.Properties.DisplayFormat.FormatString = "n2";
+            this.txtOpeningBalanceDR.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOpeningBalanceDR.Properties.EditFormat.FormatString = "n2";
+            this.txtOpeningBalanceDR.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOpeningBalanceDR.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtOpeningBalanceDR.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtOpeningBalanceDR.Properties.MaskSettings.Set("mask", "n2");
             this.txtOpeningBalanceDR.Size = new System.Drawing.Size(233, 22);
             this.txtOpeningBalanceDR.StyleController = this.layoutControl1;
-            this.txtOpeningBalanceDR.TabIndex = 12;
+            this.txtOpeningBalanceDR.TabIndex = 5;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Mandatory";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -150,7 +175,7 @@
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(283, 22);
             this.lblHeader.StyleController = this.layoutControl1;
-            this.lblHeader.TabIndex = 11;
+            this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Fixed Assets ledgers Creation ";
             // 
             // btnSave
@@ -161,17 +186,25 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 36);
             this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtOpeningBalance
             // 
+            this.txtOpeningBalance.EnterMoveNextControl = true;
             this.txtOpeningBalance.Location = new System.Drawing.Point(261, 256);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
+            this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
+            this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOpeningBalance.Properties.EditFormat.FormatString = "n2";
+            this.txtOpeningBalance.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
             this.txtOpeningBalance.Size = new System.Drawing.Size(233, 22);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
-            this.txtOpeningBalance.TabIndex = 9;
+            this.txtOpeningBalance.TabIndex = 6;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Mandatory";
             conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -179,11 +212,12 @@
             // 
             // txtLedgerName
             // 
+            this.txtLedgerName.EnterMoveNextControl = true;
             this.txtLedgerName.Location = new System.Drawing.Point(261, 46);
             this.txtLedgerName.Name = "txtLedgerName";
             this.txtLedgerName.Size = new System.Drawing.Size(233, 22);
             this.txtLedgerName.StyleController = this.layoutControl1;
-            this.txtLedgerName.TabIndex = 4;
+            this.txtLedgerName.TabIndex = 1;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Mandatory";
             conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -191,6 +225,7 @@
             // 
             // cmbGSTConsidered
             // 
+            this.cmbGSTConsidered.EnterMoveNextControl = true;
             this.cmbGSTConsidered.Location = new System.Drawing.Point(261, 130);
             this.cmbGSTConsidered.Name = "cmbGSTConsidered";
             this.cmbGSTConsidered.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -200,7 +235,7 @@
             "No"});
             this.cmbGSTConsidered.Size = new System.Drawing.Size(233, 22);
             this.cmbGSTConsidered.StyleController = this.layoutControl1;
-            this.cmbGSTConsidered.TabIndex = 6;
+            this.cmbGSTConsidered.TabIndex = 3;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "Mandatory";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -208,6 +243,7 @@
             // 
             // cmbOperatingAsset
             // 
+            this.cmbOperatingAsset.EnterMoveNextControl = true;
             this.cmbOperatingAsset.Location = new System.Drawing.Point(261, 172);
             this.cmbOperatingAsset.Name = "cmbOperatingAsset";
             this.cmbOperatingAsset.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -217,7 +253,7 @@
             "No"});
             this.cmbOperatingAsset.Size = new System.Drawing.Size(233, 22);
             this.cmbOperatingAsset.StyleController = this.layoutControl1;
-            this.cmbOperatingAsset.TabIndex = 7;
+            this.cmbOperatingAsset.TabIndex = 4;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "Mandatory";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -225,11 +261,19 @@
             // 
             // txtRateOfDerpiciation
             // 
+            this.txtRateOfDerpiciation.EnterMoveNextControl = true;
             this.txtRateOfDerpiciation.Location = new System.Drawing.Point(261, 88);
             this.txtRateOfDerpiciation.Name = "txtRateOfDerpiciation";
+            this.txtRateOfDerpiciation.Properties.DisplayFormat.FormatString = "n2";
+            this.txtRateOfDerpiciation.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtRateOfDerpiciation.Properties.EditFormat.FormatString = "n2";
+            this.txtRateOfDerpiciation.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtRateOfDerpiciation.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtRateOfDerpiciation.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtRateOfDerpiciation.Properties.MaskSettings.Set("mask", "n2");
             this.txtRateOfDerpiciation.Size = new System.Drawing.Size(233, 22);
             this.txtRateOfDerpiciation.StyleController = this.layoutControl1;
-            this.txtRateOfDerpiciation.TabIndex = 5;
+            this.txtRateOfDerpiciation.TabIndex = 2;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "Mandatory";
             conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -237,8 +281,9 @@
             // 
             // Root
             // 
+            this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Silver;
+            this.Root.AppearanceGroup.Options.UseBorderColor = true;
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
@@ -354,7 +399,9 @@
             this.Load += new System.EventHandler(this.ucFixedAssetsCompany_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalanceDR.Properties)).EndInit();
@@ -381,7 +428,6 @@
         #endregion
 
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.LabelControl lblHeader;
         private DevExpress.XtraEditors.SimpleButton btnSave;
@@ -402,5 +448,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit cmbOperatingAsset;
         private DevExpress.XtraEditors.TextEdit txtRateOfDerpiciation;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

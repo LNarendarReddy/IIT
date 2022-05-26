@@ -4,13 +4,13 @@ namespace Repository.Utility
 {
     public static class ObjectFactory
     {
-        public static LedgerTypeBase GetLedgerType(object objLedgerTypeID, object ledgerTypeData)
+        public static LedgerTypeBase GetLedgerType(object objLedgerTypeID, object ledgerTypeData,object EntityTypeID)
         {
             if (string.IsNullOrEmpty(ledgerTypeData?.ToString()) || !int.TryParse(objLedgerTypeID.ToString(), out int ledgerTypeID))
                 return null;
 
             LedgerTypeBase ledgerInfo = null;
-            switch(ledgerTypeID)
+            switch (ledgerTypeID)
             {
                 case LookUpIDMap.LedgerType_BankAccount:
                     ledgerInfo = ledgerTypeData.ToString().DeserializeXml<BankAccount>();
@@ -27,11 +27,11 @@ namespace Repository.Utility
                 case LookUpIDMap.LedgerType_Debitors:
                     ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Debitors>();
                     break;
-                case LookUpIDMap.LedgerType_FixedAssetCompany:
-                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<FixedAssetsCompany>();
-                    break;
-                case LookUpIDMap.LedgerType_FixedAssetIndividual:
-                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<FixedAssetsIndividual>();
+                case LookUpIDMap.LedgerType_FixedAsset:
+                    if (EntityTypeID.Equals(LookUpIDMap.EntityType_IndividualEntity))
+                        ledgerInfo = ledgerTypeData.ToString().DeserializeXml<FixedAssetsIndividual>();
+                    else
+                        ledgerInfo = ledgerTypeData.ToString().DeserializeXml<FixedAssetsCompany>();
                     break;
                 case LookUpIDMap.LedgerType_Investment:
                     ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Investment>();

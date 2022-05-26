@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IIT.LedgerType
+namespace IIT
 {
     public partial class ucCreditors : NavigationBase
     {
@@ -44,8 +45,7 @@ namespace IIT.LedgerType
         {
             if (!dxValidationProvider1.Validate())
                 return;
-            ledger.Name = txtLedgerName.EditValue;
-            ledger.CreditorsInfo.NameOfSundryCreditors = txtLedgerName.EditValue;
+            ledger.CreditorsInfo.NameOfSundryCreditors = ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.CreditorsInfo.GSTRegistrationStatus = cmbRegistrationStatus.EditValue;
             ledger.CreditorsInfo.GSTRegistrationNumber = txtGSTNumber.EditValue;
             ledger.CreditorsInfo.PANNumber = txtPANNumber.EditValue;
@@ -54,7 +54,10 @@ namespace IIT.LedgerType
             ledger.CreditorsInfo.CreditPeriod = txtCreditPeriodAllowed.EditValue;
             ledger.CreditorsInfo.InterestClause = txtInterest.EditValue;
             ledger.CreditorsInfo.OpeningBalance = txtOpeningBalance.EditValue;
+            ledger.LedgerTypeID = LookUpIDMap.LedgerType_Creditors;
+            ledger.UserName = Utility.UserName;
             new LedgerRepository().Save(ledger);
+            frmSingularMain.Instance.RollbackControl();
         }
     }
 }

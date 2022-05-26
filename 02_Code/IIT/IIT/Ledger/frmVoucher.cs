@@ -105,12 +105,12 @@ namespace IIT
 
         private void cmbPaymentMadefrom_EditValueChanged(object sender, EventArgs e)
         {
-            cmbPaymentMadeto.EditValue = null;
-            if (cmbPaymentMadefrom.EditValue == null)
+            if (cmbPaymentMadefrom.EditValue == null || 
+                cmbPaymentMadefrom.EditValue.Equals(Utility.CurrentEntity.CASHINHANDID) ||
+                (cmbPaymentMadeto.EditValue != null && cmbPaymentMadeto.EditValue.Equals(Utility.CurrentEntity.CASHINHANDID)))
                 return;
-
+            cmbPaymentMadeto.EditValue = null;
             BindLookups();
-
             DataTable table = cmbPaymentMadeto.Properties.DataSource as DataTable;
             DataView clone = new DataView(table);
             clone.RowFilter = string.Format($"[LEDGERID] <> {cmbPaymentMadefrom.EditValue}");

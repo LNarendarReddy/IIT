@@ -48,10 +48,8 @@ namespace IIT.Routes
                     voucherObj.VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit;
                     break;
                 case "Inventory Entry":
-                    voucherObj.VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit;
                     break;
                 case "Misc. Vouchers":
-                    voucherObj.VoucherTypeID = LookUpIDMap.VoucherType_ContraVoucher_Deposit;
                     break;
             }
             Utility.ShowDialog(new frmVoucher(voucherObj));

@@ -271,7 +271,7 @@
             this.tablePanel1.SetRow(this.labelControl1, 0);
             this.labelControl1.Size = new System.Drawing.Size(141, 15);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Application Version : 1.0.0";
+            this.labelControl1.Text = "Application Version : 1.1.4";
             // 
             // pictureEdit1
             // 

@@ -1,7 +1,7 @@
 ﻿namespace Repository.Utility
 {
     public static class LookUpIDMap
-    {       
+    {
 
         #region Entity Type
 
@@ -55,15 +55,15 @@
 
         public const int LedgerType_Debitors = 65;
 
-        public const int LedgerType_FixedAssetCompany = 66;
-
-        public const int LedgerType_FixedAssetIndividual = 67;
+        public const int LedgerType_FixedAsset = 66;
 
         public const int LedgerType_Investment = 68;
 
         public const int LedgerType_Loan = 69;
 
         public const int LedgerType_ServiceOrDuesToSubContractors = 70;
+
+        public const int LedgerType_Default = 0;
 
         #endregion Ledger Type
 

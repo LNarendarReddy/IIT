@@ -12,7 +12,7 @@ namespace Repository
 {
     public class LedgerRepository : RepositoryBase<Ledger>
     {
-        public override Ledger Load(DataRow drLedgerRow)
+        public override Ledger Load(DataRow drLedgerRow, object EntityTypeID)
         {
             return new Ledger()
             {
@@ -27,7 +27,7 @@ namespace Repository
                 Classification = drLedgerRow["CLASSIFICATION"],
                 LedgerTypeID = drLedgerRow["LEDGERTYPEID"],
                 LedgerTypeInfo = ObjectFactory.GetLedgerType(drLedgerRow["LEDGERTYPEID"],
-                drLedgerRow["LEDGERTYPEINFO"])
+                drLedgerRow["LEDGERTYPEINFO"], EntityTypeID)
             };
         }
         public override Ledger Save(Ledger ledgerObj)
@@ -99,7 +99,7 @@ namespace Repository
 
             return dt;
         }
-        public Ledger GetLedger(object LedgerID,object EntityID)
+        public Ledger GetLedger(object LedgerID,object EntityID,object EntityTypeID)
         {
             DataTable dt = new DataTable();
             try
@@ -127,7 +127,7 @@ namespace Repository
             }
 
             if (dt.Rows.Count > 0)
-                return Load(dt.Rows[0]);
+                return Load(dt.Rows[0], EntityTypeID);
             else
                 return null;
         }

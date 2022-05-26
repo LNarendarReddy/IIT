@@ -46,6 +46,7 @@
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.btnAdd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tlLedger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -76,7 +77,8 @@
             this.tlcParentID,
             this.tlcLedgerID,
             this.tlcLedgerLevel,
-            this.treeListColumn1});
+            this.treeListColumn1,
+            this.treeListColumn2});
             treeListFormatRule1.ApplyToRow = true;
             treeListFormatRule1.Column = this.tlcLedgerLevel;
             treeListFormatRule1.Name = "GroupFormat";
@@ -171,6 +173,12 @@
             this.tablePanel1.TabIndex = 1;
             this.tablePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel1_Paint);
             // 
+            // treeListColumn2
+            // 
+            this.treeListColumn2.Caption = "LEDGERTYPE";
+            this.treeListColumn2.FieldName = "LEDGERTYPE";
+            this.treeListColumn2.Name = "treeListColumn2";
+            // 
             // frmLedgerCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -196,5 +204,6 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnAdd;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
     }
 }

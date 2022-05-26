@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IIT.LedgerType
+namespace IIT
 {
     public partial class ucBankAccount : NavigationBase
     {
@@ -52,7 +53,8 @@ namespace IIT.LedgerType
             if(!dxValidationProvider1.Validate())
                 return;
 
-            ledger.Name = cmbNameOftheBank.Text + " " + txtBankAccountNumber.EditValue;
+            ledger.Name = ledger.Description = cmbNameOftheBank.Text + " " + txtBankAccountNumber.EditValue;
+            ledger.LedgerTypeID = LookUpIDMap.LedgerType_BankAccount;
             ledger.BankAccountInfo.BankID = cmbNameOftheBank.EditValue;
             ledger.BankAccountInfo.AccountNumber = txtBankAccountNumber.EditValue;
             ledger.BankAccountInfo.BranchAddress = txtBranchAddress.EditValue;
@@ -61,7 +63,9 @@ namespace IIT.LedgerType
             ledger.BankAccountInfo.NatureOfBankAccountID = cmbNatureoftheBankAccount.EditValue;
             ledger.BankAccountInfo.InterestRate = txtInterestRate.EditValue;
             ledger.BankAccountInfo.OpeningBalance = txtOpeningBalance.EditValue;
+            ledger.UserName = Utility.UserName;
             new LedgerRepository().Save(ledger);
+            frmSingularMain.Instance.RollbackControl();
         }
     }
 }

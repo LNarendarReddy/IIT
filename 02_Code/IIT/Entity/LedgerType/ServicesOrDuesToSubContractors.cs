@@ -11,6 +11,9 @@ namespace Entity.LedgerType
 
         public object PANNumber { get; set; }
 
-        public object BankAccountDetails { get; set; }
+        public object BankAccountNumber { get; set; }
+        public object AccountHolderName { get; set; }
+        public object IFSCCode { get; set; }
+        public object BrancName { get; set; }
     }
 }

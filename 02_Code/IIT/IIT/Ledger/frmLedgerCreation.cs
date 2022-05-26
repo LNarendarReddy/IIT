@@ -2,8 +2,10 @@
 using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList.Nodes.Operations;
 using Entity;
+using Entity.LedgerType;
 using IIT;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,6 +54,8 @@ namespace IIT
             {
                 case 1:
                     {
+                        if (IsEdit)
+                            return;
                         Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID, Utility.CurrentEntity.ID) :
                             new Group() { ClassificationID = HeadID };
                         Utility.ShowDialog(new frmGroup(groupdObj));
@@ -65,6 +69,8 @@ namespace IIT
                             btnAdd_ButtonClick(null, null);
                         else
                         {
+                            if (IsEdit)
+                                return;
                             SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) :
                                 new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
                             Utility.ShowDialog(new frmSubGroup(subGroupdObj));
@@ -74,18 +80,86 @@ namespace IIT
                     break;
                 case 3:
                     {
-                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedger(entityID, Utility.CurrentEntity.ID) :
+                        Ledger ledgerObj = IsEdit ? new LedgerRepository().GetLedger(entityID, 
+                            Utility.CurrentEntity.ID,Utility.CurrentEntity.EntityTypeID) :
                             new Ledger()
                             {
                                 ClassificationID = HeadID,
                                 GroupID = tlLedger.FocusedNode.ParentNode.ParentNode["LedgerID"],
                                 SubGroupID = tlLedger.FocusedNode.ParentNode["LedgerID"]
                             };
-                        Utility.ShowDialog(new frmLedger(ledgerObj));
+                        ShowLedgerForm(ledgerObj, true);
                         RefreshTreeData(ledgerObj, IsEdit, ledgerlevel);
                     }
                     break;
                 default:
+                    break;
+            }
+        }
+
+        private void ShowLedgerForm(Ledger ledgerObj, bool CallFromEvent = false)
+        {
+            int LedgerType = 0;
+            int.TryParse(Convert.ToString(CallFromEvent ? tlLedger.FocusedNode.ParentNode["LEDGERTYPE"] :
+                tlLedger.FocusedNode["LEDGERTYPE"]), out LedgerType);
+            switch (LedgerType)
+            {
+                case LookUpIDMap.LedgerType_BankAccount:
+                    if (ledgerObj.BankAccountInfo == null)
+                        ledgerObj.BankAccountInfo = new BankAccount();
+                    Utility.ShowDialog(new ucBankAccount(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_CapitalAccount:
+                    if (ledgerObj.CapitalAccountInfo == null)
+                        ledgerObj.CapitalAccountInfo = new CapitalAccount();
+                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_CCOrODC:
+                    if (ledgerObj.CCorODCInfo == null)
+                        ledgerObj.CCorODCInfo = new CCorODC();
+                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_Creditors:
+                    if (ledgerObj.CreditorsInfo == null)
+                        ledgerObj.CreditorsInfo = new Creditors();
+                    Utility.ShowDialog(new ucCreditors(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_Debitors:
+                    if (ledgerObj.DebitorsInfo == null)
+                        ledgerObj.DebitorsInfo = new Debitors();
+                    Utility.ShowDialog(new ucDebitors(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_FixedAsset:
+                    if (Utility.CurrentEntity.EntityTypeID.Equals(LookUpIDMap.EntityType_IndividualEntity))
+                    {
+                        if (ledgerObj.FixedAssetsIndividualInfo == null)
+                            ledgerObj.FixedAssetsIndividualInfo = new FixedAssetsIndividual();
+                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj));
+                    }
+                    else
+                    {
+                        if (ledgerObj.FixedAssetsCompanyInfo == null)
+                            ledgerObj.FixedAssetsCompanyInfo  = new FixedAssetsCompany();
+                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj));
+                    }
+                    break;
+                case LookUpIDMap.LedgerType_Investment:
+                    if (ledgerObj.InvestmentInfo == null)
+                        ledgerObj.InvestmentInfo  = new Investment();
+                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_Loan:
+                    if (ledgerObj.LoanInfo == null)
+                        ledgerObj.LoanInfo = new Loan();
+                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors:
+                    if (ledgerObj.ServicesOrDuesToSubContractorsInfo == null)
+                        ledgerObj.ServicesOrDuesToSubContractorsInfo = new ServicesOrDuesToSubContractors();
+                    Utility.ShowDialog(new ucServices(ledgerObj));
+                    break;
+                case LookUpIDMap.LedgerType_Default:
+                    Utility.ShowDialog(new frmLedger(ledgerObj));
                     break;
             }
         }
@@ -164,7 +238,7 @@ namespace IIT
                                 GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"],
                                 SubGroupID = tlLedger.FocusedNode["LedgerID"]
                             };
-            Utility.ShowDialog(new frmLedger(ledgerObj));
+            ShowLedgerForm(ledgerObj);
             RefreshTreeData(ledgerObj, false, 3,true);
         }
 

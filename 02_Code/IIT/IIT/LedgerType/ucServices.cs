@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
 using Repository;
+using Repository.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IIT.LedgerType
+namespace IIT
 {
     public partial class ucServices : NavigationBase
     {
@@ -32,7 +33,10 @@ namespace IIT.LedgerType
                 cmbRegistrationStatus.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationStatus;
                 txtGSTNumber.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationNumber;
                 txtPANNumber.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.PANNumber;
-                txtBankAccountNumber.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.BankAccountDetails;
+                txtBankAccountNumber.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.BankAccountNumber;
+                txtAccountHolderName.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.AccountHolderName;
+                txtIFSCCode.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.IFSCCode;
+                txtBranch.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.BrancName;
                 txtOpeningBalance.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.OpeningBalance;
             }
         }
@@ -41,13 +45,19 @@ namespace IIT.LedgerType
         {
             if (!dxValidationProvider1.Validate())
                 return;
-            ledger.ServicesOrDuesToSubContractorsInfo.Name = ledger.Name = txtLedgerName.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.Name = ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationStatus = cmbRegistrationStatus.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationNumber = txtGSTNumber.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.PANNumber = txtPANNumber.EditValue;
-            ledger.ServicesOrDuesToSubContractorsInfo.BankAccountDetails = txtBankAccountNumber.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.BankAccountNumber = txtBankAccountNumber.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.AccountHolderName = txtAccountHolderName.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.IFSCCode = txtIFSCCode.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.BrancName = txtBranch.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.OpeningBalance = txtOpeningBalance.EditValue;
+            ledger.LedgerTypeID = LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors;
+            ledger.UserName = Utility.UserName;
             new LedgerRepository().Save(ledger);
+            frmSingularMain.Instance.RollbackControl();
         }
     }
 }
