@@ -18,8 +18,9 @@ namespace IIT
 
         private List<ActionText> helpText = new List<ActionText>()
             {
-                new ActionText("Save", buildShort: false, shortCut: "Alt + S"),
-                new ActionText("Add Ledger", buildShort: false, shortCut: "Alt + L")
+                new ActionText("Save", buildShort: false, shortCut: "Ctrl + S"),
+                new ActionText("Save & Print", buildShort: false, shortCut: "Ctrl + P"),
+                new ActionText("Add Ledger", buildShort: false, shortCut: "Ctrl + L")
             };
 
         public override IEnumerable<ActionText> HelpText => helpText;
@@ -46,6 +47,52 @@ namespace IIT
             Text = string.IsNullOrEmpty(voucherObj.VoucherNumber?.ToString()) ? Text : $"{Text} - {voucherObj.VoucherNumber}";
         }
 
+        private void BindLookups()
+        {
+            object selectedto = cmbPaymentMadeto.EditValue;
+            object selectedfrom = cmbPaymentMadefrom.EditValue;
+            switch (Convert.ToInt32(voucherObj.VoucherTypeID))
+            {
+                case LookUpIDMap.VoucherType_CashPayment:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
+                    break;
+                case LookUpIDMap.VoucherType_BankPayment:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
+                    break;
+                case LookUpIDMap.VoucherType_CashReciept:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
+                    break;
+                case LookUpIDMap.VoucherType_BankReciept:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
+                    break;
+                case LookUpIDMap.VoucherType_ContraVoucher_Withdrawal:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
+                    break;
+                case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
+                    break;
+                case LookUpIDMap.VoucherType_JournalVoucher:
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
+                    break;
+                default:
+                    break;
+            }
+            cmbPaymentMadefrom.Properties.DisplayMember = "LEDGERNAME";
+            cmbPaymentMadefrom.Properties.ValueMember = "LEDGERID";
+            cmbPaymentMadefrom.EditValue = selectedfrom;
+
+            cmbPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
+            cmbPaymentMadeto.Properties.ValueMember = "LEDGERID";
+            cmbPaymentMadeto.EditValue = selectedto;
+        }
+
         private void UpdateLabels()
         {
             switch (Convert.ToInt32(voucherObj.VoucherTypeID))
@@ -64,6 +111,8 @@ namespace IIT
                     lciPaymentMadeFrom.Text = "Bank account";
                     lciPaymentMadeTo.Text = "Payment made to";
                     lciPurpose.Text = "Narration of the payment ";
+                    lciChequeNumber.Visibility = LayoutVisibility.Always;
+                    lciModeofTransfer.Visibility = LayoutVisibility.Always;
                     break;
                 case LookUpIDMap.VoucherType_CashReciept:
                     lblformHeader.Text = "CASH RECIEPT VOUCHER";
@@ -98,6 +147,12 @@ namespace IIT
                     lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
                     break;
+                case LookUpIDMap.VoucherType_JournalVoucher:
+                    lblformHeader.Text = "JOURNAL VOUCHER";
+                    lciPaymentMadeFrom.Text = "Debited from";
+                    lciPaymentMadeTo.Text = "Credited to";
+                    lciPurpose.Text = "Narration of the voucher ";
+                    break;
                 default:
                     break;
             }
@@ -129,6 +184,12 @@ namespace IIT
 
         private void Savevoucher(bool IsPrint = false)
         {
+            if(!voucherObj.VoucherTypeID.Equals(LookUpIDMap.VoucherType_BankPayment))
+            {
+                dxValidationProvider1.SetValidationRule(rgModeOfTransfer, null);
+                dxValidationProvider1.SetValidationRule(txtChequeNumber, null);
+            }
+
             if (!dxValidationProvider1.Validate()) return;
 
             voucherObj.VoucherNumber = txtRefNo.EditValue;
@@ -144,6 +205,8 @@ namespace IIT
             voucherObj.VoucherDate = dtpVoucherDate.EditValue;
             voucherObj.UserName = Utility.UserName;
             voucherObj.EntityID = Utility.CurrentEntity.ID;
+            voucherObj.ChequeNumber = txtChequeNumber.EditValue;
+            voucherObj.ModeOfTransfer = rgModeOfTransfer.EditValue;
 
             try
             {
@@ -161,6 +224,8 @@ namespace IIT
                     rpt.Parameters["PaymentMadeFrom"].Value = cmbPaymentMadefrom.Text;
                     rpt.Parameters["PaymentMadeTo"].Value = cmbPaymentMadeto.Text;
                     rpt.Parameters["Purpose"].Value = voucherObj.Purpose;
+                    rpt.Parameters["ChequeNumber"].Value = voucherObj.ChequeNumber;
+                    rpt.Parameters["ModeOfTransfer"].Value = voucherObj.ModeOfTransfer;
 
                     switch (Convert.ToInt32(voucherObj.VoucherTypeID))
                     {
@@ -200,6 +265,12 @@ namespace IIT
                             rpt.Parameters["PaymentMadeToCaption"].Value = "Bank Account :";
                             rpt.Parameters["PurposeCaption"].Value = "Narration :";
                             break;
+                        case LookUpIDMap.VoucherType_JournalVoucher:
+                            rpt.Parameters["VoucherCaption"].Value = "JOURNAL VOUCHER";
+                            rpt.Parameters["PaymentMadeFromCaption"].Value = "Debited from";
+                            rpt.Parameters["PaymentMadeToCaption"].Value = "Credited to";
+                            rpt.Parameters["PurposeCaption"].Value = "Narration of the voucher ";
+                            break;
                         default:
                             break;
                     }
@@ -211,11 +282,6 @@ namespace IIT
             {
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            frmSingularMain.Instance.RollbackControl();
         }
 
         private void txtAmountIRupees_Leave(object sender, EventArgs e)
@@ -248,53 +314,21 @@ namespace IIT
                 cmbPaymentMadeto.Focus();
         }
 
-        private void BindLookups()
-        {
-            object selectedto = cmbPaymentMadeto.EditValue;
-            object selectedfrom = cmbPaymentMadefrom.EditValue;
-            switch (Convert.ToInt32(voucherObj.VoucherTypeID))
-            {
-                case LookUpIDMap.VoucherType_CashPayment:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
-                    break;
-                case LookUpIDMap.VoucherType_BankPayment:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
-                    break;
-                case LookUpIDMap.VoucherType_CashReciept:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
-                    break;
-                case LookUpIDMap.VoucherType_BankReciept:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
-                    break;
-                case LookUpIDMap.VoucherType_ContraVoucher_Withdrawal:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
-                    break;
-                case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
-                    break;
-                default:
-                    break;
-            }
-            cmbPaymentMadefrom.Properties.DisplayMember = "LEDGERNAME";
-            cmbPaymentMadefrom.Properties.ValueMember = "LEDGERID";
-            cmbPaymentMadefrom.EditValue = selectedfrom;
-
-            cmbPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
-            cmbPaymentMadeto.Properties.ValueMember = "LEDGERID";
-            cmbPaymentMadeto.EditValue = selectedto;
-        }
-
         protected override bool ProcessDialogKey(Keys keyData)
         {
             if (keyData == (Keys.Control | Keys.L))
             {
                 btnAdd_Click(null, null);
+                return true;
+            }
+            else if (keyData == (Keys.Control | Keys.S))
+            {
+                btnSave_Click(null, null);
+                return true;
+            }
+            else if (keyData == (Keys.Control | Keys.P))
+            {
+                btnPrint_Click(null, null);
                 return true;
             }
             return base.ProcessDialogKey(keyData);

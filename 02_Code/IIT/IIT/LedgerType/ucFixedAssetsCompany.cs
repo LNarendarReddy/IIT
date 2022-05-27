@@ -1,5 +1,5 @@
 ﻿using Entity;
-using IIT.LedgerType;
+using IIT;
 using Repository.Utility;
 using System;
 
@@ -7,7 +7,7 @@ namespace IIT
 {
     public partial class ucFixedAssetsCompany : ucLedgerTypeBase
     {
-        public override string Caption => "Debtors ledgers Creation";
+        public override string Caption => "Fixed Assets ledgers Creation";
         public ucFixedAssetsCompany(Ledger _ledger) : base(_ledger)
         {
             InitializeComponent();

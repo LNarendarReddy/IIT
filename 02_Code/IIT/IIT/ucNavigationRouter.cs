@@ -70,7 +70,9 @@ namespace IIT
             ActionExecute(Convert.ToString(gvButtons.GetRowCellValue(gvButtons.FocusedRowHandle, "Action")));
         }
 
-        private void gcButtons_KeyUp(object sender, KeyEventArgs e)
+        public virtual void ActionExecute(string actionText) => throw new NotImplementedException();
+
+        private void gcButtons_KeyDown(object sender, KeyEventArgs e)
         {
             int inputNumber = gvButtons.FocusedRowHandle + 1;
             if (e.KeyCode != Keys.Enter)
@@ -83,7 +85,5 @@ namespace IIT
             gvButtons.FocusedRowHandle = inputNumber - 1;
             gcButtons_Click(sender, e);
         }
-
-        public virtual void ActionExecute(string actionText) => throw new NotImplementedException();
     }
 }

@@ -41,6 +41,8 @@
 
         public const int VoucherType_ContraVoucher_Deposit = 60;
 
+        public const int VoucherType_JournalVoucher = 166;
+
         #endregion Voucher Type
 
         #region Ledger Type
