@@ -21,6 +21,7 @@ namespace IIT
 
         private void ucLedgerList_Load(object sender, EventArgs e)
         {
+            Utility.SetGridFormatting(gvLedgerList);
             gcLedgerList.DataSource = new LedgerRepository().GetLedgerList(Utility.CurrentEntity.ID);
         }
 
@@ -28,20 +29,22 @@ namespace IIT
         {
             if (gvLedgerList.FocusedRowHandle < 0)
                 return;
-            rptLedgerPrinting rpt = new rptLedgerPrinting();
-            rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
-            rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
-            rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
-            rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
-            rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
-            rpt.Parameters["LedgerID"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERID");
-            rpt.Parameters["LedgerName"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERNAME");
-            rpt.CreateDocument();
-            string filePath = Path.Combine(Utility.ReportsPath,
-                $"{Utility.CurrentEntity.EntityName}_{gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")}_{DateTime.Now.ToString("ddMMyyyyHHmmss")}.pdf");
-            rpt.ExportToPdf(filePath);
-            ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
-            Process.Start(startInfo);
+            Utility.ShowDialog(new ucLedgerReport(gvLedgerList.GetFocusedRowCellValue("LEDGERID"), gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")));
+
+            //rptLedgerPrinting rpt = new rptLedgerPrinting();
+            //rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
+            //rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
+            //rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
+            //rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
+            //rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
+            //rpt.Parameters["LedgerID"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERID");
+            //rpt.Parameters["LedgerName"].Value = gvLedgerList.GetFocusedRowCellValue("LEDGERNAME");
+            //rpt.CreateDocument();
+            //string filePath = Path.Combine(Utility.ReportsPath,
+            //    $"{Utility.CurrentEntity.EntityName}_{gvLedgerList.GetFocusedRowCellValue("LEDGERNAME")}_{DateTime.Now.ToString("ddMMyyyyHHmmss")}.pdf");
+            //rpt.ExportToPdf(filePath);
+            //ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
+            //Process.Start(startInfo);
         }
 
         private void gvLedgerList_KeyPress(object sender, KeyPressEventArgs e)

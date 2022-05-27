@@ -2,9 +2,7 @@
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -18,7 +16,7 @@ namespace IIT
         [STAThread]
         static void Main()
         {
-            Assembly asm = typeof(DevExpress.UserSkins.IITSkin).Assembly;
+            Assembly asm = typeof(IITSkin).Assembly;
             DevExpress.Skins.SkinManager.Default.RegisterAssembly(asm);
             BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("IITSkin");
@@ -34,7 +32,7 @@ namespace IIT
     {
         public SkinRegistration()
         {
-            DevExpress.Skins.SkinManager.Default.RegisterAssembly(typeof(DevExpress.UserSkins.IITSkin).Assembly);
+            DevExpress.Skins.SkinManager.Default.RegisterAssembly(typeof(IITSkin).Assembly);
         }
     }
 }

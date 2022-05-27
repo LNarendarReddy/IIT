@@ -212,6 +212,12 @@
     <Compile Include="Ledger\ucLedgerList.Designer.cs">
       <DependentUpon>ucLedgerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ledger\ucLedgerReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ledger\ucLedgerReport.Designer.cs">
+      <DependentUpon>ucLedgerReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ledger\ucVoucherType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\ucLedgerList.resx">
       <DependentUpon>ucLedgerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\ucLedgerReport.resx">
+      <DependentUpon>ucLedgerReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\ucVoucherType.resx">
       <DependentUpon>ucVoucherType.cs</DependentUpon>

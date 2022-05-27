@@ -41,6 +41,7 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@LEDGERDESCRIPTION", ledgerObj.Description);
                     cmd.Parameters.AddWithValue("@LedgerTypeID", ledgerObj.LedgerTypeID);
                     cmd.Parameters.AddWithValue("@LedgerTypeInfo", ledgerObj.LedgerTypeInfo.SerializeXml());
+                    cmd.Parameters.AddWithValue("@OpeningBalance", ledgerObj.LedgerTypeInfo?.OpeningBalance);
                     cmd.Parameters.AddWithValue("@UserName", ledgerObj.UserName);
                     object objReturn = cmd.ExecuteScalar();
 
