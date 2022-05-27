@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucLedgerReport));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.gcVouchers = new DevExpress.XtraGrid.GridControl();
             this.gvVouchers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +52,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcVouchers)).BeginInit();
@@ -90,6 +90,19 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 10F)});
             this.tablePanel1.Size = new System.Drawing.Size(861, 464);
             this.tablePanel1.TabIndex = 0;
+            // 
+            // btnPrint
+            // 
+            this.tablePanel1.SetColumn(this.btnPrint, 5);
+            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
+            this.btnPrint.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPrint.Location = new System.Drawing.Point(686, 418);
+            this.btnPrint.Name = "btnPrint";
+            this.tablePanel1.SetRow(this.btnPrint, 4);
+            this.btnPrint.Size = new System.Drawing.Size(163, 33);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "&Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gcVouchers
             // 
@@ -305,19 +318,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // btnPrint
-            // 
-            this.tablePanel1.SetColumn(this.btnPrint, 5);
-            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnPrint.Location = new System.Drawing.Point(686, 418);
-            this.btnPrint.Name = "btnPrint";
-            this.tablePanel1.SetRow(this.btnPrint, 4);
-            this.btnPrint.Size = new System.Drawing.Size(163, 33);
-            this.btnPrint.TabIndex = 6;
-            this.btnPrint.Text = "&Print";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // ucLedgerReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -326,6 +326,7 @@
             this.Name = "ucLedgerReport";
             this.Size = new System.Drawing.Size(885, 488);
             this.Load += new System.EventHandler(this.ucLedgerReport_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ucLedgerReport_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();

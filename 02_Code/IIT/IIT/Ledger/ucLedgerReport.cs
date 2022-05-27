@@ -13,6 +13,13 @@ namespace IIT
         public override string Caption => "Ledger Report";
         object ledgerID, ledgerName;
 
+        public ucLedgerReport(object _ledgerID, object _ledgerName)
+        {
+            InitializeComponent();
+            ledgerID = _ledgerID;
+            ledgerName = _ledgerName;
+        }
+
         private void ucLedgerReport_Load(object sender, EventArgs e)
         {
             Utility.SetGridFormatting(gvVouchers);
@@ -35,28 +42,29 @@ namespace IIT
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            rptLedgerPrinting rpt = new rptLedgerPrinting();
-            rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
-            rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
-            rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
-            rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
-            rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
-            rpt.Parameters["LedgerID"].Value = ledgerID;
-            rpt.Parameters["LedgerName"].Value = ledgerName;
-            rpt.CreateDocument();
-            string filePath = Path.Combine(Utility.ReportsPath,
-                $"{Utility.CurrentEntity.EntityName}_{ledgerName}_{DateTime.Now:ddMMyyyyHHmmss}.pdf");
-            rpt.ExportToPdf(filePath);
-            ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
-            Process.Start(startInfo);
+            //rptLedgerPrinting rpt = new rptLedgerPrinting();
+            //rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
+            //rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
+            //rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
+            //rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
+            //rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
+            //rpt.Parameters["LedgerID"].Value = ledgerID;
+            //rpt.Parameters["LedgerName"].Value = ledgerName;
+            //rpt.CreateDocument();
+            //string filePath = Path.Combine(Utility.ReportsPath,
+            //    $"{Utility.CurrentEntity.EntityName}_{ledgerName}_{DateTime.Now:ddMMyyyyHHmmss}.pdf");
+            //rpt.ExportToPdf(filePath);
+            //ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
+            //Process.Start(startInfo);
+
+            gcVouchers.ShowRibbonPrintPreview();
         }
 
-        public ucLedgerReport(object _ledgerID, object _ledgerName)
+        private void ucLedgerReport_KeyDown(object sender, KeyEventArgs e)
         {
-            InitializeComponent();
-            ledgerID = _ledgerID;
-            ledgerName = _ledgerName;
-        }
+            if (e.KeyCode != Keys.F2) return;
 
+
+        }
     }
 }
