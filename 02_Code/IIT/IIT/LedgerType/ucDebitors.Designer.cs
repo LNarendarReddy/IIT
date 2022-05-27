@@ -276,6 +276,7 @@
             conditionValidationRule6.ErrorText = "Mandatory";
             conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.txtGSTNumber, conditionValidationRule6);
+            this.txtGSTNumber.Leave += new System.EventHandler(this.txtGSTNumber_Leave);
             // 
             // cmbRegistrationStatus
             // 
@@ -294,6 +295,7 @@
             conditionValidationRule7.ErrorText = "Mandatory";
             conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.cmbRegistrationStatus, conditionValidationRule7);
+            this.cmbRegistrationStatus.EditValueChanged += new System.EventHandler(this.cmbRegistrationStatus_EditValueChanged);
             // 
             // txtLedgerName
             // 

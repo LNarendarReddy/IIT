@@ -16,14 +16,13 @@ namespace IIT
 {
     public partial class ucCreditors : NavigationBase
     {
-        public override string Caption => "Creditors or Raw Materials Suupliers ledgers Creation";
+        public override string Caption => "Creditors or Raw Materials suupliers ledgers creation";
         Ledger ledger = null;
         public ucCreditors(Ledger _ledger)
         {
             InitializeComponent();
             ledger = _ledger;
         }
-
         private void ucCreditors_Load(object sender, EventArgs e)
         {
             lblHeader.Text = Caption;
@@ -40,10 +39,11 @@ namespace IIT
                 txtOpeningBalance.EditValue = ledger.CreditorsInfo.OpeningBalance;
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!cmbRegistrationStatus.EditValue.Equals("Registered"))
+                dxValidationProvider1.SetValidationRule(txtGSTNumber,null);
+                if (!dxValidationProvider1.Validate())
                 return;
             ledger.CreditorsInfo.NameOfSundryCreditors = ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.CreditorsInfo.GSTRegistrationStatus = cmbRegistrationStatus.EditValue;
@@ -58,6 +58,24 @@ namespace IIT
             ledger.UserName = Utility.UserName;
             new LedgerRepository().Save(ledger);
             frmSingularMain.Instance.RollbackControl();
+        }
+        private void cmbRegistrationStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cmbRegistrationStatus.EditValue.Equals("Registered"))
+            { 
+                txtGSTNumber.Enabled = true;
+            }
+            else
+            {
+                txtGSTNumber.EditValue = null;
+                txtGSTNumber.Enabled = false;
+            }
+        }
+        private void txtGSTNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtGSTNumber.Text.Length < 12)
+                return;
+            txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
         }
     }
 }

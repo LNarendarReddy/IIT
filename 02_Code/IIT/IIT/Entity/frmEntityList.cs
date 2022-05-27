@@ -174,9 +174,9 @@ namespace IIT
         }
         private void gvEntityList_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != (char)Keys.Enter)
-                return;
-            Utility.ShowDialog(SelectEntity());
+            //if (e.KeyChar != (char)Keys.Enter)
+            //    return;
+            //Utility.ShowDialog(SelectEntity());
         }
         private void UpdateGridSize()
         {

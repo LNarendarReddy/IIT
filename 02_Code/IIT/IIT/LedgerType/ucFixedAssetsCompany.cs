@@ -53,5 +53,6 @@ namespace IIT
             new LedgerRepository().Save(ledger);
             frmSingularMain.Instance.RollbackControl();
         }
+
     }
 }
