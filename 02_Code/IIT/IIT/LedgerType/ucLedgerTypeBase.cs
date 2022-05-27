@@ -19,6 +19,7 @@ namespace IIT.LedgerType
         {
             ledger.UserName = Utility.UserName;
             new LedgerRepository().Save(ledger);
+            ledger.IsSave = true;
             Utility.ClearLedgerCache();
             (PreviousControl as frmLedgerCreation)?.RefreshTreeData(ledger, _isEdit, 3);
             frmSingularMain.Instance.RollbackControl();

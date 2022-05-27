@@ -1,6 +1,5 @@
 ﻿using Entity;
 using IIT.LedgerType;
-using Repository;
 using Repository.Utility;
 using System;
 
@@ -18,7 +17,7 @@ namespace IIT
         private void ucDebitors_Load(object sender, EventArgs e)
         {
             lblHeader.Text = Caption;
-            if (ledger.ID != null) return;
+            if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
             cmbRegistrationStatus.EditValue = ledger.DebitorsInfo.GSTRegistrationStatus;
             txtGSTNumber.EditValue = ledger.DebitorsInfo.GSTRegistrationNumber;

@@ -26,7 +26,7 @@ namespace IIT
             cmbNatureoftheBankAccount.Properties.ValueMember = "ENTITYLOOKUPID";
             cmbNatureoftheBankAccount.Properties.DisplayMember = "LOOKUPVALUE";
 
-            if (ledger.ID == null) return;
+            if (ledger?.ID == null) return;
 
             cmbNameOftheBank.EditValue = ledger.BankAccountInfo.BankID;
             txtBankAccountNumber.EditValue = ledger.BankAccountInfo.AccountNumber;
