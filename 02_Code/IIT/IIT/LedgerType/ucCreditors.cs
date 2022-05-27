@@ -1,43 +1,30 @@
-﻿using DevExpress.XtraEditors;
-using Entity;
-using Repository;
+﻿using Entity;
+using IIT.LedgerType;
 using Repository.Utility;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class ucCreditors : NavigationBase
+    public partial class ucCreditors : ucLedgerTypeBase
     {
-        public override string Caption => "Creditors or Raw Materials suupliers ledgers creation";
-        Ledger ledger = null;
-        public ucCreditors(Ledger _ledger)
+        public override string Caption => "Creditors or Raw Materials Suupliers ledgers Creation";
+        public ucCreditors(Ledger _ledger) : base(_ledger)
         {
             InitializeComponent();
-            ledger = _ledger;
         }
         private void ucCreditors_Load(object sender, EventArgs e)
         {
             lblHeader.Text = Caption;
-            if(ledger.ID != null)
-            {
-                txtLedgerName.EditValue = ledger.Name;
-                cmbRegistrationStatus.EditValue = ledger.CreditorsInfo.GSTRegistrationStatus;
-                txtGSTNumber.EditValue = ledger.CreditorsInfo.GSTRegistrationNumber;
-                txtPANNumber.EditValue = ledger.CreditorsInfo.PANNumber;
-                txtAddressOftheSupplier.EditValue = ledger.CreditorsInfo.SupplierAddress;
-                txtBankAccountDetails.EditValue = ledger.CreditorsInfo.BankAccountDetails;
-                txtCreditPeriodAllowed.EditValue = ledger.CreditorsInfo.CreditPeriod;
-                txtInterest.EditValue = ledger.CreditorsInfo.InterestClause;
-                txtOpeningBalance.EditValue = ledger.CreditorsInfo.OpeningBalance;
-            }
+            if (ledger?.ID == null) return;
+            txtLedgerName.EditValue = ledger.Name;
+            cmbRegistrationStatus.EditValue = ledger.CreditorsInfo.GSTRegistrationStatus;
+            txtGSTNumber.EditValue = ledger.CreditorsInfo.GSTRegistrationNumber;
+            txtPANNumber.EditValue = ledger.CreditorsInfo.PANNumber;
+            txtAddressOftheSupplier.EditValue = ledger.CreditorsInfo.SupplierAddress;
+            txtBankAccountDetails.EditValue = ledger.CreditorsInfo.BankAccountDetails;
+            txtCreditPeriodAllowed.EditValue = ledger.CreditorsInfo.CreditPeriod;
+            txtInterest.EditValue = ledger.CreditorsInfo.InterestClause;
+            txtOpeningBalance.EditValue = ledger.CreditorsInfo.OpeningBalance;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -55,9 +42,7 @@ namespace IIT
             ledger.CreditorsInfo.InterestClause = txtInterest.EditValue;
             ledger.CreditorsInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_Creditors;
-            ledger.UserName = Utility.UserName;
-            new LedgerRepository().Save(ledger);
-            frmSingularMain.Instance.RollbackControl();
+            Save();
         }
         private void cmbRegistrationStatus_EditValueChanged(object sender, EventArgs e)
         {

@@ -70,6 +70,7 @@
     <Compile Include="Masters\SectorRepository.cs" />
     <Compile Include="Masters\SubGroupRepository.cs" />
     <Compile Include="Masters\SubSectorRepository.cs" />
+    <Compile Include="ReportRepository.cs" />
     <Compile Include="Utility\LookUpIDMap.cs" />
     <Compile Include="Utility\ObjectFactory.cs" />
     <Compile Include="Utility\LookUpUtility.cs" />

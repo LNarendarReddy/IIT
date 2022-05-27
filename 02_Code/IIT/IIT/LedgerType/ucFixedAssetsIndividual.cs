@@ -1,41 +1,29 @@
-﻿using DevExpress.XtraEditors;
-using Entity;
-using Repository;
+﻿using Entity;
+using IIT.LedgerType;
 using Repository.Utility;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class ucFixedAssetsIndividual : NavigationBase
+    public partial class ucFixedAssetsIndividual : ucLedgerTypeBase
     {
         public override string Caption => "Fixed Assets ledgers Creation";
-        Ledger ledger = null;
 
-        public ucFixedAssetsIndividual(Ledger _ledger)
+        public ucFixedAssetsIndividual(Ledger _ledger) : base(_ledger)
         {
             InitializeComponent();
-            ledger = _ledger;
         }
 
         private void ucFixedAssetsIndividual_Load(object sender, EventArgs e)
         {
             lblHeader.Text = Caption;
-            if (ledger.ID != null)
-            {
-                txtLedgerName.EditValue = ledger.Name;
-                txtRateOfDepriciation.EditValue = ledger.FixedAssetsIndividualInfo.RateOfDepreciation;
-                cmbGSTConsidered.EditValue = ledger.FixedAssetsIndividualInfo.IsGSTConsidered;
-                cmbOperatingAsset.EditValue = ledger.FixedAssetsIndividualInfo.IsOperatingAsset;
-                txtOpeningBalance.EditValue = ledger.FixedAssetsIndividualInfo.OpeningBalance;
-            }
+            if (ledger?.ID == null) return;
+
+            txtLedgerName.EditValue = ledger.Name;
+            txtRateOfDepriciation.EditValue = ledger.FixedAssetsIndividualInfo.RateOfDepreciation;
+            cmbGSTConsidered.EditValue = ledger.FixedAssetsIndividualInfo.IsGSTConsidered;
+            cmbOperatingAsset.EditValue = ledger.FixedAssetsIndividualInfo.IsOperatingAsset;
+            txtOpeningBalance.EditValue = ledger.FixedAssetsIndividualInfo.OpeningBalance;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -48,9 +36,7 @@ namespace IIT
             ledger.FixedAssetsIndividualInfo.IsOperatingAsset = cmbOperatingAsset.EditValue;
             ledger.FixedAssetsIndividualInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_FixedAsset;
-            ledger.UserName = Utility.UserName;
-            new LedgerRepository().Save(ledger);
-            frmSingularMain.Instance.RollbackControl();
+            Save();
         }
     }
 }

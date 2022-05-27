@@ -1,9 +1,7 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraTreeList.Nodes;
+﻿using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList.Nodes.Operations;
 using Entity;
 using Entity.LedgerType;
-using IIT;
 using Repository;
 using Repository.Utility;
 using System;
@@ -164,7 +162,7 @@ namespace IIT
             }
         }
 
-        private void RefreshTreeData(MasterBase entityObj, bool IsEdit, int ledgerlevel, bool callfrombutton = false)
+        public void RefreshTreeData(MasterBase entityObj, bool IsEdit, int ledgerlevel, bool callfrombutton = false)
         {
             if (!entityObj.IsSave)
                 return;
