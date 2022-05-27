@@ -96,7 +96,6 @@ namespace IIT
             });
 
             frmSingularMain.Instance.gcHelpText.DataSource = helpText;
-            frmSingularMain.Instance.btnBack.Enabled = (frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase)?.PreviousControl != null;
             string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? "IIT");
             //frmSingularMain.Instance.Text = selectedEntityName;
             frmSingularMain.Instance.lblEntityName.Text = selectedEntityName;

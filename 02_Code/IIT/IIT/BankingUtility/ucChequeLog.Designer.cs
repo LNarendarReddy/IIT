@@ -110,12 +110,14 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn1.Caption = "S No";
             this.gridColumn1.FieldName = "SNO";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 78;
+            this.gridColumn1.Width = 47;
             // 
             // gridColumn2
             // 
@@ -128,6 +130,10 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn3.Caption = "Date";
             this.gridColumn3.FieldName = "VOUCHERDATE";
             this.gridColumn3.Name = "gridColumn3";
@@ -137,6 +143,10 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn4.Caption = "Cheque Number";
             this.gridColumn4.FieldName = "CHEQUENUMBER";
             this.gridColumn4.Name = "gridColumn4";
@@ -152,7 +162,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 309;
+            this.gridColumn5.Width = 412;
             // 
             // cmbNoOfLeafs
             // 
@@ -169,6 +179,10 @@
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.gridColumn6.Caption = "Amount Of Cheque";
             this.gridColumn6.FieldName = "AMOUNT";
             this.gridColumn6.Name = "gridColumn6";
@@ -178,6 +192,10 @@
             // 
             // gridColumn7
             // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.gridColumn7.Caption = "Available Balance";
             this.gridColumn7.FieldName = "AVAILABLEBALANCE";
             this.gridColumn7.Name = "gridColumn7";
@@ -187,6 +205,10 @@
             // 
             // gridColumn8
             // 
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridColumn8.Caption = "Mode Of Transfer";
             this.gridColumn8.FieldName = "MODEOFTRANSFER";
             this.gridColumn8.Name = "gridColumn8";

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSingularMain));
             this.lcMain = new DevExpress.XtraLayout.LayoutControl();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
-            this.btnBack = new DevExpress.XtraEditors.LabelControl();
             this.lblNavigationHeader = new DevExpress.XtraEditors.LabelControl();
             this.lblEntityName = new DevExpress.XtraEditors.LabelControl();
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
@@ -90,9 +89,7 @@
             // tablePanel3
             // 
             this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 43F)});
-            this.tablePanel3.Controls.Add(this.btnBack);
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel3.Controls.Add(this.lblNavigationHeader);
             this.tablePanel3.Controls.Add(this.lblEntityName);
             this.tablePanel3.Controls.Add(this.pcMain);
@@ -100,22 +97,10 @@
             this.tablePanel3.Name = "tablePanel3";
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 40F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 36F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 36F)});
             this.tablePanel3.Size = new System.Drawing.Size(928, 561);
             this.tablePanel3.TabIndex = 7;
-            // 
-            // btnBack
-            // 
-            this.tablePanel3.SetColumn(this.btnBack, 1);
-            this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBack.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBack.ImageOptions.SvgImage")));
-            this.btnBack.Location = new System.Drawing.Point(888, 43);
-            this.btnBack.Name = "btnBack";
-            this.tablePanel3.SetRow(this.btnBack, 1);
-            this.btnBack.Size = new System.Drawing.Size(37, 30);
-            this.btnBack.TabIndex = 9;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblNavigationHeader
             // 
@@ -123,9 +108,9 @@
             this.lblNavigationHeader.Appearance.Options.UseFont = true;
             this.tablePanel3.SetColumn(this.lblNavigationHeader, 0);
             this.lblNavigationHeader.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblNavigationHeader.Location = new System.Drawing.Point(3, 43);
+            this.lblNavigationHeader.Location = new System.Drawing.Point(3, 528);
             this.lblNavigationHeader.Name = "lblNavigationHeader";
-            this.tablePanel3.SetRow(this.lblNavigationHeader, 1);
+            this.tablePanel3.SetRow(this.lblNavigationHeader, 2);
             this.lblNavigationHeader.Size = new System.Drawing.Size(85, 30);
             this.lblNavigationHeader.TabIndex = 8;
             this.lblNavigationHeader.Text = "labelControl3";
@@ -151,9 +136,9 @@
             this.tablePanel3.SetColumn(this.pcMain, 0);
             this.tablePanel3.SetColumnSpan(this.pcMain, 2);
             this.pcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcMain.Location = new System.Drawing.Point(3, 79);
+            this.pcMain.Location = new System.Drawing.Point(3, 43);
             this.pcMain.Name = "pcMain";
-            this.tablePanel3.SetRow(this.pcMain, 2);
+            this.tablePanel3.SetRow(this.pcMain, 1);
             this.pcMain.Size = new System.Drawing.Size(922, 479);
             this.pcMain.TabIndex = 4;
             // 
@@ -415,7 +400,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         public DevExpress.XtraEditors.LabelControl lblNavigationHeader;
         public DevExpress.XtraEditors.LabelControl lblEntityName;
-        public DevExpress.XtraEditors.LabelControl btnBack;
         public DevExpress.XtraGrid.GridControl gcHelpText;
         private DevExpress.XtraGrid.Views.Card.CardView gvHelpText;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

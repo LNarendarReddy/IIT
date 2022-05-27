@@ -100,7 +100,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(738, 412);
+            this.tablePanel1.Size = new System.Drawing.Size(882, 412);
             this.tablePanel1.TabIndex = 0;
             // 
             // panelControl1
@@ -110,7 +110,7 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.tablePanel1.SetColumn(this.panelControl1, 2);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(529, 28);
+            this.panelControl1.Location = new System.Drawing.Point(652, 28);
             this.panelControl1.Name = "panelControl1";
             this.tablePanel1.SetRow(this.panelControl1, 1);
             this.panelControl1.Size = new System.Drawing.Size(200, 357);
@@ -138,12 +138,12 @@
             this.layoutControl1.Controls.Add(this.cmbGSTConsidered);
             this.layoutControl1.Controls.Add(this.cmbOperatingAsset);
             this.layoutControl1.Controls.Add(this.txtRateOfDerpiciation);
-            this.layoutControl1.Location = new System.Drawing.Point(9, 28);
+            this.layoutControl1.Location = new System.Drawing.Point(31, 28);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1046, 427, 650, 400);
             this.layoutControl1.Root = this.Root;
             this.tablePanel1.SetRow(this.layoutControl1, 1);
-            this.layoutControl1.Size = new System.Drawing.Size(514, 357);
+            this.layoutControl1.Size = new System.Drawing.Size(615, 357);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -159,7 +159,7 @@
             this.txtOpeningBalanceDR.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtOpeningBalanceDR.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtOpeningBalanceDR.Properties.MaskSettings.Set("mask", "n2");
-            this.txtOpeningBalanceDR.Size = new System.Drawing.Size(233, 22);
+            this.txtOpeningBalanceDR.Size = new System.Drawing.Size(334, 22);
             this.txtOpeningBalanceDR.StyleController = this.layoutControl1;
             this.txtOpeningBalanceDR.TabIndex = 5;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -171,7 +171,7 @@
             // 
             this.lblHeader.Appearance.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblHeader.Appearance.Options.UseFont = true;
-            this.lblHeader.Location = new System.Drawing.Point(115, 12);
+            this.lblHeader.Location = new System.Drawing.Point(166, 12);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(283, 22);
             this.lblHeader.StyleController = this.layoutControl1;
@@ -182,7 +182,7 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(383, 298);
+            this.btnSave.Location = new System.Drawing.Point(484, 298);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 36);
             this.btnSave.StyleController = this.layoutControl1;
@@ -202,7 +202,7 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
-            this.txtOpeningBalance.Size = new System.Drawing.Size(233, 22);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(334, 22);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 6;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -215,7 +215,7 @@
             this.txtLedgerName.EnterMoveNextControl = true;
             this.txtLedgerName.Location = new System.Drawing.Point(261, 46);
             this.txtLedgerName.Name = "txtLedgerName";
-            this.txtLedgerName.Size = new System.Drawing.Size(233, 22);
+            this.txtLedgerName.Size = new System.Drawing.Size(334, 22);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -233,7 +233,7 @@
             this.cmbGSTConsidered.Properties.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.cmbGSTConsidered.Size = new System.Drawing.Size(233, 22);
+            this.cmbGSTConsidered.Size = new System.Drawing.Size(334, 22);
             this.cmbGSTConsidered.StyleController = this.layoutControl1;
             this.cmbGSTConsidered.TabIndex = 3;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -251,7 +251,7 @@
             this.cmbOperatingAsset.Properties.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.cmbOperatingAsset.Size = new System.Drawing.Size(233, 22);
+            this.cmbOperatingAsset.Size = new System.Drawing.Size(334, 22);
             this.cmbOperatingAsset.StyleController = this.layoutControl1;
             this.cmbOperatingAsset.TabIndex = 4;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -271,7 +271,7 @@
             this.txtRateOfDerpiciation.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtRateOfDerpiciation.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtRateOfDerpiciation.Properties.MaskSettings.Set("mask", "n2");
-            this.txtRateOfDerpiciation.Size = new System.Drawing.Size(233, 22);
+            this.txtRateOfDerpiciation.Size = new System.Drawing.Size(334, 22);
             this.txtRateOfDerpiciation.StyleController = this.layoutControl1;
             this.txtRateOfDerpiciation.TabIndex = 2;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -295,7 +295,7 @@
             this.layoutControlItem8,
             this.layoutControlItem5});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(514, 357);
+            this.Root.Size = new System.Drawing.Size(615, 357);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -304,7 +304,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(494, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(595, 42);
             this.layoutControlItem1.Text = "Name of the Fixed Assets";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(229, 15);
             // 
@@ -314,7 +314,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 68);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(494, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(595, 42);
             this.layoutControlItem2.Text = "Rate of Depreciation ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(229, 15);
             // 
@@ -324,7 +324,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 110);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem3.Size = new System.Drawing.Size(494, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(595, 42);
             this.layoutControlItem3.Text = "GST considered in value of the Asset";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(229, 15);
             // 
@@ -334,7 +334,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 152);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(494, 42);
+            this.layoutControlItem4.Size = new System.Drawing.Size(595, 42);
             this.layoutControlItem4.Text = "Whether this asset is Operating Asset ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(229, 15);
             // 
@@ -344,14 +344,14 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 236);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem6.Size = new System.Drawing.Size(494, 42);
+            this.layoutControlItem6.Size = new System.Drawing.Size(595, 42);
             this.layoutControlItem6.Text = "Opening Balance of the Asset";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(229, 15);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(363, 278);
+            this.layoutControlItem7.Location = new System.Drawing.Point(464, 278);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(131, 56);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(131, 56);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -366,7 +366,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 278);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(363, 59);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(464, 59);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -375,7 +375,7 @@
             this.layoutControlItem8.Control = this.lblHeader;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(494, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(595, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -385,7 +385,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 194);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem5.Size = new System.Drawing.Size(494, 42);
+            this.layoutControlItem5.Size = new System.Drawing.Size(595, 42);
             this.layoutControlItem5.Text = "Opening balance of Depreciation Reserve";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(229, 15);
             // 
@@ -395,7 +395,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucFixedAssetsCompany";
-            this.Size = new System.Drawing.Size(738, 412);
+            this.Size = new System.Drawing.Size(882, 412);
             this.Load += new System.EventHandler(this.ucFixedAssetsCompany_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
