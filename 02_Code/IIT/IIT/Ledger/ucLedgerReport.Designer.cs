@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucLedgerReport));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.gcVouchers = new DevExpress.XtraGrid.GridControl();
             this.gvVouchers = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,6 +51,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcVouchers)).BeginInit();
@@ -70,6 +72,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 25F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 10F)});
+            this.tablePanel1.Controls.Add(this.btnPrint);
             this.tablePanel1.Controls.Add(this.gcVouchers);
             this.tablePanel1.Controls.Add(this.labelControl5);
             this.tablePanel1.Controls.Add(this.lblClosingBalance);
@@ -93,11 +96,11 @@
             this.tablePanel1.SetColumn(this.gcVouchers, 1);
             this.tablePanel1.SetColumnSpan(this.gcVouchers, 5);
             this.gcVouchers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcVouchers.Location = new System.Drawing.Point(13, 62);
+            this.gcVouchers.Location = new System.Drawing.Point(13, 66);
             this.gcVouchers.MainView = this.gvVouchers;
             this.gcVouchers.Name = "gcVouchers";
             this.tablePanel1.SetRow(this.gcVouchers, 3);
-            this.gcVouchers.Size = new System.Drawing.Size(835, 368);
+            this.gcVouchers.Size = new System.Drawing.Size(836, 346);
             this.gcVouchers.TabIndex = 5;
             this.gcVouchers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVouchers});
@@ -118,6 +121,7 @@
             this.gridColumn11});
             this.gvVouchers.GridControl = this.gcVouchers;
             this.gvVouchers.Name = "gvVouchers";
+            this.gvVouchers.OptionsBehavior.Editable = false;
             // 
             // gridColumn1
             // 
@@ -207,10 +211,10 @@
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tablePanel1.SetColumn(this.labelControl5, 3);
             this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl5.Location = new System.Drawing.Point(544, 436);
+            this.labelControl5.Location = new System.Drawing.Point(539, 418);
             this.labelControl5.Name = "labelControl5";
             this.tablePanel1.SetRow(this.labelControl5, 4);
-            this.labelControl5.Size = new System.Drawing.Size(104, 15);
+            this.labelControl5.Size = new System.Drawing.Size(104, 33);
             this.labelControl5.TabIndex = 4;
             this.labelControl5.Text = "Closing Balance : ";
             // 
@@ -221,10 +225,10 @@
             this.lblClosingBalance.Appearance.Options.UseFont = true;
             this.lblClosingBalance.Appearance.Options.UseForeColor = true;
             this.tablePanel1.SetColumn(this.lblClosingBalance, 4);
-            this.lblClosingBalance.Location = new System.Drawing.Point(654, 436);
+            this.lblClosingBalance.Location = new System.Drawing.Point(649, 425);
             this.lblClosingBalance.Name = "lblClosingBalance";
             this.tablePanel1.SetRow(this.lblClosingBalance, 4);
-            this.lblClosingBalance.Size = new System.Drawing.Size(24, 15);
+            this.lblClosingBalance.Size = new System.Drawing.Size(31, 19);
             this.lblClosingBalance.TabIndex = 3;
             this.lblClosingBalance.Text = "0.00";
             // 
@@ -234,10 +238,10 @@
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tablePanel1.SetColumn(this.labelControl3, 3);
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl3.Location = new System.Drawing.Point(544, 41);
+            this.labelControl3.Location = new System.Drawing.Point(539, 41);
             this.labelControl3.Name = "labelControl3";
             this.tablePanel1.SetRow(this.labelControl3, 2);
-            this.labelControl3.Size = new System.Drawing.Size(104, 15);
+            this.labelControl3.Size = new System.Drawing.Size(104, 19);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "Opening Balance : ";
             // 
@@ -248,10 +252,10 @@
             this.lblOpeningBalance.Appearance.Options.UseFont = true;
             this.lblOpeningBalance.Appearance.Options.UseForeColor = true;
             this.tablePanel1.SetColumn(this.lblOpeningBalance, 4);
-            this.lblOpeningBalance.Location = new System.Drawing.Point(654, 41);
+            this.lblOpeningBalance.Location = new System.Drawing.Point(649, 41);
             this.lblOpeningBalance.Name = "lblOpeningBalance";
             this.tablePanel1.SetRow(this.lblOpeningBalance, 2);
-            this.lblOpeningBalance.Size = new System.Drawing.Size(24, 15);
+            this.lblOpeningBalance.Size = new System.Drawing.Size(31, 19);
             this.lblOpeningBalance.TabIndex = 1;
             this.lblOpeningBalance.Text = "0.00";
             // 
@@ -267,9 +271,9 @@
             this.lblLedgerName.Location = new System.Drawing.Point(13, 13);
             this.lblLedgerName.Name = "lblLedgerName";
             this.tablePanel1.SetRow(this.lblLedgerName, 1);
-            this.lblLedgerName.Size = new System.Drawing.Size(835, 22);
+            this.lblLedgerName.Size = new System.Drawing.Size(836, 22);
             this.lblLedgerName.TabIndex = 0;
-            this.lblLedgerName.Text = "labelControl1";
+            this.lblLedgerName.Text = "Ledger Name";
             // 
             // layoutControl1
             // 
@@ -300,6 +304,19 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(865, 468);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // btnPrint
+            // 
+            this.tablePanel1.SetColumn(this.btnPrint, 5);
+            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
+            this.btnPrint.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPrint.Location = new System.Drawing.Point(686, 418);
+            this.btnPrint.Name = "btnPrint";
+            this.tablePanel1.SetRow(this.btnPrint, 4);
+            this.btnPrint.Size = new System.Drawing.Size(163, 33);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "&Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // ucLedgerReport
             // 
@@ -346,5 +363,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }
