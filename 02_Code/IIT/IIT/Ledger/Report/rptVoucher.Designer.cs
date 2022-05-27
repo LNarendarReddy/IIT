@@ -61,6 +61,12 @@
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow12 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow13 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow9 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell19 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -82,6 +88,8 @@
             this.VoucherCaption = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsBankVoucher = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsContraVoucher = new DevExpress.XtraReports.Parameters.Parameter();
+            this.ChequeNumber = new DevExpress.XtraReports.Parameters.Parameter();
+            this.ModeOfTransfer = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -169,7 +177,7 @@
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2,
             this.xrTable3});
-            this.Detail.HeightF = 384F;
+            this.Detail.HeightF = 442.213F;
             this.Detail.Name = "Detail";
             // 
             // xrTable2
@@ -178,7 +186,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 335F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 394F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -239,9 +247,11 @@
             this.xrTableRow6,
             this.xrTableRow7,
             this.xrTableRow8,
+            this.xrTableRow12,
+            this.xrTableRow13,
             this.xrTableRow9,
             this.xrTableRow10});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(750F, 330F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(750F, 390F);
             // 
             // xrTableRow4
             // 
@@ -249,7 +259,7 @@
             this.xrTableCell8,
             this.xrTableCell10});
             this.xrTableRow4.Name = "xrTableRow4";
-            this.xrTableRow4.Weight = 1.20000012179123D;
+            this.xrTableRow4.Weight = 1.059663431622633D;
             // 
             // xrTableCell8
             // 
@@ -291,11 +301,11 @@
             this.xrTableRow11.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell22});
             this.xrTableRow11.Name = "xrTableRow11";
-            this.xrTableRow11.Weight = 0.80000004549727732D;
+            this.xrTableRow11.Weight = 0.70644228105217044D;
             // 
             // xrTableCell22
             // 
-            this.xrTableCell22.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.xrTableCell22.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)));
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBorders = false;
@@ -309,7 +319,7 @@
             this.xrTableCell9,
             this.xrTableCell11});
             this.xrTableRow5.Name = "xrTableRow5";
-            this.xrTableRow5.Weight = 1.200000045497277D;
+            this.xrTableRow5.Weight = 1.0596633626966909D;
             // 
             // xrTableCell9
             // 
@@ -346,7 +356,7 @@
             this.xrTableCell12,
             this.xrTableCell13});
             this.xrTableRow6.Name = "xrTableRow6";
-            this.xrTableRow6.Weight = 1.1999999692033283D;
+            this.xrTableRow6.Weight = 1.0596633954897059D;
             // 
             // xrTableCell12
             // 
@@ -384,7 +394,7 @@
             this.xrTableRow7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 55 OR ?VoucherTypeID = 60, false ,true )")});
             this.xrTableRow7.Name = "xrTableRow7";
-            this.xrTableRow7.Weight = 1.1999999692033267D;
+            this.xrTableRow7.Weight = 1.0596633954897046D;
             // 
             // xrTableCell14
             // 
@@ -424,7 +434,7 @@
             this.xrTableRow8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 57 OR ?VoucherTypeID = 59, false , true)")});
             this.xrTableRow8.Name = "xrTableRow8";
-            this.xrTableRow8.Weight = 1.199999969203327D;
+            this.xrTableRow8.Weight = 1.0596634476508837D;
             // 
             // xrTableCell16
             // 
@@ -456,13 +466,90 @@
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell17.Weight = 1.6913349221877108D;
             // 
+            // xrTableRow12
+            // 
+            this.xrTableRow12.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell3,
+            this.xrTableCell20});
+            this.xrTableRow12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 56, true, false)")});
+            this.xrTableRow12.Name = "xrTableRow12";
+            this.xrTableRow12.Weight = 1.059663349197264D;
+            // 
+            // xrTableCell3
+            // 
+            this.xrTableCell3.Borders = DevExpress.XtraPrinting.BorderSide.Left;
+            this.xrTableCell3.Multiline = true;
+            this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
+            this.xrTableCell3.StylePriority.UseBorders = false;
+            this.xrTableCell3.StylePriority.UsePadding = false;
+            this.xrTableCell3.StylePriority.UseTextAlignment = false;
+            this.xrTableCell3.Text = "Cheque Number : ";
+            this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell3.Weight = 0.71422061980447671D;
+            // 
+            // xrTableCell20
+            // 
+            this.xrTableCell20.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.xrTableCell20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?ChequeNumber")});
+            this.xrTableCell20.Multiline = true;
+            this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
+            this.xrTableCell20.StylePriority.UseBorders = false;
+            this.xrTableCell20.StylePriority.UsePadding = false;
+            this.xrTableCell20.StylePriority.UseTextAlignment = false;
+            this.xrTableCell20.Text = "xrTableCell20";
+            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell20.Weight = 1.6913349221877108D;
+            // 
+            // xrTableRow13
+            // 
+            this.xrTableRow13.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell23,
+            this.xrTableCell24});
+            this.xrTableRow13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?VoucherTypeID = 56, true, false)")});
+            this.xrTableRow13.Name = "xrTableRow13";
+            this.xrTableRow13.Weight = 1.059663349197264D;
+            // 
+            // xrTableCell23
+            // 
+            this.xrTableCell23.Borders = DevExpress.XtraPrinting.BorderSide.Left;
+            this.xrTableCell23.Multiline = true;
+            this.xrTableCell23.Name = "xrTableCell23";
+            this.xrTableCell23.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
+            this.xrTableCell23.StylePriority.UseBorders = false;
+            this.xrTableCell23.StylePriority.UsePadding = false;
+            this.xrTableCell23.StylePriority.UseTextAlignment = false;
+            this.xrTableCell23.Text = "Mode Of Transfer : ";
+            this.xrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell23.Weight = 0.71422061980447671D;
+            // 
+            // xrTableCell24
+            // 
+            this.xrTableCell24.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.xrTableCell24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(?ModeOfTransfer = 1,\'RTGS\' ,Iif(?ModeOfTransfer = 2,\'NEFT\' ,Iif(?ModeOfTransf" +
+                    "er = 3,\'PDC\' ,\'DD\' )) )")});
+            this.xrTableCell24.Multiline = true;
+            this.xrTableCell24.Name = "xrTableCell24";
+            this.xrTableCell24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
+            this.xrTableCell24.StylePriority.UseBorders = false;
+            this.xrTableCell24.StylePriority.UsePadding = false;
+            this.xrTableCell24.StylePriority.UseTextAlignment = false;
+            this.xrTableCell24.Text = "xrTableCell24";
+            this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell24.Weight = 1.6913349221877108D;
+            // 
             // xrTableRow9
             // 
             this.xrTableRow9.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell18,
             this.xrTableCell19});
             this.xrTableRow9.Name = "xrTableRow9";
-            this.xrTableRow9.Weight = 1.1999999692033265D;
+            this.xrTableRow9.Weight = 1.0596633519887677D;
             // 
             // xrTableCell18
             // 
@@ -500,7 +587,7 @@
             this.xrTableCell27,
             this.xrTableCell21});
             this.xrTableRow10.Name = "xrTableRow10";
-            this.xrTableRow10.Weight = 5.2000009266911134D;
+            this.xrTableRow10.Weight = 4.59187497318152D;
             // 
             // xrTableCell27
             // 
@@ -629,6 +716,20 @@
             this.IsContraVoucher.ValueInfo = "False";
             this.IsContraVoucher.Visible = false;
             // 
+            // ChequeNumber
+            // 
+            this.ChequeNumber.Description = "ChequeNumber";
+            this.ChequeNumber.Name = "ChequeNumber";
+            this.ChequeNumber.Visible = false;
+            // 
+            // ModeOfTransfer
+            // 
+            this.ModeOfTransfer.Description = "ModeOfTransfer";
+            this.ModeOfTransfer.Name = "ModeOfTransfer";
+            this.ModeOfTransfer.Type = typeof(int);
+            this.ModeOfTransfer.ValueInfo = "0";
+            this.ModeOfTransfer.Visible = false;
+            // 
             // rptVoucher
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -652,7 +753,9 @@
             this.PurposeCaption,
             this.VoucherCaption,
             this.IsBankVoucher,
-            this.IsContraVoucher});
+            this.IsContraVoucher,
+            this.ChequeNumber,
+            this.ModeOfTransfer});
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -717,5 +820,13 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.Parameters.Parameter IsContraVoucher;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow12;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell20;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow13;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell23;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell24;
+        private DevExpress.XtraReports.Parameters.Parameter ChequeNumber;
+        private DevExpress.XtraReports.Parameters.Parameter ModeOfTransfer;
     }
 }

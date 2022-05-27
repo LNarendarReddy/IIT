@@ -1,5 +1,5 @@
 ﻿using Entity;
-using IIT.LedgerType;
+using IIT;
 using Repository.Utility;
 using System;
 

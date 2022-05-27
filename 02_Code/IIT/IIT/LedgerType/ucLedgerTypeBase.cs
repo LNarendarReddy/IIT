@@ -2,13 +2,17 @@
 using Entity;
 using Repository;
 
-namespace IIT.LedgerType
+namespace IIT
 {
     public class ucLedgerTypeBase : NavigationBase
     {
         protected Ledger ledger = null;
         private bool _isEdit = false;
 
+        public ucLedgerTypeBase()
+        {
+
+        }
         public ucLedgerTypeBase(Ledger _ledger)
         {
             ledger = _ledger;

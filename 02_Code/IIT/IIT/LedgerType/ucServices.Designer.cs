@@ -125,6 +125,7 @@
             // 
             // txtBranch
             // 
+            this.txtBranch.EnterMoveNextControl = true;
             this.txtBranch.Location = new System.Drawing.Point(197, 340);
             this.txtBranch.Name = "txtBranch";
             this.txtBranch.Size = new System.Drawing.Size(325, 22);
@@ -137,6 +138,7 @@
             // 
             // txtIFSCCode
             // 
+            this.txtIFSCCode.EnterMoveNextControl = true;
             this.txtIFSCCode.Location = new System.Drawing.Point(197, 298);
             this.txtIFSCCode.Name = "txtIFSCCode";
             this.txtIFSCCode.Size = new System.Drawing.Size(325, 22);
@@ -149,6 +151,7 @@
             // 
             // txtAccountHolderName
             // 
+            this.txtAccountHolderName.EnterMoveNextControl = true;
             this.txtAccountHolderName.Location = new System.Drawing.Point(197, 256);
             this.txtAccountHolderName.Name = "txtAccountHolderName";
             this.txtAccountHolderName.Size = new System.Drawing.Size(325, 22);

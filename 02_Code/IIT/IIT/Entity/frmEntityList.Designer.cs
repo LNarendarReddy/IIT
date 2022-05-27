@@ -110,7 +110,7 @@
             this.gcButtons.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvButtons});
             this.gcButtons.Click += new System.EventHandler(this.gcButtons_Click);
-            this.gcButtons.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gcButtons_KeyUp);
+            this.gcButtons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcButtons_KeyDown);
             // 
             // gvButtons
             // 
@@ -164,7 +164,6 @@
             this.gcEntityList.TabIndex = 1;
             this.gcEntityList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEntityList});
-            this.gcEntityList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gcButtons_KeyUp);
             // 
             // gvEntityList
             // 

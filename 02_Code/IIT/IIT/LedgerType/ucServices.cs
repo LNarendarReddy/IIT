@@ -1,5 +1,5 @@
 ﻿using Entity;
-using IIT.LedgerType;
+using IIT;
 using Repository.Utility;
 using System;
 
@@ -8,10 +8,15 @@ namespace IIT
     public partial class ucServices : ucLedgerTypeBase
     {
         public override string Caption => "Service Providers/ Sub Contractors Creation";
+        public ucServices() 
+        {
+            InitializeComponent();
+        }
         public ucServices(Ledger _ledger) : base(_ledger)
         {
             InitializeComponent();
         }
+
         private void ucServices_Load(object sender, EventArgs e)
         {
             lblHeader.Text = Caption;

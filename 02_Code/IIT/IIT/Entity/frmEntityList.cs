@@ -210,7 +210,7 @@ namespace IIT
             EntityListActionExecute(Convert.ToString(gvButtons.GetRowCellValue(gvButtons.FocusedRowHandle, "Action")));
         }
 
-        private void gcButtons_KeyUp(object sender, KeyEventArgs e)
+        private void gcButtons_KeyDown(object sender, KeyEventArgs e)
         {
             int inputNumber = gvButtons.FocusedRowHandle + 1;
             if (e.KeyCode != Keys.Enter)
