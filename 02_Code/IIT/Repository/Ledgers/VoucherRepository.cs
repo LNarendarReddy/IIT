@@ -45,6 +45,7 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@ENTITYID", voucherObj.EntityID);
                     cmd.Parameters.AddWithValue("@CHEQUENUMBER", voucherObj.ChequeNumber);
                     cmd.Parameters.AddWithValue("@MODEOFTRANSFER", voucherObj.ModeOfTransfer);
+                    cmd.Parameters.AddWithValue("@ChequeRegisterID", voucherObj.ChequeRegisterID);
                     object voucherIDObj = cmd.ExecuteScalar();
                     if (!int.TryParse(voucherIDObj.ToString(), out int voucherID))
                     {

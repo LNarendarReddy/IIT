@@ -25,7 +25,7 @@ namespace IIT
 
         private void ucChequeBookEntry_Load(object sender, EventArgs e)
         {
-            caption = "Banking - Cheque Register";
+            caption = "Banking - Cheque Book Entry";
             lblHeader.Text = caption;
 
             cmbLedger.Properties.DataSource = Utility.GetBankingLedgers();
@@ -81,7 +81,7 @@ namespace IIT
                     int.TryParse(Convert.ToString(gv.GetFocusedRowCellValue("NOOFLEAFS")), 
                     out int NoOfLeafs))
                 {
-                    gv.SetFocusedRowCellValue("CLOSINGCHEQUENO", OpeningChequeNo + NoOfLeafs);
+                    gv.SetFocusedRowCellValue("CLOSINGCHEQUENO", OpeningChequeNo + (NoOfLeafs - 1));
                 }
             }
         }
