@@ -21,6 +21,7 @@
         public object AmountInWords { get; set; }
 
         public object ChequeNumber { get; set; }
+        public object ChequeRegisterID { get; set; }
 
         public object ModeOfTransfer { get; set; }
 

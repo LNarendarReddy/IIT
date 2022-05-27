@@ -170,6 +170,23 @@ namespace IIT
             DataView clone = new DataView(table);
             clone.RowFilter = string.Format($"[LEDGERID] <> {cmbPaymentMadefrom.EditValue}");
             cmbPaymentMadeto.Properties.DataSource = clone;
+
+            if(voucherObj.VoucherTypeID.Equals(LookUpIDMap.VoucherType_BankPayment))
+            {
+                DataTable dt = new BankingRepository().GetChequeNumber(cmbPaymentMadefrom.EditValue);
+                if(dt.Rows.Count > 0 
+                    && int.TryParse(Convert.ToString(dt.Rows[0][0]), out int ChequeNumber) 
+                    && ChequeNumber > 0)
+                {
+                    txtChequeNumber.EditValue = ChequeNumber;
+                    voucherObj.ChequeRegisterID = dt.Rows[0][1];
+                }
+            }
+        }
+
+        private void GenerateChequeNumber()
+        {
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)

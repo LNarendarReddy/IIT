@@ -71,5 +71,61 @@ namespace Repository
 
             return ChequeRegisterID;
         }
+        public DataTable GetChequeNumber(object LedgerID)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_CHEQUENUMBER]";
+                    cmd.Parameters.AddWithValue("@LedgerID", LedgerID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while retrieving cheque number", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+
+            return dt;
+        }
+        public DataTable GetChequeLog(object LedgerID)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_CHEQUELOG]";
+                    cmd.Parameters.AddWithValue("@LEDGERID", LedgerID);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while retrieving cheque log", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+
+            return dt;
+        }
     }
 }

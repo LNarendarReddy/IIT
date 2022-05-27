@@ -25,6 +25,7 @@ namespace IIT.Routes
                 case "Cheque Print":
                     break;
                 case "Cheque Register":
+                    formObj = new ucChequeLog();
                     break;
                 case "Post Dated Cheques":
                     break;

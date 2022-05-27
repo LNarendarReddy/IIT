@@ -101,6 +101,12 @@
     <Compile Include="BankingUtility\ucChequeBookEntry.Designer.cs">
       <DependentUpon>ucChequeBookEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="BankingUtility\ucChequeLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BankingUtility\ucChequeLog.Designer.cs">
+      <DependentUpon>ucChequeLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entity\frmAddGSTNumber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="BankingUtility\ucChequeBookEntry.resx">
       <DependentUpon>ucChequeBookEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankingUtility\ucChequeLog.resx">
+      <DependentUpon>ucChequeLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entity\frmAddGSTNumber.resx">
       <DependentUpon>frmAddGSTNumber.cs</DependentUpon>
