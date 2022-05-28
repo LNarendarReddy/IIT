@@ -7,7 +7,9 @@ namespace Repository.Utility
         public static LedgerTypeBase GetLedgerType(object objLedgerTypeID, object ledgerTypeData,object EntityTypeID)
         {
             if (string.IsNullOrEmpty(ledgerTypeData?.ToString()) || !int.TryParse(objLedgerTypeID.ToString(), out int ledgerTypeID))
+            {
                 return null;
+            }
 
             LedgerTypeBase ledgerInfo = null;
             switch (ledgerTypeID)

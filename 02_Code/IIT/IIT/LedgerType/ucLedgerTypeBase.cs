@@ -8,15 +8,17 @@ namespace IIT
     {
         protected Ledger ledger = null;
         private bool _isEdit = false;
+        private bool _isCallFromAddButton = false;
 
         public ucLedgerTypeBase()
         {
 
         }
-        public ucLedgerTypeBase(Ledger _ledger)
+        public ucLedgerTypeBase(Ledger _ledger, bool isCallFromAddButton) 
         {
             ledger = _ledger;
-            _isEdit = ledger?.ID != null && int.TryParse(ledger.ID.ToString(), out int id) && id > 0;
+            _isEdit = ledger.IsEdit;
+            _isCallFromAddButton = isCallFromAddButton;
         }
 
         protected void Save()
@@ -25,7 +27,7 @@ namespace IIT
             new LedgerRepository().Save(ledger);
             ledger.IsSave = true;
             Utility.ClearLedgerCache();
-            (PreviousControl as frmLedgerCreation)?.RefreshTreeData(ledger, _isEdit, 3);
+            (PreviousControl as frmLedgerCreation)?.RefreshTreeData(ledger, _isEdit, 3, _isCallFromAddButton);
             frmSingularMain.Instance.RollbackControl();
         }
     }

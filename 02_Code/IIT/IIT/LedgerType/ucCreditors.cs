@@ -8,7 +8,7 @@ namespace IIT
     public partial class ucCreditors : ucLedgerTypeBase
     {
         public override string Caption => "Creditors or Raw Materials Suupliers ledgers Creation";
-        public ucCreditors(Ledger _ledger) : base(_ledger)
+        public ucCreditors(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
         {
             InitializeComponent();
         }

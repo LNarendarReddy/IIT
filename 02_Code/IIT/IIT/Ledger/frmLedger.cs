@@ -2,24 +2,22 @@
 using Entity;
 using Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmLedger : DevExpress.XtraEditors.XtraForm
+    public partial class frmLedger : XtraForm
     {
-        Ledger ledgerObj;
-        public frmLedger(Ledger ledger)
+        readonly Ledger ledgerObj;
+        readonly frmLedgerCreation ledgerCreation;
+        readonly bool callFromAddButton;
+
+        public frmLedger(Ledger ledger, frmLedgerCreation ledgerForm, bool _callFromAddButton)
         {
             InitializeComponent();
             ledgerObj = ledger;
+            ledgerCreation = ledgerForm;
+            callFromAddButton = _callFromAddButton;
 
             luClassification.Properties.DataSource = LookUpUtility.GetClassification();
             luClassification.Properties.DisplayMember = "LOOKUPVALUE";
@@ -66,8 +64,10 @@ namespace IIT
 
             try
             {
+                bool isEdit = ledgerObj.IsEdit;
                 new LedgerRepository().Save(ledgerObj);
                 ledgerObj.IsSave = true;
+                ledgerCreation?.RefreshTreeData(ledgerObj, isEdit, 3, callFromAddButton);
                 Close();
             }
             catch (Exception ex)

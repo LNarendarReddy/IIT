@@ -87,7 +87,6 @@ namespace IIT
                                 SubGroupID = tlLedger.FocusedNode.ParentNode["LedgerID"]
                             };
                         ShowLedgerForm(ledgerObj, true);
-                        RefreshTreeData(ledgerObj, IsEdit, ledgerlevel);
                     }
                     break;
                 default:
@@ -105,59 +104,59 @@ namespace IIT
                 case LookUpIDMap.LedgerType_BankAccount:
                     if (ledgerObj.BankAccountInfo == null)
                         ledgerObj.BankAccountInfo = new BankAccount();
-                    Utility.ShowDialog(new ucBankAccount(ledgerObj));
+                    Utility.ShowDialog(new ucBankAccount(ledgerObj, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_CapitalAccount:
                     if (ledgerObj.CapitalAccountInfo == null)
                         ledgerObj.CapitalAccountInfo = new CapitalAccount();
-                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_CCOrODC:
                     if (ledgerObj.CCorODCInfo == null)
                         ledgerObj.CCorODCInfo = new CCorODC();
-                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_Creditors:
                     if (ledgerObj.CreditorsInfo == null)
                         ledgerObj.CreditorsInfo = new Creditors();
-                    Utility.ShowDialog(new ucCreditors(ledgerObj));
+                    Utility.ShowDialog(new ucCreditors(ledgerObj, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_Debitors:
                     if (ledgerObj.DebitorsInfo == null)
                         ledgerObj.DebitorsInfo = new Debitors();
-                    Utility.ShowDialog(new ucDebitors(ledgerObj));
+                    Utility.ShowDialog(new ucDebitors(ledgerObj, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_FixedAsset:
                     if (Utility.CurrentEntity.EntityTypeID.Equals(LookUpIDMap.EntityType_IndividualEntity))
                     {
                         if (ledgerObj.FixedAssetsIndividualInfo == null)
                             ledgerObj.FixedAssetsIndividualInfo = new FixedAssetsIndividual();
-                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj));
+                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj, !CallFromEvent));
                     }
                     else
                     {
                         if (ledgerObj.FixedAssetsCompanyInfo == null)
                             ledgerObj.FixedAssetsCompanyInfo  = new FixedAssetsCompany();
-                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj));
+                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj, !CallFromEvent));
                     }
                     break;
                 case LookUpIDMap.LedgerType_Investment:
                     if (ledgerObj.InvestmentInfo == null)
                         ledgerObj.InvestmentInfo  = new Investment();
-                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_Loan:
                     if (ledgerObj.LoanInfo == null)
                         ledgerObj.LoanInfo = new Loan();
-                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors:
                     if (ledgerObj.ServicesOrDuesToSubContractorsInfo == null)
                         ledgerObj.ServicesOrDuesToSubContractorsInfo = new ServicesOrDuesToSubContractors();
-                    Utility.ShowDialog(new ucServices(ledgerObj));
+                    Utility.ShowDialog(new ucServices(ledgerObj, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_Default:
-                    Utility.ShowDialog(new frmLedger(ledgerObj));
+                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
                     break;
             }
         }

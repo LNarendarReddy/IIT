@@ -8,7 +8,7 @@ namespace IIT
     public partial class ucFixedAssetsCompany : ucLedgerTypeBase
     {
         public override string Caption => "Fixed Assets ledgers Creation";
-        public ucFixedAssetsCompany(Ledger _ledger) : base(_ledger)
+        public ucFixedAssetsCompany(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
         {
             InitializeComponent();
         }

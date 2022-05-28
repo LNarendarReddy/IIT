@@ -10,7 +10,7 @@ namespace IIT
     {
         public override string Caption => "Bank Account ledgers Creation";
 
-        public ucBankAccount(Ledger _ledger) : base(_ledger)
+        public ucBankAccount(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
         {
             InitializeComponent();
         }

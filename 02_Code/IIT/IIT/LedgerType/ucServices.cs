@@ -12,7 +12,7 @@ namespace IIT
         {
             InitializeComponent();
         }
-        public ucServices(Ledger _ledger) : base(_ledger)
+        public ucServices(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
         {
             InitializeComponent();
         }

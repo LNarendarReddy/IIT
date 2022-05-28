@@ -321,7 +321,7 @@ namespace IIT
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Ledger ledgerobj = new Ledger();
-            Utility.ShowDialog(new frmLedger(ledgerobj));
+            Utility.ShowDialog(new frmLedger(ledgerobj, null, false));
             if (!ledgerobj.IsSave)
                 return;
             BindLookups();

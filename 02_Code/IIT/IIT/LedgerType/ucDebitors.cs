@@ -9,7 +9,7 @@ namespace IIT
     {
         public override string Caption => "Debtors ledgers Creation";
         
-        public ucDebitors(Ledger _ledger) : base(_ledger)
+        public ucDebitors(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
         {
             InitializeComponent();
         }

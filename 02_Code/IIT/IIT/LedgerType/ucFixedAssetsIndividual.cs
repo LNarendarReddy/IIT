@@ -9,7 +9,7 @@ namespace IIT
     {
         public override string Caption => "Fixed Assets ledgers Creation";
 
-        public ucFixedAssetsIndividual(Ledger _ledger) : base(_ledger)
+        public ucFixedAssetsIndividual(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
         {
             InitializeComponent();
         }
