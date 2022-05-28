@@ -59,6 +59,10 @@ namespace IIT
             cmbStateB.Properties.DisplayMember = "LOOKUPVALUE";
             cmbStateB.Properties.ValueMember = "ENTITYLOOKUPID";
 
+            cmbNatureOfBussiness.Properties.DataSource = LookUpUtility.GetSector();
+            cmbNatureOfBussiness.Properties.DisplayMember = "SUBSECTORNAME";
+            cmbNatureOfBussiness.Properties.ValueMember = "SUBSECTORID";
+
             DataTable dtResidentStatus = LookUpUtility.GetResidentStatus();
             foreach (DataRow drResidentStatus in dtResidentStatus.Rows)
             {
@@ -91,7 +95,7 @@ namespace IIT
                 cmbCurrency.EditValue = entityData.Currency;
                 txtEmail.EditValue = entityData.EmailID;
                 rgResidenceStatus.EditValue = entityData.ResidentStatus;
-                txtNatureOfBussiness.EditValue = entityData.NatureOfBussiness;
+                cmbNatureOfBussiness.EditValue = entityData.SubSectorID;
 
                 txtHNoR.EditValue = entityData.PermanentAddress.HNo;
                 txtAreaR.EditValue = entityData.PermanentAddress.Area;
@@ -144,7 +148,7 @@ namespace IIT
             entityData.EmailID = txtEmail.EditValue;
             entityData.ResidentStatus = rgResidenceStatus.EditValue;
             entityData.SameAddress = chkSameAddress.EditValue;
-            entityData.NatureOfBussiness = txtNatureOfBussiness.EditValue;
+            entityData.SubSectorID = cmbNatureOfBussiness.EditValue;
             entityData.UserName = Utility.UserName;
 
             entityData.PermanentAddress.HNo = txtHNoR.EditValue;

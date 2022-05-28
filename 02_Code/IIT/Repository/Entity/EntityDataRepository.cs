@@ -32,7 +32,7 @@ namespace Repository
                     ResidentStatus = drEntity["RESIDENTSTATUSID"],
                     //GSTREGNOID = drEntity["GSTREGNOID"],
                     SameAddress = drEntity["SameAddress"],
-                    NatureOfBussiness = drEntity["NatureOfBussiness"],
+                     SubSectorID = drEntity["SUBSECTORID"],
                     CompanyNumber = drEntity["CompanyNumber"],
                     CASHINHANDID = drEntity["CASHINHANDID"],
                     EntitylogoID = drEntity["ENTITYLOGOID"],
@@ -70,7 +70,7 @@ namespace Repository
                     cmd.Parameters.AddWithValue("@CurrencyID", entityObj.Currency);
                     cmd.Parameters.AddWithValue("@ResidentStatusID", entityObj.ResidentStatus);
                     cmd.Parameters.AddWithValue("@SameAddress", entityObj.SameAddress);
-                    cmd.Parameters.AddWithValue("@NAtureOfBussiness", entityObj.NatureOfBussiness);
+                    cmd.Parameters.AddWithValue("@SubSectorID", entityObj.SubSectorID);
                     cmd.Parameters.AddWithValue("@CompanyNumber", entityObj.CompanyNumber);
                     cmd.Parameters.AddWithValue("@UserName", entityObj.UserName);
                     cmd.Parameters.AddWithValue("@LogoData", entityObj.LogoData);

@@ -51,7 +51,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule19 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule20 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule21 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule22 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lblFormHeading = new DevExpress.XtraEditors.LabelControl();
             this.btnAddLogo = new DevExpress.XtraEditors.SimpleButton();
@@ -92,7 +91,6 @@
             this.txtEntityName = new DevExpress.XtraEditors.TextEdit();
             this.cmbStateR = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbStateB = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtNatureOfBuisness = new DevExpress.XtraEditors.TextEdit();
             this.cmbNumberOfPartners = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cmbGSTNumber = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -133,6 +131,7 @@
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmbNatureOfBuisness = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCompanyNumber.Properties)).BeginInit();
@@ -158,7 +157,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEntityName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateR.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNatureOfBuisness.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbNumberOfPartners.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGSTNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -201,6 +199,7 @@
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNatureOfBuisness.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -232,9 +231,9 @@
             this.layoutControl1.Controls.Add(this.txtEntityName);
             this.layoutControl1.Controls.Add(this.cmbStateR);
             this.layoutControl1.Controls.Add(this.cmbStateB);
-            this.layoutControl1.Controls.Add(this.txtNatureOfBuisness);
             this.layoutControl1.Controls.Add(this.cmbNumberOfPartners);
             this.layoutControl1.Controls.Add(this.cmbGSTNumber);
+            this.layoutControl1.Controls.Add(this.cmbNatureOfBuisness);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 2);
             this.layoutControl1.Name = "layoutControl1";
@@ -717,23 +716,6 @@
             conditionValidationRule20.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.cmbStateB, conditionValidationRule20);
             // 
-            // txtNatureOfBuisness
-            // 
-            this.txtNatureOfBuisness.EnterMoveNextControl = true;
-            this.txtNatureOfBuisness.Location = new System.Drawing.Point(157, 298);
-            this.txtNatureOfBuisness.Name = "txtNatureOfBuisness";
-            this.txtNatureOfBuisness.Properties.DisplayFormat.FormatString = "d";
-            this.txtNatureOfBuisness.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNatureOfBuisness.Properties.EditFormat.FormatString = "d";
-            this.txtNatureOfBuisness.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNatureOfBuisness.Size = new System.Drawing.Size(317, 22);
-            this.txtNatureOfBuisness.StyleController = this.layoutControl1;
-            this.txtNatureOfBuisness.TabIndex = 8;
-            conditionValidationRule21.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule21.ErrorText = "Mandatory";
-            conditionValidationRule21.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtNatureOfBuisness, conditionValidationRule21);
-            // 
             // cmbNumberOfPartners
             // 
             this.cmbNumberOfPartners.EnterMoveNextControl = true;
@@ -751,10 +733,10 @@
             this.cmbNumberOfPartners.Size = new System.Drawing.Size(167, 22);
             this.cmbNumberOfPartners.StyleController = this.layoutControl1;
             this.cmbNumberOfPartners.TabIndex = 2;
-            conditionValidationRule22.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule22.ErrorText = "Mandatory";
-            conditionValidationRule22.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbNumberOfPartners, conditionValidationRule22);
+            conditionValidationRule21.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule21.ErrorText = "Mandatory";
+            conditionValidationRule21.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbNumberOfPartners, conditionValidationRule21);
             // 
             // cmbGSTNumber
             // 
@@ -918,7 +900,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.txtNatureOfBuisness;
+            this.layoutControlItem8.Control = this.cmbNatureOfBuisness;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 224);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -1189,6 +1171,21 @@
             this.panelControl1.Size = new System.Drawing.Size(1033, 705);
             this.panelControl1.TabIndex = 1;
             // 
+            // cmbNatureOfBuisness
+            // 
+            this.cmbNatureOfBuisness.Location = new System.Drawing.Point(157, 298);
+            this.cmbNatureOfBuisness.Name = "cmbNatureOfBuisness";
+            this.cmbNatureOfBuisness.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbNatureOfBuisness.Properties.DisplayFormat.FormatString = "d";
+            this.cmbNatureOfBuisness.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbNatureOfBuisness.Properties.EditFormat.FormatString = "d";
+            this.cmbNatureOfBuisness.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbNatureOfBuisness.Properties.NullText = "";
+            this.cmbNatureOfBuisness.Size = new System.Drawing.Size(317, 22);
+            this.cmbNatureOfBuisness.StyleController = this.layoutControl1;
+            this.cmbNatureOfBuisness.TabIndex = 8;
+            // 
             // frmPartnershipFirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1224,7 +1221,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEntityName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateR.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNatureOfBuisness.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbNumberOfPartners.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGSTNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -1267,6 +1263,7 @@
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNatureOfBuisness.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1333,7 +1330,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem33;
         private DevExpress.XtraEditors.TextEdit txtCompanyNumber;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraEditors.TextEdit txtNatureOfBuisness;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -1354,5 +1350,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.LabelControl lblFormHeading;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.LookUpEdit cmbNatureOfBuisness;
     }
 }

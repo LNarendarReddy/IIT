@@ -67,7 +67,11 @@ namespace IIT
             cmbStateB.Properties.DisplayMember = "LOOKUPVALUE";
             cmbStateB.Properties.ValueMember = "ENTITYLOOKUPID";
 
-            if(!entityData.ID.Equals(0))
+            cmbNatureOfBuisness.Properties.DataSource = LookUpUtility.GetSector();
+            cmbNatureOfBuisness.Properties.DisplayMember = "SUBSECTORNAME";
+            cmbNatureOfBuisness.Properties.ValueMember = "SUBSECTORID";
+
+            if (!entityData.ID.Equals(0))
             {
                 isLoading = true;
                 entityData.EntityTypeID = entityType;
@@ -77,7 +81,7 @@ namespace IIT
                 txtOfficeNumber.EditValue = entityData.OfficeNumber;
                 txtMobileNumber.EditValue = entityData.MobileNumber;
                 txtEmail.EditValue = entityData.EmailID;
-                txtNatureOfBuisness.EditValue = entityData.NatureOfBussiness;
+                cmbNatureOfBuisness.EditValue = entityData.SubSectorID;
                 cmbMethod.EditValue = entityData.MethodOfAccounting;
                 cmbCurrency.EditValue = entityData.Currency;
                 txtCompanyNumber.EditValue = entityData.CompanyNumber;
@@ -130,7 +134,7 @@ namespace IIT
             entityData.MobileNumber = txtMobileNumber.EditValue;
             entityData.EmailID = txtEmail.EditValue;
             entityData.PrimaryGST = entityData.GSTRegNo.First(X=> X.ID.Equals(cmbGSTNumber.EditValue));
-            entityData.NatureOfBussiness = txtNatureOfBuisness.EditValue;
+            entityData.SubSectorID = cmbNatureOfBuisness.EditValue;
             entityData.MethodOfAccounting = cmbMethod.EditValue;
             entityData.Currency = cmbCurrency.EditValue;
             entityData.CompanyNumber = txtCompanyNumber.EditValue;

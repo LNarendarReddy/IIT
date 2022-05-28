@@ -12,6 +12,7 @@ namespace Repository
         private static DataTable dtVoucherType = null;
         private static DataTable dtBanks = null;
         private static DataTable dtNatureOfBanks = null;
+        private static DataTable dtSector = null;
 
         private static LookUpRepository lookUpRepository = new LookUpRepository();
 
@@ -61,6 +62,12 @@ namespace Repository
         {
             return dtNatureOfBanks =
                 dtNatureOfBanks ?? lookUpRepository.GetLookUpData("NATUREOFBANKS");
+        }
+
+        public static DataTable GetSector()
+        {
+            return dtSector =
+                dtSector ?? lookUpRepository.GetSector();
         }
     }
 }
