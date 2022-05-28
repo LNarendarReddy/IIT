@@ -237,7 +237,7 @@ namespace IIT
                                 SubGroupID = tlLedger.FocusedNode["LedgerID"]
                             };
             ShowLedgerForm(ledgerObj);
-            RefreshTreeData(ledgerObj, false, 3,true);
+            //RefreshTreeData(ledgerObj, false, 3,true);
         }
 
         private void tlLedger_BeforeExpand(object sender, DevExpress.XtraTreeList.BeforeExpandEventArgs e)

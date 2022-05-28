@@ -262,7 +262,7 @@
             this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell13});
             this.xrTableRow5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "?IsPurposeVisible")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(?IsPurposeVisible = \'Yes\',True , False)")});
             this.xrTableRow5.Name = "xrTableRow5";
             this.xrTableRow5.StylePriority.UseBorders = false;
             this.xrTableRow5.Weight = 0.63559322033898313D;

@@ -352,7 +352,7 @@
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmSingularMain.IconOptions.Icon")));
             this.KeyPreview = true;
             this.Name = "frmSingularMain";
-            this.Text = "IIT";
+            this.Text = "India\'s Integrated Tax Software (IIT)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSingularMain_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmSingularMain_KeyPress);

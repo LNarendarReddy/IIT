@@ -218,6 +218,12 @@
             this.txtBankAccountNumber.EnterMoveNextControl = true;
             this.txtBankAccountNumber.Location = new System.Drawing.Point(180, 88);
             this.txtBankAccountNumber.Name = "txtBankAccountNumber";
+            this.txtBankAccountNumber.Properties.DisplayFormat.FormatString = "d";
+            this.txtBankAccountNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtBankAccountNumber.Properties.EditFormat.FormatString = "d";
+            this.txtBankAccountNumber.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("mask", "d");
             this.txtBankAccountNumber.Size = new System.Drawing.Size(285, 22);
             this.txtBankAccountNumber.StyleController = this.layoutControl1;
             this.txtBankAccountNumber.TabIndex = 2;

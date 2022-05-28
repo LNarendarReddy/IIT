@@ -208,6 +208,7 @@
             this.cmbGSTConsidered.Properties.Items.AddRange(new object[] {
             "Yes",
             "No"});
+            this.cmbGSTConsidered.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmbGSTConsidered.Size = new System.Drawing.Size(323, 22);
             this.cmbGSTConsidered.StyleController = this.layoutControl1;
             this.cmbGSTConsidered.TabIndex = 3;
@@ -226,6 +227,7 @@
             this.cmbOperatingAsset.Properties.Items.AddRange(new object[] {
             "Yes",
             "No"});
+            this.cmbOperatingAsset.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmbOperatingAsset.Size = new System.Drawing.Size(323, 22);
             this.cmbOperatingAsset.StyleController = this.layoutControl1;
             this.cmbOperatingAsset.TabIndex = 4;

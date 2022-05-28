@@ -96,7 +96,7 @@ namespace IIT
             });
 
             frmSingularMain.Instance.gcHelpText.DataSource = helpText;
-            string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? "IIT");
+            string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? "India's Integrated Tax Software (IIT)");
             //frmSingularMain.Instance.Text = selectedEntityName;
             frmSingularMain.Instance.lblEntityName.Text = selectedEntityName;
             frmSingularMain.Instance.lblNavigationHeader.Text = userControl.Header;
