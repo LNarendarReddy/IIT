@@ -230,6 +230,12 @@
     <Compile Include="Ledger\ucVoucherType.Designer.cs">
       <DependentUpon>ucVoucherType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masters\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmProgress.Designer.cs">
+      <DependentUpon>frmProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -433,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmGroupList.resx">
       <DependentUpon>frmGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmProgress.resx">
+      <DependentUpon>frmProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmSector.resx">
       <DependentUpon>frmSector.cs</DependentUpon>
