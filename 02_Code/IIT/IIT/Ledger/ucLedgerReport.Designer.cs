@@ -38,7 +38,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcolPurpose = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -96,13 +96,15 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
-            this.gridColumn8,
+            this.gcolPurpose,
             this.gridColumn9,
             this.gridColumn10,
             this.gridColumn11});
             this.gvVouchers.GridControl = this.gcVouchers;
             this.gvVouchers.Name = "gvVouchers";
             this.gvVouchers.OptionsBehavior.Editable = false;
+            this.gvVouchers.OptionsView.ShowFooter = true;
+            this.gvVouchers.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -168,17 +170,17 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
             // 
-            // gridColumn8
+            // gcolPurpose
             // 
-            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridColumn8.Caption = "Purpose";
-            this.gridColumn8.FieldName = "PURPOSE";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 4;
+            this.gcolPurpose.AppearanceCell.Options.UseTextOptions = true;
+            this.gcolPurpose.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gcolPurpose.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcolPurpose.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gcolPurpose.Caption = "Purpose";
+            this.gcolPurpose.FieldName = "PURPOSE";
+            this.gcolPurpose.Name = "gcolPurpose";
+            this.gcolPurpose.Visible = true;
+            this.gcolPurpose.VisibleIndex = 4;
             // 
             // gridColumn9
             // 
@@ -189,6 +191,8 @@
             this.gridColumn9.Caption = "Credit Amount";
             this.gridColumn9.FieldName = "CREDITAMOUNT";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDITAMOUNT", "SUM={0:0.##}")});
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
             // 
@@ -201,6 +205,8 @@
             this.gridColumn10.Caption = "Debit Amount";
             this.gridColumn10.FieldName = "DEBITAMOUNT";
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBITAMOUNT", "SUM={0:0.##}")});
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
             // 
@@ -344,7 +350,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gcolPurpose;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;

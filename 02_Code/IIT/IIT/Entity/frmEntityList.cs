@@ -164,7 +164,7 @@ namespace IIT
 
             BindDatasource();
             Utility.CurrentEntity = null;
-            frmSingularMain.Instance.Text = "India's Integrated Tax Software (IIT)";
+            frmSingularMain.Instance.Text = Utility.Caption;
         }
 
         private void btnviewLogo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
