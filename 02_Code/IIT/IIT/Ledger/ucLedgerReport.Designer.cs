@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lblToDate = new DevExpress.XtraEditors.LabelControl();
+            this.lblFromDate = new DevExpress.XtraEditors.LabelControl();
             this.gcVouchers = new DevExpress.XtraGrid.GridControl();
             this.gvVouchers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,6 +52,10 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcVouchers)).BeginInit();
@@ -59,10 +65,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lblToDate);
+            this.layoutControl1.Controls.Add(this.lblFromDate);
             this.layoutControl1.Controls.Add(this.gcVouchers);
             this.layoutControl1.Controls.Add(this.lblClosingBalance);
             this.layoutControl1.Controls.Add(this.lblOpeningBalance);
@@ -75,6 +87,28 @@
             this.layoutControl1.Size = new System.Drawing.Size(885, 725);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lblToDate
+            // 
+            this.lblToDate.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblToDate.Appearance.Options.UseFont = true;
+            this.lblToDate.Location = new System.Drawing.Point(351, 62);
+            this.lblToDate.Name = "lblToDate";
+            this.lblToDate.Size = new System.Drawing.Size(59, 19);
+            this.lblToDate.StyleController = this.layoutControl1;
+            this.lblToDate.TabIndex = 7;
+            this.lblToDate.Text = "To Date";
+            // 
+            // lblFromDate
+            // 
+            this.lblFromDate.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFromDate.Appearance.Options.UseFont = true;
+            this.lblFromDate.Location = new System.Drawing.Point(136, 62);
+            this.lblFromDate.Name = "lblFromDate";
+            this.lblFromDate.Size = new System.Drawing.Size(79, 19);
+            this.lblFromDate.StyleController = this.layoutControl1;
+            this.lblFromDate.TabIndex = 6;
+            this.lblFromDate.Text = "From Date";
             // 
             // gcVouchers
             // 
@@ -228,7 +262,7 @@
             this.lblClosingBalance.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblClosingBalance.Appearance.Options.UseFont = true;
             this.lblClosingBalance.Appearance.Options.UseForeColor = true;
-            this.lblClosingBalance.Location = new System.Drawing.Point(136, 686);
+            this.lblClosingBalance.Location = new System.Drawing.Point(834, 686);
             this.lblClosingBalance.Name = "lblClosingBalance";
             this.lblClosingBalance.Size = new System.Drawing.Size(31, 19);
             this.lblClosingBalance.StyleController = this.layoutControl1;
@@ -241,7 +275,7 @@
             this.lblOpeningBalance.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblOpeningBalance.Appearance.Options.UseFont = true;
             this.lblOpeningBalance.Appearance.Options.UseForeColor = true;
-            this.lblOpeningBalance.Location = new System.Drawing.Point(136, 62);
+            this.lblOpeningBalance.Location = new System.Drawing.Point(834, 62);
             this.lblOpeningBalance.Name = "lblOpeningBalance";
             this.lblOpeningBalance.Size = new System.Drawing.Size(31, 19);
             this.lblOpeningBalance.StyleController = this.layoutControl1;
@@ -269,7 +303,11 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.emptySpaceItem1,
+            this.emptySpaceItem2,
+            this.layoutControlItem1,
+            this.layoutControlItem6});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(885, 725);
             this.Root.TextVisible = false;
@@ -297,22 +335,58 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lblOpeningBalance;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 42);
+            this.layoutControlItem4.Location = new System.Drawing.Point(698, 42);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(865, 39);
+            this.layoutControlItem4.Size = new System.Drawing.Size(167, 39);
             this.layoutControlItem4.Text = "Opening Balance : ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(104, 15);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.lblClosingBalance;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 666);
+            this.layoutControlItem5.Location = new System.Drawing.Point(698, 666);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem5.Size = new System.Drawing.Size(865, 39);
+            this.layoutControlItem5.Size = new System.Drawing.Size(167, 39);
             this.layoutControlItem5.Text = "Closing Balance : ";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(104, 15);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(410, 42);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(288, 39);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 666);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(698, 39);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.lblFromDate;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 42);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem1.Size = new System.Drawing.Size(215, 39);
+            this.layoutControlItem1.Text = "From Date : ";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(104, 15);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.lblToDate;
+            this.layoutControlItem6.Location = new System.Drawing.Point(215, 42);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem6.Size = new System.Drawing.Size(195, 39);
+            this.layoutControlItem6.Text = "To Date : ";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(104, 15);
             // 
             // ucLedgerReport
             // 
@@ -331,6 +405,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,5 +436,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.LabelControl lblToDate;
+        private DevExpress.XtraEditors.LabelControl lblFromDate;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

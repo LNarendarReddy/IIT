@@ -85,6 +85,9 @@ namespace IIT
 
         private void FetchAndBindDataSource()
         {
+            lblFromDate.Text = CurrentSettings.FromDate.ToShortDateString();
+            lblToDate.Text = CurrentSettings.ToDate.ToShortDateString();
+
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
                 { "ENTITYID", Utility.CurrentEntity.ID },
