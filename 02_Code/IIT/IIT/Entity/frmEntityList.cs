@@ -58,6 +58,7 @@ namespace IIT
             gvButtons.BestFitColumns();
             UpdateGridSize();
             BindDatasource();
+            frmSingularMain.Instance.lblDBStatus.Text = "Database Connected";
         }
         private void EntityListActionExecute(string actionText)
         {
@@ -163,7 +164,7 @@ namespace IIT
 
             BindDatasource();
             Utility.CurrentEntity = null;
-            frmSingularMain.Instance.Text = "IIT";
+            frmSingularMain.Instance.Text = "India's Integrated Tax Software (IIT)";
         }
 
         private void btnviewLogo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
