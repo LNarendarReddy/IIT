@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntityIndividual));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule21 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -49,8 +50,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule17 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule18 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule19 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule20 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule21 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lblFormHeading = new DevExpress.XtraEditors.LabelControl();
             this.btnAddLogo = new DevExpress.XtraEditors.SimpleButton();
@@ -77,9 +76,9 @@
             this.txtPersonName = new DevExpress.XtraEditors.TextEdit();
             this.cmbStateR = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbStateB = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtNatureOfBussiness = new DevExpress.XtraEditors.TextEdit();
             this.cmbGSTNumber = new DevExpress.XtraEditors.LookUpEdit();
             this.btnAddGSTNumber = new DevExpress.XtraEditors.SimpleButton();
+            this.cmbNatureOfBussiness = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -140,8 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPersonName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateR.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNatureOfBussiness.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGSTNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNatureOfBussiness.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -209,9 +208,9 @@
             this.layoutControl1.Controls.Add(this.txtPersonName);
             this.layoutControl1.Controls.Add(this.cmbStateR);
             this.layoutControl1.Controls.Add(this.cmbStateB);
-            this.layoutControl1.Controls.Add(this.txtNatureOfBussiness);
             this.layoutControl1.Controls.Add(this.cmbGSTNumber);
             this.layoutControl1.Controls.Add(this.btnAddGSTNumber);
+            this.layoutControl1.Controls.Add(this.cmbNatureOfBussiness);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 2);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -281,10 +280,10 @@
             this.txtPincodeB.Size = new System.Drawing.Size(368, 22);
             this.txtPincodeB.StyleController = this.layoutControl1;
             this.txtPincodeB.TabIndex = 23;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPincodeB, conditionValidationRule1);
+            conditionValidationRule21.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule21.ErrorText = "Mandatory";
+            conditionValidationRule21.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPincodeB, conditionValidationRule21);
             // 
             // txtDistrictB
             // 
@@ -295,10 +294,10 @@
             this.txtDistrictB.Size = new System.Drawing.Size(368, 22);
             this.txtDistrictB.StyleController = this.layoutControl1;
             this.txtDistrictB.TabIndex = 21;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtDistrictB, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtDistrictB, conditionValidationRule1);
             // 
             // txtCityB
             // 
@@ -309,10 +308,10 @@
             this.txtCityB.Size = new System.Drawing.Size(368, 22);
             this.txtCityB.StyleController = this.layoutControl1;
             this.txtCityB.TabIndex = 20;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtCityB, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtCityB, conditionValidationRule2);
             // 
             // txtAreaB
             // 
@@ -323,10 +322,10 @@
             this.txtAreaB.Size = new System.Drawing.Size(368, 22);
             this.txtAreaB.StyleController = this.layoutControl1;
             this.txtAreaB.TabIndex = 19;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAreaB, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Mandatory";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAreaB, conditionValidationRule3);
             // 
             // txtHNoB
             // 
@@ -337,10 +336,10 @@
             this.txtHNoB.Size = new System.Drawing.Size(368, 22);
             this.txtHNoB.StyleController = this.layoutControl1;
             this.txtHNoB.TabIndex = 18;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtHNoB, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Mandatory";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtHNoB, conditionValidationRule4);
             // 
             // txtDistrictR
             // 
@@ -351,10 +350,10 @@
             this.txtDistrictR.Size = new System.Drawing.Size(368, 22);
             this.txtDistrictR.StyleController = this.layoutControl1;
             this.txtDistrictR.TabIndex = 15;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtDistrictR, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtDistrictR, conditionValidationRule5);
             this.txtDistrictR.EditValueChanged += new System.EventHandler(this.txtDistrictR_EditValueChanged);
             // 
             // txtCityR
@@ -366,10 +365,10 @@
             this.txtCityR.Size = new System.Drawing.Size(368, 22);
             this.txtCityR.StyleController = this.layoutControl1;
             this.txtCityR.TabIndex = 14;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Mandatory";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtCityR, conditionValidationRule7);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Mandatory";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtCityR, conditionValidationRule6);
             this.txtCityR.EditValueChanged += new System.EventHandler(this.txtCityR_EditValueChanged);
             // 
             // txtAreaR
@@ -381,10 +380,10 @@
             this.txtAreaR.Size = new System.Drawing.Size(368, 22);
             this.txtAreaR.StyleController = this.layoutControl1;
             this.txtAreaR.TabIndex = 13;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "Mandatory";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAreaR, conditionValidationRule8);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Mandatory";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAreaR, conditionValidationRule7);
             this.txtAreaR.EditValueChanged += new System.EventHandler(this.txtAreaR_EditValueChanged);
             // 
             // txtHNoR
@@ -396,10 +395,10 @@
             this.txtHNoR.Size = new System.Drawing.Size(368, 22);
             this.txtHNoR.StyleController = this.layoutControl1;
             this.txtHNoR.TabIndex = 12;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "Mandatory";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtHNoR, conditionValidationRule9);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "Mandatory";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtHNoR, conditionValidationRule8);
             this.txtHNoR.EditValueChanged += new System.EventHandler(this.txtHNoR_EditValueChanged);
             // 
             // txtPincodeR
@@ -411,10 +410,10 @@
             this.txtPincodeR.Size = new System.Drawing.Size(368, 22);
             this.txtPincodeR.StyleController = this.layoutControl1;
             this.txtPincodeR.TabIndex = 17;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "Mandatory";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPincodeR, conditionValidationRule10);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "Mandatory";
+            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPincodeR, conditionValidationRule9);
             this.txtPincodeR.EditValueChanged += new System.EventHandler(this.txtPincodeR_EditValueChanged);
             // 
             // rgResidenceStatus
@@ -442,10 +441,10 @@
             this.cmbCurrency.Size = new System.Drawing.Size(341, 22);
             this.cmbCurrency.StyleController = this.layoutControl1;
             this.cmbCurrency.TabIndex = 9;
-            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule11.ErrorText = "Mandatory";
-            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbCurrency, conditionValidationRule11);
+            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule10.ErrorText = "Mandatory";
+            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbCurrency, conditionValidationRule10);
             // 
             // cmbMethod
             // 
@@ -461,10 +460,10 @@
             this.cmbMethod.Size = new System.Drawing.Size(341, 22);
             this.cmbMethod.StyleController = this.layoutControl1;
             this.cmbMethod.TabIndex = 8;
-            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule12.ErrorText = "Mandatory";
-            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbMethod, conditionValidationRule12);
+            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule11.ErrorText = "Mandatory";
+            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbMethod, conditionValidationRule11);
             // 
             // txtEmail
             // 
@@ -475,10 +474,10 @@
             this.txtEmail.Size = new System.Drawing.Size(341, 22);
             this.txtEmail.StyleController = this.layoutControl1;
             this.txtEmail.TabIndex = 6;
-            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule13.ErrorText = "Mandatory";
-            conditionValidationRule13.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtEmail, conditionValidationRule13);
+            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule12.ErrorText = "Mandatory";
+            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtEmail, conditionValidationRule12);
             // 
             // txtMobileNumber
             // 
@@ -489,10 +488,10 @@
             this.txtMobileNumber.Size = new System.Drawing.Size(341, 22);
             this.txtMobileNumber.StyleController = this.layoutControl1;
             this.txtMobileNumber.TabIndex = 5;
-            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule14.ErrorText = "Mandatory";
-            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtMobileNumber, conditionValidationRule14);
+            conditionValidationRule13.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule13.ErrorText = "Mandatory";
+            conditionValidationRule13.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtMobileNumber, conditionValidationRule13);
             // 
             // txtAadharNumber
             // 
@@ -510,10 +509,10 @@
             this.txtAadharNumber.Size = new System.Drawing.Size(341, 22);
             this.txtAadharNumber.StyleController = this.layoutControl1;
             this.txtAadharNumber.TabIndex = 3;
-            conditionValidationRule15.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule15.ErrorText = "Mandatory";
-            conditionValidationRule15.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtAadharNumber, conditionValidationRule15);
+            conditionValidationRule14.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule14.ErrorText = "Mandatory";
+            conditionValidationRule14.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtAadharNumber, conditionValidationRule14);
             // 
             // txtPanNumber
             // 
@@ -525,10 +524,10 @@
             this.txtPanNumber.Size = new System.Drawing.Size(341, 22);
             this.txtPanNumber.StyleController = this.layoutControl1;
             this.txtPanNumber.TabIndex = 2;
-            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule16.ErrorText = "Mandatory";
-            conditionValidationRule16.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPanNumber, conditionValidationRule16);
+            conditionValidationRule15.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule15.ErrorText = "Mandatory";
+            conditionValidationRule15.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPanNumber, conditionValidationRule15);
             // 
             // txtEntityName
             // 
@@ -539,10 +538,10 @@
             this.txtEntityName.Size = new System.Drawing.Size(341, 22);
             this.txtEntityName.StyleController = this.layoutControl1;
             this.txtEntityName.TabIndex = 1;
-            conditionValidationRule17.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule17.ErrorText = "Mandatory";
-            conditionValidationRule17.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtEntityName, conditionValidationRule17);
+            conditionValidationRule16.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule16.ErrorText = "Mandatory";
+            conditionValidationRule16.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtEntityName, conditionValidationRule16);
             // 
             // txtPersonName
             // 
@@ -553,10 +552,10 @@
             this.txtPersonName.Size = new System.Drawing.Size(341, 22);
             this.txtPersonName.StyleController = this.layoutControl1;
             this.txtPersonName.TabIndex = 0;
-            conditionValidationRule18.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule18.ErrorText = "Mandatory";
-            conditionValidationRule18.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPersonName, conditionValidationRule18);
+            conditionValidationRule17.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule17.ErrorText = "Mandatory";
+            conditionValidationRule17.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtPersonName, conditionValidationRule17);
             // 
             // cmbStateR
             // 
@@ -572,10 +571,10 @@
             this.cmbStateR.Size = new System.Drawing.Size(368, 22);
             this.cmbStateR.StyleController = this.layoutControl1;
             this.cmbStateR.TabIndex = 16;
-            conditionValidationRule19.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule19.ErrorText = "Mandatory";
-            conditionValidationRule19.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbStateR, conditionValidationRule19);
+            conditionValidationRule18.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule18.ErrorText = "Mandatory";
+            conditionValidationRule18.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbStateR, conditionValidationRule18);
             this.cmbStateR.EditValueChanged += new System.EventHandler(this.cmbStateR_EditValueChanged);
             // 
             // cmbStateB
@@ -592,28 +591,10 @@
             this.cmbStateB.Size = new System.Drawing.Size(368, 22);
             this.cmbStateB.StyleController = this.layoutControl1;
             this.cmbStateB.TabIndex = 22;
-            conditionValidationRule20.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule20.ErrorText = "Mandatory";
-            conditionValidationRule20.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbStateB, conditionValidationRule20);
-            // 
-            // txtNatureOfBussiness
-            // 
-            this.txtNatureOfBussiness.EnterMoveNextControl = true;
-            this.txtNatureOfBussiness.Location = new System.Drawing.Point(157, 298);
-            this.txtNatureOfBussiness.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtNatureOfBussiness.Name = "txtNatureOfBussiness";
-            this.txtNatureOfBussiness.Properties.DisplayFormat.FormatString = "d";
-            this.txtNatureOfBussiness.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNatureOfBussiness.Properties.EditFormat.FormatString = "d";
-            this.txtNatureOfBussiness.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNatureOfBussiness.Size = new System.Drawing.Size(341, 22);
-            this.txtNatureOfBussiness.StyleController = this.layoutControl1;
-            this.txtNatureOfBussiness.TabIndex = 7;
-            conditionValidationRule21.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule21.ErrorText = "Mandatory";
-            conditionValidationRule21.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtNatureOfBussiness, conditionValidationRule21);
+            conditionValidationRule19.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule19.ErrorText = "Mandatory";
+            conditionValidationRule19.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbStateB, conditionValidationRule19);
             // 
             // cmbGSTNumber
             // 
@@ -643,6 +624,26 @@
             this.btnAddGSTNumber.TabIndex = 4;
             this.btnAddGSTNumber.Text = "Add GST Number";
             this.btnAddGSTNumber.Click += new System.EventHandler(this.btnAddGSTNumber_Click);
+            // 
+            // cmbNatureOfBussiness
+            // 
+            this.cmbNatureOfBussiness.Location = new System.Drawing.Point(157, 298);
+            this.cmbNatureOfBussiness.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbNatureOfBussiness.Name = "cmbNatureOfBussiness";
+            this.cmbNatureOfBussiness.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbNatureOfBussiness.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBSECTORID", "SUBSECTORID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBSECTORNAME", "SUBSECTORNAME")});
+            this.cmbNatureOfBussiness.Properties.DisplayFormat.FormatString = "d";
+            this.cmbNatureOfBussiness.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbNatureOfBussiness.Properties.EditFormat.FormatString = "d";
+            this.cmbNatureOfBussiness.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbNatureOfBussiness.Properties.NullText = "";
+            this.cmbNatureOfBussiness.Properties.ShowHeader = false;
+            this.cmbNatureOfBussiness.Size = new System.Drawing.Size(341, 22);
+            this.cmbNatureOfBussiness.StyleController = this.layoutControl1;
+            this.cmbNatureOfBussiness.TabIndex = 7;
             // 
             // Root
             // 
@@ -768,7 +769,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.txtNatureOfBussiness;
+            this.layoutControlItem8.Control = this.cmbNatureOfBussiness;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 224);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -1066,8 +1067,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPersonName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateR.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbStateB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNatureOfBussiness.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGSTNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNatureOfBussiness.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -1166,7 +1167,6 @@
         private DevExpress.XtraEditors.LookUpEdit cmbStateR;
         private DevExpress.XtraEditors.LookUpEdit cmbStateB;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
-        private DevExpress.XtraEditors.TextEdit txtNatureOfBussiness;
         private DevExpress.XtraEditors.LookUpEdit cmbGSTNumber;
         private DevExpress.XtraEditors.SimpleButton btnAddGSTNumber;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
@@ -1177,5 +1177,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.LabelControl lblFormHeading;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
+        private DevExpress.XtraEditors.LookUpEdit cmbNatureOfBussiness;
     }
 }

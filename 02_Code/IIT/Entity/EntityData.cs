@@ -29,7 +29,7 @@ namespace Entity
 
         public GSTRegistrationNumber PrimaryGST { get; set; }
 
-        public object NatureOfBussiness { get; set; }
+        public object SubSectorID { get; set; }
 
         public Address PermanentAddress { get; set; }
 
