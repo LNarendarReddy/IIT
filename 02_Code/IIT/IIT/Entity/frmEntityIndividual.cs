@@ -1,4 +1,6 @@
-﻿using Entity;
+﻿using DevExpress.XtraSplashScreen;
+using DevExpress.XtraWaitForm;
+using Entity;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -131,6 +133,7 @@ namespace IIT
         {
             if (!dxValidationProvider1.Validate())
                 return;
+            SplashScreenManager.ShowForm(typeof(frmProgress), true, true);
             entityData.EntityTypeID = entityType;
             entityData.EntityName = txtEntityName.EditValue;
             entityData.PANNumber = txtPanNumber.EditValue;
@@ -175,6 +178,8 @@ namespace IIT
             IsSave = true;
             frmSingularMain.Instance.RollbackControl();
             frmSingularMain.Instance.RollbackControl();
+
+            SplashScreenManager.CloseForm();
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
