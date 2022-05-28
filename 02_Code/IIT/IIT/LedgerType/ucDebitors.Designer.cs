@@ -290,6 +290,7 @@
             this.cmbRegistrationStatus.Properties.Items.AddRange(new object[] {
             "Registered",
             "Unregistered"});
+            this.cmbRegistrationStatus.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmbRegistrationStatus.Size = new System.Drawing.Size(318, 22);
             this.cmbRegistrationStatus.StyleController = this.layoutControl1;
             this.cmbRegistrationStatus.TabIndex = 2;
