@@ -42,7 +42,7 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciPurpose = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -57,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciPurpose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -167,7 +167,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3,
+            this.lciPurpose,
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.emptySpaceItem2});
@@ -195,15 +195,15 @@
             this.layoutControlItem2.Text = "To Date";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 15);
             // 
-            // layoutControlItem3
+            // lciPurpose
             // 
-            this.layoutControlItem3.Control = this.cmbPurposeVisible;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 64);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem3.Size = new System.Drawing.Size(527, 32);
-            this.layoutControlItem3.Text = "Purpose Visible";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(87, 15);
+            this.lciPurpose.Control = this.cmbPurposeVisible;
+            this.lciPurpose.Location = new System.Drawing.Point(0, 64);
+            this.lciPurpose.Name = "lciPurpose";
+            this.lciPurpose.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.lciPurpose.Size = new System.Drawing.Size(527, 32);
+            this.lciPurpose.Text = "Purpose Visible";
+            this.lciPurpose.TextSize = new System.Drawing.Size(87, 15);
             // 
             // layoutControlItem5
             // 
@@ -259,7 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciPurpose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -278,7 +278,7 @@
         private DevExpress.XtraEditors.DateEdit dtpFromDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem lciPurpose;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.SimpleButton Cancel;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;

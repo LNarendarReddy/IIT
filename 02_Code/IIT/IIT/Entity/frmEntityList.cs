@@ -163,7 +163,7 @@ namespace IIT
 
             BindDatasource();
             Utility.CurrentEntity = null;
-            frmSingularMain.Instance.Text = "IIT";
+            frmSingularMain.Instance.Text = Utility.Caption;
         }
 
         private void btnviewLogo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

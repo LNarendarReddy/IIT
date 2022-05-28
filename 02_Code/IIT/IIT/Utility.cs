@@ -28,6 +28,8 @@ namespace IIT
         private static DataTable dtNonCashLedgers = null;
         private static Dictionary<string, object> configData = null;
 
+        public static string Caption = "India\'s Integrated Tax Software (IIT)";
+
         public static DataTable GetLedgers()
         {
             if(dtLedgers == null)
@@ -96,7 +98,7 @@ namespace IIT
             });
 
             frmSingularMain.Instance.gcHelpText.DataSource = helpText;
-            string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? "India's Integrated Tax Software (IIT)");
+            string selectedEntityName = Convert.ToString(CurrentEntity?.EntityName ?? Caption);
             //frmSingularMain.Instance.Text = selectedEntityName;
             frmSingularMain.Instance.lblEntityName.Text = selectedEntityName;
             frmSingularMain.Instance.lblNavigationHeader.Text = userControl.Header;
@@ -253,6 +255,7 @@ namespace IIT
             DateTime endDate = new DateTime(startDate.Year + 1, 3, 31);
             return new Tuple<DateTime, DateTime>(startDate, endDate);
         }
+
         public static T GetConfigValue<T>(string configName)
         {
             configData = configData ??
@@ -279,5 +282,31 @@ namespace IIT
 
             return default(T);
         }
+
+        public static AdminSettings GetAdminSettings()
+        {
+            return new AdminSettings()
+                {
+                    FromDate = GetConfigValue<DateTime>("FROMDATE"),
+                    ToDate = GetConfigValue<DateTime>("TODATE"),
+                    ShowPurpose = GetConfigValue<string>("NARRATIONVISIBLE")
+                };
+        }
+
+        public static void RefreshConfigData()
+        {
+            configData = null;
+        }
+    }
+
+
+    public class AdminSettings
+    {
+        public DateTime FromDate { get; set; }
+
+        public DateTime ToDate { get; set; }
+
+        public string ShowPurpose { get; set; }
+
     }
 }
