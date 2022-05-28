@@ -35,6 +35,7 @@
             this.lblEntityName = new DevExpress.XtraEditors.LabelControl();
             this.pcMain = new DevExpress.XtraEditors.PanelControl();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.lblDBStatus = new DevExpress.XtraEditors.LabelControl();
             this.gcHelpText = new DevExpress.XtraGrid.GridControl();
             this.gvHelpText = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -148,13 +149,28 @@
             this.tablePanel2.Appearance.Options.UseBackColor = true;
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F)});
+            this.tablePanel2.Controls.Add(this.lblDBStatus);
             this.tablePanel2.Controls.Add(this.gcHelpText);
             this.tablePanel2.Location = new System.Drawing.Point(935, 3);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 25F)});
             this.tablePanel2.Size = new System.Drawing.Size(222, 696);
             this.tablePanel2.TabIndex = 5;
+            // 
+            // lblDBStatus
+            // 
+            this.lblDBStatus.Appearance.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDBStatus.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.lblDBStatus.Appearance.Options.UseFont = true;
+            this.lblDBStatus.Appearance.Options.UseForeColor = true;
+            this.tablePanel2.SetColumn(this.lblDBStatus, 0);
+            this.lblDBStatus.Location = new System.Drawing.Point(3, 676);
+            this.lblDBStatus.Name = "lblDBStatus";
+            this.tablePanel2.SetRow(this.lblDBStatus, 1);
+            this.lblDBStatus.Size = new System.Drawing.Size(0, 15);
+            this.lblDBStatus.TabIndex = 1;
             // 
             // gcHelpText
             // 
@@ -164,7 +180,7 @@
             this.gcHelpText.MainView = this.gvHelpText;
             this.gcHelpText.Name = "gcHelpText";
             this.tablePanel2.SetRow(this.gcHelpText, 0);
-            this.gcHelpText.Size = new System.Drawing.Size(216, 690);
+            this.gcHelpText.Size = new System.Drawing.Size(216, 665);
             this.gcHelpText.TabIndex = 0;
             this.gcHelpText.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvHelpText});
@@ -364,6 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
+            this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcHelpText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHelpText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
@@ -404,5 +421,6 @@
         private DevExpress.XtraGrid.Views.Card.CardView gvHelpText;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        public DevExpress.XtraEditors.LabelControl lblDBStatus;
     }
 }

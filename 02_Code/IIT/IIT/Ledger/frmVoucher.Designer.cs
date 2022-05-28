@@ -515,6 +515,7 @@
             this.lcibtnAddLedgerFrom.Size = new System.Drawing.Size(113, 42);
             this.lcibtnAddLedgerFrom.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedgerFrom.TextVisible = false;
+            this.lcibtnAddLedgerFrom.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // lcibtnAddLedger1To
             // 
@@ -525,6 +526,7 @@
             this.lcibtnAddLedger1To.Size = new System.Drawing.Size(113, 42);
             this.lcibtnAddLedger1To.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedger1To.TextVisible = false;
+            this.lcibtnAddLedger1To.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem6
             // 

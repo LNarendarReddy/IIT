@@ -58,6 +58,7 @@ namespace IIT
             gvButtons.BestFitColumns();
             UpdateGridSize();
             BindDatasource();
+            frmSingularMain.Instance.lblDBStatus.Text = "Database Connected";
         }
         private void EntityListActionExecute(string actionText)
         {
