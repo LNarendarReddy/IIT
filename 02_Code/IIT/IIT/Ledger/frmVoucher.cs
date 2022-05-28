@@ -351,5 +351,10 @@ namespace IIT
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        private void rgModeOfTransfer_Enter(object sender, EventArgs e)
+        {
+            rgModeOfTransfer.SelectedIndex = rgModeOfTransfer.EditValue == null ? 0 : rgModeOfTransfer.SelectedIndex;
+        }
+
     }
 }

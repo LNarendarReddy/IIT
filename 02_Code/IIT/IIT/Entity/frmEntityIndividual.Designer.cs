@@ -500,6 +500,13 @@
             this.txtAadharNumber.Location = new System.Drawing.Point(157, 170);
             this.txtAadharNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAadharNumber.Name = "txtAadharNumber";
+            this.txtAadharNumber.Properties.DisplayFormat.FormatString = "\\d\\d\\d\\d-\\d\\d\\d\\d-\\d\\d\\d\\d";
+            this.txtAadharNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txtAadharNumber.Properties.EditFormat.FormatString = "\\d\\d\\d\\d-\\d\\d\\d\\d-\\d\\d\\d\\d";
+            this.txtAadharNumber.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txtAadharNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtAadharNumber.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txtAadharNumber.Properties.MaskSettings.Set("mask", "\\d\\d\\d\\d-\\d\\d\\d\\d-\\d\\d\\d\\d");
             this.txtAadharNumber.Size = new System.Drawing.Size(341, 22);
             this.txtAadharNumber.StyleController = this.layoutControl1;
             this.txtAadharNumber.TabIndex = 3;
@@ -514,6 +521,7 @@
             this.txtPanNumber.Location = new System.Drawing.Point(157, 138);
             this.txtPanNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPanNumber.Name = "txtPanNumber";
+            this.txtPanNumber.Properties.MaxLength = 10;
             this.txtPanNumber.Size = new System.Drawing.Size(341, 22);
             this.txtPanNumber.StyleController = this.layoutControl1;
             this.txtPanNumber.TabIndex = 2;

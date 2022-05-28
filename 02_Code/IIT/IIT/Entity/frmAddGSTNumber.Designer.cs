@@ -69,7 +69,7 @@
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(665, 0, 650, 400);
             this.layoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(359, 134);
+            this.layoutControl1.Size = new System.Drawing.Size(436, 134);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -78,9 +78,9 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnCancel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCancel.ImageOptions.SvgImage")));
-            this.btnCancel.Location = new System.Drawing.Point(232, 79);
+            this.btnCancel.Location = new System.Drawing.Point(311, 79);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 36);
+            this.btnCancel.Size = new System.Drawing.Size(110, 36);
             this.btnCancel.StyleController = this.layoutControl1;
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
@@ -90,9 +90,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(99, 79);
+            this.btnSave.Location = new System.Drawing.Point(186, 79);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(123, 36);
+            this.btnSave.Size = new System.Drawing.Size(115, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
@@ -110,7 +110,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
             this.cmbState.Properties.NullText = "";
             this.cmbState.Properties.ShowHeader = false;
-            this.cmbState.Size = new System.Drawing.Size(244, 22);
+            this.cmbState.Size = new System.Drawing.Size(321, 22);
             this.cmbState.StyleController = this.layoutControl1;
             this.cmbState.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -123,7 +123,8 @@
             this.txtGSTNumber.EnterMoveNextControl = true;
             this.txtGSTNumber.Location = new System.Drawing.Point(100, 15);
             this.txtGSTNumber.Name = "txtGSTNumber";
-            this.txtGSTNumber.Size = new System.Drawing.Size(244, 22);
+            this.txtGSTNumber.Properties.MaxLength = 15;
+            this.txtGSTNumber.Size = new System.Drawing.Size(321, 22);
             this.txtGSTNumber.StyleController = this.layoutControl1;
             this.txtGSTNumber.TabIndex = 0;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -142,7 +143,7 @@
             this.layoutControlItem4,
             this.emptySpaceItem2});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(359, 134);
+            this.Root.Size = new System.Drawing.Size(436, 134);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -151,7 +152,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem1.Size = new System.Drawing.Size(339, 32);
+            this.layoutControlItem1.Size = new System.Drawing.Size(416, 32);
             this.layoutControlItem1.Text = "GST Number";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 15);
             // 
@@ -161,27 +162,27 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 32);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem2.Size = new System.Drawing.Size(339, 32);
+            this.layoutControlItem2.Size = new System.Drawing.Size(416, 32);
             this.layoutControlItem2.Text = "State";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 15);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnSave;
-            this.layoutControlItem3.Location = new System.Drawing.Point(84, 64);
+            this.layoutControlItem3.Location = new System.Drawing.Point(171, 64);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem3.Size = new System.Drawing.Size(133, 50);
+            this.layoutControlItem3.Size = new System.Drawing.Size(125, 50);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnCancel;
-            this.layoutControlItem4.Location = new System.Drawing.Point(217, 64);
+            this.layoutControlItem4.Location = new System.Drawing.Point(296, 64);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem4.Size = new System.Drawing.Size(122, 50);
+            this.layoutControlItem4.Size = new System.Drawing.Size(120, 50);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -190,7 +191,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 64);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(84, 50);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(171, 50);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmAddGSTNumber
@@ -198,7 +199,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(359, 134);
+            this.ClientSize = new System.Drawing.Size(436, 134);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmAddGSTNumber";
             this.Text = "GST Number";

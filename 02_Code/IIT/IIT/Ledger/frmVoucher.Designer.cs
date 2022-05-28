@@ -149,6 +149,7 @@
             conditionValidationRule1.ErrorText = "Mandatory";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.rgModeOfTransfer, conditionValidationRule1);
+            this.rgModeOfTransfer.Enter += new System.EventHandler(this.rgModeOfTransfer_Enter);
             // 
             // txtChequeNumber
             // 

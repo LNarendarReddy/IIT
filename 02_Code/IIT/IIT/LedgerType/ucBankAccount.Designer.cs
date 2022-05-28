@@ -179,6 +179,7 @@
             this.txtMICRCode.EnterMoveNextControl = true;
             this.txtMICRCode.Location = new System.Drawing.Point(180, 214);
             this.txtMICRCode.Name = "txtMICRCode";
+            this.txtMICRCode.Properties.MaxLength = 9;
             this.txtMICRCode.Size = new System.Drawing.Size(285, 22);
             this.txtMICRCode.StyleController = this.layoutControl1;
             this.txtMICRCode.TabIndex = 5;
@@ -192,6 +193,7 @@
             this.txtIFSCCode.EnterMoveNextControl = true;
             this.txtIFSCCode.Location = new System.Drawing.Point(180, 172);
             this.txtIFSCCode.Name = "txtIFSCCode";
+            this.txtIFSCCode.Properties.MaxLength = 11;
             this.txtIFSCCode.Size = new System.Drawing.Size(285, 22);
             this.txtIFSCCode.StyleController = this.layoutControl1;
             this.txtIFSCCode.TabIndex = 4;

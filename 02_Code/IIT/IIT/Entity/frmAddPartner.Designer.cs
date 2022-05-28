@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddPartner));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNumberOfSharesHeld = new DevExpress.XtraEditors.TextEdit();
             this.txtDINNumber = new DevExpress.XtraEditors.TextEdit();
@@ -194,6 +194,13 @@
             this.txtAadharNumber.Location = new System.Drawing.Point(196, 184);
             this.txtAadharNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtAadharNumber.Name = "txtAadharNumber";
+            this.txtAadharNumber.Properties.DisplayFormat.FormatString = "\\d\\d\\d\\d-\\d\\d\\d\\d-\\d\\d\\d";
+            this.txtAadharNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txtAadharNumber.Properties.EditFormat.FormatString = "\\d\\d\\d\\d-\\d\\d\\d\\d-\\d\\d\\d";
+            this.txtAadharNumber.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txtAadharNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtAadharNumber.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txtAadharNumber.Properties.MaskSettings.Set("mask", "\\d\\d\\d\\d-\\d\\d\\d\\d-\\d\\d\\d\\d");
             this.txtAadharNumber.Size = new System.Drawing.Size(488, 22);
             this.txtAadharNumber.StyleController = this.layoutControl1;
             this.txtAadharNumber.TabIndex = 5;
@@ -204,6 +211,7 @@
             this.txtPanNumber.Location = new System.Drawing.Point(196, 150);
             this.txtPanNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPanNumber.Name = "txtPanNumber";
+            this.txtPanNumber.Properties.MaxLength = 10;
             this.txtPanNumber.Size = new System.Drawing.Size(488, 22);
             this.txtPanNumber.StyleController = this.layoutControl1;
             this.txtPanNumber.TabIndex = 4;
@@ -227,10 +235,10 @@
             this.txtFatherName.Size = new System.Drawing.Size(488, 22);
             this.txtFatherName.StyleController = this.layoutControl1;
             this.txtFatherName.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Mandatory";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtFatherName, conditionValidationRule3);
             // 
             // txtNameofthepartner
             // 
@@ -241,10 +249,10 @@
             this.txtNameofthepartner.Size = new System.Drawing.Size(488, 22);
             this.txtNameofthepartner.StyleController = this.layoutControl1;
             this.txtNameofthepartner.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtNameofthepartner, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtNameofthepartner, conditionValidationRule1);
             // 
             // Root
             // 

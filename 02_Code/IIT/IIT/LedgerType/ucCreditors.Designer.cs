@@ -275,6 +275,7 @@
             this.txtPANNumber.EnterMoveNextControl = true;
             this.txtPANNumber.Location = new System.Drawing.Point(227, 172);
             this.txtPANNumber.Name = "txtPANNumber";
+            this.txtPANNumber.Properties.MaxLength = 10;
             this.txtPANNumber.Size = new System.Drawing.Size(397, 22);
             this.txtPANNumber.StyleController = this.layoutControl1;
             this.txtPANNumber.TabIndex = 4;
@@ -288,6 +289,7 @@
             this.txtGSTNumber.EnterMoveNextControl = true;
             this.txtGSTNumber.Location = new System.Drawing.Point(227, 130);
             this.txtGSTNumber.Name = "txtGSTNumber";
+            this.txtGSTNumber.Properties.MaxLength = 15;
             this.txtGSTNumber.Size = new System.Drawing.Size(397, 22);
             this.txtGSTNumber.StyleController = this.layoutControl1;
             this.txtGSTNumber.TabIndex = 3;
