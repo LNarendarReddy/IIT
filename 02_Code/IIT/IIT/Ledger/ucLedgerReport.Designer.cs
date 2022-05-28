@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucLedgerReport));
-            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcVouchers = new DevExpress.XtraGrid.GridControl();
             this.gvVouchers = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,8 +50,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcVouchers)).BeginInit();
@@ -63,25 +59,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrint.ImageOptions.SvgImage")));
-            this.btnPrint.Location = new System.Drawing.Point(732, 677);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(141, 36);
-            this.btnPrint.StyleController = this.layoutControl1;
-            this.btnPrint.TabIndex = 6;
-            this.btnPrint.Text = "&Print";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btnPrint);
             this.layoutControl1.Controls.Add(this.gcVouchers);
             this.layoutControl1.Controls.Add(this.lblClosingBalance);
             this.layoutControl1.Controls.Add(this.lblOpeningBalance);
@@ -100,7 +81,7 @@
             this.gcVouchers.Location = new System.Drawing.Point(12, 93);
             this.gcVouchers.MainView = this.gvVouchers;
             this.gcVouchers.Name = "gcVouchers";
-            this.gcVouchers.Size = new System.Drawing.Size(861, 580);
+            this.gcVouchers.Size = new System.Drawing.Size(861, 581);
             this.gcVouchers.TabIndex = 5;
             this.gcVouchers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVouchers});
@@ -241,7 +222,7 @@
             this.lblClosingBalance.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblClosingBalance.Appearance.Options.UseFont = true;
             this.lblClosingBalance.Appearance.Options.UseForeColor = true;
-            this.lblClosingBalance.Location = new System.Drawing.Point(136, 685);
+            this.lblClosingBalance.Location = new System.Drawing.Point(136, 686);
             this.lblClosingBalance.Name = "lblClosingBalance";
             this.lblClosingBalance.Size = new System.Drawing.Size(31, 19);
             this.lblClosingBalance.StyleController = this.layoutControl1;
@@ -282,9 +263,7 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.emptySpaceItem1});
+            this.layoutControlItem5});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(885, 725);
             this.Root.TextVisible = false;
@@ -294,7 +273,7 @@
             this.layoutControlItem2.Control = this.gcVouchers;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 81);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(865, 584);
+            this.layoutControlItem2.Size = new System.Drawing.Size(865, 585);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -322,32 +301,12 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.lblClosingBalance;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 665);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 666);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem5.Size = new System.Drawing.Size(167, 40);
+            this.layoutControlItem5.Size = new System.Drawing.Size(865, 39);
             this.layoutControlItem5.Text = "Closing Balance : ";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(104, 15);
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.btnPrint;
-            this.layoutControlItem6.Location = new System.Drawing.Point(720, 665);
-            this.layoutControlItem6.MaxSize = new System.Drawing.Size(145, 40);
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(145, 40);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(145, 40);
-            this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(167, 665);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(553, 40);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ucLedgerReport
             // 
@@ -357,7 +316,6 @@
             this.Name = "ucLedgerReport";
             this.Size = new System.Drawing.Size(885, 725);
             this.Load += new System.EventHandler(this.ucLedgerReport_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ucLedgerReport_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcVouchers)).EndInit();
@@ -367,8 +325,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,12 +348,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

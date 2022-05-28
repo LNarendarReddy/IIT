@@ -122,7 +122,7 @@
             this.layoutControl1.Controls.Add(this.dtpVoucherDate);
             this.layoutControl1.Controls.Add(this.lblformHeader);
             this.layoutControl1.Controls.Add(this.txtPurposeofPayment);
-            this.layoutControl1.Location = new System.Drawing.Point(44, 34);
+            this.layoutControl1.Location = new System.Drawing.Point(43, 34);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1134, 386, 650, 400);
             this.layoutControl1.OptionsFocus.EnableAutoTabOrder = false;
@@ -270,7 +270,6 @@
             conditionValidationRule4.ErrorText = "Mandatory";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.cmbPaymentMadeto, conditionValidationRule4);
-            this.cmbPaymentMadeto.Enter += new System.EventHandler(this.cmbPaymentMadeto_Enter);
             // 
             // txtAmountInWords
             // 
@@ -576,7 +575,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 646F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(843, 562);
+            this.tablePanel1.Size = new System.Drawing.Size(841, 562);
             this.tablePanel1.TabIndex = 0;
             // 
             // frmVoucher
@@ -585,7 +584,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "frmVoucher";
-            this.Size = new System.Drawing.Size(843, 562);
+            this.Size = new System.Drawing.Size(841, 562);
             this.Load += new System.EventHandler(this.frmVoucherNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

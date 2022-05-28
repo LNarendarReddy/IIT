@@ -206,9 +206,9 @@
             // gridColumn8
             // 
             this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.Caption = "Mode Of Transfer";
             this.gridColumn8.FieldName = "MODEOFTRANSFER";
             this.gridColumn8.Name = "gridColumn8";

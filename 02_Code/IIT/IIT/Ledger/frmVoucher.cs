@@ -331,7 +331,7 @@ namespace IIT
                 cmbPaymentMadeto.Focus();
         }
 
-        protected override bool ProcessDialogKey(Keys keyData)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == (Keys.Control | Keys.L))
             {
@@ -348,12 +348,8 @@ namespace IIT
                 btnPrint_Click(null, null);
                 return true;
             }
-            return base.ProcessDialogKey(keyData);
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void cmbPaymentMadeto_Enter(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

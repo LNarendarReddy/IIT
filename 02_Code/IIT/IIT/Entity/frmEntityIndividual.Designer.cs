@@ -244,7 +244,7 @@
             this.btnAddLogo.Size = new System.Drawing.Size(119, 36);
             this.btnAddLogo.StyleController = this.layoutControl1;
             this.btnAddLogo.TabIndex = 24;
-            this.btnAddLogo.Text = "Add &Logo";
+            this.btnAddLogo.Text = "Add Logo";
             this.btnAddLogo.Click += new System.EventHandler(this.btnAddLogo_Click);
             // 
             // btnSaveCompany
@@ -257,7 +257,7 @@
             this.btnSaveCompany.Size = new System.Drawing.Size(111, 36);
             this.btnSaveCompany.StyleController = this.layoutControl1;
             this.btnSaveCompany.TabIndex = 25;
-            this.btnSaveCompany.Text = "&Save";
+            this.btnSaveCompany.Text = "Save";
             this.btnSaveCompany.Click += new System.EventHandler(this.btnSaveCompany_Click);
             // 
             // chkSameAddress

@@ -13,6 +13,13 @@ namespace IIT
         public override string Caption => "Ledger Report";
         object ledgerID, ledgerName;
 
+        private List<ActionText> helpText = new List<ActionText>()
+            {
+                new ActionText("Save & Print", buildShort: false, shortCut: "Ctrl + P")
+            };
+
+        public override IEnumerable<ActionText> HelpText => helpText;
+
         public ucLedgerReport(object _ledgerID, object _ledgerName)
         {
             InitializeComponent();
@@ -40,31 +47,31 @@ namespace IIT
                 : gvVouchers.GetRowCellValue(gvVouchers.RowCount - 1, "RUNNINGBAL").ToString();
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg ,Keys keyData)
         {
-            //rptLedgerPrinting rpt = new rptLedgerPrinting();
-            //rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
-            //rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
-            //rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
-            //rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
-            //rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
-            //rpt.Parameters["LedgerID"].Value = ledgerID;
-            //rpt.Parameters["LedgerName"].Value = ledgerName;
-            //rpt.CreateDocument();
-            //string filePath = Path.Combine(Utility.ReportsPath,
-            //    $"{Utility.CurrentEntity.EntityName}_{ledgerName}_{DateTime.Now:ddMMyyyyHHmmss}.pdf");
-            //rpt.ExportToPdf(filePath);
-            //ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
-            //Process.Start(startInfo);
-
-            gcVouchers.ShowRibbonPrintPreview();
-        }
-
-        private void ucLedgerReport_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode != Keys.F2) return;
+            if (keyData == (Keys.Control | Keys.P))
+            {
+                rptLedgerPrinting rpt = new rptLedgerPrinting();
+                rpt.Parameters["EntityID"].Value = Utility.CurrentEntity.ID;
+                rpt.Parameters["OrgName"].Value = Utility.CurrentEntity.EntityName;
+                rpt.Parameters["FromDate"].Value = Utility.GetConfigValue<DateTime>("FROMDATE");
+                rpt.Parameters["ToDate"].Value = Utility.GetConfigValue<DateTime>("TODATE");
+                rpt.Parameters["IsPurposeVisible"].Value = Utility.GetConfigValue<string>("NARRATIONVISIBLE");
+                rpt.Parameters["LedgerName"].Value = ledgerName;
+                rpt.Parameters["OpeningBalance"].Value = lblOpeningBalance.Text;
+                rpt.Parameters["ClosingBalance"].Value = lblClosingBalance.Text;
+                rpt.DataSource = gcVouchers.DataSource;
+                rpt.CreateDocument();
+                string filePath = Path.Combine(Utility.ReportsPath,
+                    $"{Utility.CurrentEntity.EntityName}_{ledgerName}_{DateTime.Now:ddMMyyyyHHmmss}.pdf");
+                rpt.ExportToPdf(filePath);
+                ProcessStartInfo startInfo = new ProcessStartInfo(filePath);
+                Process.Start(startInfo);
 
 
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

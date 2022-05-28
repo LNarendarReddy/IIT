@@ -3,6 +3,7 @@ using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace IIT
 {
@@ -15,8 +16,8 @@ namespace IIT
         bool IsCompany;
         private List<ActionText> helpText = new List<ActionText>() 
             { 
-                new ActionText("Save", buildShort: false, shortCut: "Alt + S"),
-                new ActionText("Add Logo", buildShort: false, shortCut: "Alt + L")
+                new ActionText("Save", buildShort: false, shortCut: "Ctrl + S"),
+                new ActionText("Add Logo", buildShort: false, shortCut: "Ctrl + L")
             };
 
         public override string Caption => @"Create\Modify Entity";
@@ -263,6 +264,21 @@ namespace IIT
         private void btnAddLogo_Click(object sender, EventArgs e)
         {
             Utility.ShowDialog(new frmEntityLogo(entityData));
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                btnSaveCompany_Click(null, null);
+                return true;
+            }
+            else if (keyData == (Keys.Control | Keys.L))
+            {
+                btnAddLogo_Click(null, null);
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
