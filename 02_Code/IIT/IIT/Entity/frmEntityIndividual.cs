@@ -26,6 +26,8 @@ namespace IIT
 
         public override string Caption => @"Create\Modify Entity";
 
+        EntityDataRepository entityDataRepository = new EntityDataRepository();
+
         public frmEntityIndividual(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
@@ -174,11 +176,13 @@ namespace IIT
                 entityData.GSTRegNo.Add(new GSTRegistrationNumber());
             entityData.GSTRegNo.First().UserName = Utility.UserName;
 
-            new EntityDataRepository().Save(entityData);
+            entityDataRepository.Save(entityData);
             IsSave = true;
             frmSingularMain.Instance.RollbackControl(false);
             frmSingularMain.Instance.RollbackControl(false);
-
+            Utility.ClearLedgerCache();
+            Utility.CurrentEntity = entityDataRepository.GetEntityData(entityData.ID);
+            Utility.ShowDialog(new Routes.AccountingRoute());
             SplashScreenManager.CloseForm();
         }
 

@@ -23,6 +23,9 @@ namespace IIT
 
         public override string Caption => @"Create\Modify Entity";
         public override IEnumerable<ActionText> HelpText => helpText;
+
+        EntityDataRepository entityDataRepository = new EntityDataRepository();
+
         public frmPartnershipFirm(int _entityType, int EntityID = 0)
         {
             InitializeComponent();
@@ -170,10 +173,13 @@ namespace IIT
             entityData.PersonData.ForEach(x => x.UserName = Utility.UserName);
             entityData.GSTRegNo.ForEach(x => x.UserName = Utility.UserName);
 
-            new EntityDataRepository().Save(entityData);
+            entityDataRepository.Save(entityData);
             IsSave = true;
             frmSingularMain.Instance.RollbackControl(false);
             frmSingularMain.Instance.RollbackControl(false);
+            Utility.ClearLedgerCache();
+            Utility.CurrentEntity = entityDataRepository.GetEntityData(entityData.ID);
+            Utility.ShowDialog(new Routes.AccountingRoute());
             SplashScreenManager.CloseForm();
         }
 
