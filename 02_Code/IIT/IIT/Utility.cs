@@ -88,6 +88,7 @@ namespace IIT
             frmSingularMain.Instance.pcMain.Controls.Clear();
             frmSingularMain.Instance.pcMain.Controls.Add(userControl);
             //frmSingularMain.Instance.tpMain.SetCell(userControl, 1, 1);
+            frmSingularMain.Instance.CurrentControl = userControl;
             userControl.Focus();
 
             var helpText = userControl.HelpText.ToList();

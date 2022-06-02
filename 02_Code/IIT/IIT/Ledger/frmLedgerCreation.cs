@@ -19,13 +19,16 @@ namespace IIT
 
         private List<ActionText> helpText = new List<ActionText>() { 
             new ActionText("Navigate", buildShort: false, shortCut: "Up/Down"),
-            new ActionText("Expand", buildShort: false, shortCut: "Ctrl + Right"),
+            new ActionText("Expand", buildShort: false, shortCut: "Enter"),
+            new ActionText("Collapse", buildShort: false, shortCut: "Esc"),
             new ActionText("Add ledger", buildShort: false, shortCut: "Alt + N")
         };
 
         public override IEnumerable<ActionText> HelpText => helpText;
 
         public override string Caption => caption;
+
+        public override bool HandlesESC => true;
 
         public frmLedgerCreation(object _HeadID, string HeadName)
         {
@@ -43,9 +46,21 @@ namespace IIT
 
         private void tlLedger_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode != Keys.Enter || tlLedger.FocusedNode == null)
-                return;
+            if (tlLedger.FocusedNode == null) return;
             int ledgerlevel = Convert.ToInt32(tlLedger.FocusedNode["LedgerLevel"]);
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (ledgerlevel > 1)
+                    tlLedger.FocusedNode.ParentNode.Collapse();
+                else 
+                    frmSingularMain.Instance.RollbackControl();
+                
+                return;
+            }
+
+            if (e.KeyCode != Keys.Enter)
+                return;
             bool IsEdit = int.TryParse(tlLedger.FocusedNode["LedgerID"]?.ToString(), out int entityID) && entityID > 0;
 
             switch (ledgerlevel)
@@ -53,7 +68,10 @@ namespace IIT
                 case 1:
                     {
                         if (IsEdit)
+                        {
+                            tlLedger.FocusedNode.Expand();
                             return;
+                        }
                         Group groupdObj = IsEdit ? new GroupRepository().GetGroupDetails(entityID, Utility.CurrentEntity.ID) :
                             new Group() { ClassificationID = HeadID };
                         Utility.ShowDialog(new frmGroup(groupdObj));
@@ -68,7 +86,10 @@ namespace IIT
                         else
                         {
                             if (IsEdit)
+                            {
+                                tlLedger.FocusedNode.Expand();
                                 return;
+                            }
                             SubGroup subGroupdObj = IsEdit ? new SubGroupRepository().GetSubGroupDetails(entityID, Utility.CurrentEntity.ID) :
                                 new SubGroup() { ClassificationID = HeadID, GroupID = tlLedger.FocusedNode.ParentNode["LedgerID"] };
                             Utility.ShowDialog(new frmSubGroup(subGroupdObj));

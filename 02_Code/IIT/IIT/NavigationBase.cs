@@ -14,6 +14,8 @@ namespace IIT
 
         public string Header => PreviousControl != null ? PreviousControl.Header + " > " + Caption : Caption;
 
+        public virtual bool HandlesESC => false;
+
         public NavigationBase()
         { 
             helpText = new List<ActionText>(); 

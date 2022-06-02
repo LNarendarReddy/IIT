@@ -11,6 +11,8 @@ namespace IIT
 
         public static frmSingularMain Instance { get { return _instance ?? (_instance = new frmSingularMain()); } }
 
+        public NavigationBase CurrentControl { get; set; }
+
         public frmSingularMain()
         {
             InitializeComponent();
@@ -46,13 +48,20 @@ namespace IIT
 
         private void frmSingularMain_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != (char) Keys.Escape)
-                return;
-            RollbackControl();
+            //if (e.KeyChar != (char) Keys.Escape)
+            //    return;
+            //RollbackControl();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            RollbackControl();
+        }
+
+        private void frmSingularMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Escape || CurrentControl == null || CurrentControl.HandlesESC)
+                return;
             RollbackControl();
         }
     }
