@@ -172,15 +172,15 @@ namespace IIT
 
             new EntityDataRepository().Save(entityData);
             IsSave = true;
-            frmSingularMain.Instance.RollbackControl();
-            frmSingularMain.Instance.RollbackControl();
+            frmSingularMain.Instance.RollbackControl(false);
+            frmSingularMain.Instance.RollbackControl(false);
             SplashScreenManager.CloseForm();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmSingularMain.Instance.RollbackControl();
-            frmSingularMain.Instance.RollbackControl();
+            frmSingularMain.Instance.RollbackControl(false);
+            frmSingularMain.Instance.RollbackControl(false);
         }
 
         private void chkSameAddress_CheckedChanged(object sender, EventArgs e)

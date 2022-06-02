@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -33,8 +34,13 @@ namespace IIT
             Utility.ShowDialog(new frmEntityList());
         }
 
-        public void RollbackControl()
+        public void RollbackControl(bool showPrompt = true)
         {
+            if (showPrompt 
+                && XtraMessageBox.Show("Are you sure you want to close?"
+                    , "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) 
+                != DialogResult.Yes) return;
+
             Utility.ShowDialog((pcMain.Controls[0] as NavigationBase)?.PreviousControl);
         }
 
