@@ -38,6 +38,8 @@ namespace IIT
 
         public void RollbackControl(bool showPrompt = true)
         {
+            showPrompt = showPrompt && !(pcMain.Controls[0] is ucNavigationRouter);
+
             if (showPrompt 
                 && XtraMessageBox.Show("Are you sure you want to close?"
                     , "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) 

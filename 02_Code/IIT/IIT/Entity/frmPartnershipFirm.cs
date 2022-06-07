@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraSplashScreen;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using Entity;
 using Repository;
 using System;
@@ -130,6 +131,24 @@ namespace IIT
         {
             if (!dxValidationProvider1.Validate())
                 return;
+
+            //string errorMessage = null;
+            //if (entityData.PersonData == null || cmbNumberOfPartners.EditValue == null 
+            //    || !entityData.PersonData.Count.Equals(Convert.ToInt32(cmbNumberOfPartners.EditValue)))
+            //{
+            //    errorMessage = "Person data doesn't match with entered No. of partners value";
+            //}
+            //else if (entityData.PersonData.Select(x => x.PercentageShares ?? 0m).Cast<decimal>().Sum() != 100)
+            //{
+            //    errorMessage = "Total sum of shares in person do not add up to 100";
+            //}
+
+            //if(!string.IsNullOrEmpty(errorMessage))
+            //{
+            //    XtraMessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
+
             SplashScreenManager.ShowForm(typeof(frmProgress), true, true);
 
             entityData.EntityTypeID = entityType;
@@ -242,18 +261,21 @@ namespace IIT
 
         private void btnAddPartner_Click(object sender, EventArgs e)
         {
-            if (cmbNumberOfPartners.EditValue == null 
-                || Convert.ToInt32(cmbNumberOfPartners.EditValue) == gvPartners.RowCount)
+            if (cmbNumberOfPartners.EditValue == null || entityData.PersonData == null
+                || Convert.ToInt32(cmbNumberOfPartners.EditValue) == entityData.PersonData.Count)
+            {
                 return;
-            Person person = new Person();
-            person.ID = 0;
-            frmAddPartner obj = new frmAddPartner(person,entityType == 13 ? true : false);
+            }
+
+            Person person = new Person { ID = 0 };
+            frmAddPartner obj = new frmAddPartner(person, entityType == 13);
             Utility.ShowDialog(obj);
             if (person.IsSave)
             {
                 entityData.PersonData.Add(person);
                 gcPartners.DataSource = entityData.PersonData;
                 gcPartners.RefreshDataSource();
+                btnAddPartner_Click(sender, e);
             }
         }
 
