@@ -155,5 +155,29 @@ namespace Repository
             }
             return dt;
         }
+        public string GetAvailableBalance(object LedgerID)
+        {
+            string obj = null;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_R_AVAILABLEBALANCE]";
+                    cmd.Parameters.AddWithValue("@LEDGERID", LedgerID);
+                    obj = Convert.ToString(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while retrieving available balance", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+            return obj;
+        }
     }
 }

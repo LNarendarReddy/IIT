@@ -6,7 +6,12 @@ namespace IIT.Routes
     {
         public AccountingReportsRoute() : base(new List<string>()
                     {
-                        "Ledger Printing"
+                        "On Demand Reports"
+                        ,"Ledger Reports"
+                        ,"Day Book"
+                        ,"Inventory Reports"
+                        ,"Banking/Finance Utility"
+                        ,"Financial Reports"
                         , "Trail Balance"
                         , "Balance Sheet"
                         , "Profit and Loss Account"
@@ -21,8 +26,16 @@ namespace IIT.Routes
             NavigationBase formObj = null;
             switch (actionText)
             {
-                case "Ledger Printing":
+                case "Ledger Reports":
                     formObj = new ucLedgerList();
+                    break;
+                case "Day Book":
+                    formObj = new frmVoucherList();
+                    break;
+                case "Inventory Reports":
+                    break;
+                case "Banking/Finance Utility":
+                    formObj = new BankingUtilityRoute();
                     break;
                 case "Trail Balance":
                     break;

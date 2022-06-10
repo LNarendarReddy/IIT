@@ -123,6 +123,7 @@
             this.txtNumberOfSharesHeld.Size = new System.Drawing.Size(490, 22);
             this.txtNumberOfSharesHeld.StyleController = this.layoutControl1;
             this.txtNumberOfSharesHeld.TabIndex = 6;
+            this.txtNumberOfSharesHeld.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtNumberOfSharesHeld_Spin);
             // 
             // txtDINNumber
             // 
@@ -187,6 +188,7 @@
             this.txtShare.Size = new System.Drawing.Size(488, 22);
             this.txtShare.StyleController = this.layoutControl1;
             this.txtShare.TabIndex = 7;
+            this.txtShare.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtNumberOfSharesHeld_Spin);
             // 
             // txtAadharNumber
             // 

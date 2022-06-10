@@ -247,7 +247,7 @@
             this.ClientSize = new System.Drawing.Size(547, 167);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmSettings";
-            this.Text = "Print Settings";
+            this.Text = "Period Setting";
             this.Load += new System.EventHandler(this.frmSettings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

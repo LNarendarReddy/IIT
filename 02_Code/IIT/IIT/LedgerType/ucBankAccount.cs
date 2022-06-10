@@ -42,7 +42,6 @@ namespace IIT
         {
             if(!dxValidationProvider1.Validate())
                 return;
-
             ledger.Name = ledger.Description = cmbNameOftheBank.Text + " " + txtBankAccountNumber.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_BankAccount;
             ledger.BankAccountInfo.BankID = cmbNameOftheBank.EditValue;
@@ -54,6 +53,11 @@ namespace IIT
             ledger.BankAccountInfo.InterestRate = txtInterestRate.EditValue;
             ledger.BankAccountInfo.OpeningBalance = txtOpeningBalance.EditValue;
             Save();
+        }
+
+        private void txtInterestRate_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

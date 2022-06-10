@@ -13,6 +13,7 @@ namespace IIT
 {
     public partial class frmVoucher : NavigationBase
     {
+        private bool isLoading = false;
         private string caption;
         public override string Caption => caption;
 
@@ -33,14 +34,24 @@ namespace IIT
             dtpVoucherDate.EditValue = DateTime.Now;
         }
 
+        public frmVoucher(){}
+
         private void frmVoucherNew_Load(object sender, EventArgs e)
         {
             BindLookups();
-            txtRefNo.EditValue = voucherObj.VoucherNumber;
-            txtAmountIRupees.EditValue = voucherObj.Amount;
-            cmbPaymentMadeto.EditValue = voucherObj.PaymentTo;
-            cmbPaymentMadefrom.EditValue = voucherObj.PaymentFrom;
-            txtPurposeofPayment.EditValue = voucherObj.Purpose;
+            if (voucherObj.ID != null)
+            {
+                isLoading = true;
+                txtRefNo.EditValue = voucherObj.VoucherNumber;
+                txtAmountIRupees.EditValue = voucherObj.Amount;
+                cmbPaymentMadeto.EditValue = voucherObj.PaymentTo;
+                cmbPaymentMadefrom.EditValue = voucherObj.PaymentFrom;
+                txtPurposeofPayment.EditValue = voucherObj.Purpose;
+                cmbPaymentMadefrom_Leave(null, null);
+                cmbPaymentMadeto_Leave(null, null);
+                txtAmountIRupees_Leave(null, null);
+                isLoading = false;
+            }
             dtpVoucherDate.EditValue = voucherObj.VoucherDate ?? DateTime.Now;
             UpdateLabels();
             caption = lblformHeader.Text;
@@ -91,6 +102,9 @@ namespace IIT
             cmbPaymentMadeto.Properties.DisplayMember = "LEDGERNAME";
             cmbPaymentMadeto.Properties.ValueMember = "LEDGERID";
             cmbPaymentMadeto.EditValue = selectedto;
+
+            
+
         }
 
         private void UpdateLabels()
@@ -105,6 +119,7 @@ namespace IIT
                     cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
+                    lblPaymentFromAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_BankPayment:
                     lblformHeader.Text = "BANK PAYMENT VOUCHER";
@@ -122,6 +137,7 @@ namespace IIT
                     cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
+                    lblPaymentToAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_BankReciept:
                     lblformHeader.Text = "BANK RECIEPT VOUCHER";
@@ -137,6 +153,7 @@ namespace IIT
                     cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
+                    lblPaymentToAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
                     lblformHeader.Text = "CONTRA VOUCHER - Deposit";
@@ -146,6 +163,7 @@ namespace IIT
                     cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
                     lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
                     lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
+                    lblPaymentFromAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_JournalVoucher:
                     lblformHeader.Text = "JOURNAL VOUCHER";
@@ -160,6 +178,7 @@ namespace IIT
 
         private void cmbPaymentMadefrom_EditValueChanged(object sender, EventArgs e)
         {
+            if (isLoading) return;
             if (cmbPaymentMadefrom.EditValue == null || 
                 cmbPaymentMadefrom.EditValue.Equals(Utility.CurrentEntity.CASHINHANDID) ||
                 (cmbPaymentMadeto.EditValue != null && cmbPaymentMadeto.EditValue.Equals(Utility.CurrentEntity.CASHINHANDID)))
@@ -171,22 +190,8 @@ namespace IIT
             clone.RowFilter = string.Format($"[LEDGERID] <> {cmbPaymentMadefrom.EditValue}");
             cmbPaymentMadeto.Properties.DataSource = clone;
 
-            if(voucherObj.VoucherTypeID.Equals(LookUpIDMap.VoucherType_BankPayment))
-            {
-                DataTable dt = new BankingRepository().GetChequeNumber(cmbPaymentMadefrom.EditValue);
-                if(dt.Rows.Count > 0 
-                    && int.TryParse(Convert.ToString(dt.Rows[0][0]), out int ChequeNumber) 
-                    && ChequeNumber > 0)
-                {
-                    txtChequeNumber.EditValue = ChequeNumber;
-                    voucherObj.ChequeRegisterID = dt.Rows[0][1];
-                }
-            }
-        }
-
-        private void GenerateChequeNumber()
-        {
-
+            if (voucherObj.VoucherTypeID.Equals(LookUpIDMap.VoucherType_BankPayment))
+                txtChequeNumber.EditValue = new BankingRepository().GetChequeNumber(cmbPaymentMadefrom.EditValue);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -206,10 +211,17 @@ namespace IIT
                 dxValidationProvider1.SetValidationRule(rgModeOfTransfer, null);
                 dxValidationProvider1.SetValidationRule(txtChequeNumber, null);
             }
+            else
+            {
+                voucherObj.ChequeRegisterID = new BankingRepository().ValidateChequeNumber(cmbPaymentMadefrom.EditValue, txtChequeNumber.EditValue);
+                if (voucherObj.ChequeRegisterID == null &&
+                    XtraMessageBox.Show("Entered cheque number is not exists cheque register.Are sure want to continue?", "Question",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    return;
+            }
 
             if (!dxValidationProvider1.Validate()) return;
 
-            voucherObj.VoucherNumber = txtRefNo.EditValue;
             voucherObj.Amount = txtAmountIRupees.EditValue;
 
             voucherObj.PaymentFrom = lciPaymentMadeFrom.Visibility == LayoutVisibility.Never ?
@@ -293,7 +305,7 @@ namespace IIT
                     }
                     rpt.ShowRibbonPreview();
                 }
-                frmSingularMain.Instance.RollbackControl();
+                frmSingularMain.Instance.RollbackControl(false);
             }
             catch (Exception ex)
             {
@@ -320,15 +332,15 @@ namespace IIT
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Ledger ledgerobj = new Ledger();
-            Utility.ShowDialog(new frmLedger(ledgerobj, null, false));
-            if (!ledgerobj.IsSave)
-                return;
-            BindLookups();
-            if (lciPaymentMadeTo.Visibility == LayoutVisibility.Never)
-                cmbPaymentMadefrom.Focus();
-            else
-                cmbPaymentMadeto.Focus();
+            //Ledger ledgerobj = new Ledger();
+            //Utility.ShowDialog(new frmLedger(ledgerobj, null, false));
+            //if (!ledgerobj.IsSave)
+            //    return;
+            //BindLookups();
+            //if (lciPaymentMadeTo.Visibility == LayoutVisibility.Never)
+            //    cmbPaymentMadefrom.Focus();
+            //else
+            //    cmbPaymentMadeto.Focus();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -356,5 +368,23 @@ namespace IIT
             rgModeOfTransfer.SelectedIndex = rgModeOfTransfer.EditValue == null ? 0 : rgModeOfTransfer.SelectedIndex;
         }
 
+        private void txtAmountIRupees_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbPaymentMadefrom_Leave(object sender, EventArgs e)
+        {
+            if (cmbPaymentMadefrom.EditValue == null)
+                return;
+            lblPaymentFromAvailableBalance.Text = $"Available Balance : {new LedgerRepository().GetAvailableBalance(cmbPaymentMadefrom.EditValue)}";
+        }
+
+        private void cmbPaymentMadeto_Leave(object sender, EventArgs e)
+        {
+            if (cmbPaymentMadeto.EditValue == null)
+                return;
+            lblPaymentToAvailableBalance.Text = $"Available Balance : {new LedgerRepository().GetAvailableBalance(cmbPaymentMadeto.EditValue)}";
+        }
     }
 }

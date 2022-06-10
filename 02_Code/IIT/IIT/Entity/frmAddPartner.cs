@@ -70,5 +70,11 @@ namespace IIT
             person.IsSave = false;
             this.Close();
         }
+
+        private void txtNumberOfSharesHeld_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
+        {
+            e.Handled = true;
+        }
+
     }
 }
