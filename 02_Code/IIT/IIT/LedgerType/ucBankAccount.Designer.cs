@@ -153,6 +153,7 @@
             conditionValidationRule1.ErrorText = "Mandatory";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule1);
+            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterestRate_Spin);
             // 
             // txtInterestRate
             // 
@@ -173,6 +174,7 @@
             conditionValidationRule2.ErrorText = "Mandatory";
             conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.txtInterestRate, conditionValidationRule2);
+            this.txtInterestRate.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterestRate_Spin);
             // 
             // txtMICRCode
             // 
@@ -220,12 +222,8 @@
             this.txtBankAccountNumber.EnterMoveNextControl = true;
             this.txtBankAccountNumber.Location = new System.Drawing.Point(180, 88);
             this.txtBankAccountNumber.Name = "txtBankAccountNumber";
-            this.txtBankAccountNumber.Properties.DisplayFormat.FormatString = "d";
-            this.txtBankAccountNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtBankAccountNumber.Properties.EditFormat.FormatString = "d";
-            this.txtBankAccountNumber.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtBankAccountNumber.Properties.MaskSettings.Set("mask", "d");
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("mask", "[a-zA-Z0-9]{0,16}");
             this.txtBankAccountNumber.Size = new System.Drawing.Size(285, 22);
             this.txtBankAccountNumber.StyleController = this.layoutControl1;
             this.txtBankAccountNumber.TabIndex = 2;

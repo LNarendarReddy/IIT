@@ -6,8 +6,7 @@ namespace IIT.Routes
     {
         public RequisitionFormsRoute() : base(new List<string>()
                     {
-                        "Banking Utility"
-                        , "Stock Statements"
+                        "Stock Statements"
                         , "Sales Registers"
                         , "Purchases Registers"
                         , "CMA Reports"
@@ -24,9 +23,6 @@ namespace IIT.Routes
             NavigationBase formObj = null;
             switch (actionText)
             {
-                case "Banking Utility":
-                    formObj = new BankingUtilityRoute();
-                    break;
                 case "Stock Statements":
                     formObj = new StockStatementsRoute();
                     break;

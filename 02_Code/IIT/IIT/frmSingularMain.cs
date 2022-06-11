@@ -42,7 +42,7 @@ namespace IIT
 
             if (showPrompt 
                 && XtraMessageBox.Show("Are you sure you want to close?"
-                    , "Confirm", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) 
+                    , "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
                 != DialogResult.Yes) return;
 
             Utility.ShowDialog((pcMain.Controls[0] as NavigationBase)?.PreviousControl);
@@ -53,11 +53,6 @@ namespace IIT
             //if (e.KeyChar != (char) Keys.Escape)
             //    return;
             //RollbackControl();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            RollbackControl();
         }
 
         private void frmSingularMain_KeyDown(object sender, KeyEventArgs e)

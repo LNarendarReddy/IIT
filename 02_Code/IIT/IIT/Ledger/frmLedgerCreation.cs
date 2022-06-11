@@ -54,7 +54,7 @@ namespace IIT
                 if (ledgerlevel > 1)
                     tlLedger.FocusedNode.ParentNode.Collapse();
                 else 
-                    frmSingularMain.Instance.RollbackControl();
+                    frmSingularMain.Instance.RollbackControl(false);
                 
                 return;
             }
@@ -148,17 +148,20 @@ namespace IIT
                     Utility.ShowDialog(new ucDebitors(ledgerObj, !CallFromEvent));
                     break;
                 case LookUpIDMap.LedgerType_FixedAsset:
+
+                    bool IsLandLedger = CallFromEvent ? tlLedger.FocusedNode.ParentNode["LedgerName"].Equals("Lands") :
+                tlLedger.FocusedNode["LedgerName"].Equals("Lands");
                     if (Utility.CurrentEntity.EntityTypeID.Equals(LookUpIDMap.EntityType_IndividualEntity))
                     {
                         if (ledgerObj.FixedAssetsIndividualInfo == null)
                             ledgerObj.FixedAssetsIndividualInfo = new FixedAssetsIndividual();
-                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj, !CallFromEvent));
+                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj, !CallFromEvent, IsLandLedger));
                     }
                     else
                     {
                         if (ledgerObj.FixedAssetsCompanyInfo == null)
                             ledgerObj.FixedAssetsCompanyInfo  = new FixedAssetsCompany();
-                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj, !CallFromEvent));
+                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj, !CallFromEvent, IsLandLedger));
                     }
                     break;
                 case LookUpIDMap.LedgerType_Investment:
@@ -240,7 +243,7 @@ namespace IIT
         private void frmLedgerList_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Escape)
-                frmSingularMain.Instance.RollbackControl();
+                frmSingularMain.Instance.RollbackControl(false);
         }
 
         private void tablePanel1_Paint(object sender, PaintEventArgs e)

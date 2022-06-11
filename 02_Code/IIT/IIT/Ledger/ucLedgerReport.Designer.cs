@@ -226,7 +226,7 @@
             this.gridColumn9.FieldName = "CREDITAMOUNT";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDITAMOUNT", "SUM={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDITAMOUNT", "{0:0.##}")});
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 5;
             // 
@@ -240,7 +240,7 @@
             this.gridColumn10.FieldName = "DEBITAMOUNT";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBITAMOUNT", "SUM={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBITAMOUNT", "{0:0.##}")});
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
             // 

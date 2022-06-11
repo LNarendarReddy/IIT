@@ -71,9 +71,9 @@ namespace Repository
 
             return ChequeRegisterID;
         }
-        public DataTable GetChequeNumber(object LedgerID)
+        public object GetChequeNumber(object LedgerID)
         {
-            DataTable dt = new DataTable();
+            object objReturn = null;
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -81,11 +81,8 @@ namespace Repository
                     cmd.Connection = SQLCon.Sqlconn();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_CHEQUENUMBER]";
-                    cmd.Parameters.AddWithValue("@LedgerID", LedgerID);
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        da.Fill(dt);
-                    }
+                    cmd.Parameters.AddWithValue("@LEDGERID", LedgerID);
+                    objReturn = cmd.ExecuteScalar();
                 }
             }
             catch (Exception ex)
@@ -97,9 +94,9 @@ namespace Repository
                 SQLCon.Sqlconn().Close();
             }
 
-            return dt;
+            return objReturn;
         }
-        public DataTable GetChequeLog(object LedgerID)
+        public DataTable GetChequeLog(object LedgerID,object FromDate, object Todate)
         {
             DataTable dt = new DataTable();
             try
@@ -110,6 +107,8 @@ namespace Repository
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "[USP_R_CHEQUELOG]";
                     cmd.Parameters.AddWithValue("@LEDGERID", LedgerID);
+                    cmd.Parameters.AddWithValue("@FROMDATE", FromDate);
+                    cmd.Parameters.AddWithValue("@TODATE", Todate);
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
                         da.Fill(dt);
@@ -126,6 +125,33 @@ namespace Repository
             }
 
             return dt;
+        }
+        public object ValidateChequeNumber(object LedgerID,object ChequeNumber)
+        {
+            object objReturn = null;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = SQLCon.Sqlconn();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "[USP_CHK_CHEQUEREGISTERID]";
+                    cmd.Parameters.AddWithValue("@LEDGERID", LedgerID);
+                    cmd.Parameters.AddWithValue("@CHEQUENUMBER", ChequeNumber);
+                    objReturn = cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Error while validating cheque number", ex);
+            }
+            finally
+            {
+                SQLCon.Sqlconn().Close();
+            }
+
+            return objReturn;
         }
     }
 }

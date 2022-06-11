@@ -66,5 +66,10 @@ namespace IIT
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
         }
+
+        private void txtOpeningBalance_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

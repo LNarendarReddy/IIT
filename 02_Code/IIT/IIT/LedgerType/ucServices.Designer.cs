@@ -205,6 +205,7 @@
             conditionValidationRule4.ErrorText = "Mandatory";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule4);
+            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtOpeningBalance_Spin);
             // 
             // txtBankAccountNumber
             // 
@@ -214,9 +215,9 @@
             this.txtBankAccountNumber.Properties.DisplayFormat.FormatString = "d";
             this.txtBankAccountNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtBankAccountNumber.Properties.EditFormat.FormatString = "d";
-            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtBankAccountNumber.Properties.MaskSettings.Set("mask", "d");
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerSignature", "isOptimistic=False");
+            this.txtBankAccountNumber.Properties.MaskSettings.Set("mask", "[a-zA-Z0-9]{0,16}");
             this.txtBankAccountNumber.Size = new System.Drawing.Size(325, 22);
             this.txtBankAccountNumber.StyleController = this.layoutControl1;
             this.txtBankAccountNumber.TabIndex = 5;

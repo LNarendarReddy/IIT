@@ -10,7 +10,7 @@ namespace IIT.Routes
                         , "Cheque Print"
                         , "Cheque Register"
                         , "Post Dated Cheques"
-                    }, "Banking Utility")
+                    }, "Banking/Finance Utility")
         {
         }
 

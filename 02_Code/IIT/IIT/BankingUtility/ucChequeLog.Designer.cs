@@ -42,11 +42,15 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblHeader = new DevExpress.XtraEditors.LabelControl();
             this.cmbLedger = new DevExpress.XtraEditors.LookUpEdit();
+            this.lblFromDate = new DevExpress.XtraEditors.LabelControl();
+            this.lblToDate = new DevExpress.XtraEditors.LabelControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcChequeLog)).BeginInit();
@@ -58,6 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -65,6 +71,8 @@
             this.layoutControl1.Controls.Add(this.gcChequeLog);
             this.layoutControl1.Controls.Add(this.lblHeader);
             this.layoutControl1.Controls.Add(this.cmbLedger);
+            this.layoutControl1.Controls.Add(this.lblFromDate);
+            this.layoutControl1.Controls.Add(this.lblToDate);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -238,10 +246,32 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "LEDGERNAME")});
             this.cmbLedger.Properties.NullText = "";
-            this.cmbLedger.Size = new System.Drawing.Size(315, 22);
+            this.cmbLedger.Size = new System.Drawing.Size(286, 22);
             this.cmbLedger.StyleController = this.layoutControl1;
             this.cmbLedger.TabIndex = 1;
             this.cmbLedger.Leave += new System.EventHandler(this.cmbLedger_Leave);
+            // 
+            // lblFromDate
+            // 
+            this.lblFromDate.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFromDate.Appearance.Options.UseFont = true;
+            this.lblFromDate.Location = new System.Drawing.Point(871, 74);
+            this.lblFromDate.Name = "lblFromDate";
+            this.lblFromDate.Size = new System.Drawing.Size(79, 19);
+            this.lblFromDate.StyleController = this.layoutControl1;
+            this.lblFromDate.TabIndex = 6;
+            this.lblFromDate.Text = "From Date";
+            // 
+            // lblToDate
+            // 
+            this.lblToDate.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblToDate.Appearance.Options.UseFont = true;
+            this.lblToDate.Location = new System.Drawing.Point(1083, 74);
+            this.lblToDate.Name = "lblToDate";
+            this.lblToDate.Size = new System.Drawing.Size(59, 19);
+            this.lblToDate.StyleController = this.layoutControl1;
+            this.lblToDate.TabIndex = 7;
+            this.lblToDate.Text = "To Date";
             // 
             // Root
             // 
@@ -251,7 +281,9 @@
             this.layoutControlItem1,
             this.layoutControlItem8,
             this.layoutControlItem7,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem6});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1162, 752);
             this.Root.TextVisible = false;
@@ -262,7 +294,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 54);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(448, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(419, 42);
             this.layoutControlItem1.Text = "Name of the Bank ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(101, 15);
             // 
@@ -289,10 +321,34 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(448, 54);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(419, 54);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(694, 42);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(319, 42);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.lblFromDate;
+            this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem2.CustomizationFormText = "From Date : ";
+            this.layoutControlItem2.Location = new System.Drawing.Point(738, 54);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem2.Size = new System.Drawing.Size(212, 42);
+            this.layoutControlItem2.Text = "From Date : ";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(101, 15);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.lblToDate;
+            this.layoutControlItem6.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem6.CustomizationFormText = "To Date : ";
+            this.layoutControlItem6.Location = new System.Drawing.Point(950, 54);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem6.Size = new System.Drawing.Size(192, 42);
+            this.layoutControlItem6.Text = "To Date : ";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(101, 15);
             // 
             // ucChequeLog
             // 
@@ -313,6 +369,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,5 +396,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.LabelControl lblFromDate;
+        private DevExpress.XtraEditors.LabelControl lblToDate;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

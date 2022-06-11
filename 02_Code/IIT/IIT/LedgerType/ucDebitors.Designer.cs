@@ -230,6 +230,7 @@
             conditionValidationRule3.ErrorText = "Mandatory";
             conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule3);
+            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterestCluase_Spin);
             // 
             // txtInterestCluase
             // 
@@ -250,6 +251,7 @@
             conditionValidationRule4.ErrorText = "Mandatory";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider1.SetValidationRule(this.txtInterestCluase, conditionValidationRule4);
+            this.txtInterestCluase.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterestCluase_Spin);
             // 
             // txtPANNumber
             // 
