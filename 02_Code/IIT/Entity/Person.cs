@@ -2,6 +2,11 @@
 {
     public class Person : EntityBase
     {
+        public Person()
+        {
+            IsAuthorizedSignatory = false;
+        }
+
         public object PersonName { get; set; }
 
         public object FatherName { get; set; }

@@ -25,18 +25,15 @@ namespace IIT
 
         private void frmAddPartner_Load(object sender, EventArgs e)
         {
-            if(!person.ID.Equals(0))
-            {
-                txtNameofthepartner.EditValue = person.PersonName;
-                txtFatherName.EditValue = person.FatherName;
-                txtAddress.EditValue = person.Address;
-                txtDINNumber.EditValue = person.DINNo;
-                txtPanNumber.EditValue = person.PANNumber;
-                txtAadharNumber.EditValue = person.AadharNumber;
-                txtNumberOfSharesHeld.EditValue = person.NoOfShares;
-                txtShare.EditValue = person.PercentageShares;
-                chkAuthor.EditValue = person.IsAuthorizedSignatory;
-            }
+            txtNameofthepartner.EditValue = person.PersonName;
+            txtFatherName.EditValue = person.FatherName;
+            txtAddress.EditValue = person.Address;
+            txtDINNumber.EditValue = person.DINNo;
+            txtPanNumber.EditValue = person.PANNumber;
+            txtAadharNumber.EditValue = person.AadharNumber;
+            txtNumberOfSharesHeld.EditValue = person.NoOfShares;
+            txtShare.EditValue = person.PercentageShares;
+            chkAuthor.EditValue = person.IsAuthorizedSignatory;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

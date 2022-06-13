@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPartnershipFirm));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -68,6 +73,8 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcNOOfShares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEditPartner = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAddPartner = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddGSTNumber = new DevExpress.XtraEditors.SimpleButton();
             this.txtOfficeNumber = new DevExpress.XtraEditors.TextEdit();
@@ -137,6 +144,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCompanyNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPartners)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPartners)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditPartner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOfficeNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSameAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPincodeB.Properties)).BeginInit();
@@ -283,6 +291,8 @@
             this.gcPartners.Location = new System.Drawing.Point(15, 533);
             this.gcPartners.MainView = this.gvPartners;
             this.gcPartners.Name = "gcPartners";
+            this.gcPartners.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnEditPartner});
             this.gcPartners.Size = new System.Drawing.Size(999, 107);
             this.gcPartners.TabIndex = 27;
             this.gcPartners.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -303,10 +313,10 @@
             this.gridColumn7,
             this.gridColumn8,
             this.gcNOOfShares,
-            this.gridColumn10});
+            this.gridColumn10,
+            this.gridColumn6});
             this.gvPartners.GridControl = this.gcPartners;
             this.gvPartners.Name = "gvPartners";
-            this.gvPartners.OptionsBehavior.Editable = false;
             this.gvPartners.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn11
@@ -314,12 +324,14 @@
             this.gridColumn11.Caption = "ID";
             this.gridColumn11.FieldName = "ID";
             this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "PersonName";
             this.gridColumn1.FieldName = "PersonName";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -328,6 +340,7 @@
             this.gridColumn2.Caption = "FatherName";
             this.gridColumn2.FieldName = "FatherName";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -336,6 +349,7 @@
             this.gridColumn3.Caption = "PANNumber";
             this.gridColumn3.FieldName = "PANNumber";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -344,6 +358,7 @@
             this.gridColumn4.Caption = "AadharNumber";
             this.gridColumn4.FieldName = "AadharNumber";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -352,12 +367,14 @@
             this.gridColumn5.Caption = "EntityID";
             this.gridColumn5.FieldName = "EntityID";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             // 
             // gcDIN
             // 
             this.gcDIN.Caption = "DINNo";
             this.gcDIN.FieldName = "DINNo";
             this.gcDIN.Name = "gcDIN";
+            this.gcDIN.OptionsColumn.AllowEdit = false;
             this.gcDIN.Visible = true;
             this.gcDIN.VisibleIndex = 4;
             // 
@@ -366,6 +383,7 @@
             this.gridColumn7.Caption = "IsAuthorizedSignatory";
             this.gridColumn7.FieldName = "IsAuthorizedSignatory";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
             // 
@@ -374,6 +392,7 @@
             this.gridColumn8.Caption = "PercentageShares";
             this.gridColumn8.FieldName = "PercentageShares";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
             // 
@@ -382,6 +401,7 @@
             this.gcNOOfShares.Caption = "NoOfShares";
             this.gcNOOfShares.FieldName = "NoOfShares";
             this.gcNOOfShares.Name = "gcNOOfShares";
+            this.gcNOOfShares.OptionsColumn.AllowEdit = false;
             this.gcNOOfShares.Visible = true;
             this.gcNOOfShares.VisibleIndex = 7;
             // 
@@ -390,8 +410,27 @@
             this.gridColumn10.Caption = "Address";
             this.gridColumn10.FieldName = "Address";
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 8;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Edit";
+            this.gridColumn6.ColumnEdit = this.btnEditPartner;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 9;
+            // 
+            // btnEditPartner
+            // 
+            this.btnEditPartner.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnEditPartner.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEditPartner.Name = "btnEditPartner";
+            this.btnEditPartner.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEditPartner.Click += new System.EventHandler(this.btnEditPartner_Click);
             // 
             // btnAddPartner
             // 
@@ -1204,6 +1243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCompanyNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPartners)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPartners)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditPartner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOfficeNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSameAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPincodeB.Properties)).EndInit();
@@ -1354,5 +1394,7 @@
         private DevExpress.XtraEditors.LabelControl lblFormHeading;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.LookUpEdit cmbNatureOfBuisness;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditPartner;
     }
 }

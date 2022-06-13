@@ -132,22 +132,26 @@ namespace IIT
             if (!dxValidationProvider1.Validate())
                 return;
 
-            //string errorMessage = null;
-            //if (entityData.PersonData == null || cmbNumberOfPartners.EditValue == null 
-            //    || !entityData.PersonData.Count.Equals(Convert.ToInt32(cmbNumberOfPartners.EditValue)))
-            //{
-            //    errorMessage = "Person data doesn't match with entered No. of partners value";
-            //}
-            //else if (entityData.PersonData.Select(x => x.PercentageShares ?? 0m).Cast<decimal>().Sum() != 100)
-            //{
-            //    errorMessage = "Total sum of shares in person do not add up to 100";
-            //}
+            string errorMessage = null;
+            if (entityData.PersonData == null || cmbNumberOfPartners.EditValue == null)
+            {
+                errorMessage = "Person data or No. of partners is empty";
+            }
+            else if(entityData.PersonData.Count.Equals(Convert.ToInt32(cmbNumberOfPartners.EditValue)) &&
+                entityData.PersonData.Select(x => x.PercentageShares ?? 0m).Cast<decimal>().Sum() != 100)
+            {
+                errorMessage = "Sum of Percentage of shares should be 100";
+            }
+            else if (entityData.PersonData.Select(x => x.PercentageShares ?? 0m).Cast<decimal>().Sum() > 100)
+            {
+                errorMessage = "Total sum of percentage of shares is greater than 100";
+            }
 
-            //if(!string.IsNullOrEmpty(errorMessage))
-            //{
-            //    XtraMessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    return;
-            //}
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                XtraMessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             SplashScreenManager.ShowForm(typeof(frmProgress), true, true);
 
@@ -315,6 +319,19 @@ namespace IIT
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void btnEditPartner_Click(object sender, EventArgs e)
+        {
+            if (gvPartners.FocusedRowHandle < 0 || !(gvPartners.FocusedRowObject is Person)) return;
+
+            Person personObj = gvPartners.FocusedRowObject as Person;
+            frmAddPartner obj = new frmAddPartner(personObj, entityType == 13);
+            Utility.ShowDialog(obj);
+            if (personObj.IsSave)
+            {
+                gcPartners.RefreshDataSource();
+            }
         }
     }
 }
