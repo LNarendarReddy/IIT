@@ -24,6 +24,7 @@ namespace IIT
             };
         public override IEnumerable<ActionText> HelpText => helpText;
 
+        public override bool ShowQuickOptions => false;
         public override string Caption => @"Create\Modify Entity";
 
         EntityDataRepository entityDataRepository = new EntityDataRepository();

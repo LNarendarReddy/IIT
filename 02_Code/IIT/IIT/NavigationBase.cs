@@ -16,6 +16,8 @@ namespace IIT
 
         public virtual bool HandlesESC => false;
 
+        public virtual bool ShowQuickOptions => true;
+
         public NavigationBase()
         { 
             helpText = new List<ActionText>(); 

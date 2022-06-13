@@ -14,6 +14,8 @@ namespace IIT.Routes
         {
         }
 
+        public override bool ShowQuickOptions => false;
+
         public override void ActionExecute(string actionText)
         {
             NavigationBase formObj = null;

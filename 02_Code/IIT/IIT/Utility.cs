@@ -103,6 +103,7 @@ namespace IIT
             //frmSingularMain.Instance.Text = selectedEntityName;
             frmSingularMain.Instance.lblEntityName.Text = selectedEntityName;
             frmSingularMain.Instance.lblNavigationHeader.Text = userControl.Header;
+            frmSingularMain.Instance.lcQuickOptions.Visible = userControl.ShowQuickOptions;
 
         }
         public static void SetGridFormatting(GridView gridView)

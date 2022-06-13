@@ -1,13 +1,16 @@
 ﻿using DevExpress.XtraEditors;
+using IIT.Routes;
 using System;
 using System.IO;
 using System.Windows.Forms;
 
 namespace IIT
 {
-    public partial class frmSingularMain : DevExpress.XtraEditors.XtraForm
+    public partial class frmSingularMain : XtraForm
     {
         private static frmSingularMain _instance = null;
+
+        private readonly AccountingRoute accountingRoute = new AccountingRoute();
 
         public static frmSingularMain Instance { get { return _instance ?? (_instance = new frmSingularMain()); } }
 
@@ -38,14 +41,16 @@ namespace IIT
 
         public void RollbackControl(bool showPrompt = true)
         {
-            showPrompt = showPrompt && !(pcMain.Controls[0] is ucNavigationRouter);
+            NavigationBase previousControl = (pcMain.Controls[0] as NavigationBase)?.PreviousControl;
+
+            showPrompt = showPrompt && !(pcMain.Controls[0] is ucNavigationRouter) && previousControl != null;
 
             if (showPrompt 
                 && XtraMessageBox.Show("Are you sure you want to close?"
                     , "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
                 != DialogResult.Yes) return;
 
-            Utility.ShowDialog((pcMain.Controls[0] as NavigationBase)?.PreviousControl);
+            Utility.ShowDialog(previousControl);
         }
 
         private void frmSingularMain_KeyPress(object sender, KeyPressEventArgs e)
@@ -60,6 +65,26 @@ namespace IIT
             if (e.KeyCode != Keys.Escape || CurrentControl == null || CurrentControl.HandlesESC)
                 return;
             RollbackControl();
+        }
+
+        private void btnLedgerCreation_Click(object sender, EventArgs e)
+        {
+            accountingRoute.ActionExecute((sender as SimpleButton).Text);
+        }
+
+        private void btnVoucherEntry_Click(object sender, EventArgs e)
+        {
+            accountingRoute.ActionExecute((sender as SimpleButton).Text);
+        }
+
+        private void btnAccountingReports_Click(object sender, EventArgs e)
+        {
+            accountingRoute.ActionExecute((sender as SimpleButton).Text);
+        }
+
+        private void btnRequisitionForms_Click(object sender, EventArgs e)
+        {
+            accountingRoute.ActionExecute((sender as SimpleButton).Text);
         }
     }
 }

@@ -44,6 +44,9 @@ namespace IIT
         private List<ActionText> helpText = new List<ActionText>();
         public override NavigationBase PreviousControl { get => base.PreviousControl; set { } }
         public override IEnumerable<ActionText> HelpText => helpText;
+        
+        public override bool ShowQuickOptions => false;
+
         public override string Caption => "(Home)";
 
         public frmEntityList() 

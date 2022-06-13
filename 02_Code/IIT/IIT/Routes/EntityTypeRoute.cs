@@ -5,8 +5,7 @@ namespace IIT.Routes
 {
     public class EntityTypeRoute : ucNavigationRouter
     {
-        public EntityTypeRoute() 
-            : base(new List<string>()
+        public EntityTypeRoute() : base(new List<string>()
                     {
                         "Individual / Proprietor Firm"
                         , "Partnership Firm"
@@ -15,6 +14,9 @@ namespace IIT.Routes
                     }, "Entity Selection")
         {
         }
+
+        public override bool ShowQuickOptions => false;
+
 
         public override void ActionExecute(string actionText)
         {
