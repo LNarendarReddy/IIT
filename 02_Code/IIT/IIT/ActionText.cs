@@ -8,11 +8,17 @@
 
         public string Shortcut { get; set; }
 
-        internal ActionText(string action, int sno = 0, bool buildShort = true, string shortCut = "")
+        public bool IsHeader { get; set; }
+
+        internal ActionText(string action, int sno = 0, bool buildShort = true, string shortCut = "", bool isHeader = false)
         {
-            SNo = sno;
             Action = action;
-            Shortcut = buildShort ? $"Ctrl + {SNo}" : shortCut;
+            IsHeader = isHeader;
+            if (!isHeader)
+            {
+                SNo = sno;
+                Shortcut = buildShort ? $"Ctrl + {SNo}" : shortCut;
+            }
         }
     }
 }

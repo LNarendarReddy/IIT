@@ -4,19 +4,19 @@ namespace IIT.Routes
 {
     public class AccountingReportsRoute : ucNavigationRouter
     {
-        public AccountingReportsRoute() : base(new List<string>()
+        public AccountingReportsRoute() : base(new List<ActionText>()
                     {
-                        "On Demand Reports"
-                        ,"Ledger Reports"
-                        ,"Day Book"
-                        ,"Inventory Reports"
-                        ,"Banking/Finance Utility"
-                        ,"Financial Reports"
-                        , "Trail Balance"
-                        , "Balance Sheet"
-                        , "Profit and Loss Account"
-                        , "Cash Flow Statement"
-                        , "Funds Flow Statement"
+                        new ActionText("On Demand Reports", isHeader:true)
+                        , new ActionText("Ledger Reports", 1)
+                        , new ActionText("Day Book", 2)
+                        , new ActionText("Inventory Reports", 3)
+                        , new ActionText("Banking/Finance Utility", 4)
+                        , new ActionText("Financial Reports", isHeader:true)
+                        , new ActionText( "Trail Balance", 5)
+                        , new ActionText( "Balance Sheet", 6)
+                        , new ActionText( "Profit and Loss Account", 7)
+                        , new ActionText( "Cash Flow Statement", 8)
+                        , new ActionText( "Funds Flow Statement", 9)
                     }, "Accounting Reports")
         {
         }

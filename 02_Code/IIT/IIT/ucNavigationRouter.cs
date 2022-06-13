@@ -14,11 +14,12 @@ namespace IIT
     public partial class ucNavigationRouter : NavigationBase
     {
         List<ActionText> buttonsList;
+        List<ActionText> nonHeaderbuttonsList;
         private const int GridMinWidth = 300;
         private const int GridMinHeight = 100;
         private string caption;
 
-        public override IEnumerable<ActionText> HelpText => buttonsList;
+        public override IEnumerable<ActionText> HelpText => nonHeaderbuttonsList;
 
         public override string Caption => caption;
 
@@ -28,6 +29,16 @@ namespace IIT
             int i = 1;
             buttonsList = buttons.Select(x => new ActionText(x, i++)).ToList();
             caption = _caption;
+            nonHeaderbuttonsList = buttonsList;
+        }
+
+        public ucNavigationRouter(List<ActionText> buttons, string _caption)
+        {
+            InitializeComponent();
+            buttonsList = buttons;
+            caption = _caption;
+            nonHeaderbuttonsList = buttonsList.Where(x => !x.IsHeader).ToList();
+            //gvButtons.FormatRules.AddValueRule(gvButtons.Columns[""], , DevExpress.XtraEditors.FormatCondition.Equal, )
         }
 
         private void ucNavigationRouter_Load(object sender, EventArgs e)
@@ -84,6 +95,19 @@ namespace IIT
 
             gvButtons.FocusedRowHandle = inputNumber - 1;
             gcButtons_Click(sender, e);
+        }
+
+        private void gvButtons_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column == gvButtons.Columns["SNo"] && e.Value.Equals(0)) e.DisplayText = string.Empty;
+        }
+
+        private void gvButtons_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle >= 0 && Convert.ToBoolean(gvButtons.GetRowCellValue(e.FocusedRowHandle, "IsHeader")))
+            {
+                gvButtons.FocusedRowHandle = e.FocusedRowHandle + 1;
+            }
         }
     }
 }
