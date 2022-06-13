@@ -38,7 +38,6 @@ namespace IIT
             buttonsList = buttons;
             caption = _caption;
             nonHeaderbuttonsList = buttonsList.Where(x => !x.IsHeader).ToList();
-            //gvButtons.FormatRules.AddValueRule(gvButtons.Columns[""], , DevExpress.XtraEditors.FormatCondition.Equal, )
         }
 
         private void ucNavigationRouter_Load(object sender, EventArgs e)
@@ -85,15 +84,16 @@ namespace IIT
 
         private void gcButtons_KeyDown(object sender, KeyEventArgs e)
         {
-            int inputNumber = gvButtons.FocusedRowHandle + 1;
+            int inputNumber = gvButtons.FocusedRowHandle;
             if (e.KeyCode != Keys.Enter)
             {
                 if (!e.Control || !char.IsNumber((char)e.KeyCode)
                     || !int.TryParse(((char)e.KeyCode).ToString(), out inputNumber) || !(inputNumber > 0) || !(inputNumber <= gvButtons.RowCount))
                     return;
+                inputNumber = buttonsList.IndexOf(buttonsList.First(x => x.SNo == inputNumber));
             }
 
-            gvButtons.FocusedRowHandle = inputNumber - 1;
+            gvButtons.FocusedRowHandle = inputNumber;
             gcButtons_Click(sender, e);
         }
 
