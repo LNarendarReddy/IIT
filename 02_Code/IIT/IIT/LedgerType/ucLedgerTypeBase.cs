@@ -28,6 +28,7 @@ namespace IIT
             ledger.IsSave = true;
             Utility.ClearLedgerCache();
             (PreviousControl as frmLedgerCreation)?.RefreshTreeData(ledger, _isEdit, 3, _isCallFromAddButton);
+            if (!_isEdit && frmSingularMain.Instance.HasRequest("LEDGERID")) frmSingularMain.Instance.AddRequestValue("LEDGERID", ledger.ID); 
             frmSingularMain.Instance.RollbackControl(false);
         }
     }

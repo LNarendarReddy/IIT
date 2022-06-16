@@ -6,6 +6,12 @@ namespace IIT
     public class NavigationBase : XtraUserControl
     {
         IEnumerable<ActionText> helpText;
+
+        protected string RequestedType { get; set; }
+
+        protected BaseEdit RequestingControl { get; set; }
+
+
         public virtual NavigationBase PreviousControl { get; set; }
 
         public virtual IEnumerable<ActionText> HelpText => helpText;
@@ -22,5 +28,27 @@ namespace IIT
         { 
             helpText = new List<ActionText>(); 
         }
+
+        protected void AddRequestForCreate(string requestedType, BaseEdit requestingControl)
+        {
+            RequestedType = requestedType;
+            RequestingControl = requestingControl;
+            frmSingularMain.Instance.AddRequest(requestedType);
+        }
+
+        protected void FillFromCreateRequest()
+        {
+            if (string.IsNullOrEmpty(RequestedType)) return;
+
+            if (frmSingularMain.Instance.HasRequest(RequestedType))
+            {
+                RequestingControl.EditValue = frmSingularMain.Instance.GetRequestValue(RequestedType);
+                frmSingularMain.Instance.RemoveRequest(RequestedType);
+                RequestingControl.Focus();
+            }
+
+            RequestedType = string.Empty;
+            RequestingControl = null;
+        }       
     }
 }
