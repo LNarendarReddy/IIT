@@ -545,7 +545,6 @@
             this.lcibtnAddLedgerFrom.Size = new System.Drawing.Size(129, 42);
             this.lcibtnAddLedgerFrom.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedgerFrom.TextVisible = false;
-            this.lcibtnAddLedgerFrom.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // layoutControlItem6
             // 
@@ -602,7 +601,6 @@
             this.lcibtnAddLedger1To.Size = new System.Drawing.Size(129, 42);
             this.lcibtnAddLedger1To.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedger1To.TextVisible = false;
-            this.lcibtnAddLedger1To.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // lciAvailableBalanceFrom
             // 
@@ -649,6 +647,7 @@
             this.Name = "frmVoucher";
             this.Size = new System.Drawing.Size(841, 570);
             this.Load += new System.EventHandler(this.frmVoucherNew_Load);
+            this.VisibleChanged += new System.EventHandler(this.frmVoucher_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rgModeOfTransfer.Properties)).EndInit();

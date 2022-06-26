@@ -83,6 +83,7 @@ namespace IIT
             if(frmSingularMain.Instance.pcMain.Controls.Count == 1 && userControl.PreviousControl == null)
             {
                 userControl.PreviousControl = frmSingularMain.Instance.pcMain.Controls[0] as NavigationBase;
+                if(userControl.PreviousControl != null) userControl.PreviousControl.Visible = false;
             }
 
             frmSingularMain.Instance.pcMain.Controls.Clear();

@@ -2,6 +2,7 @@
 using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraReports.UI;
 using Entity;
+using IIT.Routes;
 using Repository;
 using Repository.Utility;
 using System;
@@ -15,6 +16,7 @@ namespace IIT
     {
         private bool isLoading = false;
         private string caption;
+
         public override string Caption => caption;
 
         private List<ActionText> helpText = new List<ActionText>()
@@ -331,16 +333,9 @@ namespace IIT
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-            //Ledger ledgerobj = new Ledger();
-            //Utility.ShowDialog(new frmLedger(ledgerobj, null, false));
-            //if (!ledgerobj.IsSave)
-            //    return;
-            //BindLookups();
-            //if (lciPaymentMadeTo.Visibility == LayoutVisibility.Never)
-            //    cmbPaymentMadefrom.Focus();
-            //else
-            //    cmbPaymentMadeto.Focus();
+        {            
+            AddRequestForCreate("LEDGERID", sender == btnAdd ? cmbPaymentMadefrom : cmbPaymentMadeto);
+            Utility.ShowDialog(new LedgerCreationRoute());
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -386,5 +381,13 @@ namespace IIT
                 return;
             lblPaymentToAvailableBalance.Text = $"Available Balance : {new LedgerRepository().GetAvailableBalance(cmbPaymentMadeto.EditValue)}";
         }
+
+        private void frmVoucher_VisibleChanged(object sender, EventArgs e)
+        {
+            if (!Visible || Disposing) return;
+            BindLookups();
+            FillFromCreateRequest();
+        }
+     
     }
 }
