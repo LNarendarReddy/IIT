@@ -3,7 +3,6 @@ namespace Entity.LedgerType
 {
     public class FixedAssetsCompany : LedgerTypeBase
     {
-        public object NameOfAsset { get; set; }
 
         public object RateOfDepreciation { get; set; }
 

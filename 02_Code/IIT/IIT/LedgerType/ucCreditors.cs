@@ -1,5 +1,7 @@
-﻿using Entity;
+﻿using DevExpress.XtraEditors;
+using Entity;
 using IIT;
+using Repository;
 using Repository.Utility;
 using System;
 
@@ -7,24 +9,45 @@ namespace IIT
 {
     public partial class ucCreditors : ucLedgerTypeBase
     {
-        public override string Caption => "Creditors or Raw Materials Suupliers ledgers Creation";
-        public ucCreditors(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
+        public ucCreditors(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
         }
         private void ucCreditors_Load(object sender, EventArgs e)
         {
+            cmbNatureOfSupplier.Properties.DataSource = LookUpUtility.GetNatureOfSupplier();
+            cmbNatureOfSupplier.Properties.ValueMember = "ENTITYLOOKUPID";
+            cmbNatureOfSupplier.Properties.DisplayMember = "LOOKUPVALUE";
+
+            cmbNameoftheBank.Properties.DataSource = LookUpUtility.GetBanks();
+            cmbNameoftheBank.Properties.ValueMember = "ENTITYLOOKUPID";
+            cmbNameoftheBank.Properties.DisplayMember = "LOOKUPVALUE";
+
+            cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
+            cmbTDSRates.Properties.ValueMember = "ENTITYLOOKUPID";
+            cmbTDSRates.Properties.DisplayMember = "LOOKUPVALUE";
+
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
+            cmbNatureOfSupplier.EditValue = ledger.CreditorsInfo.NatureOfSupplier;
             cmbRegistrationStatus.EditValue = ledger.CreditorsInfo.GSTRegistrationStatus;
             txtGSTNumber.EditValue = ledger.CreditorsInfo.GSTRegistrationNumber;
             txtPANNumber.EditValue = ledger.CreditorsInfo.PANNumber;
-            txtAddressOftheSupplier.EditValue = ledger.CreditorsInfo.SupplierAddress;
-            txtBankAccountDetails.EditValue = ledger.CreditorsInfo.BankAccountDetails;
             txtCreditPeriodAllowed.EditValue = ledger.CreditorsInfo.CreditPeriod;
             txtInterest.EditValue = ledger.CreditorsInfo.InterestClause;
+            rgTDSApplicable.EditValue = ledger.CreditorsInfo.IsTDSApplicable;
+            cmbTDSRates.EditValue = ledger.CreditorsInfo.TDSRate;
             txtOpeningBalance.EditValue = ledger.CreditorsInfo.OpeningBalance;
+            txtDoorNumber.EditValue = ledger.CreditorsInfo.DoorNumber;
+            txtArea.EditValue = ledger.CreditorsInfo.Area;
+            txtCity.EditValue = ledger.CreditorsInfo.City;
+            txtPinCode.EditValue = ledger.CreditorsInfo.PinCode;
+            cmbNameoftheBank.EditValue = ledger.CreditorsInfo.BankID;
+            txtAccountNumber.EditValue = ledger.CreditorsInfo.AccountNumber;
+            txtAccountHolderName.EditValue = ledger.CreditorsInfo.AccountHolderName;
+            txtIFSCCode.EditValue = ledger.CreditorsInfo.IFSCCode;
+            txtBranch.EditValue = ledger.CreditorsInfo.BranchName;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -32,29 +55,32 @@ namespace IIT
                 dxValidationProvider1.SetValidationRule(txtGSTNumber,null);
                 if (!dxValidationProvider1.Validate())
                 return;
-            ledger.CreditorsInfo.NameOfSundryCreditors = ledger.Name = ledger.Description = txtLedgerName.EditValue;
+            ledger.Name = ledger.Description = txtLedgerName.EditValue;
+            ledger.CreditorsInfo.NatureOfSupplier = cmbNatureOfSupplier.EditValue;
             ledger.CreditorsInfo.GSTRegistrationStatus = cmbRegistrationStatus.EditValue;
             ledger.CreditorsInfo.GSTRegistrationNumber = txtGSTNumber.EditValue;
             ledger.CreditorsInfo.PANNumber = txtPANNumber.EditValue;
-            ledger.CreditorsInfo.SupplierAddress = txtAddressOftheSupplier.EditValue;
-            ledger.CreditorsInfo.BankAccountDetails = txtBankAccountDetails.EditValue;
             ledger.CreditorsInfo.CreditPeriod = txtCreditPeriodAllowed.EditValue;
             ledger.CreditorsInfo.InterestClause = txtInterest.EditValue;
+            ledger.CreditorsInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.CreditorsInfo.TDSRate = cmbTDSRates.EditValue;
             ledger.CreditorsInfo.OpeningBalance = txtOpeningBalance.EditValue;
+            ledger.CreditorsInfo.DoorNumber = txtDoorNumber.EditValue;
+            ledger.CreditorsInfo.Area = txtArea.EditValue;
+            ledger.CreditorsInfo.City = txtCity.EditValue;
+            ledger.CreditorsInfo.PinCode = txtPinCode.EditValue;
+            ledger.CreditorsInfo.BankID = cmbNameoftheBank.EditValue;
+            ledger.CreditorsInfo.AccountNumber = txtAccountNumber.EditValue;
+            ledger.CreditorsInfo.AccountHolderName = txtAccountHolderName.EditValue;
+            ledger.CreditorsInfo.IFSCCode = txtIFSCCode.EditValue;
+            ledger.CreditorsInfo.BranchName = txtBranch.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_Creditors;
             Save();
         }
         private void cmbRegistrationStatus_EditValueChanged(object sender, EventArgs e)
         {
-            if (cmbRegistrationStatus.EditValue.Equals("Registered"))
-            { 
-                txtGSTNumber.Enabled = true;
-            }
-            else
-            {
-                txtGSTNumber.EditValue = null;
-                txtGSTNumber.Enabled = false;
-            }
+            txtGSTNumber.EditValue = null;
+            txtGSTNumber.Enabled = cmbRegistrationStatus.EditValue.Equals("Registered");
         }
         private void txtGSTNumber_Leave(object sender, EventArgs e)
         {
@@ -62,10 +88,14 @@ namespace IIT
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
         }
-
         private void txtInterest_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
         {
             e.Handled = true;
+        }
+        private void rgTypeofLoan_Enter(object sender, EventArgs e)
+        {
+            RadioGroup rg = sender as RadioGroup;
+            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
         }
     }
 }

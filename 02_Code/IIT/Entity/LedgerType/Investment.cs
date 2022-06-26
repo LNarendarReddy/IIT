@@ -3,7 +3,6 @@ namespace Entity.LedgerType
 {
     public class Investment : LedgerTypeBase
     {
-        public object Name { get; set; }
 
         public object TypeOfInvestment { get; set; }
 

@@ -8,9 +8,8 @@ namespace IIT
 {
     public partial class ucBankAccount : ucLedgerTypeBase
     {
-        public override string Caption => "Bank Account ledgers Creation";
-
-        public ucBankAccount(Ledger _ledger, bool isCallFromAddButton) : base(_ledger, isCallFromAddButton)
+        public ucBankAccount(Ledger _ledger, bool isCallFromAddButton,string caption) : 
+            base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
         }
@@ -31,6 +30,9 @@ namespace IIT
             cmbNameOftheBank.EditValue = ledger.BankAccountInfo.BankID;
             txtBankAccountNumber.EditValue = ledger.BankAccountInfo.AccountNumber;
             txtBranchAddress.EditValue = ledger.BankAccountInfo.BranchAddress;
+            txtLocation.EditValue = ledger.BankAccountInfo.Location;
+            txtPinCode.EditValue = ledger.BankAccountInfo.PinCode;
+            txtContactNo.EditValue = ledger.BankAccountInfo.ContactNumber;
             txtIFSCCode.EditValue = ledger.BankAccountInfo.IFSCCode;
             txtMICRCode.EditValue = ledger.BankAccountInfo.MICRCode;
             cmbNatureoftheBankAccount.EditValue = ledger.BankAccountInfo.NatureOfBankAccountID;
@@ -47,6 +49,9 @@ namespace IIT
             ledger.BankAccountInfo.BankID = cmbNameOftheBank.EditValue;
             ledger.BankAccountInfo.AccountNumber = txtBankAccountNumber.EditValue;
             ledger.BankAccountInfo.BranchAddress = txtBranchAddress.EditValue;
+            ledger.BankAccountInfo.Location = txtLocation.EditValue;
+            ledger.BankAccountInfo.PinCode = txtPinCode.EditValue;
+            ledger.BankAccountInfo.ContactNumber = txtContactNo.EditValue;
             ledger.BankAccountInfo.IFSCCode =  txtIFSCCode.EditValue;
             ledger.BankAccountInfo.MICRCode = txtMICRCode.EditValue;
             ledger.BankAccountInfo.NatureOfBankAccountID = cmbNatureoftheBankAccount.EditValue;

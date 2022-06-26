@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
 using IIT;
+using Repository;
 using Repository.Utility;
 using System;
 
@@ -9,9 +10,8 @@ namespace IIT
     public partial class ucFixedAssetsIndividual : ucLedgerTypeBase
     {
         private bool _isLandLedger = false;
-        public override string Caption => "Fixed Assets ledgers Creation";
 
-        public ucFixedAssetsIndividual(Ledger _ledger, bool isCallFromAddButton, bool isLandLedger) : base(_ledger, isCallFromAddButton)
+        public ucFixedAssetsIndividual(Ledger _ledger, bool isCallFromAddButton, bool isLandLedger,string caption) : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
             _isLandLedger = isLandLedger;
@@ -20,6 +20,11 @@ namespace IIT
 
         private void ucFixedAssetsIndividual_Load(object sender, EventArgs e)
         {
+
+            cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
+            cmbTDSRates.Properties.ValueMember = "ENTITYLOOKUPID";
+            cmbTDSRates.Properties.DisplayMember = "LOOKUPVALUE";
+
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
 
@@ -27,6 +32,8 @@ namespace IIT
             txtRateOfDepriciation.EditValue = ledger.FixedAssetsIndividualInfo.RateOfDepreciation;
             rgGSTConsidered.EditValue = ledger.FixedAssetsIndividualInfo.IsGSTConsidered;
             rgOperatingAsset.EditValue = ledger.FixedAssetsIndividualInfo.IsOperatingAsset;
+            rgTDSApplicable.EditValue = ledger.FixedAssetsIndividualInfo.IsTDSApplicable;
+            cmbTDSRates.EditValue = ledger.FixedAssetsIndividualInfo.TDSRate;
             txtOpeningBalance.EditValue = ledger.FixedAssetsIndividualInfo.OpeningBalance;
         }
 
@@ -36,10 +43,12 @@ namespace IIT
                 dxValidationProvider1.SetValidationRule(txtRateOfDepriciation, null);
             if (!dxValidationProvider1.Validate())
                 return;
-            ledger.FixedAssetsIndividualInfo.NameOfAsset = ledger.Name = ledger.Description = txtLedgerName.EditValue;
+            ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.FixedAssetsIndividualInfo.RateOfDepreciation = txtRateOfDepriciation.EditValue;
             ledger.FixedAssetsIndividualInfo.IsGSTConsidered = rgGSTConsidered.EditValue;
             ledger.FixedAssetsIndividualInfo.IsOperatingAsset = rgOperatingAsset.EditValue;
+            ledger.FixedAssetsIndividualInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.FixedAssetsIndividualInfo.TDSRate = cmbTDSRates.EditValue;
             ledger.FixedAssetsIndividualInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_FixedAsset;
             Save();

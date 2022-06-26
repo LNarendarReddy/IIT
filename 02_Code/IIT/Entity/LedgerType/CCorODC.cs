@@ -3,7 +3,6 @@ namespace Entity.LedgerType
 {
     public class CCorODC : LedgerTypeBase
     {
-        public object NameOfBankOrFinInst { get; set; }
 
         public object TypeOfLoan { get; set; }
 
@@ -14,14 +13,9 @@ namespace Entity.LedgerType
         public object InterestRate { get; set; }
 
         public object RegularEMIAmount { get; set; }
-
-        public object PDCAgainsECS { get; set; }
-
         public object FinancerGSTNo { get; set; }
 
         public object PANNo { get; set; }
-
-        public object TDSApplicable { get; set; }
 
     }
 }

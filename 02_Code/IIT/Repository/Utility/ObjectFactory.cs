@@ -18,7 +18,12 @@ namespace Repository.Utility
                     ledgerInfo = ledgerTypeData.ToString().DeserializeXml<BankAccount>();
                     break;
                 case LookUpIDMap.LedgerType_CapitalAccount:
-                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CapitalAccount>();
+                    if (EntityTypeID.Equals(LookUpIDMap.EntityType_Company))
+                        ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CapitalAccount>();
+                    else if (EntityTypeID.Equals(LookUpIDMap.EntityType_Firm))
+                        ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CapitalAccountFirm>();
+                    else 
+                        ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CapitalAccountPropietor>();
                     break;
                 case LookUpIDMap.LedgerType_CCOrODC:
                     ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CCorODC>();
@@ -43,6 +48,30 @@ namespace Repository.Utility
                     break;
                 case LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors:
                     ledgerInfo = ledgerTypeData.ToString().DeserializeXml<ServicesOrDuesToSubContractors>();
+                    break;
+                case LookUpIDMap.LedgerType_RawMaterials:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<RawMaterials>();
+                    break;
+                case LookUpIDMap.LedgerType_EmployeePaySheet:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<EmployeePaySheet>();
+                    break;
+                case LookUpIDMap.LedgerType_ReservesandSurplus:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<ReservesAndSurplus>();
+                    break;
+                case LookUpIDMap.LedgerType_Regular:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<Regular>();
+                    break;
+                case LookUpIDMap.LedgerType_IndirectIncomes:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<IndirectIncomes>();
+                    break;
+                case LookUpIDMap.LedgerType_DirectIncomes:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<DirectIncomes>();
+                    break;
+                case LookUpIDMap.LedgerType_CurrentAccountFirm:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CurrentAccountFirm>();
+                    break;
+                case LookUpIDMap.LedgerType_CashInHand:
+                    ledgerInfo = ledgerTypeData.ToString().DeserializeXml<CashinHand>();
                     break;
             }
 

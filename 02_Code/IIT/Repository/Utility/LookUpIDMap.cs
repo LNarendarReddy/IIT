@@ -65,7 +65,21 @@
 
         public const int LedgerType_ServiceOrDuesToSubContractors = 70;
 
-        public const int LedgerType_Default = 0;
+        public const int LedgerType_RawMaterials = 167;
+
+        public const int LedgerType_EmployeePaySheet = 168;
+
+        public const int LedgerType_ReservesandSurplus = 169;
+
+        public const int LedgerType_Regular = 170;
+
+        public const int LedgerType_IndirectIncomes = 171;
+
+        public const int LedgerType_DirectIncomes = 172;
+
+        public const int LedgerType_CurrentAccountFirm = 173;
+
+        public const int LedgerType_CashInHand = 176;
 
         #endregion Ledger Type
 

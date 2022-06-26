@@ -3,7 +3,7 @@ namespace Entity.LedgerType
 {
     public class CapitalAccount : LedgerTypeBase
     {
-        public object NameOfCapital { get; set; }
+        public object NatureoftheCapital { get; set; }
 
         public object AuthorizedCapitalAmount { get; set; }
 
@@ -14,5 +14,6 @@ namespace Entity.LedgerType
         public object FaceValue { get; set; }
 
         public object PremiumValue { get; set; }
+        public object PercentageOfPreference { get; set; }
     }
 }

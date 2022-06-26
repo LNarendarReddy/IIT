@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucFixedAssetsCompany));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucFixedAssetsCompany));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtOpeningBalanceDR = new DevExpress.XtraEditors.TextEdit();
             this.lblHeader = new DevExpress.XtraEditors.LabelControl();
@@ -46,6 +48,8 @@
             this.txtRateOfDerpiciation = new DevExpress.XtraEditors.TextEdit();
             this.rgGSTConsidered = new DevExpress.XtraEditors.RadioGroup();
             this.rgOperatingAsset = new DevExpress.XtraEditors.RadioGroup();
+            this.cmbTDSRates = new DevExpress.XtraEditors.LookUpEdit();
+            this.rgTDSApplicable = new DevExpress.XtraEditors.RadioGroup();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciROD = new DevExpress.XtraLayout.LayoutControlItem();
@@ -56,11 +60,11 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciDR = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalanceDR.Properties)).BeginInit();
@@ -69,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRateOfDerpiciation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgGSTConsidered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgOperatingAsset.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciROD)).BeginInit();
@@ -79,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciDR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,9 +95,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Controls.Add(this.panelControl1);
             this.tablePanel1.Controls.Add(this.layoutControl1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
@@ -98,32 +104,8 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(882, 456);
+            this.tablePanel1.Size = new System.Drawing.Size(674, 522);
             this.tablePanel1.TabIndex = 0;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Appearance.BorderColor = System.Drawing.Color.Silver;
-            this.panelControl1.Appearance.Options.UseBorderColor = true;
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.tablePanel1.SetColumn(this.panelControl1, 2);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(652, 50);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 1);
-            this.panelControl1.Size = new System.Drawing.Size(200, 357);
-            this.panelControl1.TabIndex = 1;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(16, 168);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(173, 15);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Dep rates chart to be displayed ";
             // 
             // layoutControl1
             // 
@@ -136,12 +118,14 @@
             this.layoutControl1.Controls.Add(this.txtRateOfDerpiciation);
             this.layoutControl1.Controls.Add(this.rgGSTConsidered);
             this.layoutControl1.Controls.Add(this.rgOperatingAsset);
-            this.layoutControl1.Location = new System.Drawing.Point(31, 38);
+            this.layoutControl1.Controls.Add(this.cmbTDSRates);
+            this.layoutControl1.Controls.Add(this.rgTDSApplicable);
+            this.layoutControl1.Location = new System.Drawing.Point(30, 22);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1046, 427, 650, 400);
             this.layoutControl1.Root = this.Root;
             this.tablePanel1.SetRow(this.layoutControl1, 1);
-            this.layoutControl1.Size = new System.Drawing.Size(615, 381);
+            this.layoutControl1.Size = new System.Drawing.Size(615, 479);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -160,10 +144,10 @@
             this.txtOpeningBalanceDR.Size = new System.Drawing.Size(334, 22);
             this.txtOpeningBalanceDR.StyleController = this.layoutControl1;
             this.txtOpeningBalanceDR.TabIndex = 5;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalanceDR, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalanceDR, conditionValidationRule1);
             this.txtOpeningBalanceDR.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtRateOfDerpiciation_Spin);
             // 
             // lblHeader
@@ -181,18 +165,18 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(484, 325);
+            this.btnSave.Location = new System.Drawing.Point(484, 421);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 36);
             this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(261, 283);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(261, 379);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -203,11 +187,11 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
             this.txtOpeningBalance.Size = new System.Drawing.Size(334, 22);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
-            this.txtOpeningBalance.TabIndex = 6;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule5);
+            this.txtOpeningBalance.TabIndex = 8;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule2);
             this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtRateOfDerpiciation_Spin);
             // 
             // txtLedgerName
@@ -218,10 +202,10 @@
             this.txtLedgerName.Size = new System.Drawing.Size(334, 22);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Mandatory";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule3);
             // 
             // txtRateOfDerpiciation
             // 
@@ -238,10 +222,10 @@
             this.txtRateOfDerpiciation.Size = new System.Drawing.Size(334, 22);
             this.txtRateOfDerpiciation.StyleController = this.layoutControl1;
             this.txtRateOfDerpiciation.TabIndex = 2;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtRateOfDerpiciation, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Mandatory";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtRateOfDerpiciation, conditionValidationRule4);
             this.txtRateOfDerpiciation.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtRateOfDerpiciation_Spin);
             // 
             // rgGSTConsidered
@@ -255,6 +239,10 @@
             this.rgGSTConsidered.Size = new System.Drawing.Size(334, 34);
             this.rgGSTConsidered.StyleController = this.layoutControl1;
             this.rgGSTConsidered.TabIndex = 3;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgGSTConsidered, conditionValidationRule5);
             this.rgGSTConsidered.Enter += new System.EventHandler(this.rgGSTConsidered_Enter);
             // 
             // rgOperatingAsset
@@ -268,7 +256,48 @@
             this.rgOperatingAsset.Size = new System.Drawing.Size(334, 37);
             this.rgOperatingAsset.StyleController = this.layoutControl1;
             this.rgOperatingAsset.TabIndex = 4;
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Mandatory";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgOperatingAsset, conditionValidationRule6);
             this.rgOperatingAsset.Enter += new System.EventHandler(this.rgGSTConsidered_Enter);
+            // 
+            // cmbTDSRates
+            // 
+            this.cmbTDSRates.EnterMoveNextControl = true;
+            this.cmbTDSRates.Location = new System.Drawing.Point(261, 337);
+            this.cmbTDSRates.Name = "cmbTDSRates";
+            this.cmbTDSRates.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSRates.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSRates.Properties.NullText = "";
+            this.cmbTDSRates.Properties.ShowHeader = false;
+            this.cmbTDSRates.Size = new System.Drawing.Size(334, 22);
+            this.cmbTDSRates.StyleController = this.layoutControl1;
+            this.cmbTDSRates.TabIndex = 7;
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Mandatory";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.cmbTDSRates, conditionValidationRule7);
+            // 
+            // rgTDSApplicable
+            // 
+            this.rgTDSApplicable.EnterMoveNextControl = true;
+            this.rgTDSApplicable.Location = new System.Drawing.Point(261, 283);
+            this.rgTDSApplicable.Name = "rgTDSApplicable";
+            this.rgTDSApplicable.Properties.Columns = 2;
+            this.rgTDSApplicable.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
+            this.rgTDSApplicable.Size = new System.Drawing.Size(334, 34);
+            this.rgTDSApplicable.StyleController = this.layoutControl1;
+            this.rgTDSApplicable.TabIndex = 6;
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "Mandatory";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgTDSApplicable, conditionValidationRule8);
             // 
             // Root
             // 
@@ -284,9 +313,11 @@
             this.layoutControlItem7,
             this.emptySpaceItem2,
             this.layoutControlItem8,
-            this.lciDR});
+            this.lciDR,
+            this.layoutControlItem9,
+            this.layoutControlItem21});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(615, 381);
+            this.Root.Size = new System.Drawing.Size(615, 479);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -338,7 +369,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtOpeningBalance;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 263);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 359);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
             this.layoutControlItem6.Size = new System.Drawing.Size(595, 42);
@@ -348,12 +379,12 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(464, 305);
+            this.layoutControlItem7.Location = new System.Drawing.Point(464, 401);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(131, 56);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(131, 56);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem7.Size = new System.Drawing.Size(131, 56);
+            this.layoutControlItem7.Size = new System.Drawing.Size(131, 58);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
@@ -361,9 +392,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 305);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 401);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(464, 56);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(464, 58);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -386,19 +417,43 @@
             this.lciDR.Text = "Opening balance of Depreciation Reserve";
             this.lciDR.TextSize = new System.Drawing.Size(229, 15);
             // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.rgTDSApplicable;
+            this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem9.CustomizationFormText = "Is TDS is applicable ";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 263);
+            this.layoutControlItem9.MaxSize = new System.Drawing.Size(0, 54);
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(292, 54);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem9.Size = new System.Drawing.Size(595, 54);
+            this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem9.Text = "Is TDS is applicable ";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(229, 15);
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.cmbTDSRates;
+            this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem21.CustomizationFormText = "Applicable section of TDS";
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 317);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
+            this.layoutControlItem21.Size = new System.Drawing.Size(595, 42);
+            this.layoutControlItem21.Text = "Applicable section of TDS";
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(229, 15);
+            // 
             // ucFixedAssetsCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucFixedAssetsCompany";
-            this.Size = new System.Drawing.Size(882, 456);
+            this.Size = new System.Drawing.Size(674, 522);
             this.Load += new System.EventHandler(this.ucFixedAssetsCompany_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalanceDR.Properties)).EndInit();
@@ -407,6 +462,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRateOfDerpiciation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgGSTConsidered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgOperatingAsset.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciROD)).EndInit();
@@ -417,6 +474,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciDR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -443,9 +502,11 @@
         private DevExpress.XtraLayout.LayoutControlItem lciDR;
         private DevExpress.XtraEditors.TextEdit txtRateOfDerpiciation;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.RadioGroup rgGSTConsidered;
         private DevExpress.XtraEditors.RadioGroup rgOperatingAsset;
+        private DevExpress.XtraEditors.LookUpEdit cmbTDSRates;
+        private DevExpress.XtraEditors.RadioGroup rgTDSApplicable;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
     }
 }

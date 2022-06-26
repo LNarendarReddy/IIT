@@ -14,13 +14,12 @@ namespace IIT
         {
 
         }
-        public ucLedgerTypeBase(Ledger _ledger, bool isCallFromAddButton) 
+        public ucLedgerTypeBase(Ledger _ledger, bool isCallFromAddButton,string caption) : base(caption)
         {
             ledger = _ledger;
             _isEdit = ledger.IsEdit;
             _isCallFromAddButton = isCallFromAddButton;
         }
-
         protected void Save()
         {
             ledger.UserName = Utility.UserName;

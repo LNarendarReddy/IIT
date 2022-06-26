@@ -120,32 +120,48 @@ namespace IIT
             int LedgerType = 0;
             int.TryParse(Convert.ToString(CallFromEvent ? tlLedger.FocusedNode.ParentNode["LEDGERTYPE"] :
                 tlLedger.FocusedNode["LEDGERTYPE"]), out LedgerType);
+            string caption = Convert.ToString(tlLedger.FocusedNode["LEDGERNAME"]);
             switch (LedgerType)
             {
                 case LookUpIDMap.LedgerType_BankAccount:
                     if (ledgerObj.BankAccountInfo == null)
                         ledgerObj.BankAccountInfo = new BankAccount();
-                    Utility.ShowDialog(new ucBankAccount(ledgerObj, !CallFromEvent));
+                    Utility.ShowDialog(new ucBankAccount(ledgerObj, !CallFromEvent, caption));
                     break;
                 case LookUpIDMap.LedgerType_CapitalAccount:
-                    if (ledgerObj.CapitalAccountInfo == null)
-                        ledgerObj.CapitalAccountInfo = new CapitalAccount();
-                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
+                    if (Utility.CurrentEntity.EntityTypeID.Equals(LookUpIDMap.EntityType_Company))
+                    {
+                        if (ledgerObj.CapitalAccountInfo == null)
+                            ledgerObj.CapitalAccountInfo = new CapitalAccount();
+                        Utility.ShowDialog(new ucCapitalAccount(ledgerObj, !CallFromEvent, caption));
+                    }
+                    else if (Utility.CurrentEntity.EntityTypeID.Equals(LookUpIDMap.EntityType_Firm))
+                    {
+                        if (ledgerObj.CapitalAccountFirmInfo == null)
+                            ledgerObj.CapitalAccountFirmInfo = new CapitalAccountFirm();
+                        Utility.ShowDialog(new ucCapitalAccountFirm(ledgerObj, !CallFromEvent, caption));
+                    }
+                    else
+                    {
+                        if (ledgerObj.CapitalAccountPropietorInfo == null)
+                            ledgerObj.CapitalAccountPropietorInfo = new CapitalAccountPropietor();
+                        Utility.ShowDialog(new ucCapitalAccountPropietor(ledgerObj, !CallFromEvent, caption));
+                    }
                     break;
                 case LookUpIDMap.LedgerType_CCOrODC:
                     if (ledgerObj.CCorODCInfo == null)
                         ledgerObj.CCorODCInfo = new CCorODC();
-                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
+                    Utility.ShowDialog(new ucCCorODC(ledgerObj, !CallFromEvent, caption));
                     break;
                 case LookUpIDMap.LedgerType_Creditors:
                     if (ledgerObj.CreditorsInfo == null)
                         ledgerObj.CreditorsInfo = new Creditors();
-                    Utility.ShowDialog(new ucCreditors(ledgerObj, !CallFromEvent));
+                    Utility.ShowDialog(new ucCreditors(ledgerObj, !CallFromEvent, caption));
                     break;
                 case LookUpIDMap.LedgerType_Debitors:
                     if (ledgerObj.DebitorsInfo == null)
                         ledgerObj.DebitorsInfo = new Debitors();
-                    Utility.ShowDialog(new ucDebitors(ledgerObj, !CallFromEvent));
+                    Utility.ShowDialog(new ucDebitors(ledgerObj, !CallFromEvent, caption));
                     break;
                 case LookUpIDMap.LedgerType_FixedAsset:
 
@@ -155,32 +171,69 @@ namespace IIT
                     {
                         if (ledgerObj.FixedAssetsIndividualInfo == null)
                             ledgerObj.FixedAssetsIndividualInfo = new FixedAssetsIndividual();
-                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj, !CallFromEvent, IsLandLedger));
+                        Utility.ShowDialog(new ucFixedAssetsIndividual(ledgerObj, !CallFromEvent, IsLandLedger, caption));
                     }
                     else
                     {
                         if (ledgerObj.FixedAssetsCompanyInfo == null)
                             ledgerObj.FixedAssetsCompanyInfo  = new FixedAssetsCompany();
-                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj, !CallFromEvent, IsLandLedger));
+                        Utility.ShowDialog(new ucFixedAssetsCompany(ledgerObj, !CallFromEvent, IsLandLedger, caption));
                     }
                     break;
                 case LookUpIDMap.LedgerType_Investment:
                     if (ledgerObj.InvestmentInfo == null)
                         ledgerObj.InvestmentInfo  = new Investment();
-                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
+                    Utility.ShowDialog(new ucInvestment(ledgerObj, !CallFromEvent, caption));
                     break;
                 case LookUpIDMap.LedgerType_Loan:
                     if (ledgerObj.LoanInfo == null)
                         ledgerObj.LoanInfo = new Loan();
-                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
+                    Utility.ShowDialog(new ucLoans(ledgerObj, !CallFromEvent, caption));
                     break;
                 case LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors:
                     if (ledgerObj.ServicesOrDuesToSubContractorsInfo == null)
                         ledgerObj.ServicesOrDuesToSubContractorsInfo = new ServicesOrDuesToSubContractors();
-                    Utility.ShowDialog(new ucServices(ledgerObj, !CallFromEvent));
+                    Utility.ShowDialog(new ucServices(ledgerObj, !CallFromEvent, caption));
                     break;
-                case LookUpIDMap.LedgerType_Default:
-                    Utility.ShowDialog(new frmLedger(ledgerObj, this, !CallFromEvent));
+                case LookUpIDMap.LedgerType_RawMaterials:
+                    if (ledgerObj.RawMaterialsInfo == null)
+                        ledgerObj.RawMaterialsInfo = new RawMaterials();
+                    Utility.ShowDialog(new ucRawMaterials(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_EmployeePaySheet:
+                    if (ledgerObj.EmployeePaySheetInfo == null)
+                        ledgerObj.EmployeePaySheetInfo = new EmployeePaySheet();
+                    Utility.ShowDialog(new ucEmployeePaysheet(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_ReservesandSurplus:
+                    if (ledgerObj. ReservesAndSurplusInfo == null)
+                        ledgerObj.ReservesAndSurplusInfo = new ReservesAndSurplus();
+                    Utility.ShowDialog(new ucReservesAndSurplus(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_Regular:
+                    if (ledgerObj.RegularInfo == null)
+                        ledgerObj.RegularInfo = new Regular();
+                    Utility.ShowDialog(new ucRegular(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_IndirectIncomes:
+                    if (ledgerObj.IndirectIncomesInfo == null)
+                        ledgerObj.IndirectIncomesInfo = new IndirectIncomes();
+                    Utility.ShowDialog(new ucIndirectIncomes(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_DirectIncomes:
+                    if (ledgerObj.DirectIncomesInfo == null)
+                        ledgerObj.DirectIncomesInfo = new DirectIncomes();
+                    Utility.ShowDialog(new ucDirectIncomes(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_CurrentAccountFirm:
+                    if (ledgerObj.CurrentAccountFirmInfo == null)
+                        ledgerObj.CurrentAccountFirmInfo = new CurrentAccountFirm();
+                    Utility.ShowDialog(new ucCurrentAccountFirm(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_CashInHand:
+                    if (ledgerObj.CashinHandInfo == null)
+                        ledgerObj.CashinHandInfo = new CashinHand();
+                    Utility.ShowDialog(new ucCashInHand(ledgerObj, !CallFromEvent, caption));
                     break;
             }
         }
