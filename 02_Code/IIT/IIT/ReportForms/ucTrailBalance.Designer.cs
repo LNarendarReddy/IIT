@@ -115,13 +115,14 @@
             // 
             this.gridColumn3.Caption = "Group Name";
             this.gridColumn3.FieldName = "GROUPNAME";
+            this.gridColumn3.GroupFormat.FormatString = "{0}";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Sub-Group Name";
+            this.gridColumn4.Caption = "Particulars";
             this.gridColumn4.FieldName = "SUBGROUPNAME";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
