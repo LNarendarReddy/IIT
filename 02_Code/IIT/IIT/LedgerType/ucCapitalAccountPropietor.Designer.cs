@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCapitalAccountPropietor));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.rgRecieptForAdditions = new DevExpress.XtraEditors.RadioGroup();
@@ -85,23 +85,21 @@
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel1.Controls.Add(this.layoutControl1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(664, 487);
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
+            this.tablePanel1.Size = new System.Drawing.Size(543, 404);
             this.tablePanel1.TabIndex = 0;
             // 
             // layoutControl1
             // 
-            this.tablePanel1.SetColumn(this.layoutControl1, 1);
+            this.tablePanel1.SetColumn(this.layoutControl1, 0);
             this.layoutControl1.Controls.Add(this.rgRecieptForAdditions);
             this.layoutControl1.Controls.Add(this.lblHeader);
             this.layoutControl1.Controls.Add(this.btnSave);
@@ -110,39 +108,39 @@
             this.layoutControl1.Controls.Add(this.rgInterestonCapital);
             this.layoutControl1.Controls.Add(this.rgDrawings);
             this.layoutControl1.Controls.Add(this.rgOthersifany);
-            this.layoutControl1.Location = new System.Drawing.Point(25, 24);
+            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1046, 427, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.tablePanel1.SetRow(this.layoutControl1, 1);
-            this.layoutControl1.Size = new System.Drawing.Size(615, 440);
+            this.tablePanel1.SetRow(this.layoutControl1, 0);
+            this.layoutControl1.Size = new System.Drawing.Size(527, 389);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // rgRecieptForAdditions
             // 
             this.rgRecieptForAdditions.EnterMoveNextControl = true;
-            this.rgRecieptForAdditions.Location = new System.Drawing.Point(165, 121);
+            this.rgRecieptForAdditions.Location = new System.Drawing.Point(138, 102);
             this.rgRecieptForAdditions.Name = "rgRecieptForAdditions";
             this.rgRecieptForAdditions.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgRecieptForAdditions.Size = new System.Drawing.Size(418, 43);
+            this.rgRecieptForAdditions.Size = new System.Drawing.Size(366, 36);
             this.rgRecieptForAdditions.StyleController = this.layoutControl1;
             this.rgRecieptForAdditions.TabIndex = 2;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgRecieptForAdditions, conditionValidationRule1);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Mandatory";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgRecieptForAdditions, conditionValidationRule7);
             this.rgRecieptForAdditions.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // lblHeader
             // 
-            this.lblHeader.Appearance.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Appearance.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblHeader.Appearance.Options.UseFont = true;
-            this.lblHeader.Location = new System.Drawing.Point(105, 12);
+            this.lblHeader.Location = new System.Drawing.Point(125, 5);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(404, 22);
+            this.lblHeader.Size = new System.Drawing.Size(276, 16);
             this.lblHeader.StyleController = this.layoutControl1;
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Propietors Captial Account Ledger Creation";
@@ -151,9 +149,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(476, 392);
+            this.btnSave.Location = new System.Drawing.Point(411, 348);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(127, 36);
+            this.btnSave.Size = new System.Drawing.Size(111, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
@@ -162,7 +160,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(153, 358);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(127, 317);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -171,80 +169,80 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
-            this.txtOpeningBalance.Size = new System.Drawing.Size(442, 22);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(388, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 6;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Mandatory";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule1);
             this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textEdit_Spin);
             // 
             // txtLedgerName
             // 
             this.txtLedgerName.EnterMoveNextControl = true;
-            this.txtLedgerName.Location = new System.Drawing.Point(153, 46);
+            this.txtLedgerName.Location = new System.Drawing.Point(127, 32);
             this.txtLedgerName.Name = "txtLedgerName";
-            this.txtLedgerName.Size = new System.Drawing.Size(442, 22);
+            this.txtLedgerName.Size = new System.Drawing.Size(388, 20);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Mandatory";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule2);
             // 
             // rgInterestonCapital
             // 
             this.rgInterestonCapital.EnterMoveNextControl = true;
-            this.rgInterestonCapital.Location = new System.Drawing.Point(165, 238);
+            this.rgInterestonCapital.Location = new System.Drawing.Point(138, 206);
             this.rgInterestonCapital.Name = "rgInterestonCapital";
             this.rgInterestonCapital.Properties.Columns = 2;
             this.rgInterestonCapital.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgInterestonCapital.Size = new System.Drawing.Size(418, 34);
+            this.rgInterestonCapital.Size = new System.Drawing.Size(366, 32);
             this.rgInterestonCapital.StyleController = this.layoutControl1;
             this.rgInterestonCapital.TabIndex = 4;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgInterestonCapital, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Mandatory";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgInterestonCapital, conditionValidationRule3);
             this.rgInterestonCapital.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // rgDrawings
             // 
             this.rgDrawings.EnterMoveNextControl = true;
-            this.rgDrawings.Location = new System.Drawing.Point(165, 184);
+            this.rgDrawings.Location = new System.Drawing.Point(138, 156);
             this.rgDrawings.Name = "rgDrawings";
             this.rgDrawings.Properties.Columns = 2;
             this.rgDrawings.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgDrawings.Size = new System.Drawing.Size(418, 34);
+            this.rgDrawings.Size = new System.Drawing.Size(366, 32);
             this.rgDrawings.StyleController = this.layoutControl1;
             this.rgDrawings.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgDrawings, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Mandatory";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgDrawings, conditionValidationRule4);
             this.rgDrawings.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // rgOthersifany
             // 
             this.rgOthersifany.EnterMoveNextControl = true;
-            this.rgOthersifany.Location = new System.Drawing.Point(165, 292);
+            this.rgOthersifany.Location = new System.Drawing.Point(138, 256);
             this.rgOthersifany.Name = "rgOthersifany";
             this.rgOthersifany.Properties.Columns = 2;
             this.rgOthersifany.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgOthersifany.Size = new System.Drawing.Size(418, 34);
+            this.rgOthersifany.Size = new System.Drawing.Size(366, 32);
             this.rgOthersifany.StyleController = this.layoutControl1;
             this.rgOthersifany.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgOthersifany, conditionValidationRule6);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Mandatory";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.rgOthersifany, conditionValidationRule5);
             this.rgOthersifany.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // Root
@@ -260,44 +258,45 @@
             this.layoutControlItem8,
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(615, 440);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.Root.Size = new System.Drawing.Size(527, 389);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtLedgerName;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 20);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(595, 42);
+            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem1.Size = new System.Drawing.Size(521, 38);
             this.layoutControlItem1.Text = "Name of the Propietor";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(121, 15);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(105, 14);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtOpeningBalance;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 338);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 305);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem6.Size = new System.Drawing.Size(595, 42);
+            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem6.Size = new System.Drawing.Size(521, 38);
             this.layoutControlItem6.Text = "Opening Balance";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(121, 15);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(105, 14);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(464, 380);
+            this.layoutControlItem7.Location = new System.Drawing.Point(406, 343);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(131, 40);
+            this.layoutControlItem7.Size = new System.Drawing.Size(115, 40);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 380);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 343);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(464, 40);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(406, 40);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -306,7 +305,7 @@
             this.layoutControlItem8.Control = this.lblHeader;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(595, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(521, 20);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -320,9 +319,9 @@
             this.layoutControlItem2,
             this.layoutControlItem9,
             this.layoutControlItem4});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 68);
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 58);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(595, 270);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(521, 247);
             this.layoutControlGroup1.Text = "Adjustments considered to the captial Account :- ";
             // 
             // layoutControlItem11
@@ -330,63 +329,63 @@
             this.layoutControlItem11.Control = this.rgRecieptForAdditions;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem11.Size = new System.Drawing.Size(571, 63);
+            this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem11.Size = new System.Drawing.Size(499, 54);
             this.layoutControlItem11.Text = "Reciepts or Additions";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(121, 15);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(105, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.rgDrawings;
             this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem2.CustomizationFormText = "Is TDS is applicable ";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 63);
-            this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 54);
-            this.layoutControlItem2.MinSize = new System.Drawing.Size(292, 54);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 50);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(250, 50);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(571, 54);
+            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem2.Size = new System.Drawing.Size(499, 50);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Drawings";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(121, 15);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(105, 14);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.rgInterestonCapital;
             this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem9.CustomizationFormText = "Is TDS is applicable ";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 117);
-            this.layoutControlItem9.MaxSize = new System.Drawing.Size(0, 54);
-            this.layoutControlItem9.MinSize = new System.Drawing.Size(292, 54);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 104);
+            this.layoutControlItem9.MaxSize = new System.Drawing.Size(0, 50);
+            this.layoutControlItem9.MinSize = new System.Drawing.Size(250, 50);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem9.Size = new System.Drawing.Size(571, 54);
+            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem9.Size = new System.Drawing.Size(499, 50);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.Text = "Interest on Capital";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(121, 15);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(105, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.rgOthersifany;
             this.layoutControlItem4.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem4.CustomizationFormText = "Others if any";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 171);
-            this.layoutControlItem4.MaxSize = new System.Drawing.Size(0, 54);
-            this.layoutControlItem4.MinSize = new System.Drawing.Size(292, 54);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 154);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(0, 50);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(250, 50);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(571, 54);
+            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem4.Size = new System.Drawing.Size(499, 50);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "Others if any";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(121, 15);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 14);
             // 
             // ucCapitalAccountPropietor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucCapitalAccountPropietor";
-            this.Size = new System.Drawing.Size(664, 487);
+            this.Size = new System.Drawing.Size(543, 404);
             this.Load += new System.EventHandler(this.ucCpaitalAccountPropietor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);

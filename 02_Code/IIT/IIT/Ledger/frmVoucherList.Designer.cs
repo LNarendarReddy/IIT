@@ -68,18 +68,18 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1105, 710);
+            this.layoutControl1.Size = new System.Drawing.Size(814, 507);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gcVoucher
             // 
-            this.gcVoucher.Location = new System.Drawing.Point(12, 12);
+            this.gcVoucher.Location = new System.Drawing.Point(4, 4);
             this.gcVoucher.MainView = this.gvVoucher;
             this.gcVoucher.Name = "gcVoucher";
             this.gcVoucher.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnView});
-            this.gcVoucher.Size = new System.Drawing.Size(1081, 686);
+            this.gcVoucher.Size = new System.Drawing.Size(806, 499);
             this.gcVoucher.TabIndex = 4;
             this.gcVoucher.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVoucher});
@@ -99,6 +99,7 @@
             this.gridColumn6,
             this.gridColumn4,
             this.gridColumn12});
+            this.gvVoucher.DetailHeight = 327;
             this.gvVoucher.GridControl = this.gcVoucher;
             this.gvVoucher.Name = "gvVoucher";
             this.gvVoucher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gvVoucher_KeyPress);
@@ -107,100 +108,114 @@
             // 
             this.gridColumn1.Caption = "VOUCHERID";
             this.gridColumn1.FieldName = "VOUCHERID";
+            this.gridColumn1.MinWidth = 17;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Width = 64;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Voucher Date";
             this.gridColumn2.FieldName = "VOUCHERDATE";
+            this.gridColumn2.MinWidth = 17;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 91;
+            this.gridColumn2.Width = 78;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Voucher #";
             this.gridColumn3.FieldName = "VOUCHERNUMBER";
+            this.gridColumn3.MinWidth = 17;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 77;
+            this.gridColumn3.Width = 66;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Amount";
             this.gridColumn5.FieldName = "AMOUNT";
+            this.gridColumn5.MinWidth = 17;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 83;
+            this.gridColumn5.Width = 71;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Payment To";
             this.gridColumn7.FieldName = "PAYMENTTO";
+            this.gridColumn7.MinWidth = 17;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Width = 64;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Bank Name";
             this.gridColumn8.FieldName = "BANKNAME";
+            this.gridColumn8.MinWidth = 17;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Width = 132;
+            this.gridColumn8.Width = 113;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Narration";
             this.gridColumn9.FieldName = "PURPOSE";
+            this.gridColumn9.MinWidth = 17;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 299;
+            this.gridColumn9.Width = 256;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "VOUCHERTYPEID";
             this.gridColumn10.FieldName = "VOUCHERTYPEID";
+            this.gridColumn10.MinWidth = 17;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Width = 64;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "Voucher Type";
             this.gridColumn11.FieldName = "VOUCHERTYPE";
+            this.gridColumn11.MinWidth = 17;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 1;
-            this.gridColumn11.Width = 105;
+            this.gridColumn11.Width = 90;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Payment To";
             this.gridColumn6.FieldName = "TOLEDGER";
+            this.gridColumn6.MinWidth = 17;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 115;
+            this.gridColumn6.Width = 99;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Payment From";
             this.gridColumn4.FieldName = "FROMLEDGER";
+            this.gridColumn4.MinWidth = 17;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 124;
+            this.gridColumn4.Width = 106;
             // 
             // gridColumn12
             // 
@@ -208,9 +223,11 @@
             this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn12.Caption = "View";
             this.gridColumn12.ColumnEdit = this.btnView;
+            this.gridColumn12.MinWidth = 17;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 7;
+            this.gridColumn12.Width = 64;
             // 
             // btnView
             // 
@@ -229,7 +246,8 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1105, 710);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.Root.Size = new System.Drawing.Size(814, 507);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -237,17 +255,17 @@
             this.layoutControlItem1.Control = this.gcVoucher;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1085, 690);
+            this.layoutControlItem1.Size = new System.Drawing.Size(810, 503);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // frmVoucherList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmVoucherList";
-            this.Size = new System.Drawing.Size(1105, 710);
+            this.Size = new System.Drawing.Size(814, 507);
             this.Load += new System.EventHandler(this.frmVoucherList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

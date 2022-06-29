@@ -197,7 +197,17 @@ namespace IIT
             entityData.PersonData.ForEach(x => x.UserName = Utility.UserName);
             entityData.GSTRegNo.ForEach(x => x.UserName = Utility.UserName);
 
-            entityDataRepository.Save(entityData);
+            try
+            {
+                entityDataRepository.Save(entityData);
+                SplashScreenManager.CloseForm();
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm();
+                XtraMessageBox.Show(ex.Message);
+            }
+
             IsSave = true;
             frmSingularMain.Instance.RollbackControl(false);
             frmSingularMain.Instance.RollbackControl(false);

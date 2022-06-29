@@ -113,7 +113,7 @@
             // 
             // layoutControl1
             // 
-            this.tablePanel1.SetColumn(this.layoutControl1, 1);
+            this.tablePanel1.SetColumn(this.layoutControl1, 0);
             this.layoutControl1.Controls.Add(this.lblPaymentToAvailableBalance);
             this.layoutControl1.Controls.Add(this.lblPaymentFromAvailableBalance);
             this.layoutControl1.Controls.Add(this.rgModeOfTransfer);
@@ -130,13 +130,13 @@
             this.layoutControl1.Controls.Add(this.dtpVoucherDate);
             this.layoutControl1.Controls.Add(this.lblformHeader);
             this.layoutControl1.Controls.Add(this.txtPurposeofPayment);
-            this.layoutControl1.Location = new System.Drawing.Point(43, 23);
+            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1134, 386, 650, 400);
             this.layoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.layoutControl1.Root = this.Root;
-            this.tablePanel1.SetRow(this.layoutControl1, 1);
-            this.layoutControl1.Size = new System.Drawing.Size(755, 524);
+            this.tablePanel1.SetRow(this.layoutControl1, 0);
+            this.layoutControl1.Size = new System.Drawing.Size(647, 489);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -146,7 +146,7 @@
             this.lblPaymentToAvailableBalance.Appearance.ForeColor = System.Drawing.Color.Green;
             this.lblPaymentToAvailableBalance.Appearance.Options.UseFont = true;
             this.lblPaymentToAvailableBalance.Appearance.Options.UseForeColor = true;
-            this.lblPaymentToAvailableBalance.Location = new System.Drawing.Point(16, 393);
+            this.lblPaymentToAvailableBalance.Location = new System.Drawing.Point(14, 345);
             this.lblPaymentToAvailableBalance.Name = "lblPaymentToAvailableBalance";
             this.lblPaymentToAvailableBalance.Size = new System.Drawing.Size(109, 15);
             this.lblPaymentToAvailableBalance.StyleController = this.layoutControl1;
@@ -159,7 +159,7 @@
             this.lblPaymentFromAvailableBalance.Appearance.ForeColor = System.Drawing.Color.Green;
             this.lblPaymentFromAvailableBalance.Appearance.Options.UseFont = true;
             this.lblPaymentFromAvailableBalance.Appearance.Options.UseForeColor = true;
-            this.lblPaymentFromAvailableBalance.Location = new System.Drawing.Point(16, 262);
+            this.lblPaymentFromAvailableBalance.Location = new System.Drawing.Point(14, 220);
             this.lblPaymentFromAvailableBalance.Name = "lblPaymentFromAvailableBalance";
             this.lblPaymentFromAvailableBalance.Size = new System.Drawing.Size(109, 15);
             this.lblPaymentFromAvailableBalance.StyleController = this.layoutControl1;
@@ -169,14 +169,14 @@
             // rgModeOfTransfer
             // 
             this.rgModeOfTransfer.EnterMoveNextControl = true;
-            this.rgModeOfTransfer.Location = new System.Drawing.Point(401, 297);
+            this.rgModeOfTransfer.Location = new System.Drawing.Point(347, 253);
             this.rgModeOfTransfer.Name = "rgModeOfTransfer";
             this.rgModeOfTransfer.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "RTGS"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "NEFT "),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(3)), "PDC"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(4)), "DD")});
-            this.rgModeOfTransfer.Size = new System.Drawing.Size(338, 34);
+            this.rgModeOfTransfer.Size = new System.Drawing.Size(286, 34);
             this.rgModeOfTransfer.StyleController = this.layoutControl1;
             this.rgModeOfTransfer.TabIndex = 5;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -188,7 +188,7 @@
             // txtChequeNumber
             // 
             this.txtChequeNumber.EnterMoveNextControl = true;
-            this.txtChequeNumber.Location = new System.Drawing.Point(140, 302);
+            this.txtChequeNumber.Location = new System.Drawing.Point(123, 258);
             this.txtChequeNumber.Name = "txtChequeNumber";
             this.txtChequeNumber.Properties.DisplayFormat.FormatString = "d";
             this.txtChequeNumber.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -197,7 +197,7 @@
             this.txtChequeNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtChequeNumber.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtChequeNumber.Properties.MaskSettings.Set("mask", "d");
-            this.txtChequeNumber.Size = new System.Drawing.Size(117, 22);
+            this.txtChequeNumber.Size = new System.Drawing.Size(97, 20);
             this.txtChequeNumber.StyleController = this.layoutControl1;
             this.txtChequeNumber.TabIndex = 4;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -209,9 +209,9 @@
             // 
             this.btnPrint.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrint.ImageOptions.SvgImage")));
-            this.btnPrint.Location = new System.Drawing.Point(620, 472);
+            this.btnPrint.Location = new System.Drawing.Point(532, 440);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(119, 36);
+            this.btnPrint.Size = new System.Drawing.Size(101, 34);
             this.btnPrint.StyleController = this.layoutControl1;
             this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "Save && Print";
@@ -221,9 +221,9 @@
             // 
             this.btnAddLedger1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLedger1.ImageOptions.Image")));
             this.btnAddLedger1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAddLedger1.Location = new System.Drawing.Point(630, 351);
+            this.btnAddLedger1.Location = new System.Drawing.Point(540, 305);
             this.btnAddLedger1.Name = "btnAddLedger1";
-            this.btnAddLedger1.Size = new System.Drawing.Size(109, 22);
+            this.btnAddLedger1.Size = new System.Drawing.Size(93, 22);
             this.btnAddLedger1.StyleController = this.layoutControl1;
             this.btnAddLedger1.TabIndex = 10;
             this.btnAddLedger1.Text = "Add Ledger";
@@ -233,9 +233,9 @@
             // 
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAdd.Location = new System.Drawing.Point(630, 220);
+            this.btnAdd.Location = new System.Drawing.Point(540, 180);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(109, 22);
+            this.btnAdd.Size = new System.Drawing.Size(93, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add Ledger";
@@ -244,22 +244,22 @@
             // cmbPaymentMadefrom
             // 
             this.cmbPaymentMadefrom.EnterMoveNextControl = true;
-            this.cmbPaymentMadefrom.Location = new System.Drawing.Point(140, 220);
+            this.cmbPaymentMadefrom.Location = new System.Drawing.Point(123, 180);
             this.cmbPaymentMadefrom.Name = "cmbPaymentMadefrom";
             this.cmbPaymentMadefrom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbPaymentMadefrom.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "Ledger"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERDESCRIPTION", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPID", "SUBGROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "sub Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPID", "GROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "Ledger", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERDESCRIPTION", "Description", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPID", "SUBGROUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "sub Group", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPID", "GROUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbPaymentMadefrom.Properties.NullText = "";
-            this.cmbPaymentMadefrom.Size = new System.Drawing.Size(470, 22);
+            this.cmbPaymentMadefrom.Size = new System.Drawing.Size(399, 20);
             this.cmbPaymentMadefrom.StyleController = this.layoutControl1;
             this.cmbPaymentMadefrom.TabIndex = 3;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -273,9 +273,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(481, 472);
+            this.btnSave.Location = new System.Drawing.Point(413, 440);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(119, 36);
+            this.btnSave.Size = new System.Drawing.Size(101, 34);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
@@ -284,22 +284,22 @@
             // cmbPaymentMadeto
             // 
             this.cmbPaymentMadeto.EnterMoveNextControl = true;
-            this.cmbPaymentMadeto.Location = new System.Drawing.Point(140, 351);
+            this.cmbPaymentMadeto.Location = new System.Drawing.Point(123, 305);
             this.cmbPaymentMadeto.Name = "cmbPaymentMadeto";
             this.cmbPaymentMadeto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbPaymentMadeto.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "Ledger"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERDESCRIPTION", "Description", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPID", "SUBGROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "Sub Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPID", "GROUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "Ledger", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERDESCRIPTION", "Description", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPID", "SUBGROUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("SUBGROUPNAME", "Sub Group", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPID", "GROUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GROUPNAME", "Group", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATIONID", "CLASSIFICATIONID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CLASSIFICATION", "Head", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbPaymentMadeto.Properties.NullText = "";
-            this.cmbPaymentMadeto.Size = new System.Drawing.Size(470, 22);
+            this.cmbPaymentMadeto.Size = new System.Drawing.Size(399, 20);
             this.cmbPaymentMadeto.StyleController = this.layoutControl1;
             this.cmbPaymentMadeto.TabIndex = 6;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -315,16 +315,16 @@
             this.txtAmountInWords.AppearanceDisabled.Options.UseTextOptions = true;
             this.txtAmountInWords.AppearanceDisabled.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.txtAmountInWords.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.txtAmountInWords.Location = new System.Drawing.Point(140, 185);
+            this.txtAmountInWords.Location = new System.Drawing.Point(123, 148);
             this.txtAmountInWords.Name = "txtAmountInWords";
-            this.txtAmountInWords.Size = new System.Drawing.Size(599, 15);
+            this.txtAmountInWords.Size = new System.Drawing.Size(510, 14);
             this.txtAmountInWords.StyleController = this.layoutControl1;
             this.txtAmountInWords.TabIndex = 2;
             // 
             // txtAmountIRupees
             // 
             this.txtAmountIRupees.EnterMoveNextControl = true;
-            this.txtAmountIRupees.Location = new System.Drawing.Point(140, 143);
+            this.txtAmountIRupees.Location = new System.Drawing.Point(123, 110);
             this.txtAmountIRupees.Name = "txtAmountIRupees";
             this.txtAmountIRupees.Properties.DisplayFormat.FormatString = "n2";
             this.txtAmountIRupees.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -333,7 +333,7 @@
             this.txtAmountIRupees.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtAmountIRupees.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtAmountIRupees.Properties.MaskSettings.Set("mask", "n2");
-            this.txtAmountIRupees.Size = new System.Drawing.Size(599, 22);
+            this.txtAmountIRupees.Size = new System.Drawing.Size(510, 20);
             this.txtAmountIRupees.StyleController = this.layoutControl1;
             this.txtAmountIRupees.TabIndex = 1;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -346,7 +346,7 @@
             // txtRefNo
             // 
             this.txtRefNo.EnterMoveNextControl = true;
-            this.txtRefNo.Location = new System.Drawing.Point(595, 86);
+            this.txtRefNo.Location = new System.Drawing.Point(510, 58);
             this.txtRefNo.Name = "txtRefNo";
             this.txtRefNo.Properties.DisplayFormat.FormatString = "d";
             this.txtRefNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -355,7 +355,7 @@
             this.txtRefNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtRefNo.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtRefNo.Properties.MaskSettings.Set("mask", "d");
-            this.txtRefNo.Size = new System.Drawing.Size(144, 22);
+            this.txtRefNo.Size = new System.Drawing.Size(123, 20);
             this.txtRefNo.StyleController = this.layoutControl1;
             this.txtRefNo.TabIndex = 12;
             conditionValidationRule6.ErrorText = "";
@@ -366,13 +366,13 @@
             // 
             this.dtpVoucherDate.EditValue = null;
             this.dtpVoucherDate.EnterMoveNextControl = true;
-            this.dtpVoucherDate.Location = new System.Drawing.Point(16, 86);
+            this.dtpVoucherDate.Location = new System.Drawing.Point(14, 58);
             this.dtpVoucherDate.Name = "dtpVoucherDate";
             this.dtpVoucherDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpVoucherDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpVoucherDate.Size = new System.Drawing.Size(131, 22);
+            this.dtpVoucherDate.Size = new System.Drawing.Size(111, 20);
             this.dtpVoucherDate.StyleController = this.layoutControl1;
             this.dtpVoucherDate.TabIndex = 13;
             conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -382,11 +382,11 @@
             // 
             // lblformHeader
             // 
-            this.lblformHeader.Appearance.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.lblformHeader.Appearance.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblformHeader.Appearance.Options.UseFont = true;
-            this.lblformHeader.Location = new System.Drawing.Point(315, 21);
+            this.lblformHeader.Location = new System.Drawing.Point(281, 11);
             this.lblformHeader.Name = "lblformHeader";
-            this.lblformHeader.Size = new System.Drawing.Size(124, 22);
+            this.lblformHeader.Size = new System.Drawing.Size(85, 16);
             this.lblformHeader.StyleController = this.layoutControl1;
             this.lblformHeader.TabIndex = 0;
             this.lblformHeader.Text = "labelControl1";
@@ -394,9 +394,9 @@
             // txtPurposeofPayment
             // 
             this.txtPurposeofPayment.EnterMoveNextControl = true;
-            this.txtPurposeofPayment.Location = new System.Drawing.Point(140, 428);
+            this.txtPurposeofPayment.Location = new System.Drawing.Point(123, 378);
             this.txtPurposeofPayment.Name = "txtPurposeofPayment";
-            this.txtPurposeofPayment.Size = new System.Drawing.Size(599, 24);
+            this.txtPurposeofPayment.Size = new System.Drawing.Size(510, 44);
             this.txtPurposeofPayment.StyleController = this.layoutControl1;
             this.txtPurposeofPayment.TabIndex = 7;
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -429,8 +429,8 @@
             this.lciAvailableBalanceFrom,
             this.lciAvailableBalanceTo});
             this.Root.Name = "Root";
-            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.Root.Size = new System.Drawing.Size(755, 524);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 5, 5);
+            this.Root.Size = new System.Drawing.Size(647, 489);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -439,81 +439,81 @@
             this.layoutControlItem1.Control = this.lblformHeader;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(15, 15, 15, 15);
-            this.layoutControlItem1.Size = new System.Drawing.Size(743, 52);
+            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlItem1.Size = new System.Drawing.Size(637, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dtpVoucherDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(151, 60);
+            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem2.Size = new System.Drawing.Size(129, 55);
             this.layoutControlItem2.Text = "Date:";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(112, 15);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(97, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtRefNo;
-            this.layoutControlItem3.Location = new System.Drawing.Point(579, 52);
+            this.layoutControlItem3.Location = new System.Drawing.Point(496, 26);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem3.Size = new System.Drawing.Size(164, 60);
+            this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem3.Size = new System.Drawing.Size(141, 55);
             this.layoutControlItem3.Text = "Ref#";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(112, 15);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(97, 14);
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(151, 52);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(129, 26);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(428, 60);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(367, 55);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtAmountIRupees;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 112);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 81);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 25, 10);
-            this.layoutControlItem4.Size = new System.Drawing.Size(743, 57);
+            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 23, 9);
+            this.layoutControlItem4.Size = new System.Drawing.Size(637, 52);
             this.layoutControlItem4.Text = "Amount In Rupees";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(112, 15);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(97, 14);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtAmountInWords;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 169);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 133);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem5.Size = new System.Drawing.Size(743, 35);
+            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem5.Size = new System.Drawing.Size(637, 32);
             this.layoutControlItem5.Text = "Amount In Words";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(112, 15);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(97, 14);
             // 
             // lciPurpose
             // 
             this.lciPurpose.Control = this.txtPurposeofPayment;
-            this.lciPurpose.Location = new System.Drawing.Point(0, 412);
+            this.lciPurpose.Location = new System.Drawing.Point(0, 363);
             this.lciPurpose.Name = "lciPurpose";
-            this.lciPurpose.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciPurpose.Size = new System.Drawing.Size(743, 44);
+            this.lciPurpose.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lciPurpose.Size = new System.Drawing.Size(637, 62);
             this.lciPurpose.Text = "Purpose of Payment";
-            this.lciPurpose.TextSize = new System.Drawing.Size(112, 15);
+            this.lciPurpose.TextSize = new System.Drawing.Size(97, 14);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnSave;
-            this.layoutControlItem8.Location = new System.Drawing.Point(465, 456);
-            this.layoutControlItem8.MaxSize = new System.Drawing.Size(139, 56);
-            this.layoutControlItem8.MinSize = new System.Drawing.Size(139, 56);
+            this.layoutControlItem8.Location = new System.Drawing.Point(399, 425);
+            this.layoutControlItem8.MaxSize = new System.Drawing.Size(119, 52);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(119, 52);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem8.Size = new System.Drawing.Size(139, 56);
+            this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem8.Size = new System.Drawing.Size(119, 52);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
@@ -521,40 +521,40 @@
             // lciPaymentMadeFrom
             // 
             this.lciPaymentMadeFrom.Control = this.cmbPaymentMadefrom;
-            this.lciPaymentMadeFrom.Location = new System.Drawing.Point(0, 204);
+            this.lciPaymentMadeFrom.Location = new System.Drawing.Point(0, 165);
             this.lciPaymentMadeFrom.Name = "lciPaymentMadeFrom";
-            this.lciPaymentMadeFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciPaymentMadeFrom.Size = new System.Drawing.Size(614, 42);
+            this.lciPaymentMadeFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lciPaymentMadeFrom.Size = new System.Drawing.Size(526, 40);
             this.lciPaymentMadeFrom.Text = "Bank Account";
-            this.lciPaymentMadeFrom.TextSize = new System.Drawing.Size(112, 15);
+            this.lciPaymentMadeFrom.TextSize = new System.Drawing.Size(97, 14);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 456);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 425);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(465, 56);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(399, 52);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lcibtnAddLedgerFrom
             // 
             this.lcibtnAddLedgerFrom.Control = this.btnAdd;
-            this.lcibtnAddLedgerFrom.Location = new System.Drawing.Point(614, 204);
+            this.lcibtnAddLedgerFrom.Location = new System.Drawing.Point(526, 165);
             this.lcibtnAddLedgerFrom.Name = "lcibtnAddLedgerFrom";
-            this.lcibtnAddLedgerFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lcibtnAddLedgerFrom.Size = new System.Drawing.Size(129, 42);
+            this.lcibtnAddLedgerFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lcibtnAddLedgerFrom.Size = new System.Drawing.Size(111, 40);
             this.lcibtnAddLedgerFrom.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedgerFrom.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnPrint;
-            this.layoutControlItem6.Location = new System.Drawing.Point(604, 456);
-            this.layoutControlItem6.MaxSize = new System.Drawing.Size(139, 56);
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(139, 56);
+            this.layoutControlItem6.Location = new System.Drawing.Point(518, 425);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(119, 52);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(119, 52);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem6.Size = new System.Drawing.Size(139, 56);
+            this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem6.Size = new System.Drawing.Size(119, 52);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -562,90 +562,88 @@
             // lciChequeNumber
             // 
             this.lciChequeNumber.Control = this.txtChequeNumber;
-            this.lciChequeNumber.Location = new System.Drawing.Point(0, 281);
+            this.lciChequeNumber.Location = new System.Drawing.Point(0, 238);
             this.lciChequeNumber.Name = "lciChequeNumber";
-            this.lciChequeNumber.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 15, 10);
-            this.lciChequeNumber.Size = new System.Drawing.Size(261, 54);
+            this.lciChequeNumber.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 14, 9);
+            this.lciChequeNumber.Size = new System.Drawing.Size(224, 52);
             this.lciChequeNumber.Text = "Cheque Number";
             this.lciChequeNumber.TextLocation = DevExpress.Utils.Locations.Left;
-            this.lciChequeNumber.TextSize = new System.Drawing.Size(112, 15);
+            this.lciChequeNumber.TextSize = new System.Drawing.Size(97, 14);
             this.lciChequeNumber.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // lciModeofTransfer
             // 
             this.lciModeofTransfer.Control = this.rgModeOfTransfer;
-            this.lciModeofTransfer.Location = new System.Drawing.Point(261, 281);
+            this.lciModeofTransfer.Location = new System.Drawing.Point(224, 238);
             this.lciModeofTransfer.Name = "lciModeofTransfer";
-            this.lciModeofTransfer.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciModeofTransfer.Size = new System.Drawing.Size(482, 54);
+            this.lciModeofTransfer.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lciModeofTransfer.Size = new System.Drawing.Size(413, 52);
             this.lciModeofTransfer.Text = "Mode of Transfer";
-            this.lciModeofTransfer.TextSize = new System.Drawing.Size(112, 15);
+            this.lciModeofTransfer.TextSize = new System.Drawing.Size(97, 14);
             this.lciModeofTransfer.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // lciPaymentMadeTo
             // 
             this.lciPaymentMadeTo.Control = this.cmbPaymentMadeto;
-            this.lciPaymentMadeTo.Location = new System.Drawing.Point(0, 335);
+            this.lciPaymentMadeTo.Location = new System.Drawing.Point(0, 290);
             this.lciPaymentMadeTo.Name = "lciPaymentMadeTo";
-            this.lciPaymentMadeTo.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciPaymentMadeTo.Size = new System.Drawing.Size(614, 42);
+            this.lciPaymentMadeTo.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lciPaymentMadeTo.Size = new System.Drawing.Size(526, 40);
             this.lciPaymentMadeTo.Text = "Payment Made to";
-            this.lciPaymentMadeTo.TextSize = new System.Drawing.Size(112, 15);
+            this.lciPaymentMadeTo.TextSize = new System.Drawing.Size(97, 14);
             // 
             // lcibtnAddLedger1To
             // 
             this.lcibtnAddLedger1To.Control = this.btnAddLedger1;
-            this.lcibtnAddLedger1To.Location = new System.Drawing.Point(614, 335);
+            this.lcibtnAddLedger1To.Location = new System.Drawing.Point(526, 290);
             this.lcibtnAddLedger1To.Name = "lcibtnAddLedger1To";
-            this.lcibtnAddLedger1To.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lcibtnAddLedger1To.Size = new System.Drawing.Size(129, 42);
+            this.lcibtnAddLedger1To.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lcibtnAddLedger1To.Size = new System.Drawing.Size(111, 40);
             this.lcibtnAddLedger1To.TextSize = new System.Drawing.Size(0, 0);
             this.lcibtnAddLedger1To.TextVisible = false;
             // 
             // lciAvailableBalanceFrom
             // 
             this.lciAvailableBalanceFrom.Control = this.lblPaymentFromAvailableBalance;
-            this.lciAvailableBalanceFrom.Location = new System.Drawing.Point(0, 246);
+            this.lciAvailableBalanceFrom.Location = new System.Drawing.Point(0, 205);
             this.lciAvailableBalanceFrom.Name = "lciAvailableBalanceFrom";
-            this.lciAvailableBalanceFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciAvailableBalanceFrom.Size = new System.Drawing.Size(743, 35);
+            this.lciAvailableBalanceFrom.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lciAvailableBalanceFrom.Size = new System.Drawing.Size(637, 33);
             this.lciAvailableBalanceFrom.TextSize = new System.Drawing.Size(0, 0);
             this.lciAvailableBalanceFrom.TextVisible = false;
             // 
             // lciAvailableBalanceTo
             // 
             this.lciAvailableBalanceTo.Control = this.lblPaymentToAvailableBalance;
-            this.lciAvailableBalanceTo.Location = new System.Drawing.Point(0, 377);
+            this.lciAvailableBalanceTo.Location = new System.Drawing.Point(0, 330);
             this.lciAvailableBalanceTo.Name = "lciAvailableBalanceTo";
-            this.lciAvailableBalanceTo.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.lciAvailableBalanceTo.Size = new System.Drawing.Size(743, 35);
+            this.lciAvailableBalanceTo.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.lciAvailableBalanceTo.Size = new System.Drawing.Size(637, 33);
             this.lciAvailableBalanceTo.TextSize = new System.Drawing.Size(0, 0);
             this.lciAvailableBalanceTo.TextVisible = false;
             // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 101.35F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel1.Controls.Add(this.layoutControl1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 646F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(841, 570);
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
+            this.tablePanel1.Size = new System.Drawing.Size(659, 501);
             this.tablePanel1.TabIndex = 0;
             // 
             // frmVoucher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "frmVoucher";
-            this.Size = new System.Drawing.Size(841, 570);
+            this.Size = new System.Drawing.Size(659, 501);
             this.Load += new System.EventHandler(this.frmVoucherNew_Load);
             this.VisibleChanged += new System.EventHandler(this.frmVoucher_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

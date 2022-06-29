@@ -67,37 +67,36 @@
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel1.Controls.Add(this.layoutControl1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(829, 790);
+            this.tablePanel1.Size = new System.Drawing.Size(462, 453);
             this.tablePanel1.TabIndex = 1;
             // 
             // layoutControl1
             // 
-            this.tablePanel1.SetColumn(this.layoutControl1, 1);
+            this.tablePanel1.SetColumn(this.layoutControl1, 0);
             this.layoutControl1.Controls.Add(this.gcLedgerList);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(155, 3);
+            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             this.tablePanel1.SetRow(this.layoutControl1, 0);
-            this.layoutControl1.Size = new System.Drawing.Size(519, 784);
+            this.layoutControl1.Size = new System.Drawing.Size(445, 447);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gcLedgerList
             // 
-            this.gcLedgerList.Location = new System.Drawing.Point(12, 12);
+            this.gcLedgerList.Location = new System.Drawing.Point(4, 4);
             this.gcLedgerList.MainView = this.gvLedgerList;
             this.gcLedgerList.Name = "gcLedgerList";
-            this.gcLedgerList.Size = new System.Drawing.Size(495, 760);
+            this.gcLedgerList.Size = new System.Drawing.Size(437, 439);
             this.gcLedgerList.TabIndex = 4;
             this.gcLedgerList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLedgerList});
@@ -114,6 +113,7 @@
             this.gridColumn16,
             this.gridColumn17,
             this.gridColumn18});
+            this.gvLedgerList.DetailHeight = 327;
             this.gvLedgerList.GridControl = this.gcLedgerList;
             this.gvLedgerList.Name = "gvLedgerList";
             this.gvLedgerList.OptionsBehavior.Editable = false;
@@ -127,57 +127,75 @@
             // 
             this.gridColumn10.Caption = "LEDGERID";
             this.gridColumn10.FieldName = "LEDGERID";
+            this.gridColumn10.MinWidth = 17;
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Width = 64;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "Ledger";
             this.gridColumn11.FieldName = "LEDGERNAME";
+            this.gridColumn11.MinWidth = 17;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 0;
+            this.gridColumn11.Width = 64;
             // 
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Description";
             this.gridColumn12.FieldName = "LEDGERDESCRIPTION";
+            this.gridColumn12.MinWidth = 17;
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Width = 64;
             // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "SUBGROUPID";
             this.gridColumn13.FieldName = "SUBGROUPID";
+            this.gridColumn13.MinWidth = 17;
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Width = 64;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "Sub Group";
             this.gridColumn14.FieldName = "SUBGROUPNAME";
+            this.gridColumn14.MinWidth = 17;
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Width = 64;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "GROUPID";
             this.gridColumn15.FieldName = "GROUPID";
+            this.gridColumn15.MinWidth = 17;
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Width = 64;
             // 
             // gridColumn16
             // 
             this.gridColumn16.Caption = "Group";
             this.gridColumn16.FieldName = "GROUPNAME";
+            this.gridColumn16.MinWidth = 17;
             this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Width = 64;
             // 
             // gridColumn17
             // 
             this.gridColumn17.Caption = "CLASSIFICATIONID";
             this.gridColumn17.FieldName = "CLASSIFICATIONID";
+            this.gridColumn17.MinWidth = 17;
             this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Width = 64;
             // 
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Head";
             this.gridColumn18.FieldName = "CLASSIFICATION";
+            this.gridColumn18.MinWidth = 17;
             this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Width = 64;
             // 
             // Root
             // 
@@ -186,7 +204,8 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(519, 784);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.Root.Size = new System.Drawing.Size(445, 447);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem2
@@ -194,7 +213,7 @@
             this.layoutControlItem2.Control = this.gcLedgerList;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(499, 764);
+            this.layoutControlItem2.Size = new System.Drawing.Size(441, 443);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -267,11 +286,11 @@
             // 
             // ucLedgerList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucLedgerList";
-            this.Size = new System.Drawing.Size(829, 790);
+            this.Size = new System.Drawing.Size(462, 453);
             this.Load += new System.EventHandler(this.ucLedgerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);

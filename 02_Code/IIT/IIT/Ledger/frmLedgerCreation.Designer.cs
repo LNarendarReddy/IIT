@@ -44,9 +44,9 @@
             this.tlcParentID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlcLedgerID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.btnAdd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tlLedger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -57,7 +57,9 @@
             // 
             this.tlcLedgerLevel.Caption = "LedgerLevel";
             this.tlcLedgerLevel.FieldName = "LedgerLevel";
+            this.tlcLedgerLevel.MinWidth = 17;
             this.tlcLedgerLevel.Name = "tlcLedgerLevel";
+            this.tlcLedgerLevel.Width = 64;
             // 
             // tlLedger
             // 
@@ -69,8 +71,6 @@
             this.tlLedger.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
             this.tlLedger.Appearance.HeaderPanel.Options.UseFont = true;
             this.tlLedger.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.tlLedger.Appearance.Row.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.tlLedger.Appearance.Row.Options.UseFont = true;
             this.tablePanel1.SetColumn(this.tlLedger, 0);
             this.tlLedger.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.tlcLedgerName,
@@ -79,6 +79,7 @@
             this.tlcLedgerLevel,
             this.treeListColumn1,
             this.treeListColumn2});
+            this.tlLedger.Dock = System.Windows.Forms.DockStyle.Fill;
             treeListFormatRule1.ApplyToRow = true;
             treeListFormatRule1.Column = this.tlcLedgerLevel;
             treeListFormatRule1.Name = "GroupFormat";
@@ -101,15 +102,17 @@
             treeListFormatRule2.Rule = formatConditionRuleValue2;
             this.tlLedger.FormatRules.Add(treeListFormatRule1);
             this.tlLedger.FormatRules.Add(treeListFormatRule2);
-            this.tlLedger.Location = new System.Drawing.Point(3, 7);
+            this.tlLedger.Location = new System.Drawing.Point(3, 3);
+            this.tlLedger.MinWidth = 17;
             this.tlLedger.Name = "tlLedger";
             this.tlLedger.OptionsCustomization.AllowSort = false;
             this.tlLedger.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAdd});
             this.tablePanel1.SetRow(this.tlLedger, 0);
-            this.tlLedger.RowHeight = 25;
-            this.tlLedger.Size = new System.Drawing.Size(906, 751);
+            this.tlLedger.RowHeight = 23;
+            this.tlLedger.Size = new System.Drawing.Size(776, 708);
             this.tlLedger.TabIndex = 4;
+            this.tlLedger.TreeLevelWidth = 15;
             this.tlLedger.CustomNodeCellEdit += new DevExpress.XtraTreeList.GetCustomNodeCellEditEventHandler(this.tlLedger_CustomNodeCellEdit);
             this.tlLedger.BeforeExpand += new DevExpress.XtraTreeList.BeforeExpandEventHandler(this.tlLedger_BeforeExpand);
             this.tlLedger.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.tlLedger_ShowingEditor);
@@ -119,23 +122,28 @@
             // 
             this.tlcLedgerName.Caption = "Ledger";
             this.tlcLedgerName.FieldName = "LedgerName";
+            this.tlcLedgerName.MinWidth = 17;
             this.tlcLedgerName.Name = "tlcLedgerName";
             this.tlcLedgerName.OptionsColumn.AllowEdit = false;
             this.tlcLedgerName.Visible = true;
             this.tlcLedgerName.VisibleIndex = 0;
-            this.tlcLedgerName.Width = 591;
+            this.tlcLedgerName.Width = 507;
             // 
             // tlcParentID
             // 
             this.tlcParentID.Caption = "ParentID";
             this.tlcParentID.FieldName = "ParentID";
+            this.tlcParentID.MinWidth = 17;
             this.tlcParentID.Name = "tlcParentID";
+            this.tlcParentID.Width = 64;
             // 
             // tlcLedgerID
             // 
             this.tlcLedgerID.Caption = "LedgerID";
             this.tlcLedgerID.FieldName = "LedgerID";
+            this.tlcLedgerID.MinWidth = 17;
             this.tlcLedgerID.Name = "tlcLedgerID";
+            this.tlcLedgerID.Width = 64;
             // 
             // treeListColumn1
             // 
@@ -143,11 +151,20 @@
             this.treeListColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.treeListColumn1.Caption = "Add Ledger";
             this.treeListColumn1.FieldName = "Add";
-            this.treeListColumn1.MaxWidth = 90;
+            this.treeListColumn1.MaxWidth = 77;
+            this.treeListColumn1.MinWidth = 17;
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 1;
-            this.treeListColumn1.Width = 90;
+            this.treeListColumn1.Width = 77;
+            // 
+            // treeListColumn2
+            // 
+            this.treeListColumn2.Caption = "LEDGERTYPE";
+            this.treeListColumn2.FieldName = "LEDGERTYPE";
+            this.treeListColumn2.MinWidth = 17;
+            this.treeListColumn2.Name = "treeListColumn2";
+            this.treeListColumn2.Width = 64;
             // 
             // btnAdd
             // 
@@ -169,23 +186,17 @@
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(912, 765);
+            this.tablePanel1.Size = new System.Drawing.Size(782, 714);
             this.tablePanel1.TabIndex = 1;
             this.tablePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel1_Paint);
             // 
-            // treeListColumn2
-            // 
-            this.treeListColumn2.Caption = "LEDGERTYPE";
-            this.treeListColumn2.FieldName = "LEDGERTYPE";
-            this.treeListColumn2.Name = "treeListColumn2";
-            // 
             // frmLedgerCreation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "frmLedgerCreation";
-            this.Size = new System.Drawing.Size(912, 765);
+            this.Size = new System.Drawing.Size(782, 714);
             this.Load += new System.EventHandler(this.frmLedgerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tlLedger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();

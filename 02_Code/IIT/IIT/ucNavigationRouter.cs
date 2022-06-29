@@ -23,6 +23,10 @@ namespace IIT
 
         public override string Caption => caption;
 
+        public ucNavigationRouter()
+        {
+
+        }
         public ucNavigationRouter(IEnumerable<string> buttons, string _caption)
         {
             InitializeComponent();
@@ -70,7 +74,7 @@ namespace IIT
             width = Math.Max(GridMinWidth, width);
             width = Math.Min(ClientSize.Width - gcButtons.Location.X, width);
             height = Math.Max(GridMinHeight, height);
-            height = Math.Min(ClientSize.Height - gcButtons.Location.Y, height);
+            //height = Math.Min(ClientSize.Height - gcButtons.Location.Y, height);
             gcButtons.Size = new Size(width, height);
             gvButtons.LayoutChanged();
         }

@@ -14,7 +14,7 @@ namespace IIT
         private readonly AccountingRoute accountingRoute = new AccountingRoute();
 
         public static frmSingularMain Instance { get { return _instance ?? (_instance = new frmSingularMain()); } }
-
+        
         public NavigationBase CurrentControl { get; set; }
 
         private Dictionary<string, object> requestCache = new Dictionary<string, object>();
@@ -45,9 +45,8 @@ namespace IIT
         public void RollbackControl(bool showPrompt = true)
         {
             NavigationBase previousControl = (pcMain.Controls[0] as NavigationBase)?.PreviousControl;
-
+            if (previousControl == null) return;
             showPrompt = showPrompt && !(pcMain.Controls[0] is ucNavigationRouter) && previousControl != null;
-
             if (showPrompt 
                 && XtraMessageBox.Show("Are you sure you want to close?"
                     , "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
@@ -73,7 +72,6 @@ namespace IIT
 
             requestCache.Remove(requestName); 
         }
-
 
         private void frmSingularMain_KeyPress(object sender, KeyPressEventArgs e)
         {

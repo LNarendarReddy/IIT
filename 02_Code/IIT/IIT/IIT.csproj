@@ -137,12 +137,6 @@
     <Compile Include="Entity\frmEntityLogo.Designer.cs">
       <DependentUpon>frmEntityLogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entity\frmEntityType.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Entity\frmEntityType.Designer.cs">
-      <DependentUpon>frmEntityType.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entity\frmPartnershipFirm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -278,18 +272,6 @@
     <Compile Include="Ledger\frmSettings.Designer.cs">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ledger\ucLedgerInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Ledger\ucLedgerInfo.Designer.cs">
-      <DependentUpon>ucLedgerInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\ucAccountInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Entity\ucAccountInfo.Designer.cs">
-      <DependentUpon>ucAccountInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSingularMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,12 +290,6 @@
     <Compile Include="Ledger\ucLedgerReport.Designer.cs">
       <DependentUpon>ucLedgerReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ledger\ucVoucherType.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Ledger\ucVoucherType.Designer.cs">
-      <DependentUpon>ucVoucherType.cs</DependentUpon>
-    </Compile>
     <Compile Include="Masters\frmProgress.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,12 +298,6 @@
     </Compile>
     <Compile Include="NavigationBase.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Ledger\frmLedger.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ledger\frmLedger.Designer.cs">
-      <DependentUpon>frmLedger.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmLedgerCreation.cs">
       <SubType>UserControl</SubType>
@@ -467,9 +437,6 @@
     <EmbeddedResource Include="Entity\frmEntityLogo.resx">
       <DependentUpon>frmEntityLogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entity\frmEntityType.resx">
-      <DependentUpon>frmEntityType.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Entity\frmPartnershipFirm.resx">
       <DependentUpon>frmPartnershipFirm.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,17 +503,8 @@
     <EmbeddedResource Include="Ledger\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ledger\ucLedgerInfo.resx">
-      <DependentUpon>ucLedgerInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Entity\ucAccountInfo.resx">
-      <DependentUpon>ucAccountInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSingularMain.resx">
       <DependentUpon>frmSingularMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ledger\frmLedger.resx">
-      <DependentUpon>frmLedger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmLedgerCreation.resx">
       <DependentUpon>frmLedgerCreation.cs</DependentUpon>
@@ -568,9 +526,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\ucLedgerReport.resx">
       <DependentUpon>ucLedgerReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ledger\ucVoucherType.resx">
-      <DependentUpon>ucVoucherType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmGroup.resx">
       <DependentUpon>frmGroup.cs</DependentUpon>

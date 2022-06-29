@@ -14,7 +14,7 @@ namespace IIT
         {
 
         }
-        public ucLedgerTypeBase(Ledger _ledger, bool isCallFromAddButton,string caption) : base(caption)
+        public ucLedgerTypeBase(Ledger _ledger, bool isCallFromAddButton, string caption) : base($"{ caption} Ledger Creation")
         {
             ledger = _ledger;
             _isEdit = ledger.IsEdit;

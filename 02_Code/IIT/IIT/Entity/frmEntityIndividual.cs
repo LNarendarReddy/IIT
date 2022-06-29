@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraSplashScreen;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
 using Entity;
 using Repository;
@@ -177,14 +178,22 @@ namespace IIT
                 entityData.GSTRegNo.Add(new GSTRegistrationNumber());
             entityData.GSTRegNo.First().UserName = Utility.UserName;
 
-            entityDataRepository.Save(entityData);
+            try
+            {
+                entityDataRepository.Save(entityData);
+                SplashScreenManager.CloseForm();
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm();
+                XtraMessageBox.Show(ex.Message);
+            }
             IsSave = true;
             frmSingularMain.Instance.RollbackControl(false);
             frmSingularMain.Instance.RollbackControl(false);
             Utility.ClearLedgerCache();
             Utility.CurrentEntity = entityDataRepository.GetEntityData(entityData.ID);
             Utility.ShowDialog(new Routes.AccountingRoute());
-            SplashScreenManager.CloseForm();
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)

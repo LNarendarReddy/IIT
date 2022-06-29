@@ -120,7 +120,8 @@ namespace IIT
             int LedgerType = 0;
             int.TryParse(Convert.ToString(CallFromEvent ? tlLedger.FocusedNode.ParentNode["LEDGERTYPE"] :
                 tlLedger.FocusedNode["LEDGERTYPE"]), out LedgerType);
-            string caption = Convert.ToString(tlLedger.FocusedNode["LEDGERNAME"]);
+            string caption = Convert.ToString(CallFromEvent ? tlLedger.FocusedNode.ParentNode["LedgerName"] :
+                tlLedger.FocusedNode["LedgerName"]);
             switch (LedgerType)
             {
                 case LookUpIDMap.LedgerType_BankAccount:

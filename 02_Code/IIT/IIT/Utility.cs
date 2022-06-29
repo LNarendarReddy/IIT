@@ -104,7 +104,10 @@ namespace IIT
             //frmSingularMain.Instance.Text = selectedEntityName;
             frmSingularMain.Instance.lblEntityName.Text = selectedEntityName;
             frmSingularMain.Instance.lblNavigationHeader.Text = userControl.Header;
-            frmSingularMain.Instance.lcQuickOptions.Visible = userControl.ShowQuickOptions;
+            frmSingularMain.Instance.btnLedgerCreation.Size = userControl.ShowQuickOptions? new Size(110,22) : new Size(0, 0);
+            frmSingularMain.Instance.btnVoucherEntry.Size = userControl.ShowQuickOptions ? new Size(110, 22) : new Size(0, 0);
+            frmSingularMain.Instance.btnAccountingReports.Size = userControl.ShowQuickOptions ? new Size(110, 22) : new Size(0, 0);
+            frmSingularMain.Instance.btnRequisitionForms.Size = userControl.ShowQuickOptions ? new Size(110, 22) : new Size(0, 0);
 
         }
         public static void SetGridFormatting(GridView gridView)

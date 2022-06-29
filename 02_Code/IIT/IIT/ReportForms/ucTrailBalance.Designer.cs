@@ -56,16 +56,16 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(942, 449);
+            this.layoutControl1.Size = new System.Drawing.Size(807, 419);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gcTrailBalance
             // 
-            this.gcTrailBalance.Location = new System.Drawing.Point(12, 12);
+            this.gcTrailBalance.Location = new System.Drawing.Point(4, 4);
             this.gcTrailBalance.MainView = this.gvTrailBalance;
             this.gcTrailBalance.Name = "gcTrailBalance";
-            this.gcTrailBalance.Size = new System.Drawing.Size(918, 425);
+            this.gcTrailBalance.Size = new System.Drawing.Size(799, 411);
             this.gcTrailBalance.TabIndex = 4;
             this.gcTrailBalance.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTrailBalance});
@@ -85,6 +85,7 @@
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8});
+            this.gvTrailBalance.DetailHeight = 327;
             this.gvTrailBalance.GridControl = this.gcTrailBalance;
             this.gvTrailBalance.GroupCount = 1;
             this.gvTrailBalance.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -103,70 +104,86 @@
             // 
             this.gridColumn1.Caption = "GROUPID";
             this.gridColumn1.FieldName = "GROUPID";
+            this.gridColumn1.MinWidth = 17;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 64;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "SUBGROUPID";
             this.gridColumn2.FieldName = "SUBGROUPID";
+            this.gridColumn2.MinWidth = 17;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Width = 64;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Group Name";
             this.gridColumn3.FieldName = "GROUPNAME";
             this.gridColumn3.GroupFormat.FormatString = "{0}";
+            this.gridColumn3.MinWidth = 17;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 64;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Particulars";
             this.gridColumn4.FieldName = "SUBGROUPNAME";
+            this.gridColumn4.MinWidth = 17;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 64;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Opening Balance";
             this.gridColumn5.FieldName = "OPENINGBAL";
+            this.gridColumn5.MinWidth = 17;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OPENINGBAL", "{0:0.##}")});
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 64;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Credit";
             this.gridColumn6.FieldName = "CREDITAMOUNT";
+            this.gridColumn6.MinWidth = 17;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDITAMOUNT", "{0:0.##}")});
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.Width = 64;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Debit";
             this.gridColumn7.FieldName = "DEBITAMOUNT";
+            this.gridColumn7.MinWidth = 17;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBITAMOUNT", "{0:0.##}")});
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.Width = 64;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Closing Balance";
             this.gridColumn8.FieldName = "CLOSINGBAL";
+            this.gridColumn8.MinWidth = 17;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CLOSINGBAL", "{0:0.##}")});
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.Width = 64;
             // 
             // Root
             // 
@@ -175,7 +192,8 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(942, 449);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.Root.Size = new System.Drawing.Size(807, 419);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -183,17 +201,17 @@
             this.layoutControlItem1.Control = this.gcTrailBalance;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(922, 429);
+            this.layoutControlItem1.Size = new System.Drawing.Size(803, 415);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // ucTrailBalance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
             this.Name = "ucTrailBalance";
-            this.Size = new System.Drawing.Size(942, 449);
+            this.Size = new System.Drawing.Size(807, 419);
             this.Load += new System.EventHandler(this.ucTrailBalance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

@@ -67,28 +67,29 @@
             // 
             // layoutControl1
             // 
-            this.tablePanel1.SetColumn(this.layoutControl1, 1);
+            this.tablePanel1.SetColumn(this.layoutControl1, 0);
             this.layoutControl1.Controls.Add(this.gcChequeRegister);
             this.layoutControl1.Controls.Add(this.lblHeader);
             this.layoutControl1.Controls.Add(this.cmbLedger);
-            this.layoutControl1.Location = new System.Drawing.Point(19, 23);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1270, 392, 650, 400);
             this.layoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.layoutControl1.Root = this.Root;
-            this.tablePanel1.SetRow(this.layoutControl1, 1);
-            this.layoutControl1.Size = new System.Drawing.Size(1062, 680);
+            this.tablePanel1.SetRow(this.layoutControl1, 0);
+            this.layoutControl1.Size = new System.Drawing.Size(910, 635);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gcChequeRegister
             // 
-            this.gcChequeRegister.Location = new System.Drawing.Point(12, 108);
+            this.gcChequeRegister.Location = new System.Drawing.Point(4, 62);
             this.gcChequeRegister.MainView = this.gvChequeRegister;
             this.gcChequeRegister.Name = "gcChequeRegister";
             this.gcChequeRegister.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmbNoOfLeafs});
-            this.gcChequeRegister.Size = new System.Drawing.Size(1038, 560);
+            this.gcChequeRegister.Size = new System.Drawing.Size(902, 569);
             this.gcChequeRegister.TabIndex = 2;
             this.gcChequeRegister.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvChequeRegister});
@@ -104,6 +105,7 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6});
+            this.gvChequeRegister.DetailHeight = 327;
             this.gvChequeRegister.GridControl = this.gcChequeRegister;
             this.gvChequeRegister.Name = "gvChequeRegister";
             this.gvChequeRegister.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
@@ -118,41 +120,48 @@
             // 
             this.gridColumn1.Caption = "CHEQUEREGISTERID";
             this.gridColumn1.FieldName = "CHEQUEREGISTERID";
+            this.gridColumn1.MinWidth = 17;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 64;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "LEDGERID";
             this.gridColumn2.FieldName = "LEDGERID";
+            this.gridColumn2.MinWidth = 17;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Width = 64;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Cheque Book Code";
             this.gridColumn3.FieldName = "CHEQUEBOOKCODE";
+            this.gridColumn3.MinWidth = 17;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 253;
+            this.gridColumn3.Width = 217;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Opening Cheque Number";
             this.gridColumn4.FieldName = "OPENINGCHEQUENO";
+            this.gridColumn4.MinWidth = 17;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 270;
+            this.gridColumn4.Width = 231;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "No Of Leafs";
             this.gridColumn5.ColumnEdit = this.cmbNoOfLeafs;
             this.gridColumn5.FieldName = "NOOFLEAFS";
+            this.gridColumn5.MinWidth = 17;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
-            this.gridColumn5.Width = 151;
+            this.gridColumn5.Width = 129;
             // 
             // cmbNoOfLeafs
             // 
@@ -172,18 +181,19 @@
             // 
             this.gridColumn6.Caption = "Closing Cheque Number";
             this.gridColumn6.FieldName = "CLOSINGCHEQUENO";
+            this.gridColumn6.MinWidth = 17;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 339;
+            this.gridColumn6.Width = 291;
             // 
             // lblHeader
             // 
-            this.lblHeader.Appearance.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
+            this.lblHeader.Appearance.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblHeader.Appearance.Options.UseFont = true;
-            this.lblHeader.Location = new System.Drawing.Point(464, 25);
+            this.lblHeader.Location = new System.Drawing.Point(412, 4);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(133, 24);
+            this.lblHeader.Size = new System.Drawing.Size(85, 16);
             this.lblHeader.StyleController = this.layoutControl1;
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "labelControl1";
@@ -191,15 +201,15 @@
             // cmbLedger
             // 
             this.cmbLedger.EnterMoveNextControl = true;
-            this.cmbLedger.Location = new System.Drawing.Point(133, 74);
+            this.cmbLedger.Location = new System.Drawing.Point(111, 31);
             this.cmbLedger.Name = "cmbLedger";
             this.cmbLedger.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbLedger.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "LEDGERNAME")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERID", "LEDGERID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LEDGERNAME", "LEDGERNAME", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbLedger.Properties.NullText = "";
-            this.cmbLedger.Size = new System.Drawing.Size(276, 22);
+            this.cmbLedger.Size = new System.Drawing.Size(237, 20);
             this.cmbLedger.StyleController = this.layoutControl1;
             this.cmbLedger.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -218,18 +228,19 @@
             this.layoutControlItem7,
             this.emptySpaceItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1062, 680);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.Root.Size = new System.Drawing.Size(910, 635);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cmbLedger;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 20);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 10, 10);
-            this.layoutControlItem1.Size = new System.Drawing.Size(409, 42);
+            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem1.Size = new System.Drawing.Size(355, 38);
             this.layoutControlItem1.Text = "Name of the Bank ";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(101, 15);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(88, 14);
             // 
             // layoutControlItem8
             // 
@@ -237,52 +248,48 @@
             this.layoutControlItem8.Control = this.lblHeader;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Padding = new DevExpress.XtraLayout.Utils.Padding(15, 15, 15, 15);
-            this.layoutControlItem8.Size = new System.Drawing.Size(1042, 54);
+            this.layoutControlItem8.Size = new System.Drawing.Size(906, 20);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gcChequeRegister;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1042, 564);
+            this.layoutControlItem7.Size = new System.Drawing.Size(906, 573);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(409, 54);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(355, 20);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(633, 42);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(551, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 55F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
             this.tablePanel1.Controls.Add(this.layoutControl1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1099, 725);
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(929, 641);
             this.tablePanel1.TabIndex = 0;
             // 
             // ucChequeBookEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucChequeBookEntry";
-            this.Size = new System.Drawing.Size(1099, 725);
+            this.Size = new System.Drawing.Size(929, 641);
             this.Load += new System.EventHandler(this.ucChequeBookEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

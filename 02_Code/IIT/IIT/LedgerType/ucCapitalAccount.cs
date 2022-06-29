@@ -30,7 +30,7 @@ namespace IIT
             txtNoOfShares.EditValue = ledger.CapitalAccountInfo.NoOfShares;
             txtFaceValueOfShare.EditValue = ledger.CapitalAccountInfo.FaceValue;
             txtPremiumValueofShare.EditValue = ledger.CapitalAccountInfo.PremiumValue;
-            txtPercentageOfPreferance.EditValue = ledger.CapitalAccountInfo.PercentageOfPreference;
+            txtPercentageOfPrefarence.EditValue = ledger.CapitalAccountInfo.PercentageOfPreference;
             txtOpeningBalance.EditValue = ledger.CapitalAccountInfo.OpeningBalance;
         }
 
@@ -44,7 +44,7 @@ namespace IIT
             ledger.CapitalAccountInfo.NoOfShares = txtNoOfShares.EditValue;
             ledger.CapitalAccountInfo.FaceValue = txtFaceValueOfShare.EditValue;
             ledger.CapitalAccountInfo.PremiumValue = txtPremiumValueofShare.EditValue;
-            ledger.CapitalAccountInfo.PercentageOfPreference = txtPercentageOfPreferance.EditValue;
+            ledger.CapitalAccountInfo.PercentageOfPreference = txtPercentageOfPrefarence.EditValue;
             ledger.CapitalAccountInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_CapitalAccount;
             Save();
@@ -60,5 +60,10 @@ namespace IIT
         {
             e.Handled = true;
         }
+
+        private void rgNatgureOfCapital_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }   
     }
 }

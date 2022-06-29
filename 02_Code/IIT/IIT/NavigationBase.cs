@@ -7,10 +7,11 @@ namespace IIT
     {
         IEnumerable<ActionText> helpText;
 
+        string caption = string.Empty;
+
         protected string RequestedType { get; set; }
 
         protected BaseEdit RequestingControl { get; set; }
-
 
         public virtual NavigationBase PreviousControl { get; set; }
 
@@ -28,6 +29,9 @@ namespace IIT
         { 
             helpText = new List<ActionText>();
             caption = _caption;
+        }
+        public NavigationBase()
+        {
 
         }
 
