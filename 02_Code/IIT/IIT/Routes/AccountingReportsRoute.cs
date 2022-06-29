@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using IIT.ReportForms;
+using System.Collections.Generic;
 
 namespace IIT.Routes
 {
@@ -38,6 +39,7 @@ namespace IIT.Routes
                     formObj = new BankingUtilityRoute();
                     break;
                 case "Trail Balance":
+                    formObj = new ucTrailBalance();
                     break;
                 case "Balance Sheet":
                     break;
