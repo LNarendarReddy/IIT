@@ -83,7 +83,7 @@
             treeListFormatRule1.ApplyToRow = true;
             treeListFormatRule1.Column = this.tlcLedgerLevel;
             treeListFormatRule1.Name = "GroupFormat";
-            formatConditionRuleValue1.Appearance.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            formatConditionRuleValue1.Appearance.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.Green;
             formatConditionRuleValue1.Appearance.Options.UseFont = true;
             formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
@@ -93,7 +93,7 @@
             treeListFormatRule2.ApplyToRow = true;
             treeListFormatRule2.Column = this.tlcLedgerLevel;
             treeListFormatRule2.Name = "subGroupFormat";
-            formatConditionRuleValue2.Appearance.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            formatConditionRuleValue2.Appearance.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             formatConditionRuleValue2.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             formatConditionRuleValue2.Appearance.Options.UseFont = true;
             formatConditionRuleValue2.Appearance.Options.UseForeColor = true;
@@ -110,7 +110,7 @@
             this.btnAdd});
             this.tablePanel1.SetRow(this.tlLedger, 0);
             this.tlLedger.RowHeight = 23;
-            this.tlLedger.Size = new System.Drawing.Size(776, 708);
+            this.tlLedger.Size = new System.Drawing.Size(776, 437);
             this.tlLedger.TabIndex = 4;
             this.tlLedger.TreeLevelWidth = 15;
             this.tlLedger.CustomNodeCellEdit += new DevExpress.XtraTreeList.GetCustomNodeCellEditEventHandler(this.tlLedger_CustomNodeCellEdit);
@@ -186,7 +186,7 @@
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(782, 714);
+            this.tablePanel1.Size = new System.Drawing.Size(782, 443);
             this.tablePanel1.TabIndex = 1;
             this.tablePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel1_Paint);
             // 
@@ -196,7 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "frmLedgerCreation";
-            this.Size = new System.Drawing.Size(782, 714);
+            this.Size = new System.Drawing.Size(782, 443);
             this.Load += new System.EventHandler(this.frmLedgerList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tlLedger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();

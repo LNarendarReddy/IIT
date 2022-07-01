@@ -16,16 +16,15 @@ namespace IIT
     {
         BankingRepository bankingRepository = new BankingRepository();
         private AdminSettings CurrentSettings = null;
-        private string caption;
-        public override string Caption => caption;
-        public ucChequeLog()
+        private static string caption = "Banking - Cheque Register";
+        public ucChequeLog() : base(caption)
         {
             InitializeComponent();
         }
 
         private void ucChequeLog_Load(object sender, EventArgs e)
         {
-            lblHeader.Text = caption = "Banking - Cheque Register";
+            lblHeader.Text = caption;
 
             CurrentSettings = Utility.GetAdminSettings();
             lblFromDate.Text = CurrentSettings.FromDate.ToShortDateString();

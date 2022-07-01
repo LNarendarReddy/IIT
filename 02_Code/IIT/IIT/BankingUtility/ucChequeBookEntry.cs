@@ -16,18 +16,15 @@ namespace IIT
     public partial class ucChequeBookEntry : NavigationBase
     {
         BankingRepository bankingRepository = new BankingRepository();
-        private string caption;
-        public override string Caption => caption;
-        public ucChequeBookEntry()
+        private static string caption = "Banking - Cheque Book Entry";
+        public ucChequeBookEntry():base (caption)
         {
             InitializeComponent();
         }
 
         private void ucChequeBookEntry_Load(object sender, EventArgs e)
         {
-            caption = "Banking - Cheque Book Entry";
             lblHeader.Text = caption;
-
             cmbLedger.Properties.DataSource = Utility.GetBankingLedgers();
             cmbLedger.Properties.ValueMember = "LEDGERID";
             cmbLedger.Properties.DisplayMember = "LEDGERNAME";

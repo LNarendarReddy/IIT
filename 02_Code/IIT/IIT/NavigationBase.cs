@@ -30,7 +30,7 @@ namespace IIT
             helpText = new List<ActionText>();
             caption = _caption;
         }
-        public NavigationBase()
+        private NavigationBase()
         {
 
         }

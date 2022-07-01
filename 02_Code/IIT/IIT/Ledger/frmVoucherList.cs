@@ -11,9 +11,9 @@ namespace IIT
     {
         VoucherRepository voucherRepository = new VoucherRepository();
 
-        public override string Caption => "Day Book";
+        public static string caption => "Day Book";
 
-        public frmVoucherList()
+        public frmVoucherList() : base(caption)
         {
             InitializeComponent();
         }
