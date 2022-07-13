@@ -1,5 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraTreeList;
+using DevExpress.XtraTreeList.Columns;
+using DevExpress.XtraTreeList.StyleFormatConditions;
 using Entity;
 using Repository;
 using System;
@@ -118,6 +121,44 @@ namespace IIT
             gridView.Appearance.HeaderPanel.Options.UseForeColor = true;
             gridView.OptionsView.ShowGroupPanel = false;
         }
+
+        public static void SetTreeListFormatting(TreeList tlTreeList, TreeListColumn levelColumn)
+        {
+            tlTreeList.Appearance.FocusedCell.BackColor = Color.FromArgb(19, 109, 190);
+            tlTreeList.Appearance.FocusedCell.ForeColor = Color.White;
+            tlTreeList.Appearance.FocusedCell.Options.UseForeColor = true;
+            tlTreeList.Appearance.FocusedCell.Options.UseBackColor = true;
+
+            tlTreeList.Appearance.HeaderPanel.Font = new Font("Arial", 9F, FontStyle.Bold);
+            tlTreeList.Appearance.HeaderPanel.ForeColor = Color.White;
+            tlTreeList.Appearance.HeaderPanel.Options.UseForeColor = true;
+            tlTreeList.Appearance.HeaderPanel.Options.UseFont = true;
+
+            TreeListFormatRule treeListFormatRule1 = new TreeListFormatRule();
+            FormatConditionRuleValue formatConditionRuleValue1 = new FormatConditionRuleValue();
+            TreeListFormatRule treeListFormatRule2 = new TreeListFormatRule();
+            FormatConditionRuleValue formatConditionRuleValue2 = new FormatConditionRuleValue();
+
+            treeListFormatRule1.ApplyToRow = true;
+            treeListFormatRule1.Column = levelColumn;
+            treeListFormatRule1.Name = "GroupFormat";
+            formatConditionRuleValue1.Appearance.Font = new Font("Arial", 10F, FontStyle.Bold);
+            formatConditionRuleValue1.Appearance.Options.UseFont = true;
+            formatConditionRuleValue1.Condition = FormatCondition.Equal;
+            formatConditionRuleValue1.Value1 = ((short)(1));
+            treeListFormatRule1.Rule = formatConditionRuleValue1;
+            treeListFormatRule2.ApplyToRow = true;
+            treeListFormatRule2.Column = levelColumn;
+            treeListFormatRule2.Name = "subGroupFormat";
+            formatConditionRuleValue2.Appearance.Font = new Font("Arial", 9F, FontStyle.Regular);
+            formatConditionRuleValue2.Appearance.Options.UseFont = true;
+            formatConditionRuleValue2.Condition = FormatCondition.Equal;
+            formatConditionRuleValue2.Value1 = ((short)(2));
+            treeListFormatRule2.Rule = formatConditionRuleValue2;
+            tlTreeList.FormatRules.Add(treeListFormatRule1);
+            tlTreeList.FormatRules.Add(treeListFormatRule2);
+        }
+
         public static void PropogateAddress(CheckEdit chkSame, BaseEdit source, BaseEdit target)
         {
             if (!chkSame.Checked) { return; }
