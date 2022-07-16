@@ -29,29 +29,28 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gcTrailBalance = new DevExpress.XtraGrid.GridControl();
-            this.gvTrailBalance = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tlTrailBalance = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.tlcTrialBalanceLevel = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcTrailBalance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTrailBalance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tlTrailBalance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gcTrailBalance);
+            this.layoutControl1.Controls.Add(this.tlTrailBalance);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -60,130 +59,89 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gcTrailBalance
+            // tlTrailBalance
             // 
-            this.gcTrailBalance.Location = new System.Drawing.Point(4, 4);
-            this.gcTrailBalance.MainView = this.gvTrailBalance;
-            this.gcTrailBalance.Name = "gcTrailBalance";
-            this.gcTrailBalance.Size = new System.Drawing.Size(799, 411);
-            this.gcTrailBalance.TabIndex = 4;
-            this.gcTrailBalance.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvTrailBalance});
+            this.tlTrailBalance.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn9,
+            this.treeListColumn1,
+            this.treeListColumn2,
+            this.tlcTrialBalanceLevel,
+            this.treeListColumn4,
+            this.treeListColumn5,
+            this.treeListColumn7,
+            this.treeListColumn6,
+            this.treeListColumn8});
+            this.tlTrailBalance.Location = new System.Drawing.Point(4, 4);
+            this.tlTrailBalance.Name = "tlTrailBalance";
+            this.tlTrailBalance.OptionsBehavior.Editable = false;
+            this.tlTrailBalance.OptionsBehavior.PopulateServiceColumns = true;
+            this.tlTrailBalance.Size = new System.Drawing.Size(799, 411);
+            this.tlTrailBalance.TabIndex = 4;
+            this.tlTrailBalance.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tlTrailBalance_KeyDown);
             // 
-            // gvTrailBalance
+            // treeListColumn9
             // 
-            this.gvTrailBalance.Appearance.FooterPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.gvTrailBalance.Appearance.FooterPanel.Options.UseFont = true;
-            this.gvTrailBalance.Appearance.GroupFooter.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.gvTrailBalance.Appearance.GroupFooter.Options.UseFont = true;
-            this.gvTrailBalance.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8});
-            this.gvTrailBalance.DetailHeight = 327;
-            this.gvTrailBalance.GridControl = this.gcTrailBalance;
-            this.gvTrailBalance.GroupCount = 1;
-            this.gvTrailBalance.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OPENINGBAL", this.gridColumn5, "(Opening Balance: {0:0.##})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDITAMOUNT", this.gridColumn6, "(Credit: {0:0.##})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBITAMOUNT", this.gridColumn7, "(Debit: {0:0.##})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CLOSINGBAL", this.gridColumn8, "(Closing Balance: {0:0.##})")});
-            this.gvTrailBalance.Name = "gvTrailBalance";
-            this.gvTrailBalance.OptionsBehavior.AutoExpandAllGroups = true;
-            this.gvTrailBalance.OptionsBehavior.Editable = false;
-            this.gvTrailBalance.OptionsView.ShowFooter = true;
-            this.gvTrailBalance.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn3, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.treeListColumn9.Caption = "TBID";
+            this.treeListColumn9.FieldName = "TBID";
+            this.treeListColumn9.Name = "treeListColumn9";
             // 
-            // gridColumn1
+            // treeListColumn1
             // 
-            this.gridColumn1.Caption = "GROUPID";
-            this.gridColumn1.FieldName = "GROUPID";
-            this.gridColumn1.MinWidth = 17;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 64;
+            this.treeListColumn1.Caption = "PARENTID";
+            this.treeListColumn1.FieldName = "PARENTID";
+            this.treeListColumn1.Name = "treeListColumn1";
             // 
-            // gridColumn2
+            // treeListColumn2
             // 
-            this.gridColumn2.Caption = "SUBGROUPID";
-            this.gridColumn2.FieldName = "SUBGROUPID";
-            this.gridColumn2.MinWidth = 17;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Width = 64;
+            this.treeListColumn2.Caption = "CURRENTID";
+            this.treeListColumn2.FieldName = "CURRENTID";
+            this.treeListColumn2.Name = "treeListColumn2";
             // 
-            // gridColumn3
+            // tlcTrialBalanceLevel
             // 
-            this.gridColumn3.Caption = "Group Name";
-            this.gridColumn3.FieldName = "GROUPNAME";
-            this.gridColumn3.GroupFormat.FormatString = "{0}";
-            this.gridColumn3.MinWidth = 17;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 64;
+            this.tlcTrialBalanceLevel.Caption = "TBLEVEL";
+            this.tlcTrialBalanceLevel.FieldName = "TBLEVEL";
+            this.tlcTrialBalanceLevel.Name = "tlcTrialBalanceLevel";
             // 
-            // gridColumn4
+            // treeListColumn4
             // 
-            this.gridColumn4.Caption = "Particulars";
-            this.gridColumn4.FieldName = "SUBGROUPNAME";
-            this.gridColumn4.MinWidth = 17;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            this.gridColumn4.Width = 64;
+            this.treeListColumn4.Caption = "Particular";
+            this.treeListColumn4.FieldName = "TBNAME";
+            this.treeListColumn4.Name = "treeListColumn4";
+            this.treeListColumn4.Visible = true;
+            this.treeListColumn4.VisibleIndex = 0;
             // 
-            // gridColumn5
+            // treeListColumn5
             // 
-            this.gridColumn5.Caption = "Opening Balance";
-            this.gridColumn5.FieldName = "OPENINGBAL";
-            this.gridColumn5.MinWidth = 17;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "OPENINGBAL", "{0:0.##}")});
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 64;
+            this.treeListColumn5.Caption = "Opening Balance";
+            this.treeListColumn5.FieldName = "OPENINGBAL";
+            this.treeListColumn5.Name = "treeListColumn5";
+            this.treeListColumn5.Visible = true;
+            this.treeListColumn5.VisibleIndex = 1;
             // 
-            // gridColumn6
+            // treeListColumn6
             // 
-            this.gridColumn6.Caption = "Credit";
-            this.gridColumn6.FieldName = "CREDITAMOUNT";
-            this.gridColumn6.MinWidth = 17;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CREDITAMOUNT", "{0:0.##}")});
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
-            this.gridColumn6.Width = 64;
+            this.treeListColumn6.Caption = "Credit Amount";
+            this.treeListColumn6.FieldName = "CREDITAMOUNT";
+            this.treeListColumn6.Name = "treeListColumn6";
+            this.treeListColumn6.Visible = true;
+            this.treeListColumn6.VisibleIndex = 3;
             // 
-            // gridColumn7
+            // treeListColumn7
             // 
-            this.gridColumn7.Caption = "Debit";
-            this.gridColumn7.FieldName = "DEBITAMOUNT";
-            this.gridColumn7.MinWidth = 17;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DEBITAMOUNT", "{0:0.##}")});
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
-            this.gridColumn7.Width = 64;
+            this.treeListColumn7.Caption = "Debit Amount";
+            this.treeListColumn7.FieldName = "DEBITAMOUNT";
+            this.treeListColumn7.Name = "treeListColumn7";
+            this.treeListColumn7.Visible = true;
+            this.treeListColumn7.VisibleIndex = 2;
             // 
-            // gridColumn8
+            // treeListColumn8
             // 
-            this.gridColumn8.Caption = "Closing Balance";
-            this.gridColumn8.FieldName = "CLOSINGBAL";
-            this.gridColumn8.MinWidth = 17;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CLOSINGBAL", "{0:0.##}")});
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 4;
-            this.gridColumn8.Width = 64;
+            this.treeListColumn8.Caption = "Closing Balance";
+            this.treeListColumn8.FieldName = "CLOSINGBAL";
+            this.treeListColumn8.Name = "treeListColumn8";
+            this.treeListColumn8.Visible = true;
+            this.treeListColumn8.VisibleIndex = 4;
             // 
             // Root
             // 
@@ -198,7 +156,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gcTrailBalance;
+            this.layoutControlItem1.Control = this.tlTrailBalance;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(803, 415);
@@ -215,8 +173,7 @@
             this.Load += new System.EventHandler(this.ucTrailBalance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcTrailBalance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTrailBalance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tlTrailBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
@@ -227,16 +184,16 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraGrid.GridControl gcTrailBalance;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvTrailBalance;
+        private DevExpress.XtraTreeList.TreeList tlTrailBalance;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn tlcTrialBalanceLevel;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
     }
 }

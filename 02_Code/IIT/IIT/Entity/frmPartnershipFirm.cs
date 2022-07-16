@@ -214,7 +214,6 @@ namespace IIT
             Utility.ClearLedgerCache();
             Utility.CurrentEntity = entityDataRepository.GetEntityData(entityData.ID);
             Utility.ShowDialog(new Routes.AccountingRoute());
-            SplashScreenManager.CloseForm();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
