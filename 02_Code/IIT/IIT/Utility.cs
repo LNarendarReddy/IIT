@@ -26,6 +26,7 @@ namespace IIT
         private static DataTable dtLedgers = null;
         private static DataTable dtBankingLedgers = null;
         private static DataTable dtNonCashLedgers = null;
+        private static DataTable dtCashLedgers = null;
         private static Dictionary<string, object> configData = null;
 
         public static string Caption = "India\'s Integrated Tax Software (IIT)";
@@ -57,6 +58,17 @@ namespace IIT
                 dtNonCashLedgers = dv.ToTable();
             }
             return dtNonCashLedgers;
+        }
+        public static DataTable GetCashLedgers()
+        {
+            if (dtCashLedgers == null)
+            {
+                DataTable dt = GetLedgers().Copy();
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = "SUBGROUPNAME = 'Cash in Hand'";
+                dtCashLedgers = dv.ToTable();
+            }
+            return dtCashLedgers;
         }
         public static void ClearLedgerCache()
         {

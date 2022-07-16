@@ -15,5 +15,7 @@ namespace Entity.LedgerType
         public object BranchName { get; set; }
         public object IsTDSApplicable { get; set; }
         public object TDSRate { get; set; }
+        public object IsTCSApplicable { get; set; }
+        public object TCSRate { get; set; }
     }
 }

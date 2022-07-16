@@ -67,7 +67,7 @@ namespace IIT
             switch (Convert.ToInt32(voucherObj.VoucherTypeID))
             {
                 case LookUpIDMap.VoucherType_CashPayment:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetCashLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetNonCashLedgers();
                     break;
                 case LookUpIDMap.VoucherType_BankPayment:
@@ -76,7 +76,7 @@ namespace IIT
                     break;
                 case LookUpIDMap.VoucherType_CashReciept:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetCashLedgers();
                     break;
                 case LookUpIDMap.VoucherType_BankReciept:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetNonCashLedgers();
@@ -84,10 +84,10 @@ namespace IIT
                     break;
                 case LookUpIDMap.VoucherType_ContraVoucher_Withdrawal:
                     cmbPaymentMadefrom.Properties.DataSource = Utility.GetBankingLedgers();
-                    cmbPaymentMadeto.Properties.DataSource = Utility.GetLedgers();
+                    cmbPaymentMadeto.Properties.DataSource = Utility.GetCashLedgers();
                     break;
                 case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
-                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetLedgers();
+                    cmbPaymentMadefrom.Properties.DataSource = Utility.GetCashLedgers();
                     cmbPaymentMadeto.Properties.DataSource = Utility.GetBankingLedgers();
                     break;
                 case LookUpIDMap.VoucherType_JournalVoucher:
@@ -118,9 +118,11 @@ namespace IIT
                     lciPaymentMadeFrom.Text = "Payment made from";
                     lciPaymentMadeTo.Text = "Payment made to";
                     lciPurpose.Text = "Narration of the payment ";
-                    cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
-                    lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
-                    lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
+                    if (Utility.GetCashLedgers().Rows.Count == 1)
+                    {
+                        cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                        cmbPaymentMadefrom.Enabled = false;
+                    }
                     lblPaymentFromAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_BankPayment:
@@ -136,9 +138,11 @@ namespace IIT
                     lciPaymentMadeFrom.Text = "Amount received from";
                     lciPaymentMadeTo.Text = "Amount credited to";
                     lciPurpose.Text = "Narration of the reciept ";
-                    cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
-                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
-                    lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
+                    if (Utility.GetCashLedgers().Rows.Count == 1)
+                    {
+                        cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                        cmbPaymentMadeto.Enabled = false;
+                    }
                     lblPaymentToAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_BankReciept:
@@ -152,9 +156,11 @@ namespace IIT
                     lciPaymentMadeFrom.Text = "Bank Account";
                     lciPaymentMadeTo.Text = "Amount credited to";
                     lciPurpose.Text = "Narration ";
-                    cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
-                    lciPaymentMadeTo.Visibility = LayoutVisibility.Never;
-                    lcibtnAddLedger1To.Visibility = LayoutVisibility.Never;
+                    if (Utility.GetCashLedgers().Rows.Count == 1)
+                    {
+                        cmbPaymentMadeto.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                        cmbPaymentMadeto.Enabled = false;
+                    }
                     lblPaymentToAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_ContraVoucher_Deposit:
@@ -162,9 +168,11 @@ namespace IIT
                     lciPaymentMadeFrom.Text = "Amount debited from";
                     lciPaymentMadeTo.Text = "Bank Account";
                     lciPurpose.Text = "Reasons ";
-                    cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
-                    lciPaymentMadeFrom.Visibility = LayoutVisibility.Never;
-                    lcibtnAddLedgerFrom.Visibility = LayoutVisibility.Never;
+                    if (Utility.GetCashLedgers().Rows.Count == 1)
+                    {
+                        cmbPaymentMadefrom.EditValue = Utility.CurrentEntity.CASHINHANDID;
+                        cmbPaymentMadefrom.Enabled = false;
+                    }
                     lblPaymentFromAvailableBalance.Text = $"Available balance in cash : {new LedgerRepository().GetAvailableBalance(Utility.CurrentEntity.CASHINHANDID)}";
                     break;
                 case LookUpIDMap.VoucherType_JournalVoucher:
