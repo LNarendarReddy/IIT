@@ -66,15 +66,10 @@ namespace IIT
             }
             else if(keyData == Keys.F2)
             {
-                frmSettings settingsForm = new frmSettings(CurrentSettings, true);
-                Utility.ShowDialog(settingsForm);
-
-                if (CurrentSettings.FromDate == settingsForm.SelectedSettings.FromDate 
-                    && CurrentSettings.ToDate == settingsForm.SelectedSettings.ToDate) return true;
-
-                CurrentSettings.FromDate = settingsForm.SelectedSettings.FromDate;
-                CurrentSettings.ToDate = settingsForm.SelectedSettings.ToDate;
-                FetchAndBindDataSource();
+                if (Utility.ShowDialog(new frmSettings(CurrentSettings, true)) == DialogResult.OK)
+                {
+                    FetchAndBindDataSource();
+                }
 
                 return true;
             }

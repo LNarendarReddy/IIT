@@ -11,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace IIT
 {
@@ -79,15 +80,15 @@ namespace IIT
             dtBankingLedgers = null;
             dtNonCashLedgers = null;
         }
-        public static void ShowDialog(XtraForm frm)
+        public static DialogResult ShowDialog(XtraForm frm)
         {
             frm.ShowInTaskbar  = false;
-            frm.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;    
-            frm.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            frm.StartPosition = FormStartPosition.CenterScreen;    
+            frm.WindowState = FormWindowState.Normal;
             frm.IconOptions.ShowIcon = false;
             frm.ControlBox = false;
-            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            frm.ShowDialog();
+            frm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            return frm.ShowDialog();
         }
         public static void ShowDialog(NavigationBase userControl)
         {

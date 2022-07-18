@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraLayout.Utils;
 using Repository;
 using System;
+using System.Windows.Forms;
 
 namespace IIT
 {
@@ -30,18 +31,19 @@ namespace IIT
             if (!dxValidationProvider1.Validate())
                 return;
 
-            SelectedSettings = new AdminSettings() { FromDate = (DateTime)dtpFromDate.EditValue, ToDate = (DateTime)dtpTodate.EditValue };
-            if (!isApply)
+            DateTime fromDate = (DateTime)dtpFromDate.EditValue;
+            DateTime toDate = (DateTime)dtpTodate.EditValue;
+            DialogResult = SelectedSettings.FromDate != fromDate || SelectedSettings.ToDate != toDate ? DialogResult.OK : DialogResult.Cancel;
+
+            SelectedSettings.FromDate = fromDate;
+            SelectedSettings.ToDate = toDate;
+
+            if (!isApply && DialogResult == DialogResult.OK)
             {
                 new LookUpRepository().SaveConfig(dtpFromDate.EditValue, dtpTodate.EditValue, cmbPurposeVisible.EditValue);
                 Utility.RefreshConfigData();
             }
 
-            this.Close();
-        }
-
-        private void Cancel_Click(object sender, EventArgs e)
-        {
             this.Close();
         }
     }

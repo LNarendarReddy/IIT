@@ -92,7 +92,6 @@
             this.Cancel.StyleController = this.layoutControl1;
             this.Cancel.TabIndex = 5;
             this.Cancel.Text = "Cancel";
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // btnOk
             // 
