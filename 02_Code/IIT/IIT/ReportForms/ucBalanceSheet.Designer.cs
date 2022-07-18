@@ -29,38 +29,36 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gcLiabilities = new DevExpress.XtraGrid.GridControl();
-            this.gvLiabilities = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcAssets = new DevExpress.XtraGrid.GridControl();
-            this.gvAssets = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tlLiabilities = new DevExpress.XtraTreeList.TreeList();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tlAssets = new DevExpress.XtraTreeList.TreeList();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.tlcBalanceSheetLiabilitiesLevel = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.tlcBalanceSheetAssetsLevel = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn10 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn11 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcLiabilities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvLiabilities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcAssets)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvAssets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tlLiabilities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tlAssets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gcLiabilities);
-            this.layoutControl1.Controls.Add(this.gcAssets);
+            this.layoutControl1.Controls.Add(this.tlAssets);
+            this.layoutControl1.Controls.Add(this.tlLiabilities);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -69,203 +67,143 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gcLiabilities
-            // 
-            this.gcLiabilities.Location = new System.Drawing.Point(4, 4);
-            this.gcLiabilities.MainView = this.gvLiabilities;
-            this.gcLiabilities.Name = "gcLiabilities";
-            this.gcLiabilities.Size = new System.Drawing.Size(445, 455);
-            this.gcLiabilities.TabIndex = 6;
-            this.gcLiabilities.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvLiabilities});
-            // 
-            // gvLiabilities
-            // 
-            this.gvLiabilities.Appearance.FooterPanel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.gvLiabilities.Appearance.FooterPanel.Options.UseFont = true;
-            this.gvLiabilities.Appearance.GroupFooter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gvLiabilities.Appearance.GroupFooter.Options.UseFont = true;
-            this.gvLiabilities.Appearance.GroupRow.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gvLiabilities.Appearance.GroupRow.Options.UseFont = true;
-            this.gvLiabilities.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10});
-            this.gvLiabilities.DetailHeight = 327;
-            this.gvLiabilities.GridControl = this.gcLiabilities;
-            this.gvLiabilities.GroupCount = 1;
-            this.gvLiabilities.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BALANCE", this.gridColumn10, "{0:0.##}")});
-            this.gvLiabilities.Name = "gvLiabilities";
-            this.gvLiabilities.OptionsBehavior.AutoExpandAllGroups = true;
-            this.gvLiabilities.OptionsBehavior.Editable = false;
-            this.gvLiabilities.OptionsView.ShowFooter = true;
-            this.gvLiabilities.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn8, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "GROUPID";
-            this.gridColumn6.FieldName = "GROUPID";
-            this.gridColumn6.MinWidth = 17;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Width = 64;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "SUBGROUPID";
-            this.gridColumn7.FieldName = "SUBGROUPID";
-            this.gridColumn7.MinWidth = 17;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Width = 64;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Group Name";
-            this.gridColumn8.FieldName = "GROUPNAME";
-            this.gridColumn8.MinWidth = 17;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            this.gridColumn8.Width = 64;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Particulars";
-            this.gridColumn9.FieldName = "SUBGROUPNAME";
-            this.gridColumn9.MinWidth = 17;
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
-            this.gridColumn9.Width = 64;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Amount in Rs";
-            this.gridColumn10.FieldName = "BALANCE";
-            this.gridColumn10.MinWidth = 17;
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BALANCE", "{0:0.##}")});
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
-            this.gridColumn10.Width = 64;
-            // 
-            // gcAssets
-            // 
-            this.gcAssets.Location = new System.Drawing.Point(453, 4);
-            this.gcAssets.MainView = this.gvAssets;
-            this.gcAssets.Name = "gcAssets";
-            this.gcAssets.Size = new System.Drawing.Size(446, 455);
-            this.gcAssets.TabIndex = 5;
-            this.gcAssets.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvAssets});
-            // 
-            // gvAssets
-            // 
-            this.gvAssets.Appearance.FooterPanel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.gvAssets.Appearance.FooterPanel.Options.UseFont = true;
-            this.gvAssets.Appearance.GroupFooter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gvAssets.Appearance.GroupFooter.Options.UseFont = true;
-            this.gvAssets.Appearance.GroupRow.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.gvAssets.Appearance.GroupRow.Options.UseFont = true;
-            this.gvAssets.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
-            this.gvAssets.DetailHeight = 327;
-            this.gvAssets.GridControl = this.gcAssets;
-            this.gvAssets.GroupCount = 1;
-            this.gvAssets.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BALANCE", this.gridColumn5, "{0:0.##}")});
-            this.gvAssets.Name = "gvAssets";
-            this.gvAssets.OptionsBehavior.AutoExpandAllGroups = true;
-            this.gvAssets.OptionsBehavior.Editable = false;
-            this.gvAssets.OptionsView.ShowFooter = true;
-            this.gvAssets.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn3, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "GROUPID";
-            this.gridColumn1.FieldName = "GROUPID";
-            this.gridColumn1.MinWidth = 17;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 64;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "SUBGROUPID";
-            this.gridColumn2.FieldName = "SUBGROUPID";
-            this.gridColumn2.MinWidth = 17;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Width = 64;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Group Name";
-            this.gridColumn3.FieldName = "GROUPNAME";
-            this.gridColumn3.MinWidth = 17;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 64;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Particulars";
-            this.gridColumn4.FieldName = "SUBGROUPNAME";
-            this.gridColumn4.MinWidth = 17;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            this.gridColumn4.Width = 64;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Amount in Rs";
-            this.gridColumn5.FieldName = "BALANCE";
-            this.gridColumn5.MinWidth = 17;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BALANCE", "{0:0.##}")});
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 64;
-            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(903, 463);
             this.Root.TextVisible = false;
             // 
+            // tlLiabilities
+            // 
+            this.tlLiabilities.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn1,
+            this.treeListColumn2,
+            this.treeListColumn3,
+            this.tlcBalanceSheetLiabilitiesLevel,
+            this.treeListColumn5,
+            this.treeListColumn6});
+            this.tlLiabilities.Location = new System.Drawing.Point(4, 4);
+            this.tlLiabilities.Name = "tlLiabilities";
+            this.tlLiabilities.Size = new System.Drawing.Size(445, 455);
+            this.tlLiabilities.TabIndex = 4;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.tlLiabilities;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(449, 459);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // tlAssets
+            // 
+            this.tlAssets.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumn4,
+            this.treeListColumn7,
+            this.treeListColumn8,
+            this.tlcBalanceSheetAssetsLevel,
+            this.treeListColumn10,
+            this.treeListColumn11});
+            this.tlAssets.Location = new System.Drawing.Point(453, 4);
+            this.tlAssets.Name = "tlAssets";
+            this.tlAssets.Size = new System.Drawing.Size(446, 455);
+            this.tlAssets.TabIndex = 5;
+            // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.gcAssets;
+            this.layoutControlItem2.Control = this.tlAssets;
             this.layoutControlItem2.Location = new System.Drawing.Point(449, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(450, 459);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // layoutControlItem1
+            // treeListColumn1
             // 
-            this.layoutControlItem1.Control = this.gcLiabilities;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(449, 459);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
+            this.treeListColumn1.Caption = "BSID";
+            this.treeListColumn1.FieldName = "BSID";
+            this.treeListColumn1.Name = "treeListColumn1";
+            // 
+            // treeListColumn2
+            // 
+            this.treeListColumn2.Caption = "PARENTID";
+            this.treeListColumn2.FieldName = "PARENTID";
+            this.treeListColumn2.Name = "treeListColumn2";
+            // 
+            // treeListColumn3
+            // 
+            this.treeListColumn3.Caption = "CURRENTID";
+            this.treeListColumn3.FieldName = "CURRENTID";
+            this.treeListColumn3.Name = "treeListColumn3";
+            // 
+            // tlcBalanceSheetLiabilitiesLevel
+            // 
+            this.tlcBalanceSheetLiabilitiesLevel.Caption = "BSLEVEL";
+            this.tlcBalanceSheetLiabilitiesLevel.FieldName = "BSLEVEL";
+            this.tlcBalanceSheetLiabilitiesLevel.Name = "tlcBalanceSheetLiabilitiesLevel";
+            // 
+            // treeListColumn5
+            // 
+            this.treeListColumn5.Caption = "Particular";
+            this.treeListColumn5.FieldName = "BSNAME";
+            this.treeListColumn5.Name = "treeListColumn5";
+            this.treeListColumn5.Visible = true;
+            this.treeListColumn5.VisibleIndex = 0;
+            // 
+            // treeListColumn6
+            // 
+            this.treeListColumn6.Caption = "Opening Balance";
+            this.treeListColumn6.FieldName = "OPENINGBAL";
+            this.treeListColumn6.Name = "treeListColumn6";
+            this.treeListColumn6.Visible = true;
+            this.treeListColumn6.VisibleIndex = 1;
+            // 
+            // treeListColumn4
+            // 
+            this.treeListColumn4.Caption = "BSID";
+            this.treeListColumn4.FieldName = "BSID";
+            this.treeListColumn4.Name = "treeListColumn4";
+            // 
+            // treeListColumn7
+            // 
+            this.treeListColumn7.Caption = "PARENTID";
+            this.treeListColumn7.FieldName = "PARENTID";
+            this.treeListColumn7.Name = "treeListColumn7";
+            // 
+            // treeListColumn8
+            // 
+            this.treeListColumn8.Caption = "CURRENTID";
+            this.treeListColumn8.FieldName = "CURRENTID";
+            this.treeListColumn8.Name = "treeListColumn8";
+            // 
+            // tlcBalanceSheetAssetsLevel
+            // 
+            this.tlcBalanceSheetAssetsLevel.Caption = "BSLEVEL";
+            this.tlcBalanceSheetAssetsLevel.FieldName = "BSLEVEL";
+            this.tlcBalanceSheetAssetsLevel.Name = "tlcBalanceSheetAssetsLevel";
+            // 
+            // treeListColumn10
+            // 
+            this.treeListColumn10.Caption = "Particular";
+            this.treeListColumn10.FieldName = "BSNAME";
+            this.treeListColumn10.Name = "treeListColumn10";
+            this.treeListColumn10.Visible = true;
+            this.treeListColumn10.VisibleIndex = 0;
+            // 
+            // treeListColumn11
+            // 
+            this.treeListColumn11.Caption = "Opening balance";
+            this.treeListColumn11.FieldName = "OPENINGBAL";
+            this.treeListColumn11.Name = "treeListColumn11";
+            this.treeListColumn11.Visible = true;
+            this.treeListColumn11.VisibleIndex = 1;
             // 
             // ucBalanceSheet
             // 
@@ -277,13 +215,11 @@
             this.Load += new System.EventHandler(this.ucBalanceSheet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcLiabilities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvLiabilities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcAssets)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvAssets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tlLiabilities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tlAssets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,21 +228,21 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraGrid.GridControl gcAssets;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvAssets;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.GridControl gcLiabilities;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvLiabilities;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraTreeList.TreeList tlAssets;
+        private DevExpress.XtraTreeList.TreeList tlLiabilities;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn tlcBalanceSheetLiabilitiesLevel;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn tlcBalanceSheetAssetsLevel;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn10;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn11;
     }
 }

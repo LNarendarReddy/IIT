@@ -14,11 +14,19 @@ namespace IIT.ReportForms
 
         private void ucBalanceSheet_Load(object sender, System.EventArgs e)
         {
-            Utility.SetGridFormatting(gvAssets);
-            Utility.SetGridFormatting(gvLiabilities);
+            Utility.SetTreeListFormatting(tlAssets, tlcBalanceSheetAssetsLevel);
+            Utility.SetTreeListFormatting(tlLiabilities, tlcBalanceSheetLiabilitiesLevel);
             DataSet dsBalanceSheet = new ReportRepository().GetReportDataset("USP_RPT_BALANCESHEET", new Dictionary<string, object>());
-            gcAssets.DataSource = dsBalanceSheet.Tables[0];
-            gcLiabilities.DataSource = dsBalanceSheet.Tables[1]; 
+
+            tlAssets.DataSource = dsBalanceSheet.Tables[0];
+            tlAssets.KeyFieldName = "BSID";
+            tlAssets.ParentFieldName = "PARENTID";
+            tlAssets.ExpandToLevel(0);
+
+            tlLiabilities.DataSource = dsBalanceSheet.Tables[1];
+            tlLiabilities.KeyFieldName = "BSID";
+            tlLiabilities.ParentFieldName = "PARENTID";
+            tlLiabilities.ExpandToLevel(0);
         }
     }
 }
