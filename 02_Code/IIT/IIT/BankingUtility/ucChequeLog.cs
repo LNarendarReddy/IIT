@@ -49,17 +49,13 @@ namespace IIT
         {
             if (keyData == Keys.F2)
             {
-                frmSettings settingsForm = new frmSettings(CurrentSettings, true);
-                Utility.ShowDialog(settingsForm);
+                if (Utility.ShowDialog(new frmSettings(CurrentSettings, true)) == DialogResult.OK)
+                {
+                    lblFromDate.Text = CurrentSettings.FromDate.ToShortDateString();
+                    lblToDate.Text = CurrentSettings.ToDate.ToShortDateString();
+                    cmbLedger_Leave(null, null);
+                }
 
-                if (CurrentSettings.FromDate == settingsForm.SelectedSettings.FromDate
-                    && CurrentSettings.ToDate == settingsForm.SelectedSettings.ToDate) return true;
-
-                CurrentSettings.FromDate = settingsForm.SelectedSettings.FromDate;
-                CurrentSettings.ToDate = settingsForm.SelectedSettings.ToDate;
-                lblFromDate.Text = CurrentSettings.FromDate.ToShortDateString();
-                lblToDate.Text = CurrentSettings.ToDate.ToShortDateString();
-                cmbLedger_Leave(null,null);
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);

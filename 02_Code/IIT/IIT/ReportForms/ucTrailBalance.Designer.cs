@@ -35,10 +35,10 @@
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlcTrialBalanceLevel = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.tlcOpeningBalance = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.tlcClosingBalance = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -67,10 +67,10 @@
             this.treeListColumn2,
             this.tlcTrialBalanceLevel,
             this.treeListColumn4,
-            this.treeListColumn5,
+            this.tlcOpeningBalance,
             this.treeListColumn7,
             this.treeListColumn6,
-            this.treeListColumn8});
+            this.tlcClosingBalance});
             this.tlTrailBalance.Location = new System.Drawing.Point(4, 4);
             this.tlTrailBalance.Name = "tlTrailBalance";
             this.tlTrailBalance.OptionsBehavior.Editable = false;
@@ -111,21 +111,13 @@
             this.treeListColumn4.Visible = true;
             this.treeListColumn4.VisibleIndex = 0;
             // 
-            // treeListColumn5
+            // tlcOpeningBalance
             // 
-            this.treeListColumn5.Caption = "Opening Balance";
-            this.treeListColumn5.FieldName = "OPENINGBAL";
-            this.treeListColumn5.Name = "treeListColumn5";
-            this.treeListColumn5.Visible = true;
-            this.treeListColumn5.VisibleIndex = 1;
-            // 
-            // treeListColumn6
-            // 
-            this.treeListColumn6.Caption = "Credit Amount";
-            this.treeListColumn6.FieldName = "CREDITAMOUNT";
-            this.treeListColumn6.Name = "treeListColumn6";
-            this.treeListColumn6.Visible = true;
-            this.treeListColumn6.VisibleIndex = 3;
+            this.tlcOpeningBalance.Caption = "Opening Balance";
+            this.tlcOpeningBalance.FieldName = "OPENINGBAL";
+            this.tlcOpeningBalance.Name = "tlcOpeningBalance";
+            this.tlcOpeningBalance.Visible = true;
+            this.tlcOpeningBalance.VisibleIndex = 1;
             // 
             // treeListColumn7
             // 
@@ -135,13 +127,21 @@
             this.treeListColumn7.Visible = true;
             this.treeListColumn7.VisibleIndex = 2;
             // 
-            // treeListColumn8
+            // treeListColumn6
             // 
-            this.treeListColumn8.Caption = "Closing Balance";
-            this.treeListColumn8.FieldName = "CLOSINGBAL";
-            this.treeListColumn8.Name = "treeListColumn8";
-            this.treeListColumn8.Visible = true;
-            this.treeListColumn8.VisibleIndex = 4;
+            this.treeListColumn6.Caption = "Credit Amount";
+            this.treeListColumn6.FieldName = "CREDITAMOUNT";
+            this.treeListColumn6.Name = "treeListColumn6";
+            this.treeListColumn6.Visible = true;
+            this.treeListColumn6.VisibleIndex = 3;
+            // 
+            // tlcClosingBalance
+            // 
+            this.tlcClosingBalance.Caption = "Closing Balance";
+            this.tlcClosingBalance.FieldName = "CLOSINGBAL";
+            this.tlcClosingBalance.Name = "tlcClosingBalance";
+            this.tlcClosingBalance.Visible = true;
+            this.tlcClosingBalance.VisibleIndex = 4;
             // 
             // Root
             // 
@@ -190,10 +190,10 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcTrialBalanceLevel;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn4;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn5;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn tlcOpeningBalance;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn tlcClosingBalance;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
     }
 }
