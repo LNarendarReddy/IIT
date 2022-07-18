@@ -19,7 +19,6 @@ namespace Entity
         public object LedgerTypeID { get; set; }
 
         public LedgerTypeBase LedgerTypeInfo { get; set; }
-
         public BankAccount BankAccountInfo
         {
             get { return LedgerTypeInfo as BankAccount; }
@@ -85,6 +84,16 @@ namespace Entity
             get { return LedgerTypeInfo as ReservesAndSurplus; }
             set { LedgerTypeInfo = value; }
         }
+        public StatutoryDues StatutoryDuesInfo
+        {
+            get { return LedgerTypeInfo as StatutoryDues; }
+            set { LedgerTypeInfo = value; }
+        }
+        public Depreciation DepreciationInfo
+        {
+            get { return LedgerTypeInfo as Depreciation; }
+            set { LedgerTypeInfo = value; }
+        }
         public Regular RegularInfo
         {
             get { return LedgerTypeInfo as Regular; }
@@ -118,6 +127,16 @@ namespace Entity
         public CashinHand CashinHandInfo
         {
             get { return LedgerTypeInfo as CashinHand; }
+            set { LedgerTypeInfo = value; }
+        }
+        public Commission CommissionInfo
+        {
+            get { return LedgerTypeInfo as Commission; }
+            set { LedgerTypeInfo = value; }
+        }
+        public Dividend DividendInfo
+        {
+            get { return LedgerTypeInfo as Dividend; }
             set { LedgerTypeInfo = value; }
         }
     }

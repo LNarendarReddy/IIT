@@ -35,7 +35,11 @@ namespace IIT
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.CashinHandInfo.HavingPrettyCashAccount = rgHavingPrettyCashAccount.EditValue;
             ledger.CashinHandInfo.Details = txtDetails.EditValue;
-            ledger.CashinHandInfo.OpeningBalance = txtOpeningBalance.EditValue;
+            decimal PettyCash = 0;
+            decimal OpeningBalance = 0;
+            decimal.TryParse(txtDetails.Text, out PettyCash);
+            decimal.TryParse(txtOpeningBalance.Text, out OpeningBalance);
+            ledger.CashinHandInfo.OpeningBalance = PettyCash + OpeningBalance;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_CashInHand;
             Save();
         }

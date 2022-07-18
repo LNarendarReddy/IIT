@@ -53,10 +53,13 @@
     <Compile Include="LedgerType\CashinHand .cs" />
     <Compile Include="LedgerType\CCorODC.cs" />
     <Compile Include="LedgerType\CapitalAccountPropietor.cs" />
+    <Compile Include="LedgerType\Commission.cs" />
     <Compile Include="LedgerType\Creditors.cs" />
     <Compile Include="LedgerType\CurrentAccountFirm.cs" />
     <Compile Include="LedgerType\Debitors.cs" />
+    <Compile Include="LedgerType\Depreciation.cs" />
     <Compile Include="LedgerType\DirectIncomes.cs" />
+    <Compile Include="LedgerType\Dividend.cs" />
     <Compile Include="LedgerType\EmployeePaySheet.cs" />
     <Compile Include="LedgerType\FixedAssetsCompany.cs" />
     <Compile Include="LedgerType\FixedAssetsIndividual.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="LedgerType\Regular.cs" />
     <Compile Include="LedgerType\ReservesAndSurplus.cs" />
     <Compile Include="LedgerType\ServicesOrDuesToSubContractors.cs" />
+    <Compile Include="LedgerType\StatutoryDues.cs" />
     <Compile Include="Masters\Group.cs" />
     <Compile Include="Masters\MasterBase.cs" />
     <Compile Include="Masters\Sector.cs" />

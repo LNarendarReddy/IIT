@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucLoans));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -84,7 +85,7 @@
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -203,36 +204,36 @@
             // 
             this.dtpEMIDate.EditValue = null;
             this.dtpEMIDate.EnterMoveNextControl = true;
-            this.dtpEMIDate.Location = new System.Drawing.Point(558, 200);
+            this.dtpEMIDate.Location = new System.Drawing.Point(560, 200);
             this.dtpEMIDate.Name = "dtpEMIDate";
             this.dtpEMIDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpEMIDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpEMIDate.Size = new System.Drawing.Size(207, 20);
+            this.dtpEMIDate.Size = new System.Drawing.Size(205, 20);
             this.dtpEMIDate.StyleController = this.layoutControl1;
             this.dtpEMIDate.TabIndex = 16;
             // 
             // txtloanAccountNumber
             // 
             this.txtloanAccountNumber.EnterMoveNextControl = true;
-            this.txtloanAccountNumber.Location = new System.Drawing.Point(167, 246);
+            this.txtloanAccountNumber.Location = new System.Drawing.Point(169, 246);
             this.txtloanAccountNumber.Name = "txtloanAccountNumber";
-            this.txtloanAccountNumber.Size = new System.Drawing.Size(218, 20);
+            this.txtloanAccountNumber.Size = new System.Drawing.Size(216, 20);
             this.txtloanAccountNumber.StyleController = this.layoutControl1;
             this.txtloanAccountNumber.TabIndex = 6;
             // 
             // rgFreaquency
             // 
             this.rgFreaquency.EnterMoveNextControl = true;
-            this.rgFreaquency.Location = new System.Drawing.Point(558, 154);
+            this.rgFreaquency.Location = new System.Drawing.Point(560, 154);
             this.rgFreaquency.Name = "rgFreaquency";
             this.rgFreaquency.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("M", "M"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Q", "Q"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("HY", "HY"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Y", "Y")});
-            this.rgFreaquency.Size = new System.Drawing.Size(207, 36);
+            this.rgFreaquency.Size = new System.Drawing.Size(205, 36);
             this.rgFreaquency.StyleController = this.layoutControl1;
             this.rgFreaquency.TabIndex = 15;
             this.rgFreaquency.Enter += new System.EventHandler(this.radioGroup_Enter);
@@ -240,9 +241,9 @@
             // txtMoratoriumPeriod
             // 
             this.txtMoratoriumPeriod.EnterMoveNextControl = true;
-            this.txtMoratoriumPeriod.Location = new System.Drawing.Point(167, 170);
+            this.txtMoratoriumPeriod.Location = new System.Drawing.Point(169, 170);
             this.txtMoratoriumPeriod.Name = "txtMoratoriumPeriod";
-            this.txtMoratoriumPeriod.Size = new System.Drawing.Size(218, 20);
+            this.txtMoratoriumPeriod.Size = new System.Drawing.Size(216, 20);
             this.txtMoratoriumPeriod.StyleController = this.layoutControl1;
             this.txtMoratoriumPeriod.TabIndex = 4;
             this.txtMoratoriumPeriod.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textedit_Spin);
@@ -251,20 +252,20 @@
             // 
             this.dtpLoanSanctionDate.EditValue = null;
             this.dtpLoanSanctionDate.EnterMoveNextControl = true;
-            this.dtpLoanSanctionDate.Location = new System.Drawing.Point(167, 132);
+            this.dtpLoanSanctionDate.Location = new System.Drawing.Point(169, 132);
             this.dtpLoanSanctionDate.Name = "dtpLoanSanctionDate";
             this.dtpLoanSanctionDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpLoanSanctionDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpLoanSanctionDate.Size = new System.Drawing.Size(218, 20);
+            this.dtpLoanSanctionDate.Size = new System.Drawing.Size(216, 20);
             this.dtpLoanSanctionDate.StyleController = this.layoutControl1;
             this.dtpLoanSanctionDate.TabIndex = 3;
             // 
             // txtEMIAmount
             // 
             this.txtEMIAmount.EnterMoveNextControl = true;
-            this.txtEMIAmount.Location = new System.Drawing.Point(558, 230);
+            this.txtEMIAmount.Location = new System.Drawing.Point(560, 230);
             this.txtEMIAmount.Name = "txtEMIAmount";
             this.txtEMIAmount.Properties.DisplayFormat.FormatString = "n2";
             this.txtEMIAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -273,7 +274,7 @@
             this.txtEMIAmount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtEMIAmount.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtEMIAmount.Properties.MaskSettings.Set("mask", "n2");
-            this.txtEMIAmount.Size = new System.Drawing.Size(207, 20);
+            this.txtEMIAmount.Size = new System.Drawing.Size(205, 20);
             this.txtEMIAmount.StyleController = this.layoutControl1;
             this.txtEMIAmount.TabIndex = 17;
             this.txtEMIAmount.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textedit_Spin);
@@ -304,7 +305,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(167, 452);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(169, 452);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -313,7 +314,7 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
-            this.txtOpeningBalance.Size = new System.Drawing.Size(218, 20);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(216, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 11;
             this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textedit_Spin);
@@ -321,7 +322,7 @@
             // txtInterestRate
             // 
             this.txtInterestRate.EnterMoveNextControl = true;
-            this.txtInterestRate.Location = new System.Drawing.Point(558, 124);
+            this.txtInterestRate.Location = new System.Drawing.Point(560, 124);
             this.txtInterestRate.Name = "txtInterestRate";
             this.txtInterestRate.Properties.DisplayFormat.FormatString = "n2";
             this.txtInterestRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -330,7 +331,7 @@
             this.txtInterestRate.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtInterestRate.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtInterestRate.Properties.MaskSettings.Set("mask", "n2");
-            this.txtInterestRate.Size = new System.Drawing.Size(207, 20);
+            this.txtInterestRate.Size = new System.Drawing.Size(205, 20);
             this.txtInterestRate.StyleController = this.layoutControl1;
             this.txtInterestRate.TabIndex = 14;
             this.txtInterestRate.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textedit_Spin);
@@ -338,20 +339,20 @@
             // txtPANNumber
             // 
             this.txtPANNumber.EnterMoveNextControl = true;
-            this.txtPANNumber.Location = new System.Drawing.Point(167, 322);
+            this.txtPANNumber.Location = new System.Drawing.Point(169, 322);
             this.txtPANNumber.Name = "txtPANNumber";
             this.txtPANNumber.Properties.MaxLength = 10;
-            this.txtPANNumber.Size = new System.Drawing.Size(218, 20);
+            this.txtPANNumber.Size = new System.Drawing.Size(216, 20);
             this.txtPANNumber.StyleController = this.layoutControl1;
             this.txtPANNumber.TabIndex = 8;
             // 
             // txtGSTNumber
             // 
             this.txtGSTNumber.EnterMoveNextControl = true;
-            this.txtGSTNumber.Location = new System.Drawing.Point(167, 284);
+            this.txtGSTNumber.Location = new System.Drawing.Point(169, 284);
             this.txtGSTNumber.Name = "txtGSTNumber";
             this.txtGSTNumber.Properties.MaxLength = 15;
-            this.txtGSTNumber.Size = new System.Drawing.Size(218, 20);
+            this.txtGSTNumber.Size = new System.Drawing.Size(216, 20);
             this.txtGSTNumber.StyleController = this.layoutControl1;
             this.txtGSTNumber.TabIndex = 7;
             this.txtGSTNumber.Leave += new System.EventHandler(this.txtGSTNumber_Leave);
@@ -359,16 +360,16 @@
             // txtLedgerName
             // 
             this.txtLedgerName.EnterMoveNextControl = true;
-            this.txtLedgerName.Location = new System.Drawing.Point(167, 42);
+            this.txtLedgerName.Location = new System.Drawing.Point(169, 42);
             this.txtLedgerName.Name = "txtLedgerName";
-            this.txtLedgerName.Size = new System.Drawing.Size(218, 20);
+            this.txtLedgerName.Size = new System.Drawing.Size(216, 20);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
             // 
             // cmbNameoftheBank
             // 
             this.cmbNameoftheBank.EnterMoveNextControl = true;
-            this.cmbNameoftheBank.Location = new System.Drawing.Point(558, 291);
+            this.cmbNameoftheBank.Location = new System.Drawing.Point(560, 291);
             this.cmbNameoftheBank.Name = "cmbNameoftheBank";
             this.cmbNameoftheBank.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -377,56 +378,56 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbNameoftheBank.Properties.NullText = "";
             this.cmbNameoftheBank.Properties.ShowHeader = false;
-            this.cmbNameoftheBank.Size = new System.Drawing.Size(207, 20);
+            this.cmbNameoftheBank.Size = new System.Drawing.Size(205, 20);
             this.cmbNameoftheBank.StyleController = this.layoutControl1;
             this.cmbNameoftheBank.TabIndex = 18;
             // 
             // txtAccountNumber
             // 
             this.txtAccountNumber.EnterMoveNextControl = true;
-            this.txtAccountNumber.Location = new System.Drawing.Point(558, 321);
+            this.txtAccountNumber.Location = new System.Drawing.Point(560, 321);
             this.txtAccountNumber.Name = "txtAccountNumber";
-            this.txtAccountNumber.Size = new System.Drawing.Size(207, 20);
+            this.txtAccountNumber.Size = new System.Drawing.Size(205, 20);
             this.txtAccountNumber.StyleController = this.layoutControl1;
             this.txtAccountNumber.TabIndex = 19;
             // 
             // txtAccountHolderName
             // 
             this.txtAccountHolderName.EnterMoveNextControl = true;
-            this.txtAccountHolderName.Location = new System.Drawing.Point(558, 351);
+            this.txtAccountHolderName.Location = new System.Drawing.Point(560, 351);
             this.txtAccountHolderName.Name = "txtAccountHolderName";
-            this.txtAccountHolderName.Size = new System.Drawing.Size(207, 20);
+            this.txtAccountHolderName.Size = new System.Drawing.Size(205, 20);
             this.txtAccountHolderName.StyleController = this.layoutControl1;
             this.txtAccountHolderName.TabIndex = 20;
             // 
             // txtIFSCCode
             // 
             this.txtIFSCCode.EnterMoveNextControl = true;
-            this.txtIFSCCode.Location = new System.Drawing.Point(558, 381);
+            this.txtIFSCCode.Location = new System.Drawing.Point(560, 381);
             this.txtIFSCCode.Name = "txtIFSCCode";
-            this.txtIFSCCode.Size = new System.Drawing.Size(207, 20);
+            this.txtIFSCCode.Size = new System.Drawing.Size(205, 20);
             this.txtIFSCCode.StyleController = this.layoutControl1;
             this.txtIFSCCode.TabIndex = 21;
             // 
             // txtBranch
             // 
             this.txtBranch.EnterMoveNextControl = true;
-            this.txtBranch.Location = new System.Drawing.Point(558, 411);
+            this.txtBranch.Location = new System.Drawing.Point(560, 411);
             this.txtBranch.Name = "txtBranch";
-            this.txtBranch.Size = new System.Drawing.Size(207, 20);
+            this.txtBranch.Size = new System.Drawing.Size(205, 20);
             this.txtBranch.StyleController = this.layoutControl1;
             this.txtBranch.TabIndex = 22;
             // 
             // rgTDSApplicable
             // 
             this.rgTDSApplicable.EnterMoveNextControl = true;
-            this.rgTDSApplicable.Location = new System.Drawing.Point(167, 360);
+            this.rgTDSApplicable.Location = new System.Drawing.Point(169, 360);
             this.rgTDSApplicable.Name = "rgTDSApplicable";
             this.rgTDSApplicable.Properties.Columns = 2;
             this.rgTDSApplicable.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgTDSApplicable.Size = new System.Drawing.Size(218, 36);
+            this.rgTDSApplicable.Size = new System.Drawing.Size(216, 36);
             this.rgTDSApplicable.StyleController = this.layoutControl1;
             this.rgTDSApplicable.TabIndex = 9;
             this.rgTDSApplicable.Enter += new System.EventHandler(this.radioGroup_Enter);
@@ -434,7 +435,7 @@
             // cmbTDSRates
             // 
             this.cmbTDSRates.EnterMoveNextControl = true;
-            this.cmbTDSRates.Location = new System.Drawing.Point(167, 414);
+            this.cmbTDSRates.Location = new System.Drawing.Point(169, 414);
             this.cmbTDSRates.Name = "cmbTDSRates";
             this.cmbTDSRates.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -443,19 +444,19 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbTDSRates.Properties.NullText = "";
             this.cmbTDSRates.Properties.ShowHeader = false;
-            this.cmbTDSRates.Size = new System.Drawing.Size(218, 20);
+            this.cmbTDSRates.Size = new System.Drawing.Size(216, 20);
             this.cmbTDSRates.StyleController = this.layoutControl1;
             this.cmbTDSRates.TabIndex = 10;
             // 
             // rgTypeofLoan
             // 
             this.rgTypeofLoan.EnterMoveNextControl = true;
-            this.rgTypeofLoan.Location = new System.Drawing.Point(167, 80);
+            this.rgTypeofLoan.Location = new System.Drawing.Point(169, 80);
             this.rgTypeofLoan.Name = "rgTypeofLoan";
             this.rgTypeofLoan.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Secured", "Secured"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("Unsecured", "Unsecured")});
-            this.rgTypeofLoan.Size = new System.Drawing.Size(218, 34);
+            this.rgTypeofLoan.Size = new System.Drawing.Size(216, 34);
             this.rgTypeofLoan.StyleController = this.layoutControl1;
             this.rgTypeofLoan.TabIndex = 2;
             this.rgTypeofLoan.Enter += new System.EventHandler(this.radioGroup_Enter);
@@ -464,7 +465,7 @@
             // 
             this.dtpEMIStartDate.EditValue = null;
             this.dtpEMIStartDate.EnterMoveNextControl = true;
-            this.dtpEMIStartDate.Location = new System.Drawing.Point(558, 64);
+            this.dtpEMIStartDate.Location = new System.Drawing.Point(560, 64);
             this.dtpEMIStartDate.Name = "dtpEMIStartDate";
             this.dtpEMIStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -475,7 +476,7 @@
             this.dtpEMIStartDate.Properties.EditFormat.FormatString = "";
             this.dtpEMIStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpEMIStartDate.Properties.MaskSettings.Set("mask", "");
-            this.dtpEMIStartDate.Size = new System.Drawing.Size(207, 20);
+            this.dtpEMIStartDate.Size = new System.Drawing.Size(205, 20);
             this.dtpEMIStartDate.StyleController = this.layoutControl1;
             this.dtpEMIStartDate.TabIndex = 12;
             // 
@@ -483,7 +484,7 @@
             // 
             this.dtpEMIClosingDate.EditValue = null;
             this.dtpEMIClosingDate.EnterMoveNextControl = true;
-            this.dtpEMIClosingDate.Location = new System.Drawing.Point(558, 94);
+            this.dtpEMIClosingDate.Location = new System.Drawing.Point(560, 94);
             this.dtpEMIClosingDate.Name = "dtpEMIClosingDate";
             this.dtpEMIClosingDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -495,16 +496,16 @@
             this.dtpEMIClosingDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpEMIClosingDate.Properties.Mask.EditMask = "";
             this.dtpEMIClosingDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dtpEMIClosingDate.Size = new System.Drawing.Size(207, 20);
+            this.dtpEMIClosingDate.Size = new System.Drawing.Size(205, 20);
             this.dtpEMIClosingDate.StyleController = this.layoutControl1;
             this.dtpEMIClosingDate.TabIndex = 13;
             // 
             // txtNameOftheBank
             // 
             this.txtNameOftheBank.EnterMoveNextControl = true;
-            this.txtNameOftheBank.Location = new System.Drawing.Point(167, 208);
+            this.txtNameOftheBank.Location = new System.Drawing.Point(169, 208);
             this.txtNameOftheBank.Name = "txtNameOftheBank";
-            this.txtNameOftheBank.Size = new System.Drawing.Size(218, 20);
+            this.txtNameOftheBank.Size = new System.Drawing.Size(216, 20);
             this.txtNameOftheBank.StyleController = this.layoutControl1;
             this.txtNameOftheBank.TabIndex = 5;
             // 

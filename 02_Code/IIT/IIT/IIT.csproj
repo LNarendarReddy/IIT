@@ -179,6 +179,12 @@
     <Compile Include="LedgerType\ucCapitalAccountPropietor.Designer.cs">
       <DependentUpon>ucCapitalAccountPropietor.cs</DependentUpon>
     </Compile>
+    <Compile Include="LedgerType\ucCommission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucCommission.Designer.cs">
+      <DependentUpon>ucCommission.cs</DependentUpon>
+    </Compile>
     <Compile Include="LedgerType\ucCreditors.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,11 +203,23 @@
     <Compile Include="LedgerType\ucDebitors.Designer.cs">
       <DependentUpon>ucDebitors.cs</DependentUpon>
     </Compile>
+    <Compile Include="LedgerType\ucDepreciation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucDepreciation.Designer.cs">
+      <DependentUpon>ucDepreciation.cs</DependentUpon>
+    </Compile>
     <Compile Include="LedgerType\ucDirectIncomes.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LedgerType\ucDirectIncomes.Designer.cs">
       <DependentUpon>ucDirectIncomes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucDividend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucDividend.Designer.cs">
+      <DependentUpon>ucDividend.cs</DependentUpon>
     </Compile>
     <Compile Include="LedgerType\ucEmployeePaysheet.cs">
       <SubType>UserControl</SubType>
@@ -265,6 +283,12 @@
     </Compile>
     <Compile Include="LedgerType\ucServices.Designer.cs">
       <DependentUpon>ucServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LedgerType\ucStatutoryDues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LedgerType\ucStatutoryDues.Designer.cs">
+      <DependentUpon>ucStatutoryDues.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger\frmSettings.cs">
       <SubType>Form</SubType>
@@ -458,6 +482,9 @@
     <EmbeddedResource Include="LedgerType\ucCapitalAccountPropietor.resx">
       <DependentUpon>ucCapitalAccountPropietor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucCommission.resx">
+      <DependentUpon>ucCommission.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LedgerType\ucCreditors.resx">
       <DependentUpon>ucCreditors.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,8 +494,14 @@
     <EmbeddedResource Include="LedgerType\ucDebitors.resx">
       <DependentUpon>ucDebitors.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucDepreciation.resx">
+      <DependentUpon>ucDepreciation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LedgerType\ucDirectIncomes.resx">
       <DependentUpon>ucDirectIncomes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucDividend.resx">
+      <DependentUpon>ucDividend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LedgerType\ucEmployeePaysheet.resx">
       <DependentUpon>ucEmployeePaysheet.cs</DependentUpon>
@@ -499,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LedgerType\ucServices.resx">
       <DependentUpon>ucServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucStatutoryDues.resx">
+      <DependentUpon>ucStatutoryDues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>

@@ -20,6 +20,7 @@ namespace Repository
         private static DataTable dtIncomeType = null;
         private static DataTable dtNatureOfReserves = null;
         private static DataTable dtInvestmentType = null;
+        private static DataTable dtDueType = null;
 
         private static LookUpRepository lookUpRepository = new LookUpRepository();
         public static DataTable GetMethodOfAccountings()
@@ -101,6 +102,11 @@ namespace Repository
         {
             return dtInvestmentType =
                 dtInvestmentType ?? lookUpRepository.GetLookUpData("InvestmentType");
+        }
+        public static DataTable GetDueType()
+        {
+            return dtDueType =
+                dtDueType ?? lookUpRepository.GetLookUpData("DueType");
         }
     }
 }
