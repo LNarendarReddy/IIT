@@ -396,6 +396,21 @@ namespace IIT
             BindLookups();
             FillFromCreateRequest();
         }
-     
+
+        private void btnMultipleVouchers_Click(object sender, EventArgs e)
+        {
+            frmSingularMain.Instance.RollbackControl(false);
+            MultiVoucherSettings multiVoucherSettings = new MultiVoucherSettings()
+            {
+                VoucherTypeID = voucherObj.VoucherTypeID,
+                VoucherTypeHeader = lblformHeader.Text,
+                FromPaymentHeader = lciPaymentMadeFrom.Text,
+                FromPaymentSource = cmbPaymentMadefrom.Properties.DataSource,
+                ToPaymentHeader = lciPaymentMadeTo.Text,
+                ToPaymentSource = cmbPaymentMadeto.Properties.DataSource,
+                PurposeText = lciPurpose.Text
+            };
+            Utility.ShowDialog(new ucMultiVoucher(multiVoucherSettings));
+        }
     }
 }
