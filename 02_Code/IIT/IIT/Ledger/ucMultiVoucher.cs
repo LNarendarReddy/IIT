@@ -41,16 +41,15 @@ namespace IIT
             paymentToSource = multiVoucherSettings.ToPaymentSource as DataTable;
 
             rluPaymentFrom.DataSource = paymentFromSource;
-            rluPaymentTo.DataSource = paymentToSource;
-
             rluPaymentFrom.DisplayMember = "LEDGERNAME";
             rluPaymentFrom.ValueMember = "LEDGERID";
 
+            rluPaymentTo.DataSource = paymentToSource;
             rluPaymentTo.DisplayMember = "LEDGERNAME";
             rluPaymentTo.ValueMember = "LEDGERID";
 
-            if (paymentFromSource.Rows.Count == 1) rluPaymentFrom.ReadOnly = true;
-            if (paymentToSource.Rows.Count == 1) rluPaymentTo.ReadOnly = true;
+            rluPaymentFrom.ReadOnly = paymentFromSource.Rows.Count == 1;
+            rluPaymentTo.ReadOnly = paymentToSource.Rows.Count == 1;
         }
 
         private void ucMultiVoucher_Load(object sender, EventArgs e)
@@ -64,7 +63,7 @@ namespace IIT
         {
             if (!gvVouchers.UpdateCurrentRow())
             {
-                XtraMessageBox.Show("Some of the values are not entered");
+                XtraMessageBox.Show("Some of the values are not entered", "Error");
                 return;
             }
 
