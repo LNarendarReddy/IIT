@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IIT.LedgerType
+namespace IIT
 {
     public partial class ucStatutoryDues : ucLedgerTypeBase
     {
@@ -20,9 +20,9 @@ namespace IIT.LedgerType
         {
             InitializeComponent();
         }
-
         private void ucStatutoryDues_Load(object sender, EventArgs e)
         {
+            base.AddControls(layoutControl1);
             cmbTypeofDue.Properties.DataSource = LookUpUtility.GetDueType();
             cmbTypeofDue.Properties.ValueMember = "ENTITYLOOKUPID";
             cmbTypeofDue.Properties.DisplayMember = "LOOKUPVALUE";
@@ -36,17 +36,13 @@ namespace IIT.LedgerType
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.StatutoryDuesInfo.TypeofDue = cmbTypeofDue.EditValue;
             ledger.StatutoryDuesInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_StatutoryDues;
             Save();
-        }
-        private void textExit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

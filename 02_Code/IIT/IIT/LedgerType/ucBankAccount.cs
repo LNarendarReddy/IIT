@@ -1,32 +1,34 @@
-﻿using Entity;
+﻿using DevExpress.XtraEditors;
+using Entity;
 using IIT;
 using Repository;
 using Repository.Utility;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace IIT
 {
     public partial class ucBankAccount : ucLedgerTypeBase
     {
+        public ucBankAccount()
+        { 
+
+        }
         public ucBankAccount(Ledger _ledger, bool isCallFromAddButton,string caption) : 
             base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
+            this.txtInterestRate.Spin += base.textedit_Spin;
         }
-
         private void ucBankAccount_Load(object sender, EventArgs e)
         {
-            lblHeader.Name = Caption;
             cmbNameOftheBank.Properties.DataSource = LookUpUtility.GetBanks();
-            cmbNameOftheBank.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNameOftheBank.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbNatureoftheBankAccount.Properties.DataSource = LookUpUtility.GetNatureOfBanks();
-            cmbNatureoftheBankAccount.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNatureoftheBankAccount.Properties.DisplayMember = "LOOKUPVALUE";
-
+            base.AddControls(layoutControl1);
+            lblHeader.Name = Caption;
             if (ledger?.ID == null) return;
-
             cmbNameOftheBank.EditValue = ledger.BankAccountInfo.BankID;
             txtBankAccountNumber.EditValue = ledger.BankAccountInfo.AccountNumber;
             txtBranchAddress.EditValue = ledger.BankAccountInfo.BranchAddress;
@@ -39,10 +41,9 @@ namespace IIT
             txtInterestRate.EditValue = ledger.BankAccountInfo.InterestRate;
             txtOpeningBalance.EditValue = ledger.BankAccountInfo.OpeningBalance;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(!dxValidationProvider1.Validate())
+            if(!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = cmbNameOftheBank.Text + " " + txtBankAccountNumber.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_BankAccount;
@@ -60,10 +61,7 @@ namespace IIT
             Save();
         }
 
-        private void txtInterestRate_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
-        }
+
     }
 }
     

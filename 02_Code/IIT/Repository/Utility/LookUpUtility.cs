@@ -21,6 +21,14 @@ namespace Repository
         private static DataTable dtNatureOfReserves = null;
         private static DataTable dtInvestmentType = null;
         private static DataTable dtDueType = null;
+        private static DataTable dtBoolType = null;
+        private static DataTable dtCapitalType = null;
+        private static DataTable dtRegType = null;
+        private static DataTable dtLoanType = null;
+        private static DataTable dtIncomeType1 = null;
+        private static DataTable dtEmployeeLocation = null;
+        private static DataTable dtLoanType1 = null;
+        private static DataTable dtLoanFrequency = null;
 
         private static LookUpRepository lookUpRepository = new LookUpRepository();
         public static DataTable GetMethodOfAccountings()
@@ -107,6 +115,46 @@ namespace Repository
         {
             return dtDueType =
                 dtDueType ?? lookUpRepository.GetLookUpData("DueType");
+        }
+        public static DataTable GetBoolType()
+        {
+            return dtBoolType =
+                dtBoolType ?? lookUpRepository.GetLookUpData("BOOLTYPE");
+        }
+        public static DataTable GetCapitalType()
+        {
+            return dtCapitalType =
+                dtCapitalType ?? lookUpRepository.GetLookUpData("CAPITALTYPE");
+        }
+        public static DataTable GetRegType()
+        {
+            return dtRegType =
+                dtRegType ?? lookUpRepository.GetLookUpData("REGISTRATIONTYPE");
+        }
+        public static DataTable GetLoanType()
+        {
+            return dtLoanType =
+                dtLoanType ?? lookUpRepository.GetLookUpData("LoanType");
+        }
+        public static DataTable GetIncomeType1()
+        {
+            return dtIncomeType1 =
+                dtIncomeType1 ?? lookUpRepository.GetLookUpData("IncomeType1");
+        }
+        public static DataTable GetEmployeeLocation()
+        {
+            return dtEmployeeLocation =
+                dtEmployeeLocation ?? lookUpRepository.GetLookUpData("EmployeeLocation");
+        }
+        public static DataTable GetLoanType1()
+        {
+            return dtLoanType1 =
+                dtLoanType1 ?? lookUpRepository.GetLookUpData("LoanType1");
+        }
+        public static DataTable GetLoanRepaymentFrequency()
+        {
+            return dtLoanFrequency =
+                dtLoanFrequency ?? lookUpRepository.GetLookUpData("LoanRepaymentFreaquency");
         }
     }
 }

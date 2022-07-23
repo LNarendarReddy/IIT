@@ -19,9 +19,11 @@ namespace IIT
         public ucReservesAndSurplus(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton,caption)
         {
             InitializeComponent();
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
         }
         private void ucReservesAndSurplus_Load(object sender, EventArgs e)
         {
+            base.AddControls(layoutControl1);
             cmbNatureOfReserve.Properties.DataSource = LookUpUtility.GetNatureOfReserves();
             cmbNatureOfReserve.Properties.ValueMember = "ENTITYLOOKUPID";
             cmbNatureOfReserve.Properties.DisplayMember = "LOOKUPVALUE";
@@ -35,17 +37,13 @@ namespace IIT
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.ReservesAndSurplusInfo.NatureOfReserves = cmbNatureOfReserve.EditValue;
             ledger.ReservesAndSurplusInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_ReservesandSurplus;
             Save();
-        }
-        private void textExit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

@@ -28,19 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBankAccount));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtContactNo = new DevExpress.XtraEditors.TextEdit();
             this.txtPinCode = new DevExpress.XtraEditors.TextEdit();
@@ -72,7 +60,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtContactNo.Properties)).BeginInit();
@@ -104,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -135,41 +121,29 @@
             // txtContactNo
             // 
             this.txtContactNo.EnterMoveNextControl = true;
-            this.txtContactNo.Location = new System.Drawing.Point(156, 226);
+            this.txtContactNo.Location = new System.Drawing.Point(158, 226);
             this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(248, 20);
+            this.txtContactNo.Size = new System.Drawing.Size(246, 20);
             this.txtContactNo.StyleController = this.layoutControl1;
             this.txtContactNo.TabIndex = 6;
-            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule12.ErrorText = "Mandatory";
-            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtContactNo, conditionValidationRule12);
             // 
             // txtPinCode
             // 
             this.txtPinCode.EnterMoveNextControl = true;
-            this.txtPinCode.Location = new System.Drawing.Point(156, 196);
+            this.txtPinCode.Location = new System.Drawing.Point(158, 196);
             this.txtPinCode.Name = "txtPinCode";
-            this.txtPinCode.Size = new System.Drawing.Size(248, 20);
+            this.txtPinCode.Size = new System.Drawing.Size(246, 20);
             this.txtPinCode.StyleController = this.layoutControl1;
             this.txtPinCode.TabIndex = 5;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtPinCode, conditionValidationRule1);
             // 
             // txtLocation
             // 
             this.txtLocation.EnterMoveNextControl = true;
-            this.txtLocation.Location = new System.Drawing.Point(156, 166);
+            this.txtLocation.Location = new System.Drawing.Point(158, 166);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(248, 20);
+            this.txtLocation.Size = new System.Drawing.Size(246, 20);
             this.txtLocation.StyleController = this.layoutControl1;
             this.txtLocation.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLocation, conditionValidationRule2);
             // 
             // lblHeader
             // 
@@ -197,7 +171,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(156, 417);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(158, 417);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -206,19 +180,14 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
-            this.txtOpeningBalance.Size = new System.Drawing.Size(248, 20);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(246, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 11;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule3);
-            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterestRate_Spin);
             // 
             // txtInterestRate
             // 
             this.txtInterestRate.EnterMoveNextControl = true;
-            this.txtInterestRate.Location = new System.Drawing.Point(156, 379);
+            this.txtInterestRate.Location = new System.Drawing.Point(158, 379);
             this.txtInterestRate.Name = "txtInterestRate";
             this.txtInterestRate.Properties.DisplayFormat.FormatString = "n2";
             this.txtInterestRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -227,75 +196,54 @@
             this.txtInterestRate.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtInterestRate.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtInterestRate.Properties.MaskSettings.Set("mask", "n2");
-            this.txtInterestRate.Size = new System.Drawing.Size(248, 20);
+            this.txtInterestRate.Size = new System.Drawing.Size(246, 20);
             this.txtInterestRate.StyleController = this.layoutControl1;
             this.txtInterestRate.TabIndex = 10;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtInterestRate, conditionValidationRule4);
-            this.txtInterestRate.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterestRate_Spin);
             // 
             // txtMICRCode
             // 
             this.txtMICRCode.EnterMoveNextControl = true;
-            this.txtMICRCode.Location = new System.Drawing.Point(156, 303);
+            this.txtMICRCode.Location = new System.Drawing.Point(158, 303);
             this.txtMICRCode.Name = "txtMICRCode";
             this.txtMICRCode.Properties.MaxLength = 9;
-            this.txtMICRCode.Size = new System.Drawing.Size(248, 20);
+            this.txtMICRCode.Size = new System.Drawing.Size(246, 20);
             this.txtMICRCode.StyleController = this.layoutControl1;
             this.txtMICRCode.TabIndex = 8;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtMICRCode, conditionValidationRule5);
             // 
             // txtIFSCCode
             // 
             this.txtIFSCCode.EnterMoveNextControl = true;
-            this.txtIFSCCode.Location = new System.Drawing.Point(156, 265);
+            this.txtIFSCCode.Location = new System.Drawing.Point(158, 265);
             this.txtIFSCCode.Name = "txtIFSCCode";
             this.txtIFSCCode.Properties.MaxLength = 11;
-            this.txtIFSCCode.Size = new System.Drawing.Size(248, 20);
+            this.txtIFSCCode.Size = new System.Drawing.Size(246, 20);
             this.txtIFSCCode.StyleController = this.layoutControl1;
             this.txtIFSCCode.TabIndex = 7;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtIFSCCode, conditionValidationRule6);
             // 
             // txtBranchAddress
             // 
             this.txtBranchAddress.EnterMoveNextControl = true;
-            this.txtBranchAddress.Location = new System.Drawing.Point(156, 136);
+            this.txtBranchAddress.Location = new System.Drawing.Point(158, 136);
             this.txtBranchAddress.Name = "txtBranchAddress";
-            this.txtBranchAddress.Size = new System.Drawing.Size(248, 20);
+            this.txtBranchAddress.Size = new System.Drawing.Size(246, 20);
             this.txtBranchAddress.StyleController = this.layoutControl1;
             this.txtBranchAddress.TabIndex = 3;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Mandatory";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtBranchAddress, conditionValidationRule7);
             // 
             // txtBankAccountNumber
             // 
             this.txtBankAccountNumber.EnterMoveNextControl = true;
-            this.txtBankAccountNumber.Location = new System.Drawing.Point(156, 76);
+            this.txtBankAccountNumber.Location = new System.Drawing.Point(158, 76);
             this.txtBankAccountNumber.Name = "txtBankAccountNumber";
             this.txtBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
             this.txtBankAccountNumber.Properties.MaskSettings.Set("mask", "[a-zA-Z0-9]{0,16}");
-            this.txtBankAccountNumber.Size = new System.Drawing.Size(248, 20);
+            this.txtBankAccountNumber.Size = new System.Drawing.Size(246, 20);
             this.txtBankAccountNumber.StyleController = this.layoutControl1;
             this.txtBankAccountNumber.TabIndex = 2;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "Mandatory";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtBankAccountNumber, conditionValidationRule8);
             // 
             // cmbNameOftheBank
             // 
             this.cmbNameOftheBank.EnterMoveNextControl = true;
-            this.cmbNameOftheBank.Location = new System.Drawing.Point(156, 38);
+            this.cmbNameOftheBank.Location = new System.Drawing.Point(158, 38);
             this.cmbNameOftheBank.Name = "cmbNameOftheBank";
             this.cmbNameOftheBank.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -304,18 +252,14 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbNameOftheBank.Properties.NullText = "";
             this.cmbNameOftheBank.Properties.ShowHeader = false;
-            this.cmbNameOftheBank.Size = new System.Drawing.Size(248, 20);
+            this.cmbNameOftheBank.Size = new System.Drawing.Size(246, 20);
             this.cmbNameOftheBank.StyleController = this.layoutControl1;
             this.cmbNameOftheBank.TabIndex = 1;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "Mandatory";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbNameOftheBank, conditionValidationRule9);
             // 
             // cmbNatureoftheBankAccount
             // 
             this.cmbNatureoftheBankAccount.EnterMoveNextControl = true;
-            this.cmbNatureoftheBankAccount.Location = new System.Drawing.Point(156, 341);
+            this.cmbNatureoftheBankAccount.Location = new System.Drawing.Point(158, 341);
             this.cmbNatureoftheBankAccount.Name = "cmbNatureoftheBankAccount";
             this.cmbNatureoftheBankAccount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -325,13 +269,9 @@
             this.cmbNatureoftheBankAccount.Properties.NullText = "";
             this.cmbNatureoftheBankAccount.Properties.PopupSizeable = false;
             this.cmbNatureoftheBankAccount.Properties.ShowHeader = false;
-            this.cmbNatureoftheBankAccount.Size = new System.Drawing.Size(248, 20);
+            this.cmbNatureoftheBankAccount.Size = new System.Drawing.Size(246, 20);
             this.cmbNatureoftheBankAccount.StyleController = this.layoutControl1;
             this.cmbNatureoftheBankAccount.TabIndex = 9;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "Mandatory";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbNatureoftheBankAccount, conditionValidationRule10);
             // 
             // Root
             // 
@@ -566,7 +506,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,7 +535,6 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.LabelControl lblHeader;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private DevExpress.XtraEditors.LookUpEdit cmbNatureoftheBankAccount;
         private DevExpress.XtraEditors.TextEdit txtContactNo;
         private DevExpress.XtraEditors.TextEdit txtPinCode;

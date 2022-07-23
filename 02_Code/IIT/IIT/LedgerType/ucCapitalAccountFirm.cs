@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.DXErrorProvider;
 using Entity;
+using Repository;
 using Repository.Utility;
 using System;
 using System.Collections.Generic;
@@ -18,47 +20,50 @@ namespace IIT
         public ucCapitalAccountFirm(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtCapitalShare.Spin += base.textedit_Spin;
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
         }
         private void ucCapitalAccountFirm_Load(object sender, EventArgs e)
         {
+
+            cmbCurrentAccountInBooks.Properties.DataSource =
+                cmbRecieptForAdditions.Properties.DataSource =
+                cmbRemuneration.Properties.DataSource =
+                cmbShareofProfit.Properties.DataSource =
+                cmbDrawings.Properties.DataSource =
+                cmbInterestonCapital.Properties.DataSource =
+                cmbOthersifany.Properties.DataSource = LookUpUtility.GetBoolType();
+
+            base.AddControls(layoutControl1);
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
             txtCapitalShare.EditValue = ledger.CapitalAccountFirmInfo.CapitalShare;
-            rgCurrentAccountInBooks.EditValue = ledger.CapitalAccountFirmInfo.CurrentAccountInBooks;
-            rgRecieptForAdditions .EditValue = ledger.CapitalAccountFirmInfo.RecieptForAdditions;
-            rgRemuneration.EditValue = ledger.CapitalAccountFirmInfo.Remuneration;
-            rgShareofProfit.EditValue = ledger.CapitalAccountFirmInfo.ShareofProfit;
-            rgDrawings.EditValue = ledger.CapitalAccountFirmInfo.Drawings;
-            rgInterestonCapital.EditValue = ledger.CapitalAccountFirmInfo.InterestonCapital;
-            rgOthersifany.EditValue = ledger.CapitalAccountFirmInfo.Othersifany;
+            cmbCurrentAccountInBooks.EditValue = ledger.CapitalAccountFirmInfo.CurrentAccountInBooks;
+            cmbRecieptForAdditions.EditValue = ledger.CapitalAccountFirmInfo.RecieptForAdditions;
+            cmbRemuneration.EditValue = ledger.CapitalAccountFirmInfo.Remuneration;
+            cmbShareofProfit.EditValue = ledger.CapitalAccountFirmInfo.ShareofProfit;
+            cmbDrawings.EditValue = ledger.CapitalAccountFirmInfo.Drawings;
+            cmbInterestonCapital.EditValue = ledger.CapitalAccountFirmInfo.InterestonCapital;
+            cmbOthersifany.EditValue = ledger.CapitalAccountFirmInfo.Othersifany;
             txtOpeningBalance.EditValue = ledger.CapitalAccountFirmInfo.OpeningBalance;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.CapitalAccountFirmInfo.CapitalShare = txtCapitalShare.EditValue;
-            ledger.CapitalAccountFirmInfo.CurrentAccountInBooks = rgCurrentAccountInBooks.EditValue;
-            ledger.CapitalAccountFirmInfo.RecieptForAdditions = rgRecieptForAdditions.EditValue;
-            ledger.CapitalAccountFirmInfo.Remuneration = rgRemuneration.EditValue;
-            ledger.CapitalAccountFirmInfo.ShareofProfit = rgShareofProfit.EditValue;
-            ledger.CapitalAccountFirmInfo.Drawings = rgDrawings.EditValue;
-            ledger.CapitalAccountFirmInfo.InterestonCapital = rgInterestonCapital.EditValue;
-            ledger.CapitalAccountFirmInfo.Othersifany = rgOthersifany.EditValue;
+            ledger.CapitalAccountFirmInfo.CurrentAccountInBooks = cmbCurrentAccountInBooks.EditValue;
+            ledger.CapitalAccountFirmInfo.RecieptForAdditions = cmbRecieptForAdditions.EditValue;
+            ledger.CapitalAccountFirmInfo.Remuneration = cmbRemuneration.EditValue;
+            ledger.CapitalAccountFirmInfo.ShareofProfit = cmbShareofProfit.EditValue;
+            ledger.CapitalAccountFirmInfo.Drawings = cmbDrawings.EditValue;
+            ledger.CapitalAccountFirmInfo.InterestonCapital = cmbInterestonCapital.EditValue;
+            ledger.CapitalAccountFirmInfo.Othersifany = cmbOthersifany.EditValue;
             ledger.CapitalAccountFirmInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_CapitalAccount;
             Save();
-        }
-        private void radioGroup_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
-        }
-        private void textedit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

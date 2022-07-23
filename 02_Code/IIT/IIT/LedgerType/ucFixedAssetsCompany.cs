@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
 using IIT;
+using Repository;
 using Repository.Utility;
 using System;
 
@@ -15,48 +16,42 @@ namespace IIT
             _isLandLedger = isLandLedger;
             lciROD.Visibility = isLandLedger ? DevExpress.XtraLayout.Utils.LayoutVisibility.Never : DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
             lciDR.Visibility = isLandLedger ? DevExpress.XtraLayout.Utils.LayoutVisibility.Never : DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            this.txtOpeningBalanceDR.Spin += base.textedit_Spin;
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
+            this.txtRateOfDerpiciation.Spin += base.textedit_Spin;
         }
         private void ucFixedAssetsCompany_Load(object sender, EventArgs e)
         {
+            cmbGSTConsidered.Properties.DataSource =
+                cmbOperatingAsset.Properties.DataSource =
+                cmbTDSApplicable.Properties.DataSource = LookUpUtility.GetBoolType();
+            cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
+            base.AddControls(layoutControl1);
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
             txtRateOfDerpiciation.EditValue = ledger.FixedAssetsCompanyInfo.RateOfDepreciation;
-            rgGSTConsidered.EditValue = ledger.FixedAssetsCompanyInfo.IsGSTConsidered;
-            rgOperatingAsset.EditValue = ledger.FixedAssetsCompanyInfo.IsOperatingAsset;
+            cmbGSTConsidered.EditValue = ledger.FixedAssetsCompanyInfo.IsGSTConsidered;
+            cmbOperatingAsset.EditValue = ledger.FixedAssetsCompanyInfo.IsOperatingAsset;
             txtOpeningBalanceDR.EditValue = ledger.FixedAssetsCompanyInfo.OpeningBalanceOfDepreciationReserve;
-            rgTDSApplicable.EditValue = ledger.FixedAssetsCompanyInfo.IsTDSApplicable;
+            cmbTDSApplicable.EditValue = ledger.FixedAssetsCompanyInfo.IsTDSApplicable;
             cmbTDSRates.EditValue = ledger.FixedAssetsCompanyInfo.TDSRate;
             txtOpeningBalance.EditValue = ledger.FixedAssetsCompanyInfo.OpeningBalance;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (_isLandLedger)
-            {
-                dxValidationProvider1.SetValidationRule(txtRateOfDerpiciation, null);
-                dxValidationProvider1.SetValidationRule(txtOpeningBalanceDR, null);
-            }
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.FixedAssetsCompanyInfo.RateOfDepreciation = txtRateOfDerpiciation.EditValue;
-            ledger.FixedAssetsCompanyInfo.IsGSTConsidered = rgGSTConsidered.EditValue;
-            ledger.FixedAssetsCompanyInfo.IsOperatingAsset = rgOperatingAsset.EditValue;
+            ledger.FixedAssetsCompanyInfo.IsGSTConsidered = cmbGSTConsidered.EditValue;
+            ledger.FixedAssetsCompanyInfo.IsOperatingAsset = cmbOperatingAsset.EditValue;
             ledger.FixedAssetsCompanyInfo.OpeningBalanceOfDepreciationReserve = txtOpeningBalanceDR.EditValue;
-            ledger.FixedAssetsCompanyInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.FixedAssetsCompanyInfo.IsTDSApplicable = cmbTDSApplicable.EditValue;
             ledger.FixedAssetsCompanyInfo.TDSRate = cmbTDSRates.EditValue;
             ledger.FixedAssetsCompanyInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_FixedAsset;
             Save();
-        }
-        private void txtRateOfDerpiciation_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
-        }
-        private void rgGSTConsidered_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
         }
     }
 }

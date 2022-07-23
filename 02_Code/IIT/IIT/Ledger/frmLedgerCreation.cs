@@ -149,6 +149,7 @@ namespace IIT
                         Utility.ShowDialog(new ucCapitalAccountPropietor(ledgerObj, !CallFromEvent, caption));
                     }
                     break;
+
                 case LookUpIDMap.LedgerType_CCOrODC:
                     if (ledgerObj.CCorODCInfo == null)
                         ledgerObj.CCorODCInfo = new CCorODC();
@@ -235,6 +236,26 @@ namespace IIT
                     if (ledgerObj.CashinHandInfo == null)
                         ledgerObj.CashinHandInfo = new CashinHand();
                     Utility.ShowDialog(new ucCashInHand(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_StatutoryDues:
+                    if (ledgerObj.StatutoryDuesInfo == null)
+                        ledgerObj.StatutoryDuesInfo = new StatutoryDues();
+                    Utility.ShowDialog(new ucStatutoryDues(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_Depreciation:
+                    if (ledgerObj.DepreciationInfo == null)
+                        ledgerObj.DepreciationInfo = new Depreciation();
+                    Utility.ShowDialog(new ucDepreciation(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_Commission:
+                    if (ledgerObj.CommissionInfo == null)
+                        ledgerObj.CommissionInfo = new Commission();
+                    Utility.ShowDialog(new ucCommission(ledgerObj, !CallFromEvent, caption));
+                    break;
+                case LookUpIDMap.LedgerType_Dividend:
+                    if (ledgerObj.DividendInfo == null)
+                        ledgerObj.DividendInfo = new Dividend();
+                    Utility.ShowDialog(new ucDividend(ledgerObj, !CallFromEvent, caption));
                     break;
             }
         }

@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucInvestment));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.lblHeader = new DevExpress.XtraEditors.LabelControl();
@@ -45,18 +38,17 @@
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
             this.cmbTypeOfInvestment = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbTCSRate = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.rgTCSApplicable = new DevExpress.XtraEditors.RadioGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -66,18 +58,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTypeOfInvestment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTCSRate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgTCSApplicable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -98,7 +89,6 @@
             // layoutControl1
             // 
             this.tablePanel1.SetColumn(this.layoutControl1, 0);
-            this.layoutControl1.Controls.Add(this.rgTCSApplicable);
             this.layoutControl1.Controls.Add(this.lblHeader);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.txtOpeningBalance);
@@ -106,6 +96,7 @@
             this.layoutControl1.Controls.Add(this.txtLedgerName);
             this.layoutControl1.Controls.Add(this.cmbTypeOfInvestment);
             this.layoutControl1.Controls.Add(this.cmbTCSRate);
+            this.layoutControl1.Controls.Add(this.cmbTDSApplicable);
             this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsFocus.EnableAutoTabOrder = false;
@@ -130,7 +121,7 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(307, 281);
+            this.btnSave.Location = new System.Drawing.Point(307, 266);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 34);
             this.btnSave.StyleController = this.layoutControl1;
@@ -141,7 +132,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(143, 243);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(137, 228);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -150,49 +141,35 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtOpeningBalance.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
-            this.txtOpeningBalance.Size = new System.Drawing.Size(261, 20);
+            this.txtOpeningBalance.Size = new System.Drawing.Size(267, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 11;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule1);
-            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterest_Spin);
             // 
             // txtTenure
             // 
             this.txtTenure.EnterMoveNextControl = true;
-            this.txtTenure.Location = new System.Drawing.Point(143, 114);
+            this.txtTenure.Location = new System.Drawing.Point(137, 114);
             this.txtTenure.Name = "txtTenure";
             this.txtTenure.Properties.MaxLength = 11;
-            this.txtTenure.Size = new System.Drawing.Size(261, 20);
+            this.txtTenure.Size = new System.Drawing.Size(267, 20);
             this.txtTenure.StyleController = this.layoutControl1;
             this.txtTenure.TabIndex = 7;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtTenure, conditionValidationRule2);
-            this.txtTenure.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.txtInterest_Spin);
             // 
             // txtLedgerName
             // 
             this.txtLedgerName.EnterMoveNextControl = true;
-            this.txtLedgerName.Location = new System.Drawing.Point(143, 38);
+            this.txtLedgerName.Location = new System.Drawing.Point(137, 38);
             this.txtLedgerName.Name = "txtLedgerName";
             this.txtLedgerName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
             this.txtLedgerName.Properties.MaskSettings.Set("mask", "[a-zA-Z0-9]{0,16}");
-            this.txtLedgerName.Size = new System.Drawing.Size(261, 20);
+            this.txtLedgerName.Size = new System.Drawing.Size(267, 20);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule3);
             // 
             // cmbTypeOfInvestment
             // 
             this.cmbTypeOfInvestment.EnterMoveNextControl = true;
-            this.cmbTypeOfInvestment.Location = new System.Drawing.Point(143, 76);
+            this.cmbTypeOfInvestment.Location = new System.Drawing.Point(137, 76);
             this.cmbTypeOfInvestment.Name = "cmbTypeOfInvestment";
             this.cmbTypeOfInvestment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -201,18 +178,14 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbTypeOfInvestment.Properties.NullText = "";
             this.cmbTypeOfInvestment.Properties.ShowHeader = false;
-            this.cmbTypeOfInvestment.Size = new System.Drawing.Size(261, 20);
+            this.cmbTypeOfInvestment.Size = new System.Drawing.Size(267, 20);
             this.cmbTypeOfInvestment.StyleController = this.layoutControl1;
             this.cmbTypeOfInvestment.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbTypeOfInvestment, conditionValidationRule4);
             // 
             // cmbTCSRate
             // 
             this.cmbTCSRate.EnterMoveNextControl = true;
-            this.cmbTCSRate.Location = new System.Drawing.Point(143, 205);
+            this.cmbTCSRate.Location = new System.Drawing.Point(137, 190);
             this.cmbTCSRate.Name = "cmbTCSRate";
             this.cmbTCSRate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -222,13 +195,25 @@
             this.cmbTCSRate.Properties.NullText = "";
             this.cmbTCSRate.Properties.PopupSizeable = false;
             this.cmbTCSRate.Properties.ShowHeader = false;
-            this.cmbTCSRate.Size = new System.Drawing.Size(261, 20);
+            this.cmbTCSRate.Size = new System.Drawing.Size(267, 20);
             this.cmbTCSRate.StyleController = this.layoutControl1;
             this.cmbTCSRate.TabIndex = 9;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbTCSRate, conditionValidationRule5);
+            // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(137, 152);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(267, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 8;
             // 
             // Root
             // 
@@ -244,7 +229,7 @@
             this.layoutControlItem12,
             this.layoutControlItem13,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem5});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(416, 327);
@@ -258,14 +243,14 @@
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem1.Size = new System.Drawing.Size(410, 38);
             this.layoutControlItem1.Text = "Type of Investment";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(119, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(113, 14);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 269);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 254);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(295, 52);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(295, 67);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -276,47 +261,37 @@
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem4.Size = new System.Drawing.Size(410, 38);
             this.layoutControlItem4.Text = "Tenure";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(119, 14);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(113, 14);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.cmbTCSRate;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 193);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 178);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem6.Size = new System.Drawing.Size(410, 38);
             this.layoutControlItem6.Text = "TCS Rate";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(119, 14);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(113, 14);
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.txtOpeningBalance;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 231);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 216);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem11.Size = new System.Drawing.Size(410, 38);
             this.layoutControlItem11.Text = "Opening Balance ";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(119, 14);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.txtLedgerName;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem2.Size = new System.Drawing.Size(410, 38);
-            this.layoutControlItem2.Text = "Name of the Investment";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(119, 14);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(113, 14);
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnSave;
-            this.layoutControlItem12.Location = new System.Drawing.Point(295, 269);
+            this.layoutControlItem12.Location = new System.Drawing.Point(295, 254);
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(115, 52);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(115, 52);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem12.Size = new System.Drawing.Size(115, 52);
+            this.layoutControlItem12.Size = new System.Drawing.Size(115, 67);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
@@ -331,31 +306,27 @@
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
-            // rgTCSApplicable
+            // layoutControlItem2
             // 
-            this.rgTCSApplicable.Location = new System.Drawing.Point(143, 152);
-            this.rgTCSApplicable.Name = "rgTCSApplicable";
-            this.rgTCSApplicable.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgTCSApplicable.Size = new System.Drawing.Size(261, 35);
-            this.rgTCSApplicable.StyleController = this.layoutControl1;
-            this.rgTCSApplicable.TabIndex = 13;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Mandatory";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgTCSApplicable, conditionValidationRule7);
-            this.rgTCSApplicable.Enter += new System.EventHandler(this.rgTypeofLoan_Enter);
+            this.layoutControlItem2.Control = this.txtLedgerName;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem2.Size = new System.Drawing.Size(410, 38);
+            this.layoutControlItem2.Text = "Name of the Investment";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(113, 14);
             // 
-            // layoutControlItem3
+            // layoutControlItem5
             // 
-            this.layoutControlItem3.Control = this.rgTCSApplicable;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 140);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem3.Size = new System.Drawing.Size(410, 53);
-            this.layoutControlItem3.Text = "Is TDS/ TCS is applicable";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(119, 14);
+            this.layoutControlItem5.Control = this.cmbTDSApplicable;
+            this.layoutControlItem5.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem5.CustomizationFormText = "Reciepts or Additions";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 140);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem5.Size = new System.Drawing.Size(410, 38);
+            this.layoutControlItem5.Text = "Is TDS is applicable ";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(113, 14);
             // 
             // ucInvestment
             // 
@@ -374,18 +345,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTypeOfInvestment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTCSRate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgTCSApplicable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,8 +380,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraEditors.RadioGroup rgTCSApplicable;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraEditors.LookUpEdit cmbTDSApplicable;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

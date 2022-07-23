@@ -28,32 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucCapitalAccountFirm));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.rgCurrentAccountInBooks = new DevExpress.XtraEditors.RadioGroup();
             this.txtCapitalShare = new DevExpress.XtraEditors.TextEdit();
-            this.rgShareofProfit = new DevExpress.XtraEditors.RadioGroup();
-            this.rgRecieptForAdditions = new DevExpress.XtraEditors.RadioGroup();
             this.lblHeader = new DevExpress.XtraEditors.LabelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtOpeningBalance = new DevExpress.XtraEditors.TextEdit();
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
-            this.rgRemuneration = new DevExpress.XtraEditors.RadioGroup();
-            this.rgInterestonCapital = new DevExpress.XtraEditors.RadioGroup();
-            this.rgDrawings = new DevExpress.XtraEditors.RadioGroup();
-            this.rgOthersifany = new DevExpress.XtraEditors.RadioGroup();
+            this.cmbCurrentAccountInBooks = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbRecieptForAdditions = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbRemuneration = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbShareofProfit = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbDrawings = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbInterestonCapital = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbOthersifany = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -61,29 +50,28 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rgCurrentAccountInBooks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCapitalShare.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgShareofProfit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgRecieptForAdditions.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgRemuneration.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgInterestonCapital.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgDrawings.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgOthersifany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCurrentAccountInBooks.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRecieptForAdditions.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRemuneration.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbShareofProfit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDrawings.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbInterestonCapital.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOthersifany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -91,15 +79,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -114,49 +101,32 @@
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 100F)});
-            this.tablePanel1.Size = new System.Drawing.Size(542, 607);
+            this.tablePanel1.Size = new System.Drawing.Size(542, 505);
             this.tablePanel1.TabIndex = 0;
             // 
             // layoutControl1
             // 
             this.tablePanel1.SetColumn(this.layoutControl1, 0);
-            this.layoutControl1.Controls.Add(this.rgCurrentAccountInBooks);
             this.layoutControl1.Controls.Add(this.txtCapitalShare);
-            this.layoutControl1.Controls.Add(this.rgShareofProfit);
-            this.layoutControl1.Controls.Add(this.rgRecieptForAdditions);
             this.layoutControl1.Controls.Add(this.lblHeader);
             this.layoutControl1.Controls.Add(this.btnSave);
             this.layoutControl1.Controls.Add(this.txtOpeningBalance);
             this.layoutControl1.Controls.Add(this.txtLedgerName);
-            this.layoutControl1.Controls.Add(this.rgRemuneration);
-            this.layoutControl1.Controls.Add(this.rgInterestonCapital);
-            this.layoutControl1.Controls.Add(this.rgDrawings);
-            this.layoutControl1.Controls.Add(this.rgOthersifany);
+            this.layoutControl1.Controls.Add(this.cmbCurrentAccountInBooks);
+            this.layoutControl1.Controls.Add(this.cmbRecieptForAdditions);
+            this.layoutControl1.Controls.Add(this.cmbRemuneration);
+            this.layoutControl1.Controls.Add(this.cmbShareofProfit);
+            this.layoutControl1.Controls.Add(this.cmbDrawings);
+            this.layoutControl1.Controls.Add(this.cmbInterestonCapital);
+            this.layoutControl1.Controls.Add(this.cmbOthersifany);
             this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1046, 427, 650, 400);
             this.layoutControl1.Root = this.Root;
             this.tablePanel1.SetRow(this.layoutControl1, 0);
-            this.layoutControl1.Size = new System.Drawing.Size(527, 592);
+            this.layoutControl1.Size = new System.Drawing.Size(527, 491);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // rgCurrentAccountInBooks
-            // 
-            this.rgCurrentAccountInBooks.EnterMoveNextControl = true;
-            this.rgCurrentAccountInBooks.Location = new System.Drawing.Point(225, 108);
-            this.rgCurrentAccountInBooks.Name = "rgCurrentAccountInBooks";
-            this.rgCurrentAccountInBooks.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgCurrentAccountInBooks.Size = new System.Drawing.Size(290, 34);
-            this.rgCurrentAccountInBooks.StyleController = this.layoutControl1;
-            this.rgCurrentAccountInBooks.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgCurrentAccountInBooks, conditionValidationRule1);
-            this.rgCurrentAccountInBooks.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // txtCapitalShare
             // 
@@ -172,45 +142,6 @@
             this.txtCapitalShare.Size = new System.Drawing.Size(290, 20);
             this.txtCapitalShare.StyleController = this.layoutControl1;
             this.txtCapitalShare.TabIndex = 2;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtCapitalShare, conditionValidationRule2);
-            this.txtCapitalShare.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textedit_Spin);
-            // 
-            // rgShareofProfit
-            // 
-            this.rgShareofProfit.EnterMoveNextControl = true;
-            this.rgShareofProfit.Location = new System.Drawing.Point(237, 298);
-            this.rgShareofProfit.Name = "rgShareofProfit";
-            this.rgShareofProfit.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgShareofProfit.Size = new System.Drawing.Size(266, 34);
-            this.rgShareofProfit.StyleController = this.layoutControl1;
-            this.rgShareofProfit.TabIndex = 6;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgShareofProfit, conditionValidationRule3);
-            this.rgShareofProfit.Enter += new System.EventHandler(this.radioGroup_Enter);
-            // 
-            // rgRecieptForAdditions
-            // 
-            this.rgRecieptForAdditions.EnterMoveNextControl = true;
-            this.rgRecieptForAdditions.Location = new System.Drawing.Point(237, 193);
-            this.rgRecieptForAdditions.Name = "rgRecieptForAdditions";
-            this.rgRecieptForAdditions.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgRecieptForAdditions.Size = new System.Drawing.Size(266, 34);
-            this.rgRecieptForAdditions.StyleController = this.layoutControl1;
-            this.rgRecieptForAdditions.TabIndex = 4;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgRecieptForAdditions, conditionValidationRule4);
-            this.rgRecieptForAdditions.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // lblHeader
             // 
@@ -227,9 +158,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(411, 551);
+            this.btnSave.Location = new System.Drawing.Point(395, 450);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(111, 36);
+            this.btnSave.Size = new System.Drawing.Size(127, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
@@ -238,7 +169,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(225, 520);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(225, 419);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -250,11 +181,6 @@
             this.txtOpeningBalance.Size = new System.Drawing.Size(290, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 10;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule5);
-            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textedit_Spin);
             // 
             // txtLedgerName
             // 
@@ -264,81 +190,124 @@
             this.txtLedgerName.Size = new System.Drawing.Size(290, 20);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule6);
             // 
-            // rgRemuneration
+            // cmbCurrentAccountInBooks
             // 
-            this.rgRemuneration.EnterMoveNextControl = true;
-            this.rgRemuneration.Location = new System.Drawing.Point(237, 245);
-            this.rgRemuneration.Name = "rgRemuneration";
-            this.rgRemuneration.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgRemuneration.Size = new System.Drawing.Size(266, 35);
-            this.rgRemuneration.StyleController = this.layoutControl1;
-            this.rgRemuneration.TabIndex = 5;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Mandatory";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgRemuneration, conditionValidationRule7);
-            this.rgRemuneration.Enter += new System.EventHandler(this.radioGroup_Enter);
+            this.cmbCurrentAccountInBooks.EnterMoveNextControl = true;
+            this.cmbCurrentAccountInBooks.Location = new System.Drawing.Point(225, 108);
+            this.cmbCurrentAccountInBooks.Name = "cmbCurrentAccountInBooks";
+            this.cmbCurrentAccountInBooks.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbCurrentAccountInBooks.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbCurrentAccountInBooks.Properties.NullText = "";
+            this.cmbCurrentAccountInBooks.Properties.PopupSizeable = false;
+            this.cmbCurrentAccountInBooks.Size = new System.Drawing.Size(290, 20);
+            this.cmbCurrentAccountInBooks.StyleController = this.layoutControl1;
+            this.cmbCurrentAccountInBooks.TabIndex = 3;
             // 
-            // rgInterestonCapital
+            // cmbRecieptForAdditions
             // 
-            this.rgInterestonCapital.EnterMoveNextControl = true;
-            this.rgInterestonCapital.Location = new System.Drawing.Point(237, 403);
-            this.rgInterestonCapital.Name = "rgInterestonCapital";
-            this.rgInterestonCapital.Properties.Columns = 2;
-            this.rgInterestonCapital.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgInterestonCapital.Size = new System.Drawing.Size(266, 34);
-            this.rgInterestonCapital.StyleController = this.layoutControl1;
-            this.rgInterestonCapital.TabIndex = 8;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "Mandatory";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgInterestonCapital, conditionValidationRule8);
-            this.rgInterestonCapital.Enter += new System.EventHandler(this.radioGroup_Enter);
+            this.cmbRecieptForAdditions.EnterMoveNextControl = true;
+            this.cmbRecieptForAdditions.Location = new System.Drawing.Point(237, 179);
+            this.cmbRecieptForAdditions.Name = "cmbRecieptForAdditions";
+            this.cmbRecieptForAdditions.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbRecieptForAdditions.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbRecieptForAdditions.Properties.NullText = "";
+            this.cmbRecieptForAdditions.Properties.PopupSizeable = false;
+            this.cmbRecieptForAdditions.Properties.ShowHeader = false;
+            this.cmbRecieptForAdditions.Size = new System.Drawing.Size(266, 20);
+            this.cmbRecieptForAdditions.StyleController = this.layoutControl1;
+            this.cmbRecieptForAdditions.TabIndex = 4;
             // 
-            // rgDrawings
+            // cmbRemuneration
             // 
-            this.rgDrawings.EnterMoveNextControl = true;
-            this.rgDrawings.Location = new System.Drawing.Point(237, 350);
-            this.rgDrawings.Name = "rgDrawings";
-            this.rgDrawings.Properties.Columns = 2;
-            this.rgDrawings.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgDrawings.Size = new System.Drawing.Size(266, 35);
-            this.rgDrawings.StyleController = this.layoutControl1;
-            this.rgDrawings.TabIndex = 7;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "Mandatory";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgDrawings, conditionValidationRule9);
-            this.rgDrawings.Enter += new System.EventHandler(this.radioGroup_Enter);
+            this.cmbRemuneration.EnterMoveNextControl = true;
+            this.cmbRemuneration.Location = new System.Drawing.Point(237, 217);
+            this.cmbRemuneration.Name = "cmbRemuneration";
+            this.cmbRemuneration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbRemuneration.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbRemuneration.Properties.NullText = "";
+            this.cmbRemuneration.Properties.PopupSizeable = false;
+            this.cmbRemuneration.Properties.ShowHeader = false;
+            this.cmbRemuneration.Size = new System.Drawing.Size(266, 20);
+            this.cmbRemuneration.StyleController = this.layoutControl1;
+            this.cmbRemuneration.TabIndex = 5;
             // 
-            // rgOthersifany
+            // cmbShareofProfit
             // 
-            this.rgOthersifany.EnterMoveNextControl = true;
-            this.rgOthersifany.Location = new System.Drawing.Point(237, 455);
-            this.rgOthersifany.Name = "rgOthersifany";
-            this.rgOthersifany.Properties.Columns = 2;
-            this.rgOthersifany.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgOthersifany.Size = new System.Drawing.Size(266, 35);
-            this.rgOthersifany.StyleController = this.layoutControl1;
-            this.rgOthersifany.TabIndex = 9;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "This value is not valid";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgOthersifany, conditionValidationRule10);
-            this.rgOthersifany.Enter += new System.EventHandler(this.radioGroup_Enter);
+            this.cmbShareofProfit.EnterMoveNextControl = true;
+            this.cmbShareofProfit.Location = new System.Drawing.Point(237, 255);
+            this.cmbShareofProfit.Name = "cmbShareofProfit";
+            this.cmbShareofProfit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbShareofProfit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbShareofProfit.Properties.NullText = "";
+            this.cmbShareofProfit.Properties.PopupSizeable = false;
+            this.cmbShareofProfit.Properties.ShowHeader = false;
+            this.cmbShareofProfit.Size = new System.Drawing.Size(266, 20);
+            this.cmbShareofProfit.StyleController = this.layoutControl1;
+            this.cmbShareofProfit.TabIndex = 6;
+            // 
+            // cmbDrawings
+            // 
+            this.cmbDrawings.EnterMoveNextControl = true;
+            this.cmbDrawings.Location = new System.Drawing.Point(237, 293);
+            this.cmbDrawings.Name = "cmbDrawings";
+            this.cmbDrawings.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbDrawings.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbDrawings.Properties.NullText = "";
+            this.cmbDrawings.Properties.PopupSizeable = false;
+            this.cmbDrawings.Properties.ShowHeader = false;
+            this.cmbDrawings.Size = new System.Drawing.Size(266, 20);
+            this.cmbDrawings.StyleController = this.layoutControl1;
+            this.cmbDrawings.TabIndex = 7;
+            // 
+            // cmbInterestonCapital
+            // 
+            this.cmbInterestonCapital.EnterMoveNextControl = true;
+            this.cmbInterestonCapital.Location = new System.Drawing.Point(237, 331);
+            this.cmbInterestonCapital.Name = "cmbInterestonCapital";
+            this.cmbInterestonCapital.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbInterestonCapital.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbInterestonCapital.Properties.NullText = "";
+            this.cmbInterestonCapital.Properties.PopupSizeable = false;
+            this.cmbInterestonCapital.Properties.ShowHeader = false;
+            this.cmbInterestonCapital.Size = new System.Drawing.Size(266, 20);
+            this.cmbInterestonCapital.StyleController = this.layoutControl1;
+            this.cmbInterestonCapital.TabIndex = 8;
+            // 
+            // cmbOthersifany
+            // 
+            this.cmbOthersifany.EnterMoveNextControl = true;
+            this.cmbOthersifany.Location = new System.Drawing.Point(237, 369);
+            this.cmbOthersifany.Name = "cmbOthersifany";
+            this.cmbOthersifany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbOthersifany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbOthersifany.Properties.NullText = "";
+            this.cmbOthersifany.Properties.PopupSizeable = false;
+            this.cmbOthersifany.Properties.ShowHeader = false;
+            this.cmbOthersifany.Size = new System.Drawing.Size(266, 20);
+            this.cmbOthersifany.StyleController = this.layoutControl1;
+            this.cmbOthersifany.TabIndex = 9;
             // 
             // Root
             // 
@@ -353,10 +322,10 @@
             this.layoutControlItem8,
             this.layoutControlGroup1,
             this.layoutControlItem5,
-            this.layoutControlItem10});
+            this.layoutControlItem13});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.Root.Size = new System.Drawing.Size(527, 592);
+            this.Root.Size = new System.Drawing.Size(527, 491);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -372,7 +341,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtOpeningBalance;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 508);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 407);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem6.Size = new System.Drawing.Size(521, 38);
@@ -382,18 +351,18 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(406, 546);
+            this.layoutControlItem7.Location = new System.Drawing.Point(390, 445);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(115, 40);
+            this.layoutControlItem7.Size = new System.Drawing.Size(131, 40);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 546);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 445);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(406, 40);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(390, 40);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -412,82 +381,88 @@
             this.layoutControlGroup1.AppearanceGroup.Options.UseFont = true;
             this.layoutControlGroup1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem3,
-            this.layoutControlItem12,
+            this.layoutControlItem14,
             this.layoutControlItem2,
-            this.layoutControlItem9,
-            this.layoutControlItem4});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 148);
+            this.layoutControlItem9});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 134);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(521, 360);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(521, 273);
             this.layoutControlGroup1.Text = "Adjustments considered to the current Account :- ";
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.cmbRecieptForAdditions;
+            this.layoutControlItem10.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem10.CustomizationFormText = "Partners having current Account in books";
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem10.Size = new System.Drawing.Size(497, 38);
+            this.layoutControlItem10.Text = "Reciepts or Additions";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(201, 14);
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.rgRecieptForAdditions;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem11.Control = this.cmbRemuneration;
+            this.layoutControlItem11.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem11.CustomizationFormText = "Partners having current Account in books";
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 38);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem11.Size = new System.Drawing.Size(497, 52);
-            this.layoutControlItem11.Text = "Reciepts or Additions";
+            this.layoutControlItem11.Size = new System.Drawing.Size(497, 38);
+            this.layoutControlItem11.Text = "Remuneration";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(201, 14);
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.rgRemuneration;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem3.Control = this.cmbShareofProfit;
+            this.layoutControlItem3.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem3.CustomizationFormText = "Partners having current Account in books";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem3.Size = new System.Drawing.Size(497, 53);
-            this.layoutControlItem3.Text = "Remuneration";
+            this.layoutControlItem3.Size = new System.Drawing.Size(497, 38);
+            this.layoutControlItem3.Text = "Share of Profit";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(201, 14);
             // 
-            // layoutControlItem12
+            // layoutControlItem14
             // 
-            this.layoutControlItem12.Control = this.rgShareofProfit;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 105);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem12.Size = new System.Drawing.Size(497, 52);
-            this.layoutControlItem12.Text = "Share of Profit";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(201, 14);
+            this.layoutControlItem14.Control = this.cmbDrawings;
+            this.layoutControlItem14.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem14.CustomizationFormText = "Partners having current Account in books";
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 114);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem14.Size = new System.Drawing.Size(497, 38);
+            this.layoutControlItem14.Text = "Drawings";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(201, 14);
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.rgDrawings;
+            this.layoutControlItem2.Control = this.cmbInterestonCapital;
             this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem2.CustomizationFormText = "Is TDS is applicable ";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 157);
+            this.layoutControlItem2.CustomizationFormText = "Partners having current Account in books";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 152);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem2.Size = new System.Drawing.Size(497, 53);
-            this.layoutControlItem2.Text = "Drawings";
+            this.layoutControlItem2.Size = new System.Drawing.Size(497, 38);
+            this.layoutControlItem2.Text = "Interest on Capital";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(201, 14);
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.rgInterestonCapital;
+            this.layoutControlItem9.Control = this.cmbOthersifany;
             this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem9.CustomizationFormText = "Is TDS is applicable ";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 210);
+            this.layoutControlItem9.CustomizationFormText = "Partners having current Account in books";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 190);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem9.Size = new System.Drawing.Size(497, 52);
-            this.layoutControlItem9.Text = "Interest on Capital";
+            this.layoutControlItem9.Size = new System.Drawing.Size(497, 38);
+            this.layoutControlItem9.Text = "Others if any";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(201, 14);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.rgOthersifany;
-            this.layoutControlItem4.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem4.CustomizationFormText = "Others if any";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 262);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem4.Size = new System.Drawing.Size(497, 53);
-            this.layoutControlItem4.Text = "Others if any";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(201, 14);
             // 
             // layoutControlItem5
             // 
@@ -499,15 +474,15 @@
             this.layoutControlItem5.Text = "% of the Share capital";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(201, 14);
             // 
-            // layoutControlItem10
+            // layoutControlItem13
             // 
-            this.layoutControlItem10.Control = this.rgCurrentAccountInBooks;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem10.Size = new System.Drawing.Size(521, 52);
-            this.layoutControlItem10.Text = "Partners having current Account in books";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(201, 14);
+            this.layoutControlItem13.Control = this.cmbCurrentAccountInBooks;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem13.Size = new System.Drawing.Size(521, 38);
+            this.layoutControlItem13.Text = "Partners having current Account in books";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(201, 14);
             // 
             // ucCapitalAccountFirm
             // 
@@ -515,22 +490,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucCapitalAccountFirm";
-            this.Size = new System.Drawing.Size(542, 607);
+            this.Size = new System.Drawing.Size(542, 505);
             this.Load += new System.EventHandler(this.ucCapitalAccountFirm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rgCurrentAccountInBooks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCapitalShare.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgShareofProfit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgRecieptForAdditions.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgRemuneration.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgInterestonCapital.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgDrawings.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgOthersifany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCurrentAccountInBooks.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRecieptForAdditions.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRemuneration.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbShareofProfit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDrawings.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbInterestonCapital.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOthersifany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -538,15 +513,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -555,16 +529,10 @@
 
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.RadioGroup rgShareofProfit;
-        private DevExpress.XtraEditors.RadioGroup rgRecieptForAdditions;
         private DevExpress.XtraEditors.LabelControl lblHeader;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.TextEdit txtOpeningBalance;
         private DevExpress.XtraEditors.TextEdit txtLedgerName;
-        private DevExpress.XtraEditors.RadioGroup rgRemuneration;
-        private DevExpress.XtraEditors.RadioGroup rgInterestonCapital;
-        private DevExpress.XtraEditors.RadioGroup rgDrawings;
-        private DevExpress.XtraEditors.RadioGroup rgOthersifany;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
@@ -572,16 +540,21 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.TextEdit txtCapitalShare;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.RadioGroup rgCurrentAccountInBooks;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.LookUpEdit cmbCurrentAccountInBooks;
+        private DevExpress.XtraEditors.LookUpEdit cmbRecieptForAdditions;
+        private DevExpress.XtraEditors.LookUpEdit cmbRemuneration;
+        private DevExpress.XtraEditors.LookUpEdit cmbShareofProfit;
+        private DevExpress.XtraEditors.LookUpEdit cmbDrawings;
+        private DevExpress.XtraEditors.LookUpEdit cmbInterestonCapital;
+        private DevExpress.XtraEditors.LookUpEdit cmbOthersifany;
     }
 }

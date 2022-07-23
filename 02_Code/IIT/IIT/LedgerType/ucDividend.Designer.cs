@@ -1,4 +1,4 @@
-﻿namespace IIT.LedgerType
+﻿namespace IIT
 {
     partial class ucDividend
     {
@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDividend));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNameOfTheCompany = new DevExpress.XtraEditors.TextEdit();
@@ -44,7 +37,6 @@
             this.txtOpeningBalance = new DevExpress.XtraEditors.TextEdit();
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
             this.cmbTDSRates = new DevExpress.XtraEditors.LookUpEdit();
-            this.rgTDSApplicable = new DevExpress.XtraEditors.RadioGroup();
             this.cmbIsFromIndia = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -52,11 +44,11 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -65,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIsFromIndia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -73,11 +64,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -104,8 +95,8 @@
             this.layoutControl1.Controls.Add(this.txtOpeningBalance);
             this.layoutControl1.Controls.Add(this.txtLedgerName);
             this.layoutControl1.Controls.Add(this.cmbTDSRates);
-            this.layoutControl1.Controls.Add(this.rgTDSApplicable);
             this.layoutControl1.Controls.Add(this.cmbIsFromIndia);
+            this.layoutControl1.Controls.Add(this.cmbTDSApplicable);
             this.layoutControl1.Location = new System.Drawing.Point(3, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1046, 427, 650, 400);
@@ -118,15 +109,11 @@
             // txtNameOfTheCompany
             // 
             this.txtNameOfTheCompany.EnterMoveNextControl = true;
-            this.txtNameOfTheCompany.Location = new System.Drawing.Point(157, 158);
+            this.txtNameOfTheCompany.Location = new System.Drawing.Point(157, 146);
             this.txtNameOfTheCompany.Name = "txtNameOfTheCompany";
             this.txtNameOfTheCompany.Size = new System.Drawing.Size(358, 20);
             this.txtNameOfTheCompany.StyleController = this.layoutControl1;
             this.txtNameOfTheCompany.TabIndex = 4;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Mandatory";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtNameOfTheCompany, conditionValidationRule1);
             // 
             // lblHeader
             // 
@@ -143,9 +130,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(388, 265);
+            this.btnSave.Location = new System.Drawing.Point(387, 253);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(134, 36);
+            this.btnSave.Size = new System.Drawing.Size(135, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
@@ -154,7 +141,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(157, 234);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(157, 222);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -166,11 +153,6 @@
             this.txtOpeningBalance.Size = new System.Drawing.Size(358, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
             this.txtOpeningBalance.TabIndex = 6;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Mandatory";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtOpeningBalance, conditionValidationRule2);
-            this.txtOpeningBalance.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.textExit_Spin);
             // 
             // txtLedgerName
             // 
@@ -180,15 +162,11 @@
             this.txtLedgerName.Size = new System.Drawing.Size(358, 20);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Mandatory";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtLedgerName, conditionValidationRule3);
             // 
             // cmbTDSRates
             // 
             this.cmbTDSRates.EnterMoveNextControl = true;
-            this.cmbTDSRates.Location = new System.Drawing.Point(157, 120);
+            this.cmbTDSRates.Location = new System.Drawing.Point(157, 108);
             this.cmbTDSRates.Name = "cmbTDSRates";
             this.cmbTDSRates.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -200,33 +178,11 @@
             this.cmbTDSRates.Size = new System.Drawing.Size(358, 20);
             this.cmbTDSRates.StyleController = this.layoutControl1;
             this.cmbTDSRates.TabIndex = 3;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Mandatory";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbTDSRates, conditionValidationRule4);
-            // 
-            // rgTDSApplicable
-            // 
-            this.rgTDSApplicable.EnterMoveNextControl = true;
-            this.rgTDSApplicable.Location = new System.Drawing.Point(157, 70);
-            this.rgTDSApplicable.Name = "rgTDSApplicable";
-            this.rgTDSApplicable.Properties.Columns = 2;
-            this.rgTDSApplicable.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Yes", "Yes"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("No", "No")});
-            this.rgTDSApplicable.Size = new System.Drawing.Size(358, 32);
-            this.rgTDSApplicable.StyleController = this.layoutControl1;
-            this.rgTDSApplicable.TabIndex = 2;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Mandatory";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.rgTDSApplicable, conditionValidationRule5);
-            this.rgTDSApplicable.Enter += new System.EventHandler(this.radioGroup_Enter);
             // 
             // cmbIsFromIndia
             // 
             this.cmbIsFromIndia.EnterMoveNextControl = true;
-            this.cmbIsFromIndia.Location = new System.Drawing.Point(157, 196);
+            this.cmbIsFromIndia.Location = new System.Drawing.Point(157, 184);
             this.cmbIsFromIndia.Name = "cmbIsFromIndia";
             this.cmbIsFromIndia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -237,10 +193,6 @@
             this.cmbIsFromIndia.Size = new System.Drawing.Size(358, 20);
             this.cmbIsFromIndia.StyleController = this.layoutControl1;
             this.cmbIsFromIndia.TabIndex = 5;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Mandatory";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.cmbIsFromIndia, conditionValidationRule6);
             // 
             // Root
             // 
@@ -253,10 +205,10 @@
             this.layoutControlItem7,
             this.emptySpaceItem2,
             this.layoutControlItem8,
-            this.layoutControlItem9,
             this.layoutControlItem21,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem11});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(527, 314);
@@ -275,7 +227,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtOpeningBalance;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 222);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 210);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem6.Size = new System.Drawing.Size(521, 38);
@@ -285,18 +237,18 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(383, 260);
+            this.layoutControlItem7.Location = new System.Drawing.Point(382, 248);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(138, 48);
+            this.layoutControlItem7.Size = new System.Drawing.Size(139, 60);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 260);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 248);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(383, 48);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(382, 60);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -309,27 +261,12 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.rgTDSApplicable;
-            this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem9.CustomizationFormText = "Is TDS is applicable ";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 58);
-            this.layoutControlItem9.MaxSize = new System.Drawing.Size(0, 50);
-            this.layoutControlItem9.MinSize = new System.Drawing.Size(250, 50);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem9.Size = new System.Drawing.Size(521, 50);
-            this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem9.Text = "Is TDS is applicable ";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(133, 14);
-            // 
             // layoutControlItem21
             // 
             this.layoutControlItem21.Control = this.cmbTDSRates;
             this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem21.CustomizationFormText = "Applicable section of TDS";
-            this.layoutControlItem21.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem21.Size = new System.Drawing.Size(521, 38);
@@ -339,7 +276,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtNameOfTheCompany;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 146);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 134);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem2.Size = new System.Drawing.Size(521, 38);
@@ -349,12 +286,40 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.cmbIsFromIndia;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 184);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 172);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem3.Size = new System.Drawing.Size(521, 38);
             this.layoutControlItem3.Text = "Divident received from India";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(133, 14);
+            // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(157, 70);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(358, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 8;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.cmbTDSApplicable;
+            this.layoutControlItem11.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem11.CustomizationFormText = "Reciepts or Additions";
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 58);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem11.Size = new System.Drawing.Size(521, 38);
+            this.layoutControlItem11.Text = "Is TDS is applicable ";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(133, 14);
             // 
             // ucDividend
             // 
@@ -372,7 +337,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIsFromIndia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -380,11 +344,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,18 +363,17 @@
         private DevExpress.XtraEditors.TextEdit txtOpeningBalance;
         private DevExpress.XtraEditors.TextEdit txtLedgerName;
         private DevExpress.XtraEditors.LookUpEdit cmbTDSRates;
-        private DevExpress.XtraEditors.RadioGroup rgTDSApplicable;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.ComboBoxEdit cmbIsFromIndia;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraEditors.LookUpEdit cmbTDSApplicable;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using Entity;
+using Repository;
 using Repository.Utility;
 using System;
 using System.Collections.Generic;
@@ -18,22 +19,25 @@ namespace IIT
         public ucCashInHand(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
         }
         private void ucCashInHand_Load(object sender, EventArgs e)
         {
+            cmbHavingPrettyCashAccount.Properties.DataSource = LookUpUtility.GetBoolType();
+            base.AddControls(layoutControl1);
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
-            rgHavingPrettyCashAccount.EditValue = ledger.CashinHandInfo.HavingPrettyCashAccount;
+            cmbHavingPrettyCashAccount.EditValue = ledger.CashinHandInfo.HavingPrettyCashAccount;
             txtDetails.EditValue = ledger.CashinHandInfo.Details;
             txtOpeningBalance.EditValue = ledger.CashinHandInfo.OpeningBalance;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
-            ledger.CashinHandInfo.HavingPrettyCashAccount = rgHavingPrettyCashAccount.EditValue;
+            ledger.CashinHandInfo.HavingPrettyCashAccount = cmbHavingPrettyCashAccount.EditValue;
             ledger.CashinHandInfo.Details = txtDetails.EditValue;
             decimal PettyCash = 0;
             decimal OpeningBalance = 0;
@@ -42,15 +46,6 @@ namespace IIT
             ledger.CashinHandInfo.OpeningBalance = PettyCash + OpeningBalance;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_CashInHand;
             Save();
-        }
-        private void radioGroup_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
-        }
-        private void textEdit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }
