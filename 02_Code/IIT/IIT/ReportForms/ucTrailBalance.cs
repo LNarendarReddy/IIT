@@ -18,7 +18,7 @@ namespace IIT.ReportForms
         private List<ActionText> helpText = new List<ActionText>() {
             new ActionText("Navigate", buildShort: false, shortCut: "Up/Down"),
             new ActionText("F2", buildShort: false, shortCut: "Date Settings"),
-            new ActionText("F4", buildShort: false, shortCut: "Date Settings"),
+            new ActionText("F4", buildShort: false, shortCut: "Display Settings"),
             new ActionText("Expand", buildShort: false, shortCut: "Enter"),
             new ActionText("Collapse", buildShort: false, shortCut: "Esc")
         };
@@ -73,7 +73,8 @@ namespace IIT.ReportForms
             Dictionary<string, object> parameters = new Dictionary<string, object>() 
             {
                 { "FromDate", currentSettings.FromDate },
-                { "ToDate", currentSettings.ToDate }
+                { "ToDate", currentSettings.ToDate },
+                { "EntityID", Utility.CurrentEntity.ID }
             };
 
             tlTrailBalance.DataSource = reportRepository.GetReportData("USP_RPT_TRAILBALANCE", parameters);

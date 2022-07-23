@@ -112,24 +112,10 @@ namespace IIT
         private void gvVouchers_ValidateRow(object sender, ValidateRowEventArgs e)
         {
             Voucher currentVoucherObj = gvVouchers.GetFocusedRow() as Voucher;
-
-            if (currentVoucherObj.VoucherDate == null)
-            {
-                e.Valid = false;
-                gvVouchers.SetColumnError(gvVouchers.Columns["VoucherDate"], "Value cannot be empty");
-            }
-
-            if (currentVoucherObj.PaymentFrom == null)
-            {
-                e.Valid = false;
-                gvVouchers.SetColumnError(gvVouchers.Columns["PaymentFrom"], "Value cannot be empty");
-            }
-
-            if (currentVoucherObj.PaymentTo == null)
-            {
-                e.Valid = false;
-                gvVouchers.SetColumnError(gvVouchers.Columns["PaymentTo"], "Value cannot be empty");
-            }
+                        
+            CheckColumnValue(currentVoucherObj.VoucherDate, "VoucherDate", e);
+            CheckColumnValue(currentVoucherObj.PaymentFrom, "PaymentFrom", e);
+            CheckColumnValue(currentVoucherObj.PaymentTo, "PaymentTo", e);
 
             if (string.IsNullOrEmpty(currentVoucherObj.Purpose?.ToString()))
             {
@@ -142,6 +128,13 @@ namespace IIT
                 e.Valid = false;
                 gvVouchers.SetColumnError(gvVouchers.Columns["Amount"], "Value cannot be empty");
             }
+        }
+
+        private void CheckColumnValue(object value, string columnName, ValidateRowEventArgs e)
+        {
+            if (value != null) return;
+            e.Valid = false;
+            gvVouchers.SetColumnError(gvVouchers.Columns[columnName], "Value cannot be empty");
         }
 
         private void gvVouchers_InvalidRowException(object sender, InvalidRowExceptionEventArgs e)

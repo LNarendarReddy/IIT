@@ -16,7 +16,13 @@ namespace IIT.ReportForms
         {
             Utility.SetTreeListFormatting(tlAssets, tlcBalanceSheetAssetsLevel);
             Utility.SetTreeListFormatting(tlLiabilities, tlcBalanceSheetLiabilitiesLevel);
-            DataSet dsBalanceSheet = new ReportRepository().GetReportDataset("USP_RPT_BALANCESHEET", new Dictionary<string, object>());
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "EntityID", Utility.CurrentEntity.ID }
+            };
+
+            DataSet dsBalanceSheet = new ReportRepository().GetReportDataset("USP_RPT_BALANCESHEET", parameters);
 
             tlAssets.DataSource = dsBalanceSheet.Tables[0];
             tlAssets.KeyFieldName = "BSID";
