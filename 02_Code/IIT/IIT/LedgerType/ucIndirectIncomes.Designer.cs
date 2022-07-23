@@ -355,7 +355,7 @@
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem1.Size = new System.Drawing.Size(521, 38);
-            this.layoutControlItem1.Text = "Revenue from Sales or Operations ";
+            this.layoutControlItem1.Text = "Other Income";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(203, 14);
             // 
             // lciROD

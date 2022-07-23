@@ -9,8 +9,8 @@ namespace IIT.Routes
                     {
                         "Individual / Proprietor Firm"
                         , "Partnership Firm"
-                        , "AOP / BOI"
                         , "Company"
+                        , "AOP / BOI"
                     }, "Entity Selection")
         {
         }
