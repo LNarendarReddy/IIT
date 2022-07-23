@@ -314,6 +314,12 @@
     <Compile Include="Ledger\ucLedgerReport.Designer.cs">
       <DependentUpon>ucLedgerReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ledger\ucMultiVoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ledger\ucMultiVoucher.Designer.cs">
+      <DependentUpon>ucMultiVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Masters\frmProgress.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -571,6 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger\ucLedgerReport.resx">
       <DependentUpon>ucLedgerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\ucMultiVoucher.resx">
+      <DependentUpon>ucMultiVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmGroup.resx">
       <DependentUpon>frmGroup.cs</DependentUpon>
