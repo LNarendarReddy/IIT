@@ -19,59 +19,53 @@ namespace IIT
         public ucDirectIncomes(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtIGST.Spin += base.textedit_Spin;
+            this.txtSGST.Spin += base.textedit_Spin;
+            this.txtCGST.Spin += base.textedit_Spin;
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
         }
         private void ucDirectIncomes_Load(object sender, EventArgs e)
         {
+            base.AddControls(layoutControl1);
             cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
-            cmbTDSRates.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbTDSRates.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbUnits.Properties.DataSource = LookUpUtility.GetRMUnits();
-            cmbUnits.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbUnits.Properties.DisplayMember = "LOOKUPVALUE";
-
+            cmbNatureOfIncome.Properties.DataSource = LookUpUtility.GetIncomeType1();
+            cmbReverseCharge.Properties.DataSource =
+                cmbTDSApplicable.Properties.DataSource =
+                cmbGSTApplicable.Properties.DataSource = LookUpUtility.GetBoolType();
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
-            rgNatureofIncome.EditValue = ledger.DirectIncomesInfo.NatureofIncome;
+            cmbNatureOfIncome.EditValue = ledger.DirectIncomesInfo.NatureofIncome;
             cmbUnits.EditValue = ledger.DirectIncomesInfo.UnitID;
             txtHSNCode.EditValue = ledger.DirectIncomesInfo.HSNCode;
-            rgGSTApplicable.EditValue = ledger.DirectIncomesInfo.IsGSTApplicable;
+            cmbGSTApplicable.EditValue = ledger.DirectIncomesInfo.IsGSTApplicable;
             txtCGST.EditValue = ledger.DirectIncomesInfo.CGST;
             txtSGST.EditValue = ledger.DirectIncomesInfo.SGST;
             txtIGST.EditValue = ledger.DirectIncomesInfo.IGST;
-            rgReverseCharge.EditValue = ledger.DirectIncomesInfo.IsReverseChargeApplicable;
-            rgTDSApplicable.EditValue = ledger.DirectIncomesInfo.IsTDSApplicable;
+            cmbReverseCharge.EditValue = ledger.DirectIncomesInfo.IsReverseChargeApplicable;
+            cmbTDSApplicable.EditValue = ledger.DirectIncomesInfo.IsTDSApplicable;
             cmbTDSRates.EditValue = ledger.DirectIncomesInfo.TDSRate;
             txtOpeningBalance.EditValue = ledger.DirectIncomesInfo.OpeningBalance;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
-            ledger.DirectIncomesInfo.NatureofIncome = rgNatureofIncome.EditValue;
+            ledger.DirectIncomesInfo.NatureofIncome = cmbNatureOfIncome.EditValue;
             ledger.DirectIncomesInfo.UnitID = cmbUnits.EditValue;
             ledger.DirectIncomesInfo.HSNCode = txtHSNCode.EditValue;
-            ledger.DirectIncomesInfo.IsGSTApplicable = rgGSTApplicable.EditValue;
+            ledger.DirectIncomesInfo.IsGSTApplicable = cmbGSTApplicable.EditValue;
             ledger.DirectIncomesInfo.CGST = txtCGST.EditValue;
             ledger.DirectIncomesInfo.SGST = txtSGST.EditValue;
             ledger.DirectIncomesInfo.IGST = txtIGST.EditValue;
-            ledger.DirectIncomesInfo.IsReverseChargeApplicable = rgReverseCharge.EditValue;
-            ledger.DirectIncomesInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.DirectIncomesInfo.IsReverseChargeApplicable = cmbReverseCharge.EditValue;
+            ledger.DirectIncomesInfo.IsTDSApplicable = cmbTDSApplicable.EditValue;
             ledger.DirectIncomesInfo.TDSRate = cmbTDSRates.EditValue;
             ledger.DirectIncomesInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_DirectIncomes;
             Save();
-        }
-        private void radioGroup_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
-        }
-        private void textEdit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

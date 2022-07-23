@@ -84,7 +84,9 @@
         public const int LedgerType_StatutoryDues = 225;
 
         public const int LedgerType_Depreciation = 226;
+
         public const int LedgerType_Commission = 234;
+
         public const int LedgerType_Dividend = 235;
 
         #endregion Ledger Type

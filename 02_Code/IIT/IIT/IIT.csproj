@@ -524,6 +524,9 @@
     <EmbeddedResource Include="LedgerType\ucInvestment.resx">
       <DependentUpon>ucInvestment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LedgerType\ucLedgerTypeBase.resx">
+      <DependentUpon>ucLedgerTypeBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LedgerType\ucLoans.resx">
       <DependentUpon>ucLoans.cs</DependentUpon>
     </EmbeddedResource>

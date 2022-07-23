@@ -12,20 +12,17 @@ namespace IIT
         public ucCreditors(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
+            this.txtInterest.Spin += base.textedit_Spin;
         }
         private void ucCreditors_Load(object sender, EventArgs e)
         {
+            base.AddControls(layoutControl1);
             cmbNatureOfSupplier.Properties.DataSource = LookUpUtility.GetNatureOfSupplier();
-            cmbNatureOfSupplier.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNatureOfSupplier.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbNameoftheBank.Properties.DataSource = LookUpUtility.GetBanks();
-            cmbNameoftheBank.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNameoftheBank.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
-            cmbTDSRates.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbTDSRates.Properties.DisplayMember = "LOOKUPVALUE";
+            cmbTDSApplicable.Properties.DataSource = LookUpUtility.GetBoolType();
+            cmbRegistrationStatus.Properties.DataSource = LookUpUtility.GetRegType();
 
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
@@ -36,7 +33,7 @@ namespace IIT
             txtPANNumber.EditValue = ledger.CreditorsInfo.PANNumber;
             txtCreditPeriodAllowed.EditValue = ledger.CreditorsInfo.CreditPeriod;
             txtInterest.EditValue = ledger.CreditorsInfo.InterestClause;
-            rgTDSApplicable.EditValue = ledger.CreditorsInfo.IsTDSApplicable;
+            cmbTDSApplicable.EditValue = ledger.CreditorsInfo.IsTDSApplicable;
             cmbTDSRates.EditValue = ledger.CreditorsInfo.TDSRate;
             txtOpeningBalance.EditValue = ledger.CreditorsInfo.OpeningBalance;
             txtDoorNumber.EditValue = ledger.CreditorsInfo.DoorNumber;
@@ -51,9 +48,7 @@ namespace IIT
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!cmbRegistrationStatus.EditValue.Equals("Registered"))
-                dxValidationProvider1.SetValidationRule(txtGSTNumber,null);
-                if (!dxValidationProvider1.Validate())
+                if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.CreditorsInfo.NatureOfSupplier = cmbNatureOfSupplier.EditValue;
@@ -62,7 +57,7 @@ namespace IIT
             ledger.CreditorsInfo.PANNumber = txtPANNumber.EditValue;
             ledger.CreditorsInfo.CreditPeriod = txtCreditPeriodAllowed.EditValue;
             ledger.CreditorsInfo.InterestClause = txtInterest.EditValue;
-            ledger.CreditorsInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.CreditorsInfo.IsTDSApplicable = cmbTDSApplicable.EditValue;
             ledger.CreditorsInfo.TDSRate = cmbTDSRates.EditValue;
             ledger.CreditorsInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.CreditorsInfo.DoorNumber = txtDoorNumber.EditValue;
@@ -87,15 +82,6 @@ namespace IIT
             if (txtGSTNumber.Text.Length < 12)
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
-        }
-        private void txtInterest_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
-        }
-        private void rgTypeofLoan_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
         }
     }
 }

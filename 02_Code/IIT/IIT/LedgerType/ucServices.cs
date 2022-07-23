@@ -13,36 +13,33 @@ namespace IIT
         {
             InitializeComponent();
         }
-        public ucServices(Ledger _ledger, bool isCallFromAddButton,string caption) : base(_ledger, isCallFromAddButton, caption)
+        public ucServices(Ledger _ledger, bool isCallFromAddButton,string caption) 
+            : base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtInterestClause.Spin += base.textedit_Spin;
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
         }
         private void ucServices_Load(object sender, EventArgs e)
         {
-
+            base.AddControls(layoutControl1);
 
             cmbNameoftheBank.Properties.DataSource = LookUpUtility.GetBanks();
-            cmbNameoftheBank.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNameoftheBank.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbNatureofServices.Properties.DataSource = LookUpUtility.GetTDSRates();
-            cmbNatureofServices.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNatureofServices.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
-            cmbTDSRates.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbTDSRates.Properties.DisplayMember = "LOOKUPVALUE";
+            cmbRegistrationStatus.Properties.DataSource = LookUpUtility.GetRegType();
+            cmbReverseCharge.Properties.DataSource = cmbTDSApplicable .Properties.DataSource = LookUpUtility.GetBoolType();
 
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
 
             txtLedgerName.EditValue = ledger.Name;
             cmbNatureofServices.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.NatureOftheServices;
-            rgRegistrationStatus.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationStatus;
+            cmbRegistrationStatus.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationStatus;
             txtGSTNumber.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationNumber;
             txtPANNumber.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.PANNumber;
-            rgReverseCharge.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.IsReverseChargeApplicable;
-            rgTDSApplicable.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.IsTDSApplicable;
+            cmbReverseCharge.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.IsReverseChargeApplicable;
+            cmbTDSApplicable.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.IsTDSApplicable;
             cmbTDSRates.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.TDSRate;
             txtCreditPeriod.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.CreditPeriod;
             txtInterestClause.EditValue = ledger.ServicesOrDuesToSubContractorsInfo.InterestClause;
@@ -59,17 +56,15 @@ namespace IIT
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!rgRegistrationStatus.EditValue.Equals("Registered"))
-                dxValidationProvider1.SetValidationRule(txtGSTNumber, null);
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.NatureOftheServices = cmbNatureofServices.EditValue;
-            ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationStatus = rgRegistrationStatus.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationStatus = cmbRegistrationStatus.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.GSTRegistrationNumber = txtGSTNumber.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.PANNumber = txtPANNumber.EditValue;
-            ledger.ServicesOrDuesToSubContractorsInfo.IsReverseChargeApplicable = rgReverseCharge.EditValue;
-            ledger.ServicesOrDuesToSubContractorsInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.IsReverseChargeApplicable = cmbReverseCharge .EditValue;
+            ledger.ServicesOrDuesToSubContractorsInfo.IsTDSApplicable = cmbTDSApplicable.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.TDSRate = cmbTDSRates.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.CreditPeriod = txtCreditPeriod.EditValue;
             ledger.ServicesOrDuesToSubContractorsInfo.InterestClause = txtInterestClause.EditValue;
@@ -89,22 +84,13 @@ namespace IIT
         private void rgRegistrationStatus_EditValueChanged(object sender, EventArgs e)
         {
             txtGSTNumber.EditValue = null;
-            txtGSTNumber.Enabled = rgRegistrationStatus.EditValue.Equals("Registered");
+            txtGSTNumber.Enabled = cmbRegistrationStatus.Text.Equals("Registered");
         }
         private void txtGSTNumber_Leave(object sender, EventArgs e)
         {
             if (txtGSTNumber.Text.Length < 12)
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
-        }
-        private void txtOpeningBalance_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
-        }
-        private void rgTypeofLoan_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
         }
     }
 }

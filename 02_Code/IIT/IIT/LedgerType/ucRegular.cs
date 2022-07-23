@@ -19,26 +19,27 @@ namespace IIT
         public ucRegular(Ledger _ledger, bool isCallFromAddButton, string caption) : base(_ledger, isCallFromAddButton,caption)
         {
             InitializeComponent();
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
         }
         private void ucRegular_Load(object sender, EventArgs e)
         {
+            base.AddControls(layoutControl1);
             cmbNameoftheBank.Properties.DataSource = LookUpUtility.GetBanks();
-            cmbNameoftheBank.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNameoftheBank.Properties.DisplayMember = "LOOKUPVALUE";
-
             cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
-            cmbTDSRates.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbTDSRates.Properties.DisplayMember = "LOOKUPVALUE";
+            cmbRegistrationStatus.Properties.DataSource = LookUpUtility.GetRegType();
+            cmbTDSApplicable.Properties.DataSource = LookUpUtility.GetBoolType();
+            cmbProvisionEntryRequired.Properties.DataSource = LookUpUtility.GetBoolType();
+
 
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
-            rgRegistrationStatus.EditValue = ledger.RegularInfo.GSTRegistrationStatus;
+            cmbRegistrationStatus.EditValue = ledger.RegularInfo.GSTRegistrationStatus;
             txtGSTNumber.EditValue = ledger.RegularInfo.GSTNumber;
             txtPANNumber.EditValue = ledger.RegularInfo.PANNumber;
-            rgTDSApplicable.EditValue = ledger.RegularInfo.IsTDSApplicable;
+            cmbTDSApplicable.EditValue = ledger.RegularInfo.IsTDSApplicable;
             cmbTDSRates.EditValue = ledger.RegularInfo.TDSRate;
-            rgProvisionEntryRequired.EditValue = ledger.RegularInfo.ProvisionalEntryRequired;
+            cmbProvisionEntryRequired.EditValue = ledger.RegularInfo.ProvisionalEntryRequired;
             txtOpeningBalance.EditValue = ledger.RegularInfo.OpeningBalance;
             cmbNameoftheBank.EditValue = ledger.RegularInfo.BankID;
             txtAccountNumber.EditValue = ledger.RegularInfo.AccountNumber;
@@ -52,15 +53,15 @@ namespace IIT
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!base.ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
-            ledger.RegularInfo.GSTRegistrationStatus = rgRegistrationStatus.EditValue;
+            ledger.RegularInfo.GSTRegistrationStatus = cmbRegistrationStatus.EditValue;
             ledger.RegularInfo.GSTNumber = txtGSTNumber.EditValue;
             ledger.RegularInfo.PANNumber = txtPANNumber.EditValue;
-            ledger.RegularInfo.IsTDSApplicable = rgTDSApplicable.EditValue;
+            ledger.RegularInfo.IsTDSApplicable = cmbTDSApplicable .EditValue;
             ledger.RegularInfo.TDSRate = cmbTDSRates.EditValue;
-            ledger.RegularInfo.ProvisionalEntryRequired = rgProvisionEntryRequired.EditValue;
+            ledger.RegularInfo.ProvisionalEntryRequired = cmbProvisionEntryRequired.EditValue;
             ledger.RegularInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.RegularInfo.BankID = cmbNameoftheBank.EditValue;
             ledger.RegularInfo.AccountNumber = txtAccountNumber.EditValue;
@@ -74,19 +75,10 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_Regular;
             Save();
         }
-        private void textedit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
-        }
-        private void radioGroup_Enter(object sender, EventArgs e)
-        {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
-        }
         private void rgRegistrationStatus_EditValueChanged(object sender, EventArgs e)
         {
             txtGSTNumber.EditValue = null;
-            txtGSTNumber.Enabled = rgRegistrationStatus.EditValue.Equals("Registered");
+            txtGSTNumber.Enabled = cmbRegistrationStatus.Text.Equals("Registered");
         }
         private void txtGSTNumber_Leave(object sender, EventArgs e)
         {

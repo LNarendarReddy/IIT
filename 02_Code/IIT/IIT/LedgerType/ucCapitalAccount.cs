@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.DXErrorProvider;
 using Entity;
+using Repository;
 using Repository.Utility;
 using System;
 using System.Collections.Generic;
@@ -18,14 +20,22 @@ namespace IIT
         public ucCapitalAccount(Ledger _ledger, bool isCallFromAddButton,string caption) :base(_ledger, isCallFromAddButton, caption)
         {
             InitializeComponent();
+            this.txtPercentageOfPrefarence.Spin += base.textedit_Spin;
+            this.txtPremiumValueofShare.Spin += base.textedit_Spin;
+            this.txtNoOfShares.Spin += base.textedit_Spin;
+            this.txtFaceValueOfShare.Spin += base.textedit_Spin;
+            this.txtOpeningBalance.Spin += base.textedit_Spin;
+            this.txtAuthorizedCapitalAmount.Spin += base.textedit_Spin;
         }
 
         private void ucCapitalAccount_Load(object sender, EventArgs e)
         {
+            cmbNatureOfCapital.Properties.DataSource = LookUpUtility.GetCapitalType();
+            base.AddControls(layoutControl1);
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
-            rgNatgureOfCapital.EditValue = ledger.CapitalAccountInfo.NatureoftheCapital;
+            cmbNatureOfCapital.EditValue = ledger.CapitalAccountInfo.NatureoftheCapital;
             txtAuthorizedCapitalAmount.EditValue = ledger.CapitalAccountInfo.AuthorizedCapitalAmount;
             txtNoOfShares.EditValue = ledger.CapitalAccountInfo.NoOfShares;
             txtFaceValueOfShare.EditValue = ledger.CapitalAccountInfo.FaceValue;
@@ -36,10 +46,10 @@ namespace IIT
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!dxValidationProvider1.Validate())
+            if (!ValidateControls())
                 return;
             ledger.Name = ledger.Description = txtLedgerName.EditValue;
-            ledger.CapitalAccountInfo.NatureoftheCapital = rgNatgureOfCapital.EditValue;
+            ledger.CapitalAccountInfo.NatureoftheCapital = cmbNatureOfCapital.EditValue;
             ledger.CapitalAccountInfo.AuthorizedCapitalAmount = txtAuthorizedCapitalAmount.EditValue;
             ledger.CapitalAccountInfo.NoOfShares = txtNoOfShares.EditValue;
             ledger.CapitalAccountInfo.FaceValue = txtFaceValueOfShare.EditValue;
@@ -50,20 +60,9 @@ namespace IIT
             Save();
         }
 
-        private void rgNatgureOfCapital_Enter(object sender, EventArgs e)
+        private void cmbNatureOfCapital_EditValueChanged(object sender, EventArgs e)
         {
-            RadioGroup rg = sender as RadioGroup;
-            rg.SelectedIndex = rg.EditValue == null ? 0 : rg.SelectedIndex;
+            txtPercentageOfPrefarence.Enabled = cmbNatureOfCapital.Text.Equals("Preference");
         }
-
-        private void textedit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        private void rgNatgureOfCapital_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }   
     }
 }

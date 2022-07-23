@@ -17,5 +17,6 @@ namespace Entity.LedgerType
         public object TDSRate { get; set; }
         public object IsTCSApplicable { get; set; }
         public object TCSRate { get; set; }
+        public object EmployeeLocation { get; set; }
     }
 }
