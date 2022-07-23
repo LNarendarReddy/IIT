@@ -47,9 +47,18 @@ namespace IIT.ReportForms
                     frmSingularMain.Instance.RollbackControl();
 
             }
-            else if (e.KeyCode == Keys.Enter)
+            else if (e.KeyCode == Keys.Enter && ledgerlevel < 3)
             {
                 tlTrailBalance.FocusedNode.Expand();
+            }
+            else if (e.KeyCode == Keys.Enter && ledgerlevel == 3)
+            {
+                ucLedgerReport ledgerReport = new ucLedgerReport(tlTrailBalance.FocusedNode["CURRENTID"]
+                        , tlTrailBalance.FocusedNode["TBNAME"])
+                {
+                    CurrentSettings = currentSettings
+                };
+                Utility.ShowDialog(ledgerReport);
             }
             else if(e.KeyCode == Keys.F2)
             {
@@ -81,6 +90,8 @@ namespace IIT.ReportForms
             tlTrailBalance.KeyFieldName = "TBID";
             tlTrailBalance.ParentFieldName = "PARENTID";
             tlTrailBalance.ExpandToLevel(0);
+
+            lblHeader.Text = $"Statement of Trail balance as on {currentSettings.ToDate.ToShortDateString()}";
         }
     }
 }
