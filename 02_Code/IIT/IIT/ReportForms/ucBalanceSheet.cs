@@ -1,5 +1,6 @@
 ﻿
 using Repository;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -16,6 +17,7 @@ namespace IIT.ReportForms
         {
             Utility.SetTreeListFormatting(tlAssets, tlcBalanceSheetAssetsLevel);
             Utility.SetTreeListFormatting(tlLiabilities, tlcBalanceSheetLiabilitiesLevel);
+            lblHeader.Text = $"Balance sheet as on {DateTime.Now.ToShortDateString()}";
 
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {

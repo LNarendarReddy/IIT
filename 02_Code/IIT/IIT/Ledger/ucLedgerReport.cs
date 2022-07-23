@@ -15,7 +15,7 @@ namespace IIT
         private readonly object ledgerID;
         private readonly object ledgerName;
 
-        private AdminSettings CurrentSettings = null;
+        public AdminSettings CurrentSettings { get; set; }
 
         private List<ActionText> helpText = new List<ActionText>()
             {
@@ -34,7 +34,7 @@ namespace IIT
 
         private void ucLedgerReport_Load(object sender, EventArgs e)
         {
-            CurrentSettings = Utility.GetAdminSettings();
+            CurrentSettings = CurrentSettings ?? Utility.GetAdminSettings();
 
             Utility.SetGridFormatting(gvVouchers);
             lblLedgerName.Text = ledgerName?.ToString();
