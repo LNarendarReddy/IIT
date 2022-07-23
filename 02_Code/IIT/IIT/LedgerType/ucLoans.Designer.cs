@@ -51,7 +51,6 @@
             this.cmbTDSRates = new DevExpress.XtraEditors.LookUpEdit();
             this.dtpEMIStartDate = new DevExpress.XtraEditors.DateEdit();
             this.dtpEMIClosingDate = new DevExpress.XtraEditors.DateEdit();
-            this.txtNameOftheBank = new DevExpress.XtraEditors.TextEdit();
             this.cmbTypeofLoan = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbFrequency = new DevExpress.XtraEditors.LookUpEdit();
@@ -70,7 +69,6 @@
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -83,6 +81,7 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -109,7 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIStartDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNameOftheBank.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTypeofLoan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).BeginInit();
@@ -128,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -141,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -181,7 +179,6 @@
             this.layoutControl1.Controls.Add(this.cmbTDSRates);
             this.layoutControl1.Controls.Add(this.dtpEMIStartDate);
             this.layoutControl1.Controls.Add(this.dtpEMIClosingDate);
-            this.layoutControl1.Controls.Add(this.txtNameOftheBank);
             this.layoutControl1.Controls.Add(this.cmbTypeofLoan);
             this.layoutControl1.Controls.Add(this.cmbTDSApplicable);
             this.layoutControl1.Controls.Add(this.cmbFrequency);
@@ -205,6 +202,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpEMIDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpEMIDate.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.dtpEMIDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpEMIDate.Properties.EditFormat.FormatString = "dd-MM-yyyy";
+            this.dtpEMIDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpEMIDate.Properties.MaskSettings.Set("mask", "dd");
             this.dtpEMIDate.Size = new System.Drawing.Size(211, 20);
             this.dtpEMIDate.StyleController = this.layoutControl1;
             this.dtpEMIDate.TabIndex = 16;
@@ -212,7 +214,7 @@
             // txtloanAccountNumber
             // 
             this.txtloanAccountNumber.EnterMoveNextControl = true;
-            this.txtloanAccountNumber.Location = new System.Drawing.Point(169, 248);
+            this.txtloanAccountNumber.Location = new System.Drawing.Point(169, 210);
             this.txtloanAccountNumber.Name = "txtloanAccountNumber";
             this.txtloanAccountNumber.Size = new System.Drawing.Size(210, 20);
             this.txtloanAccountNumber.StyleController = this.layoutControl1;
@@ -237,6 +239,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpLoanSanctionDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpLoanSanctionDate.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.dtpLoanSanctionDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpLoanSanctionDate.Properties.EditFormat.FormatString = "dd-MM-yyyy";
+            this.dtpLoanSanctionDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpLoanSanctionDate.Properties.MaskSettings.Set("mask", "dd-MM-yyyy");
             this.dtpLoanSanctionDate.Size = new System.Drawing.Size(210, 20);
             this.dtpLoanSanctionDate.StyleController = this.layoutControl1;
             this.dtpLoanSanctionDate.TabIndex = 3;
@@ -272,9 +279,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(390, 443);
+            this.btnSave.Location = new System.Drawing.Point(650, 443);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(382, 36);
+            this.btnSave.Size = new System.Drawing.Size(122, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Save";
@@ -283,7 +290,7 @@
             // txtOpeningBalance
             // 
             this.txtOpeningBalance.EnterMoveNextControl = true;
-            this.txtOpeningBalance.Location = new System.Drawing.Point(169, 438);
+            this.txtOpeningBalance.Location = new System.Drawing.Point(169, 400);
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatString = "n2";
             this.txtOpeningBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -315,7 +322,7 @@
             // txtPANNumber
             // 
             this.txtPANNumber.EnterMoveNextControl = true;
-            this.txtPANNumber.Location = new System.Drawing.Point(169, 324);
+            this.txtPANNumber.Location = new System.Drawing.Point(169, 286);
             this.txtPANNumber.Name = "txtPANNumber";
             this.txtPANNumber.Properties.MaxLength = 10;
             this.txtPANNumber.Size = new System.Drawing.Size(210, 20);
@@ -325,7 +332,7 @@
             // txtGSTNumber
             // 
             this.txtGSTNumber.EnterMoveNextControl = true;
-            this.txtGSTNumber.Location = new System.Drawing.Point(169, 286);
+            this.txtGSTNumber.Location = new System.Drawing.Point(169, 248);
             this.txtGSTNumber.Name = "txtGSTNumber";
             this.txtGSTNumber.Properties.MaxLength = 15;
             this.txtGSTNumber.Size = new System.Drawing.Size(210, 20);
@@ -397,7 +404,7 @@
             // cmbTDSRates
             // 
             this.cmbTDSRates.EnterMoveNextControl = true;
-            this.cmbTDSRates.Location = new System.Drawing.Point(169, 400);
+            this.cmbTDSRates.Location = new System.Drawing.Point(169, 362);
             this.cmbTDSRates.Name = "cmbTDSRates";
             this.cmbTDSRates.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -420,11 +427,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpEMIStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpEMIStartDate.Properties.DisplayFormat.FormatString = "";
+            this.dtpEMIStartDate.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
             this.dtpEMIStartDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtpEMIStartDate.Properties.EditFormat.FormatString = "";
+            this.dtpEMIStartDate.Properties.EditFormat.FormatString = "dd-MM-yyyy";
             this.dtpEMIStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtpEMIStartDate.Properties.MaskSettings.Set("mask", "");
+            this.dtpEMIStartDate.Properties.MaskSettings.Set("mask", "dd-MM-yyyy");
             this.dtpEMIStartDate.Size = new System.Drawing.Size(211, 20);
             this.dtpEMIStartDate.StyleController = this.layoutControl1;
             this.dtpEMIStartDate.TabIndex = 12;
@@ -439,24 +446,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpEMIClosingDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpEMIClosingDate.Properties.DisplayFormat.FormatString = "";
+            this.dtpEMIClosingDate.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
             this.dtpEMIClosingDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtpEMIClosingDate.Properties.EditFormat.FormatString = "";
+            this.dtpEMIClosingDate.Properties.EditFormat.FormatString = "dd-MM-yyyy";
             this.dtpEMIClosingDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.dtpEMIClosingDate.Properties.Mask.EditMask = "";
-            this.dtpEMIClosingDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.dtpEMIClosingDate.Properties.MaskSettings.Set("mask", "dd-MM-yyyy");
             this.dtpEMIClosingDate.Size = new System.Drawing.Size(211, 20);
             this.dtpEMIClosingDate.StyleController = this.layoutControl1;
             this.dtpEMIClosingDate.TabIndex = 13;
-            // 
-            // txtNameOftheBank
-            // 
-            this.txtNameOftheBank.EnterMoveNextControl = true;
-            this.txtNameOftheBank.Location = new System.Drawing.Point(169, 210);
-            this.txtNameOftheBank.Name = "txtNameOftheBank";
-            this.txtNameOftheBank.Size = new System.Drawing.Size(210, 20);
-            this.txtNameOftheBank.StyleController = this.layoutControl1;
-            this.txtNameOftheBank.TabIndex = 5;
             // 
             // cmbTypeofLoan
             // 
@@ -477,7 +474,7 @@
             // cmbTDSApplicable
             // 
             this.cmbTDSApplicable.EnterMoveNextControl = true;
-            this.cmbTDSApplicable.Location = new System.Drawing.Point(169, 362);
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(169, 324);
             this.cmbTDSApplicable.Name = "cmbTDSApplicable";
             this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -522,13 +519,13 @@
             this.layoutControlItem21,
             this.emptySpaceItem3,
             this.layoutControlItem8,
-            this.layoutControlItem22,
             this.layoutControlItem23,
             this.layoutControlItem2,
             this.layoutControlGroup1,
             this.layoutControlItem13,
             this.layoutControlItem25,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.emptySpaceItem1});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.Root.Size = new System.Drawing.Size(777, 484);
@@ -547,7 +544,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtGSTNumber;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 274);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 236);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem3.Size = new System.Drawing.Size(385, 38);
@@ -557,7 +554,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtPANNumber;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 312);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 274);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem4.Size = new System.Drawing.Size(385, 38);
@@ -567,10 +564,10 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtOpeningBalance;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 426);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 388);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem6.Size = new System.Drawing.Size(385, 52);
+            this.layoutControlItem6.Size = new System.Drawing.Size(385, 90);
             this.layoutControlItem6.Text = "Opening Balance";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(145, 14);
             // 
@@ -589,7 +586,7 @@
             this.layoutControlGroup3.OptionsItemText.TextToControlDistance = 3;
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutControlGroup3.Size = new System.Drawing.Size(386, 181);
-            this.layoutControlGroup3.Text = "Bank Details";
+            this.layoutControlGroup3.Text = "Bank details for EMI Remittance ";
             // 
             // layoutControlItem17
             // 
@@ -612,7 +609,7 @@
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 5, 5);
             this.layoutControlItem11.Size = new System.Drawing.Size(376, 30);
-            this.layoutControlItem11.Text = "Loan Account No";
+            this.layoutControlItem11.Text = " Bank Account No";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(145, 14);
             // 
             // layoutControlItem18
@@ -624,7 +621,7 @@
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 5, 5);
             this.layoutControlItem18.Size = new System.Drawing.Size(376, 30);
-            this.layoutControlItem18.Text = "Account Holder Name";
+            this.layoutControlItem18.Text = "Account Name";
             this.layoutControlItem18.TextSize = new System.Drawing.Size(145, 14);
             // 
             // layoutControlItem19
@@ -654,9 +651,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(385, 438);
+            this.layoutControlItem7.Location = new System.Drawing.Point(645, 438);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(386, 40);
+            this.layoutControlItem7.Size = new System.Drawing.Size(126, 40);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -665,7 +662,7 @@
             this.layoutControlItem21.Control = this.cmbTDSRates;
             this.layoutControlItem21.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem21.CustomizationFormText = "Applicable section of TDS";
-            this.layoutControlItem21.Location = new System.Drawing.Point(0, 388);
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 350);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem21.Size = new System.Drawing.Size(385, 38);
@@ -690,26 +687,14 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // layoutControlItem22
-            // 
-            this.layoutControlItem22.Control = this.txtNameOftheBank;
-            this.layoutControlItem22.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem22.CustomizationFormText = "Name of the Bank / Fin. Inst";
-            this.layoutControlItem22.Location = new System.Drawing.Point(0, 198);
-            this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem22.Size = new System.Drawing.Size(385, 38);
-            this.layoutControlItem22.Text = "Name of the Bank / Fin. Inst";
-            this.layoutControlItem22.TextSize = new System.Drawing.Size(145, 14);
-            // 
             // layoutControlItem23
             // 
             this.layoutControlItem23.Control = this.txtloanAccountNumber;
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 236);
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 198);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem23.Size = new System.Drawing.Size(385, 38);
-            this.layoutControlItem23.Text = "Bank Account no of the Loan";
+            this.layoutControlItem23.Text = "Loan Agreement No";
             this.layoutControlItem23.TextSize = new System.Drawing.Size(145, 14);
             // 
             // layoutControlItem2
@@ -828,12 +813,20 @@
             this.layoutControlItem12.Control = this.cmbTDSApplicable;
             this.layoutControlItem12.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem12.CustomizationFormText = "Reciepts or Additions";
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 350);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 312);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
             this.layoutControlItem12.Size = new System.Drawing.Size(385, 38);
             this.layoutControlItem12.Text = "Is TDS is applicable ";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(145, 14);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(385, 438);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(260, 40);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ucLoans
             // 
@@ -869,7 +862,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIStartDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNameOftheBank.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTypeofLoan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).EndInit();
@@ -888,7 +880,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -901,6 +892,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -948,8 +940,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraEditors.DateEdit dtpEMIStartDate;
         private DevExpress.XtraEditors.DateEdit dtpEMIClosingDate;
-        private DevExpress.XtraEditors.TextEdit txtNameOftheBank;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraEditors.DateEdit dtpEMIDate;
         private DevExpress.XtraEditors.TextEdit txtloanAccountNumber;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
@@ -961,5 +951,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.LookUpEdit cmbFrequency;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

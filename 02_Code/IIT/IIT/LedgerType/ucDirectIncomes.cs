@@ -78,5 +78,10 @@ namespace IIT
             cmbTDSRates.EditValue = null;
             cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
         }
+        private void cmbNatureOfIncome_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbReverseCharge.EditValue = null;
+            cmbReverseCharge.Enabled = cmbNatureOfIncome.Text.Equals("Services");
+        }
     }
 }

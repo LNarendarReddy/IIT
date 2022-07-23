@@ -40,7 +40,6 @@ namespace IIT
             cmbTypeofLoan.EditValue = ledger.LoanInfo.TypeOfLoan;
             dtpLoanSanctionDate.EditValue = ledger.LoanInfo.LoanSanctionDate;
             txtMoratoriumPeriod.EditValue = ledger.LoanInfo.MoratoriumPeriod;
-            txtNameOftheBank.EditValue = ledger.LoanInfo.NameOftheBank;
             txtloanAccountNumber.EditValue = ledger.LoanInfo.BankAccOfLoan;
             txtGSTNumber.EditValue = ledger.LoanInfo.FinancerGST;
             txtPANNumber.EditValue = ledger.LoanInfo.PANNo;
@@ -67,7 +66,6 @@ namespace IIT
             ledger.LoanInfo.TypeOfLoan = cmbTypeofLoan.EditValue;
             ledger.LoanInfo.LoanSanctionDate = dtpLoanSanctionDate.EditValue;
             ledger.LoanInfo.MoratoriumPeriod = txtMoratoriumPeriod.EditValue;
-            ledger.LoanInfo.NameOftheBank = txtNameOftheBank.EditValue;
             ledger.LoanInfo.BankAccOfLoan = txtloanAccountNumber.EditValue;
             ledger.LoanInfo.FinancerGST = txtGSTNumber.EditValue;
              ledger.LoanInfo.PANNo = txtPANNumber.EditValue;

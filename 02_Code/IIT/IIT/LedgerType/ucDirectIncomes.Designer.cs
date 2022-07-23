@@ -271,6 +271,7 @@
             this.cmbNatureOfIncome.Size = new System.Drawing.Size(288, 20);
             this.cmbNatureOfIncome.StyleController = this.layoutControl1;
             this.cmbNatureOfIncome.TabIndex = 2;
+            this.cmbNatureOfIncome.EditValueChanged += new System.EventHandler(this.cmbNatureOfIncome_EditValueChanged);
             // 
             // cmbTDSApplicable
             // 
