@@ -22,14 +22,10 @@ namespace IIT
         }
         private void ucStatutoryDues_Load(object sender, EventArgs e)
         {
-            base.AddControls(layoutControl1);
             cmbTypeofDue.Properties.DataSource = LookUpUtility.GetDueType();
-            cmbTypeofDue.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbTypeofDue.Properties.DisplayMember = "LOOKUPVALUE";
-
+            base.AddControls(layoutControl1);
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
-
             txtLedgerName.EditValue = ledger.Name;
             cmbTypeofDue.EditValue = ledger.StatutoryDuesInfo.TypeofDue;
             txtOpeningBalance.EditValue = ledger.StatutoryDuesInfo.OpeningBalance;
@@ -43,6 +39,11 @@ namespace IIT
             ledger.StatutoryDuesInfo.OpeningBalance = txtOpeningBalance.EditValue;
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_StatutoryDues;
             Save();
+        }
+        private void cmbTypeofDue_EditValueChanged(object sender, EventArgs e)
+        {
+            txtLedgerName.Enabled = cmbTypeofDue.Text.Equals("Other");
+            txtLedgerName.Text = cmbTypeofDue.Text;
         }
     }
 }

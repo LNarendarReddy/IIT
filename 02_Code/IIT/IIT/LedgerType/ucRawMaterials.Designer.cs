@@ -41,6 +41,8 @@
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
             this.cmbTDSRates = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbUnits = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbGSTApplicable = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciROD = new DevExpress.XtraLayout.LayoutControlItem();
@@ -53,9 +55,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbGSTApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -69,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbUnits.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTApplicable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciROD)).BeginInit();
@@ -81,9 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,6 +267,40 @@
             this.cmbUnits.StyleController = this.layoutControl1;
             this.cmbUnits.TabIndex = 2;
             // 
+            // cmbGSTApplicable
+            // 
+            this.cmbGSTApplicable.EnterMoveNextControl = true;
+            this.cmbGSTApplicable.Location = new System.Drawing.Point(167, 146);
+            this.cmbGSTApplicable.Name = "cmbGSTApplicable";
+            this.cmbGSTApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbGSTApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbGSTApplicable.Properties.NullText = "";
+            this.cmbGSTApplicable.Properties.ShowHeader = false;
+            this.cmbGSTApplicable.Size = new System.Drawing.Size(348, 20);
+            this.cmbGSTApplicable.StyleController = this.layoutControl1;
+            this.cmbGSTApplicable.TabIndex = 8;
+            this.cmbGSTApplicable.EditValueChanged += new System.EventHandler(this.cmbGSTApplicable_EditValueChanged);
+            // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(167, 222);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(348, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
+            // 
             // Root
             // 
             this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Silver;
@@ -404,22 +438,6 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // cmbGSTApplicable
-            // 
-            this.cmbGSTApplicable.EnterMoveNextControl = true;
-            this.cmbGSTApplicable.Location = new System.Drawing.Point(167, 146);
-            this.cmbGSTApplicable.Name = "cmbGSTApplicable";
-            this.cmbGSTApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbGSTApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbGSTApplicable.Properties.NullText = "";
-            this.cmbGSTApplicable.Properties.ShowHeader = false;
-            this.cmbGSTApplicable.Size = new System.Drawing.Size(348, 20);
-            this.cmbGSTApplicable.StyleController = this.layoutControl1;
-            this.cmbGSTApplicable.TabIndex = 8;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.cmbGSTApplicable;
@@ -431,22 +449,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(521, 38);
             this.layoutControlItem11.Text = "Is GST Applicable ";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(143, 14);
-            // 
-            // cmbTDSApplicable
-            // 
-            this.cmbTDSApplicable.EnterMoveNextControl = true;
-            this.cmbTDSApplicable.Location = new System.Drawing.Point(167, 222);
-            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
-            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbTDSApplicable.Properties.NullText = "";
-            this.cmbTDSApplicable.Properties.ShowHeader = false;
-            this.cmbTDSApplicable.Size = new System.Drawing.Size(348, 20);
-            this.cmbTDSApplicable.StyleController = this.layoutControl1;
-            this.cmbTDSApplicable.TabIndex = 8;
             // 
             // layoutControlItem3
             // 
@@ -480,6 +482,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbUnits.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTApplicable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciROD)).EndInit();
@@ -492,9 +496,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 

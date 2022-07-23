@@ -25,8 +25,6 @@ namespace IIT
         {
             base.AddControls(layoutControl1);
             cmbNatureOfReserve.Properties.DataSource = LookUpUtility.GetNatureOfReserves();
-            cmbNatureOfReserve.Properties.ValueMember = "ENTITYLOOKUPID";
-            cmbNatureOfReserve.Properties.DisplayMember = "LOOKUPVALUE";
 
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;

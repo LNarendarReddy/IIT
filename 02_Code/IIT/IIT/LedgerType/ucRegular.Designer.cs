@@ -298,6 +298,7 @@
             this.cmbTDSRates.Size = new System.Drawing.Size(180, 20);
             this.cmbTDSRates.StyleController = this.layoutControl1;
             this.cmbTDSRates.TabIndex = 6;
+            this.cmbTDSRates.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
             // 
             // txtDoorNumber
             // 
@@ -350,6 +351,7 @@
             this.cmbRegistrationStatus.Size = new System.Drawing.Size(180, 20);
             this.cmbRegistrationStatus.StyleController = this.layoutControl1;
             this.cmbRegistrationStatus.TabIndex = 8;
+            this.cmbRegistrationStatus.EditValueChanged += new System.EventHandler(this.cmbRegistrationStatus_EditValueChanged);
             // 
             // cmbTDSApplicable
             // 

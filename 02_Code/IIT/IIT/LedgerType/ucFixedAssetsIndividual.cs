@@ -48,5 +48,10 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_FixedAsset;
             Save();
         }
+        private void cmbTDSApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbTDSRates.EditValue = null;
+            cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
+        }
     }
 }

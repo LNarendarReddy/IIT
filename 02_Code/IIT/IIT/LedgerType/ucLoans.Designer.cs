@@ -52,6 +52,9 @@
             this.dtpEMIStartDate = new DevExpress.XtraEditors.DateEdit();
             this.dtpEMIClosingDate = new DevExpress.XtraEditors.DateEdit();
             this.txtNameOftheBank = new DevExpress.XtraEditors.TextEdit();
+            this.cmbTypeofLoan = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbFrequency = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -76,13 +79,10 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbTypeofLoan = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbFrequency = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -110,6 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameOftheBank.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTypeofLoan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -134,13 +137,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTypeofLoan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -458,6 +458,55 @@
             this.txtNameOftheBank.StyleController = this.layoutControl1;
             this.txtNameOftheBank.TabIndex = 5;
             // 
+            // cmbTypeofLoan
+            // 
+            this.cmbTypeofLoan.EnterMoveNextControl = true;
+            this.cmbTypeofLoan.Location = new System.Drawing.Point(169, 96);
+            this.cmbTypeofLoan.Name = "cmbTypeofLoan";
+            this.cmbTypeofLoan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTypeofLoan.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cmbTypeofLoan.Properties.NullText = "";
+            this.cmbTypeofLoan.Properties.ShowHeader = false;
+            this.cmbTypeofLoan.Size = new System.Drawing.Size(210, 20);
+            this.cmbTypeofLoan.StyleController = this.layoutControl1;
+            this.cmbTypeofLoan.TabIndex = 1;
+            // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(169, 362);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(210, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
+            // 
+            // cmbFrequency
+            // 
+            this.cmbFrequency.EnterMoveNextControl = true;
+            this.cmbFrequency.Location = new System.Drawing.Point(554, 170);
+            this.cmbFrequency.Name = "cmbFrequency";
+            this.cmbFrequency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFrequency.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbFrequency.Properties.NullText = "";
+            this.cmbFrequency.Properties.ShowHeader = false;
+            this.cmbFrequency.Size = new System.Drawing.Size(211, 20);
+            this.cmbFrequency.StyleController = this.layoutControl1;
+            this.cmbFrequency.TabIndex = 8;
+            // 
             // Root
             // 
             this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Silver;
@@ -740,6 +789,18 @@
             this.layoutControlItem10.Text = "Regular EMI Amount";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(145, 14);
             // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.cmbFrequency;
+            this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem9.CustomizationFormText = "Reciepts or Additions";
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 90);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 5, 5);
+            this.layoutControlItem9.Size = new System.Drawing.Size(376, 30);
+            this.layoutControlItem9.Text = "Loan Repayment Frequency";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(145, 14);
+            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.txtMoratoriumPeriod;
@@ -749,22 +810,6 @@
             this.layoutControlItem13.Size = new System.Drawing.Size(385, 38);
             this.layoutControlItem13.Text = "Moratorium Period given if any";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(145, 14);
-            // 
-            // cmbTypeofLoan
-            // 
-            this.cmbTypeofLoan.EnterMoveNextControl = true;
-            this.cmbTypeofLoan.Location = new System.Drawing.Point(169, 96);
-            this.cmbTypeofLoan.Name = "cmbTypeofLoan";
-            this.cmbTypeofLoan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTypeofLoan.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cmbTypeofLoan.Properties.NullText = "";
-            this.cmbTypeofLoan.Properties.ShowHeader = false;
-            this.cmbTypeofLoan.Size = new System.Drawing.Size(210, 20);
-            this.cmbTypeofLoan.StyleController = this.layoutControl1;
-            this.cmbTypeofLoan.TabIndex = 1;
             // 
             // layoutControlItem25
             // 
@@ -778,22 +823,6 @@
             this.layoutControlItem25.Text = "Type of Loan ";
             this.layoutControlItem25.TextSize = new System.Drawing.Size(145, 14);
             // 
-            // cmbTDSApplicable
-            // 
-            this.cmbTDSApplicable.EnterMoveNextControl = true;
-            this.cmbTDSApplicable.Location = new System.Drawing.Point(169, 362);
-            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
-            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbTDSApplicable.Properties.NullText = "";
-            this.cmbTDSApplicable.Properties.ShowHeader = false;
-            this.cmbTDSApplicable.Size = new System.Drawing.Size(210, 20);
-            this.cmbTDSApplicable.StyleController = this.layoutControl1;
-            this.cmbTDSApplicable.TabIndex = 8;
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.cmbTDSApplicable;
@@ -805,34 +834,6 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(385, 38);
             this.layoutControlItem12.Text = "Is TDS is applicable ";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(145, 14);
-            // 
-            // cmbFrequency
-            // 
-            this.cmbFrequency.EnterMoveNextControl = true;
-            this.cmbFrequency.Location = new System.Drawing.Point(554, 170);
-            this.cmbFrequency.Name = "cmbFrequency";
-            this.cmbFrequency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFrequency.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbFrequency.Properties.NullText = "";
-            this.cmbFrequency.Properties.ShowHeader = false;
-            this.cmbFrequency.Size = new System.Drawing.Size(211, 20);
-            this.cmbFrequency.StyleController = this.layoutControl1;
-            this.cmbFrequency.TabIndex = 8;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.cmbFrequency;
-            this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem9.CustomizationFormText = "Reciepts or Additions";
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 90);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 5, 5);
-            this.layoutControlItem9.Size = new System.Drawing.Size(376, 30);
-            this.layoutControlItem9.Text = "Loan Repayment Frequency";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(145, 14);
             // 
             // ucLoans
             // 
@@ -869,6 +870,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpEMIClosingDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameOftheBank.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTypeofLoan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -893,13 +897,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTypeofLoan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFrequency.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }

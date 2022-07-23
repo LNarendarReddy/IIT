@@ -49,6 +49,9 @@
             this.txtPANNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtGSTNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
+            this.cmbRegistrationStatus = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbReverseCharge = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -72,13 +75,10 @@
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.cmbRegistrationStatus = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbReverseCharge = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbNameoftheBank.Properties)).BeginInit();
@@ -98,6 +98,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPANNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGSTNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRegistrationStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbReverseCharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
@@ -121,14 +124,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRegistrationStatus.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbReverseCharge.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -379,6 +379,56 @@
             this.txtLedgerName.Size = new System.Drawing.Size(189, 20);
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
+            // 
+            // cmbRegistrationStatus
+            // 
+            this.cmbRegistrationStatus.EnterMoveNextControl = true;
+            this.cmbRegistrationStatus.Location = new System.Drawing.Point(208, 149);
+            this.cmbRegistrationStatus.Name = "cmbRegistrationStatus";
+            this.cmbRegistrationStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbRegistrationStatus.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbRegistrationStatus.Properties.NullText = "";
+            this.cmbRegistrationStatus.Properties.ShowHeader = false;
+            this.cmbRegistrationStatus.Size = new System.Drawing.Size(189, 20);
+            this.cmbRegistrationStatus.StyleController = this.layoutControl1;
+            this.cmbRegistrationStatus.TabIndex = 8;
+            this.cmbRegistrationStatus.EditValueChanged += new System.EventHandler(this.cmbRegistrationStatus_EditValueChanged);
+            // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(208, 377);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(189, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
+            // 
+            // cmbReverseCharge
+            // 
+            this.cmbReverseCharge.EnterMoveNextControl = true;
+            this.cmbReverseCharge.Location = new System.Drawing.Point(208, 263);
+            this.cmbReverseCharge.Name = "cmbReverseCharge";
+            this.cmbReverseCharge.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbReverseCharge.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cmbReverseCharge.Properties.NullText = "";
+            this.cmbReverseCharge.Properties.ShowHeader = false;
+            this.cmbReverseCharge.Size = new System.Drawing.Size(189, 20);
+            this.cmbReverseCharge.StyleController = this.layoutControl1;
+            this.cmbReverseCharge.TabIndex = 10;
             // 
             // Root
             // 
@@ -638,6 +688,42 @@
             this.layoutControlItem19.Text = "Applicable section of TDS";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(184, 14);
             // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.cmbRegistrationStatus;
+            this.layoutControlItem23.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem23.CustomizationFormText = "Reciepts or Additions";
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 137);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem23.Size = new System.Drawing.Size(403, 38);
+            this.layoutControlItem23.Text = "GST Registration status ";
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(184, 14);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.cmbTDSApplicable;
+            this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem2.CustomizationFormText = "Reciepts or Additions";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 365);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem2.Size = new System.Drawing.Size(403, 38);
+            this.layoutControlItem2.Text = "Is TDS is applicable ";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(184, 14);
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.cmbReverseCharge;
+            this.layoutControlItem18.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem18.CustomizationFormText = "Applicable section of TDS";
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 251);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
+            this.layoutControlItem18.Size = new System.Drawing.Size(403, 38);
+            this.layoutControlItem18.Text = "Is reverse Charge scheme Applicable ";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(184, 14);
+            // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
@@ -652,90 +738,6 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tablePanel1.Size = new System.Drawing.Size(828, 531);
             this.tablePanel1.TabIndex = 0;
-            // 
-            // cmbRegistrationStatus
-            // 
-            this.cmbRegistrationStatus.EnterMoveNextControl = true;
-            this.cmbRegistrationStatus.Location = new System.Drawing.Point(208, 149);
-            this.cmbRegistrationStatus.Name = "cmbRegistrationStatus";
-            this.cmbRegistrationStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbRegistrationStatus.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbRegistrationStatus.Properties.NullText = "";
-            this.cmbRegistrationStatus.Properties.ShowHeader = false;
-            this.cmbRegistrationStatus.Size = new System.Drawing.Size(189, 20);
-            this.cmbRegistrationStatus.StyleController = this.layoutControl1;
-            this.cmbRegistrationStatus.TabIndex = 8;
-            // 
-            // layoutControlItem23
-            // 
-            this.layoutControlItem23.Control = this.cmbRegistrationStatus;
-            this.layoutControlItem23.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem23.CustomizationFormText = "Reciepts or Additions";
-            this.layoutControlItem23.Location = new System.Drawing.Point(0, 137);
-            this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem23.Size = new System.Drawing.Size(403, 38);
-            this.layoutControlItem23.Text = "GST Registration status ";
-            this.layoutControlItem23.TextSize = new System.Drawing.Size(184, 14);
-            // 
-            // cmbTDSApplicable
-            // 
-            this.cmbTDSApplicable.EnterMoveNextControl = true;
-            this.cmbTDSApplicable.Location = new System.Drawing.Point(208, 377);
-            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
-            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbTDSApplicable.Properties.NullText = "";
-            this.cmbTDSApplicable.Properties.ShowHeader = false;
-            this.cmbTDSApplicable.Size = new System.Drawing.Size(189, 20);
-            this.cmbTDSApplicable.StyleController = this.layoutControl1;
-            this.cmbTDSApplicable.TabIndex = 8;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.cmbTDSApplicable;
-            this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem2.CustomizationFormText = "Reciepts or Additions";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 365);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem2.Size = new System.Drawing.Size(403, 38);
-            this.layoutControlItem2.Text = "Is TDS is applicable ";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(184, 14);
-            // 
-            // cmbReverseCharge
-            // 
-            this.cmbReverseCharge.EnterMoveNextControl = true;
-            this.cmbReverseCharge.Location = new System.Drawing.Point(208, 263);
-            this.cmbReverseCharge.Name = "cmbReverseCharge";
-            this.cmbReverseCharge.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbReverseCharge.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 17, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE", 17, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cmbReverseCharge.Properties.NullText = "";
-            this.cmbReverseCharge.Properties.ShowHeader = false;
-            this.cmbReverseCharge.Size = new System.Drawing.Size(189, 20);
-            this.cmbReverseCharge.StyleController = this.layoutControl1;
-            this.cmbReverseCharge.TabIndex = 10;
-            // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.Control = this.cmbReverseCharge;
-            this.layoutControlItem18.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem18.CustomizationFormText = "Applicable section of TDS";
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 251);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 9, 9, 9);
-            this.layoutControlItem18.Size = new System.Drawing.Size(403, 38);
-            this.layoutControlItem18.Text = "Is reverse Charge scheme Applicable ";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(184, 14);
             // 
             // ucServices
             // 
@@ -764,6 +766,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPANNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGSTNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRegistrationStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbReverseCharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
@@ -787,14 +792,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRegistrationStatus.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbReverseCharge.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
 
         }

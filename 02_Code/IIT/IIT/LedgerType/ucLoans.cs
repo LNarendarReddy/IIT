@@ -94,5 +94,10 @@ namespace IIT
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
         }
+        private void cmbTDSApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbTDSRates.EditValue = null;
+            cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
+        }
     }
 }

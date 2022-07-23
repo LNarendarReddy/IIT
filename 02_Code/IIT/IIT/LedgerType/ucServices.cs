@@ -28,7 +28,8 @@ namespace IIT
             cmbNatureofServices.Properties.DataSource = LookUpUtility.GetTDSRates();
             cmbTDSRates.Properties.DataSource = LookUpUtility.GetTDSRates();
             cmbRegistrationStatus.Properties.DataSource = LookUpUtility.GetRegType();
-            cmbReverseCharge.Properties.DataSource = cmbTDSApplicable .Properties.DataSource = LookUpUtility.GetBoolType();
+            cmbReverseCharge.Properties.DataSource = 
+                cmbTDSApplicable .Properties.DataSource = LookUpUtility.GetBoolType();
 
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
@@ -81,16 +82,21 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_ServiceOrDuesToSubContractors;
             Save();
         }
-        private void rgRegistrationStatus_EditValueChanged(object sender, EventArgs e)
-        {
-            txtGSTNumber.EditValue = null;
-            txtGSTNumber.Enabled = cmbRegistrationStatus.Text.Equals("Registered");
-        }
         private void txtGSTNumber_Leave(object sender, EventArgs e)
         {
             if (txtGSTNumber.Text.Length < 12)
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
+        }
+        private void cmbRegistrationStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            txtGSTNumber.EditValue = null;
+            txtGSTNumber.Enabled = cmbRegistrationStatus.Text.Equals("Registered");
+        }
+        private void cmbTDSApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbTDSRates.EditValue = null;
+            cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
         }
     }
 }

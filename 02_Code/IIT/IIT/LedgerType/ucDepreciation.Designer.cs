@@ -69,7 +69,7 @@
             this.layoutControl1.Root = this.Root;
             this.tablePanel1.SetRow(this.layoutControl1, 0);
             this.layoutControl1.Size = new System.Drawing.Size(443, 156);
-            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txtLedgerName
@@ -100,7 +100,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(123, 36);
             this.btnSave.StyleController = this.layoutControl1;
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -118,7 +118,7 @@
             this.txtOpeningBalance.Properties.MaskSettings.Set("mask", "n2");
             this.txtOpeningBalance.Size = new System.Drawing.Size(311, 20);
             this.txtOpeningBalance.StyleController = this.layoutControl1;
-            this.txtOpeningBalance.TabIndex = 3;
+            this.txtOpeningBalance.TabIndex = 2;
             // 
             // Root
             // 
@@ -197,7 +197,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(459, 170);
-            this.tablePanel1.TabIndex = 2;
+            this.tablePanel1.TabIndex = 0;
             // 
             // ucDepreciation
             // 

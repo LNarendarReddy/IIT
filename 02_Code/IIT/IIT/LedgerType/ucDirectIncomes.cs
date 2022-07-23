@@ -67,5 +67,16 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_DirectIncomes;
             Save();
         }
+        private void cmbGSTApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            txtCGST.EditValue = txtSGST.EditValue = txtIGST.EditValue = null;
+            txtCGST.Enabled = txtSGST.Enabled = txtIGST.Enabled =
+                cmbGSTApplicable.Text.Equals("Yes");
+        }
+        private void cmbTDSApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbTDSRates.EditValue = null;
+            cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
+        }
     }
 }

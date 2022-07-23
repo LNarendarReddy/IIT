@@ -218,7 +218,8 @@
             this.cmbTDSApplicable.Properties.ShowHeader = false;
             this.cmbTDSApplicable.Size = new System.Drawing.Size(367, 20);
             this.cmbTDSApplicable.StyleController = this.layoutControl1;
-            this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.TabIndex = 4;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
             // 
             // Root
             // 

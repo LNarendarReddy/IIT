@@ -76,6 +76,7 @@
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -123,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -309,9 +311,9 @@
             // 
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
-            this.btnSave.Location = new System.Drawing.Point(415, 359);
+            this.btnSave.Location = new System.Drawing.Point(658, 359);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(358, 36);
+            this.btnSave.Size = new System.Drawing.Size(115, 36);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Save";
@@ -409,7 +411,8 @@
             this.cmbRegistrationStatus.Properties.ShowHeader = false;
             this.cmbRegistrationStatus.Size = new System.Drawing.Size(231, 20);
             this.cmbRegistrationStatus.StyleController = this.layoutControl1;
-            this.cmbRegistrationStatus.TabIndex = 8;
+            this.cmbRegistrationStatus.TabIndex = 3;
+            this.cmbRegistrationStatus.EditValueChanged += new System.EventHandler(this.cmbRegistrationStatus_EditValueChanged);
             // 
             // cmbTDSApplicable
             // 
@@ -426,6 +429,7 @@
             this.cmbTDSApplicable.Size = new System.Drawing.Size(231, 20);
             this.cmbTDSApplicable.StyleController = this.layoutControl1;
             this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
             // 
             // Root
             // 
@@ -574,7 +578,8 @@
             this.layoutControlItem16,
             this.layoutControlItem18,
             this.layoutControlItem19,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.emptySpaceItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(398, 171);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
@@ -634,10 +639,10 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSave;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 150);
+            this.layoutControlItem7.Location = new System.Drawing.Point(243, 150);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Padding = new DevExpress.XtraLayout.Utils.Padding(9, 14, 9, 9);
-            this.layoutControlItem7.Size = new System.Drawing.Size(381, 59);
+            this.layoutControlItem7.Size = new System.Drawing.Size(138, 59);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -697,6 +702,14 @@
             this.layoutControlItem6.Text = "Opening Balance";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(137, 14);
             // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 150);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(243, 59);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // ucDebitors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -752,6 +765,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -805,5 +819,6 @@
         private DevExpress.XtraEditors.LookUpEdit cmbTDSApplicable;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

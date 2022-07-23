@@ -157,6 +157,7 @@
             this.cmbTypeofDue.Size = new System.Drawing.Size(309, 20);
             this.cmbTypeofDue.StyleController = this.layoutControl1;
             this.cmbTypeofDue.TabIndex = 2;
+            this.cmbTypeofDue.EditValueChanged += new System.EventHandler(this.cmbTypeofDue_EditValueChanged);
             // 
             // Root
             // 

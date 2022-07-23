@@ -37,6 +37,9 @@
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
             this.txtRateOfDepriciation = new DevExpress.XtraEditors.TextEdit();
             this.cmbTDSRates = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbGSTConsidered = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbOperatingAsset = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciROD = new DevExpress.XtraLayout.LayoutControlItem();
@@ -45,9 +48,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbOperatingAsset = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbGSTConsidered = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,6 +59,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRateOfDepriciation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTConsidered.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOperatingAsset.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciROD)).BeginInit();
@@ -67,9 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOperatingAsset.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTConsidered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -194,6 +194,55 @@
             this.cmbTDSRates.StyleController = this.layoutControl1;
             this.cmbTDSRates.TabIndex = 6;
             // 
+            // cmbGSTConsidered
+            // 
+            this.cmbGSTConsidered.EnterMoveNextControl = true;
+            this.cmbGSTConsidered.Location = new System.Drawing.Point(211, 108);
+            this.cmbGSTConsidered.Name = "cmbGSTConsidered";
+            this.cmbGSTConsidered.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbGSTConsidered.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbGSTConsidered.Properties.NullText = "";
+            this.cmbGSTConsidered.Properties.ShowHeader = false;
+            this.cmbGSTConsidered.Size = new System.Drawing.Size(278, 20);
+            this.cmbGSTConsidered.StyleController = this.layoutControl1;
+            this.cmbGSTConsidered.TabIndex = 8;
+            // 
+            // cmbOperatingAsset
+            // 
+            this.cmbOperatingAsset.EnterMoveNextControl = true;
+            this.cmbOperatingAsset.Location = new System.Drawing.Point(211, 146);
+            this.cmbOperatingAsset.Name = "cmbOperatingAsset";
+            this.cmbOperatingAsset.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbOperatingAsset.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbOperatingAsset.Properties.NullText = "";
+            this.cmbOperatingAsset.Properties.ShowHeader = false;
+            this.cmbOperatingAsset.Size = new System.Drawing.Size(278, 20);
+            this.cmbOperatingAsset.StyleController = this.layoutControl1;
+            this.cmbOperatingAsset.TabIndex = 8;
+            // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(211, 184);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(278, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
+            // 
             // Root
             // 
             this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Silver;
@@ -288,54 +337,6 @@
             this.layoutControlItem21.Text = "Applicable section of TDS";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(187, 14);
             // 
-            // cmbOperatingAsset
-            // 
-            this.cmbOperatingAsset.EnterMoveNextControl = true;
-            this.cmbOperatingAsset.Location = new System.Drawing.Point(211, 146);
-            this.cmbOperatingAsset.Name = "cmbOperatingAsset";
-            this.cmbOperatingAsset.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbOperatingAsset.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbOperatingAsset.Properties.NullText = "";
-            this.cmbOperatingAsset.Properties.ShowHeader = false;
-            this.cmbOperatingAsset.Size = new System.Drawing.Size(278, 20);
-            this.cmbOperatingAsset.StyleController = this.layoutControl1;
-            this.cmbOperatingAsset.TabIndex = 8;
-            // 
-            // cmbTDSApplicable
-            // 
-            this.cmbTDSApplicable.EnterMoveNextControl = true;
-            this.cmbTDSApplicable.Location = new System.Drawing.Point(211, 184);
-            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
-            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbTDSApplicable.Properties.NullText = "";
-            this.cmbTDSApplicable.Properties.ShowHeader = false;
-            this.cmbTDSApplicable.Size = new System.Drawing.Size(278, 20);
-            this.cmbTDSApplicable.StyleController = this.layoutControl1;
-            this.cmbTDSApplicable.TabIndex = 8;
-            // 
-            // cmbGSTConsidered
-            // 
-            this.cmbGSTConsidered.EnterMoveNextControl = true;
-            this.cmbGSTConsidered.Location = new System.Drawing.Point(211, 108);
-            this.cmbGSTConsidered.Name = "cmbGSTConsidered";
-            this.cmbGSTConsidered.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbGSTConsidered.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbGSTConsidered.Properties.NullText = "";
-            this.cmbGSTConsidered.Properties.ShowHeader = false;
-            this.cmbGSTConsidered.Size = new System.Drawing.Size(278, 20);
-            this.cmbGSTConsidered.StyleController = this.layoutControl1;
-            this.cmbGSTConsidered.TabIndex = 8;
-            // 
             // layoutControlItem24
             // 
             this.layoutControlItem24.Control = this.cmbGSTConsidered;
@@ -388,6 +389,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRateOfDepriciation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTConsidered.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOperatingAsset.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciROD)).EndInit();
@@ -396,9 +400,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOperatingAsset.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbGSTConsidered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();

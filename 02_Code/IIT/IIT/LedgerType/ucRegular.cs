@@ -30,7 +30,6 @@ namespace IIT
             cmbTDSApplicable.Properties.DataSource = LookUpUtility.GetBoolType();
             cmbProvisionEntryRequired.Properties.DataSource = LookUpUtility.GetBoolType();
 
-
             lblHeader.Text = Caption;
             if (ledger?.ID == null) return;
             txtLedgerName.EditValue = ledger.Name;
@@ -75,16 +74,21 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_Regular;
             Save();
         }
-        private void rgRegistrationStatus_EditValueChanged(object sender, EventArgs e)
-        {
-            txtGSTNumber.EditValue = null;
-            txtGSTNumber.Enabled = cmbRegistrationStatus.Text.Equals("Registered");
-        }
         private void txtGSTNumber_Leave(object sender, EventArgs e)
         {
             if (txtGSTNumber.Text.Length < 12)
                 return;
             txtPANNumber.EditValue = txtGSTNumber.Text.Substring(2, 10);
+        }
+        private void cmbRegistrationStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            txtGSTNumber.EditValue = null;
+            txtGSTNumber.Enabled = cmbRegistrationStatus.Text.Equals("Registered");
+        }
+        private void cmbTDSApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbTDSRates.EditValue = null;
+            cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
         }
     }
 }

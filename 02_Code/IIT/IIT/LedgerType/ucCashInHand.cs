@@ -47,5 +47,10 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_CashInHand;
             Save();
         }
+        private void cmbHavingPrettyCashAccount_EditValueChanged(object sender, EventArgs e)
+        {
+            txtDetails.EditValue = null;
+            txtDetails.Enabled = cmbHavingPrettyCashAccount.Text.Equals("Yes");
+        }
     }
 }

@@ -62,5 +62,16 @@ namespace IIT
             ledger.LedgerTypeID = LookUpIDMap.LedgerType_RawMaterials;
             Save();
         }
+        private void cmbTDSApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            cmbTDSRates.EditValue = null;
+            cmbTDSRates.Enabled = cmbTDSApplicable.Text.Equals("Yes");
+        }
+        private void cmbGSTApplicable_EditValueChanged(object sender, EventArgs e)
+        {
+            txtCGST.EditValue = txtSGST.EditValue = txtIGST.EditValue = null;
+            txtCGST.Enabled = txtSGST.Enabled = txtIGST.Enabled = cmbTDSApplicable.Text.Equals("Yes");
+
+        }
     }
 }

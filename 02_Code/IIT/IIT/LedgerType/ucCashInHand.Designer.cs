@@ -168,6 +168,7 @@
             this.cmbHavingPrettyCashAccount.Size = new System.Drawing.Size(333, 20);
             this.cmbHavingPrettyCashAccount.StyleController = this.layoutControl1;
             this.cmbHavingPrettyCashAccount.TabIndex = 2;
+            this.cmbHavingPrettyCashAccount.EditValueChanged += new System.EventHandler(this.cmbHavingPrettyCashAccount_EditValueChanged);
             // 
             // Root
             // 

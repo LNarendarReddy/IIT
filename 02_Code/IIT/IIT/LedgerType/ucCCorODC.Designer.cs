@@ -369,6 +369,7 @@
             this.cmbTDSApplicable.Size = new System.Drawing.Size(224, 20);
             this.cmbTDSApplicable.StyleController = this.layoutControl1;
             this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
             // 
             // Root
             // 

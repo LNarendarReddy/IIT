@@ -38,6 +38,7 @@
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
             this.cmbTDSRates = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbIsFromIndia = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -47,7 +48,6 @@
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbTDSApplicable = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -58,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIsFromIndia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -67,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Size = new System.Drawing.Size(551, 336);
+            this.tablePanel1.Size = new System.Drawing.Size(543, 330);
             this.tablePanel1.TabIndex = 0;
             // 
             // layoutControl1
@@ -194,6 +194,23 @@
             this.cmbIsFromIndia.StyleController = this.layoutControl1;
             this.cmbIsFromIndia.TabIndex = 5;
             // 
+            // cmbTDSApplicable
+            // 
+            this.cmbTDSApplicable.EnterMoveNextControl = true;
+            this.cmbTDSApplicable.Location = new System.Drawing.Point(157, 70);
+            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
+            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbTDSApplicable.Properties.NullText = "";
+            this.cmbTDSApplicable.Properties.ShowHeader = false;
+            this.cmbTDSApplicable.Size = new System.Drawing.Size(358, 20);
+            this.cmbTDSApplicable.StyleController = this.layoutControl1;
+            this.cmbTDSApplicable.TabIndex = 2;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
+            // 
             // Root
             // 
             this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Silver;
@@ -293,22 +310,6 @@
             this.layoutControlItem3.Text = "Divident received from India";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(133, 14);
             // 
-            // cmbTDSApplicable
-            // 
-            this.cmbTDSApplicable.EnterMoveNextControl = true;
-            this.cmbTDSApplicable.Location = new System.Drawing.Point(157, 70);
-            this.cmbTDSApplicable.Name = "cmbTDSApplicable";
-            this.cmbTDSApplicable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTDSApplicable.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbTDSApplicable.Properties.NullText = "";
-            this.cmbTDSApplicable.Properties.ShowHeader = false;
-            this.cmbTDSApplicable.Size = new System.Drawing.Size(358, 20);
-            this.cmbTDSApplicable.StyleController = this.layoutControl1;
-            this.cmbTDSApplicable.TabIndex = 8;
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.cmbTDSApplicable;
@@ -327,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucDividend";
-            this.Size = new System.Drawing.Size(551, 336);
+            this.Size = new System.Drawing.Size(543, 330);
             this.Load += new System.EventHandler(this.ucDividend_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
@@ -338,6 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTDSRates.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIsFromIndia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -347,7 +349,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTDSApplicable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 

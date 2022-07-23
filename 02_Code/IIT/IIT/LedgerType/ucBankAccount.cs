@@ -60,8 +60,6 @@ namespace IIT
             ledger.BankAccountInfo.OpeningBalance = txtOpeningBalance.EditValue;
             Save();
         }
-
-
     }
 }
     

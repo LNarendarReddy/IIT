@@ -287,6 +287,7 @@
             this.cmbGSTApplicable.Size = new System.Drawing.Size(288, 20);
             this.cmbGSTApplicable.StyleController = this.layoutControl1;
             this.cmbGSTApplicable.TabIndex = 8;
+            this.cmbGSTApplicable.EditValueChanged += new System.EventHandler(this.cmbGSTApplicable_EditValueChanged);
             // 
             // cmbTDSApplicable
             // 
@@ -303,6 +304,7 @@
             this.cmbTDSApplicable.Size = new System.Drawing.Size(288, 20);
             this.cmbTDSApplicable.StyleController = this.layoutControl1;
             this.cmbTDSApplicable.TabIndex = 8;
+            this.cmbTDSApplicable.EditValueChanged += new System.EventHandler(this.cmbTDSApplicable_EditValueChanged);
             // 
             // cmbReverseCharge
             // 

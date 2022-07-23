@@ -62,6 +62,7 @@ namespace IIT
 
         private void cmbNatureOfCapital_EditValueChanged(object sender, EventArgs e)
         {
+            txtPercentageOfPrefarence.EditValue = null;
             txtPercentageOfPrefarence.Enabled = cmbNatureOfCapital.Text.Equals("Preference");
         }
     }

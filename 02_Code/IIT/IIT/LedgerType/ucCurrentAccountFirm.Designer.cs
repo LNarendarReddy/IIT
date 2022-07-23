@@ -35,6 +35,12 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtOpeningBalance = new DevExpress.XtraEditors.TextEdit();
             this.txtLedgerName = new DevExpress.XtraEditors.TextEdit();
+            this.cmbRecieptForAdditions = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbRemuneration = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbShareofProfit = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbDrawings = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbInterestonCapital = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbOthersifany = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -42,12 +48,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.cmbDrawings = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbInterestonCapital = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbOthersifany = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbRemuneration = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbRecieptForAdditions = new DevExpress.XtraEditors.LookUpEdit();
-            this.cmbShareofProfit = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -60,6 +60,12 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRecieptForAdditions.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRemuneration.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbShareofProfit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDrawings.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbInterestonCapital.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOthersifany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
@@ -67,12 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDrawings.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbInterestonCapital.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOthersifany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRemuneration.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRecieptForAdditions.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbShareofProfit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
@@ -166,6 +166,108 @@
             this.txtLedgerName.StyleController = this.layoutControl1;
             this.txtLedgerName.TabIndex = 1;
             // 
+            // cmbRecieptForAdditions
+            // 
+            this.cmbRecieptForAdditions.EnterMoveNextControl = true;
+            this.cmbRecieptForAdditions.Location = new System.Drawing.Point(139, 103);
+            this.cmbRecieptForAdditions.Name = "cmbRecieptForAdditions";
+            this.cmbRecieptForAdditions.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbRecieptForAdditions.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbRecieptForAdditions.Properties.NullText = "";
+            this.cmbRecieptForAdditions.Properties.PopupSizeable = false;
+            this.cmbRecieptForAdditions.Properties.ShowHeader = false;
+            this.cmbRecieptForAdditions.Size = new System.Drawing.Size(364, 20);
+            this.cmbRecieptForAdditions.StyleController = this.layoutControl1;
+            this.cmbRecieptForAdditions.TabIndex = 2;
+            // 
+            // cmbRemuneration
+            // 
+            this.cmbRemuneration.EnterMoveNextControl = true;
+            this.cmbRemuneration.Location = new System.Drawing.Point(139, 141);
+            this.cmbRemuneration.Name = "cmbRemuneration";
+            this.cmbRemuneration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbRemuneration.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbRemuneration.Properties.NullText = "";
+            this.cmbRemuneration.Properties.PopupSizeable = false;
+            this.cmbRemuneration.Properties.ShowHeader = false;
+            this.cmbRemuneration.Size = new System.Drawing.Size(364, 20);
+            this.cmbRemuneration.StyleController = this.layoutControl1;
+            this.cmbRemuneration.TabIndex = 3;
+            // 
+            // cmbShareofProfit
+            // 
+            this.cmbShareofProfit.EnterMoveNextControl = true;
+            this.cmbShareofProfit.Location = new System.Drawing.Point(139, 179);
+            this.cmbShareofProfit.Name = "cmbShareofProfit";
+            this.cmbShareofProfit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbShareofProfit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbShareofProfit.Properties.NullText = "";
+            this.cmbShareofProfit.Properties.PopupSizeable = false;
+            this.cmbShareofProfit.Properties.ShowHeader = false;
+            this.cmbShareofProfit.Size = new System.Drawing.Size(364, 20);
+            this.cmbShareofProfit.StyleController = this.layoutControl1;
+            this.cmbShareofProfit.TabIndex = 4;
+            // 
+            // cmbDrawings
+            // 
+            this.cmbDrawings.EnterMoveNextControl = true;
+            this.cmbDrawings.Location = new System.Drawing.Point(139, 217);
+            this.cmbDrawings.Name = "cmbDrawings";
+            this.cmbDrawings.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbDrawings.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbDrawings.Properties.NullText = "";
+            this.cmbDrawings.Properties.PopupSizeable = false;
+            this.cmbDrawings.Properties.ShowHeader = false;
+            this.cmbDrawings.Size = new System.Drawing.Size(364, 20);
+            this.cmbDrawings.StyleController = this.layoutControl1;
+            this.cmbDrawings.TabIndex = 5;
+            // 
+            // cmbInterestonCapital
+            // 
+            this.cmbInterestonCapital.EnterMoveNextControl = true;
+            this.cmbInterestonCapital.Location = new System.Drawing.Point(139, 255);
+            this.cmbInterestonCapital.Name = "cmbInterestonCapital";
+            this.cmbInterestonCapital.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbInterestonCapital.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbInterestonCapital.Properties.NullText = "";
+            this.cmbInterestonCapital.Properties.PopupSizeable = false;
+            this.cmbInterestonCapital.Properties.ShowHeader = false;
+            this.cmbInterestonCapital.Size = new System.Drawing.Size(364, 20);
+            this.cmbInterestonCapital.StyleController = this.layoutControl1;
+            this.cmbInterestonCapital.TabIndex = 6;
+            // 
+            // cmbOthersifany
+            // 
+            this.cmbOthersifany.EnterMoveNextControl = true;
+            this.cmbOthersifany.Location = new System.Drawing.Point(139, 293);
+            this.cmbOthersifany.Name = "cmbOthersifany";
+            this.cmbOthersifany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbOthersifany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
+            this.cmbOthersifany.Properties.NullText = "";
+            this.cmbOthersifany.Properties.PopupSizeable = false;
+            this.cmbOthersifany.Properties.ShowHeader = false;
+            this.cmbOthersifany.Size = new System.Drawing.Size(364, 20);
+            this.cmbOthersifany.StyleController = this.layoutControl1;
+            this.cmbOthersifany.TabIndex = 7;
+            // 
             // Root
             // 
             this.Root.AppearanceGroup.BorderColor = System.Drawing.Color.Silver;
@@ -246,108 +348,6 @@
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(521, 273);
             this.layoutControlGroup1.Text = "Adjustments considered to the current Account :- ";
-            // 
-            // cmbDrawings
-            // 
-            this.cmbDrawings.EnterMoveNextControl = true;
-            this.cmbDrawings.Location = new System.Drawing.Point(139, 217);
-            this.cmbDrawings.Name = "cmbDrawings";
-            this.cmbDrawings.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbDrawings.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbDrawings.Properties.NullText = "";
-            this.cmbDrawings.Properties.PopupSizeable = false;
-            this.cmbDrawings.Properties.ShowHeader = false;
-            this.cmbDrawings.Size = new System.Drawing.Size(364, 20);
-            this.cmbDrawings.StyleController = this.layoutControl1;
-            this.cmbDrawings.TabIndex = 7;
-            // 
-            // cmbInterestonCapital
-            // 
-            this.cmbInterestonCapital.EnterMoveNextControl = true;
-            this.cmbInterestonCapital.Location = new System.Drawing.Point(139, 255);
-            this.cmbInterestonCapital.Name = "cmbInterestonCapital";
-            this.cmbInterestonCapital.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbInterestonCapital.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbInterestonCapital.Properties.NullText = "";
-            this.cmbInterestonCapital.Properties.PopupSizeable = false;
-            this.cmbInterestonCapital.Properties.ShowHeader = false;
-            this.cmbInterestonCapital.Size = new System.Drawing.Size(364, 20);
-            this.cmbInterestonCapital.StyleController = this.layoutControl1;
-            this.cmbInterestonCapital.TabIndex = 8;
-            // 
-            // cmbOthersifany
-            // 
-            this.cmbOthersifany.EnterMoveNextControl = true;
-            this.cmbOthersifany.Location = new System.Drawing.Point(139, 293);
-            this.cmbOthersifany.Name = "cmbOthersifany";
-            this.cmbOthersifany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbOthersifany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbOthersifany.Properties.NullText = "";
-            this.cmbOthersifany.Properties.PopupSizeable = false;
-            this.cmbOthersifany.Properties.ShowHeader = false;
-            this.cmbOthersifany.Size = new System.Drawing.Size(364, 20);
-            this.cmbOthersifany.StyleController = this.layoutControl1;
-            this.cmbOthersifany.TabIndex = 9;
-            // 
-            // cmbRemuneration
-            // 
-            this.cmbRemuneration.EnterMoveNextControl = true;
-            this.cmbRemuneration.Location = new System.Drawing.Point(139, 141);
-            this.cmbRemuneration.Name = "cmbRemuneration";
-            this.cmbRemuneration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbRemuneration.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbRemuneration.Properties.NullText = "";
-            this.cmbRemuneration.Properties.PopupSizeable = false;
-            this.cmbRemuneration.Properties.ShowHeader = false;
-            this.cmbRemuneration.Size = new System.Drawing.Size(364, 20);
-            this.cmbRemuneration.StyleController = this.layoutControl1;
-            this.cmbRemuneration.TabIndex = 5;
-            // 
-            // cmbRecieptForAdditions
-            // 
-            this.cmbRecieptForAdditions.EnterMoveNextControl = true;
-            this.cmbRecieptForAdditions.Location = new System.Drawing.Point(139, 103);
-            this.cmbRecieptForAdditions.Name = "cmbRecieptForAdditions";
-            this.cmbRecieptForAdditions.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbRecieptForAdditions.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbRecieptForAdditions.Properties.NullText = "";
-            this.cmbRecieptForAdditions.Properties.PopupSizeable = false;
-            this.cmbRecieptForAdditions.Properties.ShowHeader = false;
-            this.cmbRecieptForAdditions.Size = new System.Drawing.Size(364, 20);
-            this.cmbRecieptForAdditions.StyleController = this.layoutControl1;
-            this.cmbRecieptForAdditions.TabIndex = 4;
-            // 
-            // cmbShareofProfit
-            // 
-            this.cmbShareofProfit.EnterMoveNextControl = true;
-            this.cmbShareofProfit.Location = new System.Drawing.Point(139, 179);
-            this.cmbShareofProfit.Name = "cmbShareofProfit";
-            this.cmbShareofProfit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbShareofProfit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTITYLOOKUPID", "ENTITYLOOKUPID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LOOKUPVALUE", "LOOKUPVALUE")});
-            this.cmbShareofProfit.Properties.NullText = "";
-            this.cmbShareofProfit.Properties.PopupSizeable = false;
-            this.cmbShareofProfit.Properties.ShowHeader = false;
-            this.cmbShareofProfit.Size = new System.Drawing.Size(364, 20);
-            this.cmbShareofProfit.StyleController = this.layoutControl1;
-            this.cmbShareofProfit.TabIndex = 6;
             // 
             // layoutControlItem10
             // 
@@ -435,6 +435,12 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtOpeningBalance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLedgerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRecieptForAdditions.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRemuneration.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbShareofProfit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDrawings.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbInterestonCapital.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOthersifany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
@@ -442,12 +448,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDrawings.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbInterestonCapital.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbOthersifany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRemuneration.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRecieptForAdditions.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbShareofProfit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
